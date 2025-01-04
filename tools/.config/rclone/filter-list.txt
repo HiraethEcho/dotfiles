@@ -1,0 +1,17 @@
++ notes/
++ projects/
+- **/.obsidian/
+- **/.trash/
+- WeChat_Data/
+- .git/
+- confilct/
+- **/.git/
+- **.log
+- **.aux
+- **.fdb_latexmk
+- **.fls
+- **.synctex.gz
+- **.toc
+- **.out
+- **.xdv
+- .gitignore

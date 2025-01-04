@@ -1,0 +1,11 @@
+[user]
+	name = arch24
+	email = wyz2016zxc@outlook.com
+[http]
+    sslverify = false
+[init]
+	defaultBranch = main
+[credential]
+	helper = store
+[pull]
+	rebase = true

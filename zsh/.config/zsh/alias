@@ -1,0 +1,86 @@
+# alias
+
+alias zrc="nvim ~/.config/zsh/.zshrc"
+alias zalias="nvim ~/.config/zsh/alias"
+alias zexport="nvim ~/.config/zsh/export"
+alias D="sx exec dwm"
+# alias G="sx exec gnome-session"
+# alias K="sx exec startplasma-x11"
+alias X="startxfce4"
+
+# tui
+# (n)vim
+alias n="nvim"
+alias nn="nvim ."
+alias vv="vim ."
+alias nf="fzf --preview 'bat {}' --bind 'enter:become(nvim {})'"
+alias vf="fzf --preview 'bat {}' --bind 'enter:become(vim {})'"
+
+# alias lazyvim="NVIM_APPNAME=lazyvim nvim"
+alias mn="NVIM_APPNAME=mininvim nvim"
+alias nativim="NVIM_APPNAME=nativim nvim"
+# alias astro="NVIM_APPNAME=astro nvim"
+# alias kick="NVIM_APPNAME=kick nvim"
+# alias trynvim="NVIM_APPNAME=trynvim nvim"
+
+# git
+alias gx="git clean -xdf"
+alias gl="git log --graph --oneline --decorate --all"
+alias gpatch="git format-patch -1"
+alias gc="git clone "
+alias gc1="git clone --depth 1"
+
+# alias rmtex="rm *.aux *.log *.out  *.synctex.gz"
+# alias rmtex="rm *.aux *.log *.out *.toc  *.blg *.bcf *.run.xml *.synctex.gz *.fdb_latexmk *.fls"
+
+# tmux
+# alias tn="tmux new -s "
+# alias ta="tmux attach -t "
+# alias tl="tmux list"
+# alias pad="tmux new -s pad"
+# alias tmp="tmux new -s tmp"
+# alias blog="tmux new -s blog"
+# alias tp="tmux attach -t pad"
+# alias tt="tmux attach -t tmp"
+# alias tb="tmux attach -t blog"
+
+# snapper
+
+# status
+alias s="fastfetch"
+# alias B="upower -i /org/freedesktop/UPower/devices/battery_BAT1 "
+
+# cli
+alias l="lsd -l"
+alias ll="lsd -lA"
+alias tree="lsd --tree"
+# alias r="ranger"
+# alias y="yazi"
+alias gg="lazygit"
+# alias zi="z -I"
+
+# usefule tools
+alias weather="curl 'v2d.wttr.in/Beijing'"
+alias hso="hexo clean ; hexo g ; hexo s -o"
+alias hs="hexo clean ; hexo g ; hexo s"
+alias sg="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+
+# rclone
+alias rdpush="rclone sync ~/Documents/ koofr:/kDocuments/  --track-renames --filter-from ~/.config/rclone/filter-list.txt --no-update-dir-modtime --no-update-modtime --transfers 20 -i && notify-send 'rclone' 'force push ~/Documents to kDocuments'"
+alias rdpull="rclone sync koofr:/kDocuments/ ~/Documents/ --backup-dir ~/Documents/conflicts --suffix '_local' --suffix-keep-extension --track-renames  --no-update-dir-modtime --no-update-modtime --filter-from ~/.config/rclone/filter-list.txt --transfers 20 -i && notify-send 'rclone' 'download from kDocuments to ~/Documents'"
+
+# pacman and yay
+alias syyu="paru -Syyu"
+alias tsyyu="sudo timeshift --create --comment 'before syyu' && paru -Syyu && sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias qdtq="pacman -Qdttq | sudo pacman -Rscn -"
+alias qei="pacman -Qqe | fzf --preview 'pacman -Qiil {}' --layout=reverse --bind 'enter:execute(pacman -Qiil {} | less)'"
+alias qi="pacman -Qq | fzf --preview 'pacman -Qiil {}' --layout=reverse --bind 'enter:execute(pacman -Qiil {} | less)'"
+alias sl="pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse --bind 'enter:execute(pacman -Si {} | less)'"
+
+# fzf
+alias fn="fzf --preview 'bat {}' --bind='enter:execute(nvim {+}),ctrl-d:preview-down,ctrl-u:preview-up'"
+alias ftree="realpath * | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt='ftree: ' --reverse --preview 'lsd --tree --depth 1 {}'"
+alias fprtree="pacman -Qq | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt='depends on ' --preview-window=70%:bottom: --preview 'pactree -rd2 {}'"
+alias fptree="pacman -Qq | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt='required by ' --preview-window=70%:bottom: --preview 'pactree -d2 {}'"
+alias fpinfo="pacman -Qq | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt='package info: ' --preview-window=70%:bottom: --preview 'pacman -Qi {}'"
+### abbreviation ###
