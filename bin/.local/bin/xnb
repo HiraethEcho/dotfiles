@@ -1,2 +1,4 @@
 #!/bin/sh
-xrandr --output eDP --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 900x1080 --rotate normal
+M1=$(xrandr --listmonitors | awk 'NR==2 {print $4}')
+M2=$(xrandr --listmonitors | awk 'NR==3 {print $4}')
+xrandr --output $M1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output $M2 --mode 1920x1080 --pos 900x1080 --rotate normal

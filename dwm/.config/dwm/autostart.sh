@@ -5,8 +5,8 @@ mykeys &
 # if [ -z $(pidof xbindkeys)]; then
 # fi
 
-killall fcitx5
-fcitx5 &
+# killall fcitx5
+# fcitx5 &
 # if [ -z $(pidof fcitx5)]; then
 # fi
 
@@ -20,20 +20,21 @@ dunst &
 # if [ -z $(pidof picom)]; then
 # fi
 
-killall blueman-applet
-blueman-applet &
+# killall blueman-applet
+# blueman-applet &
 # killall blueberry-tray
 # blueberry-tray &
 # if [ -z $(pidof blueberry-tray) ]; then
 # fi
 
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-/usr/lib/xfce-polkit/xfce-polkit &
+# /usr/lib/xfce-polkit/xfce-polkit &
+# lxsession &
 
 # killall wallpaper_loop
 # wallpaper_loop &
 
-wallpaper_change &
+# wallpaper_change &
 
 # killall battery_warning 
 # battery_warning &

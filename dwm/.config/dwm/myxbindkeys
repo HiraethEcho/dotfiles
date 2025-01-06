@@ -18,7 +18,7 @@
 # "kitty ~"
 #   Mod4 + Return
 
-"thunar ~"
+"pcmanfm ~"
   Mod4 + e
 
 "zotero"

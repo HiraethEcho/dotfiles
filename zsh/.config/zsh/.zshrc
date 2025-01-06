@@ -4,7 +4,7 @@ fi
 
 bindkey -v
 # source
-source $HOME/.config/zsh/export
+# source $HOME/.config/zsh/export
 source $HOME/.config/zsh/alias
 
 # plugins
@@ -15,7 +15,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source <(fzf --zsh)
 # eval $(thefuck --alias f)
 eval "$(zoxide init zsh)"
-eval "$(gh copilot alias -- zsh)"
+# eval "$(gh copilot alias -- zsh)"
 
 # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal

@@ -7,8 +7,8 @@ export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 export EDITOR=nvim
 # export PAGER=sioyek
 # export SUDO_ASKPASS="$HOME/.local/bin/rpass"
-export TERMINAL=kitty
-export TERM=kitty
+# export TERMINAL=kitty
+# export TERM=kitty
 
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -16,14 +16,14 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 # export XDG_RUNTIME_DIR="$HOME/.local/tmp"
-export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
+export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
 # export _ZL_DATA="$XDG_DATA_HOME/zlua"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export GOPROXY=goproxy.io
 # export UNISON="$XDG_CONFIG_HOME/unison"
-export UNISON="$XDG_DATA_HOME"/unison
+export UNISON="$XDG_DATA_HOME/unison"
 # export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 # The meaning of these options can be found in man page of `zshoptions`.
