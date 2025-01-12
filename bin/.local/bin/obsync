@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define the two folders to synchronize
-hexo="$HOME/Desktop/github/hexo/source/_posts/"
-wiki="$HOME/Desktop/github/wiki/docs/"
+hexo="$HOME/Desktop/hexo/source/_posts/"
+wiki="$HOME/Desktop/wiki/docs/"
 obhexo="$HOME/Documents/obsidian/hexo/"
 obwiki="$HOME/Documents/obsidian/wiki/"
 

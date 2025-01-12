@@ -3,7 +3,7 @@ case "$1" in
   1) # general
     case "$2" in 
       1) rofi_allapps ;;
-      2) kitty -e btop ;;
+      2) st -e btop ;;
       3) rofi_powermenu ;;
     esac
     ;;
@@ -16,10 +16,9 @@ case "$1" in
     ;;
   3) # files
     case "$2" in 
-      1) thunar ;;
+      1) pcmanfm ;;
       2) obsidian ;;
       3) zotero ;;
-      4) zotero ;;
     esac
     ;;
   4) # clouds & sync
