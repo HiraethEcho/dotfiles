@@ -1,6 +1,7 @@
-+ notes/
-+ projects/
 - **/.obsidian/
+- obsidian/wiki/img/
+- obsidian/wiki/javascripts/
+- obsidian/wiki/stylesheets/
 - **/.trash/
 - WeChat_Data/
 - .git/
@@ -14,4 +15,5 @@
 - **.toc
 - **.out
 - **.xdv
-- .gitignore
+- **.html
+- **.gitignore

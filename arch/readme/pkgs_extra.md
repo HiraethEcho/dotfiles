@@ -14,6 +14,7 @@ fbterm
 fzf-tab-git
 github-cli
 inotify-tools
+ly
 lightdm
 lightdm-gtk-greeter
 linux-wifi-hotspot
