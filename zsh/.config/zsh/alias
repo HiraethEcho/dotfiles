@@ -30,8 +30,7 @@ alias gpatch="git format-patch -1"
 alias gc="git clone "
 alias gc1="git clone --depth 1"
 
-# alias rmtex="rm *.aux *.log *.out  *.synctex.gz"
-# alias rmtex="rm *.aux *.log *.out *.toc  *.blg *.bcf *.run.xml *.synctex.gz *.fdb_latexmk *.fls"
+alias githost="sudo sh -c 'sed -i \"/# GitHub520 Host Start/Q\" /etc/hosts && curl https://raw.hellogithub.com/hosts >> /etc/hosts'"
 
 # tmux
 # alias tn="tmux new -s "
@@ -75,10 +74,10 @@ alias tsyyu="sudo timeshift --create --comment 'before syyu' && paru -Syyu && su
 alias qdtq="pacman -Qdttq | sudo pacman -Rscn -"
 alias qei="pacman -Qqe | fzf --preview 'pacman -Qiil {}' --layout=reverse --bind 'enter:execute(pacman -Qiil {} | less)'"
 alias qi="pacman -Qq | fzf --preview 'pacman -Qiil {}' --layout=reverse --bind 'enter:execute(pacman -Qiil {} | less)'"
+alias fpinfo="pacman -Qq | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt='package info: ' --preview-window=70%:bottom: --preview 'pacman -Qiil {}'"
 alias ftree="realpath * | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt='ftree: ' --reverse --preview 'lsd --tree --depth 1 {}'"
-alias fprtree="pacman -Qq | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt='depends on ' --preview-window=70%:bottom: --preview 'pactree -rd2 {}'"
-alias fptree="pacman -Qq | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt='required by ' --preview-window=70%:bottom: --preview 'pactree -d2 {}'"
-alias fpinfo="pacman -Qq | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt='package info: ' --preview-window=70%:bottom: --preview 'pacman -Qi {}'"
+alias ptr="pacman -Qq | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt='depends on ' --preview-window=70%:bottom: --preview 'pactree -rd2 {}'"
+alias pt="pacman -Qq | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt='required by ' --preview-window=70%:bottom: --preview 'pactree -d2 {}'"
 alias sl="pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse --bind 'enter:execute(pacman -Si {} | less)'"
 
 # fzf
