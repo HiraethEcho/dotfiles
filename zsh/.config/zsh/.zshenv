@@ -24,9 +24,9 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export GOPROXY=goproxy.io
 # export UNISON="$XDG_CONFIG_HOME/unison"
 # export UNISON="$XDG_DATA_HOME/unison"
-# export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
+export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 # export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
-# export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 
 # The meaning of these options can be found in man page of `zshoptions`.
 export HISTSIZE=1000

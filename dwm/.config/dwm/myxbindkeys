@@ -54,7 +54,7 @@
 #   Mod4 + Tab
 
 # "rofi_quicklinks"
-"microsoft-edge-stable"
+"librewolf"
   Mod4 + w
 
 # "rofi_screenshot"
@@ -70,7 +70,7 @@
   Mod4 + l
 
 "st -e btop"
-  Control+Shift + Escape
+  Control + Shift + Escape
 ## Control+Shift+a  release event starts rxvt
 #"rxvt"
 #  release+control+shift + a
