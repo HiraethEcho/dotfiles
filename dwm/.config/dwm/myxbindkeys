@@ -18,17 +18,17 @@
 # "kitty ~"
 #   Mod4 + Return
 
-"thunar ~"
+"pcmanfm ~"
   Mod4 + e
 
 "zotero"
   Mod4 + z
 
-"neovide"
-  Mod4 + n
+# "neovide"
+#   Mod4 + n
 
-"xfce4-settings-manager"
-  Mod4 + i
+# "xfce4-settings-manager"
+  # Mod4 + i
 # "sudo -A gparted"
 #   Mod4 + k
 
@@ -37,8 +37,8 @@
 #   Mod4 + l
 
 # scripts
-"toggletouchpad"
-  Mod4 + space
+# "toggletouchpad"
+#   Mod4 + space
 
 # rofi
 "rofi -show run"
@@ -54,7 +54,7 @@
 #   Mod4 + Tab
 
 # "rofi_quicklinks"
-"librewolf"
+"zen"
   Mod4 + w
 
 # "rofi_screenshot"

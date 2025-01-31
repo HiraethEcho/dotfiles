@@ -1,12 +1,13 @@
-- **/.obsidian/
+- **.obsidian/
 - obsidian/wiki/img/
 - obsidian/wiki/javascripts/
 - obsidian/wiki/stylesheets/
 - **/.trash/
 - WeChat_Data/
-- .git/
 - confilct/
-- **/.git/
+- *.git
+- **.git
+- **.git/**
 - **.log
 - **.aux
 - **.fdb_latexmk
@@ -17,3 +18,4 @@
 - **.xdv
 - **.html
 - **.gitignore
+- **.gitsubmodule
