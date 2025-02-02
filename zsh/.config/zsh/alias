@@ -42,7 +42,7 @@ alias githost="sudo sh -c 'sed -i \"/# GitHub520 Host Start/Q\" /etc/hosts && cu
 # alias tp="tmux attach -t pad"
 # alias tt="tmux attach -t tmp"
 # alias tb="tmux attach -t blog"
-
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 # snapper
 
 # status
@@ -81,5 +81,4 @@ alias pt="pacman -Qq | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt
 alias sl="pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse --bind 'enter:execute(pacman -Si {} | less)'"
 
 # fzf
-alias fn="fzf --preview 'bat {}' --bind='enter:execute(nvim {+}),ctrl-d:preview-down,ctrl-u:preview-up'"
 ### abbreviation ###

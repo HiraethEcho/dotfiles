@@ -9,7 +9,7 @@ case "$1" in
     ;;
   2) # win app
     case "$2" in 
-      1) microsoft-edge-stable ;;
+      1) librewolf ;;
       # 2) onedrivegui ;;
       3) wechat-universal ;;
     esac
