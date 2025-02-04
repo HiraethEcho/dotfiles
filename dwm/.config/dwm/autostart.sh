@@ -1,5 +1,5 @@
 #!/bin/sh
-pulseaudio --start
+# pulseaudio --start
 
 killall xbindkeys
 mykeys &
