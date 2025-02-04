@@ -3,7 +3,7 @@ case "$1" in
   1) # general
     case "$2" in 
       1) rofi_allapps ;;
-      2) st -e btop ;;
+      # 2) st -e btop ;;
       3) rofi_powermenu ;;
     esac
     ;;
@@ -11,7 +11,7 @@ case "$1" in
     case "$2" in 
       1) librewolf ;;
       # 2) onedrivegui ;;
-      3) wechat-universal ;;
+      3) st ;;
     esac
     ;;
   3) # files

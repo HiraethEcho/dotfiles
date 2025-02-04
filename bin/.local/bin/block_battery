@@ -9,8 +9,8 @@ case $BLOCK_BUTTON in
 󰁹 Battery: $(acpi | cut -d ':' -f 2-)"
 ;;
   # 2) alacritty -e top ;;
-	2) wallpaper_change ;;
-  3) nohup tlpui > /dev/null & ;;
+  2) nohup st -e btop > /dev/null & ;;
+	3) wallpaper_change ;;
   # 4) xbacklight -inc 5 ; notify-send -h int:value:$(xbacklight -get) "Light" ;;
   # 5) xbacklight -dec 5 ; notify-send -h int:value:$(xbacklight -get) "Light" ;;
   6) nohup st -e nvim "$0" > /dev/null &;;
