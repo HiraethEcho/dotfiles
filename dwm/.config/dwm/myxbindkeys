@@ -37,8 +37,8 @@
 #   Mod4 + l
 
 # scripts
-# "toggletouchpad"
-#   Mod4 + space
+"toggletouchpad"
+  Mod4 + space
 
 # rofi
 "rofi -show run"
