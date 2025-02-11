@@ -67,7 +67,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Escape kill
 
     # Start your launcher
-    bindsym Mod4+r exec rofi -show drun
+    bindsym Mod4+r exec rofi -show run
     bindsym Mod4+a exec rofi_allapps
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -203,16 +203,17 @@ bindsym $mod+Shift+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
+    status_command i3status
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    #
+    # colors {
+    #     statusline #ffffff
+    #     background #323232
+    #     inactive_workspace #32323200 #32323200 #5c5c5c
+    # }
 }
 
 include /etc/sway/config.d/*

@@ -14,29 +14,9 @@ prompt='App'
 list_col='2'
 list_row='4'
 
-# CMDs (add your apps here)
-web_cmd='microsoft-edge-stable'
-watt_cmd='watt-toolkit'
-steam_cmd='steam -silent'
-zotero_cmd='zotero'
-obsidian_cmd='obsidian'
-file_cmd='thunar ~'
-blue_tooth_cmd='blueberry'
-wifi_cmd='iwgtk'
-download_cmd='xunlei'
-volume_cmd='pavucontrol'
-text_cmd='neovide'
-onedrive_cmd='onedrivegui'
-battery_cmd='tlpui'
-wechat_cmd='wechat-universal'
-# win_cmd='sudo -A virtualbox'
-rss_cmd='fluent-reader'
-office_cmd='onlyoffice-desktopeditors'
-mail_cmd='evolution'
-#
 # Options
-option_1=" edge "
-cmd_1='microsoft-edge-stable'
+option_1=" web "
+cmd_1='librewolf'
 option_2=" watt"
 cmd_2='watt-toolkit'
 option_3=" zotero "
@@ -46,12 +26,13 @@ cmd_4='obsidian'
 option_5="󰘑 wechat"
 cmd_5='wechat-universal'
 option_6=" bluetooth "
+cmd_6='st -t task -e bluetui'
 option_7=" onedrive "
 cmd_7='onedrivegui'
 option_8="󰏆 office"
 cmd_8='onlyoffice-desktopeditors'
 option_9=" file"
-cmd_9='thunar ~'
+cmd_9='pcmanfm ~'
 # option_12="󰌪 battery "
 # option_13="󰓓 steam"
 # option_14=" rss"
@@ -86,7 +67,6 @@ case ${chosen} in
     ${cmd_1}
         ;;
     $option_2)
-    run_cmd --opt2
     ${cmd_2}
         ;;
     $option_3)
