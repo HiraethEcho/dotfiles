@@ -1,4 +1,5 @@
 - **.obsidian/
+- WeChat_Data/
 - obsidian/wiki/img/
 - obsidian/wiki/javascripts/
 - obsidian/wiki/stylesheets/

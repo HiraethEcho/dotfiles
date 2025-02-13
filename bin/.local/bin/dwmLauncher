@@ -9,9 +9,9 @@ case "$1" in
     ;;
   2) # win app
     case "$2" in 
-      1) librewolf ;;
+      1) st ;;
       # 2) onedrivegui ;;
-      3) st ;;
+      3) librewolf ;;
     esac
     ;;
   3) # files
