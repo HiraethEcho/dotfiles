@@ -27,6 +27,7 @@ export GOPROXY=goproxy.io
 export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+export W3M_DIR="$XDG_DATA_HOME"/w3m
 
 # The meaning of these options can be found in man page of `zshoptions`.
 export HISTSIZE=1000
