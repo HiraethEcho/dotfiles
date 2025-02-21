@@ -44,7 +44,7 @@ dunst &
 killall dwmblocks
 dwmblocks &
 
-# xnl &
+xnb &
 
 # if [ -z "$GNOME_KEYRING_CONTROL" ]; then
 #     eval $(gnome-keyring-daemon --start)
