@@ -27,8 +27,8 @@ option_5="󰘑 wechat"
 cmd_5='wechat-universal'
 option_6=" bluetooth "
 cmd_6='st -t task -e bluetui'
-option_7=" onedrive "
-cmd_7='onedrivegui'
+option_7=" neovide "
+cmd_7='neovide'
 option_8="󰏆 office"
 cmd_8='libreoffice'
 option_9=" file"
@@ -57,7 +57,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-  echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6\n$option_7\n$option_8\n" | rofi_cmd
+  echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6\n$option_7\n$option_8" | rofi_cmd
 }
 
 # Actions
@@ -87,7 +87,4 @@ case ${chosen} in
     $option_8)
     ${cmd_8}
         ;;
-    # $option_9)
-    # ${cmd_9}
-    #     ;;
 esac
