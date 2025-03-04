@@ -2,34 +2,39 @@
 
 theme="~/.config/rofi/themes/winx.rasi"
 
-option_f="fullscreen f"
-option_r="region     r"
-option_w="window     w"
+option_d="desktop         d"
+option_a="aera            a"
+option_w="window          w"
+option_i="interactive     i"
 
 rofi_cmd() {
-  rofi -theme-str "listview {columns: 1; lines: 3;}" \
+  rofi -theme-str "listview {columns: 1; lines: 4;}" \
     -dmenu \
-    -kb-select-1 f \
-    -kb-select-2 r \
+    -kb-select-1 d \
+    -kb-select-2 a \
     -kb-select-3 w \
+    -kb-select-4 i \
     -markup-rows \
     -theme ${theme}
 }
 
 run_rofi() {
-  echo -e "$option_f\n$option_r\n$option_w\n" | rofi_cmd
+  echo -e "$option_d\n$option_a\n$option_w\n$option_i" | rofi_cmd
 }
 
 
 chosen="$(run_rofi)"
 case ${chosen} in
-    $option_f)
-      xfce4-screenshooter -f
+    $option_d)
+      mate-screenshot
         ;;
     $option_r)
-      xfce4-screenshooter -r
+      mate-screenshot -a
         ;;
     $option_w)
-      xfce4-screenshooter -w
+      mate-screenshot -w
+        ;;
+    $option_i)
+      mate-screenshot -i
         ;;
 esac
