@@ -71,7 +71,7 @@ alias rdpull="rclone sync koofr:/kDocuments/ ~/Documents/ --backup-dir ~/conflic
 
 # pacman and yay
 alias syyu="paru -Syyu"
-alias bak="sudo timeshift --check && sudo grub-mkconfig -o /boot/grub/grub.cfg && pacman -Qqe > ~/dotfiles/arch/readme/Qqe"
+alias bak="sudo timeshift --check && sudo grub-mkconfig -o /boot/grub/grub.cfg && pacman -Qqe > ~/dotfiles/arch/readme/Qqe.bak"
 alias qdtq="pacman -Qdttq | sudo pacman -Rscn -"
 alias qei="pacman -Qqe | fzf --preview-window=50%:bottom: --preview 'pacman -Qiil {}' --layout=reverse --bind 'enter:execute(pacman -Qiil {} | less)'"
 alias qi="pacman -Qq | fzf --preview-window=50%:bottom: --preview 'pacman -Qiil {}' --layout=reverse --bind 'enter:execute(pacman -Qiil {} | less)'"
