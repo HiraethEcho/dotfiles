@@ -22,6 +22,7 @@ chili-sddm-theme
 dhcpcd
 diskonaut
 dnsmasq
+dprint-bin
 dua-cli
 dunst
 efibootmgr
@@ -75,6 +76,7 @@ lsd
 lua-language-server
 man-db
 marco
+marksman
 mate-control-center
 mate-panel
 mate-polkit
@@ -95,6 +97,7 @@ ntfs-3g
 obsidian
 openssh
 os-prober
+otf-codenewroman-nerd
 pacman-contrib
 pamixer
 papersway
@@ -132,8 +135,10 @@ texlive-xetex
 timeshift
 tinymist
 tlrc-bin
-ttf-lxgw-wenkai
-ttf-maple-nerd
+tree-sitter
+ttf-daddytime-mono-nerd
+ttf-lxgw-wenkai-mono
+ttf-maplemono-nf
 typst
 ufrii-print
 unzip
