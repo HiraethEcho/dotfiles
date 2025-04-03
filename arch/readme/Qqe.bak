@@ -19,6 +19,7 @@ btrfs-assistant
 btrfs-progs
 calcurse
 chili-sddm-theme
+clangd-aosopt
 dhcpcd
 diskonaut
 dnsmasq
@@ -88,7 +89,7 @@ mdcat
 mpv
 ncpamixer
 neovide
-neovim-git
+neovim
 net-tools
 newsboat
 nordic-theme
@@ -138,12 +139,15 @@ tlrc-bin
 tree-sitter
 ttf-daddytime-mono-nerd
 ttf-lxgw-wenkai-mono
-ttf-maplemono-nf
+ttf-maple-nerd
+ttf-nerd-fonts-symbols-mono
+ttyper
 typst
 ufrii-print
 unzip
 vulkan-radeon
 w3m
+waterfox-bin
 watt-toolkit-bin
 waybar
 webkit2gtk

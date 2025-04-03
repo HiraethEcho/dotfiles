@@ -54,7 +54,8 @@
 #   Mod4 + Tab
 
 # "rofi_quicklinks"
-"librewolf"
+# "librewolf"
+"waterfox"
   Mod4 + w
 
 # "rofi_screenshot"
