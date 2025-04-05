@@ -14,6 +14,7 @@ blueman
 bluetui
 bluez-tools
 bluez-utils
+bridge-utils
 btop
 btrfs-assistant
 btrfs-progs
@@ -46,6 +47,7 @@ grub
 grub-btrfs
 gvfs
 gvfs-dnssd
+gvim
 h-m-m-git
 hyprland
 hyprland-plugin-hyprscroller-git
@@ -66,7 +68,6 @@ lib32-vulkan-radeon
 libnotify
 libreoffice-still
 libreoffice-still-zh-cn
-librewolf
 libzip
 linux
 linux-firmware
@@ -88,7 +89,6 @@ mate-utils
 mdcat
 mpv
 ncpamixer
-neovide
 neovim
 net-tools
 newsboat
@@ -110,6 +110,7 @@ pipewire-audio
 pipewire-pulse
 prettierd
 python-pynvim
+qemu-base
 rclone
 refind
 ripgrep
@@ -145,6 +146,7 @@ ttyper
 typst
 ufrii-print
 unzip
+virt-manager
 vulkan-radeon
 w3m
 waterfox-bin
