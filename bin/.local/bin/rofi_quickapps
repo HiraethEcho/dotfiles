@@ -16,7 +16,7 @@ list_row='4'
 
 # Options
 option_1=" web "
-cmd_1='librewolf'
+cmd_1='waterfox'
 option_2=" watt"
 cmd_2='watt-toolkit'
 option_3=" zotero "
@@ -27,10 +27,10 @@ option_5="󰘑 wechat"
 cmd_5='wechat-universal'
 option_6=" bluetooth "
 cmd_6='st -t task -e bluetui'
-option_7=" neovide "
-cmd_7='neovide'
+option_7=" gvim "
+cmd_7='gvim'
 option_8="󰏆 office"
-cmd_8='libreoffice'
+cmd_8='/opt/shimo/shimo'
 option_9=" file"
 cmd_9='pcmanfm ~'
 # option_12="󰌪 battery "

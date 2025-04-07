@@ -28,6 +28,7 @@ dprint-bin
 dua-cli
 dunst
 efibootmgr
+electron-deepseek
 falkon
 fastfetch
 fcitx5
@@ -66,8 +67,6 @@ less
 lib32-mesa
 lib32-vulkan-radeon
 libnotify
-libreoffice-still
-libreoffice-still-zh-cn
 libzip
 linux
 linux-firmware
@@ -109,13 +108,17 @@ pipewire
 pipewire-audio
 pipewire-pulse
 prettierd
+python-pip
 python-pynvim
+python-wheel
 qemu-base
+qemu-desktop
 rclone
 refind
 ripgrep
 rofi-wayland
 sddm
+shimo
 sioyek
 snapper
 steam
@@ -140,7 +143,7 @@ tlrc-bin
 tree-sitter
 ttf-daddytime-mono-nerd
 ttf-lxgw-wenkai-mono
-ttf-maple-nerd
+ttf-maplemono-nf
 ttf-nerd-fonts-symbols-mono
 ttyper
 typst
