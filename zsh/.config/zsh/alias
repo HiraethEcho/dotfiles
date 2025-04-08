@@ -69,6 +69,9 @@ alias sg="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias rdpush="rclone sync ~/Documents/ koofr:/kDocuments/  --track-renames --filter-from ~/.config/rclone/filter-list.txt --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'force push ~/Documents to kDocuments'"
 alias rdpull="rclone sync koofr:/kDocuments/ ~/Documents/ --backup-dir ~/conflicts --suffix '_local' --suffix-keep-extension --track-renames  --no-update-dir-modtime --no-update-modtime --filter-from ~/.config/rclone/filter-list.txt --transfers 20 -i -L && notify-send 'rclone' 'download from kDocuments to ~/Documents'"
 
+alias rzpush="rclone sync ~/Documents/zotero_files/ koofr:/kDocuments/zotero_files/  --track-renames --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'force push ~/Documents/zotero_files to koofr'"
+alias rzpull="rclone sync koofr:/kDocuments/zotero_files/ ~/Documents/zotero_files/ --backup-dir ~/conflicts --suffix '_local' --suffix-keep-extension --track-renames  --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'download from koofr to ~/Documents/zotero_files/'"
+
 # pacman and yay
 alias syyu="paru -Syyu"
 alias bak="sudo timeshift --check && sudo grub-mkconfig -o /boot/grub/grub.cfg && pacman -Qqe > ~/dotfiles/cache/Desktop/cache/readme/Qqe.bak"

@@ -24,7 +24,6 @@ clangd-aosopt
 dhcpcd
 diskonaut
 dnsmasq
-dprint-bin
 dua-cli
 dunst
 efibootmgr
@@ -49,14 +48,11 @@ grub-btrfs
 gvfs
 gvfs-dnssd
 gvim
-h-m-m-git
 hyprland
 hyprland-plugin-hyprscroller-git
 hyprlock
 hyprpolkitagent
 hyprshot
-i3-wm
-i3status
 imagemagick
 impala
 iw
@@ -82,7 +78,6 @@ mate-control-center
 mate-panel
 mate-polkit
 mate-power-manager
-mate-sensors-applet
 mate-session-manager
 mate-utils
 mdcat
@@ -100,7 +95,6 @@ os-prober
 otf-codenewroman-nerd
 pacman-contrib
 pamixer
-papersway
 paru
 pcmanfm-gtk3
 picom-ftlabs-git
@@ -112,7 +106,6 @@ python-pip
 python-pynvim
 python-wheel
 qemu-base
-qemu-desktop
 rclone
 refind
 ripgrep
@@ -125,11 +118,10 @@ steam
 stow
 stylua
 sudo
-sway
 swaybg
-swaylock
 sx
 tdf-git
+tealdeer
 texlab
 texlive-binextra
 texlive-langchinese
@@ -139,11 +131,10 @@ texlive-pstricks
 texlive-xetex
 timeshift
 tinymist
-tlrc-bin
 tree-sitter
 ttf-daddytime-mono-nerd
 ttf-lxgw-wenkai-mono
-ttf-maplemono-nf
+ttf-maple-nerd
 ttf-nerd-fonts-symbols-mono
 ttyper
 typst
@@ -177,6 +168,7 @@ yazi
 zathura
 zathura-djvu
 zathura-pdf-mupdf
+zola
 zotero
 zoxide
 zsh
