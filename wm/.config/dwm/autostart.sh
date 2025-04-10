@@ -52,3 +52,5 @@ xnb &
 
 # if [ -z $(pidof dwmblocks) ]; then
 # fi
+#
+autossh -M 20000 -fNR 7004:localhost:2222 wyz@2408:8207:1963:c5d0:336f:8d38:d21a:7600
