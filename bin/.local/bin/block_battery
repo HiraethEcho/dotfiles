@@ -3,40 +3,40 @@ capacity=$(cat /sys/class/power_supply/BAT1/capacity)
 charging=$(cat /sys/class/power_supply/BAT1/status)
 
 case $BLOCK_BUTTON in
-#   1) notify-send "State" "󰍛 RAM: $(free -mh --si | awk  {'print $3'} | head -n 2 | tail -1)/$(free -mh --si | awk  {'print $2'} | head -n 2 | tail -1) 
+#   1) notify-send "State" "󰍛 RAM: $(free -mh --si | awk  {'print $3'} | head -n 2 | tail -1)/$(free -mh --si | awk  {'print $2'} | head -n 2 | tail -1)
 # 󰘚 CPU: $(top -bn1 | grep Cpu | awk '{print $2}')%
 #  Temp: $(acpi -t | awk '{print $4}') ℃
 #  Light: $(xbacklight -get)
-# 󰋊 Storage: $(btrfs filesystem usage / | awk '/Used/ {print $2}' | awk 'NR==1 {print}' )/$(btrfs filesystem usage / | awk '/Device size/ {print $3}') 
+# 󰋊 Storage: $(btrfs filesystem usage / | awk '/Used/ {print $2}' | awk 'NR==1 {print}' )/$(btrfs filesystem usage / | awk '/Device size/ {print $3}')
 # 󰁹 Battery: $(acpi | cut -d ':' -f 2-)"
 # ;;
-  1) notify-send "󰁹 Battery" "$(acpi | cut -d ':' -f 2-)" ;;
-  # 2) alacritty -e top ;;
-  2) nohup st -e btop > /dev/null & ;;
-  3) wallpaper_change ;;
-  # 4) xbacklight -inc 5 ; notify-send -h int:value:$(xbacklight -get) "Light" ;;
-  # 5) xbacklight -dec 5 ; notify-send -h int:value:$(xbacklight -get) "Light" ;;
-  6) nohup st -e nvim "$0" > /dev/null &;;
+1) notify-send "󰁹 Battery" "$(acpi | cut -d ':' -f 2-)" ;;
+# 2) alacritty -e top ;;
+2) nohup st -e btop >/dev/null & ;;
+3) wallpaper_change ;;
+# 4) xbacklight -inc 5 ; notify-send -h int:value:$(xbacklight -get) "Light" ;;
+# 5) xbacklight -dec 5 ; notify-send -h int:value:$(xbacklight -get) "Light" ;;
+6) nohup st -e nvim "$0" >/dev/null & ;;
 esac
 
 # rate=$(cat /sys/class/power_supply/BAT1/current_now)
 # val=$(cat /sys/class/power_supply/BAT1/charge_now)
-# h=$[$val/$rate] 
-# m=$[$val*60/$rate-$h*60] 
+# h=$[$val/$rate]
+# m=$[$val*60/$rate-$h*60]
 # printf "rate:%s val:%s h:%s m:%s" "$rate" "$val" "$h" "$m"
-# printf "rate:%s val:%s h:%s" "$rate" "$val" "$h" 
+# printf "rate:%s val:%s h:%s" "$rate" "$val" "$h"
 
 ICON=""
 if [[ $capacity -ge 60 ]]; then
-printf "^c#89b482^"
+  printf "^c#89b482^"
 elif [[ $capacity -le 30 ]]; then
-printf "^c#e06c75^"
+  printf "^c#e06c75^"
 else
-printf "^c#EBCB8B^"
+  printf "^c#EBCB8B^"
 fi
 
 if [[ "$charging" == "Charging" ]]; then
-    ICON=
+  ICON=
 else
   if [[ $capacity -le 25 ]]; then
     ICON=
@@ -46,6 +46,5 @@ else
 fi
 printf "%s^f2^" "$ICON"
 
-a=$(( (capacity)/5))
+a=$(((capacity) / 5))
 printf "^s0,7,22,12^^r1,8,%s,10^^r22,10,2,6^^f26^%s" "$a" "$capacity"
-

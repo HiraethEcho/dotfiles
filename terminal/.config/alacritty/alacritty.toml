@@ -7,18 +7,7 @@ shape = "Block"
 
 [font]
 size = 8.0
-
-[font.bold]
-family = "Maple Mono NF"
-
-[font.bold_italic]
-family = "Maple Mono NF"
-
-[font.italic]
-family = "Maple Mono NF"
-
-[font.normal]
-family = "Maple Mono NF"
+family = "CodeNewRomanNFM"
 
 [mouse]
 hide_when_typing = true

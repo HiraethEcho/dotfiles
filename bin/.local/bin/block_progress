@@ -20,17 +20,17 @@ esac
 
 
 if [[ $l -ge 69 ]]; then
-printf "^c#e06c75^"
+  printf "^c#e06c75^"
 elif [[ $l -ge 63 ]]; then
-printf "^c#000000^"
+  printf "^c#000000^"
 elif [[ $l -ge 42 ]]; then
-printf "^c#89b482^"
+  printf "^c#89b482^"
 elif [[ $l -ge 27 ]]; then
-printf "^c#01e9f1^"
+  printf "^c#01e9f1^"
 elif [[ $l -ge 18 ]]; then
-printf "^c#4169e1^"
+  printf "^c#4169e1^"
 else
-printf "^c#e06c75^"
+  printf "^c#e06c75^"
 fi
 printf "^f3^^s0,10,74,6^^r1,11,%s,4^^f76^%s" "$l" "$r" 
 # printf "^f3^^s0,10,74,6^^r1,11,%s,4^^f76^" "$l"
