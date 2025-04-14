@@ -1,19 +1,4 @@
 [[plugin.deps]]
-use = "yazi-rs/plugins:git"
-rev = "8945e54"
-hash = "771f18427fb75fb19990ce602bb322f4"
-
-[[plugin.deps]]
-use = "yazi-rs/plugins:max-preview"
-rev = "8945e54"
-hash = "15b2ff7f6563c14d5b2e93b3e9da35de"
-
-[[plugin.deps]]
-use = "GrzegorzKozub/mdcat"
-rev = "d3d5089"
-hash = "40c20e6c1085d1f45309b9f148bf4f6e"
-
-[[plugin.deps]]
 use = "Lil-Dank/lazygit"
 rev = "9f924e3"
 hash = "2b0c33928986f126d5c5a4cac31a6b46"
