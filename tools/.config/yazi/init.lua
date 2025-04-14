@@ -19,9 +19,6 @@ Status:children_add(function()
 	}
 end, 500, Status.RIGHT)
 
-require("git"):setup({
-  show_branch = true,
-})
 
 -- require("githead"):setup()
 

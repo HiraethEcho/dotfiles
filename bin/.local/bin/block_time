@@ -11,11 +11,11 @@
 case $BLOCK_BUTTON in
   # 1) notify-send -h int:value:$r "Calendar" "$(cal -m | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
 	1) notify-send  "Calendar" "$(cal -m | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
-  2) nohup st -t tasks -g 100x30 -e calcurse > /dev/null & ;;
-  3) nohup st -t tasks -g 80x20 -e slides ~/Desktop/tasks/test.md > /dev/null & ;;
+  # 2) nohup st -t tasks -g 100x30 -e calcurse > /dev/null & ;;
+  # 3) nohup st -t tasks -g 80x20 -e slides ~/Desktop/tasks/test.md > /dev/null & ;;
 	# 3) nohup thunar ~ > /dev/null & ;;
 	# 4) notify-send " " "$(cal | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
-  6) nohup kitty -e nvim "$0" > /dev/null &;;
+  6) nohup st -e nvim "$0" > /dev/null &;;
 esac
 
 printf "^c#a8fd12^"

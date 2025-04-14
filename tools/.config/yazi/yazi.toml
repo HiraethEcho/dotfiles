@@ -82,7 +82,6 @@ suppress_preload = false
 
 [plugin]
 prepend_previewers = [
-  { name = "*.md", run = "mdcat" },
 	# Archive previewer
 	{ mime = "application/*zip",            run = "ouch" },
 	{ mime = "application/x-tar",           run = "ouch" },
@@ -121,15 +120,6 @@ previewers = [
 ]
 
 
-[[plugin.prepend_fetchers]]
-id   = "git"
-name = "*"
-run  = "git"
-
-[[plugin.prepend_fetchers]]
-id   = "git"
-name = "*/"
-run  = "git"
 
 [input]
 # cd
