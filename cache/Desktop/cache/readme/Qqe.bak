@@ -15,12 +15,12 @@ blueman
 bluetui
 bluez-tools
 bluez-utils
+brave-bin
 bridge-utils
 btop
 btrfs-assistant
 btrfs-progs
 calcurse
-chili-sddm-theme
 clangd-aosopt
 dhcpcd
 diskonaut
@@ -132,6 +132,7 @@ texlive-pstricks
 texlive-xetex
 timeshift
 tinymist
+tmux
 tree-sitter
 ttf-daddytime-mono-nerd
 ttf-lxgw-wenkai-mono
@@ -165,6 +166,7 @@ xorg-xhost
 xorg-xinput
 xorg-xsetroot
 xorg-xwayland
+xpra
 yazi
 zathura
 zathura-djvu

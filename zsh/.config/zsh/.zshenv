@@ -1,7 +1,8 @@
 # export LANGUAGE=en_US:zh_CN
 # export LANGUAGE=zh_CN:en_US
 # export LANGUAGE=en_US
-export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
+# export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
+# export PATH="$HOME/.local/share/npm/bin:$PATH"
 # export PATH="$HOME/.config/dwm/dwm_functions:$HOME/.local/bin:$PATH"  
 
 export EDITOR=nvim
@@ -51,3 +52,4 @@ export FZF_COMPLETION_OPTS='--border --info=inline'
 # export FZF_COMPLETION_TRIGGER='~~'
 
 # export LFS=/mnt/lfs
+export DEBIAN_IP="2408:8207:1963:c5d0:336f:8d38:d21a:7600"
