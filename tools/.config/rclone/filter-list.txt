@@ -7,7 +7,6 @@
 - WeChat_Data/
 - confilct/
 - *.git
-- **.git
 - **.git/**
 - **.log
 - **.aux

@@ -15,13 +15,12 @@ blueman
 bluetui
 bluez-tools
 bluez-utils
-brave-bin
 bridge-utils
 btop
 btrfs-assistant
 btrfs-progs
 calcurse
-clangd-aosopt
+clang
 dhcpcd
 diskonaut
 dnsmasq
@@ -29,7 +28,6 @@ dua-cli
 dunst
 efibootmgr
 electron-deepseek
-falkon
 fastfetch
 fcitx5
 fcitx5-chinese-addons
@@ -49,6 +47,7 @@ grub-btrfs
 gvfs
 gvfs-dnssd
 gvim
+harper
 hyprland
 hyprland-plugin-hyprscroller-git
 hyprlock
@@ -98,6 +97,7 @@ pacman-contrib
 pamixer
 paru
 pcmanfm-gtk3
+pdfbooklet
 picom-ftlabs-git
 pipewire
 pipewire-audio
@@ -123,6 +123,7 @@ swaybg
 sx
 tdf-git
 tealdeer
+tex-fmt
 texlab
 texlive-binextra
 texlive-langchinese
@@ -132,6 +133,7 @@ texlive-pstricks
 texlive-xetex
 timeshift
 tinymist
+tlpui
 tmux
 tree-sitter
 ttf-daddytime-mono-nerd
@@ -166,7 +168,6 @@ xorg-xhost
 xorg-xinput
 xorg-xsetroot
 xorg-xwayland
-xpra
 yazi
 zathura
 zathura-djvu

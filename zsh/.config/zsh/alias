@@ -61,16 +61,26 @@ alias gg="lazygit"
 
 # usefule tools
 alias weather="curl 'v2d.wttr.in/Beijing'"
-alias hso="hexo clean ; hexo g ; hexo s -o"
-alias hs="hexo clean ; hexo g ; hexo s"
+# alias hso="hexo clean ; hexo g ; hexo s -o"
+# alias hs="hexo clean ; hexo g ; hexo s"
 alias sg="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 # rclone
-alias rdpush="rclone sync ~/Documents/ koofr:/kDocuments/  --track-renames --filter-from ~/.config/rclone/filter-list.txt --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'force push ~/Documents to kDocuments'"
-alias rdpull="rclone sync koofr:/kDocuments/ ~/Documents/ --backup-dir ~/conflicts --suffix '_local' --suffix-keep-extension --track-renames  --no-update-dir-modtime --no-update-modtime --filter-from ~/.config/rclone/filter-list.txt --transfers 20 -i -L && notify-send 'rclone' 'download from kDocuments to ~/Documents'"
+alias rdpush="rclone sync ~/Documents/doc koofr:/kDocuments/doc  --track-renames --filter-from ~/.config/rclone/filter-list.txt --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'force push ~/Documents/doc to kDocuments/doc'"
+alias rdpull="rclone sync koofr:/kDocuments/doc ~/Documents/doc --backup-dir ~/conflicts --suffix '_local' --suffix-keep-extension --track-renames  --no-update-dir-modtime --no-update-modtime --filter-from ~/.config/rclone/filter-list.txt --transfers 20 -i -L && notify-send 'rclone' 'download from kDocuments/doc to ~/Documents/doc'"
+
+alias rapush="rclone sync ~/Documents/ koofr:/kDocuments/  --track-renames --filter-from ~/.config/rclone/filter-list.txt --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'force push ~/Documents to kDocuments'"
+alias rapull="rclone sync koofr:/kDocuments/ ~/Documents/ --backup-dir ~/conflicts --suffix '_local' --suffix-keep-extension --track-renames  --no-update-dir-modtime --no-update-modtime --filter-from ~/.config/rclone/filter-list.txt --transfers 20 -i -L && notify-send 'rclone' 'download from kDocuments to ~/Documents'"
 
 alias rzpush="rclone sync ~/Documents/zotero_files/ koofr:/kDocuments/zotero_files/  --track-renames --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'force push ~/Documents/zotero_files to koofr'"
 alias rzpull="rclone sync koofr:/kDocuments/zotero_files/ ~/Documents/zotero_files/ --backup-dir ~/conflicts --suffix '_local' --suffix-keep-extension --track-renames  --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'download from koofr to ~/Documents/zotero_files/'"
+
+# alias rppush="rclone sync ~/Documents/projects/ koofr:/kDocuments/projects/ --exclude '.git/' --filter-from ~/.config/rclone/filter-list.txt --track-renames --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'force push ~/Documents/projects/ to koofr'"
+alias rppush="rclone sync ~/Documents/projects/ koofr:/kDocuments/projects/ --filter-from ~/.config/rclone/filter-list.txt --track-renames --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'force push ~/Documents/projects/ to koofr'"
+alias rppull="rclone sync koofr:/kDocuments/projects/ ~/Documents/projects/ --filter-from ~/.config/rclone/filter-list.txt --backup-dir ~/conflicts --suffix '_local' --suffix-keep-extension --track-renames  --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'download from koofr to ~/Documents/projects/'"
+
+alias ropush="rclone sync ~/obsidian/ koofr:/obsidian/ --filter-from ~/.config/rclone/filter-list.txt --track-renames --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'force push ~/Documents/projects/ to koofr'"
+alias ropull="rclone sync koofr:/obsidian/ ~/obsidian/ --filter-from ~/.config/rclone/filter-list.txt --backup-dir ~/conflicts --suffix '_local' --suffix-keep-extension --track-renames  --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'download from koofr to ~/Documents/projects/'"
 
 # pacman and yay
 alias syyu="paru -Syyu"
