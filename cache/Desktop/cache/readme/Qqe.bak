@@ -21,6 +21,7 @@ btrfs-assistant
 btrfs-progs
 calcurse
 clang
+cmake
 dhcpcd
 diskonaut
 dnsmasq
@@ -48,8 +49,7 @@ gvfs
 gvfs-dnssd
 gvim
 harper
-hyprland
-hyprland-plugin-hyprscroller-git
+hyprland-git
 hyprlock
 hyprpolkitagent
 hyprshot
@@ -81,12 +81,12 @@ mate-power-manager
 mate-session-manager
 mate-utils
 mdcat
+meson
 mpv
 ncpamixer
 neovim
 net-tools
 newsboat
-nordic-theme
 npm
 ntfs-3g
 obsidian
@@ -119,6 +119,7 @@ steam
 stow
 stylua
 sudo
+sway-scroll-git
 swaybg
 sx
 tdf-git
@@ -140,17 +141,14 @@ ttf-daddytime-mono-nerd
 ttf-lxgw-wenkai-mono
 ttf-maple-nerd
 ttf-nerd-fonts-symbols-mono
-ttyper
 typst
 ufrii-print
 unzip
 virt-manager
 vulkan-radeon
-w3m
 waterfox-bin
 watt-toolkit-bin
 waybar
-webkit2gtk
 websocat
 wechat-universal-bwrap
 wget
@@ -172,6 +170,7 @@ yazi
 zathura
 zathura-djvu
 zathura-pdf-mupdf
+zip
 zola
 zotero
 zoxide
