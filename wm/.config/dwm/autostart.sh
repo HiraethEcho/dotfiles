@@ -6,8 +6,8 @@ mykeys &
 # if [ -z $(pidof xbindkeys)]; then
 # fi
 
-# killall fcitx5
-# fcitx5 &
+killall fcitx5
+fcitx5 &
 # if [ -z $(pidof fcitx5)]; then
 # fi
 
