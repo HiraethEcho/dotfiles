@@ -8,30 +8,30 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/submap",
-        "sway/scratchpad",
-        "custom/media"
+        "hyprland/submap"
+        // "sway/scratchpad",
+        // "custom/media"
     ],
     "modules-center": [
-        "sway/window"
+        "hyprland/window"
     ],
     "modules-right": [
-        "mpd",
-        "idle_inhibitor",
+        // "mpd",
+        // "idle_inhibitor",
+        "tray",
         "pulseaudio",
         "network",
-        "power-profiles-daemon",
-        "cpu",
+        // "power-profiles-daemon",
+        // "cpu",
         "memory",
-        "temperature",
+        // "temperature",
         "backlight",
         "keyboard-state",
-        "sway/language",
+        // "sway/language",
         "battery",
-        "battery#bat2",
-        "clock",
-        "tray",
-        "custom/power"
+        // "battery#bat2",
+        "clock"
+        // "custom/power"
     ],
     // Modules configuration
     // "sway/workspaces": {

@@ -28,7 +28,8 @@ set $filemanager pcmanfm
 #
 # Example configuration:
 #
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+output HDMI-A-1 resolution 1920x1080 position 1920,0
+output eDP-1 resolution 1920x1080 position 0,0
 #
 # You can get the names of your outputs by running: scrollmsg -t get_outputs
 
@@ -71,10 +72,10 @@ client.unfocused #595959 #000000 #e0e0e0 #2e9ef4 #595959
 for_window [all] inhibit_idle fullscreen
 
 # Layout settings
-layout_default_width 0.5
+layout_default_width 0.75
 layout_default_height 1.0
-layout_widths [0.33333333 0.5 0.666666667 1.0]
-layout_heights [0.33333333 0.5 0.666666667 1.0]
+layout_widths [0.25 0.5 0.75 1.0]
+layout_heights [0.25 0.5 0.75 1.0]
 
 fullscreen_movefocus true
 
@@ -86,12 +87,12 @@ fullscreen_movefocus true
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+Backspace kill
+    bindsym $mod+Escape kill
 
     # Start your launcher
-    bindsym $mod+r exec $menu
+    bindsym Mod4+r exec $menu
     
-    bindsym $mod+e exec $filemanager
+    bindsym Mod4+e exec $filemanager
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -101,7 +102,7 @@ fullscreen_movefocus true
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+e reload
 
     # Exit scroll (logs you out of your Wayland session)
     bindsym $mod+Shift+q exec scrollnag -t warning -m 'You pressed the exit shortcut. Do you really want to exit scroll? This will end your Wayland session.' -B 'Yes, exit scroll' 'scrollmsg exit'
@@ -113,28 +114,38 @@ fullscreen_movefocus true
 # Moving around:
 #
     # Move your focus around
+    bindsym $mod+h focus left
+    bindsym $mod+j focus down
+    bindsym $mod+k focus up
+    bindsym $mod+l focus right
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
-    bindsym $mod+home focus beginning
-    bindsym $mod+end focus end
+    # bindsym $mod+home focus beginning
+    # bindsym $mod+end focus end
     # Move the focused window with the same, but add Ctrl
+    bindsym Mod4+h move left
+    bindsym Mod4+j move down
+    bindsym Mod4+k move up
+    bindsym Mod4+l move right
     bindsym $mod+Ctrl+$left move left
     bindsym $mod+Ctrl+$down move down
     bindsym $mod+Ctrl+$up move up
     bindsym $mod+Ctrl+$right move right
-    bindsym $mod+Ctrl+home move beginning
-    bindsym $mod+Ctrl+end move end
+    # bindsym $mod+Ctrl+home move beginning
+    # bindsym $mod+Ctrl+end move end
     # nomode
-    bindsym $mod+Alt+$left move left nomode
-    bindsym $mod+Alt+$down move down nomode
-    bindsym $mod+Alt+$up move up nomode
-    bindsym $mod+Alt+$right move right nomode
-    bindsym $mod+Alt+home move beginning nomode
-    bindsym $mod+Alt+end move end nomode
+    # bindsym $mod+Alt+$left move left nomode
+    # bindsym $mod+Alt+$down move down nomode
+    # bindsym $mod+Alt+$up move up nomode
+    # bindsym $mod+Alt+$right move right nomode
+    # bindsym $mod+Alt+home move beginning nomode
+    # bindsym $mod+Alt+end move end nomode
 
     # Focus other monitors
+    bindsym $mod+comma focus output left
+    bindsym $mod+period focus output down
     bindsym $mod+Shift+$left focus output left
     bindsym $mod+Shift+$down focus output down
     bindsym $mod+Shift+$up focus output up
@@ -167,6 +178,8 @@ fullscreen_movefocus true
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
+    bindsym Mod4+comma move workspace to output left
+    bindsym Mod4+period move workspace to output right
     bindsym $mod+Ctrl+1 move workspace to output left
     bindsym $mod+Ctrl+2 move workspace to output right
 
@@ -179,7 +192,7 @@ fullscreen_movefocus true
     bindsym $mod+Shift+Ctrl+period scale_workspace reset
 
     # Overview
-    bindsym --no-repeat $mod+tab scale_workspace overview
+    bindsym --no-repeat Mod4+tab scale_workspace overview
     bindsym --whole-window button8 scale_workspace overview
 
     # Jump
@@ -187,26 +200,26 @@ fullscreen_movefocus true
     # jump_labels_background #15309eFF
     # jump_labels_scale 0.9
     # jump_labels_keys asdf
-    bindsym --no-repeat $mod+slash jump
+    bindsym --no-repeat $mod+tab jump
 
     # Content
-    bindsym $mod+comma scale_content incr -0.05
-    bindsym --whole-window $mod+button4 scale_content incr -0.05
-    bindsym $mod+period scale_content incr 0.05
-    bindsym --whole-window $mod+button5 scale_content incr 0.05
-    bindsym $mod+Ctrl+period scale_content reset
+    # bindsym $mod+comma scale_content incr -0.05
+    # bindsym --whole-window $mod+button4 scale_content incr -0.05
+    # bindsym $mod+period scale_content incr 0.05
+    # bindsym --whole-window $mod+button5 scale_content incr 0.05
+    # bindsym $mod+Ctrl+period scale_content reset
 
 #
 # Layout stuff:
 #
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
-    bindsym $mod+Ctrl+f fullscreen global
+    # bindsym Mod4+f fullscreen global
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+y focus mode_toggle
     # Float a window
-    bindsym $mod+Shift+f floating toggle
+    bindsym $mod+Shift+space floating toggle
 
     # Toggle sticky
     bindsym $mod+a sticky toggle
@@ -223,11 +236,11 @@ fullscreen_movefocus true
     # You can send windows there and get them back later.
 
     # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+z move scratchpad
+    bindsym $mod+Shift+s move scratchpad
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+z scratchpad show
+    bindsym Mod4+grave scratchpad show
 
 #
 # Mode modifiers
@@ -256,8 +269,8 @@ bindsym $mod+backslash mode "modifiers"
 #
 bindsym $mod+minus cycle_size h prev
 bindsym $mod+equal cycle_size h next
-bindsym $mod+Shift+minus cycle_size v prev
-bindsym $mod+Shift+equal cycle_size v next
+# bindsym $mod+Shift+minus cycle_size v prev
+# bindsym $mod+Shift+equal cycle_size v next
 
 mode "setsizeh" {
     bindsym 1 set_size h 0.125
@@ -367,7 +380,7 @@ bindsym $mod+w mode "fit_size"
     bindsym Print exec grim
 
 
-focus_wrapping no
+focus_wrapping yes
 
 bindgesture swipe:4:right workspace next
 bindgesture swipe:4:left workspace prev
@@ -384,7 +397,7 @@ bar {
 
     # When the status_command prints a new line to stdout, scrollbar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    status_command while date +'%R %m/%d'; do sleep 1; done
 
     colors {
         statusline #ffffff
