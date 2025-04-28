@@ -1,7 +1,7 @@
 #!/bin/bash
 
 case $BLOCK_BUTTON in
-	1) notify-send "State" "󰍛 RAM: $(free -mh --si | awk  {'print $3'} | head -n 2 | tail -1)/$(free -mh --si | awk  {'print $2'} | head -n 2 | tail -1) 
+  1) notify-send "State" "󰍛 RAM: $(free -mh --si | awk  {'print $3'} | head -n 2 | tail -1)/$(free -mh --si | awk  {'print $2'} | head -n 2 | tail -1) 
 󰘚 CPU: $(top -bn1 | grep Cpu | awk '{print $2}')%
  Temp: $(acpi -t | awk '{print $4}') ℃
  Light: $(xbacklight -get)
@@ -10,7 +10,7 @@ case $BLOCK_BUTTON in
 ;;
   # 2) alacritty -e top ;;
   2) nohup st -e btop > /dev/null & ;;
-	3) wallpaper_change ;;
+  3) wallpaper_change ;;
   # 4) xbacklight -inc 5 ; notify-send -h int:value:$(xbacklight -get) "Light" ;;
   # 5) xbacklight -dec 5 ; notify-send -h int:value:$(xbacklight -get) "Light" ;;
   6) nohup st -e nvim "$0" > /dev/null &;;
@@ -34,7 +34,7 @@ charging=$(cat /sys/class/power_supply/BAT1/status)
     printf "^c#EBCB8B^"
     fi
 
-		if [[ "$charging" == "Charging" ]]; then
+    if [[ "$charging" == "Charging" ]]; then
         ICON=
     else
      if [[ $capacity -le 25 ]]; then

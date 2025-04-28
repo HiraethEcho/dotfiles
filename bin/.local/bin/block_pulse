@@ -21,6 +21,7 @@ VOL=$(pamixer --get-volume)
 STATE=$(pamixer --get-mute)
 a=$[$VOL/4]
     # BLUETOOTH=$(bluetooth | awk {'print $3'})
+printf "^f3^"
 printf "^c#96CDFB^"
 
 if ! [ -z "$(bluetoothctl devices Connected | grep 'AirPods')"  ]; then

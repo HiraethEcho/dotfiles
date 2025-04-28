@@ -67,7 +67,7 @@ if [ "$(cat /sys/class/net/w*/operstate 2>/dev/null)" = 'up' ] ; then
   else
       wifiicon="󰣾"
   fi
-  printf "^f2^%s^f2^%s" "$wifiicon" "$ssid"
+  printf "%s^f2^%s" "$wifiicon" "$ssid"
 elif [ "$(cat /sys/class/net/w*/operstate 2>/dev/null)" = 'down' ] ; then
 	[ "$(cat /sys/class/net/w*/flags 2>/dev/null)" = '0x1003' ] && wifiicon="󰖪 offine" || wifiicon="󰅖 disabled"
   printf "%s" "$wifiicon"

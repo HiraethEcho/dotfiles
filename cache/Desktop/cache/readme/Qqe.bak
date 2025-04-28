@@ -51,7 +51,6 @@ gvim
 harper
 hyprland-git
 hyprlock
-hyprpolkitagent
 hyprshot
 imagemagick
 impala
@@ -126,6 +125,7 @@ tdf-git
 tealdeer
 tex-fmt
 texlab
+texlive-bibtexextra
 texlive-binextra
 texlive-langchinese
 texlive-latexextra
@@ -157,6 +157,7 @@ xbindkeys
 xcape
 xclip
 xdg-desktop-portal
+xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-ninja-git
 xdg-user-dirs-gtk

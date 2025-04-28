@@ -15,6 +15,7 @@ case $BLOCK_BUTTON in
   5) xbacklight -dec 5 ; notify-send -h int:value:$(xbacklight -get) "Light" ;;
   6) nohup st -e nvim "$0" > /dev/null &;;
 esac
+printf "^f3^"
 printf "^c#ffd900^"
 light=$(xbacklight -get) 
 a=$[$light/4]
