@@ -50,6 +50,7 @@ gvfs-dnssd
 gvim
 harper
 hyprland-git
+hyprland-qtutils
 hyprlock
 hyprshot
 imagemagick
@@ -67,7 +68,6 @@ linux
 linux-firmware
 linux-headers
 linux-wifi-hotspot
-linuxqq
 lsd
 lua-language-server
 man-db
@@ -95,6 +95,8 @@ otf-codenewroman-nerd
 pacman-contrib
 pamixer
 paru
+pasystray
+pavucontrol
 pcmanfm-gtk3
 pdfbooklet
 picom-ftlabs-git
@@ -163,10 +165,12 @@ xdg-ninja-git
 xdg-user-dirs-gtk
 xf86-video-amdgpu
 xorg-server
+xorg-xeyes
 xorg-xhost
 xorg-xinput
 xorg-xsetroot
 xorg-xwayland
+xwayland-satellite
 yazi
 zathura
 zathura-djvu
