@@ -94,7 +94,10 @@
 # Default value: n/a
 #
 # bind-key ^R reload-all
-
+bind-key j down
+bind-key k up
+bind-key J next-feed
+bind-key K prev-feed
 ####  bookmark-autopilot
 #
 # If set to `yes`, the configured bookmark command is executed without any
@@ -141,7 +144,7 @@
 # Default value: %BROWSER, otherwise lynx
 #
 # browser "w3m %u"
-
+browser "waterfox %u"
 ####  cache-file
 #
 # This configuration option sets the cache file. This is especially useful if

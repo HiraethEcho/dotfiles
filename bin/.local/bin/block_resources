@@ -3,7 +3,7 @@
 # A dwm_bar function to display information regarding system memory, CPU temperature, and storage
 # Joe Standring <git@joestandring.com>
 # GNU GPLv3
-RAM=$(free --mebi | sed -n '2{p;q}' | awk '{printf ("%1.1fG/%1.1fG\n", ( $3 / 1024), ($2 / 1024))}')
+RAM=$(free --mebi | sed -n '2{p;q}' | awk '{printf ("%sMiB", $3)}')
 CPU=$(top -bn1 | grep Cpu | awk '{print $2}')%
 capacity=$(cat /sys/class/power_supply/BAT1/capacity)
 charging=$(cat /sys/class/power_supply/BAT1/status)

@@ -15,6 +15,7 @@ blueman
 bluetui
 bluez-tools
 bluez-utils
+bongo-cat
 bridge-utils
 btop
 btrfs-assistant
@@ -147,6 +148,7 @@ typst
 ufrii-print
 unzip
 virt-manager
+vrms-arch-git
 vulkan-radeon
 waterfox-bin
 watt-toolkit-bin
