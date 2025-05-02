@@ -51,9 +51,10 @@ gvfs-dnssd
 gvim
 harper
 hyprland-git
-hyprland-qtutils
-hyprlock
+hyprland-qtutils-git
+hyprlock-git
 hyprshot
+hyprwayland-scanner-git
 imagemagick
 impala
 iw
@@ -162,7 +163,6 @@ xcape
 xclip
 xdg-desktop-portal
 xdg-desktop-portal-gtk
-xdg-desktop-portal-hyprland
 xdg-ninja-git
 xdg-user-dirs-gtk
 xf86-video-amdgpu
