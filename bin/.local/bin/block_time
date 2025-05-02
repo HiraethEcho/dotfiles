@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # hh="1$(date +%H)"
 # h=$(($hh % 100))

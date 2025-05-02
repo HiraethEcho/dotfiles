@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # A dwm_bar function to display information regarding system memory, CPU temperature, and storage
 # Joe Standring <git@joestandring.com>

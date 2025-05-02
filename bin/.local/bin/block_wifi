@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 net=$(awk '/^\s*w/ { print  int($3 * 100 / 70) }' /proc/net/wireless)
 interface=$(iw dev | awk '$1=="Interface"{print $2}')

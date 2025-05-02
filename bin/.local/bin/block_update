@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 pkill -SIGUSR1 dwmblocks
 notify-send "State" "󰍛 RAM: $(free -mh --si | awk  {'print $3'} | head -n 2 | tail -1)/$(free -mh --si | awk  {'print $2'} | head -n 2 | tail -1) 

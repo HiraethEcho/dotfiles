@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # A dwm_bar module to display the current backlight brighness with xbacklight
 # Joe Standring <git@joestandring.com>
