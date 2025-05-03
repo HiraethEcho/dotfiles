@@ -105,9 +105,10 @@ layout {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
         // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
         // The default preset widths are 1/3, 1/2 and 2/3 of the output.
-        proportion 0.25
-        proportion 0.5
-        proportion 0.75
+        proportion 0.2
+        proportion 0.4
+        proportion 0.6
+        proportion 0.8
         proportion 1.0
 
         // Fixed sets the width in logical pixels exactly.
@@ -274,7 +275,7 @@ binds {
     Alt+Return { spawn "kitty"; }
     Super+A { spawn "rofi_allapps"; }
     Alt+Escape { close-window; }
-    // Super+L { spawn "swaylock"; }
+    Super+L { spawn "swaylock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -287,37 +288,13 @@ binds {
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
-// focus
-  // window and column
+// windows
+  // focus
     Alt+H     { focus-column-left; }
     Alt+J     { focus-window-down; }
     Alt+K     { focus-window-up; }
     Alt+L     { focus-column-right; }
-
-    // Alt+Left  { focus-column-left; }
-    // Alt+Down  { focus-window-down; }
-    // Alt+Up    { focus-window-up; }
-    // Alt+Right { focus-column-right; }
-
-  // column
-    Alt+Shift+J              { focus-workspace-down; }
-    Alt+Shift+K              { focus-workspace-up; }
-    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
-    // Mod+TouchpadScrollDown      cooldown-ms=150 { focus-workspace-down; }
-    // Mod+TouchpadScrollUp        cooldown-ms=150 { focus-workspace-up; }
-
-    Alt+1 { focus-workspace 1; }
-    Alt+2 { focus-workspace 2; }
-    Alt+3 { focus-workspace 3; }
-    Alt+4 { focus-workspace 4; }
-    Alt+5 { focus-workspace 5; }
-
-  // monitor
-    Alt+Comma       {focus-monitor-left;}
-    Alt+Period      {focus-monitor-right;}
-// move
-  // window and column
+  // move
     Mod+J     { move-window-down; }
     Mod+K     { move-window-up; }
     Mod+H     { consume-or-expel-window-left; }
@@ -327,12 +304,79 @@ binds {
     Mod+Up    { move-window-up; }
     Mod+Left  { consume-or-expel-window-left; }
     Mod+Right { consume-or-expel-window-right; }
+    // Alt+Left  { focus-column-left; }
+    // Alt+Down  { focus-window-down; }
+    // Alt+Up    { focus-window-up; }
+    // Alt+Right { focus-column-right; }
+    Mod+C { center-column; }
+  // resize
+    Mod+R       { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-window-height; }
+    Alt+Left   { set-column-width "-10%"; }
+    Alt+Right   { set-column-width "+10%"; }
+    Alt+Up     { set-window-height "-10%"; }
+    Alt+Down  { set-window-height "+10%"; }
+    // Mod+Ctrl+R  { reset-window-height; }
 
+// column
+  // focus
+    Alt+1 { focus-workspace 1; }
+    Alt+2 { focus-workspace 2; }
+    Alt+3 { focus-workspace 3; }
+    Alt+4 { focus-workspace 4; }
+    Alt+5 { focus-workspace 5; }
+    Alt+Shift+J              { focus-workspace-down; }
+    Alt+Shift+K              { focus-workspace-up; }
+    // Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    // Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    // Mod+TouchpadScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    // Mod+TouchpadScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    // Mod+Home { focus-column-first; }
+    // Mod+End  { focus-column-last; }
+    // Mod+WheelScrollRight      { focus-column-right; }
+    // Mod+WheelScrollLeft       { focus-column-left; }
+  // move
+    Alt+Shift+1 { move-window-to-workspace 1; }
+    Alt+Shift+2 { move-window-to-workspace 2; }
+    Alt+Shift+3 { move-window-to-workspace 3; }
+    Alt+Shift+4 { move-window-to-workspace 4; }
+    Alt+Shift+5 { move-window-to-workspace 5; }
     Mod+Shift+J     { move-window-to-workspace-down; }
     Mod+Shift+K     { move-window-to-workspace-up; }
 
+    // Mod+Ctrl+WheelScrollRight { move-column-right; }
+    // Mod+Ctrl+WheelScrollLeft  { move-column-left; }
+    // Mod+Ctrl+Home { move-column-to-first; }
+    // Mod+Ctrl+End  { move-column-to-last; }
+// monitor
+  // focus
+    Alt+Comma       {focus-monitor-left;}
+    Alt+Period      {focus-monitor-right;}
+    // Mod+Shift+Left  { focus-monitor-left; }
+    // Mod+Shift+Down  { focus-monitor-down; }
+    // Mod+Shift+Up    { focus-monitor-up; }
+    // Mod+Shift+Right { focus-monitor-right; }
+    // Mod+Shift+H     { focus-monitor-left; }
+    // Mod+Shift+J     { focus-monitor-down; }
+    // Mod+Shift+K     { focus-monitor-up; }
+    // Mod+Shift+L     { focus-monitor-right; }
+  // move
+    Mod+Comma   { move-window-to-monitor-left; }
+    Mod+Period  { move-window-to-monitor-right; }
+    // Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
+    // Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
+    // Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
+    // Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
+    // Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
+    // Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
+    // Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
+    // Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+    
+    // Mod+J     { focus-window-or-workspace-down; }
+    // Mod+K     { focus-window-or-workspace-up; }
+    // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
+    // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
 
-  // column
     // Mod+Ctrl+Shift+J         { move-column-to-workspace-down; }
     // Mod+Ctrl+Shift+K         { move-column-to-workspace-up; }
     // Mod+Shift+H              { move-column-left; }
@@ -345,63 +389,22 @@ binds {
     // Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
     // Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
 
-    Alt+Shift+1 { move-window-to-workspace 1; }
-    Alt+Shift+2 { move-window-to-workspace 2; }
-    Alt+Shift+3 { move-window-to-workspace 3; }
-    Alt+Shift+4 { move-window-to-workspace 4; }
-    Alt+Shift+5 { move-window-to-workspace 5; }
-  // monitor
-    Mod+Comma   { move-window-to-monitor-left; }
-    Mod+Period  { move-window-to-monitor-right; }
-    
-    // Mod+J     { focus-window-or-workspace-down; }
-    // Mod+K     { focus-window-or-workspace-up; }
-    // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
-    // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
-// size
-    Mod+R       { switch-preset-column-width; }
-    Mod+Shift+R { switch-preset-window-height; }
-    Mod+Ctrl+R  { reset-window-height; }
+// layout
     Mod+F       { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
-    Mod+M { center-column; }
 
     // Mod+Minus       { set-column-width "-10%"; }
     // Mod+Equal       { set-column-width "+10%"; }
     // Mod+Shift+Minus { set-window-height "-10%"; }
     // Mod+Shift+Equal { set-window-height "+10%"; }
 
-    Alt+Left   { set-column-width "-10%"; }
-    Alt+Right   { set-column-width "+10%"; }
-    Alt+Up     { set-window-height "-10%"; }
-    Alt+Down  { set-window-height "+10%"; }
 
 // function
     Super+Shift+S { screenshot; }
     Alt+Shift+Q   { quit; }
     // Mod+S         { power-off-monitors; }
-    // Mod+Home { focus-column-first; }
-    // Mod+End  { focus-column-last; }
-    // Mod+Ctrl+Home { move-column-to-first; }
-    // Mod+Ctrl+End  { move-column-to-last; }
 
-    // Mod+Shift+Left  { focus-monitor-left; }
-    // Mod+Shift+Down  { focus-monitor-down; }
-    // Mod+Shift+Up    { focus-monitor-up; }
-    // Mod+Shift+Right { focus-monitor-right; }
-    // Mod+Shift+H     { focus-monitor-left; }
-    // Mod+Shift+J     { focus-monitor-down; }
-    // Mod+Shift+K     { focus-monitor-up; }
-    // Mod+Shift+L     { focus-monitor-right; }
 
-    // Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
-    // Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
-    // Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
-    // Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
-    // Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
-    // Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
-    // Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
-    // Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
 
     // Alternatively, there are commands to move just a single window:
     // ...
@@ -428,10 +431,6 @@ binds {
     // the cooldown-ms property. The bind will be rate-limited to this value.
     // You can set a cooldown on any bind, but it's most useful for the wheel.
 
-    // Mod+WheelScrollRight      { focus-column-right; }
-    // Mod+WheelScrollLeft       { focus-column-left; }
-    // Mod+Ctrl+WheelScrollRight { move-column-right; }
-    // Mod+Ctrl+WheelScrollLeft  { move-column-left; }
 
     // Usually scrolling up and down with Shift in applications results in
     // horizontal scrolling; these binds replicate that.
