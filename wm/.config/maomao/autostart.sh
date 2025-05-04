@@ -9,7 +9,7 @@ set +e
 # wlsunset -T 3501 -t 3500 &
 
 # wallpaper
-# swaybg -i ~/.config/maomao/wallpaper/room.png &
+swaybg -i ~/Pictures/wallpapers/arch.png &
 
 # top bar
 # waybar -c ~/.config/maomao/waybar/config -s ~/.config/maomao/waybar/style.css &
@@ -45,6 +45,9 @@ if [ -z $(pidof dunst)]; then
 dunst &
 fi
 
+if [ -z $(pidof foot)]; then
+foot -s &
+fi
 
 
 # Permission authentication

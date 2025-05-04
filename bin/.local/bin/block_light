@@ -5,6 +5,12 @@
 # GNU GPLv3
 
 # Dependencies: xbacklight
+printf "^f3^"
+printf "^c#ffd900^"
+light=$(xbacklight -get) 
+a=$[$light/4]
+printf "^f2^^s0,10,27,6^^r1,11,%s,4^^f29^%s" "$a" "$light"
+
 case $BLOCK_BUTTON in
   1) xbacklight $(( ($(xbacklight -get) + 20) % 100  )) ; notify-send -h int:value:$(xbacklight -get) "Light" ;;
 	# 2) xbacklight 75 ; notify-send -h int:value:$(xbacklight -get) "Light" ;;
@@ -16,8 +22,3 @@ case $BLOCK_BUTTON in
   5) xbacklight -dec 5 ; notify-send -h int:value:$(xbacklight -get) "Light" ;;
   6) nohup st -e nvim "$0" > /dev/null &;;
 esac
-printf "^f3^"
-printf "^c#ffd900^"
-light=$(xbacklight -get) 
-a=$[$light/4]
-printf "^f2^^s0,10,27,6^^r1,11,%s,4^^f29^%s" "$a" "$light"

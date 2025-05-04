@@ -75,6 +75,7 @@ linux-wifi-hotspot
 lsd
 lua-language-server
 man-db
+maomaowm-git
 marco
 marksman
 mate-control-center
@@ -90,6 +91,7 @@ ncpamixer
 neovim
 net-tools
 newsboat
+niri
 npm
 ntfs-3g
 obsidian
@@ -127,6 +129,7 @@ stylua
 sudo
 sway-scroll-git
 swaybg
+swaylock
 sx
 tdf-git
 tealdeer
@@ -159,6 +162,7 @@ watt-toolkit-bin
 waybar
 websocat
 wechat-universal-bwrap
+wev
 wget
 wireplumber
 xbindkeys
@@ -170,6 +174,7 @@ xdg-ninja-git
 xdg-user-dirs-gtk
 xf86-video-amdgpu
 xorg-server
+xorg-xev
 xorg-xeyes
 xorg-xhost
 xorg-xinput

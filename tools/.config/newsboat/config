@@ -98,6 +98,15 @@ bind-key j down
 bind-key k up
 bind-key J next-feed
 bind-key K prev-feed
+
+bind-key h quit
+bind-key l open
+bind-key ^E toggle-source-view
+
+bind-key ^u halfpageup
+bind-key ^d halfpagedown
+
+bind-key ^i random-unread
 ####  bookmark-autopilot
 #
 # If set to `yes`, the configured bookmark command is executed without any
@@ -202,7 +211,7 @@ browser "waterfox %u"
 #
 # Default value: no
 #
-# confirm-exit yes
+confirm-exit yes
 
 ####  confirm-mark-all-feeds-read
 #

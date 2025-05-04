@@ -15,9 +15,9 @@ if [ -z $(pidof xbindkeys) ]; then
 mykeys &
 fi
 
-# if [ -z $(pidof picom) ]; then
-# picom -b
-# fi
+if [ -z $(pidof picom) ]; then
+picom -b
+fi
 # if [ -z $(pidof blueberry-tray) ]; then
 # fi
 
@@ -29,7 +29,7 @@ fi
 # killall wallpaper_loop
 # wallpaper_loop &
 
-# wallpaper_change &
+wallpaper_change &
 
 # killall battery_warning 
 # battery_warning &
