@@ -1,5 +1,6 @@
-https://hiraethecho.github.io/hexo/atom.xml
-https://github.com/v1nh1shungry/nvim-weekly-cn/releases.atom
-https://hiraethecho.github.io/wiki/feed_rss_updated.xml
-https://hiraethecho.github.io/hugo/index.xml
-https://hiraeth-dg.netlify.app/feed.xml
+https://hiraethecho.github.io/hexo/atom.xml ~hexo
+https://github.com/v1nh1shungry/nvim-weekly-cn/releases.atom "~nvim weekly"
+https://hiraethecho.github.io/wiki/feed_rss_updated.xml "~wiki"
+https://hiraethecho.github.io/hugo/index.xml "~diary"
+https://hiraeth-dg.netlify.app/feed.xml "~digital garden"
+https://rss.arxiv.org/rss/math.AG "~arxiv AG"

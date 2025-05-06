@@ -88,6 +88,7 @@ mdcat
 meson
 mpv
 ncpamixer
+neomutt
 neovim
 net-tools
 newsboat
@@ -109,6 +110,7 @@ picom-ftlabs-git
 pipewire
 pipewire-audio
 pipewire-pulse
+prettier
 prettierd
 python-pip
 python-pynvim
@@ -127,7 +129,6 @@ steam
 stow
 stylua
 sudo
-sway-scroll-git
 swaybg
 swaylock
 sx
@@ -156,6 +157,7 @@ ufrii-print
 unzip
 virt-manager
 vrms-arch-git
+vscode-html-languageserver
 vulkan-radeon
 waterfox-bin
 watt-toolkit-bin
