@@ -1,11 +1,14 @@
 acpi
 acpilight
 activate-linux-git
+activitywatch-bin
 aerc
 alsa-utils
 amd-ucode
 archlinuxcn-keyring
 autossh
+aw-awatcher
+aw-watcher-media-player
 awesome-terminal-fonts
 base
 base-devel

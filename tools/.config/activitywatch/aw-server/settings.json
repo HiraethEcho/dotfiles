@@ -1,0 +1,282 @@
+{
+    "initialTimestamp": "2025-05-08T13:21:01.792Z",
+    "startOfDay": "04:00",
+    "startOfWeek": "Monday",
+    "durationDefault": 14400,
+    "landingpage": "/activity/arch25/view/",
+    "theme": "light",
+    "newReleaseCheckData": {
+        "isEnabled": true,
+        "nextCheckTime": "2025-05-09T13:21:01.793Z",
+        "howOftenToCheck": 86400,
+        "timesChecked": 0
+    },
+    "userSatisfactionPollData": {
+        "isEnabled": true,
+        "nextPollTime": "2025-05-15T13:21:01.793Z",
+        "timesPollIsShown": 0
+    },
+    "classes": [
+        {
+            "name": [
+                "Work"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "Google Docs|libreoffice|ReText"
+            },
+            "data": {
+                "color": "#0F0",
+                "score": 10
+            }
+        },
+        {
+            "name": [
+                "Work",
+                "Programming"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "GitHub|Stack Overflow|BitBucket|Gitlab|vim|Spyder|kate|Ghidra|Scite"
+            }
+        },
+        {
+            "name": [
+                "Work",
+                "Programming",
+                "ActivityWatch"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "ActivityWatch|aw-",
+                "ignore_case": true
+            }
+        },
+        {
+            "name": [
+                "Work",
+                "Image"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "GIMP|Inkscape"
+            }
+        },
+        {
+            "name": [
+                "Work",
+                "Video"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "Kdenlive"
+            }
+        },
+        {
+            "name": [
+                "Work",
+                "Audio"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "Audacity"
+            }
+        },
+        {
+            "name": [
+                "Work",
+                "3D"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "Blender"
+            }
+        },
+        {
+            "name": [
+                "Media"
+            ],
+            "rule": {
+                "type": "none"
+            },
+            "data": {
+                "color": "#F33"
+            }
+        },
+        {
+            "name": [
+                "Media",
+                "Games"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "Minecraft|RimWorld"
+            },
+            "data": {
+                "color": "#F80"
+            }
+        },
+        {
+            "name": [
+                "Media",
+                "Video"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "YouTube|Plex|VLC"
+            },
+            "data": {
+                "color": "#F33"
+            }
+        },
+        {
+            "name": [
+                "Media",
+                "Social Media"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "reddit|Facebook|Twitter|Instagram|devRant",
+                "ignore_case": true
+            },
+            "data": {
+                "color": "#FCC400"
+            }
+        },
+        {
+            "name": [
+                "Media",
+                "Music"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "Spotify|Deezer",
+                "ignore_case": true
+            },
+            "data": {
+                "color": "#A8FC00"
+            }
+        },
+        {
+            "name": [
+                "Comms"
+            ],
+            "rule": {
+                "type": "none"
+            },
+            "data": {
+                "color": "#9FF"
+            }
+        },
+        {
+            "name": [
+                "Comms",
+                "IM"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "Messenger|Telegram|Signal|WhatsApp|Rambox|Slack|Riot|Element|Discord|Nheko|NeoChat|Mattermost"
+            }
+        },
+        {
+            "name": [
+                "Comms",
+                "Email"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "Gmail|Thunderbird|mutt|alpine"
+            }
+        },
+        {
+            "name": [
+                "Uncategorized"
+            ],
+            "rule": {
+                "type": null
+            },
+            "data": {
+                "color": "#CCC"
+            }
+        }
+    ],
+    "views": [
+        {
+            "id": "summary",
+            "name": "Summary",
+            "elements": [
+                {
+                    "type": "top_apps",
+                    "size": 3
+                },
+                {
+                    "type": "top_titles",
+                    "size": 3
+                },
+                {
+                    "type": "timeline_barchart",
+                    "size": 3
+                },
+                {
+                    "type": "top_categories",
+                    "size": 3
+                },
+                {
+                    "type": "category_tree",
+                    "size": 3
+                },
+                {
+                    "type": "category_sunburst",
+                    "size": 3
+                }
+            ]
+        },
+        {
+            "id": "window",
+            "name": "Window",
+            "elements": [
+                {
+                    "type": "top_apps",
+                    "size": 3
+                },
+                {
+                    "type": "top_titles",
+                    "size": 3
+                }
+            ]
+        },
+        {
+            "id": "browser",
+            "name": "Browser",
+            "elements": [
+                {
+                    "type": "top_domains",
+                    "size": 3
+                },
+                {
+                    "type": "top_urls",
+                    "size": 3
+                }
+            ]
+        },
+        {
+            "id": "editor",
+            "name": "Editor",
+            "elements": [
+                {
+                    "type": "top_editor_files",
+                    "size": 3
+                },
+                {
+                    "type": "top_editor_projects",
+                    "size": 3
+                },
+                {
+                    "type": "top_editor_languages",
+                    "size": 3
+                }
+            ]
+        }
+    ],
+    "requestTimeout": 30
+}
