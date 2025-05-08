@@ -12,7 +12,7 @@ set +e
 swaybg -i ~/Pictures/wallpapers/arch.png &
 
 # top bar
-# waybar -c ~/.config/maomao/waybar/config -s ~/.config/maomao/waybar/style.css &
+waybar -c ~/.config/maomao/waybar/config -s ~/.config/maomao/waybar/style.css &
 
 # dock
 # lavalauncher -c ~/.config/maomao/lavalauncher/lavalauncher.conf &
