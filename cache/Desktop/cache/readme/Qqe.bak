@@ -27,6 +27,10 @@ btrfs-progs
 calcurse
 clang
 cmake
+cnrdrvcups-sfp
+cups
+cups-browsed
+cups-pdf
 dhcpcd
 diskonaut
 dnsmasq
@@ -42,6 +46,8 @@ fcitx5-gtk
 fcitx5-qt
 fd
 feh
+foomatic-db
+foomatic-db-gutenprint-ppds
 foot
 fzf
 fzf-tab-git
@@ -50,6 +56,7 @@ gnome-keyring
 gparted
 grub
 grub-btrfs
+gutenprint
 gvfs
 gvfs-dnssd
 gvim
@@ -76,6 +83,7 @@ linux-firmware
 linux-headers
 linux-wifi-hotspot
 lsd
+lsix
 lua-language-server
 man-db
 maomaowm-git
@@ -137,6 +145,7 @@ swaylock
 sx
 tdf-git
 tealdeer
+terminaltexteffects-git
 tex-fmt
 texlab
 texlive-bibtexextra
@@ -167,6 +176,7 @@ watt-toolkit-bin
 waybar
 websocat
 wechat-universal-bwrap
+wemeet-bin
 wev
 wget
 wireplumber

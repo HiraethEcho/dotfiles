@@ -15,9 +15,9 @@ if [ -z $(pidof xbindkeys) ]; then
 mykeys &
 fi
 
-if [ -z $(pidof picom) ]; then
-picom -b
-fi
+# if [ -z $(pidof picom) ]; then
+# picom -b
+# fi
 # if [ -z $(pidof blueberry-tray) ]; then
 # fi
 
