@@ -103,14 +103,11 @@ bind-key p prev
 bind-key ^n next-unread
 bind-key ^p prev-unread
 
-bind-key O open-in-browser-noninteractively
 
 bind-key h quit
 bind-key l open
 bind-key ^E toggle-source-view
 
-bind-key ^u halfpageup
-bind-key ^d halfpagedown
 
 bind-key ^i random-unread
 
@@ -160,7 +157,7 @@ bind-key ^i random-unread
 # Default value: %BROWSER, otherwise lynx
 #
 # browser "w3m %u"
-browser "waterfox %u"
+browser "firefox %u"
 ####  cache-file
 #
 # This configuration option sets the cache file. This is especially useful if
