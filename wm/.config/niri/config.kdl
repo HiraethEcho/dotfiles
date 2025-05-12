@@ -225,6 +225,7 @@ environment {
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "foot" "-s"
 spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
+spawn-at-startup "waybar" "-c" "/home/hiraeth/.config/niri/waybar.jsonc"
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
 // Additionally, clients will be informed that they are tiled, removing some rounded corners.

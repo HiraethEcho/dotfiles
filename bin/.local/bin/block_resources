@@ -36,13 +36,13 @@ esac
   #   # printf "^f3^󰍛^f2^%s/%s^f2^󰘚^f2^%s^f2^^f2^%s°C" "$USED_RAM" "$TOTAL_RAM" "$CPU" "$CPU_TEMP"
   #   printf "^f3^󰍛^f2^%s^f2^󰘚^f2^%s^f2^^f2^%s°C" "$RAM" "$CPU" "$CPU_TEMP"
   # fi
-printf "^f3^^c#e39a83^"
+printf "^c#e39af3^"
 printf "^f3^󰍛^f2^%s^f2^󰘚^f2^%s" "$RAM" "$CPU"
 
 if [[ $capacity -ge 60 ]]; then
 printf "^c#89b482^"
 elif [[ $capacity -le 30 ]]; then
-printf "^c#e06c75^"
+printf "^c#de6020^"
 else
 printf "^c#EBCB8B^"
 fi
