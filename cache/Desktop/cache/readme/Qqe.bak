@@ -5,6 +5,7 @@ activitywatch-bin
 aerc
 alsa-utils
 amd-ucode
+arch-wiki-lite
 archlinuxcn-keyring
 autossh
 aw-awatcher
@@ -38,6 +39,7 @@ dua-cli
 dunst
 efibootmgr
 electron-deepseek
+fastbash
 fastfetch
 fcitx5
 fcitx5-chinese-addons
@@ -77,6 +79,7 @@ less
 lib32-mesa
 lib32-vulkan-radeon
 libnotify
+libxml2-legacy
 libzip
 linux
 linux-firmware
@@ -121,6 +124,7 @@ picom-ftlabs-git
 pipewire
 pipewire-audio
 pipewire-pulse
+pkgtop
 prettier
 prettierd
 python-pip
@@ -130,6 +134,7 @@ qemu-base
 rclone
 refind
 ripgrep
+ripgrep-all
 rofi-wayland
 sddm
 shfmt

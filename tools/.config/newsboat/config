@@ -80,7 +80,7 @@
 #
 # Default value: no
 #
-# auto-reload yes
+auto-reload yes
 
 ####  bind-key
 #
@@ -113,6 +113,7 @@ bind-key ^u halfpageup
 bind-key ^d halfpagedown
 
 bind-key ^i random-unread
+
 ####  bookmark-autopilot
 #
 # If set to `yes`, the configured bookmark command is executed without any
@@ -217,7 +218,7 @@ browser "waterfox %u"
 #
 # Default value: no
 #
-confirm-exit yes
+confirm-exit no
 
 ####  confirm-mark-all-feeds-read
 #
@@ -228,7 +229,7 @@ confirm-exit yes
 #
 # Default value: yes
 #
-# confirm-mark-all-feeds-read no
+confirm-mark-all-feeds-read no
 
 ####  confirm-mark-feed-read
 #
@@ -239,7 +240,7 @@ confirm-exit yes
 #
 # Default value: yes
 #
-# confirm-mark-feed-read no
+confirm-mark-feed-read no
 
 ####  cookie-cache
 #
@@ -264,7 +265,7 @@ confirm-exit yes
 #
 # Default value: %b %d
 #
-# datetime-format "%D, %R"
+datetime-format "%D, %R"
 
 ####  define-filter
 #

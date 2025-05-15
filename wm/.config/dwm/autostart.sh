@@ -15,6 +15,10 @@ if [ -z $(pidof xbindkeys) ]; then
 mykeys &
 fi
 
+if [ -z $(pidof aw-qt) ]; then
+aw-qt &
+fi
+
 # if [ -z $(pidof picom) ]; then
 # picom -b
 # fi

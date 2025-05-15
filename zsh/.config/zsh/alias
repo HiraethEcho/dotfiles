@@ -84,7 +84,7 @@ alias ropull="rclone sync koofr:/obsidian/ ~/obsidian/ --filter-from ~/.config/r
 
 # pacman and yay
 alias syyu="paru -Syyu"
-alias bak="sudo timeshift --check && sudo grub-mkconfig -o /boot/grub/grub.cfg && pacman -Qqe > ~/dotfiles/cache/Desktop/cache/readme/Qqe.bak"
+alias bak="sudo timeshift --check && sudo grub-mkconfig -o /boot/grub/grub.cfg && pacman -Qqe > ~/dotfiles/cache/Desktop/cache/readme/Qqe.bak && pacman -Qe > ~/dotfiles/cache/Desktop/cache/readme/Qe.bak"
 alias qdtq="pacman -Qdttq | sudo pacman -Rscn -"
 alias qei="pacman -Qqe | fzf --preview-window=50%:bottom: --preview 'pacman -Qiil {}' --layout=reverse --bind 'enter:execute(pacman -Qiil {} | less)'"
 alias qi="pacman -Qq | fzf --preview-window=50%:bottom: --preview 'pacman -Qiil {}' --layout=reverse --bind 'enter:execute(pacman -Qiil {} | less)'"
