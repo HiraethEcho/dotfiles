@@ -22,6 +22,7 @@ bluez-tools
 bluez-utils
 bongo-cat
 bridge-utils
+brisk
 btop
 btrfs-assistant
 btrfs-progs
@@ -64,17 +65,13 @@ gvfs-dnssd
 gvim
 harper
 hugo
-hyprland-git
-hyprland-qtutils-git
-hyprlock-git
-hyprshot
-hyprwayland-scanner-git
 imagemagick
 impala
 iw
 iwd
 kitty
 lazygit
+leenfetch
 less
 lib32-mesa
 lib32-vulkan-radeon
@@ -89,7 +86,6 @@ lsd
 lsix
 lua-language-server
 man-db
-maomaowm-git
 marco
 marksman
 mate-control-center

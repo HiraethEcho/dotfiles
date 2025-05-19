@@ -9,33 +9,31 @@ l=$((a * 72 / 1440))
 r=$((a * 100 / 1440))
 
 case $BLOCK_BUTTON in
-  1) notify-send -h int:value:$r "Calendar" "$(cal -m | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
-  # 1) notify-send  "Calendar" "$(cal -m | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
-  2) nohup st -t tasks -g 100x30 -e aerc > /dev/null & ;;
-  3) nohup st -t tasks -g 100x30 -e newsboat > /dev/null & ;;
-  # 3) nohup st -t tasks -g 80x20 -e slides ~/Desktop/tasks/test.md > /dev/null & ;;
-  # 3) nohup thunar ~ > /dev/null & ;;
-  # 4) notify-send " " "$(cal | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
-  6) nohup st -e nvim "$0" > /dev/null &;;
+1) notify-send -h int:value:$r "Calendar" "$(cal -m | sed "s/\<$(date +'%e' | sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
+# 1) notify-send  "Calendar" "$(cal -m | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
+2) nohup st -t mail -g 100x30 -e aerc >/dev/null & ;;
+3) nohup st -t rss -g 100x30 -e newsboat >/dev/null & ;;
+# 3) nohup st -t tasks -g 80x20 -e slides ~/Desktop/tasks/test.md > /dev/null & ;;
+# 3) nohup thunar ~ > /dev/null & ;;
+# 4) notify-send " " "$(cal | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
+6) nohup st -e nvim "$0" >/dev/null & ;;
 esac
 
-
 if [[ $l -ge 69 ]]; then
-printf "^c#e06c75^"
+  printf "^c#e06c75^"
 elif [[ $l -ge 63 ]]; then
-printf "^c#000000^"
+  printf "^c#000000^"
 elif [[ $l -ge 42 ]]; then
-printf "^c#89b482^"
+  printf "^c#89b482^"
 elif [[ $l -ge 27 ]]; then
-printf "^c#01e9f1^"
+  printf "^c#01e9f1^"
 elif [[ $l -ge 18 ]]; then
-printf "^c#4169e1^"
+  printf "^c#4169e1^"
 else
-printf "^c#e06c75^"
+  printf "^c#e06c75^"
 fi
 printf "^f3^^s0,10,74,6^^r1,11,%s,4^^f76^" "$l"
 # printf "^f3^^s0,10,74,6^^r1,11,%s,4^^f76^" "$l"
-
 
 # printf "^c #ff9da2^"
 printf "^c#dfe3ee^"
