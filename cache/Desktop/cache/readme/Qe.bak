@@ -22,7 +22,7 @@ bluez-tools 0.2.0-6
 bluez-utils 5.82-1
 bongo-cat 0.4.0-1
 bridge-utils 1.7.1-2
-brisk 2.2.3-1
+brisk 2.2.4-1
 btop 1.4.3-2
 btrfs-assistant 2.1.1-4
 btrfs-progs 6.14-1
@@ -36,8 +36,9 @@ cups-pdf 3.0.2-1
 dhcpcd 10.2.3-1
 diskonaut 0.11.0-3
 dnsmasq 2.91-1
-dua-cli 2.30.0-1
+dua-cli 2.30.1-1
 dunst 1.12.2-1
+edit 1.0.0-1
 efibootmgr 18-3
 electron-deepseek 1.0.0-1
 fastbash 1.0.0-1
@@ -102,7 +103,7 @@ neomutt 20250510-1
 neovim 0.11.1-2
 net-tools 2.10-3
 newsboat 2.39-2
-niri 25.02-1
+niri 25.05-1
 npm 11.4.0-1
 ntfs-3g 2022.10.3-2
 obsidian 1.8.10-1
@@ -185,7 +186,7 @@ wireplumber 0.5.8-1
 xbindkeys 1.8.7-5
 xcape 1.2-5
 xclip 0.13-6
-xdg-desktop-portal 1.20.1-1
+xdg-desktop-portal 1.20.3-1
 xdg-desktop-portal-gtk 1.15.3-1
 xdg-ninja-git r534.8e8fc89-1
 xdg-user-dirs-gtk 0.14-1

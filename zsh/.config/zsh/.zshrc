@@ -65,3 +65,4 @@ autoload -Uz compinit
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION" 
 # End of lines added by compinstall
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+precmd () {print -Pn "\e]0;%~\a"}

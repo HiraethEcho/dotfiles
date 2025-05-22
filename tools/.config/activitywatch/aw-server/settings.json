@@ -1,203 +1,348 @@
 {
     "initialTimestamp": "2025-05-08T13:21:01.792Z",
-    "startOfDay": "04:00",
+    "startOfDay": "06:00",
     "startOfWeek": "Monday",
     "durationDefault": 14400,
     "landingpage": "/activity/arch25/view/",
     "theme": "light",
     "newReleaseCheckData": {
         "isEnabled": true,
-        "nextCheckTime": "2025-05-09T13:21:01.793Z",
+        "nextCheckTime": "2025-05-23T12:14:37.981Z",
         "howOftenToCheck": 86400,
         "timesChecked": 0
     },
     "userSatisfactionPollData": {
         "isEnabled": true,
-        "nextPollTime": "2025-05-15T13:21:01.793Z",
-        "timesPollIsShown": 0
+        "nextPollTime": "2025-05-28T12:00:32.988Z",
+        "timesPollIsShown": 1
     },
     "classes": [
         {
+            "data": {},
+            "id": 0,
             "name": [
-                "Work"
-            ],
-            "rule": {
-                "type": "regex",
-                "regex": "Google Docs|libreoffice|ReText"
-            },
-            "data": {
-                "color": "#0F0",
-                "score": 10
-            }
-        },
-        {
-            "name": [
-                "Work",
-                "Programming"
-            ],
-            "rule": {
-                "type": "regex",
-                "regex": "GitHub|Stack Overflow|BitBucket|Gitlab|vim|Spyder|kate|Ghidra|Scite"
-            }
-        },
-        {
-            "name": [
-                "Work",
-                "Programming",
+                "config",
                 "ActivityWatch"
             ],
             "rule": {
-                "type": "regex",
+                "ignore_case": true,
                 "regex": "ActivityWatch|aw-",
-                "ignore_case": true
+                "type": "regex"
             }
         },
         {
-            "name": [
-                "Work",
-                "Image"
-            ],
-            "rule": {
-                "type": "regex",
-                "regex": "GIMP|Inkscape"
-            }
-        },
-        {
-            "name": [
-                "Work",
-                "Video"
-            ],
-            "rule": {
-                "type": "regex",
-                "regex": "Kdenlive"
-            }
-        },
-        {
-            "name": [
-                "Work",
-                "Audio"
-            ],
-            "rule": {
-                "type": "regex",
-                "regex": "Audacity"
-            }
-        },
-        {
-            "name": [
-                "Work",
-                "3D"
-            ],
-            "rule": {
-                "type": "regex",
-                "regex": "Blender"
-            }
-        },
-        {
+            "data": {
+                "color": "#F33"
+            },
+            "id": 1,
             "name": [
                 "Media"
             ],
             "rule": {
                 "type": "none"
-            },
-            "data": {
-                "color": "#F33"
             }
         },
         {
+            "data": {
+                "color": "#F80"
+            },
+            "id": 2,
             "name": [
                 "Media",
                 "Games"
             ],
             "rule": {
-                "type": "regex",
-                "regex": "Minecraft|RimWorld"
-            },
-            "data": {
-                "color": "#F80"
+                "regex": "Minecraft|RimWorld",
+                "type": "regex"
             }
         },
         {
+            "data": {
+                "color": "#F33"
+            },
+            "id": 3,
             "name": [
                 "Media",
                 "Video"
             ],
             "rule": {
-                "type": "regex",
-                "regex": "YouTube|Plex|VLC"
-            },
-            "data": {
-                "color": "#F33"
+                "regex": "YouTube|Plex|VLC|mpv|bilibili",
+                "type": "regex"
             }
         },
         {
+            "data": {
+                "color": "#FCC400"
+            },
+            "id": 4,
             "name": [
                 "Media",
                 "Social Media"
             ],
             "rule": {
-                "type": "regex",
+                "ignore_case": true,
                 "regex": "reddit|Facebook|Twitter|Instagram|devRant",
-                "ignore_case": true
-            },
-            "data": {
-                "color": "#FCC400"
+                "type": "regex"
             }
         },
         {
+            "data": {
+                "color": "#A8FC00"
+            },
+            "id": 5,
             "name": [
                 "Media",
                 "Music"
             ],
             "rule": {
-                "type": "regex",
+                "ignore_case": true,
                 "regex": "Spotify|Deezer",
-                "ignore_case": true
-            },
-            "data": {
-                "color": "#A8FC00"
+                "type": "regex"
             }
         },
         {
+            "data": {
+                "color": "#9FF"
+            },
+            "id": 6,
             "name": [
                 "Comms"
             ],
             "rule": {
                 "type": "none"
-            },
-            "data": {
-                "color": "#9FF"
             }
         },
         {
+            "id": 7,
             "name": [
                 "Comms",
                 "IM"
             ],
             "rule": {
-                "type": "regex",
-                "regex": "Messenger|Telegram|Signal|WhatsApp|Rambox|Slack|Riot|Element|Discord|Nheko|NeoChat|Mattermost"
+                "regex": "Messenger|Telegram|Signal|WhatsApp|Rambox|Slack|Riot|Element|Discord|Nheko|NeoChat|Mattermost",
+                "type": "regex"
             }
         },
         {
+            "data": {},
+            "id": 8,
             "name": [
                 "Comms",
                 "Email"
             ],
             "rule": {
-                "type": "regex",
-                "regex": "Gmail|Thunderbird|mutt|alpine"
+                "regex": "Gmail|Thunderbird|mutt|alpine|aerc",
+                "type": "regex"
             }
         },
         {
+            "data": {
+                "color": "#CCC"
+            },
+            "id": 9,
             "name": [
                 "Uncategorized"
             ],
             "rule": {
-                "type": null
-            },
-            "data": {
-                "color": "#CCC"
+                "type": "none"
             }
+        },
+        {
+            "data": {},
+            "id": 10,
+            "name": [
+                "rss"
+            ],
+            "rule": {
+                "regex": "rss|newsboat",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 11,
+            "name": [
+                "Web",
+                "bilibili"
+            ],
+            "rule": {
+                "regex": "\u54d4\u54e9\u54d4\u54e9|bilibili",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 12,
+            "name": [
+                "rss",
+                "AskPhilosophers"
+            ],
+            "rule": {
+                "regex": "AskPhilosophers",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 13,
+            "name": [
+                "Zotero"
+            ],
+            "rule": {
+                "regex": "Zotero",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 14,
+            "name": [
+                "rss",
+                "Quarks"
+            ],
+            "rule": {
+                "regex": "Quarks",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 15,
+            "name": [
+                "Web"
+            ],
+            "rule": {
+                "regex": "waterfox",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 16,
+            "name": [
+                "Blog"
+            ],
+            "rule": {
+                "regex": "hexo|hugo|obsidian|mkdocs|blogs",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 17,
+            "name": [
+                "config"
+            ],
+            "rule": {
+                "regex": "nvim|vimfiles|\\.config|dotfiles",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 18,
+            "name": [
+                "Comms",
+                "wechat"
+            ],
+            "rule": {
+                "regex": "\u5fae\u4fe1|wechat",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 19,
+            "name": [
+                "DeepSeek"
+            ],
+            "rule": {
+                "regex": "DeepSeek",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 20,
+            "name": [
+                "misc"
+            ],
+            "rule": {
+                "regex": "",
+                "type": "regex"
+            }
+        },
+        {
+            "id": 21,
+            "name": [
+                "config",
+                "New class"
+            ],
+            "rule": {
+                "regex": "FILL ME",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 22,
+            "name": [
+                "misc",
+                "zsh"
+            ],
+            "rule": {
+                "regex": "zsh",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 23,
+            "name": [
+                "misc",
+                "scratchpad"
+            ],
+            "rule": {
+                "regex": "scratchpad",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 24,
+            "name": [
+                "misc",
+                "explorer"
+            ],
+            "rule": {
+                "regex": "yazi|explorer",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 25,
+            "name": [
+                "misc",
+                "explorer",
+                "Yazi"
+            ],
+            "rule": {
+                "regex": "Yazi",
+                "type": "regex"
+            }
+        },
+        {
+            "name": [
+                "Web",
+                "zhihu"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "zhihu|\u77e5\u4e4e"
+            },
+            "id": 26,
+            "data": {}
         }
     ],
     "views": [
@@ -278,5 +423,15 @@
             ]
         }
     ],
-    "requestTimeout": 30
+    "requestTimeout": 30,
+    "immersiveTranslatePerformanceData": {
+        "initial": 0,
+        "buildContainer": 32,
+        "consumeContainer": 32,
+        "consumeParagraph": 94,
+        "parseParagraph": 48,
+        "translated": 410,
+        "inserted": 412
+    },
+    "useColorFallback": true
 }

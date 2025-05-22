@@ -1,0 +1,382 @@
+{
+  "categories": [
+    {
+      "data": {},
+      "id": 0,
+      "name": [
+        "config",
+        "ActivityWatch"
+      ],
+      "rule": {
+        "ignore_case": true,
+        "regex": "ActivityWatch|aw-",
+        "type": "regex"
+      },
+      "name_pretty": "config>ActivityWatch",
+      "subname": "ActivityWatch",
+      "parent": [
+        "config"
+      ],
+      "depth": 1
+    },
+    {
+      "data": {
+        "color": "#F33"
+      },
+      "id": 1,
+      "name": [
+        "Media"
+      ],
+      "rule": {
+        "type": "none"
+      },
+      "name_pretty": "Media",
+      "subname": "Media",
+      "parent": null,
+      "depth": 0
+    },
+    {
+      "data": {
+        "color": "#F80"
+      },
+      "id": 2,
+      "name": [
+        "Media",
+        "Games"
+      ],
+      "rule": {
+        "regex": "Minecraft|RimWorld",
+        "type": "regex"
+      },
+      "name_pretty": "Media>Games",
+      "subname": "Games",
+      "parent": [
+        "Media"
+      ],
+      "depth": 1
+    },
+    {
+      "data": {
+        "color": "#F33"
+      },
+      "id": 3,
+      "name": [
+        "Media",
+        "Video"
+      ],
+      "rule": {
+        "regex": "YouTube|Plex|VLC|mpv|bilibili",
+        "type": "regex"
+      },
+      "name_pretty": "Media>Video",
+      "subname": "Video",
+      "parent": [
+        "Media"
+      ],
+      "depth": 1
+    },
+    {
+      "data": {
+        "color": "#FCC400"
+      },
+      "id": 4,
+      "name": [
+        "Media",
+        "Social Media"
+      ],
+      "rule": {
+        "ignore_case": true,
+        "regex": "reddit|Facebook|Twitter|Instagram|devRant",
+        "type": "regex"
+      },
+      "name_pretty": "Media>Social Media",
+      "subname": "Social Media",
+      "parent": [
+        "Media"
+      ],
+      "depth": 1
+    },
+    {
+      "data": {
+        "color": "#A8FC00"
+      },
+      "id": 5,
+      "name": [
+        "Media",
+        "Music"
+      ],
+      "rule": {
+        "ignore_case": true,
+        "regex": "Spotify|Deezer",
+        "type": "regex"
+      },
+      "name_pretty": "Media>Music",
+      "subname": "Music",
+      "parent": [
+        "Media"
+      ],
+      "depth": 1
+    },
+    {
+      "data": {
+        "color": "#9FF"
+      },
+      "id": 6,
+      "name": [
+        "Comms"
+      ],
+      "rule": {
+        "type": "none"
+      },
+      "name_pretty": "Comms",
+      "subname": "Comms",
+      "parent": null,
+      "depth": 0
+    },
+    {
+      "id": 7,
+      "name": [
+        "Comms",
+        "IM"
+      ],
+      "rule": {
+        "regex": "Messenger|Telegram|Signal|WhatsApp|Rambox|Slack|Riot|Element|Discord|Nheko|NeoChat|Mattermost",
+        "type": "regex"
+      },
+      "name_pretty": "Comms>IM",
+      "subname": "IM",
+      "parent": [
+        "Comms"
+      ],
+      "depth": 1
+    },
+    {
+      "data": {},
+      "id": 8,
+      "name": [
+        "Comms",
+        "Email"
+      ],
+      "rule": {
+        "regex": "Gmail|Thunderbird|mutt|alpine|aerc",
+        "type": "regex"
+      },
+      "name_pretty": "Comms>Email",
+      "subname": "Email",
+      "parent": [
+        "Comms"
+      ],
+      "depth": 1
+    },
+    {
+      "data": {
+        "color": "#CCC"
+      },
+      "id": 9,
+      "name": [
+        "Uncategorized"
+      ],
+      "rule": {
+        "type": "none"
+      },
+      "name_pretty": "Uncategorized",
+      "subname": "Uncategorized",
+      "parent": null,
+      "depth": 0
+    },
+    {
+      "data": {},
+      "id": 10,
+      "name": [
+        "rss"
+      ],
+      "rule": {
+        "regex": "rss|newsboat",
+        "type": "regex"
+      },
+      "name_pretty": "rss",
+      "subname": "rss",
+      "parent": null,
+      "depth": 0
+    },
+    {
+      "data": {},
+      "id": 11,
+      "name": [
+        "Web",
+        "bilibili"
+      ],
+      "rule": {
+        "regex": "哔哩哔哩|bilibili",
+        "type": "regex"
+      },
+      "name_pretty": "Web>bilibili",
+      "subname": "bilibili",
+      "parent": [
+        "Web"
+      ],
+      "depth": 1
+    },
+    {
+      "data": {},
+      "id": 12,
+      "name": [
+        "rss",
+        "AskPhilosophers"
+      ],
+      "rule": {
+        "regex": "AskPhilosophers",
+        "type": "regex"
+      },
+      "name_pretty": "rss>AskPhilosophers",
+      "subname": "AskPhilosophers",
+      "parent": [
+        "rss"
+      ],
+      "depth": 1
+    },
+    {
+      "data": {},
+      "id": 13,
+      "name": [
+        "Zotero"
+      ],
+      "rule": {
+        "regex": "Zotero",
+        "type": "regex"
+      },
+      "name_pretty": "Zotero",
+      "subname": "Zotero",
+      "parent": null,
+      "depth": 0
+    },
+    {
+      "data": {},
+      "id": 14,
+      "name": [
+        "rss",
+        "Quarks"
+      ],
+      "rule": {
+        "regex": "Quarks",
+        "type": "regex"
+      },
+      "name_pretty": "rss>Quarks",
+      "subname": "Quarks",
+      "parent": [
+        "rss"
+      ],
+      "depth": 1
+    },
+    {
+      "data": {},
+      "id": 15,
+      "name": [
+        "Web"
+      ],
+      "rule": {
+        "regex": "waterfox",
+        "type": "regex"
+      },
+      "name_pretty": "Web",
+      "subname": "Web",
+      "parent": null,
+      "depth": 0
+    },
+    {
+      "data": {},
+      "id": 16,
+      "name": [
+        "Blog"
+      ],
+      "rule": {
+        "regex": "hexo|hugo|obsidian|mkdocs|blogs",
+        "type": "regex"
+      },
+      "name_pretty": "Blog",
+      "subname": "Blog",
+      "parent": null,
+      "depth": 0
+    },
+    {
+      "data": {},
+      "id": 17,
+      "name": [
+        "config"
+      ],
+      "rule": {
+        "regex": "nvim|vimfiles|\\.config|dotfiles",
+        "type": "regex"
+      },
+      "name_pretty": "config",
+      "subname": "config",
+      "parent": null,
+      "depth": 0
+    },
+    {
+      "data": {},
+      "id": 18,
+      "name": [
+        "Comms",
+        "wechat"
+      ],
+      "rule": {
+        "regex": "微信|wechat",
+        "type": "regex"
+      },
+      "name_pretty": "Comms>wechat",
+      "subname": "wechat",
+      "parent": [
+        "Comms"
+      ],
+      "depth": 1
+    },
+    {
+      "data": {},
+      "id": 19,
+      "name": [
+        "DeepSeek"
+      ],
+      "rule": {
+        "regex": "DeepSeek",
+        "type": "regex"
+      },
+      "name_pretty": "DeepSeek",
+      "subname": "DeepSeek",
+      "parent": null,
+      "depth": 0
+    },
+    {
+      "data": {},
+      "id": 20,
+      "name": [
+        "misc"
+      ],
+      "rule": {
+        "regex": "",
+        "type": "regex"
+      },
+      "name_pretty": "misc",
+      "subname": "misc",
+      "parent": null,
+      "depth": 0
+    },
+    {
+      "id": 21,
+      "name": [
+        "config",
+        "New class"
+      ],
+      "rule": {
+        "regex": "FILL ME",
+        "type": "regex"
+      },
+      "name_pretty": "config>New class",
+      "subname": "New class",
+      "parent": [
+        "config"
+      ],
+      "depth": 1
+    }
+  ]
+}
