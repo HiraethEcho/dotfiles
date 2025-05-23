@@ -36,6 +36,8 @@ lxpolkit &
 
 wallpaper_change &
 
+pamixer -m &
+
 # killall battery_warning 
 # battery_warning &
 #

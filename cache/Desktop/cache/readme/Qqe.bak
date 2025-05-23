@@ -55,6 +55,7 @@ foot
 fzf
 fzf-tab-git
 git
+github-cli
 gnome-keyring
 gparted
 grub
@@ -118,6 +119,7 @@ pcmanfm-gtk3
 pdfbooklet
 picom-ftlabs-git
 pipewire
+pipewire-alsa
 pipewire-audio
 pipewire-pulse
 pkgtop

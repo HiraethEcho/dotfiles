@@ -55,6 +55,7 @@ foot 1.22.3-1
 fzf 0.62.0-1
 fzf-tab-git r276.2abe1f2-1
 git 2.49.0-2
+github-cli 2.73.0-1
 gnome-keyring 1:48.0-1
 gparted 1.7.0-1
 grub 2:2.12.r292.g73d1c959-1
@@ -118,6 +119,7 @@ pcmanfm-gtk3 1.4.0-1
 pdfbooklet 3.1.2-4
 picom-ftlabs-git r2236_2024.02.17-2
 pipewire 1:1.4.2-1
+pipewire-alsa 1:1.4.2-1
 pipewire-audio 1:1.4.2-1
 pipewire-pulse 1:1.4.2-1
 pkgtop 2.5.1-2

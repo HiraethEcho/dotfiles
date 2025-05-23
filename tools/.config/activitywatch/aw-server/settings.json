@@ -4,10 +4,10 @@
     "startOfWeek": "Monday",
     "durationDefault": 14400,
     "landingpage": "/activity/arch25/view/",
-    "theme": "light",
+    "theme": "dark",
     "newReleaseCheckData": {
         "isEnabled": true,
-        "nextCheckTime": "2025-05-23T12:14:37.981Z",
+        "nextCheckTime": "2025-05-24T13:39:43.157Z",
         "howOftenToCheck": 86400,
         "timesChecked": 0
     },
@@ -137,7 +137,7 @@
         },
         {
             "data": {
-                "color": "#CCC"
+                "color": "#FDA1FF"
             },
             "id": 9,
             "name": [
@@ -148,7 +148,9 @@
             }
         },
         {
-            "data": {},
+            "data": {
+                "color": "#B0BC00"
+            },
             "id": 10,
             "name": [
                 "rss"
@@ -166,7 +168,7 @@
                 "bilibili"
             ],
             "rule": {
-                "regex": "\u54d4\u54e9\u54d4\u54e9|bilibili",
+                "regex": "\u54d4\u54e9\u54d4\u54e9|bilibili|.*_bilibili",
                 "type": "regex"
             }
         },
@@ -178,7 +180,7 @@
                 "AskPhilosophers"
             ],
             "rule": {
-                "regex": "AskPhilosophers",
+                "regex": "AskPhilosophers.*",
                 "type": "regex"
             }
         },
@@ -189,7 +191,7 @@
                 "Zotero"
             ],
             "rule": {
-                "regex": "Zotero",
+                "regex": "^Zotero$",
                 "type": "regex"
             }
         },
@@ -206,13 +208,15 @@
             }
         },
         {
-            "data": {},
+            "data": {
+                "color": "#0062B1"
+            },
             "id": 15,
             "name": [
                 "Web"
             ],
             "rule": {
-                "regex": "waterfox",
+                "regex": "waterfox|Waterfox",
                 "type": "regex"
             }
         },
@@ -273,6 +277,7 @@
             }
         },
         {
+            "data": {},
             "id": 21,
             "name": [
                 "config",
@@ -281,8 +286,7 @@
             "rule": {
                 "regex": "dotfiles|\\.config",
                 "type": "regex"
-            },
-            "data": {}
+            }
         },
         {
             "data": {},
@@ -356,6 +360,114 @@
                 "regex": "Koofr",
                 "type": "regex"
             }
+        },
+        {
+            "data": {},
+            "id": 28,
+            "name": [
+                "misc",
+                "explorer",
+                "pcmanfm"
+            ],
+            "rule": {
+                "regex": "pcmanfm",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 29,
+            "name": [
+                "misc",
+                "powershell"
+            ],
+            "rule": {
+                "regex": "powershell",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 30,
+            "name": [
+                "misc",
+                "Btrfs"
+            ],
+            "rule": {
+                "regex": "Btrfs|assistant",
+                "type": "regex"
+            }
+        },
+        {
+            "id": 31,
+            "name": [
+                "rss",
+                "AskPhilosophers",
+                "New class"
+            ],
+            "rule": {
+                "regex": "FILL ME",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 32,
+            "name": [
+                "rss",
+                "plato"
+            ],
+            "rule": {
+                "regex": "plato",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 33,
+            "name": [
+                "config",
+                "Settings"
+            ],
+            "rule": {
+                "regex": "Settings",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 34,
+            "name": [
+                "config",
+                "Preferences"
+            ],
+            "rule": {
+                "regex": "Preferences",
+                "type": "regex"
+            }
+        },
+        {
+            "name": [
+                "config",
+                "LXSession"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "LXSession"
+            },
+            "id": 35,
+            "data": {}
+        },
+        {
+            "name": [
+                "QEMU"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "QEMU"
+            },
+            "id": 36,
+            "data": {}
         }
     ],
     "views": [
