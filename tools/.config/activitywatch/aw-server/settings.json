@@ -276,12 +276,13 @@
             "id": 21,
             "name": [
                 "config",
-                "New class"
+                "dot"
             ],
             "rule": {
-                "regex": "FILL ME",
+                "regex": "dotfiles|\\.config",
                 "type": "regex"
-            }
+            },
+            "data": {}
         },
         {
             "data": {},
@@ -333,16 +334,28 @@
             }
         },
         {
+            "data": {},
+            "id": 26,
             "name": [
                 "Web",
                 "zhihu"
             ],
             "rule": {
-                "type": "regex",
-                "regex": "zhihu|\u77e5\u4e4e"
-            },
-            "id": 26,
-            "data": {}
+                "regex": "zhihu|\u77e5\u4e4e",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 27,
+            "name": [
+                "misc",
+                "Koofr"
+            ],
+            "rule": {
+                "regex": "Koofr",
+                "type": "regex"
+            }
         }
     ],
     "views": [

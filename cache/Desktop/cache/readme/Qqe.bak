@@ -38,7 +38,6 @@ diskonaut
 dnsmasq
 dua-cli
 dunst
-edit
 efibootmgr
 electron-deepseek
 fastbash
@@ -86,18 +85,17 @@ linux-wifi-hotspot
 lsd
 lsix
 lua-language-server
+lxappearance-gtk3
+lxde-common
+lxpanel-gtk3
+lxsession-gtk3
 man-db
-marco
 marksman
-mate-control-center
-mate-panel
 mate-polkit
-mate-power-manager
-mate-session-manager
-mate-utils
 mdcat
 meson
 mpv
+mpvpaper
 ncpamixer
 neomutt
 neovim
@@ -107,6 +105,7 @@ niri
 npm
 ntfs-3g
 obsidian
+openbox
 openssh
 os-prober
 otf-codenewroman-nerd
@@ -147,7 +146,6 @@ swaylock
 sx
 tdf-git
 tealdeer
-terminaltexteffects-git
 tex-fmt
 texlab
 texlive-bibtexextra
@@ -164,6 +162,7 @@ tlpui
 tmux
 tree-sitter
 ttf-daddytime-mono-nerd
+ttf-juliamono
 ttf-lxgw-wenkai-mono
 ttf-maple-nerd
 ttf-nerd-fonts-symbols-mono
