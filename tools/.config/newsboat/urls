@@ -6,11 +6,13 @@ https://link.springer.com/search.rss?new-search=true&query=*&content-type=Articl
 https://www.ams.org/rss/jams.rss "~jams"
 https://www.cambridge.org/core/rss/product/id/B987EC32470620A598056BB76325AFC2 "~Compositio Mathematica "
 
+https://feeds.science.org/rss/science.xml "~science"
+
 https://sspai.com/feed "~少数派"
 https://plink.anyfeeder.com/gcores "~机核"
 https://www.douban.com/feed/review/book "~豆瓣书评"
+https://feedx.net/rss/shanghaishuping.xml
 https://3quarksdaily.com/feed
-https://plink.anyfeeder.com/weixin/qnwzwx
 http://solidot.org/index.rss
 https://rss.aishort.top/?type=guokr
 http://feed.appinn.com/
@@ -18,11 +20,11 @@ https://buttondown.com/thepudding/rss
 https://itsfoss.com/rss/
 
 https://aphilosopher.drmcl.com/feed/ "~A Philosopher's blog"
+https://philosophynow.org/rss "~philosophy now"
 https://iep.utm.edu/feed/
-https://www.askphilosophers.org/sex-feed.xml "~askphilosophers sex"
-https://www.askphilosophers.org/freedom-feed.xml  "~askphilosophers freedom"
-https://www.askphilosophers.org/existence-feed.xml  "~askphilosophers existence" 
-https://www.askphilosophers.org/suicide-feed.xml  "~askphilosophers suicide"
+https://daily-philosophy.com/index.xml
+https://maggieappleton.com/rss.xml
+https://www.marxists.org/chinese/feed.xml
 
 https://github.com/v1nh1shungry/nvim-weekly-cn/releases.atom "~nvim weekly cn"
 https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins"

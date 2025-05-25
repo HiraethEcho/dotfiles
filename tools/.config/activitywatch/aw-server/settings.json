@@ -7,7 +7,7 @@
     "theme": "dark",
     "newReleaseCheckData": {
         "isEnabled": true,
-        "nextCheckTime": "2025-05-24T13:39:43.157Z",
+        "nextCheckTime": "2025-05-25T13:57:25.910Z",
         "howOftenToCheck": 86400,
         "timesChecked": 0
     },
@@ -447,105 +447,117 @@
             }
         },
         {
+            "data": {},
+            "id": 35,
             "name": [
                 "config",
                 "LXSession"
             ],
             "rule": {
-                "type": "regex",
-                "regex": "LXSession"
-            },
-            "id": 35,
-            "data": {}
+                "regex": "LXSession",
+                "type": "regex"
+            }
         },
         {
+            "data": {},
+            "id": 36,
             "name": [
                 "QEMU"
             ],
             "rule": {
-                "type": "regex",
-                "regex": "QEMU"
-            },
-            "id": 36,
-            "data": {}
+                "regex": "QEMU",
+                "type": "regex"
+            }
+        },
+        {
+            "data": {},
+            "id": 37,
+            "name": [
+                "Web",
+                "\u864e\u7259"
+            ],
+            "rule": {
+                "regex": "\u864e\u7259",
+                "type": "regex"
+            }
         }
     ],
     "views": [
         {
+            "elements": [
+                {
+                    "size": 3,
+                    "type": "top_apps"
+                },
+                {
+                    "size": 3,
+                    "type": "top_titles"
+                },
+                {
+                    "size": 3,
+                    "type": "timeline_barchart"
+                },
+                {
+                    "size": 3,
+                    "type": "top_categories"
+                },
+                {
+                    "size": 3,
+                    "type": "category_tree"
+                },
+                {
+                    "size": 3,
+                    "type": "category_sunburst"
+                }
+            ],
             "id": "summary",
-            "name": "Summary",
-            "elements": [
-                {
-                    "type": "top_apps",
-                    "size": 3
-                },
-                {
-                    "type": "top_titles",
-                    "size": 3
-                },
-                {
-                    "type": "timeline_barchart",
-                    "size": 3
-                },
-                {
-                    "type": "top_categories",
-                    "size": 3
-                },
-                {
-                    "type": "category_tree",
-                    "size": 3
-                },
-                {
-                    "type": "category_sunburst",
-                    "size": 3
-                }
-            ]
+            "name": "Summary"
         },
         {
+            "elements": [
+                {
+                    "size": 3,
+                    "type": "top_apps"
+                },
+                {
+                    "size": 3,
+                    "type": "top_titles"
+                }
+            ],
             "id": "window",
-            "name": "Window",
-            "elements": [
-                {
-                    "type": "top_apps",
-                    "size": 3
-                },
-                {
-                    "type": "top_titles",
-                    "size": 3
-                }
-            ]
+            "name": "Window"
         },
         {
+            "elements": [
+                {
+                    "size": 3,
+                    "type": "top_domains"
+                },
+                {
+                    "size": 3,
+                    "type": "top_urls"
+                }
+            ],
             "id": "browser",
-            "name": "Browser",
-            "elements": [
-                {
-                    "type": "top_domains",
-                    "size": 3
-                },
-                {
-                    "type": "top_urls",
-                    "size": 3
-                }
-            ]
+            "name": "Browser"
         },
         {
-            "id": "editor",
-            "name": "Editor",
             "elements": [
                 {
-                    "type": "top_editor_files",
-                    "size": 3
+                    "size": 3,
+                    "type": "top_editor_files"
                 },
                 {
-                    "type": "top_editor_projects",
-                    "size": 3
+                    "size": 3,
+                    "type": "top_editor_projects"
                 },
                 {
-                    "type": "top_editor_languages",
-                    "size": 3
+                    "size": 3,
+                    "type": "top_editor_languages"
                 }
-            ]
+            ],
+            "id": "editor",
+            "name": "Editor"
         }
     ],
     "requestTimeout": 30,
