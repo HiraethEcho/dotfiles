@@ -72,7 +72,6 @@ iw 6.9-1
 iwd 3.8-1
 kitty 0.42.1-1
 lazygit 0.51.1-1
-leenfetch 0.2.1-1
 less 1:668-1
 lib32-mesa 1:25.1.1-1
 lib32-vulkan-radeon 1:25.1.1-1
@@ -127,7 +126,7 @@ prettierd 0.26.1-1
 python-pip 25.1.1-1
 python-pynvim 0.5.2-1
 python-wheel 0.45.1-1
-qemu-base 10.0.0-1
+qemu-base 10.0.0-5
 rclone 1.69.1-1
 refind 0.14.2-1
 ripgrep 14.1.1-1
