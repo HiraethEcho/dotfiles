@@ -109,6 +109,7 @@ pasystray 0.8.2-2
 pavucontrol 1:6.1-1
 pcmanfm-gtk3 1.4.0-1
 pdfbooklet 3.1.2-4
+picgo 2.3.1-1
 picom-ftlabs-git r2236_2024.02.17-2
 pipewire 1:1.4.2-1
 pipewire-alsa 1:1.4.2-1
@@ -120,7 +121,7 @@ python-pip 25.1.1-1
 python-pynvim 0.5.2-1
 python-wheel 0.45.1-1
 qemu-base 10.0.0-5
-rclone 1.69.1-1
+rclone 1.69.3-1
 refind 0.14.2-1
 ripgrep 14.1.1-1
 ripgrep-all 0.10.9-1
@@ -135,7 +136,7 @@ stow 2.4.1-1
 stylua 2.1.0-1
 sudo 1.9.16.p2-2
 sx 3.0-1
-tdf-git 20250428.r81.5c7073b-1
+tdf-git 20250526.r83.2f4e2a5-1
 tealdeer 1.7.2-1
 tex-fmt 0.5.4-1
 texlab 5.22.1-1
