@@ -226,7 +226,7 @@ confirm-exit no
 #
 # Default value: yes
 #
-confirm-mark-all-feeds-read no
+# confirm-mark-all-feeds-read no
 
 ####  confirm-mark-feed-read
 #
@@ -237,7 +237,7 @@ confirm-mark-all-feeds-read no
 #
 # Default value: yes
 #
-confirm-mark-feed-read no
+# confirm-mark-feed-read no
 
 ####  cookie-cache
 #
