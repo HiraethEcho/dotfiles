@@ -58,7 +58,7 @@ grub-btrfs 4.13-2
 gvfs 1.57.2-3
 gvfs-dnssd 1.57.2-3
 gvim 9.1.1376-1
-harper 0.38.0-1
+harper 0.39.0-1
 hugo 0.147.5-1
 imagemagick 7.1.1.47-2
 impala 0.2.4-1
@@ -136,7 +136,7 @@ stow 2.4.1-1
 stylua 2.1.0-1
 sudo 1.9.16.p2-2
 sx 3.0-1
-tdf-git 20250526.r83.2f4e2a5-1
+tdf-git 20250528.r84.e16163e-1
 tealdeer 1.7.2-1
 tex-fmt 0.5.4-1
 texlab 5.22.1-1
