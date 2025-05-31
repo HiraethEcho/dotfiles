@@ -7,14 +7,14 @@
     "theme": "dark",
     "newReleaseCheckData": {
         "isEnabled": true,
-        "nextCheckTime": "2025-05-25T13:57:25.910Z",
+        "nextCheckTime": "2025-05-31T09:07:16.885Z",
         "howOftenToCheck": 86400,
         "timesChecked": 0
     },
     "userSatisfactionPollData": {
         "isEnabled": true,
-        "nextPollTime": "2025-05-28T12:00:32.988Z",
-        "timesPollIsShown": 1
+        "nextPollTime": "2025-06-06T09:07:15.915Z",
+        "timesPollIsShown": 2
     },
     "classes": [
         {
@@ -156,7 +156,7 @@
                 "rss"
             ],
             "rule": {
-                "regex": "rss|newsboat",
+                "regex": "rss|newsboat|RSS",
                 "type": "regex"
             }
         },
@@ -430,7 +430,7 @@
                 "Settings"
             ],
             "rule": {
-                "regex": "Settings",
+                "regex": "Settings|pulsemixer",
                 "type": "regex"
             }
         },
@@ -480,6 +480,41 @@
                 "regex": "\u864e\u7259",
                 "type": "regex"
             }
+        },
+        {
+            "name": [
+                "misc",
+                "PicGo"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "PicGo|\\.picgo"
+            },
+            "id": 38,
+            "data": {}
+        },
+        {
+            "name": [
+                "Code"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "Code"
+            },
+            "id": 39,
+            "data": {}
+        },
+        {
+            "name": [
+                "misc",
+                "cache"
+            ],
+            "rule": {
+                "type": "regex",
+                "regex": "cache"
+            },
+            "id": 40,
+            "data": {}
         }
     ],
     "views": [

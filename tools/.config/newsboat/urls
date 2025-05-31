@@ -23,6 +23,9 @@ https://philosophynow.org/rss "~philosophy now"
 https://iep.utm.edu/feed/
 https://daily-philosophy.com/index.xml
 https://maggieappleton.com/rss.xml
+https://papers.cool/arxiv/cs.CL/feed "~cool cs.CL"
+https://papers.cool/arxiv/cs.AI/feed
+https://papers.cool/arxiv/cs.LG/feed
 
 https://github.com/v1nh1shungry/nvim-weekly-cn/releases.atom "~nvim weekly cn"
 https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins"

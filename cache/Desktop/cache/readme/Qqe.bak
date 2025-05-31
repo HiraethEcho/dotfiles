@@ -14,7 +14,6 @@ base
 base-devel
 bash-language-server
 bat
-bazi-cli
 bc
 blueman
 bluetui
@@ -27,7 +26,6 @@ btop
 btrfs-assistant
 btrfs-progs
 clang
-cmake
 cups
 dhcpcd
 diskonaut
