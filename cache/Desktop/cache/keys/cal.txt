@@ -1,0 +1,9 @@
+icloud
+pGUID
+12595A95-FFF4-4286-AF75-BD8167DADFF0
+guid
+be176353-6983-4359-bac0-5bb5b2aa950a
+GET
+	https://p235-calendarws.icloud.com.cn/ca/alarmtriggers/?startDate=2025-06-02&endDate=2025-06-03&lang=zh-cn&usertz=Asia/Shanghai&clientBuildNumber=2518Project43&clientMasteringNumber=2518B22&clientId=a55f23b8-74e5-4c39-97f1-e0fc8ce35a21&dsid=17351757553
+
+webcal://p235-caldav.icloud.com.cn/published/2/MTczNTE3NTc1NTMxNzM1MVZvIg3ianJVW08dfAkQv30LzPnkkBJkN0CVDhxcUsjrH7UcPLQa0JUIj0p0wCOoiDqmv-umvmqNsqwV_8qA9Lk

@@ -52,5 +52,5 @@ export FZF_COMPLETION_OPTS='--border --info=inline'
 # export FZF_COMPLETION_TRIGGER='~~'
 
 # export LFS=/mnt/lfs
-export DEBIAN_IP="2408:8207:1963:c5d0:336f:8d38:d21a:7600"
-export WIN_IP="2408:8207:1963:c5d0:f13c:21b5:d2c8:62b7"
+export DEBIAN_IP="2408:8207:1960:a0a0:703:6d9d:72a2:c067"
+# export WIN_IP="2408:8207:1963:c5d0:f13c:21b5:d2c8:62b7"
