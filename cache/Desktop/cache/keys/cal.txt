@@ -4,6 +4,252 @@ pGUID
 guid
 be176353-6983-4359-bac0-5bb5b2aa950a
 GET
-	https://p235-calendarws.icloud.com.cn/ca/alarmtriggers/?startDate=2025-06-02&endDate=2025-06-03&lang=zh-cn&usertz=Asia/Shanghai&clientBuildNumber=2518Project43&clientMasteringNumber=2518B22&clientId=a55f23b8-74e5-4c39-97f1-e0fc8ce35a21&dsid=17351757553
+  https://p235-calendarws.icloud.com.cn/ca/alarmtriggers/?startDate=2025-06-02&endDate=2025-06-03&lang=zh-cn&usertz=Asia/Shanghai&clientBuildNumber=2518Project43&clientMasteringNumber=2518B22&clientId=a55f23b8-74e5-4c39-97f1-e0fc8ce35a21&dsid=17351757553
 
 webcal://p235-caldav.icloud.com.cn/published/2/MTczNTE3NTc1NTMxNzM1MVZvIg3ianJVW08dfAkQv30LzPnkkBJkN0CVDhxcUsjrH7UcPLQa0JUIj0p0wCOoiDqmv-umvmqNsqwV_8qA9Lk
+
+{
+  "Collection": [
+    {
+      "title": "旁听",
+      "guid": "00EFA14F-6CFA-496C-A068-393358D6D9AC",
+      "ctag": "HwoQEgwAACps0bZbqwAAAAEYAhgAIhUI2YKxgrr2qdUqEOe17a+0uJLovQEoAA==",
+      "order": 6,
+      "color": "#ffcc00",
+      "symbolicColor": "yellow",
+      "enabled": true,
+      "createdDate": [
+        20210109,
+        2021,
+        1,
+        9,
+        7,
+        56,
+        476
+      ],
+      "isFamily": false,
+      "lastModifiedDate": [
+        20250506,
+        2025,
+        5,
+        6,
+        12,
+        40,
+        760
+      ],
+      "shareTitle": "旁听",
+      "prePublishedUrl": "",
+      "supportedType": "Event",
+      "etag": "l33s1vgl",
+      "isDefault": false,
+      "objectType": "personal",
+      "readOnly": false,
+      "isPublished": false,
+      "isPrivatelyShared": false,
+      "extendedDetailsAreIncluded": false,
+      "shouldShowJunkUIWhenAppropriate": true,
+      "visible": false
+    },
+    {
+      "title": "生活",
+      "guid": "12595A95-FFF4-4286-AF75-BD8167DADFF0",
+      "ctag": "HwoQEgwAACyJeBsV8gAAAAAYAhgAIhYIzJjxt++S0dufARCNsa3ey6fuy4QBKAA=",
+      "order": 8,
+      "color": "#1badf8",
+      "symbolicColor": "blue",
+      "enabled": true,
+      "createdDate": [
+        20210120,
+        2021,
+        1,
+        20,
+        3,
+        34,
+        214
+      ],
+      "isFamily": false,
+      "lastModifiedDate": [
+        20250602,
+        2025,
+        6,
+        2,
+        10,
+        28,
+        628
+      ],
+      "shareTitle": "生活",
+      "publishedUrl": "webcal://p235-caldav.icloud.com.cn/published/2/MTczNTE3NTc1NTMxNzM1MVZvIg3ianJVW08dfAkQv30LzPnkkBJkN0CVDhxcUsjrH7UcPLQa0JUIj0p0wCOoiDqmv-umvmqNsqwV_8qA9Lk",
+      "prePublishedUrl": "",
+      "supportedType": "Event",
+      "etag": "l33s2crp",
+      "isDefault": false,
+      "objectType": "personal",
+      "shareType": "published",
+      "readOnly": false,
+      "isPublished": true,
+      "isPrivatelyShared": false,
+      "extendedDetailsAreIncluded": false,
+      "shouldShowJunkUIWhenAppropriate": true,
+      "visible": false
+    },
+    {
+      "title": "锻炼",
+      "guid": "54F2E8AA-EB9D-4A64-81C4-B80D526E4774",
+      "ctag": "HwoQEgwAACfPTawo5wABAAAYARgAIhYIz4Txn4/juZ7mARCSy47YmMiqwpoBKAA=",
+      "order": 9,
+      "color": "#ff9500",
+      "symbolicColor": "orange",
+      "enabled": false,
+      "createdDate": [
+        20210120,
+        2021,
+        1,
+        20,
+        3,
+        35,
+        215
+      ],
+      "isFamily": false,
+      "lastModifiedDate": [
+        20230623,
+        2023,
+        6,
+        23,
+        15,
+        2,
+        902
+      ],
+      "shareTitle": "锻炼",
+      "prePublishedUrl": "",
+      "supportedType": "Event",
+      "etag": "l33s4en4",
+      "isDefault": false,
+      "objectType": "personal",
+      "readOnly": false,
+      "isPublished": false,
+      "isPrivatelyShared": false,
+      "extendedDetailsAreIncluded": false,
+      "shouldShowJunkUIWhenAppropriate": true,
+      "visible": false
+    },
+    {
+      "title": "学习",
+      "guid": "B14FD3DE-F248-4A64-878F-B016C930A647",
+      "ctag": "HwoQEgwAADxM7RkLJAABAAAYARgAIhYI35XBydWHgPLrARDP+7mGmtOfwr4BKAA=",
+      "order": 7,
+      "color": "#63da38",
+      "symbolicColor": "green",
+      "enabled": true,
+      "createdDate": [
+        20210120,
+        2021,
+        1,
+        20,
+        3,
+        25,
+        205
+      ],
+      "isFamily": false,
+      "lastModifiedDate": [
+        20240309,
+        2024,
+        3,
+        9,
+        10,
+        52,
+        652
+      ],
+      "shareTitle": "学习",
+      "prePublishedUrl": "",
+      "supportedType": "Event",
+      "etag": "l33s66io",
+      "isDefault": false,
+      "objectType": "personal",
+      "readOnly": false,
+      "isPublished": false,
+      "isPrivatelyShared": false,
+      "extendedDetailsAreIncluded": false,
+      "shouldShowJunkUIWhenAppropriate": true,
+      "visible": false
+    },
+    {
+      "title": "打工！",
+      "guid": "E287D28F-1273-4AFC-A43F-70F00124BA75",
+      "ctag": "HwoQEgwAAAfNH+AVMAAAAAAYARgAIhUI4oS9vdmp95kyENmjrf+ti6ODgAEoAA==",
+      "order": 10,
+      "color": "#ff2968",
+      "symbolicColor": "red",
+      "enabled": true,
+      "createdDate": [
+        20211103,
+        2021,
+        11,
+        3,
+        13,
+        55,
+        835
+      ],
+      "isFamily": false,
+      "lastModifiedDate": [
+        20220513,
+        2022,
+        5,
+        13,
+        1,
+        55,
+        115
+      ],
+      "shareTitle": "打工！",
+      "prePublishedUrl": "",
+      "supportedType": "Event",
+      "etag": "l33sesbu",
+      "isDefault": false,
+      "objectType": "personal",
+      "readOnly": false,
+      "isPublished": false,
+      "isPrivatelyShared": false,
+      "extendedDetailsAreIncluded": false,
+      "shouldShowJunkUIWhenAppropriate": true,
+      "visible": false
+    },
+    {
+      "title": "课程",
+      "guid": "home",
+      "ctag": "HwoQEgwAACyHXvyGNQABAAAYAhgAIhUIvJ/90M74lPl/EK7smfj6o8bcvQEoAA==",
+      "color": "#cc73e1",
+      "symbolicColor": "purple",
+      "enabled": true,
+      "createdDate": [
+        20200712,
+        2020,
+        7,
+        12,
+        6,
+        20,
+        380
+      ],
+      "isFamily": false,
+      "lastModifiedDate": [
+        20250602,
+        2025,
+        6,
+        2,
+        7,
+        58,
+        478
+      ],
+      "shareTitle": "课程",
+      "prePublishedUrl": "",
+      "supportedType": "Event",
+      "etag": "l33sf2e0",
+      "isDefault": false,
+      "objectType": "personal",
+      "readOnly": false,
+      "isPublished": false,
+      "isPrivatelyShared": false,
+      "extendedDetailsAreIncluded": false,
+      "shouldShowJunkUIWhenAppropriate": true,
+      "visible": false
+    }
+  ]
+}

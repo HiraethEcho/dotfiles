@@ -1,12 +1,12 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "8945e54"
-hash = "771f18427fb75fb19990ce602bb322f4"
+rev = "63f9650"
+hash = "bf6f074cd41ee33c3360341d168f9733"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:max-preview"
 rev = "8945e54"
-hash = "15b2ff7f6563c14d5b2e93b3e9da35de"
+hash = "b25c2acb08d9ca5ff5cf71ea764fed8d"
 
 [[plugin.deps]]
 use = "GrzegorzKozub/mdcat"
