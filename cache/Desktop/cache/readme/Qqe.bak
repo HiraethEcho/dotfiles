@@ -6,6 +6,7 @@ aerc
 alsa-utils
 amd-ucode
 archlinuxcn-keyring
+atuin
 autossh
 aw-awatcher
 aw-watcher-media-player
@@ -24,6 +25,7 @@ bridge-utils
 brisk
 btop
 btrfs-assistant
+btrfs-heatmap
 btrfs-progs
 clang
 cups
@@ -43,6 +45,7 @@ fcitx5-pinyin-zhwiki
 fcitx5-qt
 fd
 feh
+flameshot
 foot
 fzf
 fzf-tab-git
@@ -51,6 +54,7 @@ github-cli
 gnome-keyring
 gowall
 gparted
+gping
 grub
 grub-btrfs
 gvfs
@@ -82,6 +86,7 @@ lxappearance-gtk3
 lxde-common
 lxpanel-gtk3
 lxsession-gtk3
+maim
 man-db
 marksman
 mate-polkit
@@ -101,6 +106,7 @@ openbox
 openssh
 os-prober
 otf-codenewroman-nerd
+pacfiles
 pacman-contrib
 pamixer
 paru
@@ -131,6 +137,7 @@ shimo
 sioyek
 snapper
 steam
+stew-bin
 stow
 stylua
 sudo
@@ -177,6 +184,7 @@ xdg-desktop-portal
 xdg-desktop-portal-gtk
 xdg-ninja-git
 xdg-user-dirs-gtk
+xdotool
 xf86-video-amdgpu
 xorg-server
 xorg-xev

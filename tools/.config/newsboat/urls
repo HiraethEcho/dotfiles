@@ -17,7 +17,6 @@ http://solidot.org/index.rss
 http://feed.appinn.com/
 https://buttondown.com/thepudding/rss
 https://itsfoss.com/rss/
-https://terminaltrove.com/blog.xml
 
 https://aphilosopher.drmcl.com/feed/ "~A Philosopher's blog"
 https://philosophynow.org/rss "~philosophy now"
@@ -32,6 +31,8 @@ https://github.com/v1nh1shungry/nvim-weekly-cn/releases.atom "~nvim weekly cn"
 https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins"
 https://dotfyle.com/this-week-in-neovim/rss.xml "~this week in neovim"
 https://www.obsidianstats.com/rss.xml "~obsidian stats"
+https://terminaltrove.com/blog.xml
+https://terminaltrove.com/totw.xml
 
 https://wiki.archlinux.org/index.php?title=Special:RecentChanges&feed=rss "~ArchWiki Changes"
 https://archlinux.org/feeds/news/ "~ArchWiki News"

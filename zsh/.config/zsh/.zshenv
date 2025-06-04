@@ -4,6 +4,7 @@
 # export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 # export PATH="$HOME/.local/share/npm/bin:$PATH"
 # export PATH="$HOME/.config/dwm/dwm_functions:$HOME/.local/bin:$PATH"  
+# export PATH="/home/hiraeth/.local/stewbin:$PATH"
 
 export EDITOR=nvim
 # export PAGER=sioyek

@@ -16,6 +16,9 @@ source <(fzf --zsh)
 # eval $(thefuck --alias f)
 eval "$(zoxide init zsh)"
 # eval "$(gh copilot alias -- zsh)"
+# Bind ctrl-r but not up arrow
+eval "$(atuin init zsh --disable-up-arrow)"
+# eval "$(atuin init zsh --disable-ctrl-r)"
 
 # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal
@@ -48,12 +51,12 @@ zle -N sudo-command-line
 bindkey "\e\e" sudo-command-line
 
 function r() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
 }
 
 # End of lines configured by zsh-newuser-install
@@ -65,4 +68,5 @@ autoload -Uz compinit
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION" 
 # End of lines added by compinstall
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
 precmd () {print -Pn "\e]0;%~\a"}

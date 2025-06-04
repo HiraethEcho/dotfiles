@@ -6,6 +6,7 @@ aerc 0.20.1-2
 alsa-utils 1.2.14-1
 amd-ucode 20250508.788aadc8-2
 archlinuxcn-keyring 20250531-1
+atuin 18.6.1-1
 autossh 1.4g-3
 aw-awatcher 0.3.1-1
 aw-watcher-media-player 1.1.1-1
@@ -18,16 +19,17 @@ bc 1.08.2-1
 blueman 2.4.4-1
 bluetui 0.6-1
 bluez-tools 0.2.0-6
-bluez-utils 5.82-1
-bongo-cat 0.4.0-1
+bluez-utils 5.83-1
+bongo-cat 0.5.0-1
 bridge-utils 1.7.1-2
 brisk 2.3.0-1
 btop 1.4.3-3
 btrfs-assistant 2.1.1-4
+btrfs-heatmap 9-4
 btrfs-progs 6.14-1
 clang 19.1.7-2
 cups 2:2.4.12-2
-dhcpcd 10.2.3-1
+dhcpcd 10.2.4-1
 diskonaut 0.11.0-3
 dnsmasq 2.91-1
 dua-cli 2.30.1-1
@@ -43,6 +45,7 @@ fcitx5-pinyin-zhwiki 1:0.2.5.20250526-1
 fcitx5-qt 5.1.9-5
 fd 10.2.0-1
 feh 3.10.3-1
+flameshot 12.1.0-6
 foot 1.22.3-1
 fzf 0.62.0-1
 fzf-tab-git r276.2abe1f2-1
@@ -51,6 +54,7 @@ github-cli 2.74.0-1
 gnome-keyring 1:48.0-1
 gowall 0.2.1-1
 gparted 1.7.0-1
+gping 1.18.0-2
 grub 2:2.12.r292.g73d1c959-1
 grub-btrfs 4.13-2
 gvfs 1.57.2-3
@@ -82,6 +86,7 @@ lxappearance-gtk3 0.6.4-1
 lxde-common 0.99.3-1
 lxpanel-gtk3 0.10.1-2
 lxsession-gtk3 1:0.5.6-1
+maim 5.8.0-3
 man-db 2.13.1-1
 marksman 20241218-1
 mate-polkit 1.28.1-2
@@ -101,6 +106,7 @@ openbox 3.6.1-12
 openssh 10.0p1-3
 os-prober 1.83-1
 otf-codenewroman-nerd 3.4.0-1
+pacfiles 0.2.7-2
 pacman-contrib 1.11.0-1
 pamixer 1.6-3
 paru 2.0.4-5
@@ -131,6 +137,7 @@ shimo 3.3.1-1
 sioyek 2.0.0-22
 snapper 0.12.2-4
 steam 1.0.0.82-2
+stew-bin 0.6.0-1
 stow 2.4.1-1
 stylua 2.1.0-1
 sudo 1.9.16.p2-2
@@ -177,6 +184,7 @@ xdg-desktop-portal 1.20.3-1
 xdg-desktop-portal-gtk 1.15.3-1
 xdg-ninja-git r534.8e8fc89-1
 xdg-user-dirs-gtk 0.14-1
+xdotool 3.20211022.1-2
 xf86-video-amdgpu 23.0.0-2
 xorg-server 21.1.16-1
 xorg-xev 1.2.6-1
@@ -189,7 +197,7 @@ xwayland-satellite 0.5.1-1
 yazi 25.5.31-1
 zathura 0.5.11-1
 zathura-djvu 0.2.10-4
-zathura-pdf-mupdf 0.4.4-16
+zathura-pdf-mupdf 0.4.4-17
 zip 3.0-11
 zotero 7.0.15-1
 zoxide 0.9.8-2

@@ -5,7 +5,31 @@ theme="~/.config/rofi/themes/winx.rasi"
 option_d="desktop         d"
 option_a="aera            a"
 option_w="window          w"
-option_i="interactive     i"
+option_f="flameshot       f"
+
+mesg="DIR: $(xdg-user-dir PICTURES)/Screenshots"
+time=$(date +%Y-%m-%d-%H-%M-%S)
+dir="$(xdg-user-dir PICTURES)/Screenshots"
+file="Screenshot_${time}.png"
+
+if [[ ! -d "$dir" ]]; then
+  mkdir -p "$dir"
+fi
+
+notify_view() {
+  notify_cmd_shot='dunstify -u low --replace=699'
+  ${notify_cmd_shot} "Copied to clipboard."
+  viewnior ${dir}/"$file"
+  if [[ -e "$dir/$file" ]]; then
+    ${notify_cmd_shot} "Screenshot Saved."
+  else
+    ${notify_cmd_shot} "Screenshot Deleted."
+  fi
+}
+
+copy_shot() {
+  tee "$file" | xclip -selection clipboard -t image/png
+}
 
 rofi_cmd() {
   rofi -theme-str "listview {columns: 1; lines: 4;}" \
@@ -13,28 +37,31 @@ rofi_cmd() {
     -kb-select-1 d \
     -kb-select-2 a \
     -kb-select-3 w \
-    -kb-select-4 i \
+    -kb-select-4 f \
     -markup-rows \
     -theme ${theme}
 }
 
 run_rofi() {
-  echo -e "$option_d\n$option_a\n$option_w\n$option_i" | rofi_cmd
+  echo -e "$option_d\n$option_a\n$option_w\n$option_f" | rofi_cmd
 }
 
-
 chosen="$(run_rofi)"
+
 case ${chosen} in
-    $option_d)
-      mate-screenshot
-        ;;
-    $option_r)
-      mate-screenshot -a
-        ;;
-    $option_w)
-      mate-screenshot -w
-        ;;
-    $option_i)
-      mate-screenshot -i
-        ;;
+$option_d)
+  cd ${dir} && sleep 0.5 && maim -u -f png | copy_shot
+  notify_view
+  ;;
+$option_a)
+  cd ${dir} && maim -u -f png -s -b 2 -c 0.35,0.55,0.85,0.25 | copy_shot
+  notify_view
+  ;;
+$option_w)
+  cd ${dir} && maim -u -f png -i `xdotool selectwindow` | copy_shot
+  notify_view
+  ;;
+$option_f)
+  flameshot gui
+  ;;
 esac

@@ -60,6 +60,7 @@
 
 # "rofi_screenshot"
 "rofi_screen"
+# "flameshot gui"
   Shift + Mod4 + s
 
 # " rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}' "
