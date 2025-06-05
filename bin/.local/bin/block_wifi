@@ -9,7 +9,7 @@ case $BLOCK_BUTTON in
   # 2) setsid -f st -e nmtui; pkill -RTMIN+1 dwmblocks ;;
 	# 2) nohup nm-connection-editor > /dev/null & ;;
   2) wihotspot ;;
-	3) nohup st -t wifi -e impala > /dev/null & ;;
+	3) nohup st -c tasks -t wifi -e impala > /dev/null & ;;
   6) nohup st -e nvim  "$0" > /dev/null & ;;
 esac
 

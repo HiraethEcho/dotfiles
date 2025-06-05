@@ -7,7 +7,7 @@
     "theme": "dark",
     "newReleaseCheckData": {
         "isEnabled": true,
-        "nextCheckTime": "2025-05-31T09:07:16.885Z",
+        "nextCheckTime": "2025-06-06T11:21:31.273Z",
         "howOftenToCheck": 86400,
         "timesChecked": 0
     },
@@ -430,7 +430,7 @@
                 "Settings"
             ],
             "rule": {
-                "regex": "Settings|pulsemixer",
+                "regex": "Settings|pulsemixer|etc|Configuration",
                 "type": "regex"
             }
         },
@@ -482,39 +482,39 @@
             }
         },
         {
+            "data": {},
+            "id": 38,
             "name": [
                 "misc",
                 "PicGo"
             ],
             "rule": {
-                "type": "regex",
-                "regex": "PicGo|\\.picgo"
-            },
-            "id": 38,
-            "data": {}
+                "regex": "PicGo|\\.picgo",
+                "type": "regex"
+            }
         },
         {
+            "data": {},
+            "id": 39,
             "name": [
                 "Code"
             ],
             "rule": {
-                "type": "regex",
-                "regex": "Code"
-            },
-            "id": 39,
-            "data": {}
+                "regex": "Code",
+                "type": "regex"
+            }
         },
         {
+            "data": {},
+            "id": 40,
             "name": [
                 "misc",
                 "cache"
             ],
             "rule": {
-                "type": "regex",
-                "regex": "cache"
-            },
-            "id": 40,
-            "data": {}
+                "regex": "cache",
+                "type": "regex"
+            }
         }
     ],
     "views": [

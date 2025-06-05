@@ -61,6 +61,7 @@ gvfs
 gvfs-dnssd
 gvim
 harper
+httrack
 hugo
 imagemagick
 impala
@@ -174,8 +175,10 @@ waybar
 websocat
 wechat-universal-bwrap
 wemeet-bin
+weread-pake
 wev
 wget
+whois
 wireplumber
 xbindkeys
 xcape
@@ -186,6 +189,7 @@ xdg-ninja-git
 xdg-user-dirs-gtk
 xdotool
 xf86-video-amdgpu
+xiaohongshu-pake
 xorg-server
 xorg-xev
 xorg-xeyes

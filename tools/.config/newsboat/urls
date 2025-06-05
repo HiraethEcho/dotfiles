@@ -7,6 +7,9 @@ https://www.ams.org/rss/jams.rss "~jams"
 https://www.cambridge.org/core/rss/product/id/B987EC32470620A598056BB76325AFC2 "~Compositio Mathematica "
 
 https://feeds.science.org/rss/science.xml "~science"
+https://papers.cool/arxiv/cs.CL/feed
+https://papers.cool/arxiv/cs.AI/feed
+https://papers.cool/arxiv/cs.LG/feed
 
 https://sspai.com/feed "~少数派"
 https://plink.anyfeeder.com/gcores "~机核"
@@ -14,18 +17,13 @@ https://www.douban.com/feed/review/book "~豆瓣书评"
 https://blog.xiaket.org/feed.xml
 https://3quarksdaily.com/feed
 http://solidot.org/index.rss
-http://feed.appinn.com/
 https://buttondown.com/thepudding/rss
-https://itsfoss.com/rss/
 
 https://aphilosopher.drmcl.com/feed/ "~A Philosopher's blog"
 https://philosophynow.org/rss "~philosophy now"
 https://iep.utm.edu/feed/
 https://daily-philosophy.com/index.xml
 https://maggieappleton.com/rss.xml
-https://papers.cool/arxiv/cs.CL/feed
-https://papers.cool/arxiv/cs.AI/feed
-https://papers.cool/arxiv/cs.LG/feed
 
 https://github.com/v1nh1shungry/nvim-weekly-cn/releases.atom "~nvim weekly cn"
 https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins"
@@ -33,9 +31,13 @@ https://dotfyle.com/this-week-in-neovim/rss.xml "~this week in neovim"
 https://www.obsidianstats.com/rss.xml "~obsidian stats"
 https://terminaltrove.com/blog.xml
 https://terminaltrove.com/totw.xml
+http://feed.appinn.com/
+https://litiaotiao.cn/index.xml
 
+https://itsfoss.com/rss/
 https://wiki.archlinux.org/index.php?title=Special:RecentChanges&feed=rss "~ArchWiki Changes"
-https://archlinux.org/feeds/news/ "~ArchWiki News"
+https://www.archlinux.org/feeds/news/ "~Arch News"
+https://www.archlinuxcn.org/feed/ "~ArchCN News"
 https://archlinux.org/feeds/packages/x86_64/ "~Arch repo"
 https://aur.archlinux.org/rss "~AUR"
 https://blog.lilydjwg.me/posts.rss
