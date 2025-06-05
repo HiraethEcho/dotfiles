@@ -154,21 +154,27 @@ function git_push_all() {
   TOTAL_LOG=$TOTAL_LOG"$LOG"
   for i in "${GIT_REPO[@]}"; do
     cd $i
-    LOG="${YELLOW}正在处理 Git 仓库: $i${NC}..."
+    LOG="${YELLOW}正在处理 Git 仓库: $i${NC}"
     echo -e $LOG
     TOTAL_LOG=$TOTAL_LOG"$LOG"
-    git add .
-    git commit -m "night backup"
-    if git push; then
-      LOG="${GREEN}✓ 推送成功${NC}"
-      echo -e $LOG
-      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-      notify-send -u normal "Push" "$i"
+    if [[ -n "$(git status --porcelain)" ]]; then
+      git add .
+      git commit -m "night backup"
+      if git push; then
+        LOG="${GREEN}✓ 推送成功${NC}"
+        echo -e $LOG
+        TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+        notify-send -u normal "Push" "$i"
+      else
+        LOG="${RED}✓ 推送失败${NC}"
+        echo -e $LOG
+        TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+        notify-send -u normal "Push failed" "$i"
+      fi
     else
-      LOG="${RED}✓ 推送失败${NC}"
+      LOG="${GREEN}No Change $i${NC}"
       echo -e $LOG
-      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-      notify-send -u normal "Push failed" "$i"
+      TOTAL_LOG=$TOTAL_LOG"$LOG"
     fi
   done
 }
