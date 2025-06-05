@@ -38,8 +38,8 @@ NC='\033[0m' # No Color
 
 function total_log() {
   echo "----"
-  echo -e "{$YELLOW}LOG:{$NC}"
-  echo $TOTAL_LOG
+  echo -e "${YELLOW}LOG:${NC}"
+  echo -e "$TOTAL_LOG"
   notify-send "LOG" "$TOTAL_LOG"
   echo "----"
 }
@@ -246,12 +246,12 @@ function rclone_push_all() {
     echo -e $LOG
     TOTAL_LOG=$TOTAL_LOG"$LOG"
     if rclone sync $local $remote $RCLONE_INTERACTIVE --suffix-keep-extension --track-renames --no-update-dir-modtime --no-update-modtime --filter-from "$HOME/.config/rclone/filter-list.txt" --transfers 20 -L; then
-      LOG="${GREEN}✓ 同步成功${NC}"
+      LOG="${GREEN}✓ 成功${NC}"
       echo -e $LOG
       TOTAL_LOG=$TOTAL_LOG"$LOG\n"
       notify-send 'rclone' "push $local to $remote"
     else
-      LOG="${RED}✗ 同步失败${NC}"
+      LOG="${RED}✗ 失败${NC}"
       echo -e $LOG
       TOTAL_LOG=$TOTAL_LOG"$LOG\n"
       notify-send -u critical 'rclone' "push from $local to $remote failed"
@@ -268,7 +268,7 @@ function night_reboot() {
     # echo $choice
     ;;
   *)
-    echo "操作已取消"
+    echo -e "操作已取消"
     ;;
   esac
 }
