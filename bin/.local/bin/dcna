@@ -26,7 +26,6 @@ RCLONE_INTERACTIVE="-i"
 
 #tmp
 BEGIN_PWD=$pwd
-STASHED_REPO=""
 TOTAL_LOG=""
 LOG=""
 CONFICT_DIRS="$HOME/conficts"
@@ -88,6 +87,9 @@ function check_sudo() {
 }
 
 function git_pull_all() {
+  LOG="${YELLOW}Git Pull All${NC}\n"
+  echo -e $LOG
+  TOTAL_LOG=$TOTAL_LOG"$LOG"
   for i in "${GIT_REPO[@]}"; do
     cd $i
     LOG="${YELLOW}处理 Git 仓库: $i${NC}..."
@@ -95,12 +97,18 @@ function git_pull_all() {
     TOTAL_LOG=$TOTAL_LOG"$LOG"
     git add .
     if [[ -n "$(git status --porcelain)" ]]; then
-      git stash
-      STASHED_REPO=$STASHED_REPO"$i"
-      LOG= "${RED}STASHED $i${NC}"
-      echo -e $LOG
-      notify-send -u critical "Stashed Repo" "$i"
-      TOTAL_LOG=$TOTAL_LOG"$LOG"
+      echo -e "${YELLOW}Try stash${NC}"
+      if git stash; then
+        LOG="${RED}STASHED $i ${NC}"
+        echo -e "$LOG"
+        notify-send -u critical "Stashed Repo" "$i"
+      else
+        LOG="${RED}✓ 失败${NC}"
+        echo -e $LOG
+        TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+        notify-send -u critical "stashed failed" "$i"
+      fi
+      echo -e "${YELLOW}Try pull${NC}"
       if git pull; then
         LOG="${GREEN}✓ 拉取成功${NC}\n"
         echo -e $LOG
@@ -112,6 +120,7 @@ function git_pull_all() {
         TOTAL_LOG=$TOTAL_LOG"$LOG\n"
         notify-send -u critical "Pull failed" "$i"
       fi
+      echo -e "${YELLOW}Try pop${NC}"
       if git stash pop; then
         LOG="${GREEN}✓ pop成功${NC}\n"
         echo -e $LOG
@@ -140,6 +149,9 @@ function git_pull_all() {
 }
 
 function git_push_all() {
+  LOG="${YELLOW}Git Push All${NC}\n"
+  echo -e $LOG
+  TOTAL_LOG=$TOTAL_LOG"$LOG"
   for i in "${GIT_REPO[@]}"; do
     cd $i
     LOG="${YELLOW}正在处理 Git 仓库: $i${NC}..."
@@ -214,6 +226,10 @@ function system_bak() {
 }
 
 function rclone_pull_all() {
+
+  LOG="${YELLOW}Rclone Pull All${NC}\n"
+  echo -e $LOG
+  TOTAL_LOG=$TOTAL_LOG"$LOG"
   for pair in "${RCLONE_PAIR[@]}"; do
     IFS=";" read -r local remote <<<"$pair"
     LOG="${YELLOW}拉取: $remote → $local${NC}..."
@@ -240,6 +256,9 @@ function rclone_pull_all() {
 }
 
 function rclone_push_all() {
+  LOG="${YELLOW}Rclone Push All${NC}\n"
+  echo -e $LOG
+  TOTAL_LOG=$TOTAL_LOG"$LOG"
   for pair in "${RCLONE_PAIR[@]}"; do
     IFS=";" read -r local remote <<<"$pair"
     LOG="${YELLOW}推送: $local → $remote${NC}"
