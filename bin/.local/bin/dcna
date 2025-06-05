@@ -1,0 +1,341 @@
+#!/bin/bash
+# daily sync, pull or push
+# set -x
+# set -u
+
+# config
+GIT_REPO=(
+  "$HOME/Documents/projects"
+  "$HOME/obsidian"
+  "$HOME/.config/nvim"
+  "$HOME/dotfiles"
+)
+
+RCLONE_PAIR=(
+  "$HOME/Documents/doc/;koofr:/kDocuments/doc/"
+  "$HOME/Documents/ucas/;koofr:/kDocuments/ucas/"
+  "$HOME/Documents/zotero_files/;koofr:/kDocuments/zotero_files/"
+  "$HOME/Documents/talks/;koofr:/kDocuments/talks/"
+  "$HOME/Documents/projects/;koofr:/kDocuments/projects/"
+  "$HOME/Documents/lectures/;koofr:/kDocuments/lectures/"
+  "$HOME/Documents/philosophy/;koofr:/kDocuments/philosophy/"
+  "$HOME/obsidian/;koofr:/obsidian/"
+)
+
+RCLONE_INTERACTIVE="-i"
+
+#tmp
+BEGIN_PWD=$pwd
+STASHED_REPO=""
+TOTAL_LOG=""
+LOG=""
+CONFICT_DIRS="$HOME/conficts"
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m' # No Color
+
+function total_log() {
+  echo "----"
+  echo -e "{$YELLOW}LOG:{$NC}"
+  echo $TOTAL_LOG
+  notify-send "LOG" "$TOTAL_LOG"
+  echo "----"
+}
+
+function show_help() {
+  echo -e "${GREEN}使用方法:${NC}"
+  echo "  dcna [命令]"
+  echo ""
+  echo -e "${GREEN}可用命令:${NC}"
+  # echo "  gp     拉取所有Git仓库（自动处理未提交内容）并同步Rclone"
+  # echo "  gP     推送所有Git仓库（自动处理未提交内容）并同步Rclone"
+  # echo "  track    启动ActivityWatch"
+  echo "  bak   更新系统并备份（需要sudo）"
+  echo "  config   显示当前配置"
+  echo "  help     显示帮助信息"
+  echo ""
+  echo -e "${YELLOW}注意: 所有路径已在脚本内配置，无需手动输入。${NC}"
+  echo -e "${YELLOW}      AUTO_STASH=$AUTO_STASH (是否自动stash未提交更改)${NC}"
+}
+
+# 显示当前配置
+function show_config() {
+  echo -e "${YELLOW}当前配置:${NC}"
+  echo ""
+  echo -e "${GREEN}Git 仓库:${NC}"
+  for repo in "${GIT_REPO[@]}"; do
+    echo "  - $repo"
+  done
+
+  echo ""
+  echo -e "${GREEN}Rclone 同步任务:${NC}"
+  for pair in "${RCLONE_SYNC[@]}"; do
+    echo "  - $pair"
+  done
+
+  echo ""
+  echo -e "${GREEN}其他选项:${NC}"
+  echo "  - AUTO_STASH: $AUTO_STASH"
+}
+
+function check_sudo() {
+  if ! sudo -v &>/dev/null; then
+    echo -e "${RED}错误: 需要sudo权限${NC}"
+    return 1
+  fi
+}
+
+function git_pull_all() {
+  for i in "${GIT_REPO[@]}"; do
+    cd $i
+    LOG="${YELLOW}处理 Git 仓库: $i${NC}..."
+    echo -e $LOG
+    TOTAL_LOG=$TOTAL_LOG"$LOG"
+    git add .
+    if [[ -n "$(git status --porcelain)" ]]; then
+      git stash
+      STASHED_REPO=$STASHED_REPO"$i"
+      LOG= "${RED}STASHED $i${NC}"
+      echo -e $LOG
+      notify-send -u critical "Stashed Repo" "$i"
+      TOTAL_LOG=$TOTAL_LOG"$LOG"
+      if git pull; then
+        LOG="${GREEN}✓ 拉取成功${NC}\n"
+        echo -e $LOG
+        TOTAL_LOG=$TOTAL_LOG"$LOG"
+        notify-send -u normal "Pull" "$i"
+      else
+        LOG="${RED}✓ 拉取失败${NC}"
+        echo -e $LOG
+        TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+        notify-send -u critical "Pull failed" "$i"
+      fi
+      if git stash pop; then
+        LOG="${GREEN}✓ pop成功${NC}\n"
+        echo -e $LOG
+        TOTAL_LOG=$TOTAL_LOG"$LOG"
+        notify-send -u normal "Stash pop" "$i"
+      else
+        LOG="${RED}✓ pop失败${NC}"
+        echo -e $LOG
+        TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+        notify-send -u critical "Pop failed" "$i"
+      fi
+    else
+      if git pull; then
+        LOG="${GREEN}✓ 拉取成功${NC}\n"
+        echo -e $LOG
+        TOTAL_LOG=$TOTAL_LOG"$LOG"
+        notify-send -u normal "Pull" "$i"
+      else
+        LOG="${RED}✓ 拉取失败${NC}"
+        echo -e $LOG
+        TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+        notify-send -u critical "Pull failed" "$i"
+      fi
+    fi
+  done
+}
+
+function git_push_all() {
+  for i in "${GIT_REPO[@]}"; do
+    cd $i
+    LOG="${YELLOW}正在处理 Git 仓库: $i${NC}..."
+    echo -e $LOG
+    TOTAL_LOG=$TOTAL_LOG"$LOG"
+    git add .
+    git commit -m "night backup"
+    if git push; then
+      LOG="${GREEN}✓ 推送成功${NC}"
+      echo -e $LOG
+      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+      notify-send -u normal "Push" "$i"
+    else
+      LOG="${RED}✓ 推送失败${NC}"
+      echo -e $LOG
+      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+      notify-send -u normal "Push failed" "$i"
+    fi
+  done
+}
+
+function system_bak() {
+  LOG="${YELLOW}运行系统更新...${NC}"
+  echo -e $LOG
+  TOTAL_LOG=$TOTAL_LOG"$LOG..."
+  if paru -Syyu --noconfirm; then
+    LOG="${GREEN}✓ 更新成功${NC}"
+    echo -e $LOG
+    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+  else
+    LOG="${RED}✗ 更新失败${NC}"
+    echo -e $LOG
+    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+  fi
+  LOG="${YELLOW}创建系统备份...${NC}"
+  echo -e $LOG
+  TOTAL_LOG=$TOTAL_LOG"$LOG"
+  if sudo timeshift --check; then
+    LOG="${GREEN}✓ 备份成功${NC}"
+    echo -e $LOG
+    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+  else
+    LOG="${RED}✗ 备份失败${NC}"
+    echo -e $LOG
+    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+  fi
+  LOG="${YELLOW}更新GRUB配置...${NC}"
+  echo -e $LOG
+  TOTAL_LOG=$TOTAL_LOG"$LOG"
+  if sudo grub-mkconfig -o /boot/grub/grub.cfg; then
+    LOG="${GREEN}✓ 成功${NC}"
+    echo -e $LOG
+    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+  else
+    LOG="${RED}✗ 失败${NC}"
+    echo -e $LOG
+    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+  fi
+  LOG="${YELLOW}备份package list...${NC}"
+  echo -e $LOG
+  TOTAL_LOG=$TOTAL_LOG"$LOG"
+  if pacman -Qqe >$HOME"/dotfiles/cache/Desktop/cache/readme/Qqe.bak" &&
+    pacman -Qe >"$HOME/dotfiles/cache/Desktop/cache/readme/Qe.bak"; then
+    LOG="${GREEN}✓ 成功${NC}"
+    echo -e $LOG
+    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+  else
+    LOG="${RED}✗ 失败${NC}"
+    echo -e $LOG
+    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+  fi
+}
+
+function rclone_pull_all() {
+  for pair in "${RCLONE_PAIR[@]}"; do
+    IFS=";" read -r local remote <<<"$pair"
+    LOG="${YELLOW}拉取: $remote → $local${NC}..."
+    echo -e $LOG
+    TOTAL_LOG=$TOTAL_LOG"$LOG"
+    if rclone sync "$remote" "$local" $RCLONE_INTERACTIVE --backup-dir $CONFICT_DIRS --suffix '_local' --track-renames --filter-from "$HOME/.config/rclone/filter-list.txt" --no-update-dir-modtime --no-update-modtime --transfers 20 -L; then
+      LOG="${GREEN}✓ 成功${NC}"
+      echo -e $LOG
+      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+      notify-send 'rclone' "pull from $remote to $local"
+    else
+      LOG="${RED}✗ 失败${NC}"
+      echo -e $LOG
+      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+      notify-send -u critical 'rclone' "pull from $remote to $local failed"
+    fi
+    if [ -d $"CONFICT_DIRS" ]; then
+      LOG="${RED}Rclone Has conficts ${NC}"
+      echo -e $LOG
+      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+      notify-send -u critical 'rclone' "Conficts"
+    fi
+  done
+}
+
+function rclone_push_all() {
+  for pair in "${RCLONE_PAIR[@]}"; do
+    IFS=";" read -r local remote <<<"$pair"
+    LOG="${YELLOW}推送: $local → $remote${NC}"
+    echo -e $LOG
+    TOTAL_LOG=$TOTAL_LOG"$LOG"
+    if rclone sync $local $remote $RCLONE_INTERACTIVE --suffix-keep-extension --track-renames --no-update-dir-modtime --no-update-modtime --filter-from "$HOME/.config/rclone/filter-list.txt" --transfers 20 -L; then
+      LOG="${GREEN}✓ 同步成功${NC}"
+      echo -e $LOG
+      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+      notify-send 'rclone' "push $local to $remote"
+    else
+      LOG="${RED}✗ 同步失败${NC}"
+      echo -e $LOG
+      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+      notify-send -u critical 'rclone' "push from $local to $remote failed"
+    fi
+  done
+}
+
+function night_reboot() {
+  printf "reboot? (y/N) "
+  read choice
+  case "$choice" in
+  y)
+    sudo reboot
+    # echo $choice
+    ;;
+  *)
+    echo "操作已取消"
+    ;;
+  esac
+}
+
+function day() {
+  RCLONE_INTERACTIVE="-i"
+  rclone_pull_all
+  git_pull_all
+  total_log
+}
+
+function night() {
+  RCLONE_INTERACTIVE=""
+  rclone_push_all
+  system_bak
+  git_push_all
+  total_log
+  night_reboot
+}
+
+case "$1" in
+d | day | c | coffee)
+  day
+  ;;
+n | night | a | alcohol)
+  night
+  ;;
+rp)
+  rclone_pull_all
+  ;;
+rP)
+  rclone_push_all
+  ;;
+gp)
+  git_pull_all
+  ;;
+re)
+  night_reboot
+  ;;
+gP)
+  git_push_all
+  ;;
+track)
+  start_tracking
+  ;;
+bak)
+  system_bak
+  ;;
+config)
+  show_config
+  ;;
+help | --help | -h)
+  show_help
+  ;;
+*)
+  if [ -z "$1" ]; then
+    show_help
+  else
+    echo -e "${RED}错误: 未知命令 '$1'${NC}"
+    show_help
+    exit 1
+  fi
+  ;;
+esac
+
+if [ -d "$CONFICT_DIRS" ]; then
+  cd $CONFICT_DIRS
+else
+  cd $BEGIN_PWD
+fi
