@@ -182,16 +182,14 @@ function git_push_all() {
 function system_bak() {
 
   local INTERACTIVE="--noconfirm"
-  while getopts ":i:" opt; do
+  while getopts ":i" opt; do
     case $opt in
     i) INTERACTIVE="" ;;
     \?)
       echo "无效选项: -$OPTARG" >&2
-      exit 1
       ;;
     esac
   done
-
 
   LOG="${YELLOW}运行系统更新...${NC}"
   echo -e $LOG
@@ -246,12 +244,11 @@ function system_bak() {
 
 function rclone_pull_all() {
   local INTERACTIVE=""
-  while getopts ":i:" opt; do
+  while getopts ":i" opt; do
     case $opt in
     i) INTERACTIVE="-i" ;;
     \?)
       echo "无效选项: -$OPTARG" >&2
-      exit 1
       ;;
     esac
   done
@@ -291,13 +288,9 @@ function rclone_pull_all() {
 
 function rclone_push_all() {
   local INTERACTIVE=""
-  while getopts ":ir:" opt; do
+  while getopts ":i" opt; do
     case $opt in
     i) INTERACTIVE="-i" ;;
-    \?)
-      echo "无效选项: -$OPTARG" >&2
-      # exit 1
-      ;;
     esac
   done
   LOG="${YELLOW}Rclone Push All${NC}\n"
@@ -324,16 +317,12 @@ function rclone_push_all() {
 
 function night_reboot() {
   local POWER=""
-  while getopts ":rulsni:" opt; do
+  while getopts ":rusln" opt; do
     case $opt in
     r) POWER="r" ;;
     u) POWER="u" ;;
     s) POWER="s" ;;
     l) POWER="l" ;;
-    \?)
-      echo "无效选项: -$OPTARG" >&2
-      # exit 1
-      ;;
     esac
   done
 
@@ -341,26 +330,26 @@ function night_reboot() {
     echo -e "${YELLOW}[r]boot/sh[u]tdown/[l]ock/[s]leep/[n]othing ?${NC}"
     read POWER
   fi
-    case "$POWER" in
-    r)
-      systemctl reboot
-      ;;
-    u)
-      systemctl poweroff -i
-      ;;
-    l)
-      slock &
-      sleep .5
-      xset dpms force off
-      ;;
-    s)
-      sleep .5
-      xset dpms force off
-      ;;
-    n | *)
-      echo -e "操作已取消"
-      ;;
-    esac
+  case "$POWER" in
+  r)
+    systemctl reboot
+    ;;
+  u)
+    systemctl poweroff -i
+    ;;
+  l)
+    slock &
+    sleep .5
+    xset dpms force off
+    ;;
+  s)
+    sleep .5
+    xset dpms force off
+    ;;
+  n | *)
+    echo -e "操作已取消"
+    ;;
+  esac
 }
 
 function day() {
