@@ -180,10 +180,23 @@ function git_push_all() {
 }
 
 function system_bak() {
+
+  local INTERACTIVE="--noconfirm"
+  while getopts ":i:" opt; do
+    case $opt in
+    i) INTERACTIVE="" ;;
+    \?)
+      echo "无效选项: -$OPTARG" >&2
+      exit 1
+      ;;
+    esac
+  done
+
+
   LOG="${YELLOW}运行系统更新...${NC}"
   echo -e $LOG
   TOTAL_LOG=$TOTAL_LOG"$LOG..."
-  if paru -Syyu --noconfirm; then
+  if paru -Syyu ${INTERACTIVE}; then
     LOG="${GREEN}✓ 更新成功${NC}"
     echo -e $LOG
     TOTAL_LOG=$TOTAL_LOG"$LOG\n"
@@ -232,6 +245,16 @@ function system_bak() {
 }
 
 function rclone_pull_all() {
+  local INTERACTIVE=""
+  while getopts ":i:" opt; do
+    case $opt in
+    i) INTERACTIVE="-i" ;;
+    \?)
+      echo "无效选项: -$OPTARG" >&2
+      exit 1
+      ;;
+    esac
+  done
 
   LOG="${YELLOW}Rclone Pull All${NC}\n"
   echo -e $LOG
@@ -241,7 +264,7 @@ function rclone_pull_all() {
     LOG="${YELLOW}拉取: $remote → $local${NC}..."
     echo -e $LOG
     TOTAL_LOG=$TOTAL_LOG"$LOG"
-    if rclone sync "$remote" "$local" $RCLONE_INTERACTIVE --backup-dir $CONFICT_DIRS --suffix '_local' --track-renames --filter-from "$HOME/.config/rclone/filter-list.txt" --no-update-dir-modtime --no-update-modtime --transfers 20 -L; then
+    if rclone sync "$remote" "$local" $INTERACTIVE --backup-dir $CONFICT_DIRS --suffix '_local' --track-renames --filter-from "$HOME/.config/rclone/filter-list.txt" --no-update-dir-modtime --no-update-modtime --transfers 20 -L; then
       LOG="${GREEN}✓ 成功${NC}"
       echo -e $LOG
       TOTAL_LOG=$TOTAL_LOG"$LOG\n"
@@ -259,9 +282,24 @@ function rclone_pull_all() {
       notify-send -u critical 'rclone' "Conficts"
     fi
   done
+  # if [ -d "$CONFICT_DIRS" ]; then
+  #   cd $CONFICT_DIRS
+  # else
+  #   cd $BEGIN_PWD
+  # fi
 }
 
 function rclone_push_all() {
+  local INTERACTIVE=""
+  while getopts ":ir:" opt; do
+    case $opt in
+    i) INTERACTIVE="-i" ;;
+    \?)
+      echo "无效选项: -$OPTARG" >&2
+      # exit 1
+      ;;
+    esac
+  done
   LOG="${YELLOW}Rclone Push All${NC}\n"
   echo -e $LOG
   TOTAL_LOG=$TOTAL_LOG"$LOG"
@@ -270,7 +308,7 @@ function rclone_push_all() {
     LOG="${YELLOW}推送: $local → $remote${NC}"
     echo -e $LOG
     TOTAL_LOG=$TOTAL_LOG"$LOG"
-    if rclone sync $local $remote $RCLONE_INTERACTIVE --suffix-keep-extension --track-renames --no-update-dir-modtime --no-update-modtime --filter-from "$HOME/.config/rclone/filter-list.txt" --transfers 20 -L; then
+    if rclone sync $local $remote $INTERACTIVE --suffix-keep-extension --track-renames --no-update-dir-modtime --no-update-modtime --filter-from "$HOME/.config/rclone/filter-list.txt" --transfers 20 -L; then
       LOG="${GREEN}✓ 成功${NC}"
       echo -e $LOG
       TOTAL_LOG=$TOTAL_LOG"$LOG\n"
@@ -285,82 +323,107 @@ function rclone_push_all() {
 }
 
 function night_reboot() {
-  printf "reboot? (y/N) "
-  read choice
-  case "$choice" in
-  y)
-    sudo reboot
-    # echo $choice
+  local POWER=""
+  while getopts ":rulsni:" opt; do
+    case $opt in
+    r) POWER="r" ;;
+    u) POWER="u" ;;
+    s) POWER="s" ;;
+    l) POWER="l" ;;
+    \?)
+      echo "无效选项: -$OPTARG" >&2
+      # exit 1
+      ;;
+    esac
+  done
+
+  if ! [[ -n "$POWER" ]]; then
+    echo -e "${YELLOW}[r]boot/sh[u]tdown/[l]ock/[s]leep/[n]othing ?${NC}"
+    read POWER
+  fi
+    case "$POWER" in
+    r)
+      systemctl reboot
+      ;;
+    u)
+      systemctl poweroff -i
+      ;;
+    l)
+      slock &
+      sleep .5
+      xset dpms force off
+      ;;
+    s)
+      sleep .5
+      xset dpms force off
+      ;;
+    n | *)
+      echo -e "操作已取消"
+      ;;
+    esac
+}
+
+function day() {
+  rclone_pull_all "$@"
+  git_pull_all "$@"
+  total_log "$@"
+}
+
+function night() {
+  rclone_push_all "$@"
+  system_bak "$@"
+  git_push_all "$@"
+  total_log "$@"
+  night_reboot "$@"
+}
+
+main() {
+  local command=$1
+  shift
+  case "$command" in
+  d | day | c | coffee)
+    day "$@"
+    ;;
+  n | night | a | alcohol)
+    night "$@"
+    ;;
+  rp)
+    rclone_pull_all "$@"
+    ;;
+  rP)
+    rclone_push_all "$@"
+    ;;
+  gp)
+    git_pull_all "$@"
+    ;;
+  re)
+    night_reboot "$@"
+    ;;
+  gP)
+    git_push_all "$@"
+    ;;
+  track)
+    start_tracking "$@"
+    ;;
+  bak)
+    system_bak "$@"
+    ;;
+  config)
+    show_config
+    ;;
+  help | --help | -h)
+    show_help
     ;;
   *)
-    echo -e "操作已取消"
+    if [ -z "$1" ]; then
+      show_help
+    else
+      echo -e "${RED}错误: 未知命令 '$1'${NC}"
+      show_help
+      exit 1
+    fi
     ;;
   esac
 }
 
-function day() {
-  RCLONE_INTERACTIVE="-i"
-  rclone_pull_all
-  git_pull_all
-  total_log
-}
-
-function night() {
-  RCLONE_INTERACTIVE=""
-  rclone_push_all
-  system_bak
-  git_push_all
-  total_log
-  night_reboot
-}
-
-case "$1" in
-d | day | c | coffee)
-  day
-  ;;
-n | night | a | alcohol)
-  night
-  ;;
-rp)
-  rclone_pull_all
-  ;;
-rP)
-  rclone_push_all
-  ;;
-gp)
-  git_pull_all
-  ;;
-re)
-  night_reboot
-  ;;
-gP)
-  git_push_all
-  ;;
-track)
-  start_tracking
-  ;;
-bak)
-  system_bak
-  ;;
-config)
-  show_config
-  ;;
-help | --help | -h)
-  show_help
-  ;;
-*)
-  if [ -z "$1" ]; then
-    show_help
-  else
-    echo -e "${RED}错误: 未知命令 '$1'${NC}"
-    show_help
-    exit 1
-  fi
-  ;;
-esac
-
-if [ -d "$CONFICT_DIRS" ]; then
-  cd $CONFICT_DIRS
-else
-  cd $BEGIN_PWD
-fi
+main "$@"
