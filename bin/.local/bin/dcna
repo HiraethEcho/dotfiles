@@ -40,7 +40,6 @@ function total_log() {
   echo -e "${YELLOW}LOG:${NC}"
   echo -e "$TOTAL_LOG"
   notify-send "LOG" "$TOTAL_LOG"
-  echo "----"
 }
 
 function show_help() {
@@ -279,11 +278,6 @@ function rclone_pull_all() {
       notify-send -u critical 'rclone' "Conficts"
     fi
   done
-  # if [ -d "$CONFICT_DIRS" ]; then
-  #   cd $CONFICT_DIRS
-  # else
-  #   cd $BEGIN_PWD
-  # fi
 }
 
 function rclone_push_all() {
@@ -356,6 +350,9 @@ function day() {
   rclone_pull_all "$@"
   git_pull_all "$@"
   total_log "$@"
+  if [ -d "$CONFICT_DIRS" ]; then
+    cd $CONFICT_DIRS
+  fi
 }
 
 function night() {

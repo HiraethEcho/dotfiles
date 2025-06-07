@@ -36,6 +36,7 @@ dua-cli
 dunst
 efibootmgr
 electron-deepseek
+expac
 fastfetch
 fcitx5
 fcitx5-chinese-addons
@@ -95,7 +96,6 @@ mdcat
 meson
 mpv
 mpvpaper
-neomutt
 neovim
 net-tools
 newsboat
@@ -135,7 +135,6 @@ rofi-wayland
 rust
 sddm
 shfmt
-shimo
 sioyek
 snapper
 steam
@@ -144,6 +143,7 @@ stow
 stylua
 sudo
 sx
+tcc
 tdf-git
 tealdeer
 tex-fmt

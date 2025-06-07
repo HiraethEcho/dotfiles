@@ -22,7 +22,7 @@ bluez-tools 0.2.0-6
 bluez-utils 5.83-1
 bongo-cat 0.5.0-1
 bridge-utils 1.7.1-2
-brisk 2.3.0-1
+brisk 2.3.1-1
 btop 1.4.3-3
 btrfs-assistant 2.1.1-4
 btrfs-heatmap 9-4
@@ -36,7 +36,8 @@ dua-cli 2.30.1-1
 dunst 1.12.2-1
 efibootmgr 18-3
 electron-deepseek 1.0.0-1
-fastfetch 2.44.0-1
+expac 10-11
+fastfetch 2.45.0-1
 fcitx5 5.1.12-1
 fcitx5-chinese-addons 5.1.8-2
 fcitx5-configtool 5.1.9-1
@@ -68,7 +69,7 @@ impala 0.2.4-1
 iw 6.9-1
 iwd 3.8-1
 kitty 0.42.1-1
-lazygit 0.51.1-1
+lazygit 0.52.0-1
 less 1:668-1
 lib32-mesa 1:25.1.2-1
 lib32-vulkan-radeon 1:25.1.2-1
@@ -95,7 +96,6 @@ mdcat 2.7.1-1
 meson 1.8.1-1
 mpv 1:0.40.0-3
 mpvpaper 1.8-1
-neomutt 20250510-1
 neovim 0.11.2-3
 net-tools 2.10-3
 newsboat 2.39-2
@@ -135,7 +135,6 @@ rofi-wayland 1.7.9.1-1
 rust 1:1.87.0-1
 sddm 0.21.0-6
 shfmt 3.11.0-1
-shimo 3.3.1-1
 sioyek 2.0.0-23
 snapper 0.12.2-4
 steam 1.0.0.82-2
@@ -144,6 +143,7 @@ stow 2.4.1-1
 stylua 2.1.0-1
 sudo 1.9.16.p2-2
 sx 3.0-1
+tcc 0.9.27.r1151.gb8b6a5fd-1
 tdf-git 20250528.r84.e16163e-1
 tealdeer 1.7.2-1
 tex-fmt 0.5.4-1
@@ -186,7 +186,7 @@ xcape 1.2-5
 xclip 0.13-6
 xdg-desktop-portal 1.20.3-1
 xdg-desktop-portal-gtk 1.15.3-1
-xdg-ninja-git r534.8e8fc89-1
+xdg-ninja-git r540.42ee421-1
 xdg-user-dirs-gtk 0.14-1
 xdotool 3.20211022.1-2
 xf86-video-amdgpu 23.0.0-2
