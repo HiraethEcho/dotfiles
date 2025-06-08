@@ -39,7 +39,7 @@ function total_log() {
   echo "----"
   echo -e "${YELLOW}LOG:${NC}"
   echo -e "$TOTAL_LOG"
-  notify-send "LOG" "$TOTAL_LOG"
+  # notify-send "LOG" "$TOTAL_LOG"
 }
 
 function show_help() {
@@ -160,18 +160,18 @@ function git_push_all() {
       git add .
       git commit -m "night backup"
       if git push; then
-        LOG="${GREEN}✓ 推送成功${NC}"
+        LOG="${GREEN}✓ 推送成功${NC}\n"
         echo -e $LOG
-        TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+        TOTAL_LOG=$TOTAL_LOG"$LOG"
         notify-send -u normal "Push" "$i"
       else
-        LOG="${RED}✓ 推送失败${NC}"
+        LOG="${RED}✓ 推送失败${NC}\n"
         echo -e $LOG
-        TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+        TOTAL_LOG=$TOTAL_LOG"$LOG"
         notify-send -u normal "Push failed" "$i"
       fi
     else
-      LOG="${GREEN}No Change $i${NC}"
+      LOG="${GREEN}No Change $i${NC}\n"
       echo -e $LOG
       TOTAL_LOG=$TOTAL_LOG"$LOG"
     fi
@@ -347,8 +347,8 @@ function night_reboot() {
 }
 
 function day() {
-  rclone_pull_all "$@"
   git_pull_all "$@"
+  rclone_pull_all "$@"
   total_log "$@"
   if [ -d "$CONFICT_DIRS" ]; then
     cd $CONFICT_DIRS

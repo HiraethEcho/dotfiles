@@ -71,8 +71,8 @@ iwd 3.8-1
 kitty 0.42.1-1
 lazygit 0.52.0-1
 less 1:668-1
-lib32-mesa 1:25.1.2-1
-lib32-vulkan-radeon 1:25.1.2-1
+lib32-mesa 1:25.1.3-2
+lib32-vulkan-radeon 1:25.1.3-2
 libnotify 0.8.6-1
 libxml2-legacy 2.13.8-1
 libzip 1.11.4-1
@@ -169,7 +169,7 @@ ufrii-print 2-1
 unzip 6.0-22
 virt-manager 5.0.0-1
 vscode-html-languageserver 1.100.0-1
-vulkan-radeon 1:25.1.2-1
+vulkan-radeon 1:25.1.3-2
 waterfox-bin 6.5.9-3
 watt-toolkit-bin 3.0.0.rc.16-1
 waybar 0.12.0-1
