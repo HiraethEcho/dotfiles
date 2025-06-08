@@ -29,13 +29,13 @@ btrfs-heatmap
 btrfs-progs
 clang
 cups
+deepseek-pake
 dhcpcd
 diskonaut
 dnsmasq
 dua-cli
 dunst
 efibootmgr
-electron-deepseek
 expac
 fastfetch
 fcitx5
@@ -64,6 +64,7 @@ gvim
 harper
 httrack
 hugo
+icloud-pake
 imagemagick
 impala
 iw
@@ -176,7 +177,6 @@ waybar
 websocat
 wechat-universal-bwrap
 wemeet-bin
-weread-pake
 wev
 wget
 whois
@@ -190,7 +190,6 @@ xdg-ninja-git
 xdg-user-dirs-gtk
 xdotool
 xf86-video-amdgpu
-xiaohongshu-pake
 xorg-server
 xorg-xev
 xorg-xeyes
@@ -200,6 +199,7 @@ xorg-xsetroot
 xorg-xwayland
 xwayland-satellite
 yazi
+yuanbao-pake
 zathura
 zathura-djvu
 zathura-pdf-mupdf

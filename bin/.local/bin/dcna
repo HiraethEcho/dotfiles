@@ -171,7 +171,7 @@ function git_push_all() {
         notify-send -u normal "Push failed" "$i"
       fi
     else
-      LOG="${GREEN}No Change $i${NC}\n"
+      LOG="${GREEN}No Change${NC}\n"
       echo -e $LOG
       TOTAL_LOG=$TOTAL_LOG"$LOG"
     fi
@@ -317,6 +317,7 @@ function night_reboot() {
     u) POWER="u" ;;
     s) POWER="s" ;;
     l) POWER="l" ;;
+    n) POWER="n" ;;
     esac
   done
 

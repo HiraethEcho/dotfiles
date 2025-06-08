@@ -1,0 +1,5 @@
+{
+	"stewPath": "/home/hiraeth/.local/share/stew",
+	"stewBinPath": "/home/hiraeth/.local/stewbin",
+	"excludedFromUpgradeAll": []
+}
