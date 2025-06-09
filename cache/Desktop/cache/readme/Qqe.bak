@@ -47,6 +47,7 @@ fcitx5-qt
 fd
 feh
 flameshot
+flomo-pake
 foot
 fzf
 fzf-tab-git
@@ -62,7 +63,6 @@ gvfs
 gvfs-dnssd
 gvim
 harper
-httrack
 hugo
 icloud-pake
 imagemagick
@@ -129,6 +129,7 @@ python-pynvim
 python-wheel
 qemu-base
 rclone
+redbook-pake
 refind
 ripgrep
 ripgrep-all
@@ -165,6 +166,7 @@ ttf-daddytime-mono-nerd
 ttf-lxgw-wenkai-mono
 ttf-maple-nerd
 ttf-nerd-fonts-symbols-mono
+tuime
 typst
 ufrii-print
 unzip
@@ -177,6 +179,7 @@ waybar
 websocat
 wechat-universal-bwrap
 wemeet-bin
+weread-pake
 wev
 wget
 whois
