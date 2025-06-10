@@ -27,6 +27,7 @@ export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GOPROXY=goproxy.io
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
 # PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 export WECHAT_DATA_DIR="$HOME/Desktop/WeChat_Data"

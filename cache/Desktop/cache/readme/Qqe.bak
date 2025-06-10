@@ -3,6 +3,7 @@ acpilight
 activate-linux-git
 activitywatch-bin
 aerc
+alist-bin
 alsa-utils
 amd-ucode
 archlinuxcn-keyring
@@ -25,17 +26,16 @@ bridge-utils
 brisk
 btop
 btrfs-assistant
-btrfs-heatmap
 btrfs-progs
 clang
 cups
 deepseek-pake
 dhcpcd
-diskonaut
 dnsmasq
 dua-cli
 dunst
 efibootmgr
+excel-pake
 expac
 fastfetch
 fcitx5
@@ -56,7 +56,6 @@ github-cli
 gnome-keyring
 gowall
 gparted
-gping
 grub
 grub-btrfs
 gvfs
@@ -94,9 +93,7 @@ man-db
 marksman
 mate-polkit
 mdcat
-meson
 mpv
-mpvpaper
 neovim
 net-tools
 newsboat
@@ -122,6 +119,7 @@ pipewire
 pipewire-alsa
 pipewire-audio
 pipewire-pulse
+powerpoint-pake
 prettier
 pulsemixer
 python-pip
@@ -132,7 +130,6 @@ rclone
 redbook-pake
 refind
 ripgrep
-ripgrep-all
 rofi-wayland
 rust
 sddm
@@ -159,14 +156,12 @@ texlive-pstricks
 texlive-xetex
 timeshift
 tinymist
-tlpui
 tmux
 tree-sitter
 ttf-daddytime-mono-nerd
 ttf-lxgw-wenkai-mono
 ttf-maple-nerd
 ttf-nerd-fonts-symbols-mono
-tuime
 typst
 ufrii-print
 unzip
@@ -184,6 +179,7 @@ wev
 wget
 whois
 wireplumber
+word-pake
 xbindkeys
 xcape
 xclip
