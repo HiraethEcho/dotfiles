@@ -35,14 +35,14 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 NC='\033[0m' # No Color
 
-function total_log() {
+total_log() {
   echo "----"
   echo -e "${YELLOW}LOG:${NC}"
   echo -e "$TOTAL_LOG"
   # notify-send "LOG" "$TOTAL_LOG"
 }
 
-function show_help() {
+show_help() {
   echo -e "${GREEN}使用方法:${NC}"
   echo "  dcna [命令]"
   echo ""
@@ -59,7 +59,7 @@ function show_help() {
 }
 
 # 显示当前配置
-function show_config() {
+show_config() {
   echo -e "${YELLOW}当前配置:${NC}"
   echo ""
   echo -e "${GREEN}Git 仓库:${NC}"
@@ -78,14 +78,14 @@ function show_config() {
   echo "  - AUTO_STASH: $AUTO_STASH"
 }
 
-function check_sudo() {
+check_sudo() {
   if ! sudo -v &>/dev/null; then
     echo -e "${RED}错误: 需要sudo权限${NC}"
     return 1
   fi
 }
 
-function git_pull_all() {
+git_pull_all() {
   LOG="${YELLOW}Git Pull All${NC}\n"
   echo -e $LOG
   TOTAL_LOG=$TOTAL_LOG"$LOG"
@@ -147,7 +147,7 @@ function git_pull_all() {
   done
 }
 
-function git_push_all() {
+git_push_all() {
   LOG="${YELLOW}Git Push All${NC}\n"
   echo -e $LOG
   TOTAL_LOG=$TOTAL_LOG"$LOG"
@@ -178,7 +178,7 @@ function git_push_all() {
   done
 }
 
-function system_bak() {
+system_bak() {
 
   local INTERACTIVE="--noconfirm"
   while getopts ":i" opt; do
@@ -241,7 +241,7 @@ function system_bak() {
   fi
 }
 
-function rclone_pull_all() {
+rclone_pull_all() {
   local INTERACTIVE=""
   while getopts ":i" opt; do
     case $opt in
@@ -280,7 +280,7 @@ function rclone_pull_all() {
   done
 }
 
-function rclone_push_all() {
+rclone_push_all() {
   local INTERACTIVE=""
   while getopts ":i" opt; do
     case $opt in
@@ -309,17 +309,9 @@ function rclone_push_all() {
   done
 }
 
-function night_reboot() {
-  local POWER=""
-  while getopts ":rusln" opt; do
-    case $opt in
-    r) POWER="r" ;;
-    u) POWER="u" ;;
-    s) POWER="s" ;;
-    l) POWER="l" ;;
-    n) POWER="n" ;;
-    esac
-  done
+night_reboot() {
+  # local POWER=""
+  getopts u: opt ; POWER=$OPTARG
 
   if ! [[ -n "$POWER" ]]; then
     echo -e "${YELLOW}[r]boot/sh[u]tdown/[l]ock/[s]leep/[n]othing ?${NC}"
@@ -347,7 +339,7 @@ function night_reboot() {
   esac
 }
 
-function day() {
+day() {
   git_pull_all "$@"
   rclone_pull_all "$@"
   total_log "$@"
@@ -356,12 +348,23 @@ function day() {
   fi
 }
 
-function night() {
+night() {
   rclone_push_all "$@"
   system_bak "$@"
   git_push_all "$@"
   total_log "$@"
   night_reboot "$@"
+}
+
+mytest() {
+  echo "what"
+  getopts u: opt ; POWER=$OPTARG
+  if ! [[ -n "$POWER" ]]; then
+    echo -e "${YELLOW}[r]boot/sh[u]tdown/[l]ock/[s]leep/[n]othing ?${NC}"
+    read POWER
+  fi
+
+  echo $POWER
 }
 
 main() {
@@ -389,9 +392,12 @@ main() {
   gP)
     git_push_all "$@"
     ;;
-  track)
-    start_tracking "$@"
+  t)
+   mytest "$@"
     ;;
+  # track)
+  #   start_tracking "$@"
+  #   ;;
   bak)
     system_bak "$@"
     ;;

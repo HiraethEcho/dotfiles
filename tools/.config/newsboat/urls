@@ -40,6 +40,12 @@ https://itsfoss.com/rss/
 https://wiki.archlinux.org/index.php?title=Special:RecentChanges&feed=rss "~ArchWiki Changes"
 https://www.archlinux.org/feeds/news/ "~Arch News"
 https://www.archlinuxcn.org/feed/ "~ArchCN News"
+https://bbs.archlinux.org/extern.php?action=feed&fid=23&type=atom "Arch Newbie"
+https://bbs.archlinux.org/extern.php?action=feed&type=atom "Arch bbs"
+https://bbs.archlinuxcn.org/extern.php?action=feed&type=rss "ArchCN bbs"
+https://bbs.archlinuxcn.org/extern.php?action=feed&fid=19&type=rss "ArchCN Newbie"
+https://bbs.archlinuxcn.org/extern.php?action=feed&fid=68&type=rss
+https://bbs.archlinuxcn.org/extern.php?action=feed&fid=28&type=rss
 https://archlinux.org/feeds/packages/x86_64/ "~Arch repo"
 https://aur.archlinux.org/rss "~AUR"
 https://blog.lilydjwg.me/posts.rss

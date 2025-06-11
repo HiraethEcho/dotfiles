@@ -3,7 +3,6 @@ acpilight
 activate-linux-git
 activitywatch-bin
 aerc
-alist-bin
 alsa-utils
 amd-ucode
 archlinuxcn-keyring
@@ -23,7 +22,6 @@ bluez-tools
 bluez-utils
 bongo-cat
 bridge-utils
-brisk
 btop
 btrfs-assistant
 btrfs-progs
@@ -97,6 +95,7 @@ mpv
 neovim
 net-tools
 newsboat
+ninve
 niri
 npm
 ntfs-3g
@@ -136,6 +135,7 @@ sddm
 shfmt
 sioyek
 snapper
+stalonetray
 steam
 stew-bin
 stow
