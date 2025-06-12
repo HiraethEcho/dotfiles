@@ -26,3 +26,6 @@ nutstore
   ag6e8brqwn2wjiva
   picgo:
   abq8dm9saami4kix
+
+archlinuxcn
+  nzUsJPZRA1F3
