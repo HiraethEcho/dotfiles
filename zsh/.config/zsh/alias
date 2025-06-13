@@ -93,4 +93,5 @@ alias pt="pacman -Qq | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt
 alias sl="pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse --bind 'enter:execute(pacman -Si {} | less)'"
 
 # fzf
+alias fzfp="fzf --preview 'fzf-preview.sh {}'"
 ### abbreviation ###

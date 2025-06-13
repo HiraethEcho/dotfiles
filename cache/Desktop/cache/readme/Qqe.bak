@@ -25,11 +25,13 @@ bridge-utils
 btop
 btrfs-assistant
 btrfs-progs
+carapace-bin
 clang
 cups
 deepseek-pake
 dhcpcd
 dnsmasq
+downgrade
 dua-cli
 dunst
 efibootmgr
@@ -64,8 +66,10 @@ hugo
 icloud-pake
 imagemagick
 impala
+inotify-tools
 iw
 iwd
+jujutsu
 kitty
 lazygit
 less
@@ -79,7 +83,6 @@ linux-firmware
 linux-headers
 linux-wifi-hotspot
 lsd
-lsix
 lua-language-server
 lua51
 lxappearance-gtk3
@@ -95,7 +98,6 @@ mpv
 neovim
 net-tools
 newsboat
-ninve
 niri
 npm
 ntfs-3g
@@ -135,9 +137,7 @@ sddm
 shfmt
 sioyek
 snapper
-stalonetray
 steam
-stew-bin
 stow
 stylua
 sudo
@@ -177,7 +177,6 @@ wemeet-bin
 weread-pake
 wev
 wget
-whois
 wireplumber
 word-pake
 xbindkeys
@@ -206,6 +205,8 @@ zip
 zotero
 zoxide
 zsh
+zsh-autocomplete
 zsh-autosuggestions
+zsh-fast-syntax-highlighting
 zsh-syntax-highlighting
 zsh-theme-powerlevel10k-git

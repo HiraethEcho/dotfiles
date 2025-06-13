@@ -25,11 +25,13 @@ bridge-utils 1.7.1-2
 btop 1.4.3-3
 btrfs-assistant 2.1.1-4
 btrfs-progs 6.14-1
+carapace-bin 1.3.2-1
 clang 20.1.6-1
 cups 2:2.4.12-2
 deepseek-pake 1.0.0-1
 dhcpcd 10.2.4-1
 dnsmasq 2.91-1
+downgrade 11.5.2-1
 dua-cli 2.30.1-1
 dunst 1.12.2-1
 efibootmgr 18-3
@@ -64,8 +66,10 @@ hugo 0.147.8-1
 icloud-pake 1.0.0-2
 imagemagick 7.1.1.47-2
 impala 0.2.4-1
+inotify-tools 4.23.9.0-2
 iw 6.9-1
 iwd 3.8-1
+jujutsu 0.30.0-1
 kitty 0.42.1-1
 lazygit 0.52.0-1
 less 1:668-1
@@ -79,7 +83,6 @@ linux-firmware 20250508.788aadc8-2
 linux-headers 6.15.2.arch1-1
 linux-wifi-hotspot 1:4.7.2-1
 lsd 1.1.5-1
-lsix 1.9.1-1
 lua-language-server 3.14.0-1
 lua51 5.1.5-13
 lxappearance-gtk3 0.6.4-1
@@ -95,9 +98,8 @@ mpv 1:0.40.0-3
 neovim 0.11.2-3
 net-tools 2.10-3
 newsboat 2.39-2
-ninve 0.1.21-1
 niri 25.05.1-2
-npm 11.4.1-1
+npm 11.4.2-1
 ntfs-3g 2022.10.3-2
 obsidian 1.8.10-1
 openbox 3.6.1-12
@@ -135,9 +137,7 @@ sddm 0.21.0-6
 shfmt 3.11.0-1
 sioyek 2.0.0-23
 snapper 0.12.2-4
-stalonetray 0.8.5-2
 steam 1.0.0.82-2
-stew-bin 0.6.0-1
 stow 2.4.1-1
 stylua 2.1.0-1
 sudo 1.9.16.p2-2
@@ -166,7 +166,7 @@ typst 1:0.13.1-1
 ufrii-print 2-1
 unzip 6.0-22
 virt-manager 5.0.0-1
-vscode-html-languageserver 1.100.0-1
+vscode-html-languageserver 1.101.0-1
 vulkan-radeon 1:25.1.3-3
 waterfox-bin 6.5.9-3
 watt-toolkit-bin 3.0.0.rc.16-1
@@ -177,7 +177,6 @@ wemeet-bin 3.19.2.400-3
 weread-pake 3.1.1-3
 wev 1.0.0-13
 wget 1.25.0-2
-whois 5.6.1-1
 wireplumber 0.5.10-1
 word-pake 1.0.0-2
 xbindkeys 1.8.7-5
@@ -206,6 +205,8 @@ zip 3.0-11
 zotero 7.0.15-1
 zoxide 0.9.8-2
 zsh 5.9-5
+zsh-autocomplete 25.03.19-1
 zsh-autosuggestions 0.7.1-1
+zsh-fast-syntax-highlighting 1.55-2
 zsh-syntax-highlighting 0.8.0-1
 zsh-theme-powerlevel10k-git 1.20.0.r91.g36f3045-1
