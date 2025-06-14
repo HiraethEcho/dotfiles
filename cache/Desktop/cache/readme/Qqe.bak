@@ -25,6 +25,7 @@ bridge-utils
 btop
 btrfs-assistant
 btrfs-progs
+calcurse
 carapace-bin
 clang
 cups
@@ -32,6 +33,7 @@ deepseek-pake
 dhcpcd
 dnsmasq
 downgrade
+dstask-bin
 dua-cli
 dunst
 efibootmgr
@@ -142,6 +144,7 @@ stow
 stylua
 sudo
 sx
+taskwarrior-tui
 tcc
 tdf-git
 tealdeer
@@ -155,6 +158,7 @@ texlive-mathscience
 texlive-pstricks
 texlive-xetex
 timeshift
+timew
 tinymist
 tmux
 tree-sitter

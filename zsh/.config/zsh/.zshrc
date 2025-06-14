@@ -19,7 +19,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme # promot theme
 # eval $(thefuck --alias f)
 
 eval "$(zoxide init zsh)"
-# eval "$(gh copilot alias -- zsh)"
+eval "$(gh copilot alias -- zsh)"
 # Bind ctrl-r but not up arrow
 eval "$(atuin init zsh --disable-up-arrow)"
 # eval "$(atuin init zsh --disable-ctrl-r)"
