@@ -7,9 +7,6 @@ https://www.ams.org/rss/jams.rss "~jams"
 https://www.cambridge.org/core/rss/product/id/B987EC32470620A598056BB76325AFC2 "~Compositio Mathematica "
 
 https://feeds.science.org/rss/science.xml "~science"
-https://papers.cool/arxiv/cs.CL/feed
-https://papers.cool/arxiv/cs.AI/feed
-https://papers.cool/arxiv/cs.LG/feed
 
 https://sspai.com/feed "~少数派"
 https://store.steampowered.com/feeds/news.xml
@@ -35,6 +32,7 @@ https://terminaltrove.com/totw.xml
 http://feed.appinn.com/
 https://litiaotiao.cn/index.xml
 https://hellogithub.com/rss
+https://rustcc.cn/rss
 
 https://itsfoss.com/rss/
 https://wiki.archlinux.org/index.php?title=Special:RecentChanges&feed=rss "~ArchWiki Changes"

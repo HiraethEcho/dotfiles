@@ -19,10 +19,9 @@ RCLONE_PAIR=(
   "$HOME/Documents/projects/;koofr:/kDocuments/projects/"
   "$HOME/Documents/lectures/;koofr:/kDocuments/lectures/"
   "$HOME/Documents/philosophy/;koofr:/kDocuments/philosophy/"
-  "$HOME/obsidian/;koofr:/obsidian/"
+  # "$HOME/obsidian/;koofr:/obsidian/"
+  "$HOME/obsidian/;tera:/obsidian/"
 )
-
-RCLONE_INTERACTIVE="-i"
 
 #tmp
 BEGIN_PWD=$pwd
