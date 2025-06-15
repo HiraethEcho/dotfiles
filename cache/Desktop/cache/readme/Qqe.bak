@@ -33,7 +33,6 @@ deepseek-pake
 dhcpcd
 dnsmasq
 downgrade
-dstask-bin
 dua-cli
 dunst
 efibootmgr
@@ -96,7 +95,10 @@ man-db
 marksman
 mate-polkit
 mdcat
+mmtc
+mpd
 mpv
+ncmpcpp
 neovim
 net-tools
 newsboat
@@ -133,8 +135,8 @@ rclone
 redbook-pake
 refind
 ripgrep
+rmpc
 rofi-wayland
-rust
 sddm
 shfmt
 sioyek
@@ -144,6 +146,7 @@ stow
 stylua
 sudo
 sx
+task
 taskwarrior-tui
 tcc
 tdf-git
