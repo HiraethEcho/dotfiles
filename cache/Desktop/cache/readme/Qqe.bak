@@ -28,6 +28,7 @@ btrfs-progs
 calcurse
 carapace-bin
 clang
+clivm
 cups
 deepseek-pake
 dhcpcd
@@ -98,6 +99,7 @@ mdcat
 mmtc
 mpd
 mpv
+ncmpc
 ncmpcpp
 neovim
 net-tools
@@ -205,6 +207,7 @@ xorg-xwayland
 xwayland-satellite
 yazi
 yuanbao-pake
+yutto
 zathura
 zathura-djvu
 zathura-pdf-mupdf
