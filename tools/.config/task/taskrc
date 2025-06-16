@@ -170,3 +170,4 @@ report.minimal.labels=Project,Description
 #                                indicator
 #
 # * Means default format, and therefore optional.  For example, 'due' and 'due.formatted' are equivalent.
+recurrence.limit=2
