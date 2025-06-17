@@ -33,7 +33,7 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 15x55
+    offset = (15,55)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -276,6 +276,7 @@
     mouse_left_click = close_current
     mouse_middle_click = do_action
     mouse_right_click = close_all
+    # mouse_right_click = context
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.

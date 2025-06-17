@@ -29,7 +29,7 @@ color.alternate=on
 weekstart=monday
 recurrence.limit=1
 
-report.all.columns=id,project,tags,description,depends,scheduled,until,due,recur,priority,status,end,start,wait.remaining,uuid.short
+report.all.columns=id,project,tags,description,depends,scheduled,until,due,recur,priority,status,end,start,wait,uuid.short
 report.all.labels=ID,Project,Tags,Description,Depends,Scheduled,Until,Due,Recur,Priority,Status,Done,Active,Wait,UUID
 report.all.sort=project
 

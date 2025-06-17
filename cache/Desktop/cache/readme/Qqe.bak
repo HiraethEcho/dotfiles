@@ -27,6 +27,7 @@ btrfs-assistant
 btrfs-progs
 calcurse
 carapace-bin
+chawan
 clang
 clivm
 cups
@@ -36,6 +37,7 @@ dnsmasq
 downgrade
 dua-cli
 dunst
+easytag
 efibootmgr
 excel-pake
 expac
@@ -121,7 +123,7 @@ pavucontrol
 pcmanfm-gtk3
 pdfbooklet
 picgo
-picom-ftlabs-git
+picom
 pipewire
 pipewire-alsa
 pipewire-audio
@@ -148,6 +150,7 @@ stow
 stylua
 sudo
 sx
+systemd-manager-tui
 task
 taskwarrior-tui
 tcc

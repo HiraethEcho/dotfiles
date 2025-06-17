@@ -27,6 +27,7 @@ btrfs-assistant 2.2-1
 btrfs-progs 6.14-1
 calcurse 4.8.1-2
 carapace-bin 1.3.2-1
+chawan 0.2.0-1
 clang 20.1.6-1
 clivm 1.0.0-1
 cups 2:2.4.12-2
@@ -36,6 +37,7 @@ dnsmasq 2.91-1
 downgrade 11.5.2-1
 dua-cli 2.30.1-1
 dunst 1.12.2-1
+easytag 2.4.3-14
 efibootmgr 18-3
 excel-pake 1.0.0-1
 expac 10-11
@@ -121,7 +123,7 @@ pavucontrol 1:6.1-1
 pcmanfm-gtk3 1.4.0-1
 pdfbooklet 3.1.2-4
 picgo 2.3.1-1
-picom-ftlabs-git r2236_2024.02.17-2
+picom 12.5-3
 pipewire 1:1.4.5-1
 pipewire-alsa 1:1.4.5-1
 pipewire-audio 1:1.4.5-1
@@ -148,6 +150,7 @@ stow 2.4.1-1
 stylua 2.1.0-1
 sudo 1.9.16.p2-2
 sx 3.0-1
+systemd-manager-tui 1.0.1-1
 task 3.4.1-1
 taskwarrior-tui 0.26.3-1
 tcc 0.9.27.r1151.gb8b6a5fd-1

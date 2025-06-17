@@ -12,7 +12,7 @@ l=$((a * 72 / 1440))
 r=$((a * 100 / 1440))
 
 case $BLOCK_BUTTON in
-1) notify-send -h int:value:$r "Calendar" "$(cal -m | sed "s/\<$(date +'%e' | sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")
+1) notify-send -h int:value:$r -h int:transient:0 "Calendar" "$(cal -m | sed "s/\<$(date +'%e' | sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")
 <span color='green'>tasks<\/span>
 $(task rc.verbose=header minimal)" ;;
 # 1) notify-send  "Calendar" "$(cal -m | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;

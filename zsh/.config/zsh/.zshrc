@@ -6,7 +6,6 @@ fi
 
 bindkey -v
 # source
-# source $HOME/.config/zsh/export
 source $HOME/.config/zsh/alias
 
 # plugins
