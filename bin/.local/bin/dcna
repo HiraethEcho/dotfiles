@@ -356,7 +356,7 @@ night() {
 }
 
 mytest() {
-  echo "what"
+  echo "test"
   getopts u: opt ; POWER=$OPTARG
   if ! [[ -n "$POWER" ]]; then
     echo -e "${YELLOW}[r]boot/sh[u]tdown/[l]ock/[s]leep/[n]othing ?${NC}"

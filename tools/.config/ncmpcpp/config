@@ -71,7 +71,7 @@ lyrics_directory = ~/.config/mpd/lyrics
 ## visualizer.
 ##
 #
-#visualizer_data_source = /tmp/mpd.fifo
+# visualizer_data_source = /tmp/mpd.fifo
 #
 ##
 ## Note: Below parameter is needed for ncmpcpp to determine which output
@@ -79,12 +79,12 @@ lyrics_directory = ~/.config/mpd/lyrics
 ## to synchronize with audio.
 ##
 #
-#visualizer_output_name = Visualizer feed
+visualizer_output_name = Visualizer feed
 #
 ##
 ## If you set format to 44100:16:2, make it 'yes'.
 ##
-#visualizer_in_stereo = yes
+visualizer_in_stereo = yes
 #
 ##
 ## Note: set below to >=10 only if you have synchronization issues with
@@ -375,7 +375,7 @@ lyrics_directory = ~/.config/mpd/lyrics
 #
 #volume_change_step = 2
 #
-#autocenter_mode = no
+# autocenter_mode = yes
 #
 #centered_cursor = no
 #

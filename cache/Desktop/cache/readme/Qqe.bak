@@ -26,8 +26,6 @@ btop
 btrfs-assistant
 btrfs-progs
 calcurse
-carapace-bin
-chawan
 clang
 clivm
 cups
@@ -58,7 +56,6 @@ fzf-tab-git
 git
 github-cli
 gnome-keyring
-gowall
 gparted
 grub
 grub-btrfs
@@ -98,11 +95,8 @@ man-db
 marksman
 mate-polkit
 mdcat
-mmtc
 mpd
 mpv
-ncmpc
-ncmpcpp
 neovim
 net-tools
 newsboat
