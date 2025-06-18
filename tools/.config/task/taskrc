@@ -39,7 +39,7 @@ report.list.sort=project
 
 report.next.columns=id,status,start.age,depends,priority,project,tags,recur,scheduled.countdown,due.countdown,until.remaining,description,urgency
 report.next.labels=ID,Status,Active,Deps,Priority,Project,Tag,Recur,Scheduled,Due,Until,Description,Urg
-report.next.sort=due
+# report.next.sort=urgency
 
 report.long.columns=id,entry,modified.age,depends,priority,project,tags,recur,wait.remaining,scheduled,due,until,description
 report.long.labels=ID,Created,Mod,Deps,Pri,Project,Tags,Recur,Wait,Sched,Due,Until,Description
@@ -213,7 +213,6 @@ uda.taskwarrior-tui.selection.indicator=
 uda.taskwarrior-tui.selection.italic=yes
 # uda.taskwarrior-tui.selection.dim=no
 # uda.taskwarrior-tui.selection.blink=no
-uda.taskwarrior-tui.selection.blink=yes
 # uda.taskwarrior-tui.selection.reverse=no
 uda.taskwarrior-tui.selection.reverse=yes
 # uda.taskwarrior-tui.mark.indicator=✔
@@ -249,6 +248,7 @@ uda.taskwarrior-tui.quick-tag.name=trush
 #######################################################################
 #                end of taskwarrior-tui configuration                 #
 #######################################################################
-
-# context.full.read=status:pending or status:recuring
-# context.full.write=status:
+context.work.read=proj:math or proj:academy
+context.code.read=proj:code
+context.code.write=proj:code
+context.work.write=proj:math or proj:academy

@@ -4,6 +4,7 @@
 # set -u
 
 # config
+CONFICT_DIRS="$HOME/conficts"
 GIT_REPO=(
   "$HOME/Documents/projects"
   "$HOME/obsidian"
@@ -23,16 +24,20 @@ RCLONE_PAIR=(
   "$HOME/obsidian/;tera:/obsidian/"
 )
 
-#tmp
-BEGIN_PWD=$pwd
-TOTAL_LOG=""
-LOG=""
-CONFICT_DIRS="$HOME/conficts"
-
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 NC='\033[0m' # No Color
+
+# tmp
+BEGIN_PWD=$pwd
+#log
+TOTAL_LOG=""
+LOG=""
+
+# flag
+POWER=""
+INTERACTIVE=""
 
 total_log() {
   echo "----"
@@ -188,11 +193,15 @@ system_bak() {
       ;;
     esac
   done
+  if ! [[ -n "$INTERACTIVE" ]]; then
+    PARU_INTERACTIVE="--noconfirm"
+  fi
+
 
   LOG="${YELLOW}运行系统更新...${NC}"
   echo -e $LOG
   TOTAL_LOG=$TOTAL_LOG"$LOG..."
-  if paru -Syyu ${INTERACTIVE}; then
+  if paru -Syyu ${PARU_INTERACTIVE}; then
     LOG="${GREEN}✓ 更新成功${NC}"
     echo -e $LOG
     TOTAL_LOG=$TOTAL_LOG"$LOG\n"
@@ -241,15 +250,9 @@ system_bak() {
 }
 
 rclone_pull_all() {
-  local INTERACTIVE=""
-  while getopts ":i" opt; do
-    case $opt in
-    i) INTERACTIVE="-i" ;;
-    \?)
-      echo "无效选项: -$OPTARG" >&2
-      ;;
-    esac
-  done
+  if [[ -n "$INTERACTIVE" ]]; then
+    RCLONE_INTERACTIVE="-i"
+  fi
 
   LOG="${YELLOW}Rclone Pull All${NC}\n"
   echo -e $LOG
@@ -259,7 +262,7 @@ rclone_pull_all() {
     LOG="${YELLOW}拉取: $remote → $local${NC}..."
     echo -e $LOG
     TOTAL_LOG=$TOTAL_LOG"$LOG"
-    if rclone sync "$remote" "$local" $INTERACTIVE --backup-dir $CONFICT_DIRS --suffix '_local' --track-renames --filter-from "$HOME/.config/rclone/filter-list.txt" --no-update-dir-modtime --no-update-modtime --transfers 20 -L; then
+    if rclone sync "$remote" "$local" $RCLONE_INTERACTIVE --backup-dir $CONFICT_DIRS --suffix '_local' --track-renames --filter-from "$HOME/.config/rclone/filter-list.txt" --no-update-dir-modtime --no-update-modtime --transfers 20 -L; then
       LOG="${GREEN}✓ 成功${NC}"
       echo -e $LOG
       TOTAL_LOG=$TOTAL_LOG"$LOG\n"
@@ -310,11 +313,15 @@ rclone_push_all() {
 
 night_reboot() {
   # local POWER=""
-  getopts u: opt ; POWER=$OPTARG
+  # OPTIND=1
+  # getopts :u: opt
+  # [[ $opt == "u" ]] && POWER=$OPTARG
+  # # POWER=$OPTARG
+  # echo "$OPTARG"
 
   if ! [[ -n "$POWER" ]]; then
-    echo -e "${YELLOW}[r]boot/sh[u]tdown/[l]ock/[s]leep/[n]othing ?${NC}"
-    read POWER
+    echo -e "${YELLOW}[r]eboot/sh[u]tdown/[l]ock/[s]leep/[n]othing ?${NC}"
+    read -t 5 -s -n 1 POWER
   fi
   case "$POWER" in
   r)
@@ -356,19 +363,29 @@ night() {
 }
 
 mytest() {
-  echo "test"
-  getopts u: opt ; POWER=$OPTARG
-  if ! [[ -n "$POWER" ]]; then
-    echo -e "${YELLOW}[r]boot/sh[u]tdown/[l]ock/[s]leep/[n]othing ?${NC}"
-    read POWER
-  fi
-
-  echo $POWER
+  # getopts :u: opt
+  # POWER=$OPTARG
+  # night_reboot "$@"
+  night_reboot
 }
 
 main() {
   local command=$1
   shift
+
+  while getopts "iu:" opt; do
+    case $opt in
+    i) INTERACTIVE="yes" ;;
+    u) POWER=$OPTARG ;;
+    \?)
+      echo "无效选项: -$OPTARG" >&2
+      ;;
+    esac
+  done
+
+  echo "power option: $POWER"
+  echo "interactive: $INTERACTIVE"
+
   case "$command" in
   d | day | c | coffee)
     day "$@"
@@ -392,7 +409,8 @@ main() {
     git_push_all "$@"
     ;;
   t)
-   mytest "$@"
+    # mytest "$@"
+    mytest
     ;;
   # track)
   #   start_tracking "$@"
