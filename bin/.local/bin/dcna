@@ -184,19 +184,9 @@ git_push_all() {
 
 system_bak() {
 
-  local INTERACTIVE="--noconfirm"
-  while getopts ":i" opt; do
-    case $opt in
-    i) INTERACTIVE="" ;;
-    \?)
-      echo "无效选项: -$OPTARG" >&2
-      ;;
-    esac
-  done
   if ! [[ -n "$INTERACTIVE" ]]; then
     PARU_INTERACTIVE="--noconfirm"
   fi
-
 
   LOG="${YELLOW}运行系统更新...${NC}"
   echo -e $LOG
@@ -383,9 +373,6 @@ main() {
       ;;
     esac
   done
-
-  echo "power option: $POWER"
-  echo "interactive: $INTERACTIVE"
 
   case "$command" in
   d | day | c | coffee)
