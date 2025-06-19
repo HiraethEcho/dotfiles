@@ -162,7 +162,7 @@ git_push_all() {
     TOTAL_LOG=$TOTAL_LOG"$LOG"
     if [[ -n "$(git status --porcelain)" ]]; then
       git add .
-      git commit -m "night backup"
+      git commit -m "backup at $(date +%y/%m/%d-%T)"
       if git push; then
         LOG="${GREEN}✓ 推送成功${NC}\n"
         echo -e $LOG
@@ -366,7 +366,8 @@ mytest() {
   # getopts :u: opt
   # POWER=$OPTARG
   # night_reboot "$@"
-  night_reboot
+  # night_reboot
+  echo $(date +%y/%m/%d-%T)
 }
 
 main() {

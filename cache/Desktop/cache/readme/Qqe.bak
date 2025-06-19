@@ -1,3 +1,4 @@
+aconfmgr-git
 acpi
 acpilight
 activate-linux-git
@@ -39,6 +40,7 @@ efibootmgr
 excel-pake
 expac
 fastfetch
+fbterm
 fcitx5
 fcitx5-chinese-addons
 fcitx5-configtool
@@ -170,6 +172,7 @@ ttf-nerd-fonts-symbols-mono
 typst
 ufrii-print
 unzip
+vdirsyncer
 virt-manager
 vscode-html-languageserver
 vulkan-radeon

@@ -1,0 +1,17 @@
+[Unit]
+Description=Autossh Persistent Reverse SSH Tunnel
+After=network.target
+
+[Service]
+User=hiraeth
+; ExecStart=/usr/local/bin/autossh-debian
+; ExecStart=/usr/bin/autossh -M 20000 -NR 7004:localhost:2222 wyz@2408:8207:1960:a0a0:703:6d9d:72a2:c067
+ExecStart=/usr/bin/autossh -M 20000 -NR 7004:localhost:2222 wyz@ 2408:8207:1962:6500:4035:dc4c:6be9:6ad1
+Restart=always
+RestartSec=10
+KillMode=process
+Environment="AUTOSSH_GATETIME=0"
+Environment="AUTOSSH_POLL=30"
+
+[Install]
+WantedBy=multi-user.target
