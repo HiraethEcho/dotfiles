@@ -72,7 +72,9 @@ inotify-tools
 iw
 iwd
 jujutsu
+khal
 kitty
+kvantum
 lazygit
 less
 lib32-mesa
@@ -108,6 +110,7 @@ obsidian
 openbox
 openssh
 os-prober
+oss-browser-bin
 otf-codenewroman-nerd
 pacfiles
 pacman-contrib
@@ -164,6 +167,7 @@ timeshift
 timew
 tinymist
 tmux
+todoman
 tree-sitter
 ttf-daddytime-mono-nerd
 ttf-lxgw-wenkai-mono
@@ -172,6 +176,7 @@ ttf-nerd-fonts-symbols-mono
 typst
 ufrii-print
 unzip
+uwsm
 vdirsyncer
 virt-manager
 vscode-html-languageserver
@@ -180,6 +185,8 @@ waterfox-bin
 watt-toolkit-bin
 waybar
 websocat
+wechat
+wechat-bin
 wechat-universal-bwrap
 wemeet-bin
 weread-pake

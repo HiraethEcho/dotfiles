@@ -37,8 +37,8 @@ report.list.columns=id,project,description,depends,due,recur
 report.list.labels=ID,Project,Description,Depends,Due,Recur
 report.list.sort=project
 
-report.next.columns=id,status,start.age,depends,priority,project,tags,recur,scheduled.countdown,due.countdown,until.remaining,description,urgency
-report.next.labels=ID,Status,Active,Deps,Priority,Project,Tag,Recur,Scheduled,Due,Until,Description,Urg
+report.next.columns=id,description,project,start.age,depends,priority,tags,recur,scheduled.countdown,due.countdown,until.remaining,urgency,status
+report.next.labels=ID,Description,Project,Active,Deps,Priority,Tag,Recur,Scheduled,Due,Until,Urg,Status
 # report.next.sort=urgency
 
 report.long.columns=id,entry,modified.age,depends,priority,project,tags,recur,wait.remaining,scheduled,due,until,description

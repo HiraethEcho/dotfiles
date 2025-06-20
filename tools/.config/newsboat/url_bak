@@ -5,6 +5,22 @@ https://papers.cool/arxiv/cs.CL/feed
 https://papers.cool/arxiv/cs.AI/feed
 https://papers.cool/arxiv/cs.LG/feed
 
+https://feeds.science.org/rss/science.xml "~science"
+https://3quarksdaily.com/feed
+https://buttondown.com/thepudding/rss
+
+https://iep.utm.edu/feed/
+https://daily-philosophy.com/index.xml
+https://maggieappleton.com/rss.xml
+
+
+https://www.archlinux.org/feeds/news/ "~Arch News"
+https://wiki.archlinux.org/index.php?title=Special:RecentChanges&feed=rss "~ArchWiki Changes"
+https://bbs.archlinux.org/extern.php?action=feed&fid=23&type=atom "Arch Newbie"
+https://bbs.archlinux.org/extern.php?action=feed&type=atom "Arch bbs"
+https://bbs.archlinuxcn.org/extern.php?action=feed&fid=68&type=rss
+https://bbs.archlinuxcn.org/extern.php?action=feed&fid=28&type=rss
+
 https://feedx.net/rss/shanghaishuping.xml
 https://plink.anyfeeder.com/weixin/qnwzwx
 https://rss.aishort.top/?type=guokr
@@ -67,3 +83,8 @@ https://www.askphilosophers.org/time-feed.xml
 https://www.askphilosophers.org/truth-feed.xml
 https://www.askphilosophers.org/value-feed.xml
 https://www.askphilosophers.org/war-feed.xml
+
+
+https://hiraethecho.github.io/hexo/atom.xml "~blog hexo"
+https://hiraethecho.github.io/wiki/feed_rss_updated.xml "~blog wiki"
+https://hiraethecho.github.io/hugo/index.xml "~blog hugo"

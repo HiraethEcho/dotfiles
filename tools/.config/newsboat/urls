@@ -2,26 +2,20 @@ https://rss.arxiv.org/rss/math.AG "~arxiv AG"
 https://sciendo.com/2/rss/journal/AUSM "~AUSM"
 https://link.springer.com/search.rss?new-search=true&query=*&content-type=Article&taxonomy=%22Algebraic+Geometry%22&sortBy=relevance&search-within=Journal&facet-journal-id=222 "~Inventiones mathematicae"
 https://rss.sciencedirect.com/publication/science/00018708 "~Advances in Mathematics"
-https://link.springer.com/search.rss?new-search=true&query=*&content-type=Article&sortBy=relevance&search-within=Journal&facet-journal-id=10240 "~Publications mathématiques de l'IHÉS"
 https://www.ams.org/rss/jams.rss "~jams"
+https://link.springer.com/search.rss?new-search=true&query=*&content-type=Article&sortBy=relevance&search-within=Journal&facet-journal-id=10240 "~Publications mathématiques de l'IHÉS"
 https://www.cambridge.org/core/rss/product/id/B987EC32470620A598056BB76325AFC2 "~Compositio Mathematica "
 
-https://feeds.science.org/rss/science.xml "~science"
 
 https://sspai.com/feed "~少数派"
 https://store.steampowered.com/feeds/news.xml
 https://plink.anyfeeder.com/gcores "~机核"
 https://www.douban.com/feed/review/book "~豆瓣书评"
 https://blog.xiaket.org/feed.xml
-https://3quarksdaily.com/feed
 http://solidot.org/index.rss
-https://buttondown.com/thepudding/rss
 
 https://aphilosopher.drmcl.com/feed/ "~A Philosopher's blog"
 https://philosophynow.org/rss "~philosophy now"
-https://iep.utm.edu/feed/
-https://daily-philosophy.com/index.xml
-https://maggieappleton.com/rss.xml
 
 https://github.com/v1nh1shungry/nvim-weekly-cn/releases.atom "~nvim weekly cn"
 https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins"
@@ -35,19 +29,9 @@ https://hellogithub.com/rss
 https://rustcc.cn/rss
 
 https://itsfoss.com/rss/
-https://wiki.archlinux.org/index.php?title=Special:RecentChanges&feed=rss "~ArchWiki Changes"
-https://www.archlinux.org/feeds/news/ "~Arch News"
 https://www.archlinuxcn.org/feed/ "~ArchCN News"
-https://bbs.archlinux.org/extern.php?action=feed&fid=23&type=atom "Arch Newbie"
-https://bbs.archlinux.org/extern.php?action=feed&type=atom "Arch bbs"
 https://bbs.archlinuxcn.org/extern.php?action=feed&type=rss "ArchCN bbs"
 https://bbs.archlinuxcn.org/extern.php?action=feed&fid=19&type=rss "ArchCN Newbie"
-https://bbs.archlinuxcn.org/extern.php?action=feed&fid=68&type=rss
-https://bbs.archlinuxcn.org/extern.php?action=feed&fid=28&type=rss
 https://archlinux.org/feeds/packages/x86_64/ "~Arch repo"
 https://aur.archlinux.org/rss "~AUR"
 https://blog.lilydjwg.me/posts.rss
-
-https://hiraethecho.github.io/hexo/atom.xml "~blog hexo"
-https://hiraethecho.github.io/wiki/feed_rss_updated.xml "~blog wiki"
-https://hiraethecho.github.io/hugo/index.xml "~blog hugo"
