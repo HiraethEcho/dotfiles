@@ -65,7 +65,6 @@ gvfs-dnssd
 gvim
 harper
 hugo
-icloud-pake
 imagemagick
 impala
 inotify-tools
@@ -86,6 +85,7 @@ linux
 linux-firmware
 linux-headers
 linux-wifi-hotspot
+lrxed-bin
 lsd
 lua-language-server
 lua51
@@ -143,6 +143,7 @@ sddm
 shfmt
 sioyek
 snapper
+snownews
 steam
 stow
 stylua
@@ -168,6 +169,7 @@ timew
 tinymist
 tmux
 todoman
+todotxt
 tree-sitter
 ttf-daddytime-mono-nerd
 ttf-lxgw-wenkai-mono

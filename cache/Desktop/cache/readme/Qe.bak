@@ -39,7 +39,7 @@ easytag 2.4.3-14
 efibootmgr 18-3
 excel-pake 1.0.0-1
 expac 10-11
-fastfetch 2.45.0-1
+fastfetch 2.46.0-1
 fbterm 1.7_5-5
 fcitx5 5.1.13-1
 fcitx5-chinese-addons 5.1.9-1
@@ -63,9 +63,8 @@ grub-btrfs 4.13-2
 gvfs 1.57.2-4
 gvfs-dnssd 1.57.2-4
 gvim 9.1.1431-1
-harper 0.42.0-1
+harper 0.43.0-1
 hugo 0.147.8-1
-icloud-pake 1.0.0-3
 imagemagick 7.1.1.47-2
 impala 0.2.4-1
 inotify-tools 4.23.9.0-2
@@ -86,6 +85,7 @@ linux 6.15.2.arch1-1
 linux-firmware 20250508.788aadc8-2
 linux-headers 6.15.2.arch1-1
 linux-wifi-hotspot 1:4.7.2-1
+lrxed-bin 0.1.2-1
 lsd 1.1.5-1
 lua-language-server 3.14.0-1
 lua51 5.1.5-13
@@ -143,6 +143,7 @@ sddm 0.21.0-6
 shfmt 3.11.0-1
 sioyek 2.0.0-23
 snapper 0.12.2-4
+snownews 1.11-1
 steam 1.0.0.82-2
 stow 2.4.1-1
 stylua 2.1.0-1
@@ -168,6 +169,7 @@ timew 1.8.0-2
 tinymist 1:0.13.12-1
 tmux 3.5_a-1
 todoman 4.5.0-2
+todotxt 2.13.0-1
 tree-sitter 0.25.6-1
 ttf-daddytime-mono-nerd 3.4.0-1
 ttf-lxgw-wenkai-mono 1.520-1

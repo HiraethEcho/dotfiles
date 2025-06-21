@@ -80,39 +80,35 @@
 #
 # Default value: no
 #
-auto-reload yes
+# auto-reload yes
+
+####  bind
+#
+# Bind sequence of keys <key-sequence> to <command-list>. This means that
+# whenever the keys in <key-sequence> are pressed in order, then the list of
+# commands in <command-list> is executed (if applicable in the current dialog).
+# For more information see <<_key_bindings>>. Optionally, a description can be
+# added. If present, the description is shown in the help form. See also
+# <<unbind-key,`unbind-key`>> to remove a key binding.
+#
+# Syntax: <key-sequence> <dialog>[,<dialog>] <command-list> [-- "<binding description>"]
+#
+# Default value: n/a
+#
+# bind of everywhere set browser "firefox" ; open-in-browser
 
 ####  bind-key
 #
 # Bind key <key> to <operation>. This means that whenever <key> is pressed,
 # then <operation> is executed (if applicable in the current dialog). For more
-# information see <<_key_bindings>>. See also <<unbind-key,`unbind-key`>> to
-# remove a key binding.
+# information see <<_old_style_key_bindings>>. See also
+# <<unbind-key,`unbind-key`>> to remove a key binding.
 #
 # Syntax: <key> <operation> [<dialog>]
 #
 # Default value: n/a
 #
 # bind-key ^R reload-all
-bind-key j down
-bind-key k up
-bind-key J next-feed
-bind-key K prev-feed
-bind-key n next
-bind-key p prev
-bind-key ^n next-unread
-bind-key ^p prev-unread
-
-bind-key O open-in-browser-noninteractively
-
-bind-key h quit
-bind-key l open
-bind-key ^E toggle-source-view
-
-bind-key ^u halfpageup
-bind-key ^d halfpagedown
-
-bind-key ^i random-unread
 
 ####  bookmark-autopilot
 #
@@ -135,7 +131,7 @@ bind-key ^i random-unread
 #
 # Default value: ""
 #
-bookmark-cmd "~/.config/newsboat/bookmark.sh"
+# bookmark-cmd "~/bin/delicious-bookmark.sh"
 
 ####  bookmark-interactive
 #
@@ -160,7 +156,7 @@ bookmark-cmd "~/.config/newsboat/bookmark.sh"
 # Default value: %BROWSER, otherwise lynx
 #
 # browser "w3m %u"
-browser "waterfox %u"
+
 ####  cache-file
 #
 # This configuration option sets the cache file. This is especially useful if
@@ -198,40 +194,6 @@ browser "waterfox %u"
 #
 # color background white black
 
-# color listnormal white black
-# color listfocus black #00ff00 bold      # 选中项：黑字绿底
-# color listnormal_unread yellow black    # 未读项：黄字
-# color listfocus_unread yellow #00ff00   # 选中未读项：黄字绿底
-# color info cyan black
-# color background white black
-
-# solarized-dark
-# color background         default   default
-# color listnormal         default   default
-# color listnormal_unread  default   default
-# color listfocus          black     yellow
-# color listfocus_unread   black     yellow
-# color info               default   black
-# color article            default   default
-# highlight article "^(Title):.*$" blue default
-# highlight article "https?://[^ ]+" red default
-# highlight article "\\[image\\ [0-9]+\\]" green default
-
-# nord
-color background          color15    default
-color listnormal          color248   default
-color listnormal_unread   color4     default
-color listfocus           color0     color4
-color listfocus_unread    color0     color4   bold
-color info                color12    color0
-color article             color248   default
-highlight article "^(Feed|Link):.*$" color6 default bold
-highlight article "^(Title|Date|Author):.*$" color6 default bold
-highlight article "https?://[^ ]+" color10 default underline
-highlight article "\\[[0-9]+\\]" color10 default bold
-highlight article "\\[image\\ [0-9]+\\]" color10 default bold
-highlight feedlist "^─.*$" color6 color0 bold
-
 ####  confirm-delete-all-articles
 #
 # If set to `yes`, then Newsboat will ask for confirmation whether the user
@@ -252,7 +214,7 @@ highlight feedlist "^─.*$" color6 color0 bold
 #
 # Default value: no
 #
-confirm-exit no
+# confirm-exit yes
 
 ####  confirm-mark-all-feeds-read
 #
@@ -263,7 +225,7 @@ confirm-exit no
 #
 # Default value: yes
 #
-confirm-mark-all-feeds-read no
+# confirm-mark-all-feeds-read no
 
 ####  confirm-mark-feed-read
 #
@@ -274,7 +236,7 @@ confirm-mark-all-feeds-read no
 #
 # Default value: yes
 #
-confirm-mark-feed-read no
+# confirm-mark-feed-read no
 
 ####  cookie-cache
 #
@@ -299,7 +261,7 @@ confirm-mark-feed-read no
 #
 # Default value: %b %d
 #
-datetime-format "%D, %R"
+# datetime-format "%D, %R"
 
 ####  define-filter
 #
@@ -434,9 +396,9 @@ datetime-format "%D, %R"
 
 ####  feedbin-flag-star
 #
-# If set and Feedbin support is used, then all articles that are flagged with
-# the specified flag are being "starred" in Feedbin and appear in the list of
-# "Starred items".
+# If set and Feedbin support is used, then all articles that are
+# <<#_flagging_articles,flagged with the specified flag>> are being "starred"
+# in Feedbin and appear in the list of "Starred items".
 #
 # Syntax: <flag>
 #
@@ -500,9 +462,9 @@ datetime-format "%D, %R"
 
 ####  feedhq-flag-share
 #
-# If set and FeedHQ support is used, then all articles that are flagged with
-# the specified flag are being "shared" in FeedHQ so that people that follow
-# you can see it.
+# If set and FeedHQ support is used, then all articles that are
+# <<#_flagging_articles,flagged with the specified flag>> are being "shared" in
+# FeedHQ so that people that follow you can see it.
 #
 # Syntax: <flag>
 #
@@ -512,9 +474,9 @@ datetime-format "%D, %R"
 
 ####  feedhq-flag-star
 #
-# If set and FeedHQ support is used, then all articles that are flagged with
-# the specified flag are being "starred" in FeedHQ and appear in the list of
-# "Starred items".
+# If set and FeedHQ support is used, then all articles that are
+# <<#_flagging_articles,flagged with the specified flag>> are being "starred"
+# in FeedHQ and appear in the list of "Starred items".
 #
 # Syntax: <flag>
 #
@@ -636,9 +598,9 @@ datetime-format "%D, %R"
 
 ####  freshrss-flag-star
 #
-# If set and FreshRSS support is used, then all articles that are flagged with
-# the specified flag are being "starred" in FreshRSS and appear in the list of
-# "Starred items".
+# If set and FreshRSS support is used, then all articles that are
+# <<#_flagging_articles,flagged with the specified flag>> are being "starred"
+# in FreshRSS and appear in the list of "Starred items".
 #
 # Syntax: <flag>
 #
@@ -889,9 +851,9 @@ datetime-format "%D, %R"
 
 ####  inoreader-flag-share
 #
-# If set and Inoreader support is used, then all articles that are flagged with
-# the specified flag are being "shared" in Inoreader so that people that follow
-# you can see it.
+# If set and Inoreader support is used, then all articles that are
+# <<#_flagging_articles,flagged with the specified flag>> are being "shared" in
+# Inoreader so that people that follow you can see it.
 #
 # Syntax: <flag>
 #
@@ -901,9 +863,9 @@ datetime-format "%D, %R"
 
 ####  inoreader-flag-star
 #
-# If set and Inoreader support is used, then all articles that are flagged with
-# the specified flag are being "starred" in Inoreader and appear in the list of
-# "Starred items".
+# If set and Inoreader support is used, then all articles that are
+# <<#_flagging_articles,flagged with the specified flag>> are being "starred"
+# in Inoreader and appear in the list of "Starred items".
 #
 # Syntax: <flag>
 #
@@ -1065,9 +1027,9 @@ datetime-format "%D, %R"
 
 ####  miniflux-flag-star
 #
-# If set and Miniflux support is used, then all articles that are flagged with
-# the specified flag are being "starred" in Miniflux and appear in the list of
-# "Starred items".
+# If set and Miniflux support is used, then all articles that are
+# <<#_flagging_articles,flagged with the specified flag>> are being "starred"
+# in Miniflux and appear in the list of "Starred items".
 #
 # Syntax: <flag>
 #
@@ -1320,8 +1282,9 @@ datetime-format "%D, %R"
 
 ####  ocnews-flag-star
 #
-# If set and ownCloud News support is used, then all articles that are flagged
-# with the specified flag are being "starred" in ownCloud News.
+# If set and ownCloud News support is used, then all articles that are
+# <<#_flagging_articles,flagged with the specified flag>> are being "starred"
+# in ownCloud News.
 #
 # Syntax: <character>
 #
@@ -1385,9 +1348,9 @@ datetime-format "%D, %R"
 
 ####  oldreader-flag-share
 #
-# If set and The Old Reader support is used, then all articles that are flagged
-# with the specified flag are being "shared" in The Old Reader so that people
-# that follow you can see it.
+# If set and The Old Reader support is used, then all articles that are
+# <<#_flagging_articles,flagged with the specified flag>> are being "shared" in
+# The Old Reader so that people that follow you can see it.
 #
 # Syntax: <flag>
 #
@@ -1397,9 +1360,9 @@ datetime-format "%D, %R"
 
 ####  oldreader-flag-star
 #
-# If set and The Old Reader support is used, then all articles that are flagged
-# with the specified flag are being "starred" in The Old Reader and appear in
-# the list of "Starred items".
+# If set and The Old Reader support is used, then all articles that are
+# <<#_flagging_articles,flagged with the specified flag>> are being "starred"
+# in The Old Reader and appear in the list of "Starred items".
 #
 # Syntax: <flag>
 #
@@ -1861,8 +1824,9 @@ datetime-format "%D, %R"
 
 ####  ttrss-flag-publish
 #
-# If set and Tiny Tiny RSS support is used, then all articles that are flagged
-# with the specified flag are being marked as "published" in Tiny Tiny RSS.
+# If set and Tiny Tiny RSS support is used, then all articles that are
+# <<#_flagging_articles,flagged with the specified flag>> are being marked as
+# "published" in Tiny Tiny RSS.
 #
 # Syntax: <character>
 #
@@ -1872,8 +1836,9 @@ datetime-format "%D, %R"
 
 ####  ttrss-flag-star
 #
-# If set and Tiny Tiny RSS support is used, then all articles that are flagged
-# with the specified flag are being "starred" in Tiny Tiny RSS.
+# If set and Tiny Tiny RSS support is used, then all articles that are
+# <<#_flagging_articles,flagged with the specified flag>> are being "starred"
+# in Tiny Tiny RSS.
 #
 # Syntax: <character>
 #
@@ -1951,10 +1916,12 @@ datetime-format "%D, %R"
 ####  unbind-key
 #
 # Unbind key <key>. This means that no operation is called when <key> is
-# pressed. If you provide "-a" as <key>, all currently bound keys will become
-# unbound. Optionally, you can specify a dialog (for a list of available
-# dialogs, see <<bind-key,`bind-key`>> above). If you specify one, the key
-# binding will only be unbound for the specified dialog.
+# pressed. `unbind-key` uses the syntax for special keys as specified in the
+# **Key** section of <<_old_style_key_bindings,Old Style Key Bindings>>. If you
+# provide "-a" as <key>, all currently bound keys will become unbound.
+# Optionally, you can specify a dialog (for a list of available dialogs, see
+# <<bind-key,`bind-key`>> above). If you specify one, the key binding will only
+# be unbound for the specified dialog.
 #
 # Syntax: <key> [<dialog>]
 #

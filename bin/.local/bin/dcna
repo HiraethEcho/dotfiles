@@ -252,7 +252,8 @@ rclone_pull_all() {
     LOG="${YELLOW}拉取: $remote → $local${NC}..."
     echo -e $LOG
     TOTAL_LOG=$TOTAL_LOG"$LOG"
-    if rclone sync "$remote" "$local" $RCLONE_INTERACTIVE --backup-dir $CONFICT_DIRS --suffix '_local' --track-renames --filter-from "$HOME/.config/rclone/filter-list.txt" --no-update-dir-modtime --no-update-modtime --transfers 20 -L; then
+    # if rclone sync "$remote" "$local" $RCLONE_INTERACTIVE --backup-dir $CONFICT_DIRS --suffix '_local' --track-renames --filter-from "$HOME/.config/rclone/filter-list.txt" --no-update-dir-modtime --no-update-modtime --transfers 20 -L; then
+    if rclone sync "$remote" "$local" $RCLONE_INTERACTIVE --track-renames --filter-from "$HOME/.config/rclone/filter-list.txt" --no-update-dir-modtime --no-update-modtime --transfers 20 -L; then
       LOG="${GREEN}✓ 成功${NC}"
       echo -e $LOG
       TOTAL_LOG=$TOTAL_LOG"$LOG\n"
@@ -336,8 +337,8 @@ night_reboot() {
 }
 
 day() {
-  git_pull_all "$@"
   rclone_pull_all "$@"
+  git_pull_all "$@"
   total_log "$@"
   if [ -d "$CONFICT_DIRS" ]; then
     cd $CONFICT_DIRS
