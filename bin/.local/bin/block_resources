@@ -16,7 +16,7 @@ ICON=""
 case "$BLOCK_BUTTON" in
 # 1) st -e btop ;;
   1) notify-send "󰁹 Battery" "$(acpi | cut -d ':' -f 2-)" ;;
-  2) tlpui ;;
+  # 2) tlpui ;;
   3) st -e btop ;;
 # 4) notify-send "res" "$BLOCK_BUTTON" ;;
 # 5) notify-send "res" "$BLOCK_BUTTON" ;;

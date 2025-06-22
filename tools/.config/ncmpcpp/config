@@ -19,13 +19,13 @@
 ## MPD clients (eg. ncmpc) also use that location.
 ##
 #
-lyrics_directory = ~/.config/mpd/lyrics
+lyrics_directory = ~/Music/lyrics
 #
 ##### connection settings #####
 #
-#mpd_host = localhost
+mpd_host = localhost
 #
-#mpd_port = 6600
+mpd_port = 6600
 #
 #mpd_password = ""
 #
@@ -33,7 +33,7 @@ lyrics_directory = ~/.config/mpd/lyrics
 #
 ## Needed for tag editor and file operations to work.
 ##
-#mpd_music_dir = ~/music
+mpd_music_dir = ~/Music
 #
 #mpd_crossfade_time = 5
 #
@@ -71,7 +71,7 @@ lyrics_directory = ~/.config/mpd/lyrics
 ## visualizer.
 ##
 #
-# visualizer_data_source = /tmp/mpd.fifo
+visualizer_data_source = /tmp/mpd.fifo
 #
 ##
 ## Note: Below parameter is needed for ncmpcpp to determine which output
@@ -337,6 +337,7 @@ visualizer_in_stereo = yes
 ## notifications etc.
 ##
 #execute_on_song_change = ""
+execute_on_song_change = notify-send "♫ Now Playing" "$(mpc current)"
 #
 ##
 ## Note: Custom command that will be executed each time player state
@@ -423,12 +424,13 @@ visualizer_in_stereo = yes
 #cyclic_scrolling = no
 #
 #lyrics_fetchers = tags, genius, tekstowo, plyrics, justsomelyrics, jahlyrics, zeneszoveg, internet
+lyrics_fetchers = tags
 #
-#follow_now_playing_lyrics = no
+follow_now_playing_lyrics = yes
 #
-#fetch_lyrics_for_current_song_in_background = no
+fetch_lyrics_for_current_song_in_background = yes
 #
-#store_lyrics_in_song_dir = no
+# store_lyrics_in_song_dir = yes
 #
 #generate_win32_compatible_filenames = yes
 #

@@ -227,8 +227,8 @@ system_bak() {
   LOG="${YELLOW}备份package list...${NC}"
   echo -e $LOG
   TOTAL_LOG=$TOTAL_LOG"$LOG"
-  if pacman -Qqe >$HOME"/dotfiles/cache/Desktop/cache/readme/Qqe.bak" &&
-    pacman -Qe >"$HOME/dotfiles/cache/Desktop/cache/readme/Qe.bak"; then
+  if pacman -Qqe >$HOME"/dotfiles/cache/Desktop/cache/readme/Qqe-`whoami`.bak" &&
+    pacman -Qe >"$HOME/dotfiles/cache/Desktop/cache/readme/Qe-`whoami`.bak"; then
     LOG="${GREEN}✓ 成功${NC}"
     echo -e $LOG
     TOTAL_LOG=$TOTAL_LOG"$LOG\n"

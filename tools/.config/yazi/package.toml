@@ -23,5 +23,17 @@ use = "GrzegorzKozub/mdcat"
 rev = "7b7380a"
 hash = "40c20e6c1085d1f45309b9f148bf4f6e"
 
-[flavor]
-deps = []
+[[plugin.deps]]
+use = "ahkohd/eza-preview"
+rev = "7a93433"
+hash = "22e1bd3dd03894746a3540b5f3729d0c"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mime-ext"
+rev = "42f64c0"
+hash = "4c49c446328c4553a4ccab7facc10b21"
+
+[[flavor.deps]]
+use = "AdithyanA2005/nord"
+rev = "3a791e9"
+hash = "fa7142cda74a50b271ea212356b40b57"

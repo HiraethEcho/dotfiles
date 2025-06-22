@@ -2,7 +2,7 @@ layout: Split(
     direction: Vertical,
     panes: [
         (
-            size: "8",
+            size: "21",
             pane: Split(
                 direction: Horizontal,
                 panes: [
@@ -20,7 +20,7 @@ layout: Split(
                                     pane: Pane(Header),
                                 ),
                                 (
-                                    size: "1",
+                                    size: "5",
                                     pane: Pane(ProgressBar),
                                 ),
                                 (
