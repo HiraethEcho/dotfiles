@@ -7,7 +7,7 @@
     show_song_table_header: false,
     symbols: (song: " ", dir: "", marker: "\u{e0b0}"),
     progress_bar: (
-        symbols: ["=", "⭘", " "],
+        symbols: ["█", "█", "█", "█", "█"],
         track_style: (bg: None),
         elapsed_style: (fg: "#fe8019", bg: None),
         thumb_style: (fg: "#fe8019", bg: None),
@@ -35,10 +35,10 @@
     song_table_format: [
         (
             prop: (kind: Property(Title), style: (fg: "#ebdbb2"), default: (kind: Text("Unknown"))),  // Changed from green to red
-            width: "50%",
-            alignment: Right,
+            width: "100%",
+            alignment: Center,
         ),
-        (
+        /* (
             prop: (kind: Text("-"), style: (fg: "#d65d0e"), default: (kind: Text("Unknown"))),
             width: "1",
             alignment: Center,
@@ -46,7 +46,7 @@
         (
             prop: (kind: Property(Artist), style: (fg: "#d65d0e"), default: (kind: Text("Unknown"))),
             width: "50%",
-        ),
+        ), */
     ],
     header: (
         rows: [

@@ -14,6 +14,8 @@ prepend_keymap = [
   { on = [ "E" ], run = "plugin eza-preview",  desc = "Toggle tree/list dir preview" },
   { on = [ "=" ], run = "plugin eza-preview inc-level", desc = "Increment tree level" },
   { on = [ "-" ], run = "plugin eza-preview dec-level", desc = "Decrement tree level" },
+  { on = [ "<C-p>" ], run = "plugin parent-arrow -1", desc = "parent cursor up" },
+  { on = [ "<C-n>" ], run = "plugin parent-arrow 1",  desc = "parent cursor down" },
 ]
 keymap = [
   { on = [ "<Esc>" ], run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },

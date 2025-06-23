@@ -29,15 +29,7 @@ require("session"):setup({
   sync_yanked = true,
 })
 
-require("eza-preview"):setup({
-  level = 1,
-  -- Follow symlinks when previewing directories (default: false)
-  follow_symlinks = true,
-  -- Show target file info instead of symlink info (default: false)
-  dereference = false,
-  -- Show hidden files (default: true) 
-  all = true
-})
+-- require("eza-preview"):setup({ level = 3, follow_symlinks = true, dereference = false, all = true })
 --[[ require("yatline"):setup({
   show_background = false,
 

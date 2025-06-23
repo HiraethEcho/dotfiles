@@ -5,7 +5,7 @@ activate-linux-git r363.746a84e-1
 activitywatch-bin 0.13.2-1
 aerc 0.20.1-3
 alsa-utils 1.2.14-1
-amd-ucode 20250508.788aadc8-2
+amd-ucode 20250613.12fe085f-6
 archlinuxcn-keyring 20250531-1
 atuin 18.6.1-1
 autossh 1.4g-4
@@ -66,7 +66,7 @@ grub-btrfs 4.13-2
 gvfs 1.57.2-4
 gvfs-dnssd 1.57.2-4
 gvim 9.1.1431-1
-harper 0.43.0-1
+harper 0.44.0-1
 hugo 0.147.8-1
 imagemagick 7.1.1.47-2
 impala 0.2.4-1
@@ -84,9 +84,9 @@ lib32-vulkan-radeon 1:25.1.4-1
 libnotify 0.8.6-1
 libxml2-legacy 2.13.8-1
 libzip 1.11.4-1
-linux 6.15.2.arch1-1
-linux-firmware 20250508.788aadc8-2
-linux-headers 6.15.2.arch1-1
+linux 6.15.3.arch1-1
+linux-firmware 20250613.12fe085f-6
+linux-headers 6.15.3.arch1-1
 linux-wifi-hotspot 1:4.7.2-1
 lrxed-bin 0.1.2-1
 lsd 1.1.5-1
@@ -107,7 +107,7 @@ mpv 1:0.40.0-3
 ncmpcpp 0.10.1-4
 neovim 0.11.2-3
 net-tools 2.10-3
-newsboat 2.39-2
+newsboat 2.40-1
 niri 25.05.1-2
 npm 11.4.2-1
 ntfs-3g 2022.10.3-2
@@ -172,7 +172,7 @@ texlive-pstricks 2025.2-1
 texlive-xetex 2025.2-1
 timeshift 24.06.6-1
 timew 1.8.0-2
-tinymist 1:0.13.12-1
+tinymist 1:0.13.14-1
 tmux 3.5_a-1
 todoman 4.5.0-2
 todotxt 2.13.0-1
@@ -184,7 +184,7 @@ ttf-nerd-fonts-symbols-mono 3.4.0-1
 typst 1:0.13.1-1
 ufrii-print 2-1
 unzip 6.0-22
-uwsm 0.21.8-1
+uwsm 0.22.0-1
 vdirsyncer 0.19.3-2
 virt-manager 5.0.0-1
 vscode-html-languageserver 1.101.0-1

@@ -8,8 +8,8 @@ news.version=3.4.1
 data.location=~/.local/share/task
 hooks.location=~/.config/task/hooks
 
-include dark-gray-blue-256.theme
-# include ~/.config/task/nord.theme
+# include dark-gray-blue-256.theme
+include ~/.config/task/custom.theme
 
 
 weekstart=monday
@@ -23,7 +23,7 @@ report.list.columns=id,project,description,depends,due,recur
 report.list.labels=ID,Project,Description,Depends,Due,Recur
 report.list.sort=project
 
-report.next.columns=id,description,project,start.age,depends,priority,tags,recur,scheduled.countdown,due.countdown,until.remaining,urgency,status
+report.next.columns=id,description.truncated_count,project,start.age,depends,priority,tags,recur,scheduled.countdown,due.countdown,until.remaining,urgency,status
 report.next.labels=ID,Description,Project,Active,Deps,Priority,Tag,Recur,Scheduled,Due,Until,Urg,Status
 report.next.filter=status:pending priority.not:L -WAITING
 # report.next.sort=urgency
@@ -33,6 +33,8 @@ report.long.labels=ID,Created,Mod,Deps,Pri,Project,Tags,Recur,Wait,Sched,Due,Unt
 
 report.minimal.columns=project,description.truncated_count
 report.minimal.labels=Project,Description
+
+report.ready.filter=+READY priority.not:L -WAITING
 
 # $ task columns
 # Columns     Type    Modifiable Supported Formats Example

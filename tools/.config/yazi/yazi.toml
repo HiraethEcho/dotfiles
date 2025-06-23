@@ -93,6 +93,7 @@ prepend_previewers = [
   { mime = "application/x-7z-compressed", run = "ouch" },
   { mime = "application/x-rar",           run = "ouch" },
   { mime = "application/x-xz",            run = "ouch" },
+  # { mime = "text/plain",                  run = "bat" },
 ]
 preloaders = [
   # Image
@@ -123,11 +124,11 @@ previewers = [
   { name = "*", run = "file" },
 ]
 
-[[plugin.prepend_fetchers]]
-id   = "mime"
-name = "*"
-run  = "mime-ext"
-prio = "high"
+# [[plugin.prepend_fetchers]]
+# id   = "mime"
+# name = "*"
+# run  = "mime-ext"
+# prio = "high"
 
 [[plugin.prepend_fetchers]]
 id   = "git"
