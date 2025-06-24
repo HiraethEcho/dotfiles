@@ -23,8 +23,8 @@ report.list.columns=id,project,description,depends,due,recur
 report.list.labels=ID,Project,Description,Depends,Due,Recur
 report.list.sort=project
 
-report.next.columns=id,description.truncated_count,project,start.age,depends,priority,tags,recur,scheduled.countdown,due.countdown,until.remaining,urgency,status
-report.next.labels=ID,Description,Project,Active,Deps,Priority,Tag,Recur,Scheduled,Due,Until,Urg,Status
+report.next.columns=id,description.truncated_count,project,start.age,priority,recur,due.countdown,urgency,status
+report.next.labels=ID,Description,Project,Active,Priority,Recur,Due,Urg,Status
 report.next.filter=status:pending priority.not:L -WAITING
 # report.next.sort=urgency
 

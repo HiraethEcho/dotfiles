@@ -25,7 +25,7 @@ bongo-cat 0.6.1-1
 bridge-utils 1.7.1-2
 btop 1.4.3-3
 btrfs-assistant 2.2-1
-btrfs-progs 6.14-1
+btrfs-progs 6.15-1
 buku 5.0-1
 cava 0.10.4-3
 clang 20.1.6-1
@@ -43,7 +43,7 @@ expac 10-11
 eza 0.21.5-1
 fastfetch 2.46.0-1
 fbterm 1.7_5-5
-fcitx5 5.1.13-1
+fcitx5 5.1.14-1
 fcitx5-chinese-addons 5.1.9-1
 fcitx5-configtool 5.1.9-1
 fcitx5-gtk 5.1.4-1
@@ -76,7 +76,6 @@ iwd 3.9-1
 jujutsu 0.30.0-1
 khal 0.13.0-1
 kitty 0.42.1-1
-kvantum 1.1.5-1
 lazygit 0.52.0-1
 less 1:668-1
 lib32-mesa 1:25.1.4-1
@@ -113,9 +112,9 @@ npm 11.4.2-1
 ntfs-3g 2022.10.3-2
 obsidian 1.8.10-1
 openbox 3.6.1-12
+openlist-bin 4.0.2-1
 openssh 10.0p1-3
 os-prober 1.83-1
-oss-browser-bin 1.19.0-1
 otf-codenewroman-nerd 3.4.0-1
 pacfiles 0.2.7-2
 pacman-contrib 1.12.0-1
@@ -143,7 +142,7 @@ rclone 1.70.1-1
 redbook-pake 1.0.0-1
 refind 0.14.2-1
 ripgrep 14.1.1-1
-rmpc-git 0.8.0.r160.g6b90b0a-1
+rmpc-git 0.9.0.r3.g8038b92-1
 rofi-wayland 1.7.9.1-1
 sddm 0.21.0-6
 shfmt 3.11.0-1
@@ -189,13 +188,11 @@ vdirsyncer 0.19.3-2
 virt-manager 5.0.0-1
 vscode-html-languageserver 1.101.0-1
 vulkan-radeon 1:25.1.4-1
-waterfox-bin 6.5.9-3
+waterfox-bin 6.5.10-1
 watt-toolkit-bin 3.0.0.rc.16-1
 waybar 0.12.0-1
 websocat 1.14.0-1
-wechat 1:6-2
 wechat-bin 4.0.1.11-2
-wechat-universal-bwrap 4.0.1.11-1
 wemeet-bin 3.19.2.400-3
 weread-pake 3.1.1-3
 wev 1.0.0-13

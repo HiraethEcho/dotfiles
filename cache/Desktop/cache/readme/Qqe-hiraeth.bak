@@ -76,7 +76,6 @@ iwd
 jujutsu
 khal
 kitty
-kvantum
 lazygit
 less
 lib32-mesa
@@ -113,9 +112,9 @@ npm
 ntfs-3g
 obsidian
 openbox
+openlist-bin
 openssh
 os-prober
-oss-browser-bin
 otf-codenewroman-nerd
 pacfiles
 pacman-contrib
@@ -193,9 +192,7 @@ waterfox-bin
 watt-toolkit-bin
 waybar
 websocat
-wechat
 wechat-bin
-wechat-universal-bwrap
 wemeet-bin
 weread-pake
 wev
