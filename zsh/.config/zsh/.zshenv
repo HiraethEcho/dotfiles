@@ -66,7 +66,8 @@ export FZF_DEFAULT_OPTS="--reverse --style full \
 # export FZF_COMPLETION_TRIGGER='~~'
 
 # export LFS=/mnt/lfs
-export DEBIAN_IP="2408:8207:1962:6500:4035:dc4c:6be9:6ad1"
+# export DEBIAN_IP="2408:8207:1962:6500:4035:dc4c:6be9:6ad1"
+export DEBIAN_IP="2408:8207:1962:6500:a71:90ff:fe3d:a08b"
 # export WIN_IP="2408:8207:1963:c5d0:f13c:21b5:d2c8:62b7"
 export ALIECS_IP="120.26.223.0"
 export ALILIGHT_IP="182.92.134.43"

@@ -108,6 +108,7 @@ neovim
 net-tools
 newsboat
 niri
+nodejs-markmap-cli
 npm
 ntfs-3g
 obsidian
@@ -133,6 +134,7 @@ pipewire-pulse
 powerpoint-pake
 prettier
 pulsemixer
+pyright
 python-eyed3
 python-pip
 python-pynvim
