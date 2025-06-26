@@ -13,14 +13,21 @@ GIT_REPO=(
 )
 
 RCLONE_PAIR=(
-  "$HOME/Documents/doc/;koofr:/kDocuments/doc/"
-  "$HOME/Documents/ucas/;koofr:/kDocuments/ucas/"
-  "$HOME/Documents/zotero_files/;koofr:/kDocuments/zotero_files/"
-  "$HOME/Documents/talks/;koofr:/kDocuments/talks/"
-  "$HOME/Documents/projects/;koofr:/kDocuments/projects/"
-  "$HOME/Documents/lectures/;koofr:/kDocuments/lectures/"
-  "$HOME/Documents/philosophy/;koofr:/kDocuments/philosophy/"
+  # "$HOME/Documents/doc/;koofr:/kDocuments/doc/"
+  # "$HOME/Documents/ucas/;koofr:/kDocuments/ucas/"
+  # "$HOME/Documents/zotero_files/;koofr:/kDocuments/zotero_files/"
+  # "$HOME/Documents/talks/;koofr:/kDocuments/talks/"
+  # "$HOME/Documents/projects/;koofr:/kDocuments/projects/"
+  # "$HOME/Documents/lectures/;koofr:/kDocuments/lectures/"
+  # "$HOME/Documents/philosophy/;koofr:/kDocuments/philosophy/"
   # "$HOME/obsidian/;koofr:/obsidian/"
+  "$HOME/Documents/doc/;tera:/Documents/doc/"
+  "$HOME/Documents/ucas/;tera:/Documents/ucas/"
+  "$HOME/Documents/zotero_files/;tera:/Documents/zotero_files/"
+  "$HOME/Documents/talks/;tera:/Documents/talks/"
+  "$HOME/Documents/projects/;tera:/Documents/projects/"
+  "$HOME/Documents/lectures/;tera:/Documents/lectures/"
+  "$HOME/Documents/philosophy/;tera:/Documents/philosophy/"
   "$HOME/obsidian/;tera:/obsidian/"
 )
 

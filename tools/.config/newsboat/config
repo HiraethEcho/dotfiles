@@ -1672,7 +1672,7 @@ datetime-format "%D, %R"
 #
 # Default value: ~/
 #
-# save-path "~/Saved Articles"
+save-path "~/obsidian/clip"
 
 ####  scrolloff
 #

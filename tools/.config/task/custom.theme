@@ -37,7 +37,7 @@ color.deleted=gray8 on gray1
 color.completed=gray10 on gray2
 color.active=underline
 
-color.overdue=on rgb113
+color.overdue=on rgb104
 color.due.today=on rgb013
 color.due=bold
 color.blocked=gray18
