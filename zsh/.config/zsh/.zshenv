@@ -66,6 +66,7 @@ export FZF_DEFAULT_OPTS="--reverse --style full \
 # export FZF_COMPLETION_TRIGGER='~~'
 
 # export LFS=/mnt/lfs
-export HOME_IP="2408:8207:1962:6500:87c2:38e5:1717:8420"
+export HOME_IP="2408:8207:1962:6500:bf23:f89a:d169:3449"
+# export HOME_IP="2408:8207:1962:6500:87c2:38e5:1717:8420"
 export ALIECS_IP="120.26.223.0"
 export ALILIGHT_IP="182.92.134.43"

@@ -31,11 +31,13 @@ btrfs-progs
 buku
 cava
 clang
+clipmenu
 clivm
 cups
 ddcutil
 deepseek-pake
 dhcpcd
+dmenu
 dnsmasq
 dua-cli
 dunst
@@ -137,6 +139,7 @@ prettier
 pulsemixer
 pyright
 python-eyed3
+python-pipx
 python-pynvim
 qemu-base
 rclone
@@ -221,6 +224,7 @@ zathura
 zathura-djvu
 zathura-pdf-mupdf
 zip
+zmk-studio-bin
 zotero
 zoxide
 zsh
