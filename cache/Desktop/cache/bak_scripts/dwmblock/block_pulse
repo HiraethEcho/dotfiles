@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# A dwm_bar function to show the master volume of PulseAudio Joe Standring <git@joestandring.com>
+# GNU GPLv3
+
+# Dependencies: pamixer
+case $BLOCK_BUTTON in
+  1) pamixer -t ; notify-send "Station" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g') " ;;
+  # 2) nohup blueberry > /dev/null & ;;
+  # 2) pamixer --set-volume $(rofi -dmenu -config ~/.config/rofi/themes/passwd.rasi) ; notify-send -h int:value:$(pamxier --get-volume) "volume" ;;
+  # 3) pamixer -m ; notify-send "Station" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g') " ;;
+  2) nohup st -c tasks -t bluetooth -e bluetui > /dev/null &;;
+  3) nohup st -c tasks -t pulse -e pulsemixer > /dev/null &;;
+  # 3) nohup pavucontrol > /dev/null &  pkill -RTMIN+3 dwmblocks ;;
+  4) pamixer -i 5 ; notify-send -h int:value:$(pamixer --get-volume) "volume";;
+  5) pamixer -d 5 ; notify-send -h int:value:$(pamixer --get-volume) "volume";;
+  6) nohup st -e nvim "$0" > /dev/null &;;
+esac
+
+VOL=$(pamixer --get-volume)
+STATE=$(pamixer --get-mute)
+a=$[$VOL/4]
+    # BLUETOOTH=$(bluetooth | awk {'print $3'})
+printf "^f3^"
+printf "^c#96CDFB^"
+
+if ! [ -z "$(bluetoothctl devices Connected | grep 'AirPods')"  ]; then
+    printf "󱡏^f2^"
+fi
+
+# if ! [ -z "$(bluetoothctl devices Connected | grep 'BT')"  ]; then
+#     printf "󰥰^f2^"
+# fi
+
+if [ "$STATE" = "true" ] || [ "$VOL" -eq 0 ]; then
+    printf "󰸈^f3^^s0,10,27,6^^r1,11,%s,4^^f29^%s" "$a" "$VOL"
+else
+    printf "󰕾^f3^^s0,10,27,6^^r1,11,%s,4^^f29^%s" "$a" "$VOL"
+fi
+# 󰥰 󱡏 
+      # printf "^c#96CDFB^󰸈^f3^^c#96CDFB^^r0,1,7,19^^c#000000^^r1,2,5,17^^c#96CDFB^^r1,%s,5,%s^^f10^%s" "$b" "$a" "$VOL"

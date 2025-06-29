@@ -6,14 +6,14 @@
 # Dependencies: pamixer
 case $BLOCK_BUTTON in
   1) pamixer -t ; notify-send "Station" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g') " ;;
-	# 2) nohup blueberry > /dev/null & ;;
+  # 2) nohup blueberry > /dev/null & ;;
   # 2) pamixer --set-volume $(rofi -dmenu -config ~/.config/rofi/themes/passwd.rasi) ; notify-send -h int:value:$(pamxier --get-volume) "volume" ;;
   # 3) pamixer -m ; notify-send "Station" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g') " ;;
   2) nohup st -c tasks -t bluetooth -e bluetui > /dev/null &;;
   3) nohup st -c tasks -t pulse -e pulsemixer > /dev/null &;;
-	# 3) nohup pavucontrol > /dev/null &  pkill -RTMIN+3 dwmblocks ;;
-	4) pamixer -i 5 ; notify-send -h int:value:$(pamixer --get-volume) "volume";;
-	5) pamixer -d 5 ; notify-send -h int:value:$(pamixer --get-volume) "volume";;
+  # 3) nohup pavucontrol > /dev/null &  pkill -RTMIN+3 dwmblocks ;;
+  4) pamixer -i 5 ; notify-send -h int:value:$(pamixer --get-volume) "volume";;
+  5) pamixer -d 5 ; notify-send -h int:value:$(pamixer --get-volume) "volume";;
   6) nohup st -e nvim "$0" > /dev/null &;;
 esac
 
@@ -24,9 +24,9 @@ a=$[$VOL/4]
 printf "^f3^"
 printf "^c#96CDFB^"
 
-if ! [ -z "$(bluetoothctl devices Connected | grep 'AirPods')"  ]; then
-    printf "󱡏^f2^"
-fi
+# if ! [ -z "$(bluetoothctl devices Connected | grep 'AirPods')"  ]; then
+#     printf "󱡏^f2^"
+# fi
 
 # if ! [ -z "$(bluetoothctl devices Connected | grep 'BT')"  ]; then
 #     printf "󰥰^f2^"

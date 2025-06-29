@@ -12,10 +12,11 @@ l=$((a * 72 / 1440))
 r=$((a * 100 / 1440))
 
 case $BLOCK_BUTTON in
-1) notify-send -h int:value:$r -h int:transient:0 "Calendar" "$(cal -m | sed "s/\<$(date +'%e' | sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")
-<span color='green'>tasks<\/span>
-$(task rc.verbose=header minimal)" ;;
-# 1) notify-send  "Calendar" "$(cal -m | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
+# 1) notify-send -h int:value:$r -h int:transient:0 "Calendar" "$(cal -m | sed "s/\<$(date +'%e' | sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")
+# <span color='green'>tasks<\/span>
+# $(task rc.verbose=header minimal)" ;;
+# 1) notify-send -h int:value:$r "Calendar" "$(cal -m | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
+1) notify-send -h int:value:$r -h int:transient:0 "Today task" "$(task rc.verbose=header due.by:eod minimal)" ;;
 # 2) nohup st -c tasks -t mail -g 100x30 -e aerc >/dev/null & ;;
 2) nohup st -c tasks -t task -g 150x50 -e taskwarrior-tui >/dev/null & ;;
 3) nohup kitty -e newsboat >/dev/null & ;;
@@ -38,11 +39,7 @@ elif [[ $l -ge 18 ]]; then
 else
   printf "^c#e06c75^"
 fi
-printf "^f3^^s0,10,74,6^^r1,11,%s,4^^f76^" "$l"
 # printf "^f3^^s0,10,74,6^^r1,11,%s,4^^f76^" "$l"
 
-# printf "^c #ff9da2^"
-printf "^c#dfe3ee^"
+# printf "^c#dfe3ee^"
 printf "^f2^󰥔^f2^%s" "$(date '+%R')"
-printf "^c#f89da2^"
-printf "^f2^󰸗^f2^%s" "$(date '+%m/%d')"

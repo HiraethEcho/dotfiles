@@ -1,0 +1,91 @@
+#!/bin/bash
+
+net=$(awk '/^\s*w/ { print  int($3 * 100 / 70) }' /proc/net/wireless)
+interface=$(iw dev | awk '$1=="Interface"{print $2}')
+ssid=$(iw dev "$interface" link | awk '$1=="SSID:"{print $2}')
+
+case $BLOCK_BUTTON in
+# 1) notify-send -h int:value:$net "Wifi" "$ssid"  ;;
+1) nohup st -c tasks -t bluetooth -e bluetui >/dev/null & ;;
+# 2) setsid -f st -e nmtui; pkill -RTMIN+1 dwmblocks ;;
+# 2) nohup nm-connection-editor > /dev/null & ;;
+2) wihotspot ;;
+3) nohup st -c tasks -t wifi -e impala >/dev/null & ;;
+6) nohup st -e nvim "$0" >/dev/null & ;;
+esac
+
+bluetooth_macs=$(bluetoothctl devices Connected | grep Device | awk '{print $2}')
+if ! [ -z $macs ]; then
+  bluetooth_icon="󰂲^f2^"
+else
+  for i in ${bluetooth_macs[@]}; do
+    icon=$(bluetoothctl info $i | grep "Icon" | awk '{print $2}')
+    case $icon in
+    audio-headphones) bluetooth_icon="󱡏^f2^$bluetooth_icon" ;;
+    input-keyboard) bluetooth_icon="󰌌^f2^$bluetooth_icon" ;;
+    input-mouse) bluetooth_icon="󰍽^f2^$bluetooth_icon" ;;
+    esac
+  done
+fi
+
+# "$(iwctl station wlan0 get-networks)"
+# 󰖪󰤭 󰤯󰤟󰤢󰤥󰤨 
+# 󰀂󰣽
+#
+
+# function get_bytes {
+#     line=$(grep $interface /proc/net/dev | cut -d ':' -f2 | awk '{print "received_bytes="$1, "transmitted_bytes="$9}')
+#     eval $line
+#     now=$(date +%s%N)
+# }
+#
+# function get_velocity {
+#     value=$1
+#     old_value=$2
+#     now=$3
+#     timediff=$(($now - $old_time))
+#     velKB=$(echo "1000000000*($value-$old_value)/1024/$timediff" | bc)
+#     if test "$velKB" -gt 1024
+#     then
+#         echo $(echo "scale=2; $velKB/1024" |bc)MB/s
+#     else
+#         echo ${velKB}KB/s
+#     fi
+# }
+#
+# get_bytes
+# old_received_bytes=$received_bytes
+# old_transmitted_bytes=$transmitted_bytes
+# old_time=$now
+#
+# get_bytes
+#
+# vel_recv=$(get_velocity $received_bytes $old_received_bytes $now)
+# vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
+
+# printf "^c#99CC32^"
+#
+# printf "^c#8030e0^%s" "$bluetooth_icon"
+printf "^c#80c0e0^^f3^%s" "$bluetooth_icon"
+#
+# printf "^c#d08770^"
+# printf "^f2^%s^f2^^f2^%s" "$vel_recv" "$vel_trans"
+
+printf "^c#b5d6e0^"
+if [ "$(cat /sys/class/net/w*/operstate 2>/dev/null)" = 'up' ]; then
+  if [ $net -ge 80 ]; then
+    wifiicon="󰣺"
+  elif [ $net -ge 60 ]; then
+    wifiicon="󰣸"
+  elif [ $net -ge 40 ]; then
+    wifiicon="󰣶"
+  elif [ $net -ge 20 ]; then
+    wifiicon="󰣴"
+  else
+    wifiicon="󰣾"
+  fi
+  printf "%s^f2^%s" "$wifiicon" "$ssid"
+elif [ "$(cat /sys/class/net/w*/operstate 2>/dev/null)" = 'down' ]; then
+  [ "$(cat /sys/class/net/w*/flags 2>/dev/null)" = '0x1003' ] && wifiicon="󰖪 offine" || wifiicon="󰅖 disabled"
+  printf "%s" "$wifiicon"
+fi

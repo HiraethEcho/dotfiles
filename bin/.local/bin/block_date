@@ -1,0 +1,18 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+1) notify-send -h int:transient:0 "Calendar" "$(cal -m | sed "s/\<$(date +'%e' | sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")
+<span color='green'>week tasks<\/span>
+$(task rc.verbose=header due.by:eow minimal)" ;;
+# 1) notify-send  "Calendar" "$(cal -m | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
+# 2) nohup st -c tasks -t mail -g 100x30 -e aerc >/dev/null & ;;
+2) nohup st -c tasks -t task -g 150x50 -e taskwarrior-tui >/dev/null & ;;
+3) nohup kitty -e newsboat >/dev/null & ;;
+# 3) nohup st -t tasks -g 80x20 -e slides ~/Desktop/tasks/test.md > /dev/null & ;;
+# 3) nohup thunar ~ > /dev/null & ;;
+# 4) notify-send " " "$(cal | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
+6) nohup st -e nvim "$0" >/dev/null & ;;
+esac
+
+printf "^c#f89da2^"
+printf "^f2^󰸗^f2^%s" "$(date '+%m/%d')"
