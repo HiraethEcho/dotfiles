@@ -114,6 +114,8 @@ bind-key ^d halfpagedown
 
 bind-key ^i random-unread
 
+bind-key B bookmark
+
 ####  bookmark-autopilot
 #
 # If set to `yes`, the configured bookmark command is executed without any
@@ -135,7 +137,8 @@ bind-key ^i random-unread
 #
 # Default value: ""
 #
-bookmark-cmd "~/.config/newsboat/bookmark.sh"
+# bookmark-cmd "~/.config/newsboat/bookmark.sh"
+bookmark-cmd "~/.config/newsboat/bookmark-buku.sh"
 
 ####  bookmark-interactive
 #
