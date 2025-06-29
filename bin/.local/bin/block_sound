@@ -6,7 +6,7 @@
 # Dependencies: pamixer
 case $BLOCK_BUTTON in
   1) pamixer -t ; notify-send "Station" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')
-$(if ! [ -z "$(mpc current)" ]; then mpc current -f '%title%'; fi) ";;
+$(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi) ";;
   # 2) nohup blueberry > /dev/null & ;;
   # 2) pamixer --set-volume $(rofi -dmenu -config ~/.config/rofi/themes/passwd.rasi) ; notify-send -h int:value:$(pamxier --get-volume) "volume" ;;
   # 3) pamixer -m ; notify-send "Station" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g') " ;;
@@ -24,13 +24,17 @@ a=$[$VOL/4]
     # BLUETOOTH=$(bluetooth | awk {'print $3'})
 # printf "^f3^"
 #
-mpd_status=$(mpc status | sed -n 2p | awk '{print $1}')
-
+mpd_status=$(mpc status | sed -n 2p | awk '{print $1}' | tr -d '[]')
+title=$(mpc current -f "%title%")
+# printf "%s" "$title"
 
 case "$mpd_status" in
-    "[playing]") mpd_icon="" ;;
-    "[paused]")  mpd_icon="" ;;
-    *)           mpd_icon="" ;;
+    "playing")
+      mpd_icon=" ${title:0:10}"
+      ;;
+    "paused")
+      mpd_icon=" ${title:0:10}"
+      ;;
 esac
 
 printf "^c#96CDFB^"
