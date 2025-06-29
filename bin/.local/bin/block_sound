@@ -5,11 +5,12 @@
 
 # Dependencies: pamixer
 case $BLOCK_BUTTON in
-  1) pamixer -t ; notify-send "Station" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g') " ;;
+  1) pamixer -t ; notify-send "Station" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')
+$(if ! [ -z "$(mpc current)" ]; then mpc current -f '%title%'; fi) ";;
   # 2) nohup blueberry > /dev/null & ;;
   # 2) pamixer --set-volume $(rofi -dmenu -config ~/.config/rofi/themes/passwd.rasi) ; notify-send -h int:value:$(pamxier --get-volume) "volume" ;;
   # 3) pamixer -m ; notify-send "Station" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g') " ;;
-  2) nohup st -c tasks -t bluetooth -e bluetui > /dev/null &;;
+  2) nohup st -c tasks -t music -e rmpc > /dev/null &;;
   3) nohup st -c tasks -t pulse -e pulsemixer > /dev/null &;;
   # 3) nohup pavucontrol > /dev/null &  pkill -RTMIN+3 dwmblocks ;;
   4) pamixer -i 5 ; notify-send -h int:value:$(pamixer --get-volume) "volume";;
@@ -21,13 +22,19 @@ VOL=$(pamixer --get-volume)
 STATE=$(pamixer --get-mute)
 a=$[$VOL/4]
     # BLUETOOTH=$(bluetooth | awk {'print $3'})
-printf "^f3^"
+# printf "^f3^"
+#
+mpd_status=$(mpc status | sed -n 2p | awk '{print $1}')
+case "$mpd_status" in
+    "[playing]") mpd_icon="" ;;
+    "[paused]")  mpd_icon="" ;;
+    *)           mpd_icon="" ;;
+esac
+
 printf "^c#96CDFB^"
+printf "%s^f2^" "$mpd_icon"
 
-# if ! [ -z "$(bluetoothctl devices Connected | grep 'AirPods')"  ]; then
-#     printf "󱡏^f2^"
-# fi
-
+printf "^c#96CDFB^"
 # if ! [ -z "$(bluetoothctl devices Connected | grep 'BT')"  ]; then
 #     printf "󰥰^f2^"
 # fi

@@ -18,12 +18,13 @@ bluetooth_macs=$(bluetoothctl devices Connected | grep Device | awk '{print $2}'
 if ! [ -z $macs ]; then
   bluetooth_icon="󰂲^f2^"
 else
+  bluetooth_icon="^f2^"
   for i in ${bluetooth_macs[@]}; do
     icon=$(bluetoothctl info $i | grep "Icon" | awk '{print $2}')
     case $icon in
-    audio-headphones) bluetooth_icon="󱡏^f2^$bluetooth_icon" ;;
-    input-keyboard) bluetooth_icon="󰌌^f2^$bluetooth_icon" ;;
-    input-mouse) bluetooth_icon="󰍽^f2^$bluetooth_icon" ;;
+    audio-headphones) bluetooth_icon="$bluetooth_icon󱡏^f2^" ;;
+    input-keyboard) bluetooth_icon="$bluetooth_icon󰌌^f2^" ;;
+    input-mouse) bluetooth_icon="$bluetooth_icon󰍽^f2^" ;;
     esac
   done
 fi
@@ -66,11 +67,11 @@ fi
 # printf "^c#99CC32^"
 #
 # printf "^c#8030e0^%s" "$bluetooth_icon"
-printf "^c#80c0e0^^f3^%s" "$bluetooth_icon"
 #
 # printf "^c#d08770^"
 # printf "^f2^%s^f2^^f2^%s" "$vel_recv" "$vel_trans"
 
+printf "^c#80c0e0^^f3^%s" "$bluetooth_icon"
 printf "^c#b5d6e0^"
 if [ "$(cat /sys/class/net/w*/operstate 2>/dev/null)" = 'up' ]; then
   if [ $net -ge 80 ]; then
