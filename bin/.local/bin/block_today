@@ -15,7 +15,7 @@ case $BLOCK_BUTTON in
 # <span color='green'>tasks<\/span>
 # $(task rc.verbose=header minimal)" ;;
 # 1) notify-send -h int:value:$r "Calendar" "$(cal -m | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
-1) notify-send -h int:value:$r -h int:transient:0 "Today task" "$(task rc.verbose=header due.by:eod minimal)" ;;
+1) notify-send -h int:value:$r -t 0 "tasks in 10 days" "$(task rc.report.next.columns=description rc.report.next.labels=Descrption rc.verbose=header next due.by:10d)";;
 2) nohup st -c tasks -t mail -g 100x30 -e aerc >/dev/null & ;;
 # 2) nohup st -c tasks -t task -g 150x50 -e taskwarrior-tui >/dev/null & ;;
 3) nohup kitty -e newsboat >/dev/null & ;;
