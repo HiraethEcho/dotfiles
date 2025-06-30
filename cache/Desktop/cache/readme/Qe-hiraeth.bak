@@ -26,7 +26,6 @@ btrfs-progs 6.15-1
 buku 5.0-1
 cava 0.10.4-3
 clang 20.1.6-1
-clipmenu 6.2.0-3
 clivm 1.0.0-1
 cups 2:2.4.12-2
 deepseek-pake 1.0.0-1
@@ -62,7 +61,7 @@ grub 2:2.12.r292.g73d1c959-1
 grub-btrfs 4.13-2
 gvfs 1.57.2-4
 gvfs-dnssd 1.57.2-4
-gvim 9.1.1431-1
+gvim 9.1.1497-1
 harper 0.44.0-1
 hugo 0.147.9-1
 imagemagick 7.1.1.47-2
@@ -178,7 +177,7 @@ vscode-html-languageserver 1.101.0-1
 vulkan-radeon 1:25.1.4-1
 waterfox-bin 6.5.10-1
 watt-toolkit-bin 3.0.0.rc.16-1
-waybar 0.13.0-1
+waybar 0.13.0-2
 websocat 1.14.0-1
 wechat-bin 4.0.1.11-2
 wemeet-bin 3.19.2.400-3
