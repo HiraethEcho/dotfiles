@@ -66,6 +66,7 @@ harper
 hugo
 imagemagick
 impala
+ironbar-git
 iw
 iwd
 khal
@@ -74,6 +75,7 @@ lazygit
 less
 lib32-mesa
 lib32-vulkan-radeon
+libappindicator-gtk3
 libnotify
 libxml2-legacy
 libzip
@@ -132,7 +134,6 @@ qemu-base
 rclone
 redbook-pake
 ripgrep
-river
 rmpc
 rofi-wayland
 sddm
@@ -146,6 +147,7 @@ sudo
 sx
 systemd-manager-tui
 task
+taskopen
 taskwarrior-tui
 tdf-git
 tealdeer
@@ -177,7 +179,6 @@ vscode-html-languageserver
 vulkan-radeon
 waterfox-bin
 watt-toolkit-bin
-waybar
 websocat
 wechat-bin
 wemeet-bin
@@ -210,7 +211,6 @@ zathura
 zathura-djvu
 zathura-pdf-mupdf
 zip
-zmk-studio-bin
 zotero
 zoxide
 zsh

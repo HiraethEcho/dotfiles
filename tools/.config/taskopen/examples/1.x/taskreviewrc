@@ -1,0 +1,28 @@
+#- taskreviewrc - taskopen-review configuration file with instructions
+#
+# Intended as basis for a daily/ weekly/ project task review process.
+# Using UUID.review.txt files as review log files, and using their access/ modification times 
+# to drive the review sequencing logic, as opposed to using review-specific date-stamps, UDAs, tags
+# or other taskwarrior attributes. 
+#
+# Add an alias to taskrc:
+# alias.review=taskopen -c ~/.taskreviewrc -n
+#
+# Add a cronjob which executes:
+#
+#    $ task (age.over:1wk AND annotation.not:Review) mod annotate Review
+#    $ taskopen -c ~/.taskreviewrc -n -i '[ -e "$1" ] || touch "$1"'
+#
+# (Note that "-i" is used here as a variant of "-b -x" without user interaction.)
+#
+# Start a review, which can be restricted to a subset by using filters:
+#
+#    $ task review project:taskopen
+
+# Reuse the NOTES feature
+NOTES_FOLDER="~/taskreview/"
+NOTES_EXT=".review.txt"
+NOTES_CMD="do_review.sh $FILE $UUID"
+NOTES_REGEX="Review"
+
+DEFAULT_SORT="priority-,atime-,mtime-"
