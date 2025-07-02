@@ -188,7 +188,7 @@ browser "waterfox %u"
 #
 # Default value: yes
 #
-# cleanup-on-quit no
+cleanup-on-quit yes
 
 ####  color
 #
@@ -200,40 +200,6 @@ browser "waterfox %u"
 # Default value: n/a
 #
 # color background white black
-
-# color listnormal white black
-# color listfocus black #00ff00 bold      # 选中项：黑字绿底
-# color listnormal_unread yellow black    # 未读项：黄字
-# color listfocus_unread yellow #00ff00   # 选中未读项：黄字绿底
-# color info cyan black
-# color background white black
-
-# solarized-dark
-# color background         default   default
-# color listnormal         default   default
-# color listnormal_unread  default   default
-# color listfocus          black     yellow
-# color listfocus_unread   black     yellow
-# color info               default   black
-# color article            default   default
-# highlight article "^(Title):.*$" blue default
-# highlight article "https?://[^ ]+" red default
-# highlight article "\\[image\\ [0-9]+\\]" green default
-
-# nord
-color background          color15    default
-color listnormal          color248   default
-color listnormal_unread   color4     default
-color listfocus           color0     color4
-color listfocus_unread    color0     color4   bold
-color info                color12    color0
-color article             color248   default
-highlight article "^(Feed|Link):.*$" color6 default bold
-highlight article "^(Title|Date|Author):.*$" color6 default bold
-highlight article "https?://[^ ]+" color10 default underline
-highlight article "\\[[0-9]+\\]" color10 default bold
-highlight article "\\[image\\ [0-9]+\\]" color10 default bold
-highlight feedlist "^─.*$" color6 color0 bold
 
 ####  confirm-delete-all-articles
 #
@@ -868,6 +834,7 @@ datetime-format "%D, %R"
 # Default value: n/a
 #
 # include "~/.newsboat/colors"
+include "~/.config/newsboat/colorschemes/dark"
 
 ####  inoreader-app-id
 #
@@ -1004,7 +971,7 @@ datetime-format "%D, %R"
 #
 # Default value: 0
 #
-# keep-articles-days 30
+keep-articles-days 10
 
 ####  macro
 #
@@ -1018,6 +985,8 @@ datetime-format "%D, %R"
 # Default value: n/a
 #
 # macro k open; reload; quit +--+ "enter feed to reload it"
+
+macro i set pager "~/.config/newsboat/kitty-img-pager"; open; set pager internal
 
 ####  mark-as-read-on-hover
 #

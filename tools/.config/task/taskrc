@@ -19,20 +19,26 @@ report.all.columns=id,project,tags,description,depends,scheduled,until,due,recur
 report.all.labels=ID,Project,Tags,Description,Depends,Scheduled,Until,Due,Recur,Priority,Status,Done,Active,Wait,UUID
 report.all.sort=project
 
-report.list.columns=id,project,description,depends,due,recur
-report.list.labels=ID,Project,Description,Depends,Due,Recur
-report.list.sort=project
+report.ls.sort=project
 
-report.next.columns=id,description.truncated_count,project,depends,start.age,priority,recur,due.countdown,urgency,status
-report.next.labels=ID,Description,Project,Dep,Active,Priority,Recur,Due,Urg,Status
-report.next.filter=status:pending priority.not:L -WAITING
-# report.next.sort=urgency
+report.list.columns=id,project,description.count,depends,due,recur,priority,scheduled,until,status
+report.list.labels=ID,Project,Description,Depends,Due,Recur,Priority,Scheduled,Until,Status
+report.list.sort=status+/,priority,project
+report.list.filter=
+
 
 report.long.columns=id,entry,modified.age,depends,priority,project,tags,recur,wait.remaining,scheduled,due,until,description
 report.long.labels=ID,Created,Mod,Deps,Pri,Project,Tags,Recur,Wait,Sched,Due,Until,Description
 
+report.next.columns=id,description.truncated_count,project,depends,start.age,priority,recur,due.countdown,urgency,status
+report.next.labels=ID,Description,Project,Dep,Active,Priority,Recur,Due,Urg,Status
+report.next.filter=status:pending priority.not:L -WAITING
+
+
 report.minimal.columns=project,description.truncated_count
 report.minimal.labels=Project,Description
+report.minimal.filter=priority.not:L -WAITING -PARENT -COMPLETED -DELETED
+report.minimal.sort=project
 
 report.ready.filter=+READY priority.not:L -WAITING
 
@@ -236,7 +242,3 @@ uda.taskwarrior-tui.quick-tag.name=trush
 #######################################################################
 #                end of taskwarrior-tui configuration                 #
 #######################################################################
-context.work.read=proj:math or proj:academy
-context.code.read=proj:code
-context.code.write=proj:code
-context.work.write=proj:math or proj:academy

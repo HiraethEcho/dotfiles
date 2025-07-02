@@ -1,3 +1,10 @@
+https://sciendo.com/2/rss/journal/AUSM "~AUSM"
+https://link.springer.com/search.rss?new-search=true&query=*&content-type=Article&taxonomy=%22Algebraic+Geometry%22&sortBy=relevance&search-within=Journal&facet-journal-id=222 "~Inventiones mathematicae"
+https://rss.sciencedirect.com/publication/science/00018708 "~Advances in Mathematics"
+https://www.ams.org/rss/jams.rss "~jams"
+https://link.springer.com/search.rss?new-search=true&query=*&content-type=Article&sortBy=relevance&search-within=Journal&facet-journal-id=10240 "~Publications mathématiques de l'IHÉS"
+https://www.cambridge.org/core/rss/product/id/B987EC32470620A598056BB76325AFC2 "~Compositio Mathematica "
+
 https://bigthink.com/feeds/feed.rss
 https://theconversation.com/us/articles.atom
 https://www.nature.com/rss/index.html
@@ -14,17 +21,23 @@ https://daily-philosophy.com/index.xml
 https://maggieappleton.com/rss.xml
 
 
+https://terminaltrove.com/blog.xml
 https://www.archlinux.org/feeds/news/ "~Arch News"
 https://wiki.archlinux.org/index.php?title=Special:RecentChanges&feed=rss "~ArchWiki Changes"
 https://bbs.archlinux.org/extern.php?action=feed&fid=23&type=atom "Arch Newbie"
 https://bbs.archlinux.org/extern.php?action=feed&type=atom "Arch bbs"
 https://bbs.archlinuxcn.org/extern.php?action=feed&fid=68&type=rss
 https://bbs.archlinuxcn.org/extern.php?action=feed&fid=28&type=rss
+https://itsfoss.com/rss/
+https://bbs.archlinuxcn.org/extern.php?action=feed&fid=19&type=rss "ArchCN Newbie"
+
+https://store.steampowered.com/feeds/news.xml
 
 https://feedx.net/rss/shanghaishuping.xml
 https://plink.anyfeeder.com/weixin/qnwzwx
 https://rss.aishort.top/?type=guokr
 https://www.marxists.org/chinese/feed.xml
+
 
 https://www.askphilosophers.org/sex-feed.xml "~askphilosophers sex"
 https://www.askphilosophers.org/freedom-feed.xml  "~askphilosophers freedom"

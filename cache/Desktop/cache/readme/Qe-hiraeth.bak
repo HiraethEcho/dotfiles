@@ -25,7 +25,7 @@ btrfs-assistant 2.2-1
 btrfs-progs 6.15-1
 buku 5.0-1
 cava 0.10.4-3
-clang 20.1.6-1
+clang 20.1.7-1
 clivm 1.0.0-1
 cups 2:2.4.12-2
 deepseek-pake 1.0.0-1
@@ -62,11 +62,11 @@ grub-btrfs 4.13-2
 gvfs 1.57.2-4
 gvfs-dnssd 1.57.2-4
 gvim 9.1.1497-1
-harper 0.44.0-1
+harper 0.47.0-1
 hugo 0.147.9-1
 imagemagick 7.1.1.47-2
 impala 0.2.4-1
-ironbar-git 0.16.1.r379.gd45eb2a-1
+ironbar-git 0.16.1.r383.g6d4170d-1
 iw 6.9-1
 iwd 3.9-1
 khal 0.13.0-1
@@ -75,7 +75,6 @@ lazygit 0.52.0-1
 less 1:668-1
 lib32-mesa 1:25.1.4-2
 lib32-vulkan-radeon 1:25.1.4-2
-libappindicator-gtk3 12.10.0.r298-4
 libnotify 0.8.6-1
 libxml2-legacy 2.13.8-1
 libzip 1.11.4-1
@@ -107,7 +106,7 @@ npm 11.4.2-1
 ntfs-3g 2022.10.3-2
 obsidian 1.8.10-1
 openbox 3.6.1-12
-openlist-bin 4.0.4-1
+openlist-bin 4.0.5-1
 openssh 10.0p1-3
 os-prober 1.83-1
 otf-codenewroman-nerd 3.4.0-1

@@ -2,12 +2,12 @@
 
 case $BLOCK_BUTTON in
 1) notify-send -t 0 "Calendar" "$(cal -m | sed "s/\<$(date +'%e' | sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")
-<b>tasks in 30d:<\/b>
-$(task rc.report.next.columns=description rc.report.next.labels=Descrption rc.verbose=header next due.by:30d)";;
+<b><span color='green'>tasks in 30d:<\/span><\/b>
+$(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:30d)";;
 # $(task rc.verbose=header due.by:eom minimal)"
 # 1) notify-send  "Calendar" "$(cal -m | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
 2) nohup st -c tasks -t mail -g 100x30 -e aerc >/dev/null & ;;
-3) nohup st -c tasks -t task -g 150x50 -e taskwarrior-tui >/dev/null & ;;
+3) nohup st -c tasks -t taskwarrior -g 120x40 -e taskwarrior-tui >/dev/null & ;;
 # 3) nohup kitty -e newsboat >/dev/null & ;;
 # 3) nohup st -t tasks -g 80x20 -e slides ~/Desktop/tasks/test.md > /dev/null & ;;
 # 3) nohup thunar ~ > /dev/null & ;;

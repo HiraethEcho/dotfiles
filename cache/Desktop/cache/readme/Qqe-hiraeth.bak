@@ -75,7 +75,6 @@ lazygit
 less
 lib32-mesa
 lib32-vulkan-radeon
-libappindicator-gtk3
 libnotify
 libxml2-legacy
 libzip

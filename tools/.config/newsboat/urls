@@ -1,14 +1,7 @@
 https://rss.arxiv.org/rss/math.AG "~arxiv AG"
-https://sciendo.com/2/rss/journal/AUSM "~AUSM"
-https://link.springer.com/search.rss?new-search=true&query=*&content-type=Article&taxonomy=%22Algebraic+Geometry%22&sortBy=relevance&search-within=Journal&facet-journal-id=222 "~Inventiones mathematicae"
-https://rss.sciencedirect.com/publication/science/00018708 "~Advances in Mathematics"
-https://www.ams.org/rss/jams.rss "~jams"
-https://link.springer.com/search.rss?new-search=true&query=*&content-type=Article&sortBy=relevance&search-within=Journal&facet-journal-id=10240 "~Publications mathématiques de l'IHÉS"
-https://www.cambridge.org/core/rss/product/id/B987EC32470620A598056BB76325AFC2 "~Compositio Mathematica "
 
 
 https://sspai.com/feed "~少数派"
-https://store.steampowered.com/feeds/news.xml
 https://plink.anyfeeder.com/gcores "~机核"
 https://www.douban.com/feed/review/book "~豆瓣书评"
 https://blog.xiaket.org/feed.xml
@@ -21,17 +14,14 @@ https://github.com/v1nh1shungry/nvim-weekly-cn/releases.atom "~nvim weekly cn"
 https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins"
 https://dotfyle.com/this-week-in-neovim/rss.xml "~this week in neovim"
 https://www.obsidianstats.com/rss.xml "~obsidian stats"
-https://terminaltrove.com/blog.xml
 https://terminaltrove.com/totw.xml
 http://feed.appinn.com/
 https://litiaotiao.cn/index.xml
 https://hellogithub.com/rss
 https://rustcc.cn/rss
 
-https://itsfoss.com/rss/
 https://www.archlinuxcn.org/feed/ "~ArchCN News"
 https://bbs.archlinuxcn.org/extern.php?action=feed&type=rss "ArchCN bbs"
-https://bbs.archlinuxcn.org/extern.php?action=feed&fid=19&type=rss "ArchCN Newbie"
 https://archlinux.org/feeds/packages/x86_64/ "~Arch repo"
 https://aur.archlinux.org/rss "~AUR"
 https://blog.lilydjwg.me/posts.rss
