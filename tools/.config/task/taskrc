@@ -242,3 +242,8 @@ uda.taskwarrior-tui.quick-tag.name=trush
 #######################################################################
 #                end of taskwarrior-tui configuration                 #
 #######################################################################
+#
+
+uda.calendar.type=string
+uda.calendar.label=Calendar
+uda.calendar.values=work,lecture,life,study
