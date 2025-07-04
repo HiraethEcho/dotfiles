@@ -17,7 +17,7 @@
     #
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = mouse
+    follow = keyboard
 
     ### Geometry ###
 
@@ -212,7 +212,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser =  microsoft-edge-stable
+    browser =  waterfox
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -228,7 +228,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 15
+    corner_radius = 10
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -274,9 +274,14 @@
     # These values can be strung together for each mouse event, and
     # will be executed in sequence.
     mouse_left_click = close_current
-    mouse_middle_click = do_action
-    mouse_right_click = close_all
+    # mouse_left_click = do_action
+    # mouse_middle_click = close_all
+    # mouse_middle_click = do_action
+    mouse_middle_click = context
+    # mouse_right_click = close_all
+    # mouse_right_click = close_current
     # mouse_right_click = context
+    mouse_right_click = do_action
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.

@@ -17,9 +17,12 @@ recurrence.limit=1
 
 report.all.columns=id,project,tags,description,depends,scheduled,until,due,recur,priority,status,end,start,wait,uuid.short
 report.all.labels=ID,Project,Tags,Description,Depends,Scheduled,Until,Due,Recur,Priority,Status,Done,Active,Wait,UUID
-report.all.sort=project
+report.all.sort=status+/,project,priority
 
 report.ls.sort=project
+report.ls.columns=id,project,tags,recur.indicator,wait.remaining,scheduled.countdown,due.countdown,until.countdown,description.count
+report.ls.labels=ID,Project,Tags,R,Wait,S,Due,Until,Description
+report.ls.filter=status:pending
 
 report.list.columns=id,project,description.count,depends,due,recur,priority,scheduled,until,status
 report.list.labels=ID,Project,Description,Depends,Due,Recur,Priority,Scheduled,Until,Status

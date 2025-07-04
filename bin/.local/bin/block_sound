@@ -1,39 +1,88 @@
 #!/bin/bash
-
 # A dwm_bar function to show the master volume of PulseAudio Joe Standring <git@joestandring.com>
 # GNU GPLv3
-
 # Dependencies: pamixer
+
 case $BLOCK_BUTTON in
-  1) pamixer -t ; notify-send -r 1 "Station" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')
-$(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi) ";;
-  # 2) nohup blueberry > /dev/null & ;;
-  # 2) pamixer --set-volume $(rofi -dmenu -config ~/.config/rofi/themes/passwd.rasi) ; notify-send -h int:value:$(pamxier --get-volume) "volume" ;;
-  # 3) pamixer -m ; notify-send "Station" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g') " ;;
-  2) nohup st -c tasks -t music -e rmpc > /dev/null &;;
-  3) nohup st -c tasks -t pulse -e pulsemixer > /dev/null &;;
-  # 3) nohup pavucontrol > /dev/null &  pkill -RTMIN+3 dwmblocks ;;
-  4) pamixer -i 5 ; notify-send -h int:value:$(pamixer --get-volume) "volume";;
-  5) pamixer -d 5 ; notify-send -h int:value:$(pamixer --get-volume) "volume";;
-  # 4) pamixer -i 5 ; notify-send -r 1 -h int:value:$(pamixer --get-volume) "volume";;
-  # 5) pamixer -d 5 ; notify-send -r 1 -h int:value:$(pamixer --get-volume) "volume";;
-  6) nohup st -e nvim "$0" > /dev/null &;;
+# 1)
+#   pamixer -t
+#   notify-send -h string:x-dunst-stack-tag:vol "Station" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')
+# $(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi) "
+# ;;
+# 1) click_dunst ;;
+1)
+  ACTION=$(dunstify -h string:x-dunst-stack-tag:sound "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')" "Left click to toggle mute\nRight click to toggle play\nMid click for more" --action="4,Label4" --action="3,stop mpd" --action="default,ToggleMute")
+  case "$ACTION" in
+  "default")
+    mpc toggle >/dev/null
+    notify-send -h string:x-dunst-stack-tag:sound "$(mpc status | sed -n 2p | awk '{print $1}' | tr -d '[]') $(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi)" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')"
+    ;;
+  "2")
+    pamixer -t
+    notify-send -h string:x-dunst-stack-tag:sound "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')" "$(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi) "
+    ;;
+  "3")
+    mpc stop >/dev/null
+    notify-send -h string:x-dunst-stack-tag:sound "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')" "$(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi) "
+    ;;
+  "4")
+    notify-send "4"
+    ;;
+  esac
+  ;;
+# 2) nohup blueberry > /dev/null & ;;
+# 2) pamixer --set-volume $(rofi -dmenu -config ~/.config/rofi/themes/passwd.rasi) ; notify-send -h int:value:$(pamxier --get-volume) "volume" ;;
+# 3) pamixer -m ; notify-send "Station" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g') " ;;
+2) nohup st -c tasks -t music -e rmpc >/dev/null & ;;
+# 3) nohup st -c tasks -t pulse -e pulsemixer >/dev/null & ;;
+3)
+  ACTION=$(dunstify -h string:x-dunst-stack-tag:sound "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')" "Left click to pulsemixer\nRight click to rmpc\nMid click for more" --action="4,Label4" --action="3,stop mpd" --action="default,ToggleMute")
+  case "$ACTION" in
+  "default")
+    nohup st -c tasks -t music -e rmpc >/dev/null &
+    notify-send -h string:x-dunst-stack-tag:sound "$(mpc status | sed -n 2p | awk '{print $1}' | tr -d '[]') $(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi)" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')"
+    ;;
+  "2")
+    nohup st -c tasks -t music -e pulsemixer >/dev/null &
+    notify-send -h string:x-dunst-stack-tag:sound "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')" "$(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi) "
+    ;;
+  "3")
+    mpc stop >/dev/null
+    notify-send -h string:x-dunst-stack-tag:sound "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')" "$(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi) "
+    ;;
+  "4")
+    notify-send "4"
+    ;;
+  esac
+  ;;
+# 3) nohup pavucontrol > /dev/null &  pkill -RTMIN+3 dwmblocks ;;
+4)
+  pamixer -i 5
+  notify-send -h int:value:$(pamixer --get-volume) "volume"
+  ;;
+5)
+  pamixer -d 5
+  notify-send -h int:value:$(pamixer --get-volume) "volume"
+  ;;
+# 4) pamixer -i 5 ; notify-send -r 1 -h int:value:$(pamixer --get-volume) "volume";;
+# 5) pamixer -d 5 ; notify-send -r 1 -h int:value:$(pamixer --get-volume) "volume";;
+6) nohup st -e nvim "$0" >/dev/null & ;;
 esac
 
 VOL=$(pamixer --get-volume)
 STATE=$(pamixer --get-mute)
-a=$[$VOL/4]
+a=$(($VOL / 4))
 
 mpd_status=$(mpc status | sed -n 2p | awk '{print $1}' | tr -d '[]')
 title=$(mpc current -f "%title%")
 
 case "$mpd_status" in
-    "playing")
-      mpd_icon=" ${title:0:10}"
-      ;;
-    "paused")
-      mpd_icon=" ${title:0:10}"
-      ;;
+"playing")
+  mpd_icon=" ${title:0:10}"
+  ;;
+"paused")
+  mpd_icon=" ${title:0:10}"
+  ;;
 esac
 
 printf "^c#96CDFB^"
@@ -52,11 +101,11 @@ fi
 printf "^c#96CDFB^"
 
 if [ "$STATE" = "true" ] || [ "$VOL" -eq 0 ]; then
-    printf "󰸈^f3^^s0,10,27,6^^r1,11,%s,4^^f29^%s" "$a" "$VOL"
+  printf "󰸈^f3^^s0,10,27,6^^r1,11,%s,4^^f29^%s" "$a" "$VOL"
 else
-    printf "󰕾^f3^^s0,10,27,6^^r1,11,%s,4^^f29^%s" "$a" "$VOL"
+  printf "󰕾^f3^^s0,10,27,6^^r1,11,%s,4^^f29^%s" "$a" "$VOL"
 fi
 
 # 󰥰 󱡏 
 #     printf "󰥰^f2^"
-      # printf "^c#96CDFB^󰸈^f3^^c#96CDFB^^r0,1,7,19^^c#000000^^r1,2,5,17^^c#96CDFB^^r1,%s,5,%s^^f10^%s" "$b" "$a" "$VOL"
+# printf "^c#96CDFB^󰸈^f3^^c#96CDFB^^r0,1,7,19^^c#000000^^r1,2,5,17^^c#96CDFB^^r1,%s,5,%s^^f10^%s" "$b" "$a" "$VOL"
