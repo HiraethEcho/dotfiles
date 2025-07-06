@@ -62,7 +62,7 @@ grub-btrfs 4.13-2
 gvfs 1.57.2-4
 gvfs-dnssd 1.57.2-4
 gvim 9.1.1497-1
-harper 0.47.0-1
+harper 0.48.0-1
 hugo 0.147.9-1
 imagemagick 7.1.1.47-2
 impala 0.2.4-1
@@ -106,7 +106,7 @@ npm 11.4.2-1
 ntfs-3g 2022.10.3-2
 obsidian 1.8.10-1
 openbox 3.6.1-12
-openlist-bin 4.0.7-1
+openlist-bin 4.0.8-1
 openssh 10.0p1-3
 os-prober 1.83-1
 otf-codenewroman-nerd 3.4.0-1
@@ -137,7 +137,7 @@ rmpc 0.9.0-1
 rofi-wayland 1.7.9.1-1
 sddm 0.21.0-6
 shfmt 3.11.0-1
-sioyek 2.0.0-23
+sioyek 2.0.0-24
 snapper 0.12.2-4
 steam 1.0.0.82-2
 stow 2.4.1-1
@@ -206,9 +206,9 @@ xwayland-satellite 0.6-1
 yazi 25.5.31-1
 yuanbao-pake 1.0.0-1
 yutto 2.0.3-1
-zathura 0.5.11-1
-zathura-djvu 0.2.10-4
-zathura-pdf-mupdf 0.4.4-17
+zathura 0.5.12-1
+zathura-djvu 0.2.10-5
+zathura-pdf-mupdf 0.4.4-19
 zip 3.0-11
 zotero 7.0.19-1
 zoxide 0.9.8-2
