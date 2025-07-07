@@ -17,7 +17,7 @@ alias nf="fzf --preview 'bat {}' --bind 'enter:become(nvim {})'"
 alias vf="fzf --preview 'bat {}' --bind 'enter:become(vim {})'"
 
 alias lazyvim="NVIM_APPNAME=lazyvim nvim"
-alias nativim="NVIM_APPNAME=nativim nvim"
+alias vi="NVIM_APPNAME=vi nvim"
 # alias mn="NVIM_APPNAME=mininvim nvim"
 # alias nativim="NVIM_APPNAME=nativim nvim"
 # alias astro="NVIM_APPNAME=astro nvim"

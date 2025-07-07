@@ -2,10 +2,11 @@
 
 case $BLOCK_BUTTON in
 1) notify-send -t 0 "Calendar" "$(cal -m | sed "s/\<$(date +'%e' | sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")
-<b><span color='green'>tasks in 30d:<\/span><\/b>
-$(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:30d)
-<b><span color='yellow'>tasks in the week:<\/span><\/b>
-$(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:eow)";;
+<b><span color='yellow'>tasks this week:<\/span><\/b>
+$(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:eow)
+<b><span color='green'>tasks this month:<\/span><\/b>
+$(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:eom and due.after:eow)"
+;;
 # $(task rc.verbose=header due.by:eom minimal)"
 # 1) notify-send  "Calendar" "$(cal -m | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
 2) nohup st -c tasks -t mail -g 100x30 -e aerc >/dev/null & ;;
