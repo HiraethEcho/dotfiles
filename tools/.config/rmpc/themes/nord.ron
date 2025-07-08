@@ -21,7 +21,8 @@
     highlighted_item_style: (fg: "#a3be8c", modifiers: "Bold"),
     current_item_style: (fg: "#2e3440", bg: "#81a1c1", modifiers: "Bold"),
     borders_style: (fg: "#81a1c1", modifiers: "Bold"),
-    highlight_border_style: (fg: "#81a1c1"),
+    highlight_border_style: (fg: "#cc241d"),  // Changed from green to dark red
+    // highlight_border_style: (fg: "#81a1c1"),
     symbols: (song: "󰝚 ", dir: " ", playlist: "󰲸 ", marker: "* ", ellipsis: "..."),
     progress_bar: (
         symbols: ["█", "█", "█", "█", "█"],

@@ -3,7 +3,6 @@ acpilight
 activitywatch-bin
 aerc
 alsa-utils
-amd-ucode
 anytype-bin
 archlinuxcn-keyring
 atuin
@@ -168,6 +167,7 @@ tree-sitter
 ttf-daddytime-mono-nerd
 ttf-lxgw-wenkai-mono
 ttf-maple-nerd
+ttf-monaco-nerd-font-git
 ttf-nerd-fonts-symbols-mono
 typst
 ufrii-print
