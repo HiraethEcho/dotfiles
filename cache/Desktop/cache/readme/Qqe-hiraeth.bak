@@ -65,7 +65,6 @@ harper
 hugo
 imagemagick
 impala
-ironbar-git
 isd-appimage
 iw
 iwd
@@ -104,6 +103,9 @@ newsboat
 niri
 npm
 ntfs-3g
+nwg-bar
+nwg-menu
+nwg-panel
 obsidian
 openbox
 openlist-bin
@@ -172,7 +174,6 @@ ttf-nerd-fonts-symbols-mono
 typst
 ufrii-print
 unzip
-uwsm
 vdirsyncer
 virt-manager
 vscode-html-languageserver
