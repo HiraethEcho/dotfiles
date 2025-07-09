@@ -3,7 +3,6 @@ acpilight
 activitywatch-bin
 aerc
 alsa-utils
-anytype-bin
 archlinuxcn-keyring
 atuin
 autossh
@@ -67,6 +66,7 @@ hugo
 imagemagick
 impala
 ironbar-git
+isd-appimage
 iw
 iwd
 khal
