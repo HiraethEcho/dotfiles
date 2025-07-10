@@ -299,8 +299,9 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
+    origin = bottom-right
     background = "#1A1B26"
-    foreground = "#ABE9B3"
+    foreground = "#A9B1D6"
     highlight  = "#A9B1D6"
     timeout = 3
     # Icon for notifications with low urgency, uncomment to enable
@@ -308,7 +309,7 @@
 
 [urgency_normal]
     background = "#1A1B26"
-    foreground = "#A9B1D6"
+    foreground = "#ABE9B3"
     highlight  = "#A9B1D6"
     highlight-background = "#16161E"
     timeout = 6

@@ -49,10 +49,10 @@ feh 3.10.3-1
 flameshot 12.1.0-6
 flomo-pake 3.1.1-2
 foot 1.22.3-1
-fzf 0.62.0-1
+fzf 0.64.0-1
 fzf-tab-git r276.2abe1f2-1
 git 2.50.1-1
-github-cli 2.74.2-1
+github-cli 2.75.0-1
 gnome-keyring 1:48.0-1
 go-musicfox-git 4.6.3.r1.g179b944-1
 gparted 1.7.0-1
@@ -132,7 +132,7 @@ pyright 1.1.403-1
 python-eyed3 0.9.8-1
 python-pynvim 0.5.2-1
 qemu-base 10.0.2-1
-rclone 1.70.2-1
+rclone 1.70.3-1
 redbook-pake 1.0.0-1
 ripgrep 14.1.1-1
 rmpc 0.9.0-1

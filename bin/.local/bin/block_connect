@@ -1,32 +1,58 @@
 #!/bin/bash
 
 net=$(awk '/^\s*w/ { print  int($3 * 100 / 70) }' /proc/net/wireless)
-interface=$(iw dev | awk '$1=="Interface"{print $2}')
-ssid=$(iw dev "$interface" link | awk '$1=="SSID:"{print $2}')
+# interface=$(iw dev | awk '$1=="Interface"{print $2}')
+# ssid=$(iw dev "$interface" link | awk '$1=="SSID:"{print $2}')
+network=$(iwctl station wlan0 show | grep network | awk '{print $3}')
+bluetooth_connects=$(bluetoothctl devices Connected | grep Device | cut -d ' ' -f 3-)
 
 case $BLOCK_BUTTON in
 # 1) notify-send -h int:value:$net "Wifi" "$ssid"  ;;
-1) nohup st -c tasks -t bluetooth -e bluetui >/dev/null & ;;
+# 1) nohup st -c tasks -t bluetooth -e bluetui >/dev/null & ;;
+
 # 2) setsid -f st -e nmtui; pkill -RTMIN+1 dwmblocks ;;
 # 2) nohup nm-connection-editor > /dev/null & ;;
+1)
+  ACTION=$(dunstify -h string:x-dunst-stack-tag:connect "Bluetooth" "${bluetooth_connects}\nLeft: Dismiss\nRight: bluetui" --action="default,Bluetui")
+  case "$ACTION" in
+  "default")
+    nohup st -c tasks -t bluetooth -e bluetui >/dev/null &
+    ;;
+  esac
+  ;;
 2) wihotspot ;;
-3) nohup st -c tasks -t wifi -e impala >/dev/null & ;;
+# 3) nohup st -c tasks -t wifi -e impala >/dev/null & ;;
+3)
+  ACTION=$(dunstify -h int:value:$net -h string:x-dunst-stack-tag:connect "NET" "${network}\nLeft: Dismiss\nRight: impala" --action="default,Bluetui")
+  case "$ACTION" in
+  "default")
+    nohup st -c tasks -t wifi -e impala >/dev/null &
+    ;;
+  esac
+  ;;
 6) nohup st -e nvim "$0" >/dev/null & ;;
 esac
 
-bluetooth_macs=$(bluetoothctl devices Connected | grep Device | awk '{print $2}')
-if ! [ -z $macs ]; then
-  bluetooth_icon="󰂲^f2^"
+# bluetooth_macs=$(bluetoothctl devices Connected | grep Device | awk '{print $2}')
+# if ! [ -z $macs ]; then
+#   bluetooth_icon="󰂲^f2^"
+# printf "^c#80c0e0^^f3^%s" "$bluetooth_icon"
+# else
+#   bluetooth_icon="^f2^"
+#   for i in ${bluetooth_macs[@]}; do
+#     icon=$(bluetoothctl info $i | grep "Icon" | awk '{print $2}')
+#     case $icon in
+#     audio-headphones) bluetooth_icon="$bluetooth_icon󱡏^f2^" ;;
+#     input-keyboard) bluetooth_icon="$bluetooth_icon󰌌^f2^" ;;
+#     input-mouse) bluetooth_icon="$bluetooth_icon󰍽^f2^" ;;
+#     esac
+#   done
+# fi
+
+if [ -z "$bluetooth_connects" ] ; then
+ printf "^c#80c0e0^^f3^󰂲"
 else
-  bluetooth_icon="^f2^"
-  for i in ${bluetooth_macs[@]}; do
-    icon=$(bluetoothctl info $i | grep "Icon" | awk '{print $2}')
-    case $icon in
-    audio-headphones) bluetooth_icon="$bluetooth_icon󱡏^f2^" ;;
-    input-keyboard) bluetooth_icon="$bluetooth_icon󰌌^f2^" ;;
-    input-mouse) bluetooth_icon="$bluetooth_icon󰍽^f2^" ;;
-    esac
-  done
+ printf "^c#80c0e0^^f3^"
 fi
 
 # "$(iwctl station wlan0 get-networks)"
@@ -71,7 +97,6 @@ fi
 # printf "^c#d08770^"
 # printf "^f2^%s^f2^^f2^%s" "$vel_recv" "$vel_trans"
 
-printf "^c#80c0e0^^f3^%s" "$bluetooth_icon"
 printf "^c#b5d6e0^"
 if [ "$(cat /sys/class/net/w*/operstate 2>/dev/null)" = 'up' ]; then
   if [ $net -ge 80 ]; then
@@ -85,7 +110,7 @@ if [ "$(cat /sys/class/net/w*/operstate 2>/dev/null)" = 'up' ]; then
   else
     wifiicon="󰣾"
   fi
-  printf "%s^f2^%s" "$wifiicon" "$ssid"
+  printf "%s^f2^%s" "$wifiicon" "$network"
 elif [ "$(cat /sys/class/net/w*/operstate 2>/dev/null)" = 'down' ]; then
   [ "$(cat /sys/class/net/w*/flags 2>/dev/null)" = '0x1003' ] && wifiicon="󰖪 offine" || wifiicon="󰅖 disabled"
   printf "%s" "$wifiicon"
