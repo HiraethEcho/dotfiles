@@ -28,14 +28,17 @@ report.list.columns=id,project,description.count,depends,due,recur,priority,sche
 report.list.labels=ID,Project,Description,Depends,Due,Recur,Priority,Scheduled,Until,Status
 report.list.sort=status+/,priority,project
 report.list.filter=
+report.list.context=false
 
 
 report.long.columns=id,entry,modified.age,depends,priority,project,tags,recur,wait.remaining,scheduled,due,until,description
 report.long.labels=ID,Created,Mod,Deps,Pri,Project,Tags,Recur,Wait,Sched,Due,Until,Description
+report.long.filter=
 
-report.next.columns=id,description.truncated_count,project,depends,priority,recur,due.relative,urgency,status
-report.next.labels=ID,Description,Project,Dep,Priority,Recur,Due,Urg,Status
+report.next.columns=id,description.truncated_count,tags,project,depends,priority,recur,due.relative,urgency,status
+report.next.labels=ID,Description,Tag,Project,Dep,Priority,Recur,Due,Urg,Status
 report.next.filter=status:pending priority.not:L -WAITING
+report.next.sort=due,priority,project
 
 
 report.minimal.columns=project,description.truncated_count
@@ -253,3 +256,6 @@ uda.taskwarrior-tui.quick-tag.name=trush
 uda.calendar.type=string
 uda.calendar.label=Calendar
 uda.calendar.values=work,lecture,life,study
+context.habit.read=tag:habit
+context.habit.write=tag:habit
+context.work.read=tag.not:habit and tag.not:chore

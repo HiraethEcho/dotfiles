@@ -3,11 +3,10 @@ acpilight
 activitywatch-bin
 aerc
 alsa-utils
+amdgpu_top
 archlinuxcn-keyring
 atuin
 autossh
-aw-awatcher
-aw-watcher-media-player
 awesome-terminal-fonts
 base
 base-devel
@@ -26,8 +25,10 @@ buku
 cava
 clang
 clivm
+cloudflared
 cups
 deepseek-pake
+deskreen-bin
 dhcpcd
 dmenu
 dnsmasq
@@ -70,6 +71,7 @@ iw
 iwd
 khal
 kitty
+kmscon
 lazygit
 less
 lib32-mesa
@@ -103,10 +105,10 @@ newsboat
 niri
 npm
 ntfs-3g
-nwg-bar
 nwg-menu
 nwg-panel
 obsidian
+ollama
 openbox
 openlist-bin
 openssh
@@ -132,6 +134,7 @@ pyright
 python-eyed3
 python-pynvim
 qemu-base
+radeontop
 rclone
 redbook-pake
 ripgrep
@@ -146,10 +149,8 @@ stow
 stylua
 sudo
 sx
-systemd-manager-tui
 task
 taskopen
-taskwarrior-tui
 tdf-git
 tealdeer
 tex-fmt
