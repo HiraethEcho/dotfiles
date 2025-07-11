@@ -6,8 +6,6 @@ alsa-utils
 archlinuxcn-keyring
 atuin
 autossh
-aw-awatcher
-aw-watcher-media-player
 awesome-terminal-fonts
 base
 base-devel
@@ -28,6 +26,7 @@ clang
 clivm
 cups
 deepseek-pake
+deskreen-bin
 dhcpcd
 dmenu
 dnsmasq
@@ -103,7 +102,6 @@ newsboat
 niri
 npm
 ntfs-3g
-nwg-bar
 nwg-menu
 nwg-panel
 obsidian
@@ -146,10 +144,8 @@ stow
 stylua
 sudo
 sx
-systemd-manager-tui
 task
 taskopen
-taskwarrior-tui
 tdf-git
 tealdeer
 tex-fmt
