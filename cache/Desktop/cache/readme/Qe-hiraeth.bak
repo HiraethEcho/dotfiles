@@ -61,7 +61,7 @@ gvfs 1.57.2-4
 gvfs-dnssd 1.57.2-4
 gvim 9.1.1497-1
 harper 0.48.0-1
-hugo 0.148.0-1
+hugo 0.148.1-1
 imagemagick 7.1.1.47-2
 impala 0.3.0-1
 isd-appimage v0.5.1-2
@@ -87,7 +87,7 @@ lxappearance-gtk3 0.6.4-1
 lxde-common 0.99.3-1
 lxpanel-gtk3 0.10.1-2
 lxsession-gtk3 1:0.5.6-1
-maim 5.8.0-3
+maim 5.8.1-1
 man-db 2.13.1-1
 marksman 20241218-1
 mate-polkit 1.28.1-2
@@ -208,7 +208,7 @@ zathura 0.5.12-1
 zathura-djvu 0.2.10-5
 zathura-pdf-mupdf 0.4.4-19
 zip 3.0-11
-zotero 7.0.19-1
+zotero 7.0.20-1
 zoxide 0.9.8-2
 zsh 5.9-5
 zsh-autocomplete 25.03.19-1
