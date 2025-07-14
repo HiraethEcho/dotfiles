@@ -6,18 +6,13 @@ task_attributes="priority,project,tags,description"
 --sort:"project,annot"
 --active-tasks:"+PENDING"
 EDITOR=nvim
-path_ext=/home/hiraeth/.config/taskopen/scripts
+path_ext="~/.config/taskopen/scripts"
 # path_ext=/usr/share/taskopen/scripts
 [Actions]
 nedit.target=annotations
 nedit.regex = "^[\\.\\/~]+.*\\.(md|pandoc|mdwn|markdown|lua|tex|txt)"
 nedit.command = "$EDITOR $FILE"
 nedit.modes="batch,any,normal"
-files.target=annotations
-files.labelregex=".*"
-files.regex="^[\\.\\/~]+.*\\.(.*)"
-files.command="xdg-open $FILE"
-files.modes="batch,any,normal"
 notes.target=annotations
 notes.labelregex=".*"
 notes.regex="^Note(\\..*)?"
@@ -28,3 +23,10 @@ url.labelregex=".*"
 url.regex="((?:www|http).*)"
 url.command="xdg-open $LAST_MATCH"
 url.modes="batch,any,normal"
+
+delete.regex = ".*"
+delete.command = "task $UUID denotate -- \"$ANNOTATION\" 2>/dev/null"
+
+files.regex = "^[\\.\\/~]+.*\\.(.*)"
+files.command = "if [[ $FILE == *.lua ]]; then nvim $FILE; else xdg-open $FILE; fi"
+files.filtercommand = "test -e $FILE"
