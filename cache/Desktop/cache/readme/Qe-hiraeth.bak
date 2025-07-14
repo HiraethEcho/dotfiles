@@ -52,7 +52,7 @@ flomo-pake 3.1.1-2
 foot 1.22.3-1
 fzf 0.64.0-1
 fzf-tab-git r277.fc6f0dc-1
-git 2.50.1-1
+git 2.50.1-3
 github-cli 2.75.0-1
 gnome-keyring 1:48.0-1
 go-musicfox-git 4.6.3.r1.g179b944-1
@@ -106,7 +106,7 @@ niri 25.05.1-2
 npm 11.4.2-1
 ntfs-3g 2022.10.3-2
 nwg-menu 0.1.9-1
-nwg-panel 0.10.9-1
+nwg-panel 0.10.10-1
 obsidian 1.8.10-1
 ollama 0.9.6-1
 openbox 3.6.1-12
@@ -166,7 +166,7 @@ timeshift 24.06.6-1
 timew 1.8.0-2
 tinymist 1:0.13.14-1
 tmux 3.5_a-1
-tree-sitter 0.25.7-1
+tree-sitter 0.25.8-1
 ttf-daddytime-mono-nerd 3.4.0-1
 ttf-lxgw-wenkai-mono 1.520-1
 ttf-maple-nerd 6.4-3
