@@ -209,7 +209,8 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    # dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/bin/rofi -dmenu -p Action:
 
     # Browser for opening urls in context menu.
     browser =  waterfox
@@ -299,7 +300,6 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    origin = bottom-right
     background = "#1A1B26"
     foreground = "#A9B1D6"
     highlight  = "#A9B1D6"
@@ -311,7 +311,6 @@
     background = "#1A1B26"
     foreground = "#A9B1D6"
     highlight  = "#ABE9B3"
-    highlight-background = "#16161E"
     timeout = 6
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon

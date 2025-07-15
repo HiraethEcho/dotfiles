@@ -2,7 +2,7 @@
   name = arch14
   email = wyz2016zxc@outlook.com
 [http]
-    sslverify = false
+	sslVerify = false
 [init]
   defaultBranch = main
 [pull]
