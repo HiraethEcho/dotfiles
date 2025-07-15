@@ -1,0 +1,29 @@
+[Unit]
+Description=Ollama Service
+Wants=network-online.target
+After=network.target network-online.target
+
+[Service]
+ExecStart=/usr/bin/ollama serve
+WorkingDirectory=/var/lib/ollama
+Environment="HOME=/var/lib/ollama"
+Environment="OLLAMA_MODELS=/var/lib/ollama"
+Environment="OLLAMA_ORIGINS=chrome-extension://*,moz-extension://*"
+Environment="OLLAMA_HOST=0.0.0.0:11434"
+; 定义允许的跨域来源
+Environment="OLLAMA_ORIGINS=*"
+; 启用调试模式
+Environment="OLLAMA_DEBUG=1"
+Environment="OLLAMA_FLASH_ATTENTION=1" #启用Flash Attention
+User=ollama
+Group=ollama
+Restart=on-failure
+RestartSec=3
+RestartPreventExitStatus=1
+Type=simple
+PrivateTmp=yes
+ProtectSystem=full
+ProtectHome=yes
+
+[Install]
+WantedBy=multi-user.target

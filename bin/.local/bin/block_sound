@@ -2,66 +2,55 @@
 # A dwm_bar function to show the master volume of PulseAudio Joe Standring <git@joestandring.com>
 # GNU GPLv3
 # Dependencies: pamixer
+#
+Notify() {
+  dunstify -h string:x-dunst-stack-tag:sound "Music" \
+    "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')
+$(mpc status | sed -n 2p | awk '{print $1}' | tr -d '[]')
+$(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi)"
+}
 
 case $BLOCK_BUTTON in
+3)
+  ACTION=$(dunstify -h string:x-dunst-stack-tag:sound "Music" \
+    "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')
+$(mpc status | sed -n 2p | awk '{print $1}' | tr -d '[]')
+$(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi)
+Left: rmpc
+Right: wiremix
+Mid: More" --action="default,Wiremix")
+  case "$ACTION" in
+  "default")
+    nohup st -c tasks -e wiremix >/dev/null &
+    Notify
+    ;;
+  "2")
+    nohup st -c tasks -e rmpc >/dev/null &
+    Notify
+    ;;
+  esac
+  ;;
+# 2) nohup st -c tasks -t music -e rmpc >/dev/null & ;;
 1)
   pamixer -t
-  notify-send -h string:x-dunst-stack-tag:vol "Station" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')\n$(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi) "
-  # ACTION=$(dunstify -h string:x-dunst-stack-tag:sound "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')" "Left: Dismiss\nRight: pamixer" --action="default,Pamixer")
-  # case "$ACTION" in
-  # "default")
-  #   nohup st -c tasks -t pulse -e pulsemixer >/dev/null &
-  #   ;;
-  # esac
+  Notify
   ;;
-# 1) click_dunst ;;
-2) nohup st -c tasks -t music -e rmpc >/dev/null & ;;
-3)
-  # ACTION=$(dunstify -h string:x-dunst-stack-tag:sound "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')" "Left: Toggle Play\nRight: Stop\nMid: " --action="4,Label4" --action="3,stop mpd" --action="default,ToggleMute")
-  ACTION=$(dunstify -h string:x-dunst-stack-tag:sound "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')" "Left: Toggle Play\nRight: Stop" --action="default,Stop")
+2)
+  ACTION=$(dunstify -h string:x-dunst-stack-tag:sound "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')" "$(mpc status | sed -n 2p | awk '{print $1}' | tr -d '[]') $(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi)\nLeft: Toggle Play\nRight: Stop" --action="default,Stop")
   case "$ACTION" in
   "default")
     mpc stop >/dev/null
-    notify-send -h string:x-dunst-stack-tag:sound "$(mpc status | sed -n 2p | awk '{print $1}' | tr -d '[]') $(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi)" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')"
+    notify-send -h string:x-dunst-stack-tag:sound "Music stopped"
     ;;
   "2")
     mpc toggle >/dev/null
-    # pamixer -t
-    notify-send -h string:x-dunst-stack-tag:sound "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')" "$(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi) "
+    Notify
     ;;
-  # "3")
-  #   mpc stop >/dev/null
-  #   notify-send -h string:x-dunst-stack-tag:sound "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')" "$(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi) "
-  #   ;;
-  # "4")
-  #   notify-send "4"
-  #   ;;
   esac
   ;;
-# 2) nohup blueberry > /dev/null & ;;
 # 2) pamixer --set-volume $(rofi -dmenu -config ~/.config/rofi/themes/passwd.rasi) ; notify-send -h int:value:$(pamxier --get-volume) "volume" ;;
 # 3) pamixer -m ; notify-send "Station" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g') " ;;
 # 3) nohup st -c tasks -t pulse -e pulsemixer >/dev/null & ;;
-# 3)
-#   ACTION=$(dunstify -h string:x-dunst-stack-tag:sound "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')" "Left click to pulsemixer\nRight click to rmpc\nMid click for more" --action="4,Label4" --action="3,stop mpd" --action="default,ToggleMute")
-#   case "$ACTION" in
-#   "default")
-#     nohup st -c tasks -t music -e rmpc >/dev/null &
-#     notify-send -h string:x-dunst-stack-tag:sound "$(mpc status | sed -n 2p | awk '{print $1}' | tr -d '[]') $(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi)" "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')"
-#     ;;
-#   "2")
-#     nohup st -c tasks -t music -e pulsemixer >/dev/null &
-#     notify-send -h string:x-dunst-stack-tag:sound "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')" "$(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi) "
-#     ;;
-#   "3")
-#     mpc stop >/dev/null
-#     notify-send -h string:x-dunst-stack-tag:sound "$(pamixer --get-mute | sed 's/true/Mute/g' | sed 's/false/Unmute/g')" "$(if ! [ -z "$(mpc current)" ]; then mpc current; else echo "no music"; fi) "
-#     ;;
-#   "4")
-#     notify-send "4"
-#     ;;
-#   esac
-#   ;;
 # 3) nohup pavucontrol > /dev/null &  pkill -RTMIN+3 dwmblocks ;;
 4)
   pamixer -i 5
