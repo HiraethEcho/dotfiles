@@ -1,6 +1,5 @@
 acpi
 acpilight
-activitywatch-bin
 aerc
 alsa-utils
 amdgpu_top
@@ -98,6 +97,7 @@ mdcat
 mpc
 mpd
 mpv
+msty-bin
 ncmpcpp
 neovim
 net-tools
@@ -129,7 +129,6 @@ pipewire-audio
 pipewire-pulse
 powerpoint-pake
 prettier
-pulsemixer
 pyright
 python-eyed3
 python-pynvim
