@@ -61,7 +61,7 @@ grub-btrfs 4.13-2
 gvfs 1.57.2-4
 gvfs-dnssd 1.57.2-4
 gvim 9.1.1552-1
-harper 0.48.0-1
+harper 0.48.0-2
 hugo 0.148.1-1
 imagemagick 7.1.2.0-2
 impala 0.3.0-1
@@ -71,6 +71,7 @@ iwd 3.9-1
 khal 0.13.0-1
 kitty 0.42.2-1
 kmscon 9.0.0-3
+lazydocker-bin 0.24.1-1
 lazygit 0.53.0-1
 less 1:668-1
 lib32-mesa 1:25.1.5-1
@@ -196,7 +197,6 @@ xbindkeys 1.8.7-5
 xcape 1.2-5
 xclip 0.13-6
 xdg-desktop-portal 1.20.3-1
-xdg-desktop-portal-gtk 1.15.3-1
 xdg-ninja-git r540.42ee421-1
 xdg-user-dirs-gtk 0.14-1
 xdotool 3.20211022.1-2
