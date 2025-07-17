@@ -71,6 +71,7 @@ iwd
 khal
 kitty
 kmscon
+lazydocker-bin
 lazygit
 less
 lib32-mesa
@@ -97,7 +98,6 @@ mdcat
 mpc
 mpd
 mpv
-msty-bin
 ncmpcpp
 neovim
 net-tools
@@ -114,6 +114,7 @@ openlist-bin
 openssh
 os-prober
 otf-codenewroman-nerd
+oxker
 pacfiles
 pacman-contrib
 pamixer
@@ -127,6 +128,8 @@ pipewire
 pipewire-alsa
 pipewire-audio
 pipewire-pulse
+podman
+podman-tui
 powerpoint-pake
 prettier
 pyright
@@ -194,7 +197,6 @@ xbindkeys
 xcape
 xclip
 xdg-desktop-portal
-xdg-desktop-portal-gtk
 xdg-ninja-git
 xdg-user-dirs-gtk
 xdotool
