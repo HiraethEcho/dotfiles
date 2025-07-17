@@ -97,7 +97,6 @@ mdcat
 mpc
 mpd
 mpv
-msty-bin
 ncmpcpp
 neovim
 net-tools
@@ -114,6 +113,7 @@ openlist-bin
 openssh
 os-prober
 otf-codenewroman-nerd
+oxker
 pacfiles
 pacman-contrib
 pamixer
@@ -127,6 +127,8 @@ pipewire
 pipewire-alsa
 pipewire-audio
 pipewire-pulse
+podman
+podman-tui
 powerpoint-pake
 prettier
 pyright
