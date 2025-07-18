@@ -26,11 +26,11 @@ export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GOPROXY=goproxy.io
-export GOPATH="$XDG_DATA_HOME"/opt/go
+export GOPATH="$HOME"/.local/opt/go
 export PATH="$GOPATH/bin:$PATH"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
-# PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 export WECHAT_DATA_DIR="$HOME/Desktop/WeChat_Data"
 export W3M_DIR="$XDG_DATA_HOME"/w3m
@@ -72,3 +72,6 @@ export HOME_IP_5G="2408:8207:1962:6500:bf23:f89a:d169:3449"
 export HOME_IP="2408:8207:1962:6500:87c2:38e5:1717:8420"
 export ALIECS_IP="120.26.223.0"
 export ALILIGHT_IP="182.92.134.43"
+
+export ZOTERO_API_KEY="vxwGh0XaMLa637qhhGYZ48LS"
+export ZOTERO_USER_ID="9666949"

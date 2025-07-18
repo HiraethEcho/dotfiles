@@ -2,7 +2,6 @@ acpi
 acpilight
 aerc
 alsa-utils
-amdgpu_top
 archlinuxcn-keyring
 atuin
 autossh
@@ -22,15 +21,18 @@ btrfs-assistant
 btrfs-progs
 buku
 cava
+chatbox-bin
 clang
 clivm
 cloudflared
 cups
+cwm
 deepseek-pake
 dhcpcd
 dmenu
 dnsmasq
 docker
+docker-compose
 dua-cli
 dunst
 efibootmgr
@@ -54,6 +56,7 @@ fzf-tab-git
 git
 github-cli
 gnome-keyring
+go
 go-musicfox-git
 gparted
 grub
@@ -70,6 +73,7 @@ iw
 iwd
 khal
 kitty
+klar
 kmscon
 lazydocker-bin
 lazygit
@@ -85,11 +89,14 @@ linux-firmware-atheros
 linux-firmware-other
 linux-headers
 linux-wifi-hotspot
+linux-zen
+linux-zen-headers
 lua-language-server
 lxappearance-gtk3
 lxde-common
 lxpanel-gtk3
 lxsession-gtk3
+mailspring-bin
 maim
 man-db
 marksman
@@ -114,7 +121,6 @@ openlist-bin
 openssh
 os-prober
 otf-codenewroman-nerd
-oxker
 pacfiles
 pacman-contrib
 pamixer
@@ -129,6 +135,7 @@ pipewire-alsa
 pipewire-audio
 pipewire-pulse
 podman
+podman-compose
 podman-tui
 powerpoint-pake
 prettier
@@ -141,7 +148,7 @@ redbook-pake
 ripgrep
 rmpc
 rofi-wayland
-sddm
+ruby
 shfmt
 sioyek
 snapper
@@ -178,6 +185,7 @@ ufrii-print
 unzip
 vdirsyncer
 virt-manager
+visual-studio-code-bin
 vscode-html-languageserver
 vulkan-radeon
 vulkan-tools

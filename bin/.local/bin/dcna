@@ -118,42 +118,17 @@ git_pull_all() {
         TOTAL_LOG=$TOTAL_LOG"$LOG\n"
         notify-send -u critical "stashed failed" "$i"
       fi
-      echo -e "${YELLOW}Try pull${NC}"
-      if git pull; then
-        LOG="${GREEN}✓ 拉取成功${NC}\n"
-        echo -e $LOG
-        TOTAL_LOG=$TOTAL_LOG"$LOG"
-        notify-send -u normal "Pull" "$i"
-      else
-        LOG="${RED}✓ 拉取失败${NC}"
-        echo -e $LOG
-        TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-        notify-send -u critical "Pull failed" "$i"
-      fi
-      echo -e "${YELLOW}Try pop${NC}"
-      if git stash pop; then
-        LOG="${GREEN}✓ pop成功${NC}\n"
-        echo -e $LOG
-        TOTAL_LOG=$TOTAL_LOG"$LOG"
-        notify-send -u normal "Stash pop" "$i"
-      else
-        LOG="${RED}✓ pop失败${NC}"
-        echo -e $LOG
-        TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-        notify-send -u critical "Pop failed" "$i"
-      fi
+    fi
+    if git pull; then
+      LOG="${GREEN}✓ 拉取成功${NC}\n"
+      echo -e $LOG
+      TOTAL_LOG=$TOTAL_LOG"$LOG"
+      notify-send -u normal "Pull" "$i"
     else
-      if git pull; then
-        LOG="${GREEN}✓ 拉取成功${NC}\n"
-        echo -e $LOG
-        TOTAL_LOG=$TOTAL_LOG"$LOG"
-        notify-send -u normal "Pull" "$i"
-      else
-        LOG="${RED}✓ 拉取失败${NC}"
-        echo -e $LOG
-        TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-        notify-send -u critical "Pull failed" "$i"
-      fi
+      LOG="${RED}✓ 拉取失败${NC}"
+      echo -e $LOG
+      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+      notify-send -u critical "Pull failed" "$i"
     fi
   done
 }
@@ -234,8 +209,8 @@ system_bak() {
   LOG="${YELLOW}备份package list...${NC}"
   echo -e $LOG
   TOTAL_LOG=$TOTAL_LOG"$LOG"
-  if pacman -Qqe >$HOME"/dotfiles/cache/Desktop/cache/readme/Qqe-`whoami`.bak" &&
-    pacman -Qe >"$HOME/dotfiles/cache/Desktop/cache/readme/Qe-`whoami`.bak"; then
+  if pacman -Qqe >$HOME"/dotfiles/cache/Desktop/cache/readme/Qqe-$(whoami).bak" &&
+    pacman -Qe >"$HOME/dotfiles/cache/Desktop/cache/readme/Qe-$(whoami).bak"; then
     LOG="${GREEN}✓ 成功${NC}"
     echo -e $LOG
     TOTAL_LOG=$TOTAL_LOG"$LOG\n"
