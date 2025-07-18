@@ -1644,7 +1644,7 @@ macro i set pager "~/.config/newsboat/kitty-img-pager"; open; set pager internal
 #
 # Default value: ~/
 #
-save-path "~/obsidian/rss"
+save-path "~/obsidian/wiki/clip"
 
 ####  scrolloff
 #

@@ -2,7 +2,6 @@ acpi
 acpilight
 aerc
 alsa-utils
-amdgpu_top
 archlinuxcn-keyring
 atuin
 autossh
@@ -22,6 +21,7 @@ btrfs-assistant
 btrfs-progs
 buku
 cava
+chatbox-bin
 clang
 clivm
 cloudflared
@@ -31,6 +31,7 @@ dhcpcd
 dmenu
 dnsmasq
 docker
+docker-compose
 dua-cli
 dunst
 efibootmgr
@@ -54,6 +55,7 @@ fzf-tab-git
 git
 github-cli
 gnome-keyring
+go
 go-musicfox-git
 gparted
 grub
@@ -70,6 +72,7 @@ iw
 iwd
 khal
 kitty
+klar
 kmscon
 lazydocker-bin
 lazygit
@@ -90,6 +93,7 @@ lxappearance-gtk3
 lxde-common
 lxpanel-gtk3
 lxsession-gtk3
+mailspring-bin
 maim
 man-db
 marksman
@@ -129,6 +133,7 @@ pipewire-alsa
 pipewire-audio
 pipewire-pulse
 podman
+podman-compose
 podman-tui
 powerpoint-pake
 prettier
@@ -141,6 +146,7 @@ redbook-pake
 ripgrep
 rmpc
 rofi-wayland
+ruby
 sddm
 shfmt
 sioyek
