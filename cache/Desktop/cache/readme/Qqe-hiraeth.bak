@@ -26,6 +26,7 @@ clang
 clivm
 cloudflared
 cups
+cwm
 deepseek-pake
 dhcpcd
 dmenu
@@ -88,6 +89,8 @@ linux-firmware-atheros
 linux-firmware-other
 linux-headers
 linux-wifi-hotspot
+linux-zen
+linux-zen-headers
 lua-language-server
 lxappearance-gtk3
 lxde-common
@@ -118,7 +121,6 @@ openlist-bin
 openssh
 os-prober
 otf-codenewroman-nerd
-oxker
 pacfiles
 pacman-contrib
 pamixer
@@ -147,7 +149,6 @@ ripgrep
 rmpc
 rofi-wayland
 ruby
-sddm
 shfmt
 sioyek
 snapper
@@ -184,6 +185,7 @@ ufrii-print
 unzip
 vdirsyncer
 virt-manager
+visual-studio-code-bin
 vscode-html-languageserver
 vulkan-radeon
 vulkan-tools
