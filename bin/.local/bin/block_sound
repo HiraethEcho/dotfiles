@@ -84,7 +84,7 @@ esac
 printf "^c#96CDFB^"
 printf "%s^f2^" "$mpd_icon"
 
-bluetooth_macs=$(bluetoothctl devices Connected | grep Device | awk '{print $2}')
+bluetooth_macs=$(bluetoothctl devices Connected | grep Device | awk '{print $2}' 2>/dev/null)
 if [ -z $macs ]; then
   for i in ${bluetooth_macs[@]}; do
     icon=$(bluetoothctl info $i | grep "Icon" | awk '{print $2}')

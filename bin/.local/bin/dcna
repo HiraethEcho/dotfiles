@@ -12,6 +12,7 @@ GIT_REPO=(
   "$HOME/dotfiles"
 )
 
+
 RCLONE_PAIR=(
   "$HOME/Documents/doc/;koofr:/kDocuments/doc/"
   "$HOME/Documents/ucas/;koofr:/kDocuments/ucas/"

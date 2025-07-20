@@ -4,8 +4,8 @@ net=$(awk '/^\s*w/ { print  int($3 * 100 / 70) }' /proc/net/wireless)
 first_interface=$(iw dev | awk '$1=="Interface"{print $2}' | head -n 1)
 interface="wlan0"
 ssid=$(iw dev "$interface" link | awk '$1=="SSID:"{print $2}')
-network=$(iwctl station wlan0 show | grep network | awk '{print $3}')
-bluetooth_connects=$(bluetoothctl devices Connected | grep Device | cut -d ' ' -f 3-)
+network=$(iwctl station wlan0 show | grep network | awk '{print $3}' 2>/dev/null)
+bluetooth_connects=$(bluetoothctl devices Connected | grep Device | cut -d ' ' -f 3- 2>/dev/null)
 
 case $BLOCK_BUTTON in
 # 1) notify-send -h int:value:$net "Wifi" "$ssid"  ;;
@@ -45,7 +45,7 @@ Mid: More" --action="default,Wiremix")
 6) nohup st -e nvim "$0" >/dev/null & ;;
 esac
 
-bluetooth_macs=$(bluetoothctl devices Connected | grep Device | awk '{print $2}')
+bluetooth_macs=$(bluetoothctl devices Connected | grep Device | awk '{print $2}' 2>/dev/null)
 if ! [ -z $macs ]; then
   bluetooth_icon="󰂲^f2^"
 else
