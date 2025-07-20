@@ -29,6 +29,7 @@ export GOPROXY=goproxy.io
 export GOPATH="$HOME"/.local/opt/go
 export PATH="$GOPATH/bin:$PATH"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export PATH="$HOME/.local/opt/npm/bin:$PATH"
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
