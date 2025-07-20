@@ -21,13 +21,12 @@ btrfs-assistant
 btrfs-progs
 buku
 cava
-chatbox-bin
+cherry-studio-bin
 clang
 clivm
 cloudflared
 cups
 cwm
-deepseek-pake
 dhcpcd
 dmenu
 dnsmasq
@@ -217,7 +216,6 @@ xorg-xsetroot
 xorg-xwayland
 xwayland-satellite
 yazi
-yuanbao-pake
 yutto
 zathura
 zathura-djvu
