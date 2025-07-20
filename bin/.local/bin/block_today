@@ -7,7 +7,7 @@
 h=$(date +%k)
 m=$(date "+$-M")
 a=$((h * 60 + m))
-l=$((a * 72 / 1440))
+l=$((a * 48 / 1440))
 r=$((a * 100 / 1440))
 
 case $BLOCK_BUTTON in
@@ -28,19 +28,19 @@ $(task rc.report.next.columns=description.count rc.report.next.labels=Descrption
 6) nohup st -e nvim "$0" >/dev/null & ;;
 esac
 
-if [[ $l -ge 69 ]]; then
+if [[ $l -ge 46 ]]; then
   printf "^c#e06c75^"
-elif [[ $l -ge 63 ]]; then
-  printf "^c#000000^"
 elif [[ $l -ge 42 ]]; then
+  printf "^c#000000^"
+elif [[ $l -ge 28 ]]; then
   printf "^c#89b482^"
-elif [[ $l -ge 27 ]]; then
-  printf "^c#01e9f1^"
 elif [[ $l -ge 18 ]]; then
+  printf "^c#01e9f1^"
+elif [[ $l -ge 12 ]]; then
   printf "^c#4169e1^"
 else
   printf "^c#e06c75^"
 fi
-# printf "^f3^^s0,10,74,6^^r1,11,%s,4^^f76^" "$l"
-# printf "^c#dfe3ee^"
+printf "^f3^^s0,10,50,6^^r1,11,%s,4^^f52^" "$l"
+printf "^c#dfe3ee^"
 printf "^f2^󰥔^f2^%s" "$(date '+%R')"
