@@ -7,9 +7,9 @@
         "ZOTERO_USER_ID": "9666949"
       }
     },
-"obsidian": {
-            "command": "npx",
-            "args": ["-y", "obsidian-mcp", "/home/hiraeth/obsidian"]
-        }
+    "obsidian": {
+      "command": "npx",
+      "args": ["-y", "obsidian-mcp", "/home/hiraeth/obsidian"]
+    }
   }
 }
