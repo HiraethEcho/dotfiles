@@ -72,8 +72,8 @@ iw
 iwd
 khal
 kitty
-klar
 kmscon
+koofr-desktop-bin
 lazydocker-bin
 lazygit
 less
@@ -95,7 +95,6 @@ lxappearance-gtk3
 lxde-common
 lxpanel-gtk3
 lxsession-gtk3
-mailspring-bin
 maim
 man-db
 marksman

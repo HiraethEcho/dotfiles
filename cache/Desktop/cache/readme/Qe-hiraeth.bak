@@ -72,8 +72,8 @@ iw 6.9-1
 iwd 3.9-1
 khal 0.13.0-1
 kitty 0.42.2-1
-klar 0.1.0-1
 kmscon 9.0.0-3
+koofr-desktop-bin 41a82e7-1
 lazydocker-bin 0.24.1-1
 lazygit 0.53.0-1
 less 1:668-1
@@ -95,7 +95,6 @@ lxappearance-gtk3 0.6.4-1
 lxde-common 0.99.3-1
 lxpanel-gtk3 0.10.1-2
 lxsession-gtk3 1:0.5.6-1
-mailspring-bin 1.16.0-1
 maim 5.8.1-1
 man-db 2.13.1-1
 marksman 20241218-1
