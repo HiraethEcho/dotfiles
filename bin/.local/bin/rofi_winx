@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-theme="~/.config/rofi/themes/winx.rasi"
+theme="~/.config/rofi/choose.rasi"
 
-option_u="power u"
-option_k="gparted k"
-option_i="terminal i"
-option_s="snapper s"
+option_u="power       u"
+option_k="gparted     k"
+option_i="terminal    i"
+option_s="snapper     s"
 
 rofi_cmd() {
   rofi -theme-str "listview {columns: 1; lines: 4;}" \

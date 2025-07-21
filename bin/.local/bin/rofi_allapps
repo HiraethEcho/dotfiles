@@ -13,4 +13,4 @@
 ## Run
 rofi \
     -show drun \
-    -theme ~/.config/rofi/themes/allapps.rasi
+    -theme ~/.config/rofi/allapps.rasi
