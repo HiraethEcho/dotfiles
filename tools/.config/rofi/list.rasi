@@ -17,11 +17,13 @@ configuration {
     display-window:             "";
 	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	window-format:              "{w} · {c} · {t}";
+
+    font: "CodeNewRoman Nerd Font mono 10";
 }
 
 /*****----- Global Properties -----*****/
 @import                          "share/color.rasi"
-@import                          "share/fonts.rasi"
+// @import                          "share/fonts.rasi"
 
 * {
     border-colour:               var(selected);
