@@ -1,0 +1,92 @@
+{
+  "mcpServers": {
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "env": {
+        "MEMORY_FILE_PATH": "/home/hiraeth/Code/ai/memory.json"
+      }
+    },
+    "MCP Neovim Server": {
+      "command": "npx",
+      "args": ["-y", "mcp-neovim-server"],
+      "env": {
+        "ALLOW_SHELL_COMMANDS": "true",
+        "NVIM_SOCKET_PATH": "/tmp/nvim"
+      }
+    },
+    "zotero": {
+      "command": "mcp-zotero",
+      "env": {
+        "ZOTERO_API_KEY": "vxwGh0XaMLa637qhhGYZ48LS",
+        "ZOTERO_USER_ID": "9666949"
+      }
+    },
+    "obsidian": {
+      "command": "npx",
+      "args": ["-y", "obsidian-mcp", "/home/hiraeth/obsidian"]
+    },
+    "Cloudflare Playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@cloudflare/playwright-mcp",
+        "--key",
+        "fe6b84f1-bf59-4f0a-aac3-5c69908a423e",
+        "--profile",
+        "sole-mole-Ejp5VC"
+      ]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@executeautomation/playwright-mcp-server"]
+    },
+    "bilibili-search": {
+      "command": "npx",
+      "args": ["bilibili-mcp"],
+      "description": "B站视频搜索 MCP 服务，可以在AI应用中搜索B站视频内容。"
+    },
+    "arxiv-mcp-server": {
+      "command": "uv",
+      "args": [
+        "tool",
+        "run",
+        "arxiv-mcp-server",
+        "--storage-path",
+        "/home/hiraeth/Documents/downloads"
+      ]
+    },
+    "amap-maps": {
+      "command": "npx",
+      "args": ["-y", "@amap/amap-maps-mcp-server"],
+      "env": {
+        "AMAP_MAPS_API_KEY": "35b7e2ab9725611c8aef83089b3f1dc5"
+      }
+    },
+    "github": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "mcp/github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "token"
+      }
+    },
+    "markmap": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@jinzcdev/markmap-mcp-server"],
+      "env": {
+        "MARKMAP_DIR": "/home/hiraeth/Code/markup"
+      }
+    }
+  }
+}

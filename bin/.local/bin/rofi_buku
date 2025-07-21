@@ -19,11 +19,15 @@
 #
 # https://github.com/erikh/buku-rofi
 
+type="5"
+
 _rofi() {
   # rofi -dpi 1 -dmenu -i -sort -no-levenshtein-sort -width 1300 -lines 40 "$@"
   # -theme-str 'textbox-prompt-colon {str: "";}' \
   rofi -theme '~/.config/rofi/list.rasi' -dpi 1 -dmenu -i -sort -no-levenshtein-sort \
     -theme-str "window {width: 1000;}" \
+    -theme-str "listview {columns: 1;}" \
+    -theme-str "configuration {show-icons: false;}" \
     -lines 40 "$@"
 }
 
@@ -217,7 +221,7 @@ addTags() {
 }
 
 parseBuku() {
-  buku --nc --np -p --tacit --nostdin 2>/dev/null | grep -v -- "--nostdin" | gawk -v max="80" -v type="2" '
+  buku --nc --np -p --tacit --nostdin 2>/dev/null | grep -v -- "--nostdin" | gawk -v max="80" -v type="$type" '
 BEGIN {
   RS=""
   FS="\n"

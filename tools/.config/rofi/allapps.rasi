@@ -25,8 +25,8 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       1440px;
-    height:                      900px;
+    width:                       1280px;
+    height:                      700px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -45,7 +45,7 @@ mainbox {
     enabled:                     true;
     spacing:                     20px;
     margin:                      0px;
-    padding:                     50px 50px;
+    padding:                     30px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @selected;
@@ -98,14 +98,14 @@ entry {
 listview {
     enabled:                     true;
     columns:                     6;
-    lines:                       12;
+    // lines:                       12;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
+    fixed-height:                false;
+    fixed-columns:               false;
     
     spacing:                     10px;
     margin:                      0px;
@@ -149,7 +149,7 @@ element-icon {
     padding:                     0px 0px 0px 0px;
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        32px;
+    size:                        20px;
     cursor:                      inherit;
 }
 element-text {

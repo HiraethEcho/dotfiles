@@ -1,0 +1,158 @@
+report.minimal.columns=id,description.truncated_count,project,tags
+report.minimal.labels=ID,Desc,Projects,Tags
+report.minimal.filter=priority.not:L -WAITING -PARENT -COMPLETED -DELETED
+report.minimal.sort=project
+report.minimal.context=true
+
+report.ls.columns=id,depends,description.truncated_count,tags,project,cal,due.relative
+report.ls.labels=ID,Dep,Description,Tags,Project,Cal,Due
+report.ls.filter=priority.not:L -WAITING -PARENT -COMPLETED -DELETED
+report.ls.sort=project
+
+report.list.columns=id,depends,description.truncated,tags,project,cal,due.relative,recur
+report.list.labels=ID,Dep,Description,Tags,Project,Cal,Due,Recurrence
+report.list.filter=status:pending
+report.list.sort=status+/,priority,project
+# report.list.context=false
+
+report.long.columns=id,depends,description,tags,project,cal,due,recur
+report.long.labels=ID,Depends,Description,Project,Tags,Cal,Due,Recurrence
+report.long.filter=status:pending
+
+report.all.columns=id,depends,description,tags,project,cal,due,recur,wait,scheduled,until,status,mask,uuid.short
+report.all.labels=ID,Depends,Description,Tags,Project,Cal,Due,Recurrence,Wait,Scheduled,Until,Status,Mask,UUID
+report.all.sort=status+/,project,tags
+report.all.filter=
+report.all.context=false
+
+report.next.columns=id,depends,description.truncated_count,tags,project,due.relative,urgency
+report.next.labels=ID,Dep,Description,Tags,Project,Due,Urgency
+report.next.filter=status:pending -WAITING -list
+report.next.sort=urgency,due,priority,project
+
+report.ready.filter=+READY priority.not:L -WAITING
+
+# $ task columns
+# Columns     Type    Modifiable Supported Formats Example
+# ----------- ------- ---------- ----------------- ------------------------------------
+# depends     string  Modifiable list*             1 2 10
+#                                count             [3]
+#                                indicator         D
+# description string  Modifiable combined*         Move your clothes down on to the
+#                                                  lower peg
+#                                                    2025-06-15 Immediately before your
+#                                                  lunch
+#                                                    2025-06-15 If you are playing in
+#                                                  the match this afternoon
+#                                                    2025-06-15 Before you write your
+#                                                  letter home
+#                                                    2025-06-15 If you're not getting
+#                                                  your hair cut
+#                                desc              Move your clothes down on to the
+#                                                  lower peg
+#                                oneline           Move your clothes down on to the
+#                                                  lower peg 2025-06-15 Immediately
+#                                                  before your lunch 2025-06-15 If you
+#                                                  are playing in the match this
+#                                                  afternoon 2025-06-15 Before you
+#                                                  write your letter home 2025-06-15 If
+#                                                  you're not getting your hair cut
+#                                truncated         Move your clothes do...
+#                                count             Move your clothes down on to the
+#                                                  lower peg [4]
+#                                truncated_count   Move your clothes do... [4]
+# due         date    Modifiable formatted*        2025-06-15
+#                                julian            2460841.98644
+#                                epoch             1749987628
+#                                iso               20250615T114028Z
+#                                age               2min
+#                                relative          -2min
+#                                remaining
+#                                countdown         0:02:05
+# end         date    Modifiable formatted*        2025-06-15
+#                                julian            2460841.98644
+#                                epoch             1749987628
+#                                iso               20250615T114028Z
+#                                age               2min
+#                                relative          -2min
+#                                remaining
+#                                countdown         0:02:05
+# entry       date    Modifiable formatted*        2025-06-15
+#                                julian            2460841.98644
+#                                epoch             1749987628
+#                                iso               20250615T114028Z
+#                                age               2min
+#                                relative          -2min
+#                                remaining
+#                                countdown         0:02:05
+# id          numeric Read Only  number*           123
+# imask       numeric Read Only  number*           12
+# last        numeric Read Only  number*           12
+# mask        string  Read Only  default*          ++++---
+# modified    date    Modifiable formatted*        2025-06-15
+#                                julian            2460841.98644
+#                                epoch             1749987628
+#                                iso               20250615T114028Z
+#                                age               2min
+#                                relative          -2min
+#                                remaining
+#                                countdown         0:02:05
+# parent      string  Read Only  long*             f30cb9c3-3fc0-483f-bfb2-3bf134f00694
+#                                short             f30cb9c3
+# priority    string  Modifiable default*
+#                                indicator
+# project     string  Modifiable full*             home.garden
+#                                parent            home
+#                                indented            home.garden
+# recur       string  Modifiable duration*         weekly
+#                                indicator         R
+# rtype       string  Read Only  default*          periodic
+#                                indicator         chained
+# scheduled   date    Modifiable formatted*        2025-06-15
+#                                julian            2460841.98644
+#                                epoch             1749987628
+#                                iso               20250615T114028Z
+#                                age               2min
+#                                relative          -2min
+#                                remaining
+#                                countdown         0:02:05
+# start       date    Modifiable formatted*        2025-06-15
+#                                julian            2460841.98644
+#                                epoch             1749987628
+#                                iso               20250615T114028Z
+#                                age               2min
+#                                relative          -2min
+#                                remaining
+#                                countdown         0:02:05
+#                                active            *
+# status      string  Modifiable long*             Pending
+#                                short             P
+# tags        string  Modifiable list*             home @chore next
+#                                indicator         +
+#                                count             [2]
+# template    string  Read Only  long*             f30cb9c3-3fc0-483f-bfb2-3bf134f00694
+#                                short             f30cb9c3
+# until       date    Modifiable formatted*        2025-06-15
+#                                julian            2460841.98644
+#                                epoch             1749987628
+#                                iso               20250615T114028Z
+#                                age               2min
+#                                relative          -2min
+#                                remaining
+#                                countdown         0:02:05
+# urgency     numeric Read Only  real*             4.6
+#                                integer           4
+# uuid        string  Read Only  long*             f30cb9c3-3fc0-483f-bfb2-3bf134f00694
+#                                short             f30cb9c3
+# wait        date    Modifiable formatted*        2025-06-15
+#                                julian            2460841.98644
+#                                epoch             1749987628
+#                                iso               20250615T114028Z
+#                                age               2min
+#                                relative          -2min
+#                                remaining
+#                                countdown         0:02:05
+# <uda>       <type>  Modifiable default*
+#                                indicator
+#
+# * Means default format, and therefore optional.  For example, 'due' and 'due.formatted' are equivalent.

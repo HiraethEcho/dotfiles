@@ -1,0 +1,15 @@
+{
+  "$schema": "https://charm.land/crush.json",
+  "lsp": {
+    "markdown": {
+      "command": "marksman"
+    }
+  },
+  "mcp": {
+    "obsidian": {
+      "command": "npx",
+      "args": ["-y", "mcp-obsidian", "/home/hiraeth/obsidian"],
+      "type": "stdio"
+    }
+  }
+}

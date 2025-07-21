@@ -15,7 +15,7 @@
 ## autogroup group [windowname,]windowclass
 autogroup 1 "waterfox"
 autogroup 2 "zotero"
-autogroup 3 "thunar,Thunar"
+autogroup 3 "pcmanfm,Pcmanfm"
 autogroup 4 "wechat"
 autogroup 5 "Steam++"
 
@@ -149,7 +149,7 @@ bind-key XF86MonBrightnessUp    "xbacklight -inc 5"
 
 ## Print Keys --
 bind-key Print          "rofi_screenshot"
-bind-key 4S-S           "rofi_screenshot"
+bind-key 4S-s           "rofi_screenshot"
 # bind-key 4-Print        "cwm_screenshot --area"
 # bind-key C-Print        "cwm_screenshot --win"
 # bind-key M-Print        "cwm_screenshot --in5"
@@ -273,14 +273,14 @@ bind-key M-j           window-cycle-ingroup
 bind-key M-k          window-rcycle-ingroup
 
 # Close current window.
-bind-key M-escape             window-close
+bind-key M-c             window-close
 bind-key M-F4            window-close
 
 # Hide current window.
 bind-key M-m          window-hide
 
 # Freeze current window geometry.
-bind-key 4-t          window-freeze
+# bind-key 4-t          window-freeze
 
 # Label current window.
 bind-key 4S-r          window-menu-label

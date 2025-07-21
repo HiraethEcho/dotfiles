@@ -19,7 +19,7 @@ case $BLOCK_BUTTON in
   # 2) xbacklight 75 ; notify-send -h int:value:$(xbacklight -get) "Light" ;;
   # 2) wallpaper_change ;;
 2)
-  xbacklight $(rofi -dmenu -config ~/.config/rofi/themes/passwd.rasi)
+  xbacklight $(rofi -dmenu -config ~/.config/rofi/passwd.rasi)
   notify-send -h int:value:$(xbacklight -get) "Light"
   ;;
 # 3) xbacklight $(( ($(xbacklight -get) + 80) % 100  )) ; notify-send -h int:value:$(xbacklight -get) "Light" ;;

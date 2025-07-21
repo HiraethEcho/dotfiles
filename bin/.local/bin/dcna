@@ -3,15 +3,15 @@
 # set -x
 # set -u
 
+# set -euo pipefail
 # config
-CONFICT_DIRS="$HOME/conficts"
+CONFLICT_DIR="$HOME/conflicts"
 GIT_REPO=(
   "$HOME/Documents/projects"
   "$HOME/obsidian"
   "$HOME/.config/nvim"
   "$HOME/dotfiles"
 )
-
 
 RCLONE_PAIR=(
   "$HOME/Documents/doc/;koofr:/kDocuments/doc/"
@@ -38,7 +38,7 @@ YELLOW='\033[0;33m'
 NC='\033[0m' # No Color
 
 # tmp
-BEGIN_PWD=$pwd
+# BEGIN_PWD="$PWD"
 #log
 TOTAL_LOG=""
 LOG=""
@@ -81,7 +81,7 @@ show_config() {
 
   echo ""
   echo -e "${GREEN}Rclone 同步任务:${NC}"
-  for pair in "${RCLONE_SYNC[@]}"; do
+  for pair in "${RCLONE_PAIR[@]}"; do
     echo "  - $pair"
   done
 
@@ -99,35 +99,36 @@ check_sudo() {
 
 git_pull_all() {
   LOG="${YELLOW}Git Pull All${NC}\n"
-  echo -e $LOG
+  echo -e "$LOG"
   TOTAL_LOG=$TOTAL_LOG"$LOG"
   for i in "${GIT_REPO[@]}"; do
-    cd $i
+    cd "$i" || return
     LOG="${YELLOW}处理 Git 仓库: $i${NC}..."
-    echo -e $LOG
+    echo -e "$LOG"
     TOTAL_LOG=$TOTAL_LOG"$LOG"
     git add .
     if [[ -n "$(git status --porcelain)" ]]; then
       echo -e "${YELLOW}Try stash${NC}"
       if git stash; then
-        LOG="${RED}STASHED $i ${NC}"
+        LOG="${RED}STASHED $i ${NC}\n"
+        TOTAL_LOG=$TOTAL_LOG"$LOG"
         echo -e "$LOG"
         notify-send -u critical "Stashed Repo" "$i"
       else
         LOG="${RED}✓ 失败${NC}"
-        echo -e $LOG
+        echo -e "$LOG"
         TOTAL_LOG=$TOTAL_LOG"$LOG\n"
         notify-send -u critical "stashed failed" "$i"
       fi
     fi
     if git pull; then
       LOG="${GREEN}✓ 拉取成功${NC}\n"
-      echo -e $LOG
+      echo -e "$LOG"
       TOTAL_LOG=$TOTAL_LOG"$LOG"
       notify-send -u normal "Pull" "$i"
     else
       LOG="${RED}✓ 拉取失败${NC}"
-      echo -e $LOG
+      echo -e "$LOG"
       TOTAL_LOG=$TOTAL_LOG"$LOG\n"
       notify-send -u critical "Pull failed" "$i"
     fi
@@ -136,30 +137,30 @@ git_pull_all() {
 
 git_push_all() {
   LOG="${YELLOW}Git Push All${NC}\n"
-  echo -e $LOG
+  echo -e "$LOG"
   TOTAL_LOG=$TOTAL_LOG"$LOG"
   for i in "${GIT_REPO[@]}"; do
-    cd $i
+    cd "$i" || return
     LOG="${YELLOW}正在处理 Git 仓库: $i${NC}"
-    echo -e $LOG
+    echo -e "$LOG"
     TOTAL_LOG=$TOTAL_LOG"$LOG"
     if [[ -n "$(git status --porcelain)" ]]; then
       git add .
       git commit -m "backup at $(date +%y/%m/%d-%T)"
       if git push; then
         LOG="${GREEN}✓ 推送成功${NC}\n"
-        echo -e $LOG
+        echo -e "$LOG"
         TOTAL_LOG=$TOTAL_LOG"$LOG"
         notify-send -u normal "Push" "$i"
       else
         LOG="${RED}✓ 推送失败${NC}\n"
-        echo -e $LOG
+        echo -e "$LOG"
         TOTAL_LOG=$TOTAL_LOG"$LOG"
         notify-send -u normal "Push failed" "$i"
       fi
     else
       LOG="${GREEN}No Change${NC}\n"
-      echo -e $LOG
+      echo -e "$LOG"
       TOTAL_LOG=$TOTAL_LOG"$LOG"
     fi
   done
@@ -167,57 +168,57 @@ git_push_all() {
 
 system_bak() {
 
-  if ! [[ -n "$INTERACTIVE" ]]; then
+  if [ -z "$INTERACTIVE" ]; then
     PARU_INTERACTIVE="--noconfirm"
   fi
 
   LOG="${YELLOW}运行系统更新...${NC}"
-  echo -e $LOG
+  echo -e "$LOG"
   TOTAL_LOG=$TOTAL_LOG"$LOG..."
-  if paru -Syyu ${PARU_INTERACTIVE}; then
+  if paru -Syyu "$PARU_INTERACTIVE"; then
     LOG="${GREEN}✓ 更新成功${NC}"
-    echo -e $LOG
+    echo -e "$LOG"
     TOTAL_LOG=$TOTAL_LOG"$LOG\n"
   else
     LOG="${RED}✗ 更新失败${NC}"
-    echo -e $LOG
+    echo -e "$LOG"
     TOTAL_LOG=$TOTAL_LOG"$LOG\n"
   fi
   LOG="${YELLOW}创建系统备份...${NC}"
-  echo -e $LOG
+  echo -e "$LOG"
   TOTAL_LOG=$TOTAL_LOG"$LOG"
   if sudo timeshift --check; then
     LOG="${GREEN}✓ 备份成功${NC}"
-    echo -e $LOG
+    echo -e "$LOG"
     TOTAL_LOG=$TOTAL_LOG"$LOG\n"
   else
     LOG="${RED}✗ 备份失败${NC}"
-    echo -e $LOG
+    echo -e "$LOG"
     TOTAL_LOG=$TOTAL_LOG"$LOG\n"
   fi
   LOG="${YELLOW}更新GRUB配置...${NC}"
-  echo -e $LOG
+  echo -e "$LOG"
   TOTAL_LOG=$TOTAL_LOG"$LOG"
   if sudo grub-mkconfig -o /boot/grub/grub.cfg; then
     LOG="${GREEN}✓ 成功${NC}"
-    echo -e $LOG
+    echo -e "$LOG"
     TOTAL_LOG=$TOTAL_LOG"$LOG\n"
   else
     LOG="${RED}✗ 失败${NC}"
-    echo -e $LOG
+    echo -e "$LOG"
     TOTAL_LOG=$TOTAL_LOG"$LOG\n"
   fi
   LOG="${YELLOW}备份package list...${NC}"
-  echo -e $LOG
+  echo -e "$LOG"
   TOTAL_LOG=$TOTAL_LOG"$LOG"
-  if pacman -Qqe >$HOME"/dotfiles/cache/Desktop/cache/readme/Qqe-$(whoami).bak" &&
+  if pacman -Qqe >"$HOME/dotfiles/cache/Desktop/cache/readme/Qqe-$(whoami).bak" &&
     pacman -Qe >"$HOME/dotfiles/cache/Desktop/cache/readme/Qe-$(whoami).bak"; then
     LOG="${GREEN}✓ 成功${NC}"
-    echo -e $LOG
+    echo -e "$LOG"
     TOTAL_LOG=$TOTAL_LOG"$LOG\n"
   else
     LOG="${RED}✗ 失败${NC}"
-    echo -e $LOG
+    echo -e "$LOG"
     TOTAL_LOG=$TOTAL_LOG"$LOG\n"
   fi
 }
@@ -228,57 +229,55 @@ rclone_pull_all() {
   fi
 
   LOG="${YELLOW}Rclone Pull All${NC}\n"
-  echo -e $LOG
+  echo -e "$LOG"
   TOTAL_LOG=$TOTAL_LOG"$LOG"
   for pair in "${RCLONE_PAIR[@]}"; do
     IFS=";" read -r local remote <<<"$pair"
     LOG="${YELLOW}拉取: $remote → $local${NC}..."
-    echo -e $LOG
+    echo -e "$LOG"
     TOTAL_LOG=$TOTAL_LOG"$LOG"
     # if rclone sync "$remote" "$local" $RCLONE_INTERACTIVE --backup-dir $CONFICT_DIRS --suffix '_local' --track-renames --filter-from "$HOME/.config/rclone/filter-list.txt" --no-update-dir-modtime --no-update-modtime --transfers 20 -L; then
     if rclone sync "$remote" "$local" $RCLONE_INTERACTIVE --track-renames --filter-from "$HOME/.config/rclone/filter-list.txt" --no-update-dir-modtime --no-update-modtime --transfers 20 -L; then
       LOG="${GREEN}✓ 成功${NC}"
-      echo -e $LOG
+      echo -e "$LOG"
       TOTAL_LOG=$TOTAL_LOG"$LOG\n"
       notify-send 'rclone' "pull from $remote to $local"
     else
       LOG="${RED}✗ 失败${NC}"
-      echo -e $LOG
+      echo -e "$LOG"
       TOTAL_LOG=$TOTAL_LOG"$LOG\n"
       notify-send -u critical 'rclone' "pull from $remote to $local failed"
     fi
-    if [ -d $"CONFICT_DIRS" ]; then
-      LOG="${RED}Rclone Has conficts ${NC}"
-      echo -e $LOG
+    if [ -d "$CONFLICT_DIR" ]; then
+      LOG="${RED}Rclone has conflicts in ${CONFLICT_DIR}${NC}"
+      echo -e "$LOG"
       TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-      notify-send -u critical 'rclone' "Conficts"
+      notify-send -u critical 'rclone' "Conflicts detected in $CONFLICT_DIR"
     fi
   done
 }
 
 rclone_push_all() {
-  local INTERACTIVE=""
-  while getopts ":i" opt; do
-    case $opt in
-    i) INTERACTIVE="-i" ;;
-    esac
-  done
+  if [[ -n "$INTERACTIVE" ]]; then
+    RCLONE_INTERACTIVE="-i"
+  fi
+
   LOG="${YELLOW}Rclone Push All${NC}\n"
-  echo -e $LOG
+  echo -e "$LOG"
   TOTAL_LOG=$TOTAL_LOG"$LOG"
   for pair in "${RCLONE_PAIR[@]}"; do
     IFS=";" read -r local remote <<<"$pair"
     LOG="${YELLOW}推送: $local → $remote${NC}"
-    echo -e $LOG
+    echo -e "$LOG"
     TOTAL_LOG=$TOTAL_LOG"$LOG"
-    if rclone sync $local $remote $INTERACTIVE --suffix-keep-extension --track-renames --no-update-dir-modtime --no-update-modtime --filter-from "$HOME/.config/rclone/filter-list.txt" --transfers 20 -L; then
+    if rclone sync "$local" "$remote" $RCLONE_INTERACTIVE --suffix-keep-extension --track-renames --no-update-dir-modtime --no-update-modtime --filter-from "$HOME/.config/rclone/filter-list.txt" --transfers 20 -L; then
       LOG="${GREEN}✓ 成功${NC}"
-      echo -e $LOG
+      echo -e "$LOG"
       TOTAL_LOG=$TOTAL_LOG"$LOG\n"
       notify-send 'rclone' "push $local to $remote"
     else
       LOG="${RED}✗ 失败${NC}"
-      echo -e $LOG
+      echo -e "$LOG"
       TOTAL_LOG=$TOTAL_LOG"$LOG\n"
       notify-send -u critical 'rclone' "push from $local to $remote failed"
     fi
@@ -293,9 +292,9 @@ night_reboot() {
   # # POWER=$OPTARG
   # echo "$OPTARG"
 
-  if ! [[ -n "$POWER" ]]; then
+  if [ -z "$POWER" ]; then
     echo -e "${YELLOW}[r]eboot/sh[u]tdown/[l]ock/[s]leep/[n]othing ?${NC}"
-    read -t 5 -s -n 1 POWER
+    read -r -t 5 -s -n 1 POWER
   fi
   case "$POWER" in
   r)
@@ -323,8 +322,8 @@ day() {
   rclone_pull_all "$@"
   git_pull_all "$@"
   total_log "$@"
-  if [ -d "$CONFICT_DIRS" ]; then
-    cd $CONFICT_DIRS
+  if [ -d "$CONFLICT_DIR" ]; then
+    cd "$CONFLICT_DIR" || return
   fi
 }
 
@@ -341,7 +340,8 @@ mytest() {
   # POWER=$OPTARG
   # night_reboot "$@"
   # night_reboot
-  echo $(date +%y/%m/%d-%T)
+  # echo "$(date +%y/%m/%d-%T)"
+  echo "end test"
 }
 
 main() {
@@ -397,7 +397,7 @@ main() {
     show_help
     ;;
   *)
-    if [ -z "$1" ]; then
+    if [ "$1" = "" ]; then
       show_help
     else
       echo -e "${RED}错误: 未知命令 '$1'${NC}"

@@ -2,16 +2,16 @@
 
 case $BLOCK_BUTTON in
 1) notify-send -t 0 "Calendar" "$(cal -m | sed "s/\<$(date +'%e' | sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")
-<b><span color='yellow'>tasks this week:<\/span><\/b>
-$(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:eow)
 <b><span color='green'>tasks this month:<\/span><\/b>
-$(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:eom and due.after:eow)"
+$(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:eom or due.by:eow)"
 ;;
+# <b><span color='yellow'>tasks this week:<\/span><\/b>
+# $(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:eow)
 # $(task rc.verbose=header due.by:eom minimal)"
 # 1) notify-send  "Calendar" "$(cal -m | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
 2) nohup st -c tasks -t mail -g 100x30 -e aerc >/dev/null & ;;
 # 3) nohup st -c tasks -t taskwarrior -g 120x40 -e taskwarrior-tui >/dev/null & ;;
-# 3) nohup kitty -e newsboat >/dev/null & ;;
+3) nohup kitty -e twkb >/dev/null & ;;
 # 3) nohup st -t tasks -g 80x20 -e slides ~/Desktop/tasks/test.md > /dev/null & ;;
 # 3) nohup thunar ~ > /dev/null & ;;
 # 4) notify-send " " "$(cal | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;

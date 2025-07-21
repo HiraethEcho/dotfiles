@@ -1,0 +1,35 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/nvme0n1p8 LABEL=arch25
+UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/         	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@	0 0
+
+UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/home     	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@home	0 0
+
+UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/root     	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@root	0 0
+
+UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/var/log  	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@log	0 0
+
+UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/var/cache	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@cache	0 0
+
+UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/tmp      	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@tmp	0 0
+
+UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/opt      	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@opt	0 0
+
+UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/var/lib/libvirt      	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@libvirt	0 0
+UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/var/lib/ollama       	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@ollama	0 0
+UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/var/lib/docker       	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@docker	0 0
+UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/var/lib/containers   	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@containers	0 0
+
+# /dev/nvme0n1p1 LABEL=SYSTEM
+# UUID=6600-EA3E      	/boot/efi 	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+UUID=6600-EA3E      	/efi 	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/nvme0n1p4
+UUID=02e9d750-f3c3-4b88-9e4f-5c088ff66b28	none      	swap      	defaults  	0 0
+
+# share
+UUID=1A1087A31087848B /mnt/share lowntfs-3g uid=1000,gid=1000,rw,user,exec,umask=000 0 0
+
+

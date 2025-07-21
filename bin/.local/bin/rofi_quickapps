@@ -44,10 +44,11 @@ cmd_9='pcmanfm ~'
 #    
 
 # Rofi CMD
-    # -mesg "$mesg" \
+# -mesg "$mesg" \
 rofi_cmd() {
   rofi -theme-str "listview {columns: $list_col; lines: $list_row;}" \
     -theme-str "window {width: $win_width;}" \
+    -theme-str "configuration {show-icons: false;}" \
     -theme-str 'textbox-prompt-colon {str: "";}' \
     -dmenu \
     -p "$prompt" \
@@ -63,28 +64,28 @@ run_rofi() {
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
-    $option_1)
-    ${cmd_1}
-        ;;
-    $option_2)
-    ${cmd_2}
-        ;;
-    $option_3)
-    ${cmd_3}
-        ;;
-    $option_4)
-    ${cmd_4}
-        ;;
-    $option_5)
-    ${cmd_5}
-        ;;
-    $option_6)
-    ${cmd_6}
-        ;;
-    $option_7)
-    ${cmd_7}
-        ;;
-    $option_8)
-    ${cmd_8}
-        ;;
+$option_1)
+  ${cmd_1}
+  ;;
+$option_2)
+  ${cmd_2}
+  ;;
+$option_3)
+  ${cmd_3}
+  ;;
+$option_4)
+  ${cmd_4}
+  ;;
+$option_5)
+  ${cmd_5}
+  ;;
+$option_6)
+  ${cmd_6}
+  ;;
+$option_7)
+  ${cmd_7}
+  ;;
+$option_8)
+  ${cmd_8}
+  ;;
 esac
