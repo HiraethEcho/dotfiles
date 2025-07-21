@@ -1,0 +1,5 @@
+
+* {
+    // font: "Maple Mono NF 20";
+    font: "CodeNewRoman Nerd Font mono 15";
+}

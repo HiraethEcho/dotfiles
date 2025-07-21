@@ -6,7 +6,7 @@
 ## Applets : Favorite Applications
 
 # Import Current Theme
-theme="~/.config/rofi/themes/quick.rasi"
+theme="~/.config/rofi/quick.rasi"
 
 win_width='500px'
 # Theme Elements
@@ -26,11 +26,11 @@ cmd_4='obsidian'
 option_5="󰘑 wechat"
 cmd_5='/opt/wechat/wechat'
 option_6=" bluetooth "
-cmd_6='st -t task -e bluetui'
-option_7=" gvim "
-cmd_7='gvim'
+cmd_6='st -c tasks -e bluetui'
+option_7=" cherry studio"
+cmd_7='cherry-studio'
 option_8="󰏆 office"
-cmd_8='/usr/bin/word'
+cmd_8='word'
 option_9=" file"
 cmd_9='pcmanfm ~'
 # option_12="󰌪 battery "

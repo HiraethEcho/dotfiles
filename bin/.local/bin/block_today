@@ -17,10 +17,13 @@ case $BLOCK_BUTTON in
 # 1) notify-send -h int:value:$r "Calendar" "$(cal -m | sed "s/\<$(date +'%e'|sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")" ;;
 # 1) notify-send -h int:value:$r -t 0 "tasks in 10 days" "$(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:10d)";;
 # 1) notify-send -t 0 -h int:value:$r "Calendar" "$(cal -m | sed "s/\<$(date +'%e' | sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")
-1) notify-send -t 0 -h int:value:$r "Tasks" "<b><span color='purple'>tasks due today:<\/span><\/b>
-$(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:eod)
-<b><span color='green'>tasks in 10d:<\/span><\/b>
-$(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:10d and due.after:eod)"
+1) notify-send -t 0 -h int:value:$r "Tasks" \
+"<b><span color='red'>overdue:<\/span><\/b>
+$(task rc.report.overdue.columns=description.count rc.report.overdue.labels=Descrption rc.verbose=header overdue)
+<b><span color='purple'>tasks due today:<\/span><\/b>
+$(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:eod and due.after:sod)
+<b><span color='green'>tasks this week<\/span><\/b>
+$(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:eow and due.after:eod)"
  ;;
 2) nohup st -c tasks -t mail -g 100x30 -e aerc >/dev/null & ;;
 # 2) nohup st -c tasks -t task -g 150x50 -e taskwarrior-tui >/dev/null & ;;

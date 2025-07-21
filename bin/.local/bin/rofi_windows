@@ -2,4 +2,4 @@
 #!/usr/bin/env bash
 rofi \
     -show window \
-    -theme ~/.config/rofi/themes/windows.rasi
+    -theme ~/.config/rofi/windows.rasi

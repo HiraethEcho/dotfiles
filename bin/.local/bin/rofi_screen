@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-theme="~/.config/rofi/themes/winx.rasi"
+theme="~/.config/rofi/choose.rasi"
 
-option_d="desktop         d"
-option_a="aera            a"
-option_w="window          w"
-option_f="flameshot       f"
+option_d="desktop     d"
+option_a="aera        a"
+option_w="window      w"
+option_f="flameshot   f"
 
 mesg="DIR: $(xdg-user-dir PICTURES)/Screenshots"
 time=$(date +%Y-%m-%d-%H-%M-%S)
