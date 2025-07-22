@@ -89,6 +89,7 @@ alias syyu="paru -Syyu"
 alias syu="paru -Syu"
 alias bak="sudo timeshift --check && sudo grub-mkconfig -o /boot/grub/grub.cfg && pacman -Qqe > ~/dotfiles/cache/Desktop/cache/readme/Qqe-`whoami`.bak && pacman -Qe > ~/dotfiles/cache/Desktop/cache/readme/Qe-`whoami`.bak"
 alias qdtq="pacman -Qdttq | sudo pacman -Rscn -"
+
 alias qei="pacman -Qqe | fzf --preview-window=50%:bottom: --preview 'pacman -Qiil {}' --layout=reverse --bind 'enter:execute(pacman -Qiil {} | less)'"
 alias qi="pacman -Qq | fzf --preview-window=50%:bottom: --preview 'pacman -Qiil {}' --layout=reverse --bind 'enter:execute(pacman -Qiil {} | less)'"
 alias ptr="pacman -Qq | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt='depends on ' --preview-window=70%:bottom: --preview 'pactree -rd2 {}'"
@@ -97,4 +98,5 @@ alias sl="pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse --bind 'e
 
 # fzf
 alias fzfp="fzf --preview 'fzf-preview.sh {}'"
+alias fman="man -k . | fzf --preview 'man {1}' --bind 'enter:execute(man {1})'"
 ### abbreviation ###

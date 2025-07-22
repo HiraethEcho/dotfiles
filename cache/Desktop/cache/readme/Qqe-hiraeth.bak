@@ -2,6 +2,7 @@ acpi
 acpilight
 aerc
 alsa-utils
+amd-ucode
 archlinuxcn-keyring
 atuin
 autossh
@@ -100,6 +101,8 @@ man-db
 marksman
 mate-polkit
 mdcat
+mission-center
+mongosh-bin
 mpc
 mpd
 mpv
@@ -128,6 +131,7 @@ pcmanfm-gtk3
 pdfbooklet
 picgo
 picom
+pikeru
 pipewire
 pipewire-alsa
 pipewire-audio
@@ -150,6 +154,8 @@ ruby
 shfmt
 sioyek
 snapper
+somo
+sshfs
 steam
 stow
 stylua
@@ -222,6 +228,7 @@ zathura-pdf-mupdf
 zip
 zotero
 zoxide
+zram-generator
 zsh
 zsh-autocomplete
 zsh-autosuggestions
