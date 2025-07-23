@@ -36,7 +36,6 @@ docker-compose
 dua-cli
 dunst
 efibootmgr
-excel-pake
 eza
 fastfetch
 fbterm
@@ -73,6 +72,7 @@ iw
 iwd
 khal
 kitty
+kmon
 kmscon
 koofr-desktop-bin
 lazydocker-bin
@@ -139,7 +139,6 @@ pipewire-pulse
 podman
 podman-compose
 podman-tui
-powerpoint-pake
 prettier
 pyright
 python-eyed3
@@ -187,6 +186,7 @@ ttf-nerd-fonts-symbols-mono
 typst
 ufrii-print
 unzip
+uv
 vdirsyncer
 virt-manager
 visual-studio-code-bin
@@ -204,7 +204,6 @@ wget
 wiremix
 wireplumber
 wl-clipboard
-word-pake
 xbindkeys
 xcape
 xclip
