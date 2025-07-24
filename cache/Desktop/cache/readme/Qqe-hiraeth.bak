@@ -24,6 +24,7 @@ buku
 cava
 cherry-studio-bin
 clang
+clinfo
 clivm
 cloudflared
 cups
@@ -102,7 +103,6 @@ marksman
 mate-polkit
 mdcat
 mission-center
-mongosh-bin
 mpc
 mpd
 mpv
@@ -118,6 +118,7 @@ nwg-panel
 obsidian
 ollama
 openbox
+opencl-mesa
 openlist-bin
 openssh
 os-prober
@@ -150,6 +151,7 @@ ripgrep
 rmpc
 rofi-wayland
 ruby
+shellharden
 shfmt
 sioyek
 snapper
