@@ -1,3 +1,4 @@
+aconfmgr-git r850.5014d5d-1
 acpi 1.7-4
 acpilight 1.2-3
 aerc 0.20.1-3
@@ -22,7 +23,7 @@ btrfs-assistant 2.2-1
 btrfs-progs 6.15-1
 buku 5.0-1
 cava 0.10.4-3
-cherry-studio-bin 1.5.1-1
+cherry-studio-bin 1.5.3-1
 clang 20.1.8-1
 clinfo 3.0.23.01.25-1
 clivm 1.0.0-1
@@ -33,7 +34,7 @@ dhcpcd 10.2.4-1
 dmenu 5.4-1
 dnsmasq 2.91-1
 docker 1:28.3.2-1
-docker-compose 2.38.2-1
+docker-compose 2.39.1-1
 dua-cli 2.30.1-1
 dunst 1.12.2-1
 efibootmgr 18-3
@@ -50,11 +51,11 @@ fd 10.2.0-1
 feh 3.10.3-1
 flameshot 12.1.0-6
 flomo-pake 3.1.1-2
-foot 1.23.0-1
+foot 1.23.1-1
 fzf 0.64.0-1
 fzf-tab-git r277.fc6f0dc-1
 git 2.50.1-3
-github-cli 2.76.0-1
+github-cli 2.76.1-1
 gnome-keyring 1:48.0-1
 go 2:1.24.5-1
 go-musicfox-git 4.6.3.r1.g179b944-1
@@ -80,6 +81,7 @@ lazydocker-bin 0.24.1-1
 lazygit 0.53.0-1
 less 1:679-1
 lib32-mesa 1:25.1.6-1
+lib32-opencl-mesa 1:25.1.6-1
 lib32-vulkan-radeon 1:25.1.6-1
 libnotify 0.8.6-1
 libxml2-legacy 2.13.8-1
@@ -92,6 +94,7 @@ linux-headers 6.15.7.arch1-1
 linux-wifi-hotspot 1:4.7.2-1
 linux-zen 6.15.7.zen1-1
 linux-zen-headers 6.15.7.zen1-1
+lostfiles 4.14-1
 lua-language-server 3.15.0-1
 lxappearance-gtk3 0.6.4-1
 lxde-common 0.99.3-1
@@ -102,7 +105,6 @@ man-db 2.13.1-1
 marksman 20241218-1
 mate-polkit 1.28.1-2
 mdcat 2.7.1-1
-mission-center 1.0.2-1
 mpc 0.35-1
 mpd 0.24.4-2
 mpv 1:0.40.0-4
@@ -111,7 +113,7 @@ neovim 0.11.3-1
 net-tools 2.10-3
 newsboat 2.40-1
 niri 25.05.1-2
-npm 11.4.2-2
+npm 11.5.1-1
 ntfs-3g 2022.10.3-2
 nwg-menu 0.1.9-1
 nwg-panel 0.10.10-1
@@ -119,7 +121,7 @@ obsidian 1.8.10-1
 ollama 0.9.6-1
 openbox 3.6.1-12
 opencl-mesa 1:25.1.6-1
-openlist-bin 4.0.8-1
+openlist-bin 4.0.9-1
 openssh 10.0p1-3
 os-prober 1.83-1
 otf-codenewroman-nerd 3.4.0-1
@@ -149,9 +151,10 @@ rclone 1.70.3-1
 redbook-pake 1.0.0-1
 ripgrep 14.1.1-1
 rmpc 0.9.0-1
+rocm-smi-lib 6.4.1-1
 rofi-wayland 1.7.9.1-1
 ruby 3.4.4-2
-shellharden 4.3.1-2
+shellcheck-bin 0.10.0-1
 shfmt 3.12.0-1
 sioyek 2.0.0-24
 snapper 0.12.2-4
@@ -164,7 +167,7 @@ sudo 1.9.17.p1-1
 sx 3.0-1
 task 3.4.1-1
 taskopen 2.0.2-2
-tdf-git 20250528.r84.e16163e-1
+tdf-git 20250724.r88.5542daf-1
 tealdeer 1.7.2-1
 tex-fmt 0.5.5-1
 texlab 5.22.1-1
@@ -191,7 +194,7 @@ unzip 6.0-22
 uv 0.8.2-1
 vdirsyncer 0.19.3-2
 virt-manager 5.0.0-1
-visual-studio-code-bin 1.102.1-1
+visual-studio-code-bin 1.102.2-1
 vscode-html-languageserver 1.102.0-1
 vulkan-radeon 1:25.1.6-1
 vulkan-tools 1.4.321.0-1

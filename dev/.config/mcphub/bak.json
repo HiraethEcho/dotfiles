@@ -1,47 +1,70 @@
-"mcp": {
-  "servers": {
+{
+  "mcpServers": {
+    "sequentialthinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+    },
+    "filesystem": {
+      "command": "mcp-filesystem-server",
+      "args": ["~/Code","~/obsidian"]
+    },
+    "git": {
+      "command": "uvx",
+      "args": ["mcp-server-git", "--repository", "~/obsidian"]
+    },
+    "github": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "mcp/github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "token"
+      }
+    },
     "context7": {
       "type": "stdio",
       "command": "npx",
       "args": ["-y", "@upstash/context7-mcp"]
     },
-    "filesystem": {
-      "command": "mcp-filesystem-server",
-      "args": ["~/Code"]
-    },
-    "sequential-thinking": {
-      "command": "npx",
+    "arxiv-mcp-server": {
+      "command": "uv",
       "args": [
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
+        "tool",
+        "run",
+        "arxiv-mcp-server",
+        "--storage-path",
+        "/path/to/paper/storage"
       ]
-    }
-  }
-},
-{
-    "mcpServers": {
-        "arxiv-mcp-server": {
-            "command": "uv",
-            "args": [
-                "tool",
-                "run",
-                "arxiv-mcp-server",
-                "--storage-path", "/path/to/paper/storage"
-            ]
-        }
-    }
-},
-{
-  "mcpServers": {
+    },
     "amap-maps": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@amap/amap-maps-mcp-server"
-      ],
+      "args": ["-y", "@amap/amap-maps-mcp-server"],
       "env": {
         "AMAP_MAPS_API_KEY": "35b7e2ab9725611c8aef83089b3f1dc5"
       }
     }
-  }
+  },
+
+  "servers": {
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${input:github_mcp_pat}"
+      }
+    }
+  },
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "github_mcp_pat",
+      "description": "GitHub Personal Access Token",
+      "password": true
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
-    "mcpServers" : {
-        "Hub": {
-            "url" : "http://localhost:37373/mcp"  
-        }
+  "mcpServers": {
+    "Hub": {
+      "url": "http://localhost:37373/mcp"
     }
+  }
 }

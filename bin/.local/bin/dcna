@@ -5,7 +5,7 @@
 
 # set -euo pipefail
 # config
-CONFICT_DIRS="$HOME/conflicts"
+CONFLICT_DIR="$HOME/conflicts"
 GIT_REPO=(
   "$HOME/Documents/projects"
   "$HOME/obsidian"
@@ -38,7 +38,7 @@ YELLOW='\033[0;33m'
 NC='\033[0m' # No Color
 
 # tmp
-BEGIN_PWD="$PWD"
+# BEGIN_PWD="$PWD"
 #log
 TOTAL_LOG=""
 LOG=""
@@ -102,7 +102,7 @@ git_pull_all() {
   echo -e "$LOG"
   TOTAL_LOG=$TOTAL_LOG"$LOG"
   for i in "${GIT_REPO[@]}"; do
-    cd "$i"
+    cd "$i" || return
     LOG="${YELLOW}处理 Git 仓库: $i${NC}..."
     echo -e "$LOG"
     TOTAL_LOG=$TOTAL_LOG"$LOG"
@@ -110,7 +110,8 @@ git_pull_all() {
     if [[ -n "$(git status --porcelain)" ]]; then
       echo -e "${YELLOW}Try stash${NC}"
       if git stash; then
-        LOG="${RED}STASHED $i ${NC}"
+        LOG="${RED}STASHED $i ${NC}\n"
+        TOTAL_LOG=$TOTAL_LOG"$LOG"
         echo -e "$LOG"
         notify-send -u critical "Stashed Repo" "$i"
       else
@@ -139,7 +140,7 @@ git_push_all() {
   echo -e "$LOG"
   TOTAL_LOG=$TOTAL_LOG"$LOG"
   for i in "${GIT_REPO[@]}"; do
-    cd "$i"
+    cd "$i" || return
     LOG="${YELLOW}正在处理 Git 仓库: $i${NC}"
     echo -e "$LOG"
     TOTAL_LOG=$TOTAL_LOG"$LOG"
@@ -167,7 +168,7 @@ git_push_all() {
 
 system_bak() {
 
-  if ! [[ -n "$INTERACTIVE" ]]; then
+  if [ -z "$INTERACTIVE" ]; then
     PARU_INTERACTIVE="--noconfirm"
   fi
 
@@ -236,7 +237,7 @@ rclone_pull_all() {
     echo -e "$LOG"
     TOTAL_LOG=$TOTAL_LOG"$LOG"
     # if rclone sync "$remote" "$local" $RCLONE_INTERACTIVE --backup-dir $CONFICT_DIRS --suffix '_local' --track-renames --filter-from "$HOME/.config/rclone/filter-list.txt" --no-update-dir-modtime --no-update-modtime --transfers 20 -L; then
-    if rclone sync "$remote" "$local" "$RCLONE_INTERACTIVE" --track-renames --filter-from "$HOME/.config/rclone/filter-list.txt" --no-update-dir-modtime --no-update-modtime --transfers 20 -L; then
+    if rclone sync "$remote" "$local" $RCLONE_INTERACTIVE --track-renames --filter-from "$HOME/.config/rclone/filter-list.txt" --no-update-dir-modtime --no-update-modtime --transfers 20 -L; then
       LOG="${GREEN}✓ 成功${NC}"
       echo -e "$LOG"
       TOTAL_LOG=$TOTAL_LOG"$LOG\n"
@@ -247,11 +248,11 @@ rclone_pull_all() {
       TOTAL_LOG=$TOTAL_LOG"$LOG\n"
       notify-send -u critical 'rclone' "pull from $remote to $local failed"
     fi
-    if [ -d "$CONFLICT_DIRS" ]; then
-      LOG="${RED}Rclone has conflicts in $CONFLICT_DIRS${NC}"
+    if [ -d "$CONFLICT_DIR" ]; then
+      LOG="${RED}Rclone has conflicts in ${CONFLICT_DIR}${NC}"
       echo -e "$LOG"
       TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-      notify-send -u critical 'rclone' "Conflicts detected in $CONFLICT_DIRS"
+      notify-send -u critical 'rclone' "Conflicts detected in $CONFLICT_DIR"
     fi
   done
 }
@@ -291,9 +292,9 @@ night_reboot() {
   # # POWER=$OPTARG
   # echo "$OPTARG"
 
-  if ! [[ -n "$POWER" ]]; then
+  if [ -z "$POWER" ]; then
     echo -e "${YELLOW}[r]eboot/sh[u]tdown/[l]ock/[s]leep/[n]othing ?${NC}"
-    read -t 5 -s -n 1 POWER
+    read -r -t 5 -s -n 1 POWER
   fi
   case "$POWER" in
   r)
@@ -321,8 +322,8 @@ day() {
   rclone_pull_all "$@"
   git_pull_all "$@"
   total_log "$@"
-  if [ -d "$CONFICT_DIRS" ]; then
-    cd "$CONFICT_DIRS"
+  if [ -d "$CONFLICT_DIR" ]; then
+    cd "$CONFLICT_DIR" || return
   fi
 }
 
@@ -339,7 +340,8 @@ mytest() {
   # POWER=$OPTARG
   # night_reboot "$@"
   # night_reboot
-  echo "$(date +%y/%m/%d-%T)"
+  # echo "$(date +%y/%m/%d-%T)"
+  echo "end test"
 }
 
 main() {

@@ -1,0 +1,15 @@
+[Unit]
+Description=Openlist Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/var/lib/openlist/
+ExecStart=/usr/bin/openlist server --data /var/lib/openlist/
+Restart=on-failure
+User=root
+Group=root
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+[Install]
+WantedBy=multi-user.target

@@ -1,3 +1,4 @@
+aconfmgr-git
 acpi
 acpilight
 aerc
@@ -80,6 +81,7 @@ lazydocker-bin
 lazygit
 less
 lib32-mesa
+lib32-opencl-mesa
 lib32-vulkan-radeon
 libnotify
 libxml2-legacy
@@ -92,6 +94,7 @@ linux-headers
 linux-wifi-hotspot
 linux-zen
 linux-zen-headers
+lostfiles
 lua-language-server
 lxappearance-gtk3
 lxde-common
@@ -102,7 +105,6 @@ man-db
 marksman
 mate-polkit
 mdcat
-mission-center
 mpc
 mpd
 mpv
@@ -149,9 +151,10 @@ rclone
 redbook-pake
 ripgrep
 rmpc
+rocm-smi-lib
 rofi-wayland
 ruby
-shellharden
+shellcheck-bin
 shfmt
 sioyek
 snapper
