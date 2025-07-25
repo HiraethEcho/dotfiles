@@ -1,5 +1,18 @@
 {
   "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "~/Code",
+        "~/obsidian"
+      ]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+    },
     "zotero": {
       "command": "mcp-zotero",
       "env": {
@@ -12,8 +25,36 @@
       "args": ["-y", "obsidian-mcp", "/home/hiraeth/obsidian"]
     },
     "context7": {
-      "type": "http",
-      "url": "https://mcp.context7.com/mcp"
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "Cloudflare Playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@cloudflare/playwright-mcp",
+        "--key",
+        "fe6b84f1-bf59-4f0a-aac3-5c69908a423e",
+        "--profile",
+        "sole-mole-Ejp5VC"
+      ]
+    },
+    "git": {
+      "command": "uvx",
+      "args": ["mcp-server-git", "--repository", "~/obsidian"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@executeautomation/playwright-mcp-server"]
+    },
+    "bilibili-search": {
+      "command": "npx",
+      "args": ["bilibili-mcp"],
+      "description": "B站视频搜索 MCP 服务，可以在AI应用中搜索B站视频内容。"
     }
   }
 }
