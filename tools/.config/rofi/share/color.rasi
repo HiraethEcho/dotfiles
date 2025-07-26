@@ -5,4 +5,4 @@
  * arc       cyberpunk     gruvbox       nord       solarized
  * black     dracula       lovelace      onedark    yousai
  * */
-@import "~/.config/rofi/share/colors/arc.rasi"
+@import "~/.config/rofi/share/colors/onedark.rasi"
