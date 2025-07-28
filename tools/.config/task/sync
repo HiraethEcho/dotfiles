@@ -1,0 +1,5 @@
+sync.aws.region=apac
+sync.aws.bucket=task
+sync.aws.access_key_id=a4251a657ea8e0b30ae9bd2dcae47f40
+sync.aws.secret_access_key=ef08397ee1737e7958efca21d0ddc8d732f042a9d14e33460eea4bbb93f29dc9
+sync.encryption_secret=wyz2025zxc
