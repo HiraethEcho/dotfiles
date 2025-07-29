@@ -27,6 +27,7 @@ chatbox-bin
 cherry-studio-bin
 clang
 cloudflared
+codename-goose-bin
 cups
 dhcpcd
 dmenu
@@ -114,6 +115,7 @@ nwg-panel
 obsidian
 ollama
 openbox
+opencode
 openlist-bin
 openssh
 os-prober
