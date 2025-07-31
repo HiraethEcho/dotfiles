@@ -2,6 +2,7 @@ aconfmgr-git
 acpi
 acpilight
 aerc
+aichat
 alsa-utils
 amd-ucode
 archlinuxcn-keyring
@@ -23,7 +24,6 @@ btrfs-assistant
 btrfs-progs
 buku
 cava
-chatbox-bin
 cherry-studio-bin
 clang
 cloudflared
@@ -141,6 +141,7 @@ python-eyed3
 python-pynvim
 qemu-base
 rclone
+resvg
 ripgrep
 rmpc
 rocm-smi-lib
@@ -157,7 +158,6 @@ sudo
 sx
 task
 taskopen
-tdf-git
 tealdeer
 tex-fmt
 texlab

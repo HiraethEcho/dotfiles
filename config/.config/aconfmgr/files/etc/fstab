@@ -23,7 +23,8 @@ UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/var/lib/docker       	btrfs     	rw,n
 UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/var/lib/containers   	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@containers	0 0
 
 # /dev/nvme0n1p1 LABEL=SYSTEM
-UUID=6600-EA3E      	/boot/efi 	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+# UUID=6600-EA3E      	/boot/efi 	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+UUID=6600-EA3E      	/efi 	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
 
 # /dev/nvme0n1p4
 UUID=02e9d750-f3c3-4b88-9e4f-5c088ff66b28	none      	swap      	defaults  	0 0

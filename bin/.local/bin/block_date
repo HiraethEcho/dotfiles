@@ -3,7 +3,7 @@
 case $BLOCK_BUTTON in
 1) notify-send -t 0 "Calendar" "$(cal -m | sed "s/\<$(date +'%e' | sed 's/ //g')\>/<b><span color='red'>&<\/span><\/b>/")
 <b><span color='green'>tasks this month:<\/span><\/b>
-$(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:eom)"
+$(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:eom or due.by:eow)"
 ;;
 # <b><span color='yellow'>tasks this week:<\/span><\/b>
 # $(task rc.report.next.columns=description.count rc.report.next.labels=Descrption rc.verbose=header next due.by:eow)
