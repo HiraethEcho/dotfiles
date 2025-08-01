@@ -4,7 +4,7 @@
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-memory"],
       "env": {
-        "MEMORY_FILE_PATH": "~/Code/ai/memory.json"
+        "MEMORY_FILE_PATH": "/home/hiraeth/Code/ai/memory.json"
       }
     },
     "MCP Neovim Server": {

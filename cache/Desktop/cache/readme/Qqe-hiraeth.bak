@@ -28,7 +28,6 @@ cherry-studio-bin
 clang
 cloudflared
 codename-goose-bin
-crush-bin
 cups
 dhcpcd
 dmenu
@@ -109,6 +108,7 @@ neovim
 net-tools
 newsboat
 niri
+noto-fonts-emoji
 npm
 ntfs-3g
 nwg-menu
@@ -142,6 +142,7 @@ python-pynvim
 qemu-base
 rclone
 resvg
+rime-emoji
 ripgrep
 rmpc
 rocm-smi-lib
