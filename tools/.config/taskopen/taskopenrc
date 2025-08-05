@@ -9,10 +9,6 @@ EDITOR=nvim
 path_ext="~/.config/taskopen/scripts"
 # path_ext=/usr/share/taskopen/scripts
 [Actions]
-nedit.target=annotations
-nedit.regex = "^[\\.\\/~]+.*\\.(md|pandoc|mdwn|markdown|lua|tex|txt)"
-nedit.command = "$EDITOR $FILE"
-nedit.modes="batch,any,normal"
 notes.target=annotations
 notes.labelregex=".*"
 notes.regex="^Note(\\..*)?"

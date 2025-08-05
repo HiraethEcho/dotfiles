@@ -6,7 +6,7 @@ Wants=network-online.target
 [Service]
 TimeoutStartSec=0
 Type=notify
-ExecStart=/usr/bin/cloudflared --no-autoupdate tunnel run --token eyJhIjoiYTk3YTkzZWEwZWMyMGI2YzAzZDljZDU2NmZkZDcxYzAiLCJ0IjoiNmNhZjJmZjYtNjIwOC00MWQ2LWEzMTMtYTc0OGNjOTdlZDhkIiwicyI6IllURXhOakUzWm1VdE1ETXhNeTAwWVRWakxXSXlNekl0TmpFd1kyRTJOVFUxT1RBeSJ9
+ExecStart=/usr/bin/cloudflared --no-autoupdate --config /etc/cloudflared/config.yml tunnel run
 Restart=on-failure
 RestartSec=5s
 

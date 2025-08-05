@@ -4,6 +4,14 @@
 path = ~/.local/share/calendars/*
 type = discover
 
+[[local_radicale]]
+path = ~/.local/share/radicale/collections/collection-root/hiraeth/*
+type = discover
+
+[[local_amss]]
+path = ~/.local/share/calendar_amss/*
+type = discover
+
 [locale]
 timeformat = %H:%M
 dateformat = %Y-%m-%d
@@ -12,4 +20,4 @@ datetimeformat = %Y-%m-%d %H:%M
 longdatetimeformat = %Y-%m-%d %H:%M
 
 [default]
-default_calendar = 12595A95-FFF4-4286-AF75-BD8167DADFF0
+default_calendar = todo

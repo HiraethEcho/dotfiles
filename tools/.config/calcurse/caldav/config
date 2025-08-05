@@ -18,6 +18,7 @@ Binary = calcurse
 # Path to the CalDAV calendar on the host specified above. This is the base
 # path following your host name in the URL.
 # Path = /path/to/calendar/on/the/server/
+Path = localhost:5232/
 
 # Type of authentication to use. Must be "basic" or "oauth2"
 #AuthMethod = basic
@@ -27,7 +28,8 @@ InsecureSSL = Yes
 
 # Disable this if you want to use HTTP instead of HTTPS.
 # Using plain HTTP is highly discouraged.
-HTTPS = Yes
+# HTTPS = No
+HTTPS = No
 
 # This option allows you to filter the types of tasks synced. To this end, the
 # value of this option should be a comma-separated list of item types, where
@@ -55,6 +57,8 @@ Verbose = Yes
 #Username = user
 #Password = password
 #PasswordCommand = pass baikal
+[Auth]
+Username = hiraeth
 
 # Optionally specify additional HTTP headers here.
 #[CustomHeaders]

@@ -31,18 +31,18 @@ $(task rc.report.next.columns=description.count rc.report.next.labels=Descrption
 6) nohup st -e nvim "$0" >/dev/null & ;;
 esac
 
-if [[ $l -ge 46 ]]; then
+if [[ $l -ge 46 ]]; then # after 23:00
   printf "^c#e06c75^"
-elif [[ $l -ge 42 ]]; then
+elif [[ $l -ge 42 ]]; then # after 21:00
   printf "^c#000000^"
-elif [[ $l -ge 28 ]]; then
+elif [[ $l -ge 28 ]]; then # after 14:00
   printf "^c#89b482^"
-elif [[ $l -ge 18 ]]; then
+elif [[ $l -ge 18 ]]; then # after 9:00
   printf "^c#01e9f1^"
-elif [[ $l -ge 12 ]]; then
-  printf "^c#4169e1^"
+elif [[ $l -ge 12 ]]; then # after 6:00
+  printf "^c#b2c2f2^"
 else
-  printf "^c#e06c75^"
+  printf "^c#e06c75^" # after 23:00 before 6:00
 fi
 printf "^f3^^s0,10,50,6^^r1,11,%s,4^^f52^" "$l"
 printf "^c#dfe3ee^"

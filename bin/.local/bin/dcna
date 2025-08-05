@@ -21,7 +21,6 @@ RCLONE_PAIR=(
   "$HOME/Documents/projects/;koofr:/kDocuments/projects/"
   "$HOME/Documents/lectures/;koofr:/kDocuments/lectures/"
   "$HOME/Documents/philosophy/;koofr:/kDocuments/philosophy/"
-  # "$HOME/obsidian/;koofr:/obsidian/"
   # "$HOME/Documents/doc/;tera:/Documents/doc/"
   # "$HOME/Documents/ucas/;tera:/Documents/ucas/"
   # "$HOME/Documents/zotero_files/;tera:/Documents/zotero_files/"
@@ -29,7 +28,10 @@ RCLONE_PAIR=(
   # "$HOME/Documents/projects/;tera:/Documents/projects/"
   # "$HOME/Documents/lectures/;tera:/Documents/lectures/"
   # "$HOME/Documents/philosophy/;tera:/Documents/philosophy/"
+  "$HOME/obsidian/;koofr:/obsidian/"
   "$HOME/obsidian/;tera:/obsidian/"
+  "$HOME/obsidian/;cloudflare:/blog/"
+  "$HOME/.local/share/radicale/collections/collection-root/hiraeth/;cloudflare:/asset/radicale-hiraeth-collection/"
 )
 
 RED='\033[0;31m'

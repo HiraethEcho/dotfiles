@@ -36,6 +36,8 @@ lxpolkit &
 
 wallpaper_change &
 
+xhidecursor &
+
 pamixer -m &
 
 # killall battery_warning 

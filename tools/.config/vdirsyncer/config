@@ -72,21 +72,22 @@ status_path = "~/.local/state/vdirsyncer/status/"
 #
 # https://p235-caldav.icloud.com.cn/17351757553/calendars/87BBBA05-934B-4D5A-BB27-771A9CD413A2/
 
-[storage ical]
-type = "caldav"
-url = "https://caldav.icloud.com.cn/"
-username = "wyz2016zxc@icloud.com"
-password = "itcc-siyq-rjty-cjyd"
-
-[storage local_ical]
-type = "filesystem"
-path = "~/.local/share/calendars/"
-fileext = ".ics"
-
-[pair icloud_sync]
-a = "ical"
-b = "local_ical"
-collections = ["from a", "from b"]
+# [storage icloud_remote]
+# type = "caldav"
+# url = "https://caldav.icloud.com.cn/"
+# username = "wyz2016zxc@icloud.com"
+# password = "itcc-siyq-rjty-cjyd"
+#
+# [storage icloud_local]
+# type = "filesystem"
+# path = "~/.local/share/calendar_icloud/"
+# fileext = ".ics"
+#
+#
+# [pair icloud_sync]
+# a = "icloud_remote"
+# b = "icloud_local"
+# collections = ["from a", "from b"]
 # metadata = ["displayname", "color"]
 # conflict_resolution = "a wins"  # 冲突时 iCloud 优先
 
@@ -106,3 +107,22 @@ collections = ["from a", "from b"]
 # url = "https://p235-caldav.icloud.com.cn/17351757553/calendars/87BBBA05-934B-4D5A-BB27-771A9CD413A2/"
 # username = "wyz2016zxc@icloud.com"
 # password = "itcc-siyq-rjty-cjyd"
+#
+
+[storage amss_remote]
+type = "caldav"
+url = "https://mail.cstnet.cn/"
+username = "wangyanze@amss.ac.cn"
+password = "ZmdA&SvC!4HqeTqd"
+
+[storage amss_local]
+type = "filesystem"
+path = "~/.local/share/calendar_amss/"
+fileext = ".ics"
+
+
+[pair amss]
+a = "amss_local"
+b = "amss_remote"
+collections = ["from a", "from b"]
+metadata = ["color", "displayname", "description", "order"]

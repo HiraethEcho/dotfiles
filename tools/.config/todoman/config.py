@@ -1,6 +1,6 @@
 # A glob expression which matches all directories relevant.
-path = "~/.local/share/calendars/87BBBA05-934B-4D5A-BB27-771A9CD413A2/"
+path = "~/.local/share/radicale/collections/collection-root/hiraeth/*"
 date_format = "%Y-%m-%d"
 time_format = "%H:%M"
-default_list = "87BBBA05-934B-4D5A-BB27-771A9CD413A2"
-# default_due = 48
+default_list = "todo"
+default_due = 0

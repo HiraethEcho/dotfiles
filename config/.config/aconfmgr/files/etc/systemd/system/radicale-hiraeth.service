@@ -1,0 +1,14 @@
+[Unit]
+Description=caldav and carddav by radicale
+After=network.target
+
+[Service]
+User=hiraeth
+Group=hiraeth
+ExecStart=radicale
+Restart=always
+RestartSec=10
+WorkingDirectory=/home/hiraeth/
+
+[Install]
+WantedBy=multi-user.target

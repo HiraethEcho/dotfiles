@@ -1,0 +1,13 @@
+[Unit]
+Description=Turn github copilot into a local openai server
+After=network.target
+
+[Service]
+User=hiraeth
+ExecStart=copilot-api start
+Restart=always
+RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

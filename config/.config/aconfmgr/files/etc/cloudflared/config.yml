@@ -1,0 +1,9 @@
+tunnel: f8fe2cb1-a1ce-42f1-a558-121799eab5f2
+credentials-file: ~/.cloudflared/f8fe2cb1-a1ce-42f1-a558-121799eab5f2.json
+ingress:
+  - hostname: arch14ssh.877675.xyz
+    service: ssh://localhost:2222
+  - hostname: cal.877675.xyz
+    service: http://localhost:5232
+  - service: http_status:404      # 默认返回404（避免暴露其他服务）
+

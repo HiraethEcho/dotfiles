@@ -1,0 +1,15 @@
+[Unit]
+Description=Autossh Persistent Reverse SSH Tunnel
+After=network.target
+
+[Service]
+User=hiraeth
+ExecStart=/usr/bin/autossh -M 30010 -NTR 2387:localhost:22 star@209.74.81.13
+Restart=always
+RestartSec=10
+KillMode=process
+Environment="AUTOSSH_GATETIME=0"
+Environment="AUTOSSH_POLL=30"
+
+[Install]
+WantedBy=multi-user.target

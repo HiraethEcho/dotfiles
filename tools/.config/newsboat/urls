@@ -1,6 +1,5 @@
 https://rss.arxiv.org/rss/math.AG "~arxiv AG"
 
-
 https://sspai.com/feed "~少数派"
 https://plink.anyfeeder.com/gcores "~机核"
 https://www.douban.com/feed/review/book "~豆瓣书评"
@@ -9,6 +8,11 @@ http://solidot.org/index.rss
 
 https://aphilosopher.drmcl.com/feed/ "~A Philosopher's blog"
 https://philosophynow.org/rss "~philosophy now"
+http://www.matrix67.com/blog/feed
+https://dawner.top/atom.xml
+http://wwj718.github.io/index.xml
+https://blog.vinfall.com/index.xml
+https://liuyandong.com/feed/
 
 https://github.com/v1nh1shungry/nvim-weekly-cn/releases.atom "~nvim weekly cn"
 https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins"

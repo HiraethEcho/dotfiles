@@ -71,8 +71,8 @@ export FZF_DEFAULT_OPTS="--reverse --style full \
 # export LFS=/mnt/lfs
 export HOME_IP_5G="2408:8207:1962:6500:bf23:f89a:d169:3449"
 export HOME_IP="2408:8207:1962:6500:87c2:38e5:1717:8420"
-export ALIECS_IP="120.26.223.0"
-export ALILIGHT_IP="182.92.134.43"
+export STAR_IP="209.74.81.13"
 
 export ZOTERO_API_KEY="vxwGh0XaMLa637qhhGYZ48LS"
 export ZOTERO_USER_ID="9666949"
+. "/home/hiraeth/.local/share/cargo/env"

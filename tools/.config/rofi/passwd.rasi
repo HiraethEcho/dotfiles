@@ -1,9 +1,10 @@
-@import "~/.config/rofi/share/fonts.rasi"
-@import "~/.config/rofi/share/color.rasi"
 
 configuration {
-  window-thumbnail:	true;
+  window-thumbnail: true;
+  font: "CodeNewRoman Nerd Font mono 20";
 }
+
+@import "~/.config/rofi/share/color.rasi"
 
 mainbox { 
     enabled:                     true;
@@ -16,24 +17,24 @@ mainbox {
   }
 
 window {
-  transparency:		"real";
-  width:		200px;
-  border:		3px 3px 3px 3px;
-  border-radius:	3px;
-  height:		75px;
+  transparency:   "real";
+  width:    200px;
+  border:   3px 3px 3px 3px;
+  border-radius:  3px;
+  height:   60px;
 }
 
 inputbar {
-  children:		["entry"];
-  expand:		false;
-  padding:		0px 0px 0px 0px;
+  children:   ["entry"];
+  expand:   false;
+  padding:    0px 0px 0px 0px;
   text-color:                  @foreground;
 }
 
 
 entry {
-  placeholder:		" ";
-  expand:		true;
-  padding:		5px;
-  border-radius:	5px;
+  placeholder:    " ";
+  expand:   true;
+  padding:    5px;
+  border-radius:  5px;
 }

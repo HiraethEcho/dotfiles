@@ -20,7 +20,7 @@
 #
 # https://www.opensource.org/licenses/mit-license.php
 
-rule.precedence.color=deleted,completed,active,overdue,due.today,due,blocked,uda.,blocking,scheduled,tagged
+rule.precedence.color=deleted,completed,active,overdue,due.today,due,uda.,blocked,blocking,scheduled,tagged
 
 # General decoration
 color.label=
@@ -37,13 +37,17 @@ color.deleted=gray8 on gray1
 color.completed=gray10 on gray2
 color.active=underline
 
-color.overdue=on rgb104
-color.due.today=on rgb013
+// color.overdue=on rgb104
+color.overdue=on blue
+color.due.today=on gray10
 color.due=bold
 color.blocked=gray18
-color.uda.priority.H=rgb540
+// color.uda.priority.H=rgb540
+// color.uda.priority.H=red
 color.uda.priority.L=gray14
-color.uda.priority.M=rgb150
+color.uda.priority.M=green
+// color.uda.priority.M=rgb150
+color.uda.priority.H=yellow
 color.blocking=gray23
 color.scheduled=gray22
 color.tagged=gray21 bold
