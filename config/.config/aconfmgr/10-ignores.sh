@@ -42,5 +42,6 @@ IgnorePath '/etc/sudoers.pacnew'
 IgnorePath '/etc/vconsole.conf'
 IgnorePath '/opt/*'
 IgnorePath '/var/*'
+IgnorePath '/efi/*'
 
 IgnorePackagesAll
