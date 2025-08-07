@@ -27,7 +27,6 @@ cava 0.10.4-3
 cherry-studio-bin 1.5.3-1
 clang 20.1.8-1
 cloudflared 2025.7.0-1
-codename-goose-bin 1.1.4-1
 cups 2:2.4.12-2
 dhcpcd 10.2.4-1
 dmenu 5.4-1
@@ -47,7 +46,7 @@ fcitx5-pinyin-zhwiki 1:0.2.5.20250731-1
 fcitx5-qt 5.1.10-1
 fd 10.2.0-1
 feh 3.10.3-1
-flameshot 13.0.0-3
+flameshot 13.0.1-1
 foot 1.23.1-1
 fzf 0.65.1-1
 fzf-tab-git r277.fc6f0dc-1
@@ -74,7 +73,7 @@ kitty 0.42.2-1
 kmscon 9.1.0-2
 koofr-desktop-bin 41a82e7-1
 lazydocker-bin 0.24.1-1
-lazygit 0.54.0-1
+lazygit 0.54.1-1
 less 1:679-1
 lib32-mesa 1:25.1.7-1
 lib32-vulkan-radeon 1:25.1.7-1
@@ -95,12 +94,12 @@ lxappearance-gtk3 0.6.4-1
 lxde-common 0.99.3-1
 lxpanel-gtk3 0.10.1-2
 lxsession-gtk3 1:0.5.6-1
-maim 5.8.1-1
+maim 5.8.1-2
 man-db 2.13.1-1
 marksman 20241218-1
 mate-polkit 1.28.1-2
 mdcat 2.7.1-1
-min-bin 1.35.1-2
+most 5.2.0-3
 mpc 0.35-1
 mpd 0.24.5-1
 mpv 1:0.40.0-5
@@ -115,9 +114,9 @@ ntfs-3g 2022.10.3-2
 nwg-menu 0.1.9-1
 nwg-panel 0.10.12-1
 obsidian 1.8.10-1
-ollama 0.11.2-1
+ollama 0.11.3-1
 openbox 3.6.1-12
-opencode-bin 0.3.131-1
+opencode-bin 0.3.133-1
 openlist-bin 4.0.9-2
 openssh 10.0p1-4
 os-prober 1.83-1
@@ -153,7 +152,6 @@ shellcheck-bin 0.11.0-1
 shfmt 3.12.0-1
 sioyek 2.0.0-25
 snapper 0.12.2-4
-steam 1.0.0.82-2
 stow 2.4.1-1
 stylua 2.1.0-1
 sudo 1.9.17.p1-1
@@ -162,7 +160,7 @@ task 3.4.1-1
 taskopen 2.0.2-2
 tealdeer 1.7.2-1
 tex-fmt 0.5.5-1
-texlab 5.22.1-1
+texlab 5.23.1-1
 texlive-bibtexextra 2025.2-1
 texlive-binextra 2025.2-1
 texlive-langchinese 2025.2-1
@@ -172,7 +170,7 @@ texlive-pstricks 2025.2-1
 texlive-xetex 2025.2-1
 timeshift 25.07.4-1
 timew 1.8.0-2
-tinymist 1:0.13.18-1
+tinymist 1:0.13.22-1
 tmux 3.5_a-1
 tree-sitter 0.25.8-1
 ttf-daddytime-mono-nerd 3.4.0-1

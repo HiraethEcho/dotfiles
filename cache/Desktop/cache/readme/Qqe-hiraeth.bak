@@ -27,7 +27,6 @@ cava
 cherry-studio-bin
 clang
 cloudflared
-codename-goose-bin
 cups
 dhcpcd
 dmenu
@@ -100,7 +99,7 @@ man-db
 marksman
 mate-polkit
 mdcat
-min-bin
+most
 mpc
 mpd
 mpv
@@ -153,7 +152,6 @@ shellcheck-bin
 shfmt
 sioyek
 snapper
-steam
 stow
 stylua
 sudo
