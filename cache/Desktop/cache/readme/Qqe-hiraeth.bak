@@ -72,6 +72,7 @@ khal
 kitty
 kmscon
 koofr-desktop-bin
+laptop-mode-tools
 lazydocker-bin
 lazygit
 less
@@ -107,6 +108,7 @@ ncmpcpp
 neovim
 net-tools
 newsboat
+nginx
 niri
 noto-fonts-emoji
 npm
@@ -139,7 +141,9 @@ prettier
 pyright
 python-eyed3
 python-pynvim
+python-pyqt5
 qemu-base
+radicale
 rclone
 resvg
 rime-emoji
@@ -152,6 +156,7 @@ shellcheck-bin
 shfmt
 sioyek
 snapper
+sshfs
 stow
 stylua
 sudo
