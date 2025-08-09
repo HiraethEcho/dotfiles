@@ -27,7 +27,10 @@ cava
 cherry-studio-bin
 clang
 cloudflared
+codename-goose-bin
+crush-bin
 cups
+cursor-cli
 dhcpcd
 dmenu
 dnsmasq
@@ -70,9 +73,7 @@ iw
 iwd
 khal
 kitty
-kmscon
 koofr-desktop-bin
-laptop-mode-tools
 lazydocker-bin
 lazygit
 less
@@ -100,7 +101,6 @@ man-db
 marksman
 mate-polkit
 mdcat
-most
 mpc
 mpd
 mpv
@@ -117,6 +117,7 @@ nwg-menu
 nwg-panel
 obsidian
 ollama
+openai-codex
 openbox
 opencode-bin
 openlist-bin
@@ -139,11 +140,10 @@ pipewire-pulse
 podman
 prettier
 pyright
+python-click-repl
 python-eyed3
 python-pynvim
-python-pyqt5
 qemu-base
-radicale
 rclone
 resvg
 rime-emoji
@@ -177,6 +177,7 @@ timeshift
 timew
 tinymist
 tmux
+todoman
 tree-sitter
 ttf-daddytime-mono-nerd
 ttf-lxgw-wenkai-mono

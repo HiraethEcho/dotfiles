@@ -4,6 +4,10 @@
 path = ~/.local/share/calendars/*
 type = discover
 
+[[local_test]]
+path = ~/.local/share/calendarstest/*
+type = discover
+
 [locale]
 timeformat = %H:%M
 dateformat = %Y-%m-%d
