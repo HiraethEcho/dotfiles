@@ -121,6 +121,7 @@ openai-codex 0.16.0-1
 openbox 3.6.1-12
 opencode-bin 0.4.2-1
 openlist-bin 4.1.0-1
+openlist-desktop-bin 0.6.1-1
 openssh 10.0p1-4
 os-prober 1.83-1
 otf-codenewroman-nerd 3.4.0-1
@@ -187,7 +188,7 @@ ttf-nerd-fonts-symbols-mono 3.4.0-1
 typst 1:0.13.1-1
 ufrii-print 2-1
 unzip 6.0-23
-uv 0.8.6-1
+uv 0.8.8-1
 vdirsyncer 0.19.3-2
 virt-manager 5.0.0-1
 visual-studio-code-bin 1.103.0-1

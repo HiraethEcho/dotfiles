@@ -1,9 +1,9 @@
 {
   "$schema": "https://charm.land/crush.json",
-"providers": {
+  "providers": {
     "copilot": {
       "type": "openai",
-      "base_url": "http://localhost:4141/v1",
+      "base_url": "http://209.74.81.13:4141/v1",
       "models": [
         {
           "id": "gpt-4.1",
