@@ -35,6 +35,7 @@ dhcpcd
 dmenu
 dnsmasq
 docker
+dovecot
 dua-cli
 dunst
 efibootmgr
