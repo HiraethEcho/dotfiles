@@ -16,4 +16,4 @@ datetimeformat = %Y-%m-%d %H:%M
 longdatetimeformat = %Y-%m-%d %H:%M
 
 [default]
-default_calendar = 12595A95-FFF4-4286-AF75-BD8167DADFF0
+default_calendar =
