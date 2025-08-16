@@ -1,3 +1,4 @@
+abduco
 aconfmgr-git
 acpi
 acpilight
@@ -75,6 +76,7 @@ iw
 iwd
 khal
 kitty
+kmscon
 koofr-desktop-bin
 lazydocker-bin
 lazygit
@@ -160,6 +162,7 @@ shfmt
 sioyek
 snapper
 sshfs
+starship
 stow
 stylua
 sudo
