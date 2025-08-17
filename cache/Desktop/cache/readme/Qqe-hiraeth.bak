@@ -6,6 +6,7 @@ aerc
 aichat
 alsa-utils
 amd-ucode
+apache-tools
 archlinuxcn-keyring
 atuin
 autossh
@@ -147,6 +148,7 @@ python-click-repl
 python-eyed3
 python-pynvim
 qemu-base
+radicale
 rclone
 resvg
 rime-emoji

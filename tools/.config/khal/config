@@ -4,8 +4,8 @@
 path = ~/.local/share/calendars/*
 type = discover
 
-[[local_test]]
-path = ~/.local/share/calendarstest/*
+[[local_radicale]]
+path = ~/.local/share/radicale/collections/collection-root/hiraeth/*
 type = discover
 
 [locale]
@@ -16,4 +16,4 @@ datetimeformat = %Y-%m-%d %H:%M
 longdatetimeformat = %Y-%m-%d %H:%M
 
 [default]
-default_calendar =
+default_calendar = todo

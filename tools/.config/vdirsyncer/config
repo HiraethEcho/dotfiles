@@ -124,3 +124,23 @@ type = "caldav"
 url = "https://cal.877675.xyz/hiraeth/"
 username = "hiraeth"
 password = "wyz2025zxc"
+
+
+[pair tmp]
+a = "tmp_local"
+b = "tmp_remote"
+collections = ["from b", "from a"]
+metadata = ["color", "displayname", "description", "order"]
+
+[storage tmp_local]
+type = "filesystem"
+path = "~/.local/share/calendar_radicale/"
+fileext = ".ics"
+
+[storage tmp_remote]
+type = "caldav"
+url = "http://localhost:5232/hiraeth/"
+username = "hiraeth"
+password = "wyz2025zxc"
+
+

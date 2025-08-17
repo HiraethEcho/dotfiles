@@ -27,7 +27,7 @@ report.all.context=false
 
 report.next.columns=id,depends,description.truncated_count,tags,project,due.relative,urgency
 report.next.labels=ID,Dep,Description,Tags,Project,Due,Urgency
-report.next.filter=status:pending -WAITING -list
+report.next.filter=status:pending -WAITING -list priority.not:L
 report.next.sort=urgency,due,priority,project
 
 report.ready.filter=+READY priority.not:L -WAITING
