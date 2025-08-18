@@ -72,22 +72,22 @@ status_path = "~/.local/state/vdirsyncer/status/"
 #
 # https://p235-caldav.icloud.com.cn/17351757553/calendars/87BBBA05-934B-4D5A-BB27-771A9CD413A2/
 
-[storage icloud_remote]
-type = "caldav"
-url = "https://caldav.icloud.com.cn/"
-username = "wyz2016zxc@icloud.com"
-password = "itcc-siyq-rjty-cjyd"
-
-[storage icloud_local]
-type = "filesystem"
-path = "~/.local/share/calendar_icloud/"
-fileext = ".ics"
-
-
-[pair icloud_sync]
-a = "icloud_remote"
-b = "icloud_remote"
-collections = ["from a", "from b"]
+# [storage icloud_remote]
+# type = "caldav"
+# url = "https://caldav.icloud.com.cn/"
+# username = "wyz2016zxc@icloud.com"
+# password = "itcc-siyq-rjty-cjyd"
+#
+# [storage icloud_local]
+# type = "filesystem"
+# path = "~/.local/share/calendar_icloud/"
+# fileext = ".ics"
+#
+#
+# [pair icloud_sync]
+# a = "icloud_remote"
+# b = "icloud_local"
+# collections = ["from a", "from b"]
 # metadata = ["displayname", "color"]
 # conflict_resolution = "a wins"  # 冲突时 iCloud 优先
 
@@ -107,40 +107,3 @@ collections = ["from a", "from b"]
 # url = "https://p235-caldav.icloud.com.cn/17351757553/calendars/87BBBA05-934B-4D5A-BB27-771A9CD413A2/"
 # username = "wyz2016zxc@icloud.com"
 # password = "itcc-siyq-rjty-cjyd"
-
-[pair radicale]
-a = "radicale_local"
-b = "radicale_remote"
-collections = ["from a", "from b"]
-metadata = ["color", "displayname", "description", "order"]
-
-[storage radicale_local]
-type = "filesystem"
-path = "~/.local/share/calendar_radicale/"
-fileext = ".ics"
-
-[storage radicale_remote]
-type = "caldav"
-url = "https://cal.877675.xyz/hiraeth/"
-username = "hiraeth"
-password = "wyz2025zxc"
-
-
-[pair tmp]
-a = "tmp_local"
-b = "tmp_remote"
-collections = ["from b", "from a"]
-metadata = ["color", "displayname", "description", "order"]
-
-[storage tmp_local]
-type = "filesystem"
-path = "~/.local/share/calendar_radicale/"
-fileext = ".ics"
-
-[storage tmp_remote]
-type = "caldav"
-url = "http://localhost:5232/hiraeth/"
-username = "hiraeth"
-password = "wyz2025zxc"
-
-
