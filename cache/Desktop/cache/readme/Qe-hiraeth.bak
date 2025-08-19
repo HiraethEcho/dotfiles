@@ -3,7 +3,6 @@ aconfmgr-git r850.5014d5d-1
 acpi 1.8-2
 acpilight 1.2-3
 aerc 0.20.1-3
-aichat 0.30.0-1
 alsa-utils 1.2.14-1
 amd-ucode 20250808-1
 apache-tools 2.4.65-1
@@ -30,7 +29,7 @@ cherry-studio-bin 1.5.6-1
 clang 20.1.8-1
 cloudflared 2025.8.0-1
 conky 1.22.2-1
-crush-bin 0.6.2-1
+crush-bin 0.6.3-1
 cups 2:2.4.12-2
 dhcpcd 10.2.4-1
 dmenu 5.4-1
@@ -59,7 +58,7 @@ git 2.50.1-3
 github-cli 2.76.2-1
 gnome-keyring 1:48.0-1
 go 2:1.24.6-1
-go-musicfox-git 4.6.6.r49.g9eff6e9-1
+go-musicfox-git 4.6.6.r53.ga0760bb-1
 gparted 1.7.0-1
 grub 2:2.12.r292.g73d1c959-1
 grub-btrfs 4.13-2
@@ -120,7 +119,6 @@ nwg-menu 0.1.9-2
 nwg-panel 0.10.12-1
 obsidian 1.8.10-1
 ollama 0.11.4-1
-openai-codex 0.21.0-1
 openbox 3.6.1-12
 opencode-bin 0.4.45-1
 openlist-bin 4.1.0-1
@@ -180,7 +178,7 @@ texlive-mathscience 2025.2-1
 texlive-pstricks 2025.2-1
 texlive-xetex 2025.2-1
 timeshift 25.07.5-1
-timew 1.8.0-2
+timew 1.9.0-1
 tinymist 1:0.13.22-1
 tlpui 1.8.0-1
 tmux 3.5_a-1
@@ -196,6 +194,7 @@ typst 1:0.13.1-1
 ufrii-print 2-1
 unzip 6.0-23
 uv 0.8.11-1
+vdhcoapp 2.0.20-2
 vdirsyncer 0.19.3-2
 virt-manager 5.0.0-1
 visual-studio-code-bin 1.103.1-1

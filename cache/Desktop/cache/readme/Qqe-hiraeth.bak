@@ -3,7 +3,6 @@ aconfmgr-git
 acpi
 acpilight
 aerc
-aichat
 alsa-utils
 amd-ucode
 apache-tools
@@ -120,7 +119,6 @@ nwg-menu
 nwg-panel
 obsidian
 ollama
-openai-codex
 openbox
 opencode-bin
 openlist-bin
@@ -196,6 +194,7 @@ typst
 ufrii-print
 unzip
 uv
+vdhcoapp
 vdirsyncer
 virt-manager
 visual-studio-code-bin
