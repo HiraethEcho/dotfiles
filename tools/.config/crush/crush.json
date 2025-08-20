@@ -3,7 +3,7 @@
   "providers": {
     "copilot": {
       "type": "openai",
-      "base_url": "https://copilot.877675.xyz/v1",
+      "base_url": "http://localhost:4141/v1",
       "models": [
         {
           "id": "gpt-4.1",
