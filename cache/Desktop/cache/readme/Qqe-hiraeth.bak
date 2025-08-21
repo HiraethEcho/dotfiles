@@ -31,6 +31,8 @@ cloudflared
 conky
 crush-bin
 cups
+cyrus-sasl-xoauth2-git
+darkhttpd
 dhcpcd
 dmenu
 dnsmasq
@@ -50,6 +52,7 @@ fcitx5-pinyin-zhwiki
 fcitx5-qt
 fd
 feh
+ffcast
 flameshot
 foot
 fzf
@@ -70,6 +73,7 @@ hugo
 imagemagick
 impala
 isd-appimage
+isync
 iw
 iwd
 khal
@@ -106,7 +110,10 @@ mdcat
 mpc
 mpd
 mpv
+msmtp
+mtm-git
 ncmpcpp
+neomutt
 neovim
 net-tools
 newsboat
@@ -118,6 +125,7 @@ ntfs-3g
 nwg-menu
 nwg-panel
 obsidian
+offlineimap
 ollama
 openbox
 opencode-bin
@@ -218,6 +226,7 @@ xdg-ninja-git
 xdg-user-dirs-gtk
 xdotool
 xf86-video-amdgpu
+xhidecursor
 xorg-server
 xorg-server-xephyr
 xorg-xhost

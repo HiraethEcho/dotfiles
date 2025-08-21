@@ -29,8 +29,10 @@ cherry-studio-bin 1.5.6-1
 clang 20.1.8-1
 cloudflared 2025.8.0-1
 conky 1.22.2-1
-crush-bin 0.6.3-1
+crush-bin 0.7.0-1
 cups 2:2.4.12-2
+cyrus-sasl-xoauth2-git r24.36aabca54fd6-1
+darkhttpd 1.17-1
 dhcpcd 10.2.4-1
 dmenu 5.4-1
 dnsmasq 2.91-1
@@ -50,6 +52,7 @@ fcitx5-pinyin-zhwiki 1:0.2.5.20250731-1
 fcitx5-qt 5.1.10-1
 fd 10.2.0-1
 feh 3.10.3-1
+ffcast 1:2.5.1-1
 flameshot 13.1.0-1
 foot 1.23.1-1
 fzf 0.65.1-1
@@ -70,6 +73,7 @@ hugo 0.148.2-2
 imagemagick 7.1.2.1-1
 impala 0.3.0-1
 isd-appimage v0.5.1-2
+isync 1.5.1-1
 iw 6.9-1
 iwd 3.9-1
 khal 0.13.0-1
@@ -106,7 +110,10 @@ mdcat 2.7.1-1
 mpc 0.35-1
 mpd 0.24.5-1
 mpv 1:0.40.0-5
+msmtp 1.8.30-1
+mtm-git r413.b346b86-1
 ncmpcpp 0.10.1-4
+neomutt 20250510-2
 neovim 0.11.3-1
 net-tools 2.10-3
 newsboat 2.40-1
@@ -118,9 +125,10 @@ ntfs-3g 2022.10.3-2
 nwg-menu 0.1.9-2
 nwg-panel 0.10.12-1
 obsidian 1.9.10-2
+offlineimap 8.0.0-6
 ollama 0.11.4-1
 openbox 3.6.1-12
-opencode-bin 0.4.45-1
+opencode-bin 0.5.12-1
 openlist-bin 4.1.0-1
 openlist-desktop-bin 0.6.1-1
 openssh 10.0p1-4
@@ -141,7 +149,7 @@ pipewire-audio 1:1.4.7-1
 pipewire-pulse 1:1.4.7-1
 podman 5.6.0-1
 prettier 3.6.2-2
-pyright 1.1.403-1
+pyright 1.1.404-1
 python-click-repl 0.3.0-3
 python-eyed3 0.9.8-1
 python-pynvim 0.5.2-1
@@ -200,7 +208,7 @@ virt-manager 5.0.0-1
 visual-studio-code-bin 1.103.1-1
 vscode-html-languageserver 1.102.0-1
 vulkan-radeon 1:25.1.7-1
-waterfox-bin 6.6.0-1
+waterfox-bin 6.6.0-2
 watt-toolkit-bin 3.0.0.rc.16-2
 websocat 1.14.0-1
 wechat-bin 4.0.1.11-2
@@ -218,6 +226,7 @@ xdg-ninja-git r549.854929e-1
 xdg-user-dirs-gtk 0.14-1
 xdotool 3.20211022.1-2
 xf86-video-amdgpu 25.0.0-1
+xhidecursor 1.0.0.r2.159b877-1
 xorg-server 21.1.18-2
 xorg-server-xephyr 21.1.18-2
 xorg-xhost 1.0.10-1
