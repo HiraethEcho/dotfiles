@@ -8,6 +8,10 @@ type = discover
 path = ~/.local/share/radicale/collections/collection-root/hiraeth/*
 type = discover
 
+[[local_amss]]
+path = ~/.local/share/calendar_amss/*
+type = discover
+
 [locale]
 timeformat = %H:%M
 dateformat = %Y-%m-%d

@@ -37,7 +37,6 @@ dhcpcd
 dmenu
 dnsmasq
 docker
-dovecot
 dua-cli
 dunst
 efibootmgr
@@ -125,7 +124,6 @@ ntfs-3g
 nwg-menu
 nwg-panel
 obsidian
-offlineimap
 ollama
 openbox
 opencode-bin
