@@ -25,7 +25,7 @@ btrfs-assistant 2.2-1
 btrfs-progs 6.16-1
 buku 5.0-1
 cava 0.10.4-3
-cherry-studio-bin 1.5.6-1
+cherry-studio-bin 1.5.7-1
 clang 20.1.8-1
 cloudflared 2025.8.1-1
 conky 1.22.2-1
@@ -34,6 +34,7 @@ cups 2:2.4.12-2
 cyrus-sasl-xoauth2-git r24.36aabca54fd6-1
 darkhttpd 1.17-1
 dhcpcd 10.2.4-1
+diagon-bin 1.1.158-1
 dmenu 5.4-1
 dnsmasq 2.91-1
 docker 1:28.3.3-1
@@ -47,7 +48,7 @@ fcitx5 5.1.14-1
 fcitx5-chinese-addons 5.1.9-1
 fcitx5-configtool 5.1.10-1
 fcitx5-gtk 5.1.4-1
-fcitx5-pinyin-zhwiki 1:0.2.5.20250731-1
+fcitx5-pinyin-zhwiki 1:0.2.5.20250823-1
 fcitx5-qt 5.1.10-1
 fd 10.2.0-1
 feh 3.10.3-1
@@ -82,19 +83,19 @@ koofr-desktop-bin 41a82e7-1
 lazydocker-bin 0.24.1-1
 lazygit 0.54.2-1
 less 1:679-1
-lib32-mesa 1:25.1.7-1
-lib32-vulkan-radeon 1:25.1.7-1
+lib32-mesa 1:25.2.1-1
+lib32-vulkan-radeon 1:25.2.1-1
 libnotify 0.8.6-1
 libxml2-legacy 2.13.8-1
 libzip 1.11.4-1
-linux 6.16.1.arch1-1
+linux 6.16.2.arch1-1
 linux-firmware-amdgpu 20250808-1
 linux-firmware-atheros 20250808-1
 linux-firmware-other 20250808-1
-linux-headers 6.16.1.arch1-1
+linux-headers 6.16.2.arch1-1
 linux-wifi-hotspot 1:4.7.2-1
-linux-zen 6.16.1.zen1-1
-linux-zen-headers 6.16.1.zen1-1
+linux-zen 6.16.2.zen1-1
+linux-zen-headers 6.16.2.zen1-1
 lostfiles 4.14-1
 lua-language-server 3.15.0-1
 lxappearance-gtk3 0.6.4-1
@@ -113,6 +114,7 @@ msmtp 1.8.30-1
 mtm-git r413.b346b86-1
 ncmpcpp 0.10.1-4
 neomutt 20250510-2
+neovide 0.15.0-1
 neovim 0.11.3-1
 net-tools 2.10-3
 newsboat 2.40-1
@@ -152,8 +154,8 @@ python-click-repl 0.3.0-3
 python-eyed3 0.9.8-1
 python-pynvim 0.5.2-1
 qemu-base 10.0.3-1
-radicale 3.5.4-1
-rclone 1.70.3-1
+radicale 3.5.5-1
+rclone 1.71.0-1
 resvg 0.45.1-2
 rime-emoji 0.0.0.20250310-1
 ripgrep 14.1.1-1
@@ -187,7 +189,6 @@ timeshift 25.07.5-1
 timew 1.9.0-1
 tinymist 1:0.13.22-1
 tlpui 1.8.0-1
-tmux 3.5_a-1
 todoman 4.6.0-1
 tree-sitter 0.25.8-1
 ttf-daddytime-mono-nerd 3.4.0-1
@@ -205,7 +206,7 @@ vdirsyncer 0.19.3-2
 virt-manager 5.0.0-1
 visual-studio-code-bin 1.103.2-1
 vscode-html-languageserver 1.102.0-1
-vulkan-radeon 1:25.1.7-1
+vulkan-radeon 1:25.2.1-1
 waterfox-bin 6.6.1-1
 watt-toolkit-bin 3.0.0.rc.16-2
 websocat 1.14.0-1

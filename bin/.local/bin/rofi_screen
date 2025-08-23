@@ -58,7 +58,7 @@ $option_a)
   notify_view
   ;;
 $option_w)
-  cd ${dir} && maim -u -f png -i `xdotool selectwindow` | copy_shot
+  cd ${dir} && maim -u -f png -i $(xdotool selectwindow) | copy_shot
   notify_view
   ;;
 $option_f)

@@ -34,6 +34,7 @@ cups
 cyrus-sasl-xoauth2-git
 darkhttpd
 dhcpcd
+diagon-bin
 dmenu
 dnsmasq
 docker
@@ -113,6 +114,7 @@ msmtp
 mtm-git
 ncmpcpp
 neomutt
+neovide
 neovim
 net-tools
 newsboat
@@ -187,7 +189,6 @@ timeshift
 timew
 tinymist
 tlpui
-tmux
 todoman
 tree-sitter
 ttf-daddytime-mono-nerd
