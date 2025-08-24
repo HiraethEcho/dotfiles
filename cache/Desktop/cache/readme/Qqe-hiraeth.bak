@@ -7,6 +7,7 @@ alsa-utils
 amd-ucode
 apache-tools
 archlinuxcn-keyring
+artalk
 atuin
 autossh
 awesome-terminal-fonts
@@ -120,6 +121,7 @@ net-tools
 newsboat
 nginx
 niri
+nodejs
 noto-fonts-emoji
 npm
 ntfs-3g
