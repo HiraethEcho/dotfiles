@@ -1,4 +1,3 @@
-abduco 0.6-7
 aconfmgr-git r850.5014d5d-1
 acpi 1.8-2
 acpilight 1.2-3
@@ -7,7 +6,6 @@ alsa-utils 1.2.14-1
 amd-ucode 20250808-1
 apache-tools 2.4.65-1
 archlinuxcn-keyring 20250531-1
-artalk 2.9.1-1
 atuin 18.8.0-1
 autossh 1.4g-4
 awesome-terminal-fonts 1.1.0-5
@@ -19,7 +17,6 @@ bc 1.08.2-1
 bluetui 0.6-1
 bluez-tools 0.2.0-6
 bluez-utils 5.83-1
-bonsai 1.0.0-1
 bridge-utils 1.7.1-2
 brightnessctl 0.5.1-3
 btop 1.4.4-1
@@ -36,7 +33,6 @@ cups 2:2.4.12-2
 cyrus-sasl-xoauth2-git r24.36aabca54fd6-1
 darkhttpd 1.17-1
 dhcpcd 10.2.4-1
-diagon-bin 1.1.158-1
 dmenu 5.4-1
 dnsmasq 2.91-1
 docker 1:28.3.3-1
@@ -59,11 +55,10 @@ flameshot 13.1.0-1
 foot 1.23.1-1
 fzf 0.65.1-1
 fzf-tab-git r277.fc6f0dc-1
-git 2.50.1-3
+git 2.51.0-1
 github-cli 2.78.0-1
 gnome-keyring 1:48.0-1
 go 2:1.24.6-1
-go-musicfox-git 4.6.6.r61.g110d208-1
 gparted 1.7.0-1
 grub 2:2.12.r292.g73d1c959-1
 grub-btrfs 4.13-2
@@ -72,10 +67,9 @@ gvfs-dnssd 1.57.2-4
 gvim 9.1.1623-1
 harper 0.48.0-2
 hugo 0.148.2-2
-imagemagick 7.1.2.1-1
+imagemagick 7.1.2.2-1
 impala 0.3.0-1
 isd-appimage v0.5.1-2
-isync 1.5.1-2
 iw 6.9-1
 iwd 3.9-1
 khal 0.13.0-1
@@ -112,10 +106,8 @@ mdcat 2.7.1-1
 mpc 0.35-1
 mpd 0.24.5-1
 mpv 1:0.40.0-5
-msmtp 1.8.30-1
 mtm-git r413.b346b86-1
 ncmpcpp 0.10.1-4
-neomutt 20250510-2
 neovide 0.15.0-1
 neovim 0.11.3-1
 net-tools 2.10-3
@@ -131,7 +123,7 @@ nwg-panel 0.10.12-1
 obsidian 1.9.10-2
 ollama 0.11.4-1
 openbox 3.6.1-12
-opencode-bin 0.5.18-1
+opencode-bin 0.5.24-1
 openlist-bin 4.1.1-1
 openlist-desktop-bin 0.6.1-1
 openssh 10.0p1-4
@@ -153,13 +145,11 @@ pipewire-pulse 1:1.4.7-1
 podman 5.6.0-1
 prettier 3.6.2-2
 pyright 1.1.404-1
-python-click-repl 0.3.0-3
 python-eyed3 0.9.8-1
 python-pynvim 0.5.2-1
 qemu-base 10.0.3-1
 radicale 3.5.5-1
 rclone 1.71.0-1
-resvg 0.45.1-2
 rime-emoji 0.0.0.20250310-1
 ripgrep 14.1.1-1
 rmpc 0.9.0-1
@@ -171,13 +161,11 @@ shfmt 3.12.0-1
 sioyek 2.0.0-26
 snapper 0.12.2-4
 sshfs 3.7.3-3
-starship 1.23.0-1
 stow 2.4.1-1
 stylua 2.1.0-1
 sudo 1.9.17.p1-1
 sx 3.0-1
 task 3.4.1-1
-taskopen 2.0.2-2
 tealdeer 1.7.2-1
 tex-fmt 0.5.5-1
 texlab 5.23.1-1
@@ -189,7 +177,6 @@ texlive-mathscience 2025.2-2
 texlive-pstricks 2025.2-2
 texlive-xetex 2025.2-2
 timeshift 25.07.5-1
-timew 1.9.0-1
 tinymist 1:0.13.22-1
 tlpui 1.8.0-1
 todoman 4.6.0-1
@@ -204,12 +191,11 @@ typst 1:0.13.1-1
 ufrii-print 2-1
 unzip 6.0-23
 uv 0.8.13-1
-vdhcoapp 2.0.20-2
 vdirsyncer 0.19.3-2
 virt-manager 5.0.0-1
 visual-studio-code-bin 1.103.2-1
 vscode-html-languageserver 1.102.0-1
-vulkan-radeon 1:25.2.1-1
+vulkan-radeon 1:25.2.1-2
 waterfox-bin 6.6.1-1
 watt-toolkit-bin 3.0.0.rc.16-2
 websocat 1.14.0-1
@@ -228,7 +214,6 @@ xdg-ninja-git r549.854929e-1
 xdg-user-dirs-gtk 0.14-1
 xdotool 3.20211022.1-2
 xf86-video-amdgpu 25.0.0-1
-xhidecursor 1.0.0.r2.159b877-1
 xorg-server 21.1.18-2
 xorg-server-xephyr 21.1.18-2
 xorg-xhost 1.0.10-1
@@ -237,6 +222,7 @@ xorg-xsetroot 1.1.3-2
 xorg-xwayland 24.1.8-1
 xwayland-satellite 0.7-1
 yazi 25.5.31-2
+yutto 2.0.3-1
 zathura 0.5.12-1
 zathura-djvu 0.2.10-5
 zathura-pdf-mupdf 0.4.4-21

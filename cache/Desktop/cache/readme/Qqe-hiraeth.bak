@@ -1,4 +1,3 @@
-abduco
 aconfmgr-git
 acpi
 acpilight
@@ -7,7 +6,6 @@ alsa-utils
 amd-ucode
 apache-tools
 archlinuxcn-keyring
-artalk
 atuin
 autossh
 awesome-terminal-fonts
@@ -19,7 +17,6 @@ bc
 bluetui
 bluez-tools
 bluez-utils
-bonsai
 bridge-utils
 brightnessctl
 btop
@@ -36,7 +33,6 @@ cups
 cyrus-sasl-xoauth2-git
 darkhttpd
 dhcpcd
-diagon-bin
 dmenu
 dnsmasq
 docker
@@ -63,7 +59,6 @@ git
 github-cli
 gnome-keyring
 go
-go-musicfox-git
 gparted
 grub
 grub-btrfs
@@ -75,7 +70,6 @@ hugo
 imagemagick
 impala
 isd-appimage
-isync
 iw
 iwd
 khal
@@ -112,10 +106,8 @@ mdcat
 mpc
 mpd
 mpv
-msmtp
 mtm-git
 ncmpcpp
-neomutt
 neovide
 neovim
 net-tools
@@ -153,13 +145,11 @@ pipewire-pulse
 podman
 prettier
 pyright
-python-click-repl
 python-eyed3
 python-pynvim
 qemu-base
 radicale
 rclone
-resvg
 rime-emoji
 ripgrep
 rmpc
@@ -171,13 +161,11 @@ shfmt
 sioyek
 snapper
 sshfs
-starship
 stow
 stylua
 sudo
 sx
 task
-taskopen
 tealdeer
 tex-fmt
 texlab
@@ -189,7 +177,6 @@ texlive-mathscience
 texlive-pstricks
 texlive-xetex
 timeshift
-timew
 tinymist
 tlpui
 todoman
@@ -204,7 +191,6 @@ typst
 ufrii-print
 unzip
 uv
-vdhcoapp
 vdirsyncer
 virt-manager
 visual-studio-code-bin
@@ -228,7 +214,6 @@ xdg-ninja-git
 xdg-user-dirs-gtk
 xdotool
 xf86-video-amdgpu
-xhidecursor
 xorg-server
 xorg-server-xephyr
 xorg-xhost
@@ -237,6 +222,7 @@ xorg-xsetroot
 xorg-xwayland
 xwayland-satellite
 yazi
+yutto
 zathura
 zathura-djvu
 zathura-pdf-mupdf
