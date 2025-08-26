@@ -123,7 +123,7 @@ nwg-panel 0.10.12-1
 obsidian 1.9.10-2
 ollama 0.11.4-1
 openbox 3.6.1-12
-opencode-bin 0.5.24-1
+opencode-bin 0.5.27-1
 openlist-bin 4.1.1-1
 openlist-desktop-bin 0.6.1-1
 openssh 10.0p1-4
@@ -192,7 +192,7 @@ ufrii-print 2-1
 unzip 6.0-23
 uv 0.8.13-1
 vdirsyncer 0.19.3-2
-virt-manager 5.0.0-1
+virt-manager 5.1.0-1
 visual-studio-code-bin 1.103.2-1
 vscode-html-languageserver 1.102.0-1
 vulkan-radeon 1:25.2.1-2
