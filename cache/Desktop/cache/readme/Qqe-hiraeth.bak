@@ -57,6 +57,7 @@ fzf
 fzf-tab-git
 git
 github-cli
+glance
 gnome-keyring
 go
 gparted
