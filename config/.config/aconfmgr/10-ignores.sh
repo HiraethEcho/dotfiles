@@ -1,5 +1,6 @@
 IgnorePath '/boot/*'
 IgnorePath '/usr/*'
+IgnorePath '/etc/artalk/data/*'
 IgnorePath '/etc/ca-certificates/*'
 IgnorePath '/etc/cni/*'
 IgnorePath '/etc/conf.d/*'
