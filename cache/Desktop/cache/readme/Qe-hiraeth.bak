@@ -40,7 +40,7 @@ dua-cli 2.31.0-1
 dunst 1.12.2-1
 efibootmgr 18-3
 eza 0.23.0-1
-fastfetch 2.50.2-1
+fastfetch 2.51.1-1
 fbterm 1.7_5-5
 fcitx5 5.1.14-1
 fcitx5-chinese-addons 5.1.9-1
@@ -67,7 +67,7 @@ gvfs 1.57.2-4
 gvfs-dnssd 1.57.2-4
 gvim 9.1.1623-1
 harper 0.48.0-2
-hugo 0.148.2-2
+hugo 0.149.0-1
 imagemagick 7.1.2.2-1
 impala 0.3.0-1
 isd-appimage v0.5.1-2
@@ -159,7 +159,7 @@ rofi-wayland 1.7.9.1-1
 ruby 3.4.5-1
 shellcheck-bin 0.11.0-1
 shfmt 3.12.0-1
-sioyek 2.0.0-26
+sioyek 2.0.0-27
 snapper 0.12.2-4
 sshfs 3.7.3-3
 stow 2.4.1-1
@@ -177,8 +177,8 @@ texlive-latexextra 2025.2-2
 texlive-mathscience 2025.2-2
 texlive-pstricks 2025.2-2
 texlive-xetex 2025.2-2
-timeshift 25.07.5-1
-tinymist 1:0.13.22-1
+timeshift 25.07.6-1
+tinymist 1:0.13.24-1
 tlpui 1.8.0-1
 todoman 4.6.0-1
 tree-sitter 0.25.8-1
@@ -191,7 +191,7 @@ ttf-nerd-fonts-symbols-mono 3.4.0-1
 typst 1:0.13.1-1
 ufrii-print 2-1
 unzip 6.0-23
-uv 0.8.13-1
+uv 0.8.14-1
 vdirsyncer 0.20.0-1
 virt-manager 5.1.0-1
 visual-studio-code-bin 1.103.2-1
@@ -226,7 +226,7 @@ yazi 25.5.31-2
 yutto 2.0.3-1
 zathura 0.5.12-1
 zathura-djvu 0.2.10-5
-zathura-pdf-mupdf 0.4.4-21
+zathura-pdf-mupdf 0.4.4-22
 zip 3.0-11
 zotero 7.0.24-1
 zoxide 0.9.8-2
