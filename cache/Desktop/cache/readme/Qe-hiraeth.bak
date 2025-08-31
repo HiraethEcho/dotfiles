@@ -37,7 +37,7 @@ dmenu 5.4-1
 dnsmasq 2.91-1
 docker 1:28.3.3-1
 dua-cli 2.31.0-1
-dunst 1.12.2-1
+dunst 1.13.0-1
 efibootmgr 18-3
 eza 0.23.0-1
 fastfetch 2.51.1-1
@@ -47,13 +47,13 @@ fcitx5-chinese-addons 5.1.9-1
 fcitx5-configtool 5.1.10-1
 fcitx5-gtk 5.1.4-1
 fcitx5-pinyin-zhwiki 1:0.2.5.20250823-1
-fcitx5-qt 5.1.10-1
+fcitx5-qt 5.1.10-2
 fd 10.3.0-1
 feh 3.10.3-1
 ffcast 1:2.5.1-1
 flameshot 13.1.0-1
 foot 1.23.1-1
-fzf 0.65.1-1
+fzf 0.65.2-1
 fzf-tab-git r277.fc6f0dc-1
 git 2.51.0-1
 github-cli 2.78.0-1
@@ -68,7 +68,7 @@ gvfs-dnssd 1.57.2-4
 gvim 9.1.1623-1
 harper 0.48.0-2
 hugo 0.149.0-1
-imagemagick 7.1.2.2-1
+imagemagick 7.1.2.3-1
 impala 0.3.0-1
 isd-appimage v0.5.1-2
 iw 6.9-1
@@ -80,8 +80,8 @@ koofr-desktop-bin 41a82e7-1
 lazydocker-bin 0.24.1-1
 lazygit 0.54.2-1
 less 1:679-1
-lib32-mesa 1:25.2.1-1
-lib32-vulkan-radeon 1:25.2.1-1
+lib32-mesa 1:25.2.1-5
+lib32-vulkan-radeon 1:25.2.1-5
 libnotify 0.8.6-1
 libxml2-legacy 2.13.8-1
 libzip 1.11.4-1
@@ -196,8 +196,8 @@ vdirsyncer 0.20.0-1
 virt-manager 5.1.0-1
 visual-studio-code-bin 1.103.2-1
 vscode-html-languageserver 1.102.0-1
-vulkan-radeon 1:25.2.1-4
-waterfox-bin 6.6.2-1
+vulkan-radeon 1:25.2.1-5
+waterfox-bin 6.6.2-3
 watt-toolkit-bin 3.0.0.rc.16-2
 websocat 1.14.0-1
 wechat-bin 4.0.1.11-2
