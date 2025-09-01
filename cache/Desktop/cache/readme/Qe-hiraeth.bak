@@ -109,8 +109,7 @@ mpd 0.24.5-1
 mpv 1:0.40.0-5
 mtm-git r413.b346b86-1
 ncmpcpp 0.10.1-4
-neovide 0.15.0-1
-neovim 0.11.3-1
+neovim 0.11.4-1
 net-tools 2.10-3
 newsboat 2.40-1
 nginx 1.28.0-4
@@ -215,6 +214,7 @@ xdg-ninja-git r549.854929e-1
 xdg-user-dirs-gtk 0.14-1
 xdotool 3.20211022.1-2
 xf86-video-amdgpu 25.0.0-1
+xhidecursor 1.0.0.r2.159b877-1
 xorg-server 21.1.18-2
 xorg-server-xephyr 21.1.18-2
 xorg-xhost 1.0.10-1
