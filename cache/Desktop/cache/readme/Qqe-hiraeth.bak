@@ -5,7 +5,9 @@ aerc
 alsa-utils
 amd-ucode
 apache-tools
+arch-wiki-docs
 archlinuxcn-keyring
+archstatus-git
 atuin
 autossh
 awesome-terminal-fonts
@@ -54,6 +56,7 @@ feh
 ffcast
 flameshot
 foot
+fv-cli-bin
 fzf
 fzf-tab-git
 git
@@ -204,6 +207,7 @@ wechat-bin
 wemeet-bin
 weread-pake
 wget
+wikiman
 wiremix
 wireplumber
 wl-clipboard
