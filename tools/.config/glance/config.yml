@@ -1,0 +1,185 @@
+theme:
+  light: true
+  background-color: 220 23 95
+  contrast-multiplier: 1.0
+  primary-color: 220 91 54
+  positive-color: 109 58 40
+  negative-color: 347 87 44
+server:
+  port: 8088
+  assets-path: /home/hiraeth/.local/share/glance-assets
+
+pages:
+  - name: info
+    columns:
+      - size: full
+        widgets:
+          - type: search
+            search-engine: bing
+            bangs:
+              - title: github
+                shortcut: "!g"
+                url: https://github.com/search?q={QUERY}
+              - title: bilibili
+                shortcut: "!b"
+                url: https://search.bilibili.com/all?keyword={QUERY}
+          - type: group
+            widgets:
+              - type: rss
+                title: blogs
+                feeds:
+                  - url: https://aphilosopher.drmcl.com/feed/
+                    title: a philosopher's blog
+                    limit: 4
+              - type: rss
+                title: arch
+                feeds:
+                  - url: https://bbs.archlinuxcn.org/extern.php?action=feed&type=rss
+                    title: arch form
+                    limit: 4
+              - type: rss
+                title: news
+                feeds:
+                  - url: https://sspai.com/feed
+                    title: sspai
+                    limit: 4
+                  - url: http://solidot.org/index.rss
+                    title: solidot
+                    limit: 4
+                  - url: https://plink.anyfeeder.com/gcores
+                    title: gcores
+                    limit: 4
+                  - url: https://blog.xiaket.org/feed.xml
+                    limit: 4
+      - size: small
+        widgets:
+          - type: clock
+            hour-format: 24h
+            timezones:
+              - timezone: Europe/Paris
+                label: Paris
+              - timezone: America/New_York
+                label: New York
+              - timezone: Asia/Tokyo
+                label: Tokyo
+          - type: calendar
+            first-day-of-week: monday
+          - type: weather
+            location: Beijing, China
+            units: metric # alternatively "imperial"
+            hour-format: 24h # alternatively "24h"
+            # Optionally hide the location from being displayed in the widget
+            # hide-location: true
+          - type: releases
+            cache: 1d
+            # Without authentication the Github API allows for up to 60 requests per hour. You can create a
+            # read-only token from your Github account settings and use it here to increase the limit.
+            # token: ...
+            repositories:
+              - glanceapp/glance
+              - opencode-ai/opencode
+          - type: to-do
+          - type: monitor
+            cache: 1m
+            title: Services
+            sites:
+              - title: memos
+                url: https://memos.877675.xyz
+          - type: repository
+            repository: glanceapp/glance
+            pull-requests-limit: 5
+            issues-limit: 3
+            commits-limit: 3
+  - name: Home
+    # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
+    # hide-desktop-navigation: true
+    columns:
+      - size: small
+        widgets:
+          - type: custom-api
+            title: Random Fact
+            cache: 6h
+            url: https://uselessfacts.jsph.pl/api/v2/facts/random
+            template: |
+              <p class="size-h4 color-paragraph">{{ .JSON.String "text" }}</p>
+
+      - size: full
+        widgets:
+          - type: search
+            search-engine: bing
+            bangs:
+              - title: YouTube
+                shortcut: "!yt"
+                url: https://www.youtube.com/results?search_query={QUERY}
+          - type: group
+            widgets:
+              - type: rss
+                title: blogs
+                feeds:
+                  - url: https://aphilosopher.drmcl.com/feed/
+                    title: a philosopher's blog
+                    limit: 4
+              - type: rss
+                title: arch
+                feeds:
+                  - url: https://bbs.archlinuxcn.org/extern.php?action=feed&type=rss
+                    title: arch form
+                    limit: 4
+              - type: rss
+                title: news
+                feeds:
+                  - url: https://sspai.com/feed
+                    title: sspai
+                    limit: 4
+                  - url: http://solidot.org/index.rss
+                    title: solidot
+                    limit: 4
+                  - url: https://plink.anyfeeder.com/gcores
+                    title: gcores
+                    limit: 4
+                  - url: https://blog.xiaket.org/feed.xml
+                    limit: 4
+
+          - type: group
+            widgets:
+              - type: hacker-news
+              - type: lobsters
+          - type: iframe
+            source: https://hiraethecho.github.io/hugo
+            height: 400
+
+      - size: small
+        widgets:
+          - type: html
+            source: |
+              <p>Hello, <span class="color-primary">World</span>!</p>
+          - type: to-do
+          - type: monitor
+            cache: 1m
+            title: Sites
+            sites:
+              - title: memos
+                url: https://memos.877675.xyz
+          - type: repository
+            repository: glanceapp/glance
+            pull-requests-limit: 5
+            issues-limit: 3
+            commits-limit: 3
+          - type: bookmarks
+            groups:
+              - links:
+                  - title: Gmail
+                    url: https://mail.google.com/mail/u/0/
+                  - title: Amazon
+                    url: https://www.amazon.com/
+                  - title: Github
+                    url: https://github.com/
+                  - title: Wikipedia
+                    url: https://en.wikipedia.org/
+              - title: Entertainment
+                color: 10 70 50
+                links:
+                  - title: bilibili
+                    url: https://www.bilibili.com/
+                  - title: huya
+                    url: https://www.huya.com/

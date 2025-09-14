@@ -29,7 +29,6 @@ chadtop
 clang
 cloudflared
 cups
-cyrus-sasl-xoauth2-git
 darkhttpd
 deepseek-pake
 dhcpcd
@@ -131,7 +130,6 @@ pacfiles
 pacman-contrib
 pamixer
 paru
-pavucontrol
 pcmanfm-gtk3
 pdfbooklet
 picgo
