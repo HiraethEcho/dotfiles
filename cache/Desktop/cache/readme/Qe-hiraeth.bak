@@ -114,7 +114,7 @@ net-tools 2.10-3
 newsboat 2.40-1
 nginx 1.28.0-4
 niri 25.08-1
-nodejs 24.7.0-1
+nodejs 24.7.0-2
 noto-fonts-emoji 1:2.048-1
 npm 11.6.0-1
 ntfs-3g 2022.10.3-2
@@ -158,7 +158,7 @@ sioyek 2.0.0-28
 snapper 0.13.0-1
 sshfs 3.7.3-3
 stow 2.4.1-1
-stylua 2.1.0-1
+stylua 2.2.0-1
 sudo 1.9.17.p1-1
 sx 3.0-1
 task 3.4.1-1
@@ -197,7 +197,7 @@ watt-toolkit-bin 3.0.0.rc.16-2
 websocat 1.14.0-1
 wechat-bin 4.0.1.11-2
 wemeet-bin 3.26.10.400-3
-weread-pake 3.2.16-1
+weread-pake 3.3.5-1
 wget 1.25.0-2
 wikiman 2.14.1-1
 wiremix 0.7.0-1
