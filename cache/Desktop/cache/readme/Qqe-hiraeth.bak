@@ -25,14 +25,12 @@ btrfs-assistant
 btrfs-progs
 buku
 cava
-chadtop
 clang
 cloudflared
 cups
 darkhttpd
 deepseek-pake
 dhcpcd
-dirsearch
 dmenu
 dnsmasq
 docker
@@ -49,10 +47,8 @@ fcitx5-pinyin-zhwiki
 fcitx5-qt
 fd
 feh
-ffcast
 flameshot
 foot
-fv-cli-bin
 fzf
 fzf-tab-git
 git
@@ -94,12 +90,7 @@ linux-wifi-hotspot
 linux-zen
 linux-zen-headers
 lua-language-server
-lxappearance-gtk3
-lxde-common
-lxpanel-gtk3
-lxsession-gtk3
 maim
-makima-bin
 man-db
 marksman
 mate-polkit
@@ -112,7 +103,6 @@ ncmpcpp
 neovim
 net-tools
 newsboat
-nginx
 niri
 nodejs
 noto-fonts-emoji
@@ -130,7 +120,6 @@ pacfiles
 pacman-contrib
 pamixer
 paru
-pcmanfm-gtk3
 pdfbooklet
 picgo
 picom
