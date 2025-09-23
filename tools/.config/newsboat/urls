@@ -31,7 +31,8 @@ https://hellogithub.com/rss
 https://rustcc.cn/rss
 
 https://www.archlinuxcn.org/feed/ "~ArchCN News"
-https://bbs.archlinuxcn.org/extern.php?action=feed&type=rss "ArchCN bbs"
+https://forum.archlinuxcn.org/latest.rss
+https://forum.archlinuxcn.org/tag/rss.rss
 https://archlinux.org/feeds/packages/x86_64/ "~Arch repo"
 https://aur.archlinux.org/rss "~AUR"
 https://blog.lilydjwg.me/posts.rss
