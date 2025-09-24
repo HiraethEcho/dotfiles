@@ -29,7 +29,7 @@ clang 20.1.8-1
 cloudflared 2025.9.1-1
 cups 2:2.4.14-1
 darkhttpd 1.17-1
-deepseek-pake 1.0.0-1
+deepseek-pake 1.0.0-3
 dhcpcd 10.2.4-1
 dmenu 5.4-1
 dnsmasq 2.91-1
@@ -52,7 +52,7 @@ foot 1.24.0-1
 fzf 0.65.2-1
 fzf-tab-git r280.fac1451-1
 git 2.51.0-1
-github-cli 2.79.0-1
+github-cli 2.80.0-1
 glance 0.8.4-1
 gnome-keyring 1:48.0-1
 go 2:1.25.1-2
@@ -80,14 +80,14 @@ lib32-vulkan-radeon 1:25.2.3-2
 libnotify 0.8.6-1
 libxml2-legacy 2.13.9-1
 libzip 1.11.4-1
-linux 6.16.8.arch2-1
+linux 6.16.8.arch3-1
 linux-firmware-amdgpu 20250917-1
 linux-firmware-atheros 20250917-1
 linux-firmware-other 20250917-1
-linux-headers 6.16.8.arch2-1
+linux-headers 6.16.8.arch3-1
 linux-wifi-hotspot 1:4.7.2-2
-linux-zen 6.16.8.zen2-1
-linux-zen-headers 6.16.8.zen2-1
+linux-zen 6.16.8.zen3-1
+linux-zen-headers 6.16.8.zen3-1
 lua-language-server 3.15.0-1
 maim 5.8.1-2
 man-db 2.13.1-1
@@ -108,7 +108,6 @@ noto-fonts-emoji 1:2.051-1
 npm 11.6.0-1
 ntfs-3g 2022.10.3-2
 obsidian 1.9.12-1
-ollama 0.12.0-2
 openbox 3.6.1-12
 openssh 10.0p1-5
 os-prober 1.83-1
@@ -162,7 +161,7 @@ timeshift 25.07.7-1
 tinymist 1:0.13.26-1
 tlpui 1.8.0-1
 todoman 4.6.0-1
-tree-sitter 0.25.9-1
+tree-sitter 0.25.10-1
 ttf-daddytime-mono-nerd 3.4.0-1
 ttf-fragment-mono 1.21-1
 ttf-lxgw-wenkai-mono 1.520-2
@@ -172,7 +171,6 @@ ttf-nerd-fonts-symbols-mono 3.4.0-1
 typst 1:0.13.1-1
 ufrii-print 2-1
 unzip 6.0-23
-uv 0.8.20-1
 vdirsyncer 0.20.0-1
 virt-manager 5.1.0-1
 visual-studio-code-bin 1.104.1-1

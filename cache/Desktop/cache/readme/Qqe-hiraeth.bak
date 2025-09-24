@@ -108,7 +108,6 @@ noto-fonts-emoji
 npm
 ntfs-3g
 obsidian
-ollama
 openbox
 openssh
 os-prober
@@ -172,7 +171,6 @@ ttf-nerd-fonts-symbols-mono
 typst
 ufrii-print
 unzip
-uv
 vdirsyncer
 virt-manager
 visual-studio-code-bin
