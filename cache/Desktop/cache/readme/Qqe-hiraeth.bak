@@ -48,6 +48,7 @@ fcitx5-qt
 fd
 feh
 flameshot
+flomo-pake
 foot
 fzf
 fzf-tab-git
@@ -86,8 +87,6 @@ linux-firmware-atheros
 linux-firmware-other
 linux-headers
 linux-wifi-hotspot
-linux-zen
-linux-zen-headers
 lua-language-server
 maim
 man-db
