@@ -53,7 +53,7 @@ foot 1.24.0-1
 fzf 0.65.2-1
 fzf-tab-git r280.fac1451-1
 git 2.51.0-1
-github-cli 2.80.0-1
+github-cli 2.81.0-1
 glance 0.8.4-1
 gnome-keyring 1:48.0-1
 go 2:1.25.1-2
@@ -71,13 +71,13 @@ isd-appimage v0.5.1-2
 iw 6.17-1
 iwd 3.10-1
 khal 0.13.0-1
-kitty 0.43.0-1
+kitty 0.43.1-1
 koofr-desktop-bin 41a82e7-1
 lazydocker-bin 0.24.1-1
 lazygit 0.55.1-1
 less 1:679-1
-lib32-mesa 1:25.2.3-2
-lib32-vulkan-radeon 1:25.2.3-2
+lib32-mesa 1:25.2.4-1
+lib32-vulkan-radeon 1:25.2.4-1
 libnotify 0.8.7-1
 libxml2-legacy 2.13.9-1
 libzip 1.11.4-1
@@ -108,7 +108,7 @@ npm 11.6.1-1
 ntfs-3g 2022.10.3-2
 obsidian 1.9.12-1
 openbox 3.6.1-12
-openssh 10.0p1-5
+openssh 10.0p1-6
 os-prober 1.83-1
 otf-codenewroman-nerd 3.4.0-1
 pacfiles 0.2.7-2
@@ -127,7 +127,7 @@ prettier 3.6.2-2
 pyright 1.1.405-1
 python-pynvim 0.6.0-1
 qemu-base 10.1.0-1
-radicale 3.5.6-1
+radicale 3.5.7-1
 rar 7.12-1
 rclone 1.71.1-1
 rime-emoji 0.0.0.20250401-1
@@ -175,11 +175,11 @@ vdirsyncer 0.20.0-1
 virt-manager 5.1.0-1
 visual-studio-code-bin 1.104.2-1
 vscode-html-languageserver 1.104.0-1
-vulkan-radeon 1:25.2.3-2
+vulkan-radeon 1:25.2.4-1
 waterfox-bin 6.6.3-1
 watt-toolkit-bin 3.0.0.rc.16-2
 websocat 1.14.0-1
-wechat-bin 4.0.1.11-2
+wechat-bin 4.1.0.10-1
 wemeet-bin 3.26.10.400-3
 weread-pake 3.3.5-1
 wget 1.25.0-2
