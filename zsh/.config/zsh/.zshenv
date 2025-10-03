@@ -75,4 +75,3 @@ export STAR_IP="209.74.81.13"
 
 export ZOTERO_API_KEY="vxwGh0XaMLa637qhhGYZ48LS"
 export ZOTERO_USER_ID="9666949"
-. "/home/hiraeth/.local/share/cargo/env"

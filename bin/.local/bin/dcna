@@ -31,7 +31,7 @@ RCLONE_PAIR=(
   "$HOME/obsidian/;koofr:/obsidian/"
   "$HOME/obsidian/;tera:/obsidian/"
   "$HOME/obsidian/;cloudflare:/blog/"
-  "$HOME/.local/share/radicale/collections/collection-root/hiraeth/;cloudflare:/asset/radicale-hiraeth-collection/"
+  "$HOME/.local/share/calendar_zeabur/;cloudflare:/asset/radicale-hiraeth-collection/"
 )
 
 RED='\033[0;31m'

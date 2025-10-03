@@ -1,5 +1,5 @@
 # A glob expression which matches all directories relevant.
-path = "~/.local/share/radicale/collections/collection-root/hiraeth/*"
+path = "~/.local/share/calendar_zeabur/*"
 date_format = "%Y-%m-%d"
 time_format = "%H:%M"
 default_list = "todo"
