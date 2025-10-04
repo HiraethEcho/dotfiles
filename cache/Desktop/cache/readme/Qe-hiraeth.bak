@@ -37,7 +37,7 @@ docker 1:28.5.0-1
 dua-cli 2.32.0-1
 dunst 1.13.0-1
 efibootmgr 18-3
-eza 0.23.3-1
+eza 0.23.4-1
 fastfetch 2.53.0-1
 fcitx5 5.1.14-1
 fcitx5-chinese-addons 5.1.9-1
@@ -64,7 +64,7 @@ gvfs 1.58.0-1
 gvfs-dnssd 1.58.0-1
 gvim 9.1.1734-1
 harper 0.65.0-1
-hugo 0.150.1-1
+hugo 0.151.0-1
 imagemagick 7.1.2.3-2
 impala 0.3.0-1
 isd-appimage v0.5.1-2
@@ -146,7 +146,7 @@ stylua 2.3.0-1
 sudo 1.9.17.p1-1
 sx 3.0-1
 task 3.4.1-1
-tealdeer 1.7.2-1
+tealdeer 1.8.0-1
 tex-fmt 0.5.5-1
 texlab 5.23.1-1
 texlive-bibtexextra 2025.2-2
@@ -189,7 +189,7 @@ wl-clipboard 1:2.2.1-3
 xbindkeys 1.8.7-5
 xcape 1.2-5
 xclip 0.13-6
-xdg-desktop-portal 1.20.3-1
+xdg-desktop-portal 1.20.3-2
 xdg-ninja-git r549.854929e-1
 xdg-user-dirs-gtk 0.14-1
 xdotool 3.20211022.1-2
