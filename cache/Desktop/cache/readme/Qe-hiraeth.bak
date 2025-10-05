@@ -60,10 +60,10 @@ go 2:1.25.1-2
 gparted 1.7.0-1
 grub 2:2.12.r359.g19c698d12-1
 grub-btrfs 4.13-2
-gvfs 1.58.0-1
-gvfs-dnssd 1.58.0-1
+gvfs 1.58.0-2
+gvfs-dnssd 1.58.0-2
 gvim 9.1.1734-1
-harper 0.65.0-1
+harper 0.66.0-1
 hugo 0.151.0-1
 imagemagick 7.1.2.3-2
 impala 0.3.0-1
@@ -94,8 +94,8 @@ marksman 20241218-1
 mate-polkit 1.28.1-2
 mdcat 2.7.1-1
 mpc 0.35-1
-mpd 0.24.5-1
-mpv 1:0.40.0-6
+mpd 0.24.5-2
+mpv 1:0.40.0-7
 mtm-git r413.b346b86-1
 ncmpcpp 0.10.1-4
 neovim 0.11.4-1
@@ -107,7 +107,7 @@ noto-fonts-emoji 1:2.051-1
 npm 11.6.1-1
 ntfs-3g 2022.10.3-2
 obsidian 1.9.14-1
-openbox 3.6.1-12
+openbox 3.6.1-13
 openssh 10.0p1-6
 os-prober 1.83-1
 otf-codenewroman-nerd 3.4.0-1
@@ -173,6 +173,7 @@ unzip 6.0-23
 vdirsyncer 0.20.0-1
 virt-manager 5.1.0-1
 visual-studio-code-bin 1.104.3-1
+vscode-css-languageserver 1.104.0-1
 vscode-html-languageserver 1.104.0-1
 vulkan-radeon 1:25.2.4-1
 waterfox-bin 6.6.3-1
