@@ -59,13 +59,13 @@ gnome-keyring 1:48.0-1
 go 2:1.25.1-2
 gparted 1.7.0-1
 grub 2:2.12.r359.g19c698d12-1
-grub-btrfs 4.13-2
+grub-btrfs 4.14-1
 gvfs 1.58.0-2
 gvfs-dnssd 1.58.0-2
 gvim 9.1.1734-1
 harper 0.66.0-1
 hugo 0.151.0-1
-imagemagick 7.1.2.4-1
+imagemagick 7.1.2.5-1
 impala 0.3.0-1
 isd-appimage v0.5.1-2
 iw 6.17-1
@@ -94,7 +94,7 @@ marksman 20241218-1
 mate-polkit 1.28.1-2
 mdcat 2.7.1-1
 mpc 0.35-1
-mpd 0.24.5-2
+mpd 0.24.5-3
 mpv 1:0.40.0-7
 mtm-git r413.b346b86-1
 ncmpcpp 0.10.1-4
@@ -147,7 +147,7 @@ sudo 1.9.17.p1-1
 sx 3.0-1
 task 3.4.1-1
 tealdeer 1.8.0-1
-tex-fmt 0.5.5-1
+tex-fmt 0.5.6-1
 texlab 5.23.1-1
 texlive-bibtexextra 2025.2-2
 texlive-binextra 2025.2-2
