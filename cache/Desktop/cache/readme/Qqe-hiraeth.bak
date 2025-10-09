@@ -63,7 +63,6 @@ grub
 grub-btrfs
 gvfs
 gvfs-dnssd
-gvim
 harper
 hugo
 imagemagick
@@ -89,6 +88,7 @@ linux-firmware-other
 linux-headers
 linux-wifi-hotspot
 lua-language-server
+ly
 maim
 man-db
 marksman
@@ -108,7 +108,6 @@ noto-fonts-emoji
 npm
 ntfs-3g
 obsidian
-openbox
 openssh
 os-prober
 otf-codenewroman-nerd
@@ -173,7 +172,6 @@ ufrii-print
 unzip
 vdirsyncer
 virt-manager
-visual-studio-code-bin
 vscode-css-languageserver
 vscode-html-languageserver
 vulkan-radeon
@@ -200,6 +198,7 @@ xhidecursor
 xorg-server
 xorg-server-xephyr
 xorg-xhost
+xorg-xinit
 xorg-xinput
 xorg-xsetroot
 xorg-xwayland
