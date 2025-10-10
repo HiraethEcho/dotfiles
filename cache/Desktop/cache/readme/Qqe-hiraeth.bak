@@ -88,7 +88,7 @@ linux-firmware-other
 linux-headers
 linux-wifi-hotspot
 lua-language-server
-ly
+lxsession-gtk3
 maim
 man-db
 marksman

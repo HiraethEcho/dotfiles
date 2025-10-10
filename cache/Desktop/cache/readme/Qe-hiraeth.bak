@@ -44,7 +44,7 @@ fcitx5-chinese-addons 5.1.9-1
 fcitx5-configtool 5.1.10-1
 fcitx5-gtk 5.1.4-1
 fcitx5-pinyin-zhwiki 1:0.2.5.20250823-1
-fcitx5-qt 5.1.10-2
+fcitx5-qt 5.1.10-3
 fd 10.3.0-1
 feh 3.11.2-2
 ffmpeg4.4 4.4.6-3
@@ -88,7 +88,7 @@ linux-firmware-other 20250917-1
 linux-headers 6.17.1.arch1-1
 linux-wifi-hotspot 1:4.7.2-2
 lua-language-server 3.15.0-1
-ly 1.1.2-1
+lxsession-gtk3 1:0.5.6-1
 maim 5.8.1-2
 man-db 2.13.1-1
 marksman 20241218-1
@@ -132,7 +132,7 @@ rclone 1.71.1-1
 rime-emoji 0.0.0.20250401-1
 ripgrep 14.1.1-1
 rmpc 0.9.0-1
-rocm-smi-lib 6.4.3-1
+rocm-smi-lib 6.4.4-1
 rofi 2.0.0-1
 ruby 3.4.5-1
 rust 1:1.90.0-3
@@ -175,7 +175,7 @@ virt-manager 5.1.0-1
 vscode-css-languageserver 1.104.0-1
 vscode-html-languageserver 1.104.0-1
 vulkan-radeon 1:25.2.4-1
-waterfox-bin 6.6.3-1
+waterfox-bin 6.6.4-1
 watt-toolkit-bin 3.0.0.rc.16-2
 websocat 1.14.0-1
 wechat-bin 4.1.0.10-1
