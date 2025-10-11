@@ -11,8 +11,8 @@ report.ls.sort=project
 
 report.list.columns=id,depends,description.truncated,tags,project,cal,due.relative,recur
 report.list.labels=ID,Dep,Description,Tags,Project,Cal,Due,Recurrence
-report.list.filter=status:pending
-report.list.sort=status+/,priority,project
+report.list.filter=status:pending or status:recurring
+report.list.sort=status-/,priority,project
 # report.list.context=false
 
 report.long.columns=id,depends,description,tags,project,cal,due,recur

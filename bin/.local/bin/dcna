@@ -330,11 +330,16 @@ day() {
 }
 
 night() {
+  misc
   rclone_push_all "$@"
-  system_bak "$@"
   git_push_all "$@"
+  system_bak "$@"
   total_log "$@"
   night_reboot "$@"
+}
+
+misc() {
+  vdirsync sync zeabur
 }
 
 mytest() {
