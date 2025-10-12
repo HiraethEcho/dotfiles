@@ -11,9 +11,9 @@ let {
         type = "workspaces"
         all_monitors = false
         name_map = {
-            1 = "󰙯"
-            2 = "icon:firefox"
-            3 = ""
+            // 1 = "󰋜"
+            // 2 = "icon:firefox"
+            // 3 = ""
             // Games = "icon:steam"
             // Code = ""
         }
@@ -126,6 +126,7 @@ let {
     // $right = [ $mpd_local $mpd_server $sys_info $volume $clipboard $power_menu $clock $notifications ]
     $right = [ $mpd_server $volume $clipboard $power_menu $clock ]
 }
+
 in {
     // anchor_to_edges = true
     position = "top"

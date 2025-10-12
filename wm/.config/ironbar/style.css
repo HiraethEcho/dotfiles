@@ -1,0 +1,260 @@
+@define-color color_bg #2d2d2d;
+@define-color color_bg_dark #1c1c1c;
+@define-color color_border #424242;
+@define-color color_border_active #6699cc;
+@define-color color_text #ffffff;
+@define-color color_urgent #8f0a0a;
+
+/* -- base styles -- */
+
+* {
+  font-family:
+    CodeNewRoman Nerd Font,
+    sans-serif;
+  border: none;
+  border-radius: 0;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+box,
+menubar,
+button {
+  background-color: @color_bg;
+  background-image: none;
+  box-shadow: none;
+}
+
+button,
+label {
+  color: @color_text;
+  padding: 0.1rem 0.2rem;
+  margin: 0 0.2rem;
+}
+
+button:hover {
+  background-color: @color_bg_dark;
+}
+
+scale trough {
+  min-width: 1px;
+  min-height: 2px;
+}
+
+#bar {
+  border-top: 1px solid @color_border;
+}
+
+.popup {
+  border: 1px solid @color_border;
+  padding: 0.5rem;
+}
+
+/* -- bluetooth -- */
+.popup-bluetooth {
+  min-height: 14rem;
+  min-width: 24rem;
+}
+
+.popup-bluetooth .header {
+  padding-bottom: 1rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid @color_border;
+}
+
+.popup-bluetooth .header .label {
+  margin-left: 0.5rem;
+}
+
+.popup-bluetooth .disabled .spinner {
+  min-width: 2rem;
+  min-height: 2rem;
+  padding: 0.4rem;
+}
+
+.popup-bluetooth .devices .box .device {
+  margin-bottom: 0.4rem;
+}
+
+.popup-bluetooth .devices .icon {
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  margin-right: 0.8rem;
+}
+
+.popup-bluetooth .devices .box .device .status .footer-label {
+  font-size: 0.8rem;
+}
+
+.popup-bluetooth .devices .box .device .spinner {
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  margin: 0.5rem;
+}
+
+/* -- clipboard -- */
+
+.clipboard {
+  font-size: 1rem;
+}
+
+.popup-clipboard .item {
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid @color_border;
+}
+
+/* -- clock -- */
+
+.clock {
+  font-weight: bold;
+}
+
+.popup-clock .calendar-clock {
+  color: @color_text;
+  font-size: 2.5rem;
+  padding-bottom: 0.1rem;
+}
+
+.popup-clock .calendar {
+  background-color: @color_bg;
+  color: @color_text;
+}
+
+.popup-clock .calendar .header {
+  padding-top: 1rem;
+  border-top: 1px solid @color_border;
+  font-size: 1.5rem;
+}
+
+.popup-clock .calendar:selected {
+  background-color: @color_border_active;
+}
+
+/* -- launcher -- */
+
+.launcher .item {
+  margin: 0 0.2rem;
+}
+
+.launcher .ifix examtem:not(.focused):hover {
+  background-color: @color_bg_dark;
+}
+
+.launcher .open {
+  border-bottom: 0.1rem solid @color_text;
+}
+
+.launcher .focused {
+  border-bottom: 0.1rem solid @color_border_active;
+}
+
+.launcher .urgent {
+  border-bottom-color: @color_urgent;
+}
+
+.popup-launcher .popup-item:not(:first-child) {
+  border-top: 0.1rem solid @color_border;
+}
+
+/* -- music -- */
+
+.music:hover * {
+  background-color: @color_bg_dark;
+}
+
+.popup-music .album-art {
+  margin-right: 1rem;
+}
+
+.popup-music .icon-box {
+  margin-right: 0.4rem;
+}
+
+.popup-music .title .icon,
+.popup-music .title .label {
+  font-size: 1.7rem;
+}
+
+.popup-music .controls *:disabled {
+  color: @color_border;
+}
+
+.popup-music .volume .slider slider {
+  border-radius: 100%;
+}
+
+.popup-music .progress .slider slider {
+  border-radius: 100%;
+}
+
+/* notifications */
+
+.notifications .count {
+  font-size: 0.6rem;
+  background-color: @color_text;
+  color: @color_bg;
+  border-radius: 100%;
+  margin-right: 3px;
+  margin-top: 3px;
+  padding-left: 4px;
+  padding-right: 4px;
+  opacity: 0.7;
+}
+
+/* -- script -- */
+
+.script {
+  padding-left: 10px;
+}
+
+/* -- sys_info -- */
+
+.sysinfo {
+  margin: 0 0.2rem;
+}
+
+/* -- tray -- */
+
+.tray {
+  margin: 0 0.2rem;
+}
+
+/* -- volume -- */
+
+.popup-volume .device-box {
+  border-right: 1px solid @color_border;
+}
+
+/* -- workspaces -- */
+
+.workspaces .item.focused {
+  box-shadow: inset 0 -3px;
+  background-color: @color_bg_dark;
+}
+
+.workspaces .item.urgent {
+  background-color: @color_urgent;
+}
+
+.workspaces .item:hover {
+  box-shadow: inset 0 -3px;
+}
+
+/* -- custom: power menu -- */
+
+.popup-power-menu #header {
+  font-size: 1rem;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid @color_border;
+}
+
+.popup-power-menu .power-btn {
+  border: 1px solid @color_border;
+  padding: 0.6em 1rem;
+}
+
+.popup-power-menu #buttons > *:nth-child(1) .power-btn {
+  margin-right: 1rem;
+}

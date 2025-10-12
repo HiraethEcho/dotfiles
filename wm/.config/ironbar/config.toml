@@ -1,0 +1,160 @@
+position = "top"
+height = 20
+
+[[start]]
+type = "workspaces"
+all_monitors = false
+icon_size = 15
+
+# [start.name_map]
+# 1 = "󰙯"
+# 2 = "icon:firefox"
+# 3 = ""
+# Games = "icon:steam"
+# Code = ""
+
+[[start]]
+type = "menu"
+icon_size = 15
+height = 400
+width = 200
+icon = "archlinux"
+
+[[start.start]]
+type = "custom"
+label = "Terminal"
+on_click = "kitty"
+
+[[start]]
+type = "launcher"
+favorites = [
+    "waterfox",
+    "wechat",
+    "kitty",
+]
+show_names = false
+show_icons = true
+icon_size = 15
+
+[[end]]
+type = "tray"
+icon_size = 15
+
+[[end]]
+type = 'sys_info'
+format = [
+    " {cpu_percent}% | {cpu_frequency} GHz",
+    " {memory_used#Mb} Mb",
+    "󰋊 {disk_used#G@/:.1} GB ({disk_percent@/}%)",
+]
+icon_size = 15
+
+[end.interval]
+cpu = 1
+disks = 300
+memory = 30
+
+[[end]]
+type = "volume"
+format = "{icon} {percentage}%"
+max_volume = 100
+icon_size = 15
+
+[end.icons]
+volume_high = "󰕾"
+volume_medium = "󰖀"
+volume_low = "󰕿"
+muted = "󰝟"
+
+[[end]]
+type = "bluetooth"
+icon_size = 15
+
+[end.format]
+not_found = ""
+disabled = " Off"
+enabled = " On"
+connected = " {device_alias}"
+connected_battery = " {device_alias} • {device_battery_percent}%"
+
+[end.popup]
+scrollable = true
+header = " Enable Bluetooth"
+disabled = "{adapter_status}"
+
+[end.popup.device]
+header = "{device_alias}"
+header_battery = "{device_alias}"
+footer = "{device_status}"
+footer_battery = "{device_status} • Battery {device_battery_percent}%"
+
+[end.adapter_status]
+not_found = "No Bluetooth adapters found"
+enabled = "Bluetooth enabled"
+enabling = "Enabling Bluetooth..."
+disabled = "Bluetooth disabled"
+disabling = "Disabling Bluetooth..."
+
+[end.device_status]
+connected = "Connected"
+connecting = "Connecting..."
+disconnected = "Disconnect"
+disconnecting = "Disconnecting..."
+[[end]]
+type = "clipboard"
+max_items = 3
+icon_size = 15
+
+[end.truncate]
+mode = "end"
+length = 50
+
+[[end]]
+type = "clock"
+format = " %Y-%m"
+icon_size = 15
+[[end]]
+type = "clock"
+format = " %H:%M"
+icon_size = 15
+
+[[end]]
+type = "custom"
+class = "power-menu"
+tooltip = "Up: {{30000:uptime -p | cut -d ' ' -f2-}}"
+icon_size = 15
+
+[[end.bar]]
+type = "button"
+name = "power-btn"
+label = ""
+on_click = "popup:toggle"
+
+[[end.popup]]
+type = "box"
+orientation = "vertical"
+
+[[end.popup.widgets]]
+type = "label"
+name = "header"
+label = "Power menu"
+
+[[end.popup.widgets]]
+type = "box"
+
+[[end.popup.widgets.widgets]]
+type = "button"
+class = "power-btn"
+label = "<span font-size='40pt'></span>"
+on_click = "!shutdown now"
+
+[[end.popup.widgets.widgets]]
+type = "button"
+class = "power-btn"
+label = "<span font-size='40pt'></span>"
+on_click = "!reboot"
+
+[[end.popup.widgets]]
+type = "label"
+name = "uptime"
+label = "Uptime: {{30000:uptime -p | cut -d ' ' -f2-}}"

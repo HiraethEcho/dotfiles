@@ -55,6 +55,7 @@ fzf
 fzf-tab-git
 git
 github-cli
+github-copilot
 glance
 gnome-keyring
 go
@@ -88,7 +89,6 @@ linux-firmware-other
 linux-headers
 linux-wifi-hotspot
 lua-language-server
-lxsession-gtk3
 maim
 man-db
 marksman
