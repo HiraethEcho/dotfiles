@@ -4,7 +4,6 @@ acpilight 1.2-3
 aerc 0.21.0-1
 alsa-utils 1.2.14-1
 amd-ucode 20251011-1
-apache-tools 2.4.65-1
 arch-wiki-docs 20250801-1
 archlinuxcn-keyring 20250531-1
 atuin 18.8.0-1
@@ -56,9 +55,7 @@ fzf-tab-git r280.fac1451-1
 git 2.51.0-1
 github-cli 2.81.0-1
 github-copilot 0.0.339-1
-glance 0.8.4-1
 gnome-keyring 1:48.0-1
-go 2:1.25.2-1
 gparted 1.7.0-1
 grub 2:2.12.r359.g19c698d12-1
 grub-btrfs 4.14-1

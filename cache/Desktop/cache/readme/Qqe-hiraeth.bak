@@ -4,7 +4,6 @@ acpilight
 aerc
 alsa-utils
 amd-ucode
-apache-tools
 arch-wiki-docs
 archlinuxcn-keyring
 atuin
@@ -56,9 +55,7 @@ fzf-tab-git
 git
 github-cli
 github-copilot
-glance
 gnome-keyring
-go
 gparted
 grub
 grub-btrfs

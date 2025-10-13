@@ -5,8 +5,6 @@ https://plink.anyfeeder.com/gcores "~机核"
 https://www.douban.com/feed/review/book "~豆瓣书评"
 https://blog.xiaket.org/feed.xml
 http://solidot.org/index.rss
-https://www.ruanyifeng.com/blog/atom.xml
-http://feeds.feedburner.com/ruanyifeng
 
 https://aphilosopher.drmcl.com/feed/ "~A Philosopher's blog"
 https://philosophynow.org/rss "~philosophy now"
@@ -21,6 +19,8 @@ https://pathos.page/feed.xml
 https://prologue.dev/atomfeed
 https://yayu.net/feed
 https://www.bboy.app/atom.xml
+https://www.ruanyifeng.com/blog/atom.xml
+https://sakari.top/index.xml
 
 https://github.com/v1nh1shungry/nvim-weekly-cn/releases.atom "~nvim weekly cn"
 https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins"
