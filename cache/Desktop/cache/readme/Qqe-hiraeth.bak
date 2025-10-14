@@ -69,6 +69,7 @@ ironbar-bin
 isd-appimage
 iw
 iwd
+keyd
 khal
 kitty
 koofr-desktop-bin
@@ -114,6 +115,7 @@ pacfiles
 pacman-contrib
 pamixer
 paru
+pcmanfm-gtk3
 pdfbooklet
 picgo
 picom
@@ -194,6 +196,7 @@ xdg-user-dirs-gtk
 xdotool
 xf86-video-amdgpu
 xhidecursor
+xkeycaps
 xorg-server
 xorg-server-xephyr
 xorg-xhost
