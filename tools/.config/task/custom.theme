@@ -38,8 +38,8 @@ color.completed=gray10 on gray2
 color.active=underline
 
 // color.overdue=on rgb104
-color.overdue=on color8
-color.due.today=underline inverse
+color.overdue=underline on color8
+color.due.today=inverse
 color.due=bold
 color.blocked=gray18
 // color.uda.priority.H=rgb540

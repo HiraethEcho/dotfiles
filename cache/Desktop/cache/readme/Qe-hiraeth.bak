@@ -25,7 +25,7 @@ btrfs-progs 6.17-1
 buku 5.0-1
 cava 0.10.6-1
 clang 20.1.8-2
-cloudflared 2025.9.1-1
+cloudflared 2025.10.0-1
 cups 2:2.4.14-1
 darkhttpd 1.17-1
 deepseek-pake 1.0.0-3
@@ -54,7 +54,7 @@ fzf 0.65.2-1
 fzf-tab-git r280.fac1451-1
 git 2.51.0-1
 github-cli 2.81.0-1
-github-copilot 0.0.340-1
+github-copilot 0.0.341-1
 gnome-keyring 1:48.0-1
 gparted 1.7.0-1
 grub 2:2.12.r418.g6b5c671d-1
@@ -63,7 +63,7 @@ gvfs 1.58.0-2
 gvfs-dnssd 1.58.0-2
 harper 0.67.0-1
 hugo 0.151.0-1
-imagemagick 7.1.2.6-1
+imagemagick 7.1.2.7-1
 impala 0.3.0-1
 ironbar-bin 0.17.1-1
 isd-appimage v0.5.1-2
@@ -81,11 +81,11 @@ lib32-vulkan-radeon 1:25.2.4-2
 libnotify 0.8.7-1
 libxml2-legacy 2.13.9-1
 libzip 1.11.4-1
-linux 6.17.1.arch1-1
+linux 6.17.2.arch1-1
 linux-firmware-amdgpu 20251011-1
 linux-firmware-atheros 20251011-1
 linux-firmware-other 20251011-1
-linux-headers 6.17.1.arch1-1
+linux-headers 6.17.2.arch1-1
 linux-wifi-hotspot 1:4.7.2-2
 lua-language-server 3.15.0-1
 maim 5.8.1-2
