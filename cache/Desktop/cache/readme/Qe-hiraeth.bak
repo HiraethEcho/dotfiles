@@ -53,8 +53,8 @@ foot 1.24.0-1
 fzf 0.65.2-1
 fzf-tab-git r280.fac1451-1
 git 2.51.0-1
-github-cli 2.81.0-1
-github-copilot 0.0.341-1
+github-cli 2.82.0-1
+github-copilot 0.0.342-1
 gnome-keyring 1:48.0-1
 gparted 1.7.0-1
 grub 2:2.12.r418.g6b5c671d-1
@@ -62,7 +62,7 @@ grub-btrfs 4.14-1
 gvfs 1.58.0-2
 gvfs-dnssd 1.58.0-2
 harper 0.67.0-1
-hugo 0.151.0-1
+hugo 0.151.1-1
 imagemagick 7.1.2.7-1
 impala 0.3.0-1
 ironbar-bin 0.17.1-1
@@ -138,7 +138,7 @@ ruby 3.4.7-1
 rust 1:1.90.0-3
 shellcheck-bin 0.11.0-1
 shfmt 3.12.0-1
-sioyek 2.0.0-28
+sioyek 2.0.0-29
 snapper 0.13.0-1
 sshfs 3.7.3-3
 stow 2.4.1-1
@@ -180,7 +180,7 @@ watt-toolkit-bin 3.0.0.rc.16-2
 websocat 1.14.0-1
 wechat-bin 4.1.0.10-1
 wemeet-bin 3.26.10.400-3
-weread-pake 3.3.5-1
+weread-pake 3.4.0-1
 wget 1.25.0-2
 wikiman 2.14.1-1
 wiremix 0.7.0-1
@@ -208,7 +208,7 @@ yazi 25.5.31-2
 yutto 2.1.0-1
 zathura 0.5.13-1
 zathura-djvu 0.2.10-6
-zathura-pdf-mupdf 0.4.4-24
+zathura-pdf-mupdf 0.4.4-25
 zip 3.0-11
 zotero 7.0.25-1
 zoxide 0.9.8-2
