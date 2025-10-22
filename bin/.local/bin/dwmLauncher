@@ -11,13 +11,13 @@ case "$1" in
     case "$2" in 
       1) st ;;
       # 2) onedrivegui ;;
-      3) librewolf ;;
+      3) waterfox ;;
     esac
     ;;
   3) # files
     case "$2" in 
-      1) pcmanfm ;;
-      2) obsidian ;;
+      1) obsidian ;;
+      2) weread ;;
       3) zotero ;;
     esac
     ;;
