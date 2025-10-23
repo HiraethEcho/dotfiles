@@ -52,7 +52,7 @@ icon_size = 15
 [end.interval]
 cpu = 1
 disks = 300
-memory = 30
+memory = 5
 
 [[end]]
 type = "volume"
@@ -111,11 +111,7 @@ length = 50
 
 [[end]]
 type = "clock"
-format = " %Y-%m"
-icon_size = 15
-[[end]]
-type = "clock"
-format = " %H:%M"
+format = " %Y-%m  %H:%M"
 icon_size = 15
 
 [[end]]
