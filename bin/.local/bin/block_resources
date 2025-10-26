@@ -14,40 +14,79 @@ ICON=""
 
 case "$BLOCK_BUTTON" in
 # 1) st -e btop ;;
-  1) notify-send "󰁹 Battery" "$(acpi | cut -d ':' -f 2-)" ;;
-  # 2) tlpui ;;
-  3) st -e btop ;;
-# 4) notify-send "res" "$BLOCK_BUTTON" ;;
-# 5) notify-send "res" "$BLOCK_BUTTON" ;;
-  6) nohup st -e nvim "$0" > /dev/null &;;
+1) notify-send "󰁹 Battery" "$(acpi | cut -d ':' -f 2-)" ;;
+# 2) tlpui ;;
+2)
+  powerprofilesctl set balanced &
+  dunstify -h string:x-dunst-stack-tag:power "Power" \
+    "$(powerprofilesctl get)"
+  ;;
+# 2)
+#   ACTION=$(dunstify -h string:x-dunst-stack-tag:power "Power" \
+#     "$(powerprofilesctl get)
+# Left: power-saver
+# Right: performance
+# Mid: More" --action="balanced,balanced")
+#   case "$ACTION" in
+#   "default")
+#     powerprofilesctl set performance &
+#     dunstify -h string:x-dunst-stack-tag:power "Power" \
+#       "$(powerprofilesctl get)"
+#     ;;
+#   "balanced")
+#     powerprofilesctl set balanced &
+#     dunstify -h string:x-dunst-stack-tag:power "Power" \
+#       "$(powerprofilesctl get)"
+#     ;;
+#   "2")
+#     powerprofilesctl set power-saver &
+#     dunstify -h string:x-dunst-stack-tag:power "Power" \
+#       "$(powerprofilesctl get)"
+#     ;;
+#   esac
+#   ;;
+3) st -e btop ;;
+4)
+  powerprofilesctl set performance &
+  dunstify -h string:x-dunst-stack-tag:power "Power" \
+    "$(powerprofilesctl get)"
+  ;;
+5)
+  powerprofilesctl set power-saver &
+  dunstify -h string:x-dunst-stack-tag:power "Power" \
+    "$(powerprofilesctl get)"
+  ;;
+  # 4) notify-send "res" "$BLOCK_BUTTON" ;;
+  # 5) notify-send "res" "$BLOCK_BUTTON" ;;
+6) nohup st -e nvim "$0" >/dev/null & ;;
 esac
-  # df_output=$(df -h $df_check_location | tail -n 1)
-  # USED_RAM=$(free -mh --si | awk  {'print $3'} | head -n 2 | tail -1)
-  # TOTAL_RAM=$(free -mh --si | awk  {'print $2'} | head -n 2 | tail -1)
-  # STOUSED=$(echo $df_output | awk '{print $3}')
-  # STOTOT=$(echo $df_output | awk '{print $2}')
-  # STOPER=$(echo $df_output | awk '{print $5}')
+# df_output=$(df -h $df_check_location | tail -n 1)
+# USED_RAM=$(free -mh --si | awk  {'print $3'} | head -n 2 | tail -1)
+# TOTAL_RAM=$(free -mh --si | awk  {'print $2'} | head -n 2 | tail -1)
+# STOUSED=$(echo $df_output | awk '{print $3}')
+# STOTOT=$(echo $df_output | awk '{print $2}')
+# STOPER=$(echo $df_output | awk '{print $5}')
 
-  # if [ "$CPU_TEMP" -ge $WARNING_LEVEL ]; then
-  #   # printf "^f3^󰍛^f2^%s/%s^f2^󰘚^f2^%s^f2^󰈸^f2^%s°C" "$USED_RAM" "$TOTAL_RAM" "$CPU" "$CPU_TEMP"
-  #   printf "^f3^󰍛^f2^%s^f2^󰘚^f2^%s^f2^󰈸^f2^%s°C" "$RAM" "$CPU" "$CPU_TEMP"
- #  else
-  #   # printf "^f3^󰍛^f2^%s/%s^f2^󰘚^f2^%s^f2^^f2^%s°C" "$USED_RAM" "$TOTAL_RAM" "$CPU" "$CPU_TEMP"
-  #   printf "^f3^󰍛^f2^%s^f2^󰘚^f2^%s^f2^^f2^%s°C" "$RAM" "$CPU" "$CPU_TEMP"
-  # fi
+# if [ "$CPU_TEMP" -ge $WARNING_LEVEL ]; then
+#   # printf "^f3^󰍛^f2^%s/%s^f2^󰘚^f2^%s^f2^󰈸^f2^%s°C" "$USED_RAM" "$TOTAL_RAM" "$CPU" "$CPU_TEMP"
+#   printf "^f3^󰍛^f2^%s^f2^󰘚^f2^%s^f2^󰈸^f2^%s°C" "$RAM" "$CPU" "$CPU_TEMP"
+#  else
+#   # printf "^f3^󰍛^f2^%s/%s^f2^󰘚^f2^%s^f2^^f2^%s°C" "$USED_RAM" "$TOTAL_RAM" "$CPU" "$CPU_TEMP"
+#   printf "^f3^󰍛^f2^%s^f2^󰘚^f2^%s^f2^^f2^%s°C" "$RAM" "$CPU" "$CPU_TEMP"
+# fi
 printf "^c#e39af3^"
 printf "^f3^󰍛^f2^%s^f2^󰘚^f2^%s" "$RAM" "$CPU"
 
 if [[ $capacity -ge 60 ]]; then
-printf "^c#89b482^"
+  printf "^c#89b482^"
 elif [[ $capacity -le 30 ]]; then
-printf "^c#de6020^"
+  printf "^c#de6020^"
 else
-printf "^c#EBCB8B^"
+  printf "^c#EBCB8B^"
 fi
 
 if [[ "$charging" == "Charging" ]]; then
-    ICON=
+  ICON=
 else
   if [[ $capacity -le 25 ]]; then
     ICON=
@@ -57,5 +96,5 @@ else
 fi
 printf "^f3^%s^f2^" "$ICON"
 
-a=$(( (capacity)/5))
+a=$(((capacity) / 5))
 printf "^f2^^s0,7,22,12^^r1,8,%s,10^^r22,10,2,6^^f26^%s%%" "$a" "$capacity"
