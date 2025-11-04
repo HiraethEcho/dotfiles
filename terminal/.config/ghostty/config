@@ -1,13 +1,13 @@
-font-family = "CodeNewRoman Nerd Font"
-# font-family-italic = "Maple Mono NF"
-font-family-italic = "Latin Modern Mono"
-font-family-bold = 
+font-family = "CodeNewRoman Nerd Font Propo"
+font-family-italic = "Maple Mono"
+# font-family-italic = "Latin Modern Mono"
+font-family-bold = "DaddyTime Mono Nerd Font"
 font-family-bold-italic = 
-font-style = default
-font-style-bold = default
-font-style-italic = default
-font-style-bold-italic = default
-font-synthetic-style = bold,italic,bold-italic
+# font-style = default
+# font-style-bold = default
+# font-style-italic = default
+# font-style-bold-italic = default
+# font-synthetic-style = bold,italic,bold-italic
 font-feature = 
 font-size = 12
 font-variation = 
@@ -16,7 +16,7 @@ font-variation-italic =
 font-variation-bold-italic = 
 font-codepoint-map = 
 font-thicken = false
-font-thicken-strength = 255
+# font-thicken-strength = 255
 alpha-blending = native
 adjust-cell-width = 
 adjust-cell-height = 
@@ -342,6 +342,8 @@ working-directory =
 # keybind = ctrl+shift+enter=toggle_split_zoom
 # keybind = super+ctrl+left_bracket=goto_split:previous
 keybind = ctrl+b>c=new_tab
+keybind = ctrl+tab=next_tab
+keybind = ctrl++shift+tab=previous_tab
 # keybind = ctrl+shift+right=next_tab
 
 keybind = ctrl+comma=open_config
@@ -458,8 +460,8 @@ gtk-wide-tabs = true
 gtk-adwaita = true
 gtk-custom-css = 
 desktop-notifications = true
-bold-is-bright = false
-term = xterm-ghostty
+bold-is-bright = true
+# term = xterm-ghostty
 enquiry-response = 
 auto-update = 
 auto-update-channel = 
