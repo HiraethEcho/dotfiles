@@ -1,37 +1,37 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "42f64c0"
-hash = "e01006bfb38951ea89031bd918b20dbb"
+rev = "8f1d971"
+hash = "63b6c222bf2103b3023389dde5e2ecfe"
 
 [[plugin.deps]]
 use = "Lil-Dank/lazygit"
-rev = "7a08a09"
-hash = "a1fa2b3e1826c3a34804ea8c548e9f80"
+rev = "8f37dc5"
+hash = "ee71543790f0ce3951161045a3787abd"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mount"
-rev = "42f64c0"
-hash = "b3f1d6ec3721d4061aad5f69cddb0cf9"
+rev = "8f1d971"
+hash = "4fccaaf10c36dc2466e2438a386ff017"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "42f64c0"
-hash = "d6f60c24d8c0cf57a855bf46115b2502"
+rev = "8f1d971"
+hash = "8a7c58225816a163a6e8730c0adafbc8"
+
+[[plugin.deps]]
+use = "ahkohd/eza-preview"
+rev = "a97cf55"
+hash = "cc3aef07a8b1c3fe820f1fbb9a5a2483"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:piper"
+rev = "8f1d971"
+hash = "64713dcd74daf9ec644883a5895e5d1"
 
 [[plugin.deps]]
 use = "GrzegorzKozub/mdcat"
 rev = "7b7380a"
 hash = "40c20e6c1085d1f45309b9f148bf4f6e"
-
-[[plugin.deps]]
-use = "ahkohd/eza-preview"
-rev = "7a93433"
-hash = "22e1bd3dd03894746a3540b5f3729d0c"
-
-[[plugin.deps]]
-use = "yazi-rs/plugins:mime-ext"
-rev = "42f64c0"
-hash = "4c49c446328c4553a4ccab7facc10b21"
 
 [[flavor.deps]]
 use = "AdithyanA2005/nord"
