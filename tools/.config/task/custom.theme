@@ -35,10 +35,11 @@ color.debug=blue
 # Task state
 color.deleted=gray8 on gray1
 color.completed=gray10 on gray2
-color.active=underline
+// color.active=underline
 
 // color.overdue=on rgb104
-color.overdue=on color8
+// color.overdue=on color8
+color.overdue=underline
 color.due.today=inverse
 color.due=bold
 color.blocked=gray18
