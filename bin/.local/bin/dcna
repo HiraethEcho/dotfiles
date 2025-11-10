@@ -8,31 +8,37 @@
 CONFLICT_DIR="$HOME/conflicts"
 GIT_REPO=(
   "$HOME/Documents/projects"
-  "$HOME/obsidian"
+  "$HOME/memex"
   "$HOME/.config/nvim"
   "$HOME/dotfiles"
 )
 
 RCLONE_PAIR=(
   "$HOME/Documents/doc/;koofr:/kDocuments/doc/"
-  "$HOME/Documents/ucas/;koofr:/kDocuments/ucas/"
+  "$HOME/Documents/math/;koofr:/kDocuments/math/"
+  "$HOME/Documents/math/;tera:/Documents/math/"
   "$HOME/Documents/zotero_files/;koofr:/kDocuments/zotero_files/"
-  "$HOME/Documents/talks/;koofr:/kDocuments/talks/"
-  "$HOME/Documents/projects/;koofr:/kDocuments/projects/"
-  "$HOME/Documents/lectures/;koofr:/kDocuments/lectures/"
-  "$HOME/Documents/philosophy/;koofr:/kDocuments/philosophy/"
-  # "$HOME/Documents/doc/;tera:/Documents/doc/"
-  # "$HOME/Documents/ucas/;tera:/Documents/ucas/"
-  # "$HOME/Documents/zotero_files/;tera:/Documents/zotero_files/"
-  # "$HOME/Documents/talks/;tera:/Documents/talks/"
-  # "$HOME/Documents/projects/;tera:/Documents/projects/"
-  # "$HOME/Documents/lectures/;tera:/Documents/lectures/"
-  # "$HOME/Documents/philosophy/;tera:/Documents/philosophy/"
-  "$HOME/obsidian/;koofr:/obsidian/"
-  "$HOME/obsidian/;tera:/obsidian/"
-  "$HOME/obsidian/;cloudflare:/blog/"
+  "$HOME/memex/;koofr:/memex/"
+  "$HOME/memex/;tera:/memex/"
   "$HOME/.local/share/calendar_zeabur/;cloudflare:/asset/radicale-hiraeth-collection/"
 )
+
+
+# "$HOME/Documents/ucas/;koofr:/kDocuments/ucas/"
+# "$HOME/Documents/projects/;koofr:/kDocuments/projects/"
+# "$HOME/Documents/lectures/;koofr:/kDocuments/lectures/"
+# "$HOME/Documents/talks/;koofr:/kDocuments/talks/"
+# "$HOME/Documents/philosophy/;koofr:/kDocuments/philosophy/"
+# "$HOME/Documents/doc/;tera:/Documents/doc/"
+# "$HOME/Documents/ucas/;tera:/Documents/ucas/"
+# "$HOME/Documents/zotero_files/;tera:/Documents/zotero_files/"
+# "$HOME/Documents/talks/;tera:/Documents/talks/"
+# "$HOME/Documents/projects/;tera:/Documents/projects/"
+# "$HOME/Documents/lectures/;tera:/Documents/lectures/"
+# "$HOME/Documents/philosophy/;tera:/Documents/philosophy/"
+# "$HOME/Documents/obsidian_old/;cloudflare:/blog/"
+# "$HOME/Documents/obsidian_old/;koofr:/obsidian_old/"
+# "$HOME/Documents/obsidian_old/;tera:/obsidian_old/"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
