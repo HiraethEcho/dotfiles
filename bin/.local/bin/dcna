@@ -12,14 +12,15 @@ GIT_REPO=(
   "$HOME/.config/nvim"
   "$HOME/dotfiles"
 )
+# "$HOME/Documents/memex"
 
 RCLONE_PAIR=(
   "$HOME/Documents/doc/;koofr:/kDocuments/doc/"
   "$HOME/Documents/math/;koofr:/kDocuments/math/"
   "$HOME/Documents/math/;tera:/Documents/math/"
   "$HOME/Documents/zotero_files/;koofr:/kDocuments/zotero_files/"
-  "$HOME/Documents/memex/;koofr:/memex/"
-  "$HOME/Documents/memex/;tera:/memex/"
+  "$HOME/memex/;koofr:/memex/"
+  "$HOME/memex/;tera:/memex/"
   "$HOME/.local/share/calendar_zeabur/;cloudflare:/asset/radicale-hiraeth-collection/"
 )
 
