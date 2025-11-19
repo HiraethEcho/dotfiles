@@ -16,12 +16,17 @@ GIT_REPO=(
 
 RCLONE_PAIR=(
   "$HOME/Documents/doc/;koofr:/kDocuments/doc/"
-  "$HOME/Documents/math/;koofr:/kDocuments/math/"
-  "$HOME/Documents/math/;tera:/Documents/math/"
   "$HOME/Documents/zotero_files/;koofr:/kDocuments/zotero_files/"
+  "$HOME/.local/share/calendar_zeabur/;cloudflare:/asset/radicale-hiraeth-collection/"
+  "$HOME/Code/docs/;koofr:/docs/"
+  "$HOME/Code/docs/;tera:/docs/"
+  "$HOME/Code/docs/;cloudflare:/blog/docs"
   "$HOME/memex/;koofr:/memex/"
   "$HOME/memex/;tera:/memex/"
-  "$HOME/.local/share/calendar_zeabur/;cloudflare:/asset/radicale-hiraeth-collection/"
+  "$HOME/memex/;cloudflare:/blog/memex"
+  "$HOME/Documents/math/;koofr:/kDocuments/math/"
+  "$HOME/Documents/math/;tera:/Documents/math/"
+  "$HOME/Documents/math/;cloudflare:/blog/math/"
 )
 
 # "$HOME/Documents/ucas/;koofr:/kDocuments/ucas/"
