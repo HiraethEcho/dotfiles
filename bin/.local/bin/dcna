@@ -7,27 +7,27 @@
 # config
 CONFLICT_DIR="$HOME/conflicts"
 GIT_REPO=(
-  "$HOME/Documents/projects"
-  "$HOME/Documents/notes"
+  "$HOME/Documents/math"
   "$HOME/Code/docs"
   "$HOME/memex"
+  "$HOME/Sites/blogs/"
   "$HOME/.config/nvim"
   "$HOME/dotfiles"
 )
 # "$HOME/Documents/memex"
 
 RCLONE_PAIR=(
-  "$HOME/Documents/zotero_files/;koofr:/kDocuments/zotero_files/"
   "$HOME/obsidian/;koofr:/obsidian/"
   "$HOME/obsidian/;tera:/obsidian/"
+  "$HOME/Documents/zotero_files/;koofr:/kDocuments/zotero_files/"
   "$HOME/.local/share/calendar_zeabur/;koofr:/asset/radicale-hiraeth-collection/"
   "$HOME/.local/share/calendar_zeabur/;tera:/asset/radicale-hiraeth-collection/"
   "$HOME/.local/share/calendar_zeabur/;cloudflare:/asset/radicale-hiraeth-collection/"
   "$HOME/Documents/projects/;koofr:/kDocuments/projects/"
   "$HOME/Documents/projects/;tera:/Documents/projects/"
-  "$HOME/Documents/notes/;koofr:/kDocuments/notes/"
-  "$HOME/Documents/notes/;tera:/Documents/notes/"
-  "$HOME/Documents/notes/;cloudflare:/blog/notes/"
+  "$HOME/Documents/math/;koofr:/kDocuments/math/"
+  "$HOME/Documents/math/;tera:/Documents/math/"
+  "$HOME/Documents/math/;cloudflare:/blog/math/"
   "$HOME/Code/docs/;koofr:/docs/"
   "$HOME/Code/docs/;tera:/docs/"
   "$HOME/Code/docs/;cloudflare:/blog/docs"
@@ -36,6 +36,9 @@ RCLONE_PAIR=(
   "$HOME/memex/;cloudflare:/blog/memex"
 )
 
+# "$HOME/Documents/math/;openlist:/cst/math/"
+# "$HOME/Documents/projects/;cst:/projects/"
+# "$HOME/Documents/zotero_files/;openlist:/cst/zotero_files/"
 # "$HOME/Documents/doc/;koofr:/kDocuments/doc/"
 # "$HOME/Documents/doc/;tera:/kDocuments/doc/"
 # "$HOME/Documents/ucas/;koofr:/kDocuments/ucas/"
