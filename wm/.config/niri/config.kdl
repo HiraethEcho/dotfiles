@@ -265,6 +265,15 @@ overview {
 // by setting an empty default-column-width.
 workspace "home"
 workspace "info"
+workspace "term"
+workspace "apps"
+workspace "back"
+// Set the overview wallpaper on the backdrop.
+layer-rule {
+  match namespace="^noctalia-overview*"
+  place-within-backdrop true
+}
+
 /-window-rule {
     // This regular expression is intentionally made as specific as possible,
     // since this is the default config, and we want no false positives.
@@ -304,7 +313,12 @@ binds {
 
     // spawn and kill
     Alt+Return { spawn "footclient"; }
-    Super+A { spawn "rofi_allapps"; }
+    // Super+A { spawn "rofi_allapps"; }
+    Super+A { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Super+I { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
+    Super+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
+    Alt+B { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "bar" "toggle"; }
+    Alt+Shift+B { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "dock" "toggle"; }
     Alt+Space { spawn "rofi_quickapps"; }
     Super+R { spawn "rofi" "-show" "run"; }
     Alt+Escape { close-window; }
@@ -366,6 +380,11 @@ binds {
     Alt+3 { focus-workspace 3; }
     Alt+4 { focus-workspace 4; }
     Alt+5 { focus-workspace 5; }
+    Alt+Q { focus-workspace "home"; }
+    Alt+W { focus-workspace "info"; }
+    Alt+E { focus-workspace "term"; }
+    Alt+R { focus-workspace "apps"; }
+    Alt+T { focus-workspace "back"; }
     Alt+Shift+J              { focus-workspace-down; }
     Alt+Shift+K              { focus-workspace-up; }
     // Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
@@ -382,6 +401,11 @@ binds {
     Alt+Shift+3 { move-window-to-workspace 3; }
     Alt+Shift+4 { move-window-to-workspace 4; }
     Alt+Shift+5 { move-window-to-workspace 5; }
+    Alt+A { move-window-to-workspace "home"; }
+    Alt+S { move-window-to-workspace "info"; }
+    Alt+D { move-window-to-workspace "term"; }
+    Alt+F { move-window-to-workspace "apps"; }
+    Alt+G { move-window-to-workspace "back"; }
     Mod+Shift+J     { move-window-to-workspace-down; }
     Mod+Shift+K     { move-window-to-workspace-up; }
 
@@ -452,6 +476,8 @@ binds {
 
     // And you can also move a whole workspace to another monitor:
     // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
+    Super+Shift+Comma  { move-workspace-to-monitor-left; }
+    Super+Shift+Period  { move-workspace-to-monitor-right; }
     // ...
 
     // Mod+Page_Down      { focus-workspace-down; }

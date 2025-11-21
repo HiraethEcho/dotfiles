@@ -20,6 +20,8 @@ RCLONE_PAIR=(
   "$HOME/obsidian/;koofr:/obsidian/"
   "$HOME/obsidian/;tera:/obsidian/"
   "$HOME/Documents/zotero_files/;koofr:/kDocuments/zotero_files/"
+  "$HOME/Documents/sorge/;tera:/Documents/sorge/"
+  "$HOME/Documents/sorge/;koofr:/kDocuments/sorge/"
   "$HOME/.local/share/calendar_zeabur/;koofr:/asset/radicale-hiraeth-collection/"
   "$HOME/.local/share/calendar_zeabur/;tera:/asset/radicale-hiraeth-collection/"
   "$HOME/.local/share/calendar_zeabur/;cloudflare:/asset/radicale-hiraeth-collection/"
@@ -362,7 +364,7 @@ night() {
 }
 
 misc() {
-  vdirsync sync zeabur
+  vdirsyncer sync zeabur
 }
 
 mytest() {
