@@ -226,7 +226,8 @@ environment {
 
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "foot" "-s"
-spawn-at-startup "ironbar"
+// spawn-at-startup "ironbar"
+spawn-at-startup "qs" "-c" "noctalia-shell"
 // spawn-at-startup "nwg-panel"
 spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 // spawn-at-startup "waybar" "-c" "/home/hiraeth/.config/niri/waybar.jsonc"
@@ -262,6 +263,8 @@ overview {
 
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
+workspace "home"
+workspace "info"
 /-window-rule {
     // This regular expression is intentionally made as specific as possible,
     // since this is the default config, and we want no false positives.
