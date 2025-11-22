@@ -1,12 +1,12 @@
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Overview
 // Remember to uncomment the node by removing "/-"!
-
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 input {
     keyboard {
         xkb {
+
         }
     }
     touchpad {
@@ -18,17 +18,17 @@ input {
         // accel-speed 0.2
         // accel-profile "flat"
         scroll-method "two-finger"
-        // disabled-on-external-mouse
+ // disabled-on-external-mouse
     }
-
     mouse {
-        // off
+ // off
         // natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
         // scroll-method "no-scroll"
+
     }
-    // Uncomment this to make the mouse warp to the center of newly focused windows.
+ // Uncomment this to make the mouse warp to the center of newly focused windows.
     // warp-mouse-to-focus
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
@@ -44,7 +44,7 @@ hotkey-overlay {
 }
 // by running `niri msg outputs` while inside a niri instance.
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
-    // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
+// Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
 output "eDP-1" {
     mode "1920x1080@60.000"
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
@@ -55,9 +55,8 @@ output "eDP-1" {
     position x=0 y=0
 }
 output "HDMI-A-1" {
-  mode "1920x1080@60"
+    mode "1920x1080@60"
 }
-
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
@@ -68,29 +67,28 @@ layout {
     // - "always", the focused column will always be centered.
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
-    center-focused-column "on-overflow"
+    center-focused-column "never"
     always-center-single-column
     preset-column-widths {
         proportion 0.4
         proportion 0.6
         proportion 0.8
         proportion 1.0
-        // Fixed sets the width in logical pixels exactly.
+ // Fixed sets the width in logical pixels exactly.
         // fixed 1920
     }
-
     // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
     preset-window-heights {
         proportion 0.3
         proportion 0.7
         proportion 1.0
     }
-
     // You can change the default width of the new windows.
     // default-column-width { proportion 0.5; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
-    default-column-width { proportion 0.6; }
-
+    default-column-width {
+        proportion 0.6
+    }
     // By default focus ring and border are rendered as a solid background rectangle
     // behind windows. That is, they will show up through semitransparent windows.
     // This is because windows using client-side decorations can have an arbitrary shape.
@@ -101,7 +99,6 @@ layout {
     //
     // Alternatively, you can override it with a window rule called
     // `draw-border-with-background`.
-
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
@@ -116,7 +113,7 @@ layout {
         active-color "#7fc8ff"
         // Color of the ring on inactive monitors.
         inactive-color "#505050"
-        // You can also use gradients. They take precedence over solid colors.
+ // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
         // The angle is the same as in linear-gradient, and is optional,
         // defaulting to 180 (top-to-bottom gradient).
@@ -131,21 +128,17 @@ layout {
         //
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
-
     // You can also add a border. It's similar to the focus ring, but always visible.
     border {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
         off
-
         width 1
         active-color "#ffc87f"
         inactive-color "#505050"
-
-        // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
+ // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
-
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
     // You can think of them as a kind of outer gaps. They are set in logical pixels.
     // Left and right struts will cause the next window to the side to always be visible.
@@ -157,13 +150,12 @@ layout {
         top 2
         bottom 2
     }
-
     tab-indicator {
-          width 4
-          gap 4
-          length total-proportion=0.4
-          position "left"
-          place-within-column
+        width 4
+        gap 4
+        length total-proportion=0.4
+        position "left"
+        place-within-column
     }
     insert-hint {
         // off
@@ -182,7 +174,7 @@ environment {
     XMODIFIERS "@im=fcitx"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
     LANG "en_US.UTF-8"
-    LC_MESSAGES "zh_CN.UTF-8"
+ // LC_MESSAGES "zh_CN.UTF-8"
     // LANG "zh_CN.UTF-8"
     // LC_CTYPE "zh_CN.UTF-8"
     // LC_NUMERIC "zh_CN.UTF-8"
@@ -202,7 +194,6 @@ environment {
     // SDL_IM_MODULE null
     // GLFW_IM_MODULE null
 }
-
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "fcitx5"
 spawn-at-startup "foot" "-s"
@@ -213,15 +204,12 @@ spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 // If the client will specifically ask for CSD, the request will be honored.
 // Additionally, clients will be informed that they are tiled, removing some rounded corners.
 // prefer-no-csd
-
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
 screenshot-path "~/Pictures/Screenshots/niri-%Y%m%d%H%M%S.png"
-
 // You can also set this to null to disable saving screenshots to disk.
 // screenshot-path null
-
 // Animation settings.
 // The wiki explains how to configure individual animations:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
@@ -236,40 +224,45 @@ overview {
     zoom 0.25
 }
 layer-rule {
-  match namespace="^noctalia-overview*"
-  place-within-backdrop true
+    match namespace="^noctalia-overview*"
+    place-within-backdrop true
 }
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 window-rule {
-  clip-to-geometry true
+    clip-to-geometry true
 }
 workspace "home" {
-  open-on-output "HDMI-A-1"
+    open-on-output "HDMI-A-1"
 }
-workspace "info"
-window-rule {
-  match app-id="Zotero"
-  open-on-workspace "info"
+workspace "info" {
+    open-on-output "HDMI-A-1"
 }
 window-rule {
-  match app-id="obsidian"
-  open-on-workspace "info"
+    match app-id="Zotero"
+    open-on-workspace "info"
 }
-workspace "term"
 window-rule {
-  match app-id="kitty"
-  open-on-workspace "term"
-  clip-to-geometry true
+    match app-id="obsidian"
+    open-on-workspace "info"
 }
-workspace "apps"
+workspace "term" {
+    open-on-output "HDMI-A-1"
+}
 window-rule {
-  match app-id="wechat"
-  open-on-workspace "apps"
-  open-floating true
+    match app-id="kitty"
+    open-on-workspace "term"
+    clip-to-geometry true
 }
-
+workspace "apps" {
+    open-on-output "HDMI-A-1"
+}
+window-rule {
+    match app-id="wechat"
+    open-on-workspace "apps"
+    open-floating true
+}
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
@@ -280,107 +273,255 @@ binds {
     //
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
-
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
-
     // help
-    Super+Slash { show-hotkey-overlay; }
-
+    Super+Slash {
+        show-hotkey-overlay
+    }
     // spawn and kill
-    Alt+Return { spawn "footclient"; }
-    Super+Return { spawn "kitty"; }
+    Alt+Return {
+        spawn "footclient"
+    }
+    Super+Return {
+        spawn "kitty"
+    }
     // Super+A { spawn "rofi_allapps"; }
-    Super+A { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-    Super+I { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
-    Super+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
-    Alt+B { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "bar" "toggle"; }
-    Alt+Shift+B { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "dock" "toggle"; }
-    Alt+Space { spawn "rofi_quickapps"; }
-    Super+R { spawn "rofi" "-show" "run"; }
-    Super+X { spawn "rofi_winx"; }
-    Alt+Escape { close-window; }
-    Alt+Shift+Q   { quit; }
-    Super+Space { spawn-sh "pkill fcitx5 || fcitx5"; }
+    Super+A {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
+    }
+    Super+I {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"
+    }
+    Super+V {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"
+    }
+    Alt+B {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "bar" "toggle"
+    }
+    Alt+Shift+B {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "dock" "toggle"
+    }
+    Alt+Space {
+        spawn "rofi_quickapps"
+    }
+    Super+R {
+        spawn "rofi" "-show" "run"
+    }
+    Super+X {
+        spawn "rofi_winx"
+    }
+    Alt+Escape {
+        close-window
+    }
+    Alt+Shift+Q {
+        quit
+    }
+    Super+Space {
+        spawn-sh "pkill fcitx5 || fcitx5"
+    }
+    Super+Z {
+        spawn "zotero"
+    }
+    Super+W {
+        spawn "waterfox"
+    }
+    Super+Grave {
+        spawn "niri-scratchpad" "kitty"
+    }
     // Super+Shift+L { spawn "swaylock"; }
     // Note: the entire command goes as a single argument in the end.
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
-
     // console
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
-
-// focus
-  // windows
-    Alt+H     { focus-column-left; }
-    Alt+K     { focus-window-or-workspace-up; }
-    Alt+J     { focus-window-or-workspace-down; }
-    Alt+L     { focus-column-right; }
-    Alt+C { center-column; }
-  // workspaces
-    Alt+1 { focus-workspace 1; }
-    Alt+2 { focus-workspace 2; }
-    Alt+3 { focus-workspace 3; }
-    Alt+4 { focus-workspace 4; }
-    Alt+5 { focus-workspace 5; }
-    Alt+Q { focus-workspace 1; }
-    Alt+W { focus-workspace 2; }
-    Alt+E { focus-workspace 3; }
-    Alt+R { focus-workspace 4; }
-    Alt+T { focus-workspace 5; }
+    XF86AudioRaiseVolume allow-when-locked=true {
+        spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"
+    }
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"
+    }
+    XF86AudioMute allow-when-locked=true {
+        spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"
+    }
+    XF86AudioMicMute allow-when-locked=true {
+        spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"
+    }
+    XF86MonBrightnessUp allow-when-locked=true {
+        spawn "brightnessctl" "--class=backlight" "set" "+10%"
+    }
+    XF86MonBrightnessDown allow-when-locked=true {
+        spawn "brightnessctl" "--class=backlight" "set" "10%-"
+    }
+    // focus
+    // windows
+    Alt+H {
+        focus-column-left
+    }
+    Alt+K {
+        focus-window-or-workspace-up
+    }
+    Alt+J {
+        focus-window-or-workspace-down
+    }
+    Alt+L {
+        focus-column-right
+    }
+    Alt+C {
+        center-column
+    }
+    // workspaces
+    Alt+1 {
+        focus-workspace 1
+    }
+    Alt+2 {
+        focus-workspace 2
+    }
+    Alt+3 {
+        focus-workspace 3
+    }
+    Alt+4 {
+        focus-workspace 4
+    }
+    Alt+5 {
+        focus-workspace 5
+    }
+    Alt+Q {
+        focus-workspace 1
+    }
+    Alt+W {
+        focus-workspace 2
+    }
+    Alt+E {
+        focus-workspace 3
+    }
+    Alt+R {
+        focus-workspace 4
+    }
+    Alt+T {
+        focus-workspace 5
+    }
     // Alt+Q { focus-workspace "home"; }
     // Alt+W { focus-workspace "info"; }
     // Alt+E { focus-workspace "term"; }
     // Alt+R { focus-workspace "apps"; }
     // Alt+T { focus-workspace "back"; }
-  // monitors
-    Alt+Comma       {focus-monitor-left;}
-    Alt+Period      {focus-monitor-right;}
-// resize
-    Alt+slash       { switch-preset-column-width; }
-    Alt+Shift+slash { switch-preset-window-height; }
-    Alt+Minus { set-column-width "-10%"; }
-    Alt+Equal { set-column-width "+10%"; }
-    Alt+Shift+Minus { set-window-height "-10%"; }
-    Alt+Shift+Equal { set-window-height "+10%"; }
-// move
-  // windows
-    Super+H     { consume-or-expel-window-left; }
-    Super+L     { consume-or-expel-window-right; }
-    Super+J     { move-window-down-or-to-workspace-down; }
-    Super+K     { move-window-up-or-to-workspace-up; }
-    Super+Comma   { move-window-to-monitor-left; }
-    Super+Period  { move-window-to-monitor-right; }
-  // workspaces
-    Alt+Shift+1 { move-window-to-workspace 1; }
-    Alt+Shift+2 { move-window-to-workspace 2; }
-    Alt+Shift+3 { move-window-to-workspace 3; }
-    Alt+Shift+4 { move-window-to-workspace 4; }
-    Alt+Shift+5 { move-window-to-workspace 5; }
-    Alt+A { move-window-to-workspace 1; }
-    Alt+S { move-window-to-workspace 2; }
-    Alt+D { move-window-to-workspace 3; }
-    Alt+F { move-window-to-workspace 4; }
-    Alt+G { move-window-to-workspace 5; }
-    Super+Shift+K         { move-workspace-up; }
-    Super+Shift+J         { move-workspace-down; }
-    Super+Shift+Comma  { move-workspace-to-monitor-left; }
-    Super+Shift+Period  { move-workspace-to-monitor-right; }
-
-    Alt+Shift+J              { focus-workspace-down; }
-    Alt+Shift+K              { focus-workspace-up; }
-// layout
-    Super+F       { maximize-column; }
+    // monitors
+    Alt+Comma {
+        focus-monitor-left
+    }
+    Alt+Period {
+        focus-monitor-right
+    }
+    // resize
+    Alt+slash {
+        switch-preset-column-width
+    }
+    Alt+Shift+slash {
+        switch-preset-window-height
+    }
+    Alt+Minus {
+        set-column-width "-10%"
+    }
+    Alt+Equal {
+        set-column-width "+10%"
+    }
+    Alt+Shift+Minus {
+        set-window-height "-10%"
+    }
+    Alt+Shift+Equal {
+        set-window-height "+10%"
+    }
+    // move
+    // windows
+    Super+H {
+        consume-or-expel-window-left
+    }
+    Super+L {
+        consume-or-expel-window-right
+    }
+    Super+J {
+        move-window-down-or-to-workspace-down
+    }
+    Super+K {
+        move-window-up-or-to-workspace-up
+    }
+    Super+Comma {
+        move-window-to-monitor-left
+    }
+    Super+Period {
+        move-window-to-monitor-right
+    }
+    // workspaces
+    Alt+Shift+1 {
+        move-window-to-workspace 1
+    }
+    Alt+Shift+2 {
+        move-window-to-workspace 2
+    }
+    Alt+Shift+3 {
+        move-window-to-workspace 3
+    }
+    Alt+Shift+4 {
+        move-window-to-workspace 4
+    }
+    Alt+Shift+5 {
+        move-window-to-workspace 5
+    }
+    Alt+A {
+        move-window-to-workspace 1
+    }
+    Alt+S {
+        move-window-to-workspace 2
+    }
+    Alt+D {
+        move-window-to-workspace 3
+    }
+    Alt+F {
+        move-window-to-workspace 4
+    }
+    Alt+G {
+        move-window-to-workspace 5
+    }
+    Super+Shift+K {
+        move-workspace-up
+    }
+    Super+Shift+J {
+        move-workspace-down
+    }
+    Super+Shift+Comma {
+        move-workspace-to-monitor-left
+    }
+    Super+Shift+Period {
+        move-workspace-to-monitor-right
+    }
+    Alt+Shift+J {
+        focus-workspace-down
+    }
+    Alt+Shift+K {
+        focus-workspace-up
+    }
+    // layout
+    Super+F {
+        maximize-column
+    }
     // Mod+Shift+F { fullscreen-window; }
-    Alt+Shift+Space       { toggle-window-floating; }
-    Alt+Tab { switch-focus-between-floating-and-tiling; }
-    Super+D { toggle-column-tabbed-display; }
-    Super+Tab { toggle-overview; }
-// function
-    Super+S         { power-off-monitors; }
-    Super+Shift+S { screenshot; }
+    Alt+Shift+Space {
+        toggle-window-floating
+    }
+    Alt+Tab {
+        switch-focus-between-floating-and-tiling
+    }
+    Super+D {
+        toggle-column-tabbed-display
+    }
+    Super+Tab {
+        toggle-overview
+    }
+    // function
+    Super+S {
+        power-off-monitors
+    }
+    Super+Shift+S {
+        screenshot
+    }
 }
+
