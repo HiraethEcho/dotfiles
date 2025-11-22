@@ -181,27 +181,55 @@
         "shortcuts": {
             "left": [
                 {
-                    "id": "Bluetooth"
+                    "enableOnStateLogic": false,
+                    "generalTooltipText": "web",
+                    "icon": "browser",
+                    "id": "CustomButton",
+                    "onClicked": "waterfox",
+                    "onMiddleClicked": "",
+                    "onRightClicked": "brave",
+                    "stateChecksJson": "[]"
                 },
                 {
-                    "id": "WallpaperSelector"
+                    "enableOnStateLogic": false,
+                    "generalTooltipText": "ref",
+                    "icon": "book-filled",
+                    "id": "CustomButton",
+                    "onClicked": "zotero",
+                    "onMiddleClicked": "",
+                    "onRightClicked": "obsidian",
+                    "stateChecksJson": "[]"
                 },
                 {
-                    "id": "ScreenRecorder"
+                    "enableOnStateLogic": false,
+                    "generalTooltipText": "file",
+                    "icon": "folder",
+                    "id": "CustomButton",
+                    "onClicked": "pcmanfm",
+                    "onMiddleClicked": "",
+                    "onRightClicked": "koofr",
+                    "stateChecksJson": "[]"
                 },
                 {
-                    "id": "NightLight"
+                    "enableOnStateLogic": false,
+                    "generalTooltipText": "deepseek",
+                    "icon": "ai",
+                    "id": "CustomButton",
+                    "onClicked": "deepseek",
+                    "onMiddleClicked": "",
+                    "onRightClicked": "",
+                    "stateChecksJson": "[]"
                 }
             ],
             "right": [
-                {
-                    "id": "Notifications"
-                },
                 {
                     "id": "PowerProfile"
                 },
                 {
                     "id": "KeepAwake"
+                },
+                {
+                    "id": "WallpaperSelector"
                 }
             ]
         }
