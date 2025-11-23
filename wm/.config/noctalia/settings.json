@@ -22,13 +22,13 @@
         "volumeStep": 5
     },
     "bar": {
-        "backgroundOpacity": 0.4,
+        "backgroundOpacity": 0.1,
         "capsuleOpacity": 1,
         "density": "default",
         "exclusive": true,
         "floating": true,
-        "marginHorizontal": 0.2,
-        "marginVertical": 0.21,
+        "marginHorizontal": 0,
+        "marginVertical": 0,
         "monitors": [
         ],
         "outerCorners": false,
@@ -59,7 +59,7 @@
                     "showMemoryAsPercent": false,
                     "showMemoryUsage": true,
                     "showNetworkStats": true,
-                    "usePrimaryColor": false
+                    "usePrimaryColor": true
                 }
             ],
             "left": [
@@ -186,7 +186,7 @@
                     "icon": "browser",
                     "id": "CustomButton",
                     "onClicked": "waterfox",
-                    "onMiddleClicked": "",
+                    "onMiddleClicked": "footclient -e newsboat",
                     "onRightClicked": "brave",
                     "stateChecksJson": "[]"
                 },
