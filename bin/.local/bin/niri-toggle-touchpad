@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+
+# 配置文件路径
+CONFIG_FILE="$HOME/.config/niri/config.kdl"
+
+
+if grep -q '^[[:space:]]*//[[:space:]]*off' "$CONFIG_FILE"; then
+    sed -i 's|^\([[:space:]]*\)\/\/[[:space:]]*off\(.*\)|\1off\2|' "$CONFIG_FILE"
+    echo "disable touchpad"
+elif grep -q '^[[:space:]]*off' "$CONFIG_FILE"; then
+    sed -i 's|^\([[:space:]]*\)off\(.*\/\/.*\)|\1\/\/ off\2|' "$CONFIG_FILE"
+    echo "enable touchpad"
+else
+    echo "no config"
+    exit 1
+fi

@@ -4,6 +4,7 @@
 // Find the full list of options on the wiki:
 input {
     touchpad {
+        // off // toggle touchpad
         tap
         scroll-method "two-finger"
     }
@@ -23,13 +24,13 @@ output "eDP-1" {
     transform "normal"
     position x=0 y=0
     hot-corners {
-      bottom-left
+        bottom-left
     }
 }
 output "HDMI-A-1" {
     mode "1920x1080@60"
     hot-corners {
-      bottom-right
+        bottom-right
     }
 }
 layout {
@@ -87,6 +88,7 @@ gestures {
     }
 }
 prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/niri-%Y%m%d%H%M%S.png"
 environment {
     DISPLAY ":0"
     XMODIFIERS "@im=fcitx"
@@ -183,7 +185,11 @@ binds {
         spawn "kitty"
     }
     Super+Space {
-        spawn-sh "pkill fcitx5 || fcitx5"
+        // spawn-sh "pkill fcitx5 || fcitx5"
+        spawn "niri-toggle-touchpad"
+    }
+    Super+E {
+        spawn "pcmanfm"
     }
     Super+Z {
         spawn "zotero"
@@ -414,7 +420,6 @@ binds {
         toggle-overview
     }
 }
-screenshot-path "~/Pictures/Screenshots/niri-%Y%m%d%H%M%S.png"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "fcitx5"
 spawn-at-startup "foot" "-s"
