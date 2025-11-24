@@ -8,6 +8,7 @@ option_i="terminal    i"
 option_s="snapper     s"
 option_b="buku        b"
 option_w="website     w"
+option_n="newsboat    n"
 
 rofi_cmd() {
   rofi -theme-str "listview {columns: 1; lines: 6;}" \
@@ -18,12 +19,13 @@ rofi_cmd() {
     -kb-select-4 s \
     -kb-select-5 b \
     -kb-select-6 w \
+    -kb-select-7 n \
     -markup-rows \
     -theme ${theme}
 }
 
 run_rofi() {
-  echo -e "$option_u\n$option_k\n$option_i\n$option_s\n$option_b\n$option_w\n" | rofi_cmd
+  echo -e "$option_u\n$option_k\n$option_i\n$option_s\n$option_b\n$option_w\n$option_n\n" | rofi_cmd
 }
 
 chosen="$(run_rofi)"
@@ -45,5 +47,8 @@ $option_b)
   ;;
 $option_w)
   rofi_quicklinks
+  ;;
+$option_n)
+  kitty -e newsboat
   ;;
 esac
