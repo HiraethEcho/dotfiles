@@ -46,11 +46,6 @@
                     "showWorkspaceNumbers": true
                 },
                 {
-                    "hideWhenZero": true,
-                    "id": "NotificationHistory",
-                    "showUnreadBadge": true
-                },
-                {
                     "diskPath": "/",
                     "id": "SystemMonitor",
                     "showCpuTemp": false,
@@ -100,6 +95,11 @@
             ],
             "right": [
                 {
+                    "hideWhenZero": true,
+                    "id": "NotificationHistory",
+                    "showUnreadBadge": true
+                },
+                {
                     "blacklist": [
                     ],
                     "colorizeIcons": false,
@@ -119,6 +119,9 @@
                 {
                     "displayMode": "alwaysShow",
                     "id": "Brightness"
+                },
+                {
+                    "id": "NoctaliaPerformance"
                 },
                 {
                     "displayMode": "alwaysShow",

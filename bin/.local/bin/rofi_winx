@@ -11,7 +11,7 @@ option_w="website     w"
 option_n="newsboat    n"
 
 rofi_cmd() {
-  rofi -theme-str "listview {columns: 1; lines: 6;}" \
+  rofi -theme-str "listview {columns: 1; lines: 7;}" \
     -dmenu \
     -kb-select-1 u \
     -kb-select-2 k \
