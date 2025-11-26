@@ -1,4 +1,5 @@
 https://rss.arxiv.org/rss/math.AG "~arxiv AG"
+https://hiraethecho.github.io/ZotWatch/feed.xml "~Zotero Watch"
 
 https://sspai.com/feed "~少数派"
 https://plink.anyfeeder.com/gcores "~机核"
@@ -30,6 +31,7 @@ https://macshuo.com/?feed=rss2
 https://maggieappleton.com/rss.xml
 https://yinji.org/feed
 http://www.aaronsw.com/2002/feeds/pgessays.rss
+https://peterbabic.dev/atom.xml
 https://memex.keinmal.top/index.xml
 
 https://github.com/v1nh1shungry/nvim-weekly-cn/releases.atom "~nvim weekly cn"

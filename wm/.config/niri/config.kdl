@@ -155,6 +155,10 @@ workspace "apps" {
     open-on-output "HDMI-A-1"
 }
 window-rule {
+    match app-id="(wechat)"
+    open-focused false
+}
+window-rule {
     match app-id="wechat"
     open-on-workspace "apps"
     open-floating true
@@ -198,7 +202,7 @@ binds {
         spawn "waterfox"
     }
     Super+Grave {
-        spawn "niri-scratchpad" "kitty"
+        spawn "niri-scratchpad" "st"
     }
     // lanucher
     // Super+A { spawn "rofi_allapps"; }
