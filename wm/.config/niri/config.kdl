@@ -146,7 +146,7 @@ window-rule {
 workspace "term" {
     open-on-output "HDMI-A-1"
 }
-window-rule {
+/-window-rule {
     match app-id="kitty"
     open-on-workspace "term"
     clip-to-geometry true
@@ -185,9 +185,7 @@ binds {
     Alt+Return {
         spawn "footclient"
     }
-    Super+Return {
-        spawn "kitty"
-    }
+    // Super+Return { spawn "kitty" }
     Super+Space {
         // spawn-sh "pkill fcitx5 || fcitx5"
         spawn "niri-toggle-touchpad"
@@ -359,37 +357,37 @@ binds {
     }
     // workspaces
     Alt+Shift+1 {
-        move-window-to-workspace 1
+        move-window-to-workspace 1 focus=false
     }
     Alt+Shift+2 {
-        move-window-to-workspace 2
+        move-window-to-workspace 2 focus=false
     }
     Alt+Shift+3 {
-        move-window-to-workspace 3
+        move-window-to-workspace 3 focus=false
     }
     Alt+Shift+4 {
-        move-window-to-workspace 4
+        move-window-to-workspace 4 focus=false
     }
     Alt+Shift+5 {
-        move-window-to-workspace 5
+        move-window-to-workspace 5 focus=false
     }
     Alt+A {
-        move-window-to-workspace 1
+        move-window-to-workspace 1 focus=false
     }
     Alt+S {
-        move-window-to-workspace 2
+        move-window-to-workspace 2 focus=false
     }
     Alt+D {
-        move-window-to-workspace 3
+        move-window-to-workspace 3 focus=false
     }
     Alt+F {
-        move-window-to-workspace 4
+        move-window-to-workspace 4 focus=false
     }
     Alt+G {
-        move-window-to-workspace 5
+        move-window-to-workspace 5 focus=false
     }
     Super+Shift+K {
-        move-workspace-up
+        move-workspace-up 
     }
     Super+Shift+J {
         move-workspace-down
@@ -407,6 +405,9 @@ binds {
         focus-workspace-up
     }
     // layout
+    Super+Return {
+        maximize-column
+    }
     Super+F {
         maximize-column
     }
