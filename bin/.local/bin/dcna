@@ -18,7 +18,6 @@ GIT_REPO=(
 
 RCLONE_PAIR=(
   "$HOME/obsidian/;koofr:/obsidian/"
-  "$HOME/obsidian/;tera:/obsidian/"
   "$HOME/Documents/zotero_files/;koofr:/kDocuments/zotero_files/"
   "$HOME/Documents/sorge/;koofr:/kDocuments/sorge/"
   "$HOME/Documents/sorge/;tera:/Documents/sorge/"
@@ -34,9 +33,10 @@ RCLONE_PAIR=(
   "$HOME/Code/docs/;tera:/docs/"
   "$HOME/memex/;koofr:/memex/"
   "$HOME/memex/;cloudflare:/blog/memex"
-  "$HOME/memex/;tera:/memex/"
 )
 # "$HOME/.local/share/calendar_zeabur/;tera:/asset/radicale-hiraeth-collection/"
+# "$HOME/obsidian/;tera:/obsidian/"
+# "$HOME/memex/;tera:/memex/"
 
 # "$HOME/Documents/math/;openlist:/cst/math/"
 # "$HOME/Documents/projects/;cst:/projects/"
