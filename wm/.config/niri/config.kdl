@@ -4,7 +4,7 @@
 // Find the full list of options on the wiki:
 input {
     touchpad {
-        off // toggle touchpad
+        // off // toggle touchpad
         tap
         scroll-method "two-finger"
     }
@@ -200,7 +200,7 @@ binds {
         spawn "waterfox"
     }
     Super+Grave {
-        spawn "niri-scratchpad" "st"
+        spawn "niri-scratchpad" "kitty"
     }
     // lanucher
     // Super+A { spawn "rofi_allapps"; }

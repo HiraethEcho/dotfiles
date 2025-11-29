@@ -5,39 +5,39 @@
 # https://github.com/YaLTeR/niri/discussions/329
 #
 # Find this name via e.g. $ niri msg windows, and find the "App ID"
-SCRATCH_WIN_NAME=$1
+SCRATCH_APP=$1
+PAD_NAME="scratchpad"
 
-[ -z "$SCRATCH_WIN_NAME" ] && notify-send "No scratchpad window name received - exiting" && exit 1
+[ -z "$SCRATCH_APP" ] && notify-send "No scratchpad window name received - exiting" && exit 1
 
 get_window_objects() {
-  SCRATCH_WIN_NAME="$1"
-  niri msg -j windows | jq ".[] | select(.app_id == \"$SCRATCH_WIN_NAME\")"
+  PAD_NAME="$1"
+  niri msg -j windows | jq ".[] | select(.app_id == \"$PAD_NAME\")"
 }
 
 # Couldn't just use the window name here for launching because the binary name is sometimes different
-if [ -z "$(get_window_objects "$SCRATCH_WIN_NAME")" ]; then
-  if [ "$SCRATCH_WIN_NAME" = "kitty" ]; then
-    setsid kitty &
-  elif [ "$SCRATCH_WIN_NAME" = "st" ]; then
-    setsid st -c st &
+if [ -z "$(get_window_objects "$PAD_NAME")" ]; then
+  if [ "$SCRATCH_APP" = "kitty" ]; then
+    setsid kitty --class $PAD_NAME &
+  elif [ "$SCRATCH_APP" = "st" ]; then
+    setsid st -c $PAD_NAME &
   else
-    notify-send -u critical 'Scratchpad Error' "There are no window ids for: $SCRATCH_WIN_NAME" -t 5000
+    notify-send -u critical 'Scratchpad Error' "There are no window ids for: $PAD_NAME" -t 5000
     exit 1
   fi
-  notify-send "Launching $SCRATCH_WIN_NAME"
-  sleep 1
 fi
 
 ID_CURRENT_WORKSPACE=$(niri msg -j workspaces | jq '.[] | select(.is_focused == true)' | jq .idx)
 
-ANY_SCRATCH_WIN_FOCUSED=$(niri msg -j windows | jq ".[] | select(.app_id == \"$SCRATCH_WIN_NAME\").is_focused" | grep "true")
+ANY_SCRATCH_WIN_FOCUSED=$(niri msg -j windows | jq ".[] | select(.app_id == \"$PAD_NAME\").is_focused" | grep "true")
 
-get_window_objects "$SCRATCH_WIN_NAME" | jq -c | while read WIN_OBJ; do
+get_window_objects "$PAD_NAME" | jq -c | while read WIN_OBJ; do
 
   WIN_ID=$(echo "$WIN_OBJ" | jq .id)
 
   if [ "$ANY_SCRATCH_WIN_FOCUSED" = "true" ]; then # Hide
-    niri msg action move-window-to-workspace --window-id "$WIN_ID" 3 --focus=false
+    niri msg action set-window-width "10%"
+    niri msg action move-window-to-workspace --window-id "$WIN_ID" 4 --focus=false
     niri msg action move-window-to-tiling --id "$WIN_ID"
   else # Show
     niri msg action move-window-to-workspace --window-id "$WIN_ID" "$ID_CURRENT_WORKSPACE"
