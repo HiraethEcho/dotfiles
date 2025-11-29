@@ -1,7 +1,15 @@
 [calendars]
 
-[[zeabur_local]]
+[[local_ical]]
+path = ~/.local/share/calendars/*
+type = discover
+
+[[local_radicale]]
 path = ~/.local/share/calendar_zeabur/*
+type = discover
+
+[[local_amss]]
+path = ~/.local/share/calendar_amss/*
 type = discover
 
 [locale]

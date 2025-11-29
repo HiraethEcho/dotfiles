@@ -23,15 +23,11 @@ output "eDP-1" {
     scale 1
     transform "normal"
     position x=0 y=0
-    hot-corners {
-        bottom-left
-    }
+ // hot-corners { bottom-left }
 }
 output "HDMI-A-1" {
     mode "1920x1080@60"
-    hot-corners {
-        bottom-right
-    }
+ // hot-corners { bottom-right }
 }
 layout {
     gaps 4
@@ -113,6 +109,14 @@ layer-rule {
     match namespace="^noctalia-overview*"
     place-within-backdrop true
 }
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
+layer-rule {
+    match namespace="dms:blurwallpaper"
+    place-within-backdrop true
+}
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 window-rule {
     clip-to-geometry true
@@ -147,9 +151,9 @@ workspace "term" {
     open-on-output "HDMI-A-1"
 }
 /-window-rule {
-    match app-id="kitty"
-    open-on-workspace "term"
-    clip-to-geometry true
+match app-id="kitty"
+open-on-workspace "term"
+clip-to-geometry true
 }
 workspace "apps" {
     open-on-output "HDMI-A-1"
@@ -207,9 +211,15 @@ binds {
     Super+A {
         spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
     }
+    /* Super+A hotkey-overlay-title="Application Launcher" {
+    spawn "dms" "ipc" "call" "spotlight" "toggle"
+    } */
     Super+V {
         spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"
     }
+    /* Super+V hotkey-overlay-title="Clipboard Manager" {
+    spawn "dms" "ipc" "call" "clipboard" "toggle"
+    } */
     Alt+Space {
         spawn "rofi_quickapps"
     }
@@ -219,10 +229,16 @@ binds {
     Super+X {
         spawn "rofi_winx"
     }
+    /* Ctrl+Alt+Backspace hotkey-overlay-title="Task Manager" {
+    spawn "dms" "ipc" "call" "processlist" "toggle"
+    } */
     // function
     Super+I {
         spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"
     }
+    /* Super+I hotkey-overlay-title="Settings" {
+        spawn "dms" "ipc" "call" "settings" "toggle"
+    } */
     Super+S {
         power-off-monitors
     }
@@ -387,7 +403,7 @@ binds {
         move-window-to-workspace 5 focus=false
     }
     Super+Shift+K {
-        move-workspace-up 
+        move-workspace-up
     }
     Super+Shift+J {
         move-workspace-down
@@ -425,9 +441,11 @@ binds {
         toggle-overview
     }
 }
+spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "fcitx5"
 spawn-at-startup "foot" "-s"
 spawn-at-startup "qs" "-c" "noctalia-shell"
+// spawn-at-startup "dms" "run"
 spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 
