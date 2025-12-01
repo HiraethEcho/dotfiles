@@ -244,6 +244,16 @@
                     "onMiddleClicked": "",
                     "onRightClicked": "",
                     "stateChecksJson": "[]"
+                },
+                {
+                    "enableOnStateLogic": false,
+                    "generalTooltipText": "terminal",
+                    "icon": "terminal-2",
+                    "id": "CustomButton",
+                    "onClicked": "footclient",
+                    "onMiddleClicked": "st",
+                    "onRightClicked": "kitty",
+                    "stateChecksJson": "[]"
                 }
             ],
             "right": [
