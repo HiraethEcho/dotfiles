@@ -2,5 +2,5 @@
 path = "~/.local/share/calendar_zeabur/*"
 date_format = "%Y-%m-%d"
 time_format = "%H:%M"
-default_list = "todo"
+default_list = "sorge"
 default_due = 0

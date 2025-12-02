@@ -1,9 +1,5 @@
-{ "registry-mirrors": [
-  "https://registry.docker-cn.com/",
-  "https://docker.mirrors.ustc.edu.cn/",
-  "https://docker.m.daocloud.io",
-  "https://noohub.ru",
-  "https://huecker.io",
-  "https://dockerhub.timeweb.cloud",
-  "https://docker.rainbond.cc"
-] }
+{
+  "registry-mirrors": [
+    "https://registry.cn-beijing.aliyuncs.com"
+  ]
+}

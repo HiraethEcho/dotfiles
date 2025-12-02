@@ -85,3 +85,66 @@ CopyFile /etc/zsh/zshenv
 
 SetFileProperty /etc/openlist group openlist
 SetFileProperty /etc/openlist owner openlist
+
+
+# Tue Dec  2 20:20:18 CST 2025 - Extra files
+
+
+RemoveFile /etc/systemd/user/default.target.wants/xdg-user-dirs-update.service
+RemoveFile /etc/systemd/user/default.target.wants
+RemoveFile /etc/systemd/system/starlight-tunnel.service
+RemoveFile /etc/systemd/system/getty@tty1.service.d/skip-username.conf.bak
+RemoveFile /etc/systemd/system/ali-tunnel.service
+RemoveFile /etc/mkinitcpio.d/linux-zen.preset
+
+
+# Tue Dec  2 20:20:18 CST 2025 - New / changed files
+
+
+CopyFile /etc/artalk/artalk.yml '' artalk artalk
+CreateDir /etc/audisp
+CreateDir /etc/audit/plugins.d 750
+CreateDir /etc/audit/rules.d
+CopyFile /etc/cloudflared/config.yml
+CopyFile /etc/keyd/default.conf
+CopyFile /etc/ly/save.txt
+CopyFile /etc/mkinitcpio.conf.pacnew
+CopyFile /etc/mkinitcpio.d/linux-zen.preset.pacsave
+CopyFile /etc/modules-load.d/iptables.conf
+CreateDir /etc/opensnitchd/rules
+CopyFile /etc/systemd/coredump.conf.d/override.conf
+CopyFile /etc/systemd/journald.conf.d/override.conf
+CopyFile /etc/systemd/system.conf.pacnew
+CopyFile /etc/systemd/system/copilot-api.service
+CreateLink /etc/systemd/system/dbus-org.freedesktop.Avahi.service /usr/lib/systemd/system/avahi-daemon.service
+CreateLink /etc/systemd/system/display-manager.service /usr/lib/systemd/system/ly.service
+CopyFile /etc/systemd/system/getty@tty1.service.d/skip-username.conf
+CopyFile /etc/systemd/system/glance-custom.service
+CreateLink /etc/systemd/system/multi-user.target.wants/avahi-daemon.service /usr/lib/systemd/system/avahi-daemon.service
+CreateLink /etc/systemd/system/multi-user.target.wants/cloudflared.service /etc/systemd/system/cloudflared.service
+CreateLink /etc/systemd/system/multi-user.target.wants/keyd.service /usr/lib/systemd/system/keyd.service
+CreateLink /etc/systemd/system/multi-user.target.wants/tlp.service /usr/lib/systemd/system/tlp.service
+CopyFile /etc/systemd/system/radicale-hiraeth.service
+CreateLink /etc/systemd/system/sockets.target.wants/avahi-daemon.socket /usr/lib/systemd/system/avahi-daemon.socket
+CopyFile /etc/systemd/system/star-tunnel.service
+CreateLink /etc/systemd/user/graphical-session-pre.target.wants/xdg-user-dirs.service /usr/lib/systemd/user/xdg-user-dirs.service
+CreateDir /etc/userdb
+CopyFile /etc/docker/daemon.json
+CopyFile /etc/mkinitcpio.d/linux.preset
+CopyFile /etc/pacman.d/mirrorlist.pacnew
+CopyFile /etc/resolv.conf
+
+
+# Tue Dec  2 20:20:18 CST 2025 - New file properties
+
+
+SetFileProperty /etc/artalk group artalk
+SetFileProperty /etc/artalk mode 750
+SetFileProperty /etc/artalk owner artalk
+
+
+# Tue Dec  2 20:20:18 CST 2025 - Extra file properties
+
+
+SetFileProperty /etc/openlist group ''
+SetFileProperty /etc/openlist owner ''
