@@ -28,7 +28,7 @@
         "capsuleOpacity": 1,
         "density": "default",
         "exclusive": true,
-        "floating": true,
+        "floating": false,
         "marginHorizontal": 0,
         "marginVertical": 0,
         "monitors": [
