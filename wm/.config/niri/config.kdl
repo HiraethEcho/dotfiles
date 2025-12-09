@@ -243,6 +243,9 @@ binds {
     Super+S {
         power-off-monitors
     }
+    ALt+Shift+S {
+        screenshot-window
+    }
     Super+Shift+S {
         screenshot
     }
