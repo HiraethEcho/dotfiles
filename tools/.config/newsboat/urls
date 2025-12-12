@@ -6,6 +6,7 @@ https://plink.anyfeeder.com/gcores "~机核"
 https://www.douban.com/feed/review/book "~豆瓣书评"
 https://blog.xiaket.org/feed.xml
 http://solidot.org/index.rss
+https://www.nature.com/nature.rss
 
 https://aphilosopher.drmcl.com/feed/ "~A Philosopher's blog"
 https://philosophynow.org/rss "~philosophy now"
@@ -34,6 +35,7 @@ http://www.aaronsw.com/2002/feeds/pgessays.rss
 https://peterbabic.dev/atom.xml
 https://blog.huan99.com/atom.xml
 https://hejunjie.life/rss.xml
+https://www.stallman.org/rss/rss.xml
 https://memex.keinmal.top/index.xml "~MEMEX"
 
 https://github.com/v1nh1shungry/nvim-weekly-cn/releases.atom "~nvim weekly cn"
