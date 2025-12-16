@@ -16,12 +16,13 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh # comp
 # source <(fzf --zsh) # CTRL-T CTRL-R ALT-C and ** trigger
 
 # theme
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme # promot theme
-# eval "$(starship init zsh)"
+# source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme # promot theme
+eval "$(starship init zsh)"
 
 # eval $(thefuck --alias f)
 eval "$(zoxide init zsh)"
-eval "$(gh copilot alias -- zsh)"
+# eval "$(navi widget zsh)"
+# eval "$(gh copilot alias -- zsh)"
 # Bind ctrl-r but not up arrow
 eval "$(atuin init zsh --disable-up-arrow)"
 # eval "$(atuin init zsh --disable-ctrl-r)"
