@@ -11,7 +11,7 @@ include ~/.config/task/report
 include ~/.config/task/uda
 
 # include ~/.config/task/sync
-# include ~/.config/task/tui
+include ~/.config/task/tui
 
 
 context.habit.read=tag:habit

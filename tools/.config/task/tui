@@ -68,4 +68,4 @@ uda.taskwarrior-tui.task-report.auto-insert-double-quotes-on-add=false
 # uda.taskwarrior-tui.context-menu.select-on-move=false
 # uda.taskwarrior-tui.tabs.change-focus-rotate=false
 
-uda.taskwarrior-tui.quick-tag.name=trush
+uda.taskwarrior-tui.quick-tag.name=next
