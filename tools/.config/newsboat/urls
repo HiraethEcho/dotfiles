@@ -8,37 +8,38 @@ https://blog.xiaket.org/feed.xml
 http://solidot.org/index.rss
 https://www.nature.com/nature.rss
 
-https://aphilosopher.drmcl.com/feed/ "~A Philosopher's blog"
-https://philosophynow.org/rss "~philosophy now"
-http://www.matrix67.com/blog/feed
-https://dawner.top/atom.xml
-http://wwj718.github.io/index.xml
-https://blog.vinfall.com/index.xml
-https://liuyandong.com/feed/
-https://atpx.com/feed.xml
-https://pathos.page/feed.xml
-https://prologue.dev/atomfeed
-https://yayu.net/feed
-https://www.bboy.app/atom.xml
-https://www.ruanyifeng.com/blog/atom.xml
-https://sakari.top/index.xml
-https://fourxiajiao.github.io/index.xml
-https://shaobin-jiang.github.io/blog/index.xml
-https://blog.loikein.one/index.xml
-https://hutusi.com/feed.xml
-https://brainbaking.com/index.xml
-https://catcoding.me/atom.xml
-https://www.giuem.com/rss.xml
-https://www.owenyoung.com/atom.xml
-https://macshuo.com/?feed=rss2
-https://maggieappleton.com/rss.xml
-https://yinji.org/feed
-http://www.aaronsw.com/2002/feeds/pgessays.rss
-https://peterbabic.dev/atom.xml
-https://blog.huan99.com/atom.xml
-https://hejunjie.life/rss.xml
-https://www.stallman.org/rss/rss.xml
-https://memex.keinmal.top/index.xml "~MEMEX"
+https://aphilosopher.drmcl.com/feed/ "~A Philosopher's blog" blog
+https://philosophynow.org/rss "~philosophy now" blog
+http://www.matrix67.com/blog/feed blog
+https://dawner.top/atom.xml blog
+http://wwj718.github.io/index.xml blog
+https://blog.vinfall.com/index.xml blog
+https://liuyandong.com/feed/ blog
+https://atpx.com/feed.xml blog
+https://pathos.page/feed.xml blog
+https://prologue.dev/atomfeed blog
+https://yayu.net/feed blog
+https://www.bboy.app/atom.xml blog
+https://www.ruanyifeng.com/blog/atom.xml blog
+https://sakari.top/index.xml blog
+https://fourxiajiao.github.io/index.xml blog
+https://shaobin-jiang.github.io/blog/index.xml blog
+https://blog.loikein.one/index.xml blog
+https://hutusi.com/feed.xml blog
+https://brainbaking.com/index.xml blog
+https://catcoding.me/atom.xml blog
+https://www.giuem.com/rss.xml blog
+https://www.owenyoung.com/atom.xml blog
+https://macshuo.com/?feed=rss2 blog
+https://maggieappleton.com/rss.xml blog
+https://yinji.org/feed blog
+http://www.aaronsw.com/2002/feeds/pgessays.rss blog
+https://peterbabic.dev/atom.xml blog
+https://blog.huan99.com/atom.xml blog
+https://hejunjie.life/rss.xml blog
+https://www.stallman.org/rss/rss.xml blog
+https://blog.lilydjwg.me/posts.rss blog
+https://memex.keinmal.top/index.xml "~MEMEX" blog
 
 https://github.com/v1nh1shungry/nvim-weekly-cn/releases.atom "~nvim weekly cn"
 https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins"
@@ -48,12 +49,10 @@ https://terminaltrove.com/totw.xml
 http://feed.appinn.com/
 https://litiaotiao.cn/index.xml
 https://hellogithub.com/rss
-https://rustcc.cn/rss
 https://typst-doc-cn.github.io/news/feed.xml
 
-https://www.archlinuxcn.org/feed/ "~ArchCN News"
-https://forum.archlinuxcn.org/latest.rss
-https://forum.archlinuxcn.org/tag/rss.rss
-https://archlinux.org/feeds/packages/x86_64/ "~Arch repo"
-https://aur.archlinux.org/rss "~AUR"
-https://blog.lilydjwg.me/posts.rss
+https://www.archlinuxcn.org/feed/ "~ArchCN News" arch
+https://forum.archlinuxcn.org/latest.rss arch
+https://forum.archlinuxcn.org/tag/rss.rss arch
+https://archlinux.org/feeds/packages/x86_64/ "~Arch repo" arch
+https://aur.archlinux.org/rss "~AUR" arch
