@@ -112,7 +112,7 @@
                     "hideMode": "hidden",
                     "hideWhenIdle": false,
                     "id": "MediaMini",
-                    "maxWidth": 200,
+                    "maxWidth": 100,
                     "scrollingMode": "hover",
                     "showAlbumArt": false,
                     "showArtistFirst": false,
