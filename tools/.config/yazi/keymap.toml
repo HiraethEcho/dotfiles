@@ -11,9 +11,9 @@ prepend_keymap = [
   { on = [ "z","P" ], run = "plugin toggle-pane min-preview",  desc = "toggle the preview pane" },
   { on = [ "M" ], run = "plugin mount",  desc = "mount" },
   { on = ["!"], for  = "unix", run  = 'shell "$SHELL" --block', desc = "Open $SHELL here"},
-  { on = [ "E" ], run = "plugin eza-preview",  desc = "Toggle tree/list dir preview" },
-  { on = [ "=" ], run = "plugin eza-preview inc-level", desc = "Increment tree level" },
-  { on = [ "-" ], run = "plugin eza-preview dec-level", desc = "Decrement tree level" },
+  # { on = [ "E" ], run = "plugin eza-preview",  desc = "Toggle tree/list dir preview" },
+  # { on = [ "=" ], run = "plugin eza-preview inc-level", desc = "Increment tree level" },
+  # { on = [ "-" ], run = "plugin eza-preview dec-level", desc = "Decrement tree level" },
   { on = [ "<C-p>" ], run = "plugin parent-arrow -1", desc = "parent cursor up" },
   { on = [ "<C-n>" ], run = "plugin parent-arrow 1",  desc = "parent cursor down" },
 ]

@@ -45,14 +45,14 @@
                     "characterCount": 2,
                     "colorizeIcons": false,
                     "enableScrollWheel": true,
-                    "followFocusedScreen": false,
-                    "groupedBorderOpacity": 1,
+                    "followFocusedScreen": true,
+                    "groupedBorderOpacity": 0.5,
                     "hideUnoccupied": true,
                     "id": "Workspace",
                     "labelMode": "index",
                     "showApplications": true,
                     "showLabelsOnlyWhenOccupied": true,
-                    "unfocusedIconsOpacity": 1
+                    "unfocusedIconsOpacity": 0.8
                 },
                 {
                     "defaultSettings": {
@@ -381,7 +381,7 @@
     "nightLight": {
         "autoSchedule": true,
         "dayTemp": "6500",
-        "enabled": true,
+        "enabled": false,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",

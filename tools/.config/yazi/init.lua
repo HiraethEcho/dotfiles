@@ -29,4 +29,4 @@ require("session"):setup({
   sync_yanked = true,
 })
 
-require("eza-preview"):setup({ level = 2, follow_symlinks = true, dereference = false, all = true })
+-- require("eza-preview"):setup({ level = 2, follow_symlinks = true, dereference = false, all = true })
