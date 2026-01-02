@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Effects
 import Quickshell
+import Quickshell.Io
 import qs.Commons
 import qs.Modules.Bar.Extras
 import qs.Services.UI
@@ -69,6 +70,19 @@ Rectangle {
     readonly property var idleIcons: root.pluginApi?.mainInstance?.idleIcons || []
 
     readonly property real cpuUsage: root.pluginApi?.mainInstance?.cpuUsage ?? 0
+    
+    function openPanel() {
+        if (pluginApi) {
+            var result = pluginApi.openPanel(root.screen);
+            Logger.i("Catwalk", "OpenPanel result:", result);
+        } else {
+            Logger.e("Catwalk", "PluginAPI is null");
+        }
+    }
+    
+    function openExternalMonitor() {
+      Quickshell.execDetached(["sh", "-c", Settings.data.systemMonitor.externalMonitor]);
+    }
 
     Timer {
         interval: Math.max(30, 200 - root.cpuUsage * 1.7)
@@ -157,22 +171,20 @@ Rectangle {
             
             Logger.i("Catwalk", "Clicked! API:", !!pluginApi, "Screen:", root.screen ? root.screen.name : "null");
 
-            // Open Panel on click
-            if (pluginApi) {
-                var result = pluginApi.openPanel(root.screen);
-                Logger.i("Catwalk", "OpenPanel result:", result);
-            } else {
-                Logger.e("Catwalk", "PluginAPI is null");
-            }
             
             if (!root.enabled && !root.allowClickWhenDisabled) {
                 return;
             }
+            // Open Panel on left/right click
+            // Open external monitor on middle click
             if (mouse.button === Qt.LeftButton) {
+                root.openPanel();
                 root.clicked();
             } else if (mouse.button === Qt.RightButton) {
+                root.openPanel();
                 root.rightClicked();
             } else if (mouse.button === Qt.MiddleButton) {
+                root.openExternalMonitor();
                 root.middleClicked();
             }
         }

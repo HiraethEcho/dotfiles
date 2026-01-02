@@ -62,7 +62,7 @@
                     "id": "plugin:catwalk"
                 },
                 {
-                    "compactMode": true,
+                    "compactMode": false,
                     "diskPath": "/",
                     "id": "SystemMonitor",
                     "showCpuTemp": false,
@@ -71,9 +71,23 @@
                     "showGpuTemp": false,
                     "showMemoryAsPercent": false,
                     "showMemoryUsage": true,
-                    "showNetworkStats": true,
+                    "showNetworkStats": false,
                     "useMonospaceFont": true,
                     "usePrimaryColor": true
+                },
+                {
+                    "defaultSettings": {
+                        "arrowType": "caret",
+                        "byteThresholdActive": 1024,
+                        "fontSizeModifier": 1,
+                        "forceMegabytes": false,
+                        "iconSizeModifier": 1,
+                        "minWidth": 0,
+                        "showNumbers": true,
+                        "spacingInbetween": 0,
+                        "useCustomColors": false
+                    },
+                    "id": "plugin:network-indicator"
                 }
             ],
             "left": [
@@ -100,6 +114,11 @@
                     "unfocusedIconsOpacity": 1
                 },
                 {
+                    "defaultSettings": {
+                    },
+                    "id": "plugin:launcher-button"
+                },
+                {
                     "colorizeIcons": false,
                     "hideMode": "hidden",
                     "id": "ActiveWindow",
@@ -107,19 +126,6 @@
                     "scrollingMode": "hover",
                     "showIcon": true,
                     "useFixedWidth": false
-                },
-                {
-                    "hideMode": "hidden",
-                    "hideWhenIdle": false,
-                    "id": "MediaMini",
-                    "maxWidth": 100,
-                    "scrollingMode": "hover",
-                    "showAlbumArt": false,
-                    "showArtistFirst": false,
-                    "showProgressRing": true,
-                    "showVisualizer": true,
-                    "useFixedWidth": true,
-                    "visualizerType": "linear"
                 }
             ],
             "right": [
