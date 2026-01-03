@@ -545,7 +545,7 @@
         "zed": false
     },
     "ui": {
-        "bluetoothDetailsViewMode": "grid",
+        "bluetoothDetailsViewMode": "list",
         "bluetoothHideUnnamedDevices": false,
         "fontDefault": "CodeNewRoman Nerd Font",
         "fontDefaultScale": 1,
