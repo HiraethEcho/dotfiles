@@ -5,10 +5,13 @@
         "enableClipPreview": true,
         "enableClipboardHistory": true,
         "iconMode": "tabler",
+        "ignoreMouseInput": false,
         "pinnedExecs": [
         ],
         "position": "top_center",
+        "screenshotAnnotationTool": "",
         "showCategories": true,
+        "showIconBackground": true,
         "sortByMostUsed": true,
         "terminalCommand": "footclient -e",
         "useApp2Unit": false,
@@ -48,6 +51,7 @@
                     "followFocusedScreen": true,
                     "groupedBorderOpacity": 0.5,
                     "hideUnoccupied": true,
+                    "iconScale": 0.8,
                     "id": "Workspace",
                     "labelMode": "index",
                     "showApplications": true,
@@ -69,6 +73,7 @@
                     "showCpuUsage": true,
                     "showDiskUsage": false,
                     "showGpuTemp": false,
+                    "showLoadAverage": false,
                     "showMemoryAsPercent": false,
                     "showMemoryUsage": true,
                     "showNetworkStats": false,
@@ -107,16 +112,12 @@
                     "followFocusedScreen": false,
                     "groupedBorderOpacity": 1,
                     "hideUnoccupied": false,
+                    "iconScale": 0.8,
                     "id": "Workspace",
                     "labelMode": "name",
                     "showApplications": false,
                     "showLabelsOnlyWhenOccupied": true,
                     "unfocusedIconsOpacity": 1
-                },
-                {
-                    "defaultSettings": {
-                    },
-                    "id": "plugin:launcher-button"
                 },
                 {
                     "colorizeIcons": false,
@@ -172,7 +173,7 @@
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
                     "useCustomFont": false,
-                    "usePrimaryColor": true
+                    "usePrimaryColor": false
                 }
             ]
         }
@@ -239,6 +240,7 @@
                 "id": "brightness-card"
             }
         ],
+        "diskPath": "/",
         "position": "close_to_bar_button",
         "shortcuts": {
             "left": [
@@ -382,6 +384,11 @@
         "weatherShowEffects": true
     },
     "network": {
+        "bluetoothDetailsViewMode": "grid",
+        "bluetoothHideUnnamedDevices": false,
+        "bluetoothRssiPollIntervalMs": 10000,
+        "bluetoothRssiPollingEnabled": false,
+        "wifiDetailsViewMode": "grid",
         "wifiEnabled": false
     },
     "nightLight": {
@@ -450,6 +457,7 @@
     "sessionMenu": {
         "countdownDuration": 10000,
         "enableCountdown": true,
+        "largeButtonsLayout": "grid",
         "largeButtonsStyle": false,
         "position": "top_left",
         "powerOptions": [
@@ -493,20 +501,21 @@
         "showHeader": true,
         "showNumberLabels": true
     },
-    "settingsVersion": 35,
+    "settingsVersion": 37,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,
         "cpuWarningThreshold": 80,
         "criticalColor": "#bf616a",
         "diskCriticalThreshold": 90,
-        "diskPath": "/",
         "diskPollingInterval": 3000,
         "diskWarningThreshold": 80,
         "enableDgpuMonitoring": false,
+        "externalMonitor": "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor",
         "gpuCriticalThreshold": 90,
         "gpuPollingInterval": 3000,
         "gpuWarningThreshold": 80,
+        "loadAvgPollingInterval": 3000,
         "memCriticalThreshold": 90,
         "memPollingInterval": 3000,
         "memWarningThreshold": 80,
@@ -545,8 +554,7 @@
         "zed": false
     },
     "ui": {
-        "bluetoothDetailsViewMode": "list",
-        "bluetoothHideUnnamedDevices": false,
+        "boxBorderEnabled": false,
         "fontDefault": "CodeNewRoman Nerd Font",
         "fontDefaultScale": 1,
         "fontFixed": "DaddyTimeMono Nerd Font Mono",
@@ -554,8 +562,7 @@
         "panelBackgroundOpacity": 0.4,
         "panelsAttachedToBar": true,
         "settingsPanelMode": "centered",
-        "tooltipsEnabled": true,
-        "wifiDetailsViewMode": "grid"
+        "tooltipsEnabled": true
     },
     "wallpaper": {
         "directory": "/home/hiraeth/Pictures/wallpapers",
@@ -572,9 +579,11 @@
         "randomIntervalSec": 300,
         "recursiveSearch": false,
         "setWallpaperOnAllMonitors": false,
+        "solidColor": "#1a1a2e",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "random",
+        "useSolidColor": false,
         "useWallhaven": false,
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
