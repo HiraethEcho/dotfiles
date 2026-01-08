@@ -315,9 +315,63 @@
         }
     },
     "desktopWidgets": {
-        "enabled": false,
-        "gridSnap": false,
+        "enabled": true,
+        "gridSnap": true,
         "monitorWidgets": [
+            {
+                "name": "eDP-1",
+                "widgets": [
+                    {
+                        "id": "Weather",
+                        "scale": 1,
+                        "showBackground": false,
+                        "x": 100,
+                        "y": 100
+                    },
+                    {
+                        "clockStyle": "analog",
+                        "customFont": "",
+                        "format": "HH:mm\\nd MMMM yyyy",
+                        "id": "Clock",
+                        "roundedCorners": true,
+                        "scale": 4.322135030493771,
+                        "showBackground": false,
+                        "useCustomFont": false,
+                        "usePrimaryColor": true,
+                        "x": 120,
+                        "y": 380
+                    },
+                    {
+                        "hideMode": "visible",
+                        "id": "MediaPlayer",
+                        "roundedCorners": true,
+                        "scale": 1,
+                        "showAlbumArt": true,
+                        "showBackground": true,
+                        "showButtons": true,
+                        "showVisualizer": true,
+                        "visualizerType": "linear",
+                        "x": 100,
+                        "y": 200
+                    },
+                    {
+                        "defaultSettings": {
+                            "hideBackground": false,
+                            "minimumThreshold": 10
+                        },
+                        "id": "plugin:catwalk",
+                        "scale": 1,
+                        "showBackground": true,
+                        "x": 360,
+                        "y": 100
+                    }
+                ]
+            },
+            {
+                "name": "HDMI-A-1",
+                "widgets": [
+                ]
+            }
         ]
     },
     "dock": {

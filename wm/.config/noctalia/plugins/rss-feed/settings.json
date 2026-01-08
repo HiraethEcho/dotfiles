@@ -1,0 +1,62 @@
+{
+  "feeds": [
+    {
+      "name": "MEMEX",
+      "url": "https://memex.keinmal.top/index.xml"
+    },
+    {
+      "name": "Philosophy",
+      "url": "https://philosophynow.org/rss"
+    },
+    {
+      "name": "少数派",
+      "url": "https://sspai.com/feed"
+    }
+  ],
+  "updateInterval": 600,
+  "maxItemsPerFeed": 10,
+  "showOnlyUnread": false,
+  "markAsReadOnClick": false,
+  "readItems": [
+    "https://www.adrenaline.com.br/?p=642424",
+    "https://www.adrenaline.com.br/?p=642204",
+    "https://www.adrenaline.com.br/?p=642416",
+    "https://www.adrenaline.com.br/?p=642401",
+    "https://www.adrenaline.com.br/?p=642402",
+    "https://www.adrenaline.com.br/?p=642398",
+    "https://www.adrenaline.com.br/?p=642393",
+    "https://www.adrenaline.com.br/?p=642388",
+    "https://www.adrenaline.com.br/?p=642200",
+    "https://www.adrenaline.com.br/?p=642379",
+    "https://sspai.com/post/105111",
+    "https://sspai.com/post/105234",
+    "https://sspai.com/post/105142",
+    "https://sspai.com/prime/story/shortcuts-personalized-vocab-learning",
+    "https://sspai.com/post/105108",
+    "https://sspai.com/post/104946",
+    "https://sspai.com/post/105214",
+    "https://sspai.com/post/105197",
+    "https://sspai.com/post/105165",
+    "https://sspai.com/post/105047",
+    "https://memex.keinmal.top/me/",
+    "https://memex.keinmal.top/glade/memo/in-and-out/",
+    "https://memex.keinmal.top/glade/memo/ai-knowledge/",
+    "https://memex.keinmal.top/diary/suzhou/",
+    "https://memex.keinmal.top/diary/drunk/",
+    "https://memex.keinmal.top/morgue/amateurs/",
+    "https://memex.keinmal.top/forest/excerpt/origin-of-family/",
+    "https://memex.keinmal.top/morgue/film-lines/",
+    "https://memex.keinmal.top/morgue/big-city-small-town/",
+    "<![CDATA[https://philosophynow.org/issues/171/The_Good_Life_Paradox]]>",
+    "<![CDATA[https://philosophynow.org/issues/171/The_Necessary_Ache]]>",
+    "<![CDATA[https://philosophynow.org/issues/171/Philosophers_on_Walking]]>",
+    "<![CDATA[https://philosophynow.org/issues/171/Happy_Thoughts]]>",
+    "<![CDATA[https://philosophynow.org/issues/171/News_December_2025_January_2026]]>",
+    "<![CDATA[https://philosophynow.org/issues/171/Hedonic_Treadmills_in_the_Vale_of_Tears]]>",
+    "<![CDATA[https://philosophynow.org/issues/171/Ancient_Indian_Wisdom_for_a_Restless_Age]]>",
+    "<![CDATA[https://philosophynow.org/issues/171/Deconstructing_Happiness]]>",
+    "<![CDATA[https://philosophynow.org/issues/171/Baruch_Spinoza_1632-1677]]>",
+    "<![CDATA[https://philosophynow.org/issues/171/Arthur_Schopenhauer_Philosophys_Dr_Feelgood]]>",
+    "https://memex.keinmal.top/morgue/ideas/"
+  ]
+}

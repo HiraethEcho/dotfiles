@@ -1,0 +1,24 @@
+{
+  "id": "steam-price-watcher",
+  "name": "Steam Price Watcher",
+  "version": "1.0.1",
+  "author": "Lokize",
+  "description": "Monitor Steam game prices and get notified when they reach your target price",
+  "license": "MIT",
+  "minNoctaliaVersion": "3.6.0",
+  "entryPoints": {
+    "main": "Main.qml",
+    "barWidget": "BarWidget.qml",
+    "panel": "Panel.qml",
+    "settings": "Settings.qml"
+  },
+  "metadata": {
+    "defaultSettings": {
+      "watchlist": [],
+      "checkInterval": 30,
+      "notifiedGames": [],
+      "currency": "br",
+      "currencySymbol": "R$"
+    }
+  }
+}

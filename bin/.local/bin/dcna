@@ -19,6 +19,7 @@ GIT_REPO=(
 RCLONE_PAIR=(
   "$HOME/obsidian/;koofr:/obsidian/"
   "$HOME/Documents/zotero_files/;koofr:/kDocuments/zotero_files/"
+  "$HOME/Documents/zotero_files/;tera:/Documents/zotero_files/"
   "$HOME/Documents/sorge/;koofr:/kDocuments/sorge/"
   "$HOME/Documents/sorge/;tera:/Documents/sorge/"
   "$HOME/Documents/projects/;koofr:/kDocuments/projects/"
@@ -50,7 +51,6 @@ RCLONE_PAIR=(
 # "$HOME/Documents/philosophy/;koofr:/kDocuments/philosophy/"
 # "$HOME/Documents/doc/;tera:/Documents/doc/"
 # "$HOME/Documents/ucas/;tera:/Documents/ucas/"
-# "$HOME/Documents/zotero_files/;tera:/Documents/zotero_files/"
 # "$HOME/Documents/talks/;tera:/Documents/talks/"
 # "$HOME/Documents/projects/;tera:/Documents/projects/"
 # "$HOME/Documents/lectures/;tera:/Documents/lectures/"
