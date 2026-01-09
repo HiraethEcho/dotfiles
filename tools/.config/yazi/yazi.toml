@@ -142,8 +142,8 @@ prepend_previewers = [
   # { url = "*.md", run = 'piper -- mdfried "$1"' },
   # { url = "*.md", run = 'piper -- mdcat "$1"' },
   # { url = "*.md", run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' },
-  { url = "*", run = 'piper -- bat -p --color=always "$1"' },
-  # { url = "*.md", run = 'piper -- bat -p --color=always "$1"' },
+  # { url = "*", run = 'piper -- bat -p --color=always "$1"' },
+  { url = "*.md", run = 'piper -- bat -p --color=always "$1"' },
 ]
 
 preloaders = [
