@@ -59,13 +59,6 @@
                     "unfocusedIconsOpacity": 0.8
                 },
                 {
-                    "defaultSettings": {
-                        "hideBackground": false,
-                        "minimumThreshold": 10
-                    },
-                    "id": "plugin:catwalk"
-                },
-                {
                     "compactMode": false,
                     "diskPath": "/",
                     "id": "SystemMonitor",
@@ -323,10 +316,10 @@
                 "widgets": [
                     {
                         "id": "Weather",
-                        "scale": 1,
+                        "scale": 1.659911086390164,
                         "showBackground": false,
-                        "x": 100,
-                        "y": 100
+                        "x": 840,
+                        "y": 820
                     },
                     {
                         "clockStyle": "analog",
@@ -334,25 +327,12 @@
                         "format": "HH:mm\\nd MMMM yyyy",
                         "id": "Clock",
                         "roundedCorners": true,
-                        "scale": 4.322135030493771,
+                        "scale": 5,
                         "showBackground": false,
                         "useCustomFont": false,
                         "usePrimaryColor": true,
-                        "x": 120,
-                        "y": 380
-                    },
-                    {
-                        "hideMode": "visible",
-                        "id": "MediaPlayer",
-                        "roundedCorners": true,
-                        "scale": 1,
-                        "showAlbumArt": true,
-                        "showBackground": true,
-                        "showButtons": true,
-                        "showVisualizer": true,
-                        "visualizerType": "linear",
-                        "x": 100,
-                        "y": 200
+                        "x": 20,
+                        "y": 300
                     },
                     {
                         "defaultSettings": {
@@ -362,8 +342,8 @@
                         "id": "plugin:catwalk",
                         "scale": 1,
                         "showBackground": true,
-                        "x": 360,
-                        "y": 100
+                        "x": 860,
+                        "y": 700
                     }
                 ]
             },

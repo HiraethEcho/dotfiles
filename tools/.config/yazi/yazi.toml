@@ -138,7 +138,7 @@ spotters = [
 
 prepend_previewers = [
   # { url = "*/", run = "eza-preview" },
-  { url = "*/", run = 'piper -- eza -TL=3 --color=always --icons=always --group-directories-first --no-quotes "$1"' },
+  { url = "*/", run = 'piper -- eza -TL=2 --color=always --icons=always --group-directories-first --no-quotes "$1"' },
   # { url = "*.md", run = 'piper -- mdfried "$1"' },
   # { url = "*.md", run = 'piper -- mdcat "$1"' },
   # { url = "*.md", run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' },

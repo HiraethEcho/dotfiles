@@ -9,18 +9,18 @@ report.ls.labels=ID,Dep,Description,Tags,Project,Cal,Due
 report.ls.filter=priority.not:L -WAITING -PARENT -COMPLETED -DELETED
 report.ls.sort=project
 
-report.list.columns=id,depends,description.truncated,tags,project,cal,due.relative,recur
-report.list.labels=ID,Dep,Description,Tags,Project,Cal,Due,Recurrence
-report.list.filter=status:pending or status:recurring
+report.list.columns=id,depends,description.truncated,tags,project,cal,due.relative,status,recur
+report.list.labels=ID,Dep,Description,Tags,Project,Cal,Due,Status,Recurrence
+report.list.filter= -COMPLETED -DELETED
 report.list.sort=status-/,priority,project
 # report.list.context=false
 
-report.long.columns=id,depends,description,tags,project,cal,due,recur
-report.long.labels=ID,Depends,Description,Project,Tags,Cal,Due,Recurrence
-report.long.filter=status:pending
+report.long.columns=id,depends,description,tags,project,cal,due,status,recur
+report.long.labels=ID,Dep,Description,Tags,Projects,Cal,Due,Status,Recurrence
+report.long.filter= -COMPLETED -DELETED
 
-report.all.columns=id,depends,description,tags,project,cal,due,recur,wait,scheduled,until,status,mask,uuid.short
-report.all.labels=ID,Depends,Description,Tags,Project,Cal,Due,Recurrence,Wait,Scheduled,Until,Status,Mask,UUID
+report.all.columns=id,depends,description,tags,project,cal,due,status,recur,wait,scheduled,until,mask,uuid.short
+report.all.labels=ID,Depends,Description,Tags,Project,Cal,Due,Status,Recurrence,Wait,Scheduled,Until,Mask,UUID
 report.all.sort=status+/,project,tags
 report.all.filter=
 report.all.context=false
