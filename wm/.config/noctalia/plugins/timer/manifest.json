@@ -1,7 +1,7 @@
 {
   "id": "timer",
   "name": "Timer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "minNoctaliaVersion": "3.8.0",
   "author": "Noctalia Team",
   "license": "MIT",

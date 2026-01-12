@@ -77,7 +77,7 @@ Rectangle {
          }
          return mouseArea.containsMouse ? Color.mOnHover : Color.mOnSurface
       }
-      pointSize: Style.fontSizeS
+      pointSize: Style.barFontSize
       font.weight: Font.Medium
     }
   }

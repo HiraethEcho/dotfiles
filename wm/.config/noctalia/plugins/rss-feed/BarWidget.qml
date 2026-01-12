@@ -30,12 +30,12 @@ Rectangle {
 
     // Watch for changes in readItems and cfg to update unread count
     onCfgChanged: {
-        console.log("RSS Feed BarWidget: Config changed");
+        Logger.d("RSS Feed", "RSS Feed BarWidget: Config changed");
         updateUnreadCount();
     }
     
     onReadItemsChanged: {
-        console.log("RSS Feed BarWidget: readItems changed, count:", readItems.length);
+        Logger.d("RSS Feed", "RSS Feed BarWidget: readItems changed, count:", readItems.length);
         updateUnreadCount();
     }
 
@@ -57,7 +57,7 @@ Rectangle {
                 const newReadItems = newCfg.readItems || defaults.readItems || [];
                 if (JSON.stringify(readItems) !== JSON.stringify(newReadItems)) {
                     cfg = newCfg;
-                    console.log("RSS Feed BarWidget: Settings updated, readItems count:", newReadItems.length);
+                    Logger.d("RSS Feed", "RSS Feed BarWidget: Settings updated, readItems count:", newReadItems.length);
                 }
             }
         }
@@ -71,9 +71,9 @@ Rectangle {
                     pluginApi.sharedData = {};
                 }
                 pluginApi.sharedData.allItems = allItems;
-                console.log("RSS Feed BarWidget: Shared", allItems.length, "items to Panel");
+                Logger.d("RSS Feed", "RSS Feed BarWidget: Shared", allItems.length, "items to Panel");
             } catch (e) {
-                console.error("RSS Feed BarWidget: Error sharing data:", e);
+                Logger.w("RSS Feed", "BarWidget: Error sharing data:", e);
             }
             updateUnreadCount();
         }
@@ -90,39 +90,15 @@ Rectangle {
         unreadCount = count;
     }
 
-    // Expose functions
-    Component.onCompleted: {
-        console.log("RSS Feed: Widget loaded");
-        console.log("RSS Feed: Feeds configured:", feeds.length);
-        
-        if (pluginApi) {
-            try {
-                // Initialize sharedData if it doesn't exist
-                if (!pluginApi.sharedData) {
-                    pluginApi.sharedData = {};
-                }
-                pluginApi.sharedData.allItems = [];
-                pluginApi.triggerRefresh = fetchAllFeeds;
-                pluginApi.markAsRead = markItemAsRead;
-                pluginApi.markAllAsRead = markAllAsRead;
-                console.log("RSS Feed: pluginApi initialized, sharedData ready");
-            } catch (e) {
-                console.error("RSS Feed: Error initializing pluginApi:", e);
-            }
-        } else {
-            console.warn("RSS Feed: pluginApi is null!");
-        }
-    }
+    implicitWidth: Math.max(60, isVertical ? Style.capsuleHeight : contentWidth)
+    implicitHeight: Math.max(32, isVertical ? contentHeight :Style.capsuleHeight)
+    radius: Style.radiusM
+    color: Style.capsuleColor
+    border.color: Style.capsuleBorderColor
+    border.width: Style.capsuleBorderWidth
 
-    implicitWidth: Math.max(60, isVertical ? (Style.capsuleHeight || 32) : contentWidth)
-    implicitHeight: Math.max(32, isVertical ? contentHeight : (Style.capsuleHeight || 32))
-    radius: Style.radiusM || 8
-    color: Style.capsuleColor || "#1E1E1E"
-    border.color: Style.capsuleBorderColor || "#2E2E2E"
-    border.width: Style.capsuleBorderWidth || 1
-
-    readonly property real contentWidth: rowLayout.implicitWidth + (Style.marginM || 8) * 2
-    readonly property real contentHeight: rowLayout.implicitHeight + (Style.marginM || 8) * 2
+    readonly property real contentWidth: rowLayout.implicitWidth + Style.marginM * 2
+    readonly property real contentHeight: rowLayout.implicitHeight + Style.marginM * 2
 
     // Timer for periodic updates
     Timer {
@@ -132,7 +108,7 @@ Rectangle {
         repeat: true
         triggeredOnStart: true
         onTriggered: {
-            console.log("RSS Feed: Timer triggered, fetching feeds");
+            Logger.d("RSS Feed", "RSS Feed: Timer triggered, fetching feeds");
             fetchAllFeeds();
         }
     }
@@ -166,7 +142,7 @@ Rectangle {
             
             try {
                 const items = parseRSSFeed(stdout.text, currentFeedUrl);
-                console.log("RSS Feed: Parsed", items.length, "items from", currentFeedUrl);
+                Logger.d("RSS Feed", "RSS Feed: Parsed", items.length, "items from", currentFeedUrl);
                 tempItems = tempItems.concat(items);
                 fetchNextFeed();
             } catch (e) {
@@ -178,16 +154,16 @@ Rectangle {
 
     function fetchAllFeeds() {
         if (feeds.length === 0) {
-            console.log("RSS Feed: No feeds configured");
+            Logger.d("RSS Feed", "RSS Feed: No feeds configured");
             return;
         }
         
         if (fetchProcess.isFetching) {
-            console.log("RSS Feed: Already fetching");
+            Logger.d("RSS Feed", "RSS Feed: Already fetching");
             return;
         }
         
-        console.log("RSS Feed: Starting fetch for", feeds.length, "feeds");
+        Logger.d("RSS Feed", "RSS Feed: Starting fetch for", feeds.length, "feeds");
         loading = true;
         error = false;
         fetchProcess.tempItems = [];
@@ -207,7 +183,7 @@ Rectangle {
             });
             
             allItems = sorted;
-            console.log("RSS Feed: Total items:", allItems.length);
+            Logger.d("RSS Feed", "RSS Feed: Total items:", allItems.length);
             updateUnreadCount();
             return;
         }
@@ -216,7 +192,7 @@ Rectangle {
         fetchProcess.currentFeedUrl = feed.url;
         fetchProcess.currentFeedIndex++;
         
-        console.log("RSS Feed: Fetching", fetchProcess.currentFeedUrl);
+        Logger.d("RSS Feed", "RSS Feed: Fetching", fetchProcess.currentFeedUrl);
         
         fetchProcess.command = [
             "curl", "-s", "-L",
@@ -327,18 +303,17 @@ Rectangle {
         pluginApi.pluginSettings.readItems = newReadItems;
         pluginApi.saveSettings();
         updateUnreadCount();
-    }
+    } 
 
     RowLayout {
         id: rowLayout
         anchors.centerIn: parent
-        spacing: Style.marginS || 6
+        spacing: Style.marginS
 
-        Text {
-            text: "\uf09e"
-            font.family: "Symbols Nerd Font"
-            font.pixelSize: Style.fontSizeL || 18
-            color: error ? (Style.errorColor || "#FF5555") : (loading ? (Style.textColorSecondary || "#BBBBBB") : (Style.textColor || "#FFFFFF"))
+        NIcon {
+            icon: "rss"
+            pointSize: Style.barFontSize
+            color: error ? Color.mOnError : loading ? Color.mPrimary : Color.mOnSurface
             
             NumberAnimation on opacity {
                 running: loading
@@ -353,17 +328,16 @@ Rectangle {
         Rectangle {
             visible: unreadCount > 0
             Layout.preferredWidth: badgeText.implicitWidth + 8
-            Layout.preferredHeight: 18
-            radius: 9
-            color: Style.accentColor || "#FF6B6B"
+            Layout.preferredHeight: width
+            radius: width * 0.5
+            color: error ? Color.mError : Color.mPrimary
 
-            Text {
+            NText {
                 id: badgeText
                 anchors.centerIn: parent
                 text: unreadCount > 99 ? "99+" : unreadCount.toString()
-                font.pixelSize: 10
-                font.bold: true
-                color: "#FFFFFF"
+                pointSize: Style.barFontSize
+                color: error ? Color.mOnError : Color.mOnPrimary
             }
         }
     }

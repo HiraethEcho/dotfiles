@@ -38,7 +38,7 @@
         "marginVertical": 0,
         "monitors": [
         ],
-        "outerCorners": true,
+        "outerCorners": false,
         "position": "top",
         "showCapsule": true,
         "showOutline": false,
@@ -95,7 +95,7 @@
                     "enableScrollWheel": true,
                     "followFocusedScreen": true,
                     "groupedBorderOpacity": 0.5,
-                    "hideUnoccupied": false,
+                    "hideUnoccupied": true,
                     "iconScale": 0.8,
                     "id": "Workspace",
                     "labelMode": "index",
@@ -212,7 +212,7 @@
             }
         ],
         "diskPath": "/",
-        "position": "close_to_bar_button",
+        "position": "top_center",
         "shortcuts": {
             "left": [
                 {
@@ -410,7 +410,7 @@
     "nightLight": {
         "autoSchedule": true,
         "dayTemp": "6500",
-        "enabled": true,
+        "enabled": false,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",

@@ -41,7 +41,7 @@ Item {
             if (pluginApi && pluginApi.pluginSettings) {
                 cfg = pluginApi.pluginSettings;
                 readItems = cfg.readItems || defaults.readItems || [];
-                console.log("RSS Feed Panel: Settings reloaded, readItems count:", readItems.length);
+                Logger.d("RSS", "Settings reloaded, readItems count:", readItems.length);
                 updateDisplayItems();
             }
         }
@@ -63,7 +63,7 @@ Item {
             if (exitCode === 0 && stdout.text) {
                 const items = parseRSSFeed(stdout.text, currentFeedUrl);
                 tempItems = tempItems.concat(items);
-                console.log("RSS Feed Panel: Fetched", items.length, "items from", currentFeedUrl);
+                Logger.d("RSS", "Fetched", items.length, "items from", currentFeedUrl);
             }
             
             fetchNextFeed();
@@ -71,8 +71,8 @@ Item {
     }
 
     Component.onCompleted: {
-        console.log("RSS Feed Panel: Component loaded");
-        console.log("RSS Feed Panel: Feeds configured:", feeds.length);
+        Logger.d("RSS", "Component loaded");
+        Logger.d("RSS", "Feeds configured:", feeds.length);
         
         // Start fetching immediately
         if (feeds.length > 0) {
@@ -82,7 +82,7 @@ Item {
 
     onVisibleChanged: {
         if (visible) {
-            console.log("RSS Feed Panel: Opened");
+            Logger.d("RSS", "Opened");
             // Refresh on open
             if (feeds.length > 0 && !loading) {
                 fetchAllFeeds();
@@ -92,16 +92,16 @@ Item {
 
     function fetchAllFeeds() {
         if (feeds.length === 0) {
-            console.log("RSS Feed Panel: No feeds configured");
+            Logger.d("RSS", "No feeds configured");
             return;
         }
         
         if (fetchProcess.isFetching) {
-            console.log("RSS Feed Panel: Already fetching");
+            Logger.d("RSS", "Already fetching");
             return;
         }
         
-        console.log("RSS Feed Panel: Starting fetch for", feeds.length, "feeds");
+        Logger.d("RSS", "Starting fetch for", feeds.length, "feeds");
         loading = true;
         fetchProcess.tempItems = [];
         fetchProcess.currentFeedIndex = 0;
@@ -120,7 +120,7 @@ Item {
             });
             
             allItems = sorted;
-            console.log("RSS Feed Panel: Total items:", allItems.length);
+            Logger.d("RSS", "Total items:", allItems.length);
             updateDisplayItems();
             return;
         }
@@ -129,7 +129,7 @@ Item {
         fetchProcess.currentFeedUrl = feed.url;
         fetchProcess.currentFeedIndex++;
         
-        console.log("RSS Feed Panel: Fetching", fetchProcess.currentFeedUrl);
+        Logger.d("RSS", "Fetching", fetchProcess.currentFeedUrl);
         
         fetchProcess.command = [
             "curl", "-s", "-L",
@@ -224,12 +224,12 @@ Item {
     onAllItemsChanged: updateDisplayItems()
     onShowOnlyUnreadChanged: updateDisplayItems()
     onReadItemsChanged: {
-        console.log("RSS Feed Panel: readItems changed, count:", readItems.length);
+        Logger.d("RSS", "readItems changed, count:", readItems.length);
         updateDisplayItems();
     }
 
     function updateDisplayItems() {
-        console.log("RSS Feed Panel: updateDisplayItems called, allItems.length:", allItems.length);
+        Logger.d("RSS", "updateDisplayItems called, allItems.length:", allItems.length);
         if (showOnlyUnread) {
             displayItems = allItems.filter(item => {
                 return !readItems.includes(item.guid || item.link);
@@ -237,7 +237,7 @@ Item {
         } else {
             displayItems = allItems.slice();
         }
-        console.log("RSS Feed Panel: displayItems.length:", displayItems.length);
+        Logger.d("RSS", "displayItems.length:", displayItems.length);
     }
 
     function markAsRead(guid) {
@@ -245,13 +245,13 @@ Item {
             return;
         }
         
-        console.log("RSS Feed Panel: Marking as read:", guid);
+        Logger.d("RSS", "Marking as read:", guid);
         
         // Get current readItems from settings
         const currentReadItems = cfg.readItems || defaults.readItems || [];
         
         if (currentReadItems.includes(guid)) {
-            console.log("RSS Feed Panel: Already marked as read");
+            Logger.d("RSS", "Already marked as read");
             return;
         }
         
@@ -262,7 +262,7 @@ Item {
         }
         newReadItems.push(guid);
         
-        console.log("RSS Feed Panel: New readItems array:", JSON.stringify(newReadItems));
+        Logger.d("RSS", "New readItems array:", JSON.stringify(newReadItems));
         
         // Save to settings using the same pattern as Settings.qml
         if (pluginApi) {
@@ -271,7 +271,7 @@ Item {
             }
             pluginApi.pluginSettings.readItems = newReadItems;
             pluginApi.saveSettings();
-            console.log("RSS Feed Panel: Settings saved, readItems count:", newReadItems.length);
+            Logger.d("RSS", "Settings saved, readItems count:", newReadItems.length);
             
             // Trigger reload timer
             settingsReloadTimer.restart();
@@ -283,7 +283,7 @@ Item {
             return;
         }
         
-        console.log("RSS Feed Panel: Marking all as read, count:", allItems.length);
+        Logger.d("RSS", "Marking all as read, count:", allItems.length);
         
         // Get current readItems from settings
         const currentReadItems = cfg.readItems || defaults.readItems || [];
@@ -301,7 +301,7 @@ Item {
             }
         }
         
-        console.log("RSS Feed Panel: New readItems array length:", newReadItems.length);
+        Logger.d("RSS", "New readItems array length:", newReadItems.length);
         
         // Save to settings using the same pattern as Settings.qml
         if (pluginApi) {
@@ -310,7 +310,7 @@ Item {
             }
             pluginApi.pluginSettings.readItems = newReadItems;
             pluginApi.saveSettings();
-            console.log("RSS Feed Panel: All marked as read, readItems count:", newReadItems.length);
+            Logger.d("RSS", "All marked as read, readItems count:", newReadItems.length);
             
             // Trigger reload timer
             settingsReloadTimer.restart();
@@ -326,32 +326,32 @@ Item {
     Rectangle {
         id: panelContainer
         anchors.fill: parent
-        color: Style.backgroundColor || "#1E1E1E"
-        radius: Style.radiusL || 12
+        color: "transparent"
+
 
         ColumnLayout {
             anchors.fill: parent
-            anchors.margins: Style.marginM || 12
-            spacing: Style.marginM || 12
+            anchors.margins: Style.marginM
+            spacing: Style.marginM
 
             // Header
             RowLayout {
                 Layout.fillWidth: true
-                spacing: Style.marginM || 12
+                spacing: Style.marginM
 
-                Text {
+                NText {
                     text: pluginApi?.tr("widget.title", "RSS Feeds") || "RSS Feeds"
-                    font.pixelSize: Style.fontSizeL || 18
+                    pointSize: Style.fontSizeL
                     font.bold: true
-                    color: Style.textColor || "#FFFFFF"
+                    color: Color.mOnSurface
                     Layout.fillWidth: true
                 }
 
-                Text {
+                NText {
                     visible: displayItems.length > 0 && showOnlyUnread
                     text: displayItems.length + " unread"
-                    font.pixelSize: Style.fontSizeM || 14
-                    color: Style.textColorSecondary || "#888888"
+                    pointSize: Style.fontSizeM
+                    color: Color.mSecondary
                 }
 
                 NButton {
@@ -361,10 +361,8 @@ Item {
                 }
             }
 
-            Rectangle {
+            NDivider {
                 Layout.fillWidth: true
-                height: 1
-                color: Color.mOutlineVariant || "#333333"
             }
 
             // Content
@@ -375,7 +373,7 @@ Item {
 
                 ListView {
                     model: displayItems
-                    spacing: Style.marginS || 8
+                    spacing: Style.marginS
 
                     delegate: Rectangle {
                         required property var modelData
@@ -383,8 +381,8 @@ Item {
 
                         width: ListView.view.width
                         height: itemLayout.implicitHeight + 16
-                        color: isUnread ? (Style.fillColorTertiary || "#2A2A2A") : (Style.fillColorSecondary || "#1A1A1A")
-                        radius: Style.radiusM || 8
+                        color: Color.mSurfaceVariant
+                        radius: Style.radiusM
 
                         readonly property bool isUnread: !readItems.includes(modelData.guid || modelData.link)
 
@@ -392,8 +390,7 @@ Item {
                             visible: isUnread
                             width: 3
                             height: parent.height
-                            color: Style.accentColor || "#4A9EFF"
-                            radius: 1.5
+                            color: isUnread ? Color.mPrimary : "transparent"
                         }
 
                         ColumnLayout {
@@ -404,21 +401,21 @@ Item {
                             spacing: 6
 
                             // Feed name
-                            Text {
+                            NText {
                                 text: modelData.feedName || "Unknown Feed"
-                                font.pixelSize: Style.fontSizeS || 11
+                                pointSize: Style.fontSizeS
                                 font.bold: true
-                                color: Style.accentColor || "#4A9EFF"
+                                color: Color.mPrimary
                                 elide: Text.ElideRight
                                 Layout.fillWidth: true
                             }
 
                             // Title
-                            Text {
+                            NText {
                                 text: modelData.title || "Untitled"
-                                font.pixelSize: Style.fontSizeM || 14
+                                pointSize: Style.fontSizeM 
                                 font.bold: isUnread
-                                color: Style.textColor || "#FFFFFF"
+                                color: Color.mOnSurface
                                 wrapMode: Text.Wrap
                                 maximumLineCount: 2
                                 elide: Text.ElideRight
@@ -426,11 +423,11 @@ Item {
                             }
 
                             // Description
-                            Text {
+                            NText {
                                 visible: modelData.description && modelData.description.length > 0
                                 text: modelData.description || ""
-                                font.pixelSize: Style.fontSizeS || 12
-                                color: Style.textColorSecondary || "#AAAAAA"
+                                pointSize: Style.fontSizeS
+                                color: Color.mSecondary
                                 wrapMode: Text.Wrap
                                 maximumLineCount: 2
                                 elide: Text.ElideRight
@@ -438,10 +435,10 @@ Item {
                             }
 
                             // Date
-                            Text {
+                            NText {
                                 text: formatDate(modelData.pubDate)
-                                font.pixelSize: Style.fontSizeS || 11
-                                color: Style.textColorSecondary || "#888888"
+                                pointSize: Style.fontSizeS 
+                                color: Color.mSecondary
                             }
                         }
 
@@ -459,30 +456,28 @@ Item {
                         }
                     }
 
-                    Text {
+                    NText {
                         visible: displayItems.length === 0
                         anchors.centerIn: parent
                         text: pluginApi?.tr("widget.noItems", "No items to display") || "No items to display"
-                        font.pixelSize: Style.fontSizeM || 14
-                        color: Style.textColorSecondary || "#888888"
+                        pointSize: Style.fontSizeM
+                        color: Color.mSecondary
                     }
                 }
             }
 
             // Footer
-            Rectangle {
+            NDivider {
                 Layout.fillWidth: true
-                height: 1
-                color: Style.borderColor || "#333333"
             }
 
             RowLayout {
                 Layout.fillWidth: true
 
-                Text {
+                NText {
                     text: allItems.length + " total items"
-                    font.pixelSize: Style.fontSizeS || 12
-                    color: Style.textColorSecondary || "#888888"
+                    pointSize: Style.fontSizeS
+                    color: Color.mSecondary
                     Layout.fillWidth: true
                 }
             }

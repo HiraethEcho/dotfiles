@@ -60,7 +60,7 @@ Rectangle {
         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         text: root.pluginApi?.mainInstance?.updateCount.toString()
         color: root.hovered ? Color.mOnHover : Color.mOnSurface
-        pointSize: Style.fontSizeS
+        pointSize: Style.barFontSize
       }
     }
 

@@ -69,16 +69,14 @@ Rectangle {
                 visible: true
                 text: convertBytes(root.txSpeed)
                 color: root.colorText
-                pointSize: Style.fontSizeXS * 0.75 * root.fontSizeModifier
-                font.weight: Font.Medium
+                pointSize: Style.barFontSize * 0.75 * root.fontSizeModifier
             }
 
             NText {
                 visible: true
                 text: convertBytes(root.rxSpeed)
                 color: root.colorText
-                pointSize: Style.fontSizeXS * 0.75 * root.fontSizeModifier
-                font.weight: Font.Medium
+                pointSize: Style.barFontSize * 0.75 * root.fontSizeModifier
             }
         }
 

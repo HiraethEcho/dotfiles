@@ -35,12 +35,12 @@ ColumnLayout {
         pluginApi.pluginSettings.showOnlyUnread = showOnlyUnread;
         pluginApi.pluginSettings.markAsReadOnClick = markAsReadOnClick;
         
-        console.log("RSS Feed Settings: Saving - updateInterval:", updateInterval, 
+        Logger.d("RSS Feed", "RSS Feed Settings: Saving - updateInterval:", updateInterval, 
                     "maxItems:", maxItemsPerFeed, "showOnlyUnread:", showOnlyUnread, 
                     "markAsReadOnClick:", markAsReadOnClick, "feeds:", feeds.length);
         
         pluginApi.saveSettings();
-        console.log("RSS Feed: Settings saved successfully");
+        Logger.d("RSS Feed", "RSS Feed: Settings saved successfully");
     }
 
     function addFeed() {

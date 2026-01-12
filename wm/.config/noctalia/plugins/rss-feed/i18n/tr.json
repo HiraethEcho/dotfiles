@@ -1,30 +1,30 @@
 {
   "settings": {
-    "title": "RSS Okuyucu Ayarları",
-    "updateInterval": "Güncelleme Aralığı",
-    "updateIntervalDesc": "Yeni öğeleri ne sıklıkla kontrol etmeli (saniye)",
-    "seconds": "saniye",
-    "maxItems": "Kaynak Başına Maks. Öğe",
-    "maxItemsDesc": "Her kaynaktan alınacak maksimum öğe sayısı",
-    "showOnlyUnread": "Sadece Okunmamışları Göster",
-    "showOnlyUnreadDesc": "Panelde sadece okunmamış öğeleri göster",
-    "markOnClick": "Tıklandığında Okundu Olarak İşaretle",
-    "markOnClickDesc": "Öğeler açıldığında otomatik olarak okundu olarak işaretle",
-    "feeds": "RSS Kaynakları",
+    "add": "Ekle",
     "addFeed": "Yeni Kaynak Ekle",
     "feedName": "Kaynak Adı",
     "feedUrl": "Kaynak URL'si",
-    "add": "Ekle",
+    "feeds": "RSS Kaynakları",
+    "markOnClick": "Tıklandığında Okundu Olarak İşaretle",
+    "markOnClickDesc": "Öğeler açıldığında otomatik olarak okundu olarak işaretle",
+    "maxItems": "Kaynak Başına Maks. Öğe",
+    "maxItemsDesc": "Her kaynaktan alınacak maksimum öğe sayısı",
+    "noFeeds": "Yapılandırılmış kaynak yok. Yukarıdan bir tane ekleyin!",
     "remove": "Kaldır",
-    "noFeeds": "Yapılandırılmış kaynak yok. Yukarıdan bir tane ekleyin!"
+    "seconds": "saniye",
+    "showOnlyUnread": "Sadece Okunmamışları Göster",
+    "showOnlyUnreadDesc": "Panelde sadece okunmamış öğeleri göster",
+    "title": "RSS Okuyucu Ayarları",
+    "updateInterval": "Güncelleme Aralığı",
+    "updateIntervalDesc": "Yeni öğeleri ne sıklıkla kontrol etmeli (saniye)"
   },
   "widget": {
-    "title": "RSS Kaynakları",
     "markAllRead": "Tümünü okundu olarak işaretle",
     "noItems": "Gösterilecek öğe yok",
-    "timeNow": "şimdi",
-    "timeMinutes": "%1dk önce",
+    "timeDays": "%1g önce",
     "timeHours": "%1sa önce",
-    "timeDays": "%1g önce"
+    "timeMinutes": "%1dk önce",
+    "timeNow": "şimdi",
+    "title": "RSS Kaynakları"
   }
 }

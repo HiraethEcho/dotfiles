@@ -46,7 +46,7 @@ Rectangle {
       visible: !barIsVertical && root.showCount
       text: root.noteCount.toString()
       color: mouseArea.containsMouse ? Color.mOnHover : Color.mOnSurface
-      font.pointSize: Style.fontSizeS
+      font.pointSize: Style.barFontSize
       font.weight: Font.Medium
     }
   }
