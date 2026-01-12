@@ -24,6 +24,12 @@
       "add_button": "Adicionar",
       "placeholder": "Insira um novo item da lista de tarefas..."
     },
+    "edit_todo": {
+      "cancel_button": "Cancelar",
+      "placeholder": "Digite o texto da tarefa",
+      "save_button": "Salvar",
+      "title": "Editar tarefa"
+    },
     "empty_state": {
       "message": "Nenhum item de afazeres ainda."
     },
@@ -32,7 +38,8 @@
       "title": "Lista de Tarefas"
     },
     "todo_item": {
-      "delete_button_tooltip": "Apagar"
+      "delete_button_tooltip": "Apagar",
+      "edit_button_tooltip": "Editar"
     }
   },
   "settings": {

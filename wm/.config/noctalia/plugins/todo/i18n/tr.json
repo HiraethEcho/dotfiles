@@ -24,6 +24,12 @@
       "add_button": "Ekle",
       "placeholder": "Yeni bir yapılacaklar öğesi girin..."
     },
+    "edit_todo": {
+      "cancel_button": "İptal",
+      "placeholder": "Yapılacak metnini girin",
+      "save_button": "Kaydet",
+      "title": "Yapılacakları düzenle"
+    },
     "empty_state": {
       "message": "Henüz yapılacak bir şey yok."
     },
@@ -32,7 +38,8 @@
       "title": "Yapılacaklar Listesi"
     },
     "todo_item": {
-      "delete_button_tooltip": "Sil"
+      "delete_button_tooltip": "Sil",
+      "edit_button_tooltip": "Düzenle"
     }
   },
   "settings": {

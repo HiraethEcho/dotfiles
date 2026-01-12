@@ -31,6 +31,12 @@ Rectangle {
   color: Style.capsuleColor
   radius: Style.radiusL
 
+  Connections {
+    target: Color
+    function onMOnHoverChanged() { }
+    function onMOnSurfaceChanged() { }
+  }
+
   RowLayout {
     id: contentRow
     anchors.centerIn: parent

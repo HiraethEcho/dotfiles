@@ -24,6 +24,12 @@
       "add_button": "添加",
       "placeholder": "输入新的待办事项..."
     },
+    "edit_todo": {
+      "cancel_button": "取消",
+      "placeholder": "输入待办事项内容",
+      "save_button": "保存",
+      "title": "编辑待办事项"
+    },
     "empty_state": {
       "message": "暂无待办事项"
     },
@@ -32,7 +38,8 @@
       "title": "待办事项列表"
     },
     "todo_item": {
-      "delete_button_tooltip": "删除"
+      "delete_button_tooltip": "删除",
+      "edit_button_tooltip": "编辑"
     }
   },
   "settings": {

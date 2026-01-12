@@ -24,6 +24,12 @@
       "add_button": "Toevoegen",
       "placeholder": "Voer een nieuw todo-item in..."
     },
+    "edit_todo": {
+      "cancel_button": "Annuleren",
+      "placeholder": "Voer todo-tekst in",
+      "save_button": "Opslaan",
+      "title": "Taak bewerken"
+    },
     "empty_state": {
       "message": "Nog geen taken."
     },
@@ -32,7 +38,8 @@
       "title": "Takenlijst"
     },
     "todo_item": {
-      "delete_button_tooltip": "Verwijderen"
+      "delete_button_tooltip": "Verwijderen",
+      "edit_button_tooltip": "Bewerken"
     }
   },
   "settings": {

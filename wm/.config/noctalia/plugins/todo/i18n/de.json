@@ -24,6 +24,12 @@
       "add_button": "Hinzufügen",
       "placeholder": "Gib eine neue Aufgabe ein..."
     },
+    "edit_todo": {
+      "cancel_button": "Abbrechen",
+      "placeholder": "Aufgabentext eingeben",
+      "save_button": "Speichern",
+      "title": "Aufgabe bearbeiten"
+    },
     "empty_state": {
       "message": "Noch keine To-Do-Elemente vorhanden."
     },
@@ -32,7 +38,8 @@
       "title": "Aufgabenliste"
     },
     "todo_item": {
-      "delete_button_tooltip": "Löschen"
+      "delete_button_tooltip": "Löschen",
+      "edit_button_tooltip": "Bearbeiten"
     }
   },
   "settings": {
