@@ -24,18 +24,6 @@
       "add_button": "Aggiungi",
       "placeholder": "Inserisci un nuovo compito..."
     },
-    "edit_todo": {
-      "cancel_button": "Annulla",
-      "placeholder": "Inserisci il testo del compito",
-      "save_button": "Salva",
-      "title": "Modifica compito"
-    },
-    "edit_todo": {
-      "cancel_button": "Annulla",
-      "placeholder": "Entra il testo dell'attività da fare",
-      "save_button": "Salva",
-      "title": "Modifica Todo"
-    },
     "empty_state": {
       "message": "Ancora nessun compito"
     },

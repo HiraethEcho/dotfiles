@@ -24,12 +24,6 @@
       "add_button": "Додати",
       "placeholder": "Введіть новий пункт списку справ..."
     },
-    "edit_todo": {
-      "cancel_button": "Скасувати",
-      "placeholder": "Введіть текст завдання",
-      "save_button": "Зберегти",
-      "title": "Редагувати завдання"
-    },
     "empty_state": {
       "message": "Поки що немає завдань"
     },

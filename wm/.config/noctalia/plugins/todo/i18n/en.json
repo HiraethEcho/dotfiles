@@ -24,12 +24,6 @@
       "add_button": "Add",
       "placeholder": "Enter a new todo item..."
     },
-    "edit_todo": {
-      "cancel_button": "Cancel",
-      "placeholder": "Enter todo text",
-      "save_button": "Save",
-      "title": "Edit Todo"
-    },
     "empty_state": {
       "message": "No todo items yet"
     },

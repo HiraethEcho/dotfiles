@@ -24,12 +24,6 @@
       "add_button": "Ajouter",
       "placeholder": "Entrez un nouvel élément de tâche..."
     },
-    "edit_todo": {
-      "cancel_button": "Annuler",
-      "placeholder": "Saisir le texte de la tâche",
-      "save_button": "Enregistrer",
-      "title": "Modifier la tâche"
-    },
     "empty_state": {
       "message": "Aucun élément de tâche pour le moment."
     },

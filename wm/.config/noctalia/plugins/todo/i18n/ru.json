@@ -24,12 +24,6 @@
       "add_button": "Добавить",
       "placeholder": "Введите новую задачу..."
     },
-    "edit_todo": {
-      "cancel_button": "Отмена",
-      "placeholder": "Введите текст задачи",
-      "save_button": "Сохранить",
-      "title": "Редактировать задачу"
-    },
     "empty_state": {
       "message": "Пока нет задач"
     },

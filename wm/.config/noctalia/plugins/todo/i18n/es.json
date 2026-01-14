@@ -24,12 +24,6 @@
       "add_button": "Añadir",
       "placeholder": "Introduce un nuevo elemento de tarea..."
     },
-    "edit_todo": {
-      "cancel_button": "Cancelar",
-      "placeholder": "Introducir texto de la tarea",
-      "save_button": "Guardar",
-      "title": "Editar tarea"
-    },
     "empty_state": {
       "message": "Aún no hay elementos."
     },

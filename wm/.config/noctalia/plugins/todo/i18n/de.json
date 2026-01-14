@@ -24,12 +24,6 @@
       "add_button": "Hinzufügen",
       "placeholder": "Gib eine neue Aufgabe ein..."
     },
-    "edit_todo": {
-      "cancel_button": "Abbrechen",
-      "placeholder": "Aufgabentext eingeben",
-      "save_button": "Speichern",
-      "title": "Aufgabe bearbeiten"
-    },
     "empty_state": {
       "message": "Noch keine To-Do-Elemente vorhanden."
     },

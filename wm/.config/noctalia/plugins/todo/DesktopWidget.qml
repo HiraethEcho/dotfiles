@@ -13,6 +13,48 @@ DraggableDesktopWidget {
   property bool showCompleted: pluginApi?.pluginSettings?.showCompleted !== undefined ? pluginApi.pluginSettings.showCompleted : pluginApi?.manifest?.metadata?.defaultSettings?.showCompleted
   property ListModel filteredTodosModel: ListModel {}
 
+  function moveTodoToCorrectPosition(todoId) {
+    if (!pluginApi) return;
+
+    var todos = pluginApi.pluginSettings.todos || [];
+    var todoIndex = -1;
+
+    for (var i = 0; i < todos.length; i++) {
+      if (todos[i].id === todoId) {
+        todoIndex = i;
+        break;
+      }
+    }
+
+    if (todoIndex !== -1) {
+      var movedTodo = todos[todoIndex];
+
+      todos.splice(todoIndex, 1);
+
+      if (movedTodo.completed) {
+        var insertIndex = todos.length;
+        for (var j = todos.length - 1; j >= 0; j--) {
+          if (todos[j].completed) {
+            insertIndex = j + 1;
+            break;
+          }
+        }
+        todos.splice(insertIndex, 0, movedTodo);
+      } else {
+        var insertIndex = 0;
+        for (; insertIndex < todos.length; insertIndex++) {
+          if (todos[insertIndex].completed) {
+            break;
+          }
+        }
+        todos.splice(insertIndex, 0, movedTodo);
+      }
+
+      pluginApi.pluginSettings.todos = todos;
+      pluginApi.saveSettings();
+    }
+  }
+
   showBackground: (pluginApi && pluginApi.pluginSettings ? (pluginApi.pluginSettings.showBackground !== undefined ? pluginApi.pluginSettings.showBackground : pluginApi?.manifest?.metadata?.defaultSettings?.showBackground) : pluginApi?.manifest?.metadata?.defaultSettings?.showBackground)
 
   readonly property color todoBg: showBackground ? Qt.rgba(0, 0, 0, 0.2) : "transparent"
@@ -268,6 +310,8 @@ DraggableDesktopWidget {
                                 }
                               }
                               pluginApi.pluginSettings.completedCount = completedCount;
+
+                              moveTodoToCorrectPosition(model.id);
 
                               pluginApi.saveSettings();
                               updateFilteredTodos(); // Refresh the display

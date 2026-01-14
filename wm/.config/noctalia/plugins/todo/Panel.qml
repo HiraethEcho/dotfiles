@@ -25,6 +25,48 @@ Item {
     value: pluginApi?.pluginSettings?.todos || []
   }
 
+  function moveTodoToCorrectPosition(todoId) {
+    if (!pluginApi) return;
+
+    var todos = pluginApi.pluginSettings.todos || [];
+    var todoIndex = -1;
+
+    for (var i = 0; i < todos.length; i++) {
+      if (todos[i].id === todoId) {
+        todoIndex = i;
+        break;
+      }
+    }
+
+    if (todoIndex !== -1) {
+      var movedTodo = todos[todoIndex];
+
+      todos.splice(todoIndex, 1);
+
+      if (movedTodo.completed) {
+        var insertIndex = todos.length;
+        for (var j = todos.length - 1; j >= 0; j--) {
+          if (todos[j].completed) {
+            insertIndex = j + 1;
+            break;
+          }
+        }
+        todos.splice(insertIndex, 0, movedTodo);
+      } else {
+        var insertIndex = 0;
+        for (; insertIndex < todos.length; insertIndex++) {
+          if (todos[insertIndex].completed) {
+            break;
+          }
+        }
+        todos.splice(insertIndex, 0, movedTodo);
+      }
+
+      pluginApi.pluginSettings.todos = todos;
+      pluginApi.saveSettings();
+    }
+  }
+
   Component.onCompleted: {
     if (pluginApi) {
       Logger.i("Todo", "Panel initialized");
@@ -36,6 +78,9 @@ Item {
   }
 
   function loadTodos() {
+    // Store the current scroll position
+    var currentScrollPos = todoListView ? todoListView.contentY : 0;
+
     todosModel.clear();
     filteredTodosModel.clear();
 
@@ -59,6 +104,13 @@ Item {
                                     createdAt: pluginTodos[k].createdAt
                                   });
       }
+    }
+
+    // Restore the scroll position
+    if (todoListView) {
+      Qt.callLater(function() {
+        todoListView.contentY = currentScrollPos;
+      });
     }
   }
 
@@ -198,13 +250,67 @@ Item {
                 property int dragTargetIndex: -1
                 property int itemSpacing: Style.marginS
 
+                // Properties for edit functionality
+                property bool editing: false
+                property string originalText: ""
+
+                // Methods for edit functionality
+                function startEdit() {
+                  editing = true;
+                  originalText = modelData.text;
+                }
+
+                function saveEdit() {
+                  if (pluginApi && todoTextEdit.text.trim() !== "") {
+                    var todos = pluginApi.pluginSettings.todos || [];
+
+                    for (var i = 0; i < todos.length; i++) {
+                      if (todos[i].id === modelData.id) {
+                        todos[i].text = todoTextEdit.text.trim();
+                        break;
+                      }
+                    }
+
+                    pluginApi.pluginSettings.todos = todos;
+                    pluginApi.saveSettings();
+
+                    root.loadTodos();
+                  }
+                  editing = false;
+                }
+
+                function cancelEdit() {
+                  editing = false;
+                  // Restore the original text when cancelling
+                  if (todoTextEdit) {
+                    todoTextEdit.text = originalText;
+                  }
+                }
+
+                // Watch for editing property changes to handle focus
+                onEditingChanged: {
+                    if (editing) {
+                        // Use a timer to delay the focus operation
+                        var timer = Qt.createQmlObject("
+                            import QtQuick 2.0;
+                            Timer {
+                                interval: 50;
+                                running: true;
+                                onTriggered: {
+                                    if (todoTextEdit && todoTextEdit.input) {
+                                        todoTextEdit.input.forceActiveFocus();
+                                    }
+                                }
+                            }", delegateItem);
+                    }
+                }
+
                 // Position binding for non-dragging state
                 y: {
                   if (delegateItem.dragging) {
                     return delegateItem.y;
                   }
 
-                  // Check if any item is being dragged
                   var draggedIndex = -1;
                   var targetIndex = -1;
                   for (var i = 0; i < todoListView.count; i++) {
@@ -221,12 +327,10 @@ Item {
                     var currentIndex = delegateItem.index;
 
                     if (draggedIndex < targetIndex) {
-                      // Dragging down: shift items up between draggedIndex and targetIndex
                       if (currentIndex > draggedIndex && currentIndex <= targetIndex) {
                         return (currentIndex - 1) * (delegateItem.height + delegateItem.itemSpacing);
                       }
                     } else {
-                      // Dragging up: shift items down between targetIndex and draggedIndex
                       if (currentIndex >= targetIndex && currentIndex < draggedIndex) {
                         return (currentIndex + 1) * (delegateItem.height + delegateItem.itemSpacing);
                       }
@@ -416,7 +520,8 @@ Item {
                               }
                               pluginApi.pluginSettings.completedCount = completedCount;
 
-                              pluginApi.saveSettings();
+                              moveTodoToCorrectPosition(modelData.id);
+
                               loadTodos();
                             }
                           }
@@ -424,86 +529,208 @@ Item {
                       }
                     }
 
-                    // Text
-                    NText {
-                      text: modelData.text
-                      color: modelData.completed ? Color.mOnSurfaceVariant : Color.mOnSurface
-                      font.strikeout: modelData.completed
-                      verticalAlignment: Text.AlignVCenter
-                      elide: Text.ElideRight
-                      Layout.fillWidth: true
-                    }
-
-                    // Edit button
+                    // Text container (using Layout to fit in the RowLayout)
                     Item {
-                      id: editButtonContainer
-                      implicitWidth: Style.baseWidgetSize * 0.8
-                      implicitHeight: Style.baseWidgetSize * 0.8
+                      Layout.fillWidth: true
+                      Layout.preferredHeight: parent.height
 
-                      NIcon {
-                        id: editButtonIcon
-                        anchors.centerIn: parent
-                        icon: "pencil"
-                        pointSize: Style.fontSizeM
-                        color: Color.mOnSurfaceVariant
-                        opacity: 0.5
+                      // Normal text display
+                      NText {
+                        id: todoTextDisplay
+                        visible: !delegateItem.editing
+                        text: modelData.text
+                        color: modelData.completed ? Color.mOnSurfaceVariant : Color.mOnSurface
+                        font.strikeout: modelData.completed
+                        verticalAlignment: Text.AlignVCenter
+                        elide: Text.ElideRight
+                        anchors.fill: parent
+                        anchors.leftMargin: Style.marginS
+                        anchors.rightMargin: Style.marginS
+                      }
 
-                        MouseArea {
-                          id: editMouseArea
+                      // Edit text field - Using TextField directly to have more control
+                      Item {
+                        id: todoTextEditContainer
+                        visible: delegateItem.editing
+                        anchors.fill: parent
+                        anchors.leftMargin: Style.marginS
+                        anchors.rightMargin: Style.baseWidgetSize * 0.8 + Style.marginL
+                        height: parent.height * 0.8
+                        anchors.verticalCenter: parent.verticalCenter
+
+                        TextField {
+                          id: todoTextEdit
                           anchors.fill: parent
-                          hoverEnabled: true
-                          cursorShape: Qt.PointingHandCursor
-                          onClicked: {
-                            // Set the current todo for editing
-                            currentTodoId = modelData.id;
-                            currentTodoText = modelData.text;
-                            editDialog.open();
+                          anchors.rightMargin: Style.baseWidgetSize * 0.8
+                          text: modelData.text
+
+                          verticalAlignment: TextInput.AlignVCenter
+
+                          echoMode: TextInput.Normal
+                          color: Color.mOnSurface
+                          placeholderTextColor: Qt.alpha(Color.mOnSurfaceVariant, 0.6)
+
+                          selectByMouse: true
+
+                          topPadding: 0
+                          bottomPadding: 0
+                          leftPadding: Style.marginS
+                          rightPadding: Style.baseWidgetSize * 0.6
+
+                          font.family: Settings.data.ui.fontDefault
+                          font.pointSize: Style.fontSizeS * Style.uiScaleRatio
+                          font.weight: Style.fontWeightRegular
+
+                          // Remove the frame/background to eliminate border
+                          background: null
+
+                          Keys.onReturnPressed: {
+                            delegateItem.saveEdit();
                           }
-                        }
 
-                        ToolTip {
-                          id: editToolTip
-                          text: pluginApi?.tr("panel.todo_item.edit_button_tooltip") || "Edit"
-                          delay: 1000
-                          parent: editButtonIcon
-                          visible: editMouseArea.containsMouse
-
-                          contentItem: NText {
-                            text: editToolTip.text
-                            color: Color.mOnPrimary
-                            font.pointSize: Style.fontSizeXS
+                          Keys.onEscapePressed: {
+                            delegateItem.cancelEdit();
                           }
 
-                          background: Rectangle {
-                            color: Color.mPrimary
-                            radius: Style.iRadiusS
-                            border.color: Qt.rgba(0, 0, 0, 0.2)
-                            border.width: 1
-                          }
-                        }
-
-                        states: [
-                          State {
-                            name: "hovered"
-                            when: editMouseArea.containsMouse
-                            PropertyChanges {
-                              target: editButtonIcon
-                              opacity: 1.0
-                              color: Color.mPrimary
+                          // Set focus when visible
+                          onVisibleChanged: {
+                            if (visible) {
+                              Qt.callLater(function() {
+                                todoTextEdit.forceActiveFocus();
+                              });
                             }
                           }
-                        ]
+                        }
 
-                        transitions: [
-                          Transition {
-                            from: "*"; to: "hovered"
-                            NumberAnimation { properties: "opacity"; duration: 150 }
-                          },
-                          Transition {
-                            from: "hovered"; to: "*"
-                            NumberAnimation { properties: "opacity"; duration: 150 }
+                        // Clear button
+                        NIconButton {
+                          icon: "restore"
+                          tooltipText: "Clear text"
+
+                          anchors.right: parent.right
+                          anchors.verticalCenter: parent.verticalCenter
+                          anchors.rightMargin: Style.marginM
+
+                          scale: 0.7  // Reduce the button size with scaling
+                          colorBg: "transparent"
+                          colorBgHover: "transparent"
+                          colorFg: Color.mOnSurface
+                          colorFgHover: Color.mError
+
+                          visible: todoTextEdit.text.length > 0
+
+                          onClicked: {
+                            todoTextEdit.clear();
+                            todoTextEdit.forceActiveFocus();
                           }
-                        ]
+                        }
+                      }
+                    }
+
+                    // Edit button (only show when not editing) and Save/Cancel buttons
+                    Item {
+                      Layout.preferredWidth: Style.baseWidgetSize * 0.8
+                      Layout.preferredHeight: parent.height
+
+                      // Edit button (only show when not editing)
+                      Item {
+                        id: editButtonContainer
+                        visible: !delegateItem.editing
+                        anchors.centerIn: parent
+
+                        implicitWidth: Style.baseWidgetSize * 0.8
+                        implicitHeight: Style.baseWidgetSize * 0.8
+
+                        NIcon {
+                          id: editButtonIcon
+                          anchors.centerIn: parent
+                          icon: "pencil"
+                          pointSize: Style.fontSizeM
+                          color: Color.mOnSurfaceVariant
+                          opacity: 0.5
+
+                          MouseArea {
+                            id: editMouseArea
+                            anchors.fill: parent
+                            hoverEnabled: true
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: {
+                              delegateItem.startEdit();
+                            }
+                          }
+
+                          ToolTip {
+                            id: editToolTip
+                            text: pluginApi?.tr("panel.todo_item.edit_button_tooltip") || "Edit"
+                            delay: 1000
+                            parent: editButtonIcon
+                            visible: editMouseArea.containsMouse
+
+                            contentItem: NText {
+                              text: editToolTip.text
+                              color: Color.mOnPrimary
+                              font.pointSize: Style.fontSizeXS
+                            }
+
+                            background: Rectangle {
+                              color: Color.mPrimary
+                              radius: Style.iRadiusS
+                              border.color: Qt.rgba(0, 0, 0, 0.2)
+                              border.width: 1
+                            }
+                          }
+
+                          states: [
+                            State {
+                              name: "hovered"
+                              when: editMouseArea.containsMouse
+                              PropertyChanges {
+                                target: editButtonIcon
+                                opacity: 1.0
+                                color: Color.mPrimary
+                              }
+                            }
+                          ]
+
+                          transitions: [
+                            Transition {
+                              from: "*"; to: "hovered"
+                              NumberAnimation { properties: "opacity"; duration: 150 }
+                            },
+                            Transition {
+                              from: "hovered"; to: "*"
+                              NumberAnimation { properties: "opacity"; duration: 150 }
+                            }
+                          ]
+                        }
+                      }
+
+                      // Save/Cancel buttons (only show when editing)
+                      RowLayout {
+                        id: editButtonsRow
+                        visible: delegateItem.editing
+                        anchors.centerIn: parent
+                        spacing: Style.marginS
+
+                        NIconButton {
+                          icon: "check"
+                          Layout.preferredWidth: Style.baseWidgetSize * 0.6
+                          Layout.preferredHeight: Style.baseWidgetSize * 0.6
+
+                          onClicked: {
+                            delegateItem.saveEdit();
+                          }
+                        }
+
+                        NIconButton {
+                          icon: "x"
+                          Layout.preferredWidth: Style.baseWidgetSize * 0.6
+                          Layout.preferredHeight: Style.baseWidgetSize * 0.6
+
+                          onClicked: {
+                            delegateItem.cancelEdit();
+                          }
+                        }
                       }
                     }
 
@@ -637,93 +864,6 @@ Item {
     }
   }
 
-  // Properties for edit dialog
-  property var currentTodoId: null
-  property string currentTodoText: ""
-
-  // Edit Dialog
-  Popup {
-    id: editDialog
-    modal: true
-    dim: true
-    anchors.centerIn: Overlay.overlay
-    width: 400 * Style.uiScaleRatio
-    height: 200 * Style.uiScaleRatio
-    padding: Style.marginL
-    background: Rectangle {
-      color: Color.mSurface
-      border.color: Color.mOutline
-      border.width: 1
-      radius: Style.radiusL
-    }
-
-    ColumnLayout {
-      anchors.fill: parent
-      spacing: Style.marginM
-
-      NText {
-        text: pluginApi?.tr("panel.edit_todo.title") || "Edit Todo"
-        font.pointSize: Style.fontSizeL
-        font.weight: Font.Bold
-        color: Color.mOnSurface
-        Layout.fillWidth: true
-        horizontalAlignment: Text.AlignHCenter
-      }
-
-      NTextInput {
-        id: editTodoInput
-        text: root.currentTodoText
-        placeholderText: pluginApi?.tr("panel.edit_todo.placeholder") || "Enter todo text"
-        Layout.fillWidth: true
-        onTextChanged: root.currentTodoText = text
-      }
-
-      RowLayout {
-        Layout.alignment: Qt.AlignHCenter
-        spacing: Style.marginM
-
-        NButton {
-          text: pluginApi?.tr("panel.edit_todo.cancel_button") || "Cancel"
-          onClicked: {
-            editDialog.close();
-          }
-        }
-
-        NButton {
-          text: pluginApi?.tr("panel.edit_todo.save_button") || "Save"
-          backgroundColor: Color.mPrimary
-          textColor: Color.mOnPrimary
-          onClicked: {
-            if (pluginApi && root.currentTodoId !== null && root.currentTodoText.trim() !== "") {
-              var todos = pluginApi.pluginSettings.todos || [];
-
-              for (var i = 0; i < todos.length; i++) {
-                if (todos[i].id === root.currentTodoId) {
-                  todos[i].text = root.currentTodoText.trim();
-                  break;
-                }
-              }
-
-              pluginApi.pluginSettings.todos = todos;
-              pluginApi.saveSettings();
-              loadTodos();
-              editDialog.close();
-            }
-          }
-        }
-      }
-    }
-
-    onOpened: {
-      editTodoInput.forceActiveFocus();
-      editTodoInput.text = root.currentTodoText;
-    }
-
-    onClosed: {
-      root.currentTodoId = null;
-      root.currentTodoText = "";
-    }
-  }
 
   function addTodo() {
     if (newTodoInput.text.trim() !== "") {
@@ -731,7 +871,7 @@ Item {
         var todos = pluginApi.pluginSettings.todos || [];
 
         var newTodo = {
-          id: Date.now() // Use timestamp as simple ID
+          id: Date.now()
               ,
           text: newTodoInput.text.trim(),
           completed: false,
@@ -747,7 +887,7 @@ Item {
         pluginApi.saveSettings();
 
         newTodoInput.text = "";
-        loadTodos(); // Reload todos to update view
+        loadTodos();
       }
     }
   }
@@ -769,7 +909,7 @@ Item {
     if (pluginApi) {
       pluginApi.pluginSettings.todos = newTodos;
       pluginApi.saveSettings();
-      loadTodos(); // Reload to update the view
+      loadTodos();
     }
   }
 }

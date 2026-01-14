@@ -24,12 +24,6 @@
       "add_button": "追加",
       "placeholder": "新しい ToDo 項目を入力..."
     },
-    "edit_todo": {
-      "cancel_button": "キャンセル",
-      "placeholder": "ToDo テキストを入力",
-      "save_button": "保存",
-      "title": "ToDo を編集"
-    },
     "empty_state": {
       "message": "まだタスクはありません"
     },

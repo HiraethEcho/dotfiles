@@ -24,12 +24,6 @@
       "add_button": "添加",
       "placeholder": "输入新的待办事项..."
     },
-    "edit_todo": {
-      "cancel_button": "取消",
-      "placeholder": "输入待办事项内容",
-      "save_button": "保存",
-      "title": "编辑待办事项"
-    },
     "empty_state": {
       "message": "暂无待办事项"
     },

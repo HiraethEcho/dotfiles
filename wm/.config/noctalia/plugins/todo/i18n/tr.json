@@ -24,12 +24,6 @@
       "add_button": "Ekle",
       "placeholder": "Yeni bir yapılacaklar öğesi girin..."
     },
-    "edit_todo": {
-      "cancel_button": "İptal",
-      "placeholder": "Yapılacak metnini girin",
-      "save_button": "Kaydet",
-      "title": "Yapılacakları düzenle"
-    },
     "empty_state": {
       "message": "Henüz yapılacak bir şey yok."
     },
