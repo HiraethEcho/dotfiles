@@ -1,0 +1,41 @@
+{
+  "keybind-cheatsheet": {
+    "panel": {
+      "title": "Atalhos de Teclado",
+      "open-settings": "Configuracoes",
+      "loading": "Carregando...",
+      "no-data": "Nenhum atalho de teclado encontrado",
+      "no-categories": "Nenhuma categoria encontrada no arquivo de configuracao",
+      "no-compositor": "Nenhum compositor compativel detectado",
+      "error-read-file": "Nao foi possivel ler o arquivo de configuracao",
+      "refresh": "Atualizar",
+      "no-description": "Sem descricao"
+    },
+    "settings": {
+      "title": "Configuracoes de Atalhos de Teclado",
+      "description": "Configure a aparencia e as fontes de atalhos de teclado para o painel.",
+      "window-size": "Tamanho da Janela",
+      "width": "Largura:",
+      "height": "Altura:",
+      "auto-height": "Auto",
+      "auto-height-hint": "Quando 'Auto' esta ativado, a altura se ajusta automaticamente ao conteudo.",
+      "layout": "Layout",
+      "columns": "Numero de colunas:",
+      "columns-hint": "Mais colunas funcionam melhor com janelas mais largas.",
+      "config-paths": "Arquivos de Configuracao",
+      "config-paths-description": "Especifique caminhos personalizados para seus arquivos de configuracao de atalhos.",
+      "hyprland-format-hint": "Formato esperado: bind = $mod, KEY, action #\"descricao\"",
+      "niri-format-hint": "O plugin encontrara e analisara automaticamente o bloco 'binds { }'.",
+      "actions": "Acoes",
+      "refresh-keybinds": "Atualizar Atalhos",
+      "refresh-message": "Os atalhos serao recarregados ao abrir o painel.",
+      "reset-defaults": "Restaurar Padroes",
+      "reset-message": "As configuracoes foram restauradas para os valores padrao.",
+      "saved": "Configuracoes salvas com sucesso.",
+      "keybind-setup": "Configuracao de Atalho",
+      "keybind-setup-description": "Para abrir o cheatsheet com um atalho de teclado, adicione este bind a configuracao do seu compositor:",
+      "keybind-example-hyprland": "Hyprland: bind = $mod, F1, exec, qs -c \"noctalia-shell\" ipc call \"keybind-cheatsheet\" \"toggle\"",
+      "keybind-example-niri": "Niri: Super+F1 { spawn \"qs\" \"-c\" \"noctalia-shell\" \"ipc\" \"call\" \"keybind-cheatsheet\" \"toggle\"; }"
+    }
+  }
+}

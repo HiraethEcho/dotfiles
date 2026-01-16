@@ -1,0 +1,35 @@
+{
+  "command": {
+    "description": "Vertaal tekst"
+  },
+  "languageNames": {
+    "english": "Engels",
+    "french": "Frans",
+    "german": "Duits",
+    "italian": "Italiaans",
+    "portuguese": "Portugees",
+    "spanish": "Spaans"
+  },
+  "languages": {
+    "english": "Vertalen naar Engels",
+    "french": "Vertalen naar Frans",
+    "german": "Vertalen naar Duits",
+    "italian": "Vertalen naar het Italiaans",
+    "portuguese": "Vertalen naar het Portugees",
+    "spanish": "Vertalen naar Spaans"
+  },
+  "messages": {
+    "connectionError": "Verbindingsfout",
+    "enterText": "Typ tekst om te vertalen...",
+    "error": "Vertalingsfout",
+    "targetLanguage": "nl",
+    "translating": "Vertalen...",
+    "translation": "Vertaling ({code})"
+  },
+  "settings": {
+    "backend": {
+      "description": "Kies de vertaaldienst die je wilt gebruiken",
+      "label": "Vertaal-backend"
+    }
+  }
+}

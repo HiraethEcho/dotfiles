@@ -1,0 +1,35 @@
+{
+  "command": {
+    "description": "Metni çevir"
+  },
+  "languageNames": {
+    "english": "İngilizce",
+    "french": "Fransızca",
+    "german": "Almanca",
+    "italian": "İtalyanca",
+    "portuguese": "Português",
+    "spanish": "İspanyolca"
+  },
+  "languages": {
+    "english": "İngilizce'ye çevir",
+    "french": "Traduire en français",
+    "german": "Übersetzen nach Deutsch",
+    "italian": "Traduci in italiano",
+    "portuguese": "Traduzir para português",
+    "spanish": "Traducir al español"
+  },
+  "messages": {
+    "connectionError": "Bağlantı hatası",
+    "enterText": "Çevrilecek metni yazın...",
+    "error": "Çeviri hatası",
+    "targetLanguage": "Hedef dil: {code}",
+    "translating": "Çevriliyor...",
+    "translation": "Çeviri ({code})"
+  },
+  "settings": {
+    "backend": {
+      "description": "Kullanılacak çeviri hizmetini seçin",
+      "label": "Çeviri Arka Ucu"
+    }
+  }
+}

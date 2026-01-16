@@ -1,0 +1,35 @@
+{
+  "command": {
+    "description": "翻译文本"
+  },
+  "languageNames": {
+    "english": "英语",
+    "french": "法语",
+    "german": "德语",
+    "italian": "意大利语",
+    "portuguese": "葡萄牙语",
+    "spanish": "西班牙语"
+  },
+  "languages": {
+    "english": "翻译成英文",
+    "french": "Traduire en français",
+    "german": "翻译成中文",
+    "italian": "Traduci in italiano",
+    "portuguese": "翻译成中文",
+    "spanish": "翻译成中文"
+  },
+  "messages": {
+    "connectionError": "连接错误",
+    "enterText": "输入要翻译的文本...",
+    "error": "翻译错误",
+    "targetLanguage": "目标语言：{code}",
+    "translating": "正在翻译...",
+    "translation": "翻译 ({code})"
+  },
+  "settings": {
+    "backend": {
+      "description": "选择要使用的翻译服务",
+      "label": "翻译后端"
+    }
+  }
+}

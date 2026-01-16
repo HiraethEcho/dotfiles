@@ -1,0 +1,35 @@
+{
+  "command": {
+    "description": "Translate text"
+  },
+  "languageNames": {
+    "english": "English",
+    "french": "French",
+    "german": "German",
+    "italian": "Italian",
+    "portuguese": "Portuguese",
+    "spanish": "Spanish"
+  },
+  "languages": {
+    "english": "Translate to English",
+    "french": "Translate to French",
+    "german": "Translate to German",
+    "italian": "Translate to Italian",
+    "portuguese": "Translate to Portuguese",
+    "spanish": "Translate to Spanish"
+  },
+  "messages": {
+    "connectionError": "Connection error",
+    "enterText": "Type text to translate...",
+    "error": "Translation error",
+    "targetLanguage": "Target language: {code}",
+    "translating": "Translating...",
+    "translation": "Translation ({code})"
+  },
+  "settings": {
+    "backend": {
+      "description": "Choose the translation service to use",
+      "label": "Translation Backend"
+    }
+  }
+}

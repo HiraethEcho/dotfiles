@@ -1,0 +1,41 @@
+{
+  "keybind-cheatsheet": {
+    "panel": {
+      "title": "Tastenkurzel-Ubersicht",
+      "open-settings": "Einstellungen",
+      "loading": "Laden...",
+      "no-data": "Keine Tastenkurzel gefunden",
+      "no-categories": "Keine Kategorien in der Konfigurationsdatei gefunden",
+      "no-compositor": "Kein unterstutzter Compositor erkannt",
+      "error-read-file": "Konfigurationsdatei kann nicht gelesen werden",
+      "refresh": "Aktualisieren",
+      "no-description": "Keine Beschreibung"
+    },
+    "settings": {
+      "title": "Tastenkurzel-Ubersicht Einstellungen",
+      "description": "Konfigurieren Sie das Aussehen und die Quellen der Tastenkurzel fur das Panel.",
+      "window-size": "Fenstergrosse",
+      "width": "Breite:",
+      "height": "Hohe:",
+      "auto-height": "Auto",
+      "auto-height-hint": "Wenn 'Auto' aktiviert ist, passt sich die Hohe automatisch an den Inhalt an.",
+      "layout": "Layout",
+      "columns": "Anzahl der Spalten:",
+      "columns-hint": "Mehr Spalten funktionieren besser mit breiteren Fenstern.",
+      "config-paths": "Konfigurationsdateien",
+      "config-paths-description": "Geben Sie benutzerdefinierte Pfade zu Ihren Tastenkurzel-Konfigurationsdateien an.",
+      "hyprland-format-hint": "Erwartetes Format: bind = $mod, KEY, action #\"beschreibung\"",
+      "niri-format-hint": "Das Plugin findet und analysiert den 'binds { }' Block automatisch.",
+      "actions": "Aktionen",
+      "refresh-keybinds": "Tastenkurzel aktualisieren",
+      "refresh-message": "Tastenkurzel werden beim Offnen des Panels neu geladen.",
+      "reset-defaults": "Auf Standard zurucksetzen",
+      "reset-message": "Einstellungen wurden auf Standard zuruckgesetzt.",
+      "saved": "Einstellungen erfolgreich gespeichert.",
+      "keybind-setup": "Tastenkurzel-Einrichtung",
+      "keybind-setup-description": "Um die Ubersicht mit einer Tastenkombination zu offnen, fuge diese Bindung zu deiner Compositor-Konfiguration hinzu:",
+      "keybind-example-hyprland": "Hyprland: bind = $mod, F1, exec, qs -c \"noctalia-shell\" ipc call \"keybind-cheatsheet\" \"toggle\"",
+      "keybind-example-niri": "Niri: Super+F1 { spawn \"qs\" \"-c\" \"noctalia-shell\" \"ipc\" \"call\" \"keybind-cheatsheet\" \"toggle\"; }"
+    }
+  }
+}

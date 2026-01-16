@@ -36,10 +36,12 @@ get_window_objects "$PAD_NAME" | jq -c | while read WIN_OBJ; do
   WIN_ID=$(echo "$WIN_OBJ" | jq .id)
 
   if [ "$ANY_SCRATCH_WIN_FOCUSED" = "true" ]; then # Hide
-    niri msg action set-window-width "20%"
-    niri msg action set-window-height "20%"
+    # niri msg action set-window-width "20%"
+    niri msg action set-window-height "100%"
+    # niri msg action set-window-height "20%"
     niri msg action move-window-to-workspace --window-id "$WIN_ID" 4 --focus=false
-    niri msg action move-floating-window --id "$WIN_ID" -x 1536 -y 0
+    niri msg action move-window-to-tiling --id "$WIN_ID"
+    # niri msg action move-floating-window --id "$WIN_ID" -x 1536 -y 0
   else # Show
     niri msg action move-window-to-workspace --window-id "$WIN_ID" "$ID_CURRENT_WORKSPACE"
     niri msg action move-window-to-floating --id "$WIN_ID"

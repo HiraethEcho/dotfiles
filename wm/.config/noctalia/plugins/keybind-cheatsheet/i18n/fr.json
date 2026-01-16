@@ -1,0 +1,41 @@
+{
+  "keybind-cheatsheet": {
+    "panel": {
+      "title": "Raccourcis Clavier",
+      "open-settings": "Parametres",
+      "loading": "Chargement...",
+      "no-data": "Aucun raccourci clavier trouve",
+      "no-categories": "Aucune categorie trouvee dans le fichier de configuration",
+      "no-compositor": "Aucun compositeur compatible detecte",
+      "error-read-file": "Impossible de lire le fichier de configuration",
+      "refresh": "Actualiser",
+      "no-description": "Pas de description"
+    },
+    "settings": {
+      "title": "Parametres des Raccourcis Clavier",
+      "description": "Configurez l'apparence et les sources des raccourcis clavier pour le panneau.",
+      "window-size": "Taille de la Fenetre",
+      "width": "Largeur:",
+      "height": "Hauteur:",
+      "auto-height": "Auto",
+      "auto-height-hint": "Lorsque 'Auto' est active, la hauteur s'ajuste automatiquement au contenu.",
+      "layout": "Disposition",
+      "columns": "Nombre de colonnes:",
+      "columns-hint": "Plus de colonnes fonctionnent mieux avec des fenetres plus larges.",
+      "config-paths": "Fichiers de Configuration",
+      "config-paths-description": "Specifiez des chemins personnalises vers vos fichiers de configuration de raccourcis.",
+      "hyprland-format-hint": "Format attendu: bind = $mod, KEY, action #\"description\"",
+      "niri-format-hint": "Le plugin trouvera et analysera automatiquement le bloc 'binds { }'.",
+      "actions": "Actions",
+      "refresh-keybinds": "Actualiser les Raccourcis",
+      "refresh-message": "Les raccourcis seront recharges a l'ouverture du panneau.",
+      "reset-defaults": "Reinitialiser par Defaut",
+      "reset-message": "Les parametres ont ete reinitialises par defaut.",
+      "saved": "Parametres enregistres avec succes.",
+      "keybind-setup": "Configuration du Raccourci",
+      "keybind-setup-description": "Pour ouvrir le cheatsheet avec un raccourci clavier, ajoutez ce bind a la configuration de votre compositeur:",
+      "keybind-example-hyprland": "Hyprland: bind = $mod, F1, exec, qs -c \"noctalia-shell\" ipc call \"keybind-cheatsheet\" \"toggle\"",
+      "keybind-example-niri": "Niri: Super+F1 { spawn \"qs\" \"-c\" \"noctalia-shell\" \"ipc\" \"call\" \"keybind-cheatsheet\" \"toggle\"; }"
+    }
+  }
+}

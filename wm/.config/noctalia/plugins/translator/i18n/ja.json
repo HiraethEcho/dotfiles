@@ -1,0 +1,35 @@
+{
+  "command": {
+    "description": "テキストを翻訳"
+  },
+  "languageNames": {
+    "english": "英語",
+    "french": "フランス語",
+    "german": "ドイツ語",
+    "italian": "イタリア語",
+    "portuguese": "ポルトガル語",
+    "spanish": "スペイン語"
+  },
+  "languages": {
+    "english": "英語に翻訳",
+    "french": "フランス語に翻訳",
+    "german": "ドイツ語に翻訳\n</input>",
+    "italian": "イタリア語に翻訳",
+    "portuguese": "ポルトガル語に翻訳",
+    "spanish": "スペイン語に翻訳"
+  },
+  "messages": {
+    "connectionError": "接続エラー",
+    "enterText": "翻訳するテキストを入力してください...",
+    "error": "翻訳エラー",
+    "targetLanguage": "対象言語: {code}",
+    "translating": "翻訳中...",
+    "translation": "翻訳 ({code})"
+  },
+  "settings": {
+    "backend": {
+      "description": "使用する翻訳サービスを選択してください",
+      "label": "翻訳バックエンド"
+    }
+  }
+}

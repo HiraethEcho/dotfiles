@@ -1,0 +1,35 @@
+{
+  "command": {
+    "description": "Ez tercime bike"
+  },
+  "languageNames": {
+    "english": "Çavkanî",
+    "french": "Fransîzî",
+    "german": "Almanî",
+    "italian": "Îtalî",
+    "portuguese": "Portûgalî",
+    "spanish": "Spanyolî"
+  },
+  "languages": {
+    "english": "Ez Noctalia sazkeran",
+    "french": "Traduire en français",
+    "german": "Ez Dark Mode çalak bike gava roj diçe ava.",
+    "italian": "Traduci in italiano",
+    "portuguese": "Ez tercime bike Kurdî",
+    "spanish": "Wergera bo Kurdî"
+  },
+  "messages": {
+    "connectionError": "Xeta girêdanê",
+    "enterText": "nivîs binivîse ku were wergerandin...",
+    "error": "Xeta wergerandinê",
+    "targetLanguage": "Ez bi dilxwazî ji bo wergerandina ji bo kurdî (ku) amade me. Hûn dikarin dest pê bikin.",
+    "translating": "Ez ji bo wergerê amade me. Hûn dikarin dest pê bikin.",
+    "translation": "Wergera ({code})"
+  },
+  "settings": {
+    "backend": {
+      "description": "Xizmeta wergerê ya ku tê bikar anîn hilbijêre",
+      "label": "Paşmaya Wergerandinê"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "command": {
+    "description": "Értem."
+  },
+  "languageNames": {
+    "english": "Értesítések",
+    "french": "francia",
+    "german": "Német",
+    "italian": "Olasz",
+    "portuguese": "Portugál",
+    "spanish": "spanyol"
+  },
+  "languages": {
+    "english": "Fordítsd le angolra",
+    "french": "Traduire en français",
+    "german": "Fordítsd le németre",
+    "italian": "Traduci in italiano",
+    "portuguese": "Fordítsd le portugálra",
+    "spanish": "Fordítsd le spanyolra"
+  },
+  "messages": {
+    "connectionError": "Kapcsolódási hiba",
+    "enterText": "Írd be a lefordítandó szöveget...",
+    "error": "Fordítási hiba",
+    "targetLanguage": "```text\n```",
+    "translating": "A problem occurred while trying to apply the color scheme.",
+    "translation": "Fordítás ({code})"
+  },
+  "settings": {
+    "backend": {
+      "description": "Válaszd ki a használni kívánt fordítószolgáltatást",
+      "label": "Fordítóprogram háttérszolgáltatás"
+    }
+  }
+}

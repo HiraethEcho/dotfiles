@@ -1,0 +1,41 @@
+{
+  "keybind-cheatsheet": {
+    "panel": {
+      "title": "Keybind Cheatsheet",
+      "open-settings": "Settings",
+      "loading": "Loading...",
+      "no-data": "No keybindings found",
+      "no-categories": "No categories found in config file",
+      "no-compositor": "No supported compositor detected",
+      "error-read-file": "Cannot read configuration file",
+      "refresh": "Refresh",
+      "no-description": "No description"
+    },
+    "settings": {
+      "title": "Keybind Cheatsheet Settings",
+      "description": "Configure the appearance and keybind sources for the cheatsheet panel.",
+      "window-size": "Window Size",
+      "width": "Width:",
+      "height": "Height:",
+      "auto-height": "Auto",
+      "auto-height-hint": "When 'Auto' is enabled, height adjusts automatically based on content.",
+      "layout": "Layout",
+      "columns": "Number of columns:",
+      "columns-hint": "More columns work better with wider windows.",
+      "config-paths": "Configuration Files",
+      "config-paths-description": "Specify custom paths to your keybind configuration files. The plugin will automatically parse the appropriate file based on your compositor.",
+      "hyprland-format-hint": "Expected format: bind = $mod, KEY, action #\"description\"",
+      "niri-format-hint": "The plugin will find and parse the 'binds { }' block automatically.",
+      "actions": "Actions",
+      "refresh-keybinds": "Refresh Keybinds",
+      "refresh-message": "Keybinds will be reloaded when you open the panel.",
+      "reset-defaults": "Reset to Defaults",
+      "reset-message": "Settings have been reset to defaults.",
+      "saved": "Settings saved successfully.",
+      "keybind-setup": "Keybind Setup",
+      "keybind-setup-description": "To open the cheatsheet with a keyboard shortcut, add this bind to your compositor config:",
+      "keybind-example-hyprland": "Hyprland example: bind = $mod, F1, exec, qs -c \"noctalia-shell\" ipc call \"keybind-cheatsheet\" \"toggle\"",
+      "keybind-example-niri": "Niri example: Super+F1 { spawn \"qs\" \"-c\" \"noctalia-shell\" \"ipc\" \"call\" \"keybind-cheatsheet\" \"toggle\"; }"
+    }
+  }
+}

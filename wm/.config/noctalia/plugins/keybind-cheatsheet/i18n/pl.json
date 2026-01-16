@@ -1,0 +1,41 @@
+{
+  "keybind-cheatsheet": {
+    "panel": {
+      "title": "Skroty Klawiszowe",
+      "open-settings": "Ustawienia",
+      "loading": "Ladowanie...",
+      "no-data": "Nie znaleziono skrotow klawiszowych",
+      "no-categories": "Nie znaleziono kategorii w pliku konfiguracyjnym",
+      "no-compositor": "Nie wykryto obslugowanego kompozytora",
+      "error-read-file": "Nie mozna odczytac pliku konfiguracyjnego",
+      "refresh": "Odswiez",
+      "no-description": "Brak opisu"
+    },
+    "settings": {
+      "title": "Ustawienia Skrotow Klawiszowych",
+      "description": "Skonfiguruj wyglad i zrodla skrotow klawiszowych dla panelu.",
+      "window-size": "Rozmiar Okna",
+      "width": "Szerokosc:",
+      "height": "Wysokosc:",
+      "auto-height": "Auto",
+      "auto-height-hint": "Gdy 'Auto' jest wlaczone, wysokosc dostosowuje sie automatycznie do zawartosci.",
+      "layout": "Uklad",
+      "columns": "Liczba kolumn:",
+      "columns-hint": "Wiecej kolumn dziala lepiej z szerszymi oknami.",
+      "config-paths": "Pliki Konfiguracyjne",
+      "config-paths-description": "Okresl wlasne sciezki do plikow konfiguracyjnych skrotow klawiszowych. Plugin automatycznie przetworzy odpowiedni plik na podstawie Twojego kompozytora.",
+      "hyprland-format-hint": "Oczekiwany format: bind = $mod, KEY, action #\"opis\"",
+      "niri-format-hint": "Plugin automatycznie znajdzie i przetworzy blok 'binds { }'.",
+      "actions": "Akcje",
+      "refresh-keybinds": "Odswiez Skroty",
+      "refresh-message": "Skroty zostana przeladowane po otwarciu panelu.",
+      "reset-defaults": "Przywroc Domyslne",
+      "reset-message": "Ustawienia zostaly przywrocone do domyslnych.",
+      "saved": "Ustawienia zapisane pomyslnie.",
+      "keybind-setup": "Konfiguracja Skrotu",
+      "keybind-setup-description": "Aby otworzyc cheatsheet skrotem klawiszowym, dodaj ten bind do konfiguracji kompozytora:",
+      "keybind-example-hyprland": "Przyklad Hyprland: bind = $mod, F1, exec, qs -c \"noctalia-shell\" ipc call \"keybind-cheatsheet\" \"toggle\"",
+      "keybind-example-niri": "Przyklad Niri: Super+F1 { spawn \"qs\" \"-c\" \"noctalia-shell\" \"ipc\" \"call\" \"keybind-cheatsheet\" \"toggle\"; }"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "detectedCompositor": "niri",
+  "cheatsheetData": [],
+  "niriConfigPath": "~/.config/niri/config.kdl",
+  "hyprlandConfigPath": "~/.config/hypr/hyprland.conf",
+  "windowHeight": 850,
+  "windowWidth": 1400
+}

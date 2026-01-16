@@ -1,0 +1,35 @@
+{
+  "command": {
+    "description": "Перевести текст"
+  },
+  "languageNames": {
+    "english": "Английский",
+    "french": "Французский",
+    "german": "Немецкий",
+    "italian": "Итальянский",
+    "portuguese": "Португальский",
+    "spanish": "Испанский"
+  },
+  "languages": {
+    "english": "Перевести на английский",
+    "french": "Traduire en français",
+    "german": "Включить немецкий язык",
+    "italian": "Traduci in italiano",
+    "portuguese": "Перевести на португальский",
+    "spanish": "Перевести на испанский"
+  },
+  "messages": {
+    "connectionError": "Ошибка подключения",
+    "enterText": "Введите текст для перевода...",
+    "error": "Ошибка перевода",
+    "targetLanguage": "Целевой язык: {code}",
+    "translating": "Перевод...",
+    "translation": "Перевод ({code})"
+  },
+  "settings": {
+    "backend": {
+      "description": "Выберите службу перевода для использования",
+      "label": "Механизм перевода"
+    }
+  }
+}

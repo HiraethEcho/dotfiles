@@ -1,0 +1,35 @@
+{
+  "command": {
+    "description": "Przetłumacz tekst"
+  },
+  "languageNames": {
+    "english": "Angielski",
+    "french": "Francuski",
+    "german": "Niemiecki",
+    "italian": "Włoski",
+    "portuguese": "Portugalski",
+    "spanish": "Hiszpański"
+  },
+  "languages": {
+    "english": "Przetłumacz na angielski",
+    "french": "Traduire en français",
+    "german": "Übersetze nach Deutsch",
+    "italian": "Traduci in italiano",
+    "portuguese": "Tłumacz na polski",
+    "spanish": "Tłumacz na hiszpański"
+  },
+  "messages": {
+    "connectionError": "Błąd połączenia",
+    "enterText": "Wpisz tekst do przetłumaczenia...",
+    "error": "Błąd tłumaczenia",
+    "targetLanguage": "Target language: pl",
+    "translating": "Tłumaczenie...",
+    "translation": "Tłumaczenie ({code})"
+  },
+  "settings": {
+    "backend": {
+      "description": "Wybierz usługę tłumaczeniową, której chcesz użyć",
+      "label": "Backend tłumaczeń"
+    }
+  }
+}

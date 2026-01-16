@@ -1,0 +1,35 @@
+{
+  "command": {
+    "description": "Text übersetzen"
+  },
+  "languageNames": {
+    "english": "Englisch",
+    "french": "Französisch",
+    "german": "Deutsch",
+    "italian": "Italienisch",
+    "portuguese": "Portugiesisch",
+    "spanish": "Spanisch"
+  },
+  "languages": {
+    "english": "Ins Englische übersetzen",
+    "french": "Ins Französische übersetzen",
+    "german": "Ins Deutsche übersetzen",
+    "italian": "Ins Italienische übersetzen",
+    "portuguese": "Ins Portugiesische übersetzen",
+    "spanish": "Ins Spanische übersetzen"
+  },
+  "messages": {
+    "connectionError": "Verbindungsfehler",
+    "enterText": "Text zum Übersetzen eingeben...",
+    "error": "Übersetzungsfehler",
+    "targetLanguage": "Zielsprache: {code}",
+    "translating": "Wird übersetzt...",
+    "translation": "Übersetzung ({code})"
+  },
+  "settings": {
+    "backend": {
+      "description": "Wählen Sie den zu verwendenden Übersetzungsdienst",
+      "label": "Übersetzungsdienst"
+    }
+  }
+}

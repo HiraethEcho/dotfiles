@@ -1,0 +1,41 @@
+{
+  "keybind-cheatsheet": {
+    "panel": {
+      "title": "Гарячі клавіші",
+      "open-settings": "Налаштування",
+      "loading": "Завантаження...",
+      "no-data": "Гарячі клавіші не знайдено",
+      "no-categories": "Категорії не знайдено у файлі конфігурації",
+      "no-compositor": "Підтримуваний композитор не виявлено",
+      "error-read-file": "Не вдалося прочитати файл конфігурації",
+      "refresh": "Оновити",
+      "no-description": "Без опису"
+    },
+    "settings": {
+      "title": "Налаштування гарячих клавіш",
+      "description": "Налаштуйте зовнішній вигляд та джерела гарячих клавіш для панелі.",
+      "window-size": "Розмір вікна",
+      "width": "Ширина:",
+      "height": "Висота:",
+      "auto-height": "Авто",
+      "auto-height-hint": "Коли увімкнено 'Авто', висота автоматично підлаштовується під вміст.",
+      "layout": "Макет",
+      "columns": "Кількість колонок:",
+      "columns-hint": "Більше колонок краще працює з ширшими вікнами.",
+      "config-paths": "Файли конфігурації",
+      "config-paths-description": "Вкажіть власні шляхи до файлів конфігурації гарячих клавіш.",
+      "hyprland-format-hint": "Очікуваний формат: bind = $mod, KEY, action #\"опис\"",
+      "niri-format-hint": "Плагін автоматично знайде та проаналізує блок 'binds { }'.",
+      "actions": "Дії",
+      "refresh-keybinds": "Оновити клавіші",
+      "refresh-message": "Гарячі клавіші будуть перезавантажені при відкритті панелі.",
+      "reset-defaults": "Скинути налаштування",
+      "reset-message": "Налаштування скинуто до значень за замовчуванням.",
+      "saved": "Налаштування успішно збережено.",
+      "keybind-setup": "Налаштування клавіші",
+      "keybind-setup-description": "Щоб відкрити шпаргалку за допомогою клавіші, додайте цей bind до конфігурації композитора:",
+      "keybind-example-hyprland": "Hyprland: bind = $mod, F1, exec, qs -c \"noctalia-shell\" ipc call \"keybind-cheatsheet\" \"toggle\"",
+      "keybind-example-niri": "Niri: Super+F1 { spawn \"qs\" \"-c\" \"noctalia-shell\" \"ipc\" \"call\" \"keybind-cheatsheet\" \"toggle\"; }"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "keybind-cheatsheet": {
+    "panel": {
+      "title": "快捷键速查表",
+      "open-settings": "设置",
+      "loading": "加载中...",
+      "no-data": "未找到快捷键",
+      "no-categories": "配置文件中未找到类别",
+      "no-compositor": "未检测到支持的合成器",
+      "error-read-file": "无法读取配置文件",
+      "refresh": "刷新",
+      "no-description": "无描述"
+    },
+    "settings": {
+      "title": "快捷键速查表设置",
+      "description": "配置面板的外观和快捷键来源。",
+      "window-size": "窗口大小",
+      "width": "宽度:",
+      "height": "高度:",
+      "auto-height": "自动",
+      "auto-height-hint": "启用"自动"时，高度会根据内容自动调整。",
+      "layout": "布局",
+      "columns": "列数:",
+      "columns-hint": "更多列在较宽的窗口中效果更好。",
+      "config-paths": "配置文件",
+      "config-paths-description": "指定快捷键配置文件的自定义路径。",
+      "hyprland-format-hint": "预期格式: bind = $mod, KEY, action #\"描述\"",
+      "niri-format-hint": "插件将自动查找并解析 'binds { }' 块。",
+      "actions": "操作",
+      "refresh-keybinds": "刷新快捷键",
+      "refresh-message": "打开面板时将重新加载快捷键。",
+      "reset-defaults": "恢复默认",
+      "reset-message": "设置已恢复为默认值。",
+      "saved": "设置保存成功。",
+      "keybind-setup": "快捷键设置",
+      "keybind-setup-description": "要使用键盘快捷键打开速查表，请将此绑定添加到合成器配置中:",
+      "keybind-example-hyprland": "Hyprland: bind = $mod, F1, exec, qs -c \"noctalia-shell\" ipc call \"keybind-cheatsheet\" \"toggle\"",
+      "keybind-example-niri": "Niri: Super+F1 { spawn \"qs\" \"-c\" \"noctalia-shell\" \"ipc\" \"call\" \"keybind-cheatsheet\" \"toggle\"; }"
+    }
+  }
+}
