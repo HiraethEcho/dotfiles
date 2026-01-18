@@ -1,0 +1,442 @@
+// Check the wiki for a full description of the configuration:
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Overview
+// Remember to uncomment the node by removing "/-"!
+// Find the full list of options on the wiki:
+input {
+    touchpad {
+        // off // toggle touchpad
+        tap
+        scroll-method "two-finger"
+    }
+    warp-mouse-to-focus
+}
+cursor {
+    hide-when-typing
+    hide-after-inactive-ms 1000
+}
+hotkey-overlay {
+    skip-at-startup
+    hide-not-bound
+}
+// Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
+output "eDP-1" {
+    mode "1920x1080@60.000"
+    scale 1
+    transform "normal"
+    position x=0 y=0
+    hot-corners {
+        bottom-left
+    }
+}
+output "HDMI-A-1" {
+    mode "1920x1080@60"
+    hot-corners {
+        bottom-right
+    }
+}
+layout {
+    gaps 4
+    center-focused-column "never"
+    always-center-single-column
+    preset-column-widths {
+        proportion 0.4
+        proportion 0.6
+        proportion 0.8
+        proportion 1.0
+    }
+    preset-window-heights {
+        proportion 0.3
+        proportion 0.7
+        proportion 1.0
+    }
+    default-column-width {
+        proportion 0.8
+    }
+    focus-ring {
+        width 2
+        active-color "#7fc8ff"
+        inactive-color "#505050"
+    }
+    border {
+        off
+    }
+    struts {
+        left 48
+        right 48
+        top 0
+        bottom 0
+    }
+    tab-indicator {
+        width 4
+        gap 4
+        length total-proportion=0.4
+        position "left"
+        place-within-column
+        inactive-color "#882050"
+        active-color "#ff2030"
+    }
+}
+gestures {
+    dnd-edge-view-scroll {
+        trigger-width 30
+        delay-ms 100
+        max-speed 1500
+    }
+    dnd-edge-workspace-switch {
+        trigger-height 50
+        delay-ms 100
+        max-speed 1500
+    }
+}
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/niri-%Y%m%d%H%M%S.png"
+environment {
+    DISPLAY ":0"
+    XMODIFIERS "@im=fcitx"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    LANG "en_US.UTF-8"
+}
+// LC_MESSAGES "zh_CN.UTF-8"
+// LANG "zh_CN.UTF-8"
+// GTK_IM_MODULE "fcitx"
+// QT_IM_MODULE "fcitx"
+// QT_IM_MODULES "wayland;fcitx"
+// GTK_IM_MODULE null
+// SDL_IM_MODULE null
+// GLFW_IM_MODULE null
+animations {
+    slowdown 0.5
+}
+overview {
+    zoom 0.25
+}
+layer-rule {
+    match namespace="^noctalia-overview*"
+    place-within-backdrop true
+}
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
+window-rule {
+    clip-to-geometry true
+}
+window-rule {
+    match app-id="footclient"
+    default-column-width {
+        proportion 0.6
+    }
+}
+window-rule {
+    match app-id="waterfox"
+    default-column-width {
+        proportion 1.0
+    }
+}
+workspace "home" {
+    open-on-output "HDMI-A-1"
+}
+workspace "info" {
+    open-on-output "HDMI-A-1"
+}
+window-rule {
+    match app-id="Zotero"
+    open-on-workspace "info"
+}
+window-rule {
+    match app-id="obsidian"
+    open-on-workspace "info"
+}
+workspace "term" {
+    open-on-output "HDMI-A-1"
+}
+/-window-rule {
+match app-id="kitty"
+open-on-workspace "term"
+clip-to-geometry true
+}
+workspace "apps" {
+    open-on-output "HDMI-A-1"
+}
+window-rule {
+    match app-id="(wechat)"
+    open-focused false
+}
+window-rule {
+    match app-id="wechat"
+    open-on-workspace "apps"
+    open-floating true
+    default-column-width {
+        proportion 0.4
+    }
+    default-window-height {
+        proportion 0.6
+    }
+}
+window-rule {
+    match app-id="Steam++"
+    open-on-workspace "apps"
+    open-focused false
+}
+binds {
+    // Most actions that you can bind here can also be invoked programmatically with
+    // `niri msg action do-something`.
+    // spawn and kill
+    Super+Slash {
+        show-hotkey-overlay
+    }
+    // apps
+    Alt+Return {
+        spawn "footclient"
+    }
+    // Super+Return { spawn "kitty" }
+    Super+Space {
+        // spawn-sh "pkill fcitx5 || fcitx5"
+        spawn "niri-toggle-touchpad"
+    }
+    Super+E {
+        spawn "pcmanfm"
+    }
+    Super+Z {
+        spawn "zotero"
+    }
+    Super+W {
+        spawn "waterfox"
+    }
+    Super+Grave {
+        spawn "niri-scratchpad" "kitty"
+    }
+    // lanucher
+    // Super+A { spawn "rofi_allapps"; }
+    Super+A {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
+    }
+    Super+V {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"
+    }
+    Alt+Space {
+        spawn "rofi_quickapps"
+    }
+    Super+R {
+        spawn "rofi" "-show" "run"
+    }
+    Super+X {
+        spawn "rofi_winx"
+    }
+    // function
+    Super+I {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"
+    }
+    Super+S {
+        power-off-monitors
+    }
+    ALt+Shift+S {
+        screenshot-window
+    }
+    Super+Shift+S {
+        screenshot
+    }
+    Alt+B {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "bar" "toggle"
+    }
+    Alt+Shift+B {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "dock" "toggle"
+    }
+    // exit
+    Alt+Escape {
+        close-window
+    }
+    Alt+Shift+Q {
+        quit
+    }
+    // console
+    XF86AudioRaiseVolume allow-when-locked=true {
+        spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"
+    }
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"
+    }
+    XF86AudioMute allow-when-locked=true {
+        spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"
+    }
+    XF86AudioMicMute allow-when-locked=true {
+        spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"
+    }
+    XF86MonBrightnessUp allow-when-locked=true {
+        spawn "brightnessctl" "--class=backlight" "set" "+10%"
+    }
+    XF86MonBrightnessDown allow-when-locked=true {
+        spawn "brightnessctl" "--class=backlight" "set" "10%-"
+    }
+    // focus
+    // windows
+    Alt+H {
+        focus-column-left
+    }
+    Alt+K {
+        focus-window-or-workspace-up
+    }
+    Alt+J {
+        focus-window-or-workspace-down
+    }
+    Alt+L {
+        focus-column-right
+    }
+    Alt+C {
+        center-column
+    }
+    // workspaces
+    Alt+1 {
+        focus-workspace 1
+    }
+    Alt+2 {
+        focus-workspace 2
+    }
+    Alt+3 {
+        focus-workspace 3
+    }
+    Alt+4 {
+        focus-workspace 4
+    }
+    Alt+5 {
+        focus-workspace 5
+    }
+    Alt+Q {
+        focus-workspace 1
+    }
+    Alt+W {
+        focus-workspace 2
+    }
+    Alt+E {
+        focus-workspace 3
+    }
+    Alt+R {
+        focus-workspace 4
+    }
+    Alt+T {
+        focus-workspace 5
+    }
+    // monitors
+    Alt+Comma {
+        focus-monitor-left
+    }
+    Alt+Period {
+        focus-monitor-right
+    }
+    // resize
+    Alt+slash {
+        switch-preset-column-width
+    }
+    Alt+Shift+slash {
+        switch-preset-window-height
+    }
+    Alt+Minus {
+        set-column-width "-10%"
+    }
+    Alt+Equal {
+        set-column-width "+10%"
+    }
+    Alt+Shift+Minus {
+        set-window-height "-10%"
+    }
+    Alt+Shift+Equal {
+        set-window-height "+10%"
+    }
+    // move
+    // windows
+    Super+H {
+        consume-or-expel-window-left
+    }
+    Super+L {
+        consume-or-expel-window-right
+    }
+    Super+J {
+        move-window-down-or-to-workspace-down
+    }
+    Super+K {
+        move-window-up-or-to-workspace-up
+    }
+    Super+Comma {
+        move-window-to-monitor-left
+    }
+    Super+Period {
+        move-window-to-monitor-right
+    }
+    // workspaces
+    Alt+Shift+1 {
+        move-window-to-workspace 1 focus=false
+    }
+    Alt+Shift+2 {
+        move-window-to-workspace 2 focus=false
+    }
+    Alt+Shift+3 {
+        move-window-to-workspace 3 focus=false
+    }
+    Alt+Shift+4 {
+        move-window-to-workspace 4 focus=false
+    }
+    Alt+Shift+5 {
+        move-window-to-workspace 5 focus=false
+    }
+    Alt+A {
+        move-window-to-workspace 1 focus=false
+    }
+    Alt+S {
+        move-window-to-workspace 2 focus=false
+    }
+    Alt+D {
+        move-window-to-workspace 3 focus=false
+    }
+    Alt+F {
+        move-window-to-workspace 4 focus=false
+    }
+    Alt+G {
+        move-window-to-workspace 5 focus=false
+    }
+    Super+Shift+K {
+        move-workspace-up
+    }
+    Super+Shift+J {
+        move-workspace-down
+    }
+    Super+Shift+Comma {
+        move-workspace-to-monitor-left
+    }
+    Super+Shift+Period {
+        move-workspace-to-monitor-right
+    }
+    Alt+Shift+J {
+        focus-workspace-down
+    }
+    Alt+Shift+K {
+        focus-workspace-up
+    }
+    // layout
+    Super+Return {
+        maximize-column
+    }
+    Super+F {
+        maximize-column
+    }
+    // Mod+Shift+F { fullscreen-window; }
+    Alt+Shift+Space {
+        toggle-window-floating
+    }
+    Alt+Tab {
+        switch-focus-between-floating-and-tiling
+    }
+    Super+D {
+        toggle-column-tabbed-display
+    }
+    Super+Tab {
+        toggle-overview
+    }
+}
+spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "fcitx5"
+spawn-at-startup "foot" "-s"
+spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
+

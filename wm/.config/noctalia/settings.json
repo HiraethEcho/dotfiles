@@ -34,6 +34,7 @@
         "density": "default",
         "exclusive": true,
         "floating": false,
+        "hideOnOverview": false,
         "marginHorizontal": 0,
         "marginVertical": 0,
         "monitors": [
@@ -107,6 +108,7 @@
             "right": [
                 {
                     "hideWhenZero": true,
+                    "hideWhenZeroUnread": false,
                     "id": "NotificationHistory",
                     "showUnreadBadge": true
                 },
@@ -374,7 +376,8 @@
         "showChangelogOnStartup": true,
         "showHibernateOnLockScreen": false,
         "showScreenCorners": false,
-        "showSessionButtonsOnLockScreen": true
+        "showSessionButtonsOnLockScreen": true,
+        "telemetryEnabled": false
     },
     "hooks": {
         "darkModeChange": "",
@@ -383,6 +386,7 @@
         "performanceModeEnabled": "",
         "screenLock": "",
         "screenUnlock": "",
+        "session": "",
         "wallpaperChange": ""
     },
     "location": {
@@ -420,6 +424,7 @@
         "backgroundOpacity": 1,
         "criticalUrgencyDuration": 15,
         "enableKeyboardLayoutToast": true,
+        "enableMediaToast": false,
         "enabled": true,
         "location": "top_right",
         "lowUrgencyDuration": 3,
@@ -505,7 +510,7 @@
         "showHeader": true,
         "showNumberLabels": true
     },
-    "settingsVersion": 39,
+    "settingsVersion": 41,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,
@@ -531,32 +536,9 @@
         "warningColor": "#5e81ac"
     },
     "templates": {
-        "alacritty": false,
-        "cava": false,
-        "code": false,
-        "discord": false,
-        "emacs": false,
-        "enableUserTemplates": false,
-        "foot": false,
-        "fuzzel": false,
-        "ghostty": false,
-        "gtk": false,
-        "helix": false,
-        "hyprland": false,
-        "kcolorscheme": false,
-        "kitty": false,
-        "mango": false,
-        "niri": false,
-        "pywalfox": false,
-        "qt": false,
-        "spicetify": false,
-        "telegram": false,
-        "vicinae": false,
-        "walker": false,
-        "wezterm": false,
-        "yazi": false,
-        "zed": false,
-        "zenBrowser": false
+        "activeTemplates": [
+        ],
+        "enableUserTemplates": false
     },
     "ui": {
         "bluetoothDetailsViewMode": "grid",
@@ -582,7 +564,7 @@
         "hideWallpaperFilenames": false,
         "monitorDirectories": [
         ],
-        "overviewEnabled": true,
+        "overviewEnabled": false,
         "panelPosition": "follow_bar",
         "randomEnabled": false,
         "randomIntervalSec": 300,
