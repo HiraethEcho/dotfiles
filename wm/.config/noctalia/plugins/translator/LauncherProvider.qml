@@ -14,11 +14,12 @@ Item {
 
     function getDefaultLanguages() {
         var result = [];
+        var translatePrefix = pluginApi?.tr("translatePrefix") || "Translate to ";
         for (var code in TranslatorUtils.languages) {
             var lang = TranslatorUtils.languages[code];
-            var name = pluginApi?.tr("languageNames." + lang.name) || lang.name.charAt(0).toUpperCase() + lang.name.slice(1);
-            var desc = pluginApi?.tr("languages." + lang.name) || "Translate to " + lang.name;
-            result.push({name: name, desc: desc, code: code});
+            var languageName = pluginApi?.tr("languageNames." + lang.name) || lang.name.charAt(0).toUpperCase() + lang.name.slice(1);
+            var desc = translatePrefix + languageName;
+            result.push({name: languageName, desc: desc, code: code});
         }
         return result;
     }

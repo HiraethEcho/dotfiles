@@ -5,7 +5,7 @@ A launcher provider plugin that allows you to quickly translate text directly fr
 ## Features
 
 - **Quick Translation**: Translate text instantly from the launcher
-- **Multiple Languages**: Support for French, English, Spanish, German, Italian, and Portuguese
+- **100+ Languages**: Support for over 100 languages including major European, Asian, African, and Middle Eastern languages
 - **Auto-detect Source**: Automatically detects the source language
 - **Translation Cache**: Caches translations for faster repeated queries
 - **Clipboard Integration**: Copy translations to clipboard with a single click
@@ -33,14 +33,51 @@ A launcher provider plugin that allows you to quickly translate text directly fr
 
 ### Supported Languages
 
+The plugin supports over 100 languages. Here are some of the most popular:
+
+**European Languages:**
 - **fr** - French (français)
 - **en** - English
 - **es** - Spanish (espagnol)
 - **de** - German (allemand)
 - **it** - Italian (italien)
 - **pt** - Portuguese (portuguais)
+- **ru** - Russian (русский)
+- **nl** - Dutch (néerlandais)
+- **pl** - Polish (polski)
+- **sv** - Swedish (svenska)
+- **da** - Danish (dansk)
+- **no** - Norwegian (norsk)
+- **fi** - Finnish (suomi)
+- **cs** - Czech (čeština)
+- **hu** - Hungarian (magyar)
+- **ro** - Romanian (română)
+- **tr** - Turkish (türkçe)
+- **uk** - Ukrainian (українська)
+- **el** - Greek (ελληνικά)
+- **he** - Hebrew (עברית)
+- And many more...
 
-You can use either the language code or the language name in English or French.
+**Asian Languages:**
+- **ja** - Japanese (日本語)
+- **zh** - Chinese (中文)
+- **ko** - Korean (한국어)
+- **hi** - Hindi (हिन्दी)
+- **th** - Thai (ไทย)
+- **vi** - Vietnamese (Tiếng Việt)
+- **id** - Indonesian (Bahasa Indonesia)
+- **ar** - Arabic (العربية)
+- **fa** - Persian (فارسی)
+- And many more...
+
+**African Languages:**
+- **sw** - Swahili
+- **zu** - Zulu
+- **xh** - Xhosa
+- **yo** - Yoruba
+- And more...
+
+You can use either the language code (e.g., `fr`, `ja`, `ru`) or the language name in English or French (e.g., `french`, `japanese`, `russian`, `français`, `japonais`, `russe`).
 
 ## Configuration
 

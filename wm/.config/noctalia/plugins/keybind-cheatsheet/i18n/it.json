@@ -1,15 +1,7 @@
 {
   "keybind-cheatsheet": {
     "panel": {
-      "title": "Scorciatoie da Tastiera",
-      "open-settings": "Impostazioni",
-      "loading": "Caricamento...",
-      "no-data": "Nessuna scorciatoia trovata",
-      "no-categories": "Nessuna categoria trovata nel file di configurazione",
-      "no-compositor": "Nessun compositor supportato rilevato",
-      "error-read-file": "Impossibile leggere il file di configurazione",
-      "refresh": "Aggiorna",
-      "no-description": "Nessuna descrizione"
+      "loading": "Caricamento..."
     },
     "settings": {
       "title": "Impostazioni Scorciatoie da Tastiera",
@@ -23,9 +15,9 @@
       "columns": "Numero di colonne:",
       "columns-hint": "Piu colonne funzionano meglio con finestre piu larghe.",
       "config-paths": "File di Configurazione",
-      "config-paths-description": "Specifica percorsi personalizzati per i file di configurazione delle scorciatoie.",
-      "hyprland-format-hint": "Formato previsto: bind = $mod, KEY, action #\"descrizione\"",
-      "niri-format-hint": "Il plugin trovera e analizera automaticamente il blocco 'binds { }'.",
+      "config-paths-description": "Specifica percorsi personalizzati per i file di configurazione delle scorciatoie. Il plugin seguira automaticamente tutte le direttive include/source.",
+      "hyprland-format-hint": "Formato previsto: bind = $mod, KEY, action #\"descrizione\"\nCategorie: # 1. NOME CATEGORIA",
+      "niri-format-hint": "Le categorie vengono create con: // #\"Nome categoria\"\nDescrizioni: hotkey-overlay-title=\"descrizione\"",
       "actions": "Azioni",
       "refresh-keybinds": "Aggiorna Scorciatoie",
       "refresh-message": "Le scorciatoie verranno ricaricate all'apertura del pannello.",
@@ -35,7 +27,9 @@
       "keybind-setup": "Configurazione Scorciatoia",
       "keybind-setup-description": "Per aprire il cheatsheet con una scorciatoia, aggiungi questo bind alla configurazione del tuo compositor:",
       "keybind-example-hyprland": "Hyprland: bind = $mod, F1, exec, qs -c \"noctalia-shell\" ipc call \"keybind-cheatsheet\" \"toggle\"",
-      "keybind-example-niri": "Niri: Super+F1 { spawn \"qs\" \"-c\" \"noctalia-shell\" \"ipc\" \"call\" \"keybind-cheatsheet\" \"toggle\"; }"
+      "keybind-example-niri": "Niri: Super+F1 { spawn \"qs\" \"-c\" \"noctalia-shell\" \"ipc\" \"call\" \"keybind-cheatsheet\" \"toggle\"; }",
+      "mod-var": "Variabile Tasto Mod",
+      "mod-var-hint": "Il nome della variabile usata per il tasto Super (es. $mod o $mainMod)."
     }
   }
 }
