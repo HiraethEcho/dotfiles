@@ -94,7 +94,7 @@
                     "characterCount": 4,
                     "colorizeIcons": false,
                     "enableScrollWheel": true,
-                    "followFocusedScreen": true,
+                    "followFocusedScreen": false,
                     "groupedBorderOpacity": 0.5,
                     "hideUnoccupied": true,
                     "iconScale": 0.8,
