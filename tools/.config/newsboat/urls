@@ -1,29 +1,43 @@
-https://rss.arxiv.org/rss/math.AG "~arxiv AG"
-https://hiraethecho.github.io/ZotWatch/feed.xml "~Zotero Watch"
-
 https://sspai.com/feed "~少数派"
 https://plink.anyfeeder.com/gcores "~机核"
-https://www.douban.com/feed/review/book "~豆瓣书评"
-https://blog.xiaket.org/feed.xml
 http://solidot.org/index.rss
-https://www.nature.com/nature.rss
+https://www.douban.com/feed/review/book "~豆瓣书评"
+http://feed.appinn.com/
+
+https://forum.archlinuxcn.org/latest.rss arch
+https://www.archlinuxcn.org/feed/ "~ArchCN News" arch
+https://archlinux.org/feeds/packages/x86_64/ "~Arch repo" arch
+https://aur.archlinux.org/rss "~AUR" arch
 
 https://aphilosopher.drmcl.com/feed/ "~A Philosopher's blog" blog
+https://blog.xiaket.org/feed.xml
+https://pathos.page/feed.xml blog
+https://hutusi.com/feed.xml blog
+https://www.ruanyifeng.com/blog/atom.xml blog
+https://memex.keinmal.top/index.xml "~MEMEX" blog
+
+https://rss.arxiv.org/rss/math.AG "~arxiv AG"
+https://hiraethecho.github.io/ZotWatch/feed.xml "~Zotero Watch"
+https://www.nature.com/nature.rss
+
+https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins"
+https://www.obsidianstats.com/rss.xml "~obsidian stats"
+https://terminaltrove.com/totw.xml
+https://hellogithub.com/rss
+https://forum.archlinuxcn.org/tag/rss.rss arch
+
 https://philosophynow.org/rss "~philosophy now" blog
 http://www.matrix67.com/blog/feed blog
 http://wwj718.github.io/index.xml blog
 https://blog.vinfall.com/index.xml blog
 https://liuyandong.com/feed/ blog
 https://atpx.com/feed.xml blog
-https://pathos.page/feed.xml blog
 https://prologue.dev/atomfeed blog
 https://yayu.net/feed blog
-https://www.ruanyifeng.com/blog/atom.xml blog
 https://sakari.top/index.xml blog
 https://fourxiajiao.github.io/index.xml blog
 https://shaobin-jiang.github.io/blog/index.xml blog
 https://blog.loikein.one/index.xml blog
-https://hutusi.com/feed.xml blog
 https://brainbaking.com/index.xml blog
 https://catcoding.me/atom.xml blog
 https://www.giuem.com/rss.xml blog
@@ -39,20 +53,9 @@ https://hejunjie.life/rss.xml blog
 https://www.stallman.org/rss/rss.xml blog
 https://blog.lilydjwg.me/posts.rss blog
 https://blog.dejavu.moe/index.xml
-https://memex.keinmal.top/index.xml "~MEMEX" blog
 
 https://github.com/v1nh1shungry/nvim-weekly-cn/releases.atom "~nvim weekly cn"
-https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins"
 https://dotfyle.com/this-week-in-neovim/rss.xml "~this week in neovim"
-https://www.obsidianstats.com/rss.xml "~obsidian stats"
-https://terminaltrove.com/totw.xml
-http://feed.appinn.com/
 https://litiaotiao.cn/index.xml
-https://hellogithub.com/rss
 https://typst-doc-cn.github.io/news/feed.xml
 
-https://www.archlinuxcn.org/feed/ "~ArchCN News" arch
-https://forum.archlinuxcn.org/latest.rss arch
-https://forum.archlinuxcn.org/tag/rss.rss arch
-https://archlinux.org/feeds/packages/x86_64/ "~Arch repo" arch
-https://aur.archlinux.org/rss "~AUR" arch
