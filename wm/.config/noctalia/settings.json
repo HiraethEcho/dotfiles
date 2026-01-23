@@ -556,7 +556,7 @@
         "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
-        "directory": "/home/hiraeth/Pictures/Wallpapers",
+        "directory": "/home/hiraeth/Pictures/wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#000000",
