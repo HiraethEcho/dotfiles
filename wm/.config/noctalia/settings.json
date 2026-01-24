@@ -51,11 +51,11 @@
                     "hideMode": "hidden",
                     "iconScale": 0.8,
                     "id": "Taskbar",
-                    "maxTaskbarWidth": 40,
+                    "maxTaskbarWidth": 30,
                     "onlyActiveWorkspaces": true,
                     "onlySameOutput": true,
                     "showPinnedApps": true,
-                    "showTitle": false,
+                    "showTitle": true,
                     "smartWidth": true,
                     "titleWidth": 120
                 },
@@ -152,6 +152,9 @@
                     "tooltipFormat": "HH:mm ddd, MMM dd",
                     "useCustomFont": false,
                     "usePrimaryColor": false
+                },
+                {
+                    "id": "plugin:weekly-calendar"
                 }
             ]
         }
@@ -556,7 +559,7 @@
         "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
-        "directory": "/home/hiraeth/Pictures/wallpapers",
+        "directory": "/home/hiraeth/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#000000",
