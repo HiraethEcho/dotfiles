@@ -6,6 +6,7 @@
         "customLaunchPrefixEnabled": false,
         "enableClipPreview": true,
         "enableClipboardHistory": true,
+        "enableSettingsSearch": true,
         "iconMode": "native",
         "ignoreMouseInput": false,
         "pinnedApps": [
@@ -25,6 +26,7 @@
         ],
         "preferredPlayer": "",
         "visualizerType": "linear",
+        "volumeFeedback": false,
         "volumeOverdrive": false,
         "volumeStep": 5
     },
@@ -41,6 +43,8 @@
         ],
         "outerCorners": false,
         "position": "top",
+        "screenOverrides": [
+        ],
         "showCapsule": true,
         "showOutline": false,
         "useSeparateOpacity": false,
@@ -71,6 +75,7 @@
                     "showMemoryAsPercent": false,
                     "showMemoryUsage": true,
                     "showNetworkStats": true,
+                    "showSwapUsage": false,
                     "useMonospaceFont": true,
                     "usePrimaryColor": true
                 },
@@ -138,6 +143,7 @@
                 {
                     "deviceNativePath": "",
                     "displayMode": "alwaysShow",
+                    "hideIfIdle": false,
                     "hideIfNotDetected": true,
                     "id": "Battery",
                     "showNoctaliaPerformance": false,
@@ -182,9 +188,10 @@
     },
     "colorSchemes": {
         "darkMode": true,
+        "generationMethod": "tonal-spot",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "matugenSchemeType": "scheme-fruit-salad",
+        "monitorForColors": "",
         "predefinedScheme": "Nord",
         "schedulingMode": "off",
         "useWallpaperColors": false
@@ -365,11 +372,13 @@
         "boxRadiusRatio": 1,
         "compactLockScreen": false,
         "dimmerOpacity": 0.15,
+        "enableLockScreenCountdown": true,
         "enableShadows": false,
         "forceBlackScreenCorners": false,
         "iRadiusRatio": 1,
         "language": "en",
         "lockOnSuspend": false,
+        "lockScreenCountdownDuration": 10000,
         "radiusRatio": 1,
         "scaleRatio": 1.05,
         "screenRadiusRatio": 1,
@@ -390,6 +399,7 @@
         "screenLock": "",
         "screenUnlock": "",
         "session": "",
+        "startup": "",
         "wallpaperChange": ""
     },
     "location": {
@@ -513,7 +523,7 @@
         "showHeader": true,
         "showNumberLabels": true
     },
-    "settingsVersion": 41,
+    "settingsVersion": 44,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,
@@ -532,6 +542,8 @@
         "memPollingInterval": 3000,
         "memWarningThreshold": 80,
         "networkPollingInterval": 3000,
+        "swapCriticalThreshold": 90,
+        "swapWarningThreshold": 80,
         "tempCriticalThreshold": 90,
         "tempPollingInterval": 3000,
         "tempWarningThreshold": 80,
@@ -541,7 +553,7 @@
     "templates": {
         "activeTemplates": [
         ],
-        "enableUserTemplates": false
+        "enableUserTheming": false
     },
     "ui": {
         "bluetoothDetailsViewMode": "grid",
@@ -559,7 +571,8 @@
         "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
-        "directory": "/home/hiraeth/Pictures/Wallpapers",
+        "automationEnabled": false,
+        "directory": "/home/hiraeth/Pictures/wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#000000",
@@ -569,16 +582,16 @@
         ],
         "overviewEnabled": false,
         "panelPosition": "follow_bar",
-        "randomEnabled": false,
         "randomIntervalSec": 300,
-        "recursiveSearch": false,
         "setWallpaperOnAllMonitors": false,
+        "showHiddenFiles": false,
         "solidColor": "#1a1a2e",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "random",
         "useSolidColor": false,
         "useWallhaven": false,
+        "viewMode": "single",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
