@@ -44,4 +44,4 @@ pamixer -m &
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # /usr/lib/xfce-polkit/xfce-polkit &
 # lxpolkit &
-/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
+# /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
