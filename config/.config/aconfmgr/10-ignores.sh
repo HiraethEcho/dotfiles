@@ -44,5 +44,6 @@ IgnorePath '/etc/vconsole.conf'
 IgnorePath '/opt/*'
 IgnorePath '/var/*'
 IgnorePath '/efi/*'
+IgnorePath '/.snapshots/*'
 
 IgnorePackagesAll

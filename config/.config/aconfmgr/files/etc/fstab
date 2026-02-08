@@ -2,7 +2,6 @@
 # See fstab(5) for details.
 
 # <file system> <dir> <type> <options> <dump> <pass>
-# /dev/nvme0n1p8 LABEL=arch25
 UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/         	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@	0 0
 
 UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/home     	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@home	0 0
@@ -17,6 +16,7 @@ UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/tmp      	btrfs     	rw,noatime,nodir
 
 UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/opt      	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@opt	0 0
 
+UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/.snapshots      	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@snapshots	0 0
 UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/var/lib/libvirt      	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@libvirt	0 0
 UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/var/lib/ollama       	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@ollama	0 0
 UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/var/lib/docker       	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@docker	0 0
@@ -27,9 +27,16 @@ UUID=fcb0aa3e-7abd-474d-9104-d82d9464697e	/var/lib/containers   	btrfs     	rw,n
 UUID=6600-EA3E      	/efi 	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
 
 # /dev/nvme0n1p4
-UUID=02e9d750-f3c3-4b88-9e4f-5c088ff66b28	none      	swap      	defaults  	0 0
+#UUID=02e9d750-f3c3-4b88-9e4f-5c088ff66b28	none      	swap      	defaults  	0 0
 
 # share
 UUID=1A1087A31087848B /mnt/share lowntfs-3g uid=1000,gid=1000,rw,user,exec,umask=000 0 0
 
 
+# /dev/nvme0n1p1: LABEL_FATBOOT="SYSTEM" LABEL="SYSTEM" UUID="6600-EA3E" BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="EFI system partition" PARTUUID="0c1b0aee-5ca8-418f-a013-73b7afab88e0"
+# /dev/nvme0n1p3: LABEL="Windows" BLOCK_SIZE="512" UUID="683CD7F63CD7BCEE" TYPE="ntfs" PARTLABEL="Basic data partition" PARTUUID="a605d682-1541-4fba-8315-5ed83159dbd4"
+# /dev/nvme0n1p5: LABEL="Share" BLOCK_SIZE="512" UUID="1A1087A31087848B" TYPE="ntfs" PARTLABEL="Basic data partition" PARTUUID="b51f3186-42f3-4ea3-809e-5fe0a0d91d25"
+# /dev/nvme0n1p6: LABEL="WinRE" BLOCK_SIZE="512" UUID="7A4801654801218D" TYPE="ntfs" PARTLABEL="Basic data partition" PARTUUID="aa3952d9-4899-4adc-aea7-8c78143e8c9b"
+# /dev/nvme0n1p7: LABEL="arch" UUID="fcb0aa3e-7abd-474d-9104-d82d9464697e" UUID_SUB="da369c08-b961-4499-a455-4447d1b26ae4" BLOCK_SIZE="4096" TYPE="btrfs" PARTUUID="f2c1862e-ac44-48c8-9544-783781daa17f"
+# /dev/nvme0n1p8: UUID="3735d85f-0b8d-406f-8b18-e20ddc4ca1a4" UUID_SUB="e58751d5-054f-4293-a303-cb73dfd4f543" BLOCK_SIZE="4096" TYPE="btrfs" PARTUUID="3068c867-8ff1-46a3-8fa3-16929f8d1e3a"
+# /dev/zram0: LABEL="zram0" UUID="880a64e5-0e67-4fb0-bba7-4002631eb707" TYPE="swap"
