@@ -444,5 +444,3 @@ spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 
 
 include "dms/outputs.kdl"
-
-include "dms/windowrules.kdl"
