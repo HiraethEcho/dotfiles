@@ -7,14 +7,14 @@
     "theme": "dark",
     "newReleaseCheckData": {
         "isEnabled": true,
-        "nextCheckTime": "2025-06-06T11:21:31.273Z",
+        "nextCheckTime": "2026-03-12T07:23:50.775Z",
         "howOftenToCheck": 86400,
         "timesChecked": 0
     },
     "userSatisfactionPollData": {
-        "isEnabled": true,
-        "nextPollTime": "2025-06-06T09:07:15.915Z",
-        "timesPollIsShown": 2
+        "isEnabled": false,
+        "nextPollTime": "2026-03-18T07:23:50.128Z",
+        "timesPollIsShown": 3
     },
     "classes": [
         {
@@ -137,7 +137,7 @@
         },
         {
             "data": {
-                "color": "#FDA1FF"
+                "color": "#CCC"
             },
             "id": 9,
             "name": [
@@ -148,15 +148,13 @@
             }
         },
         {
-            "data": {
-                "color": "#B0BC00"
-            },
+            "data": {},
             "id": 10,
             "name": [
                 "rss"
             ],
             "rule": {
-                "regex": "rss|newsboat|RSS",
+                "regex": "rss|newsboat",
                 "type": "regex"
             }
         },
@@ -168,7 +166,7 @@
                 "bilibili"
             ],
             "rule": {
-                "regex": "\u54d4\u54e9\u54d4\u54e9|bilibili|.*_bilibili",
+                "regex": "\u54d4\u54e9\u54d4\u54e9|bilibili",
                 "type": "regex"
             }
         },
@@ -180,7 +178,7 @@
                 "AskPhilosophers"
             ],
             "rule": {
-                "regex": "AskPhilosophers.*",
+                "regex": "AskPhilosophers",
                 "type": "regex"
             }
         },
@@ -191,7 +189,7 @@
                 "Zotero"
             ],
             "rule": {
-                "regex": "^Zotero$",
+                "regex": "Zotero",
                 "type": "regex"
             }
         },
@@ -208,15 +206,13 @@
             }
         },
         {
-            "data": {
-                "color": "#0062B1"
-            },
+            "data": {},
             "id": 15,
             "name": [
                 "Web"
             ],
             "rule": {
-                "regex": "waterfox|Waterfox",
+                "regex": "waterfox",
                 "type": "regex"
             }
         },
@@ -277,242 +273,13 @@
             }
         },
         {
-            "data": {},
             "id": 21,
             "name": [
                 "config",
-                "dot"
-            ],
-            "rule": {
-                "regex": "dotfiles|\\.config",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 22,
-            "name": [
-                "misc",
-                "zsh"
-            ],
-            "rule": {
-                "regex": "zsh",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 23,
-            "name": [
-                "misc",
-                "scratchpad"
-            ],
-            "rule": {
-                "regex": "scratchpad",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 24,
-            "name": [
-                "misc",
-                "explorer"
-            ],
-            "rule": {
-                "regex": "yazi|explorer",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 25,
-            "name": [
-                "misc",
-                "explorer",
-                "Yazi"
-            ],
-            "rule": {
-                "regex": "Yazi",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 26,
-            "name": [
-                "Web",
-                "zhihu"
-            ],
-            "rule": {
-                "regex": "zhihu|\u77e5\u4e4e",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 27,
-            "name": [
-                "misc",
-                "Koofr"
-            ],
-            "rule": {
-                "regex": "Koofr",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 28,
-            "name": [
-                "misc",
-                "explorer",
-                "pcmanfm"
-            ],
-            "rule": {
-                "regex": "pcmanfm",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 29,
-            "name": [
-                "misc",
-                "powershell"
-            ],
-            "rule": {
-                "regex": "powershell",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 30,
-            "name": [
-                "misc",
-                "Btrfs"
-            ],
-            "rule": {
-                "regex": "Btrfs|assistant",
-                "type": "regex"
-            }
-        },
-        {
-            "id": 31,
-            "name": [
-                "rss",
-                "AskPhilosophers",
                 "New class"
             ],
             "rule": {
                 "regex": "FILL ME",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 32,
-            "name": [
-                "rss",
-                "plato"
-            ],
-            "rule": {
-                "regex": "plato",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 33,
-            "name": [
-                "config",
-                "Settings"
-            ],
-            "rule": {
-                "regex": "Settings|pulsemixer|etc|Configuration",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 34,
-            "name": [
-                "config",
-                "Preferences"
-            ],
-            "rule": {
-                "regex": "Preferences",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 35,
-            "name": [
-                "config",
-                "LXSession"
-            ],
-            "rule": {
-                "regex": "LXSession",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 36,
-            "name": [
-                "QEMU"
-            ],
-            "rule": {
-                "regex": "QEMU",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 37,
-            "name": [
-                "Web",
-                "\u864e\u7259"
-            ],
-            "rule": {
-                "regex": "\u864e\u7259",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 38,
-            "name": [
-                "misc",
-                "PicGo"
-            ],
-            "rule": {
-                "regex": "PicGo|\\.picgo",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 39,
-            "name": [
-                "Code"
-            ],
-            "rule": {
-                "regex": "Code",
-                "type": "regex"
-            }
-        },
-        {
-            "data": {},
-            "id": 40,
-            "name": [
-                "misc",
-                "cache"
-            ],
-            "rule": {
-                "regex": "cache",
                 "type": "regex"
             }
         }
@@ -605,5 +372,6 @@
         "translated": 410,
         "inserted": 412
     },
-    "useColorFallback": true
+    "useColorFallback": true,
+    "flLastSessionTimestamp": 1773213476715
 }

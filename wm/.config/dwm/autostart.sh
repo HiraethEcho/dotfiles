@@ -13,6 +13,10 @@ if [ -z $(pidof xbindkeys) ]; then
   mykeys &
 fi
 
+if [ -z $(pidof awatcher) ]; then
+  awatcher &
+fi
+
 # if [ -z $(pidof aw-qt) ]; then
 # aw-qt &
 # fi
@@ -22,10 +26,8 @@ fi
 # if [ -z $(pidof blueberry-tray) ]; then
 # fi
 
-
 # killall wallpaper_loop
 # wallpaper_loop &
-
 wallpaper_change &
 
 xhidecursor &
