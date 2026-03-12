@@ -2,6 +2,7 @@
 # export LANGUAGE=en_US:zh_CN
 # export LANGUAGE=zh_CN:en_US
 # export LANGUAGE=en_US
+export LC_MESSAGES=zh_CN.UTF-8
 
 # PATH
 export PATH="$GOPATH/bin:$PATH"
