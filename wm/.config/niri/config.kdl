@@ -203,6 +203,9 @@ binds {
     Super+E {
         spawn "pcmanfm"
     }
+    Super+O {
+        spawn "obsidian"
+    }
     Super+Z {
         spawn "zotero"
     }

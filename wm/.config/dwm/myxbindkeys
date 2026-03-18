@@ -20,18 +20,18 @@
 
 "pcmanfm ~"
   Mod4 + e
-
+"obsidian"
+  Mod4 + o
 "zotero"
   Mod4 + z
-
 "neovide"
   Mod4 + n
-
-"mate-control-center"
-  Mod4 + i
+"waterfox"
+  Mod4 + w
+# "mate-control-center"
+#   Mod4 + i
 # "sudo -A gparted"
 #   Mod4 + k
-
 # "i3lock --clock --blur 20"
 # "slock"
 #   Mod4 + l
@@ -47,6 +47,10 @@
   Mod1 + space
 "rofi_allapps"
   Mod4 + a
+"rofi_screen"
+  Shift + Mod4 + s
+"rofi_winx"
+  Mod4 + x
 
 # "rofi_powermenu"
 #   Mod4 + u
@@ -55,19 +59,13 @@
 
 # "rofi_quicklinks"
 # "librewolf"
-"waterfox"
-  Mod4 + w
 
 # "rofi_screenshot"
 # "flameshot gui"
-"rofi_screen"
-  Shift + Mod4 + s
 
 # " rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}' "
 #   Mod4 + v
 
-"rofi_winx"
-  Mod4 + x
 
 "slock & sleep .5; xset dpms force off"
   Mod4 + l

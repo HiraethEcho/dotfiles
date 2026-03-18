@@ -13,7 +13,6 @@ ICON=""
 # df_check_location='/'
 
 case "$BLOCK_BUTTON" in
-# 1) st -e btop ;;
 1) notify-send "󰁹 Battery" "$(acpi | cut -d ':' -f 2-)" ;;
 # 2) tlpui ;;
 2)
@@ -45,7 +44,7 @@ case "$BLOCK_BUTTON" in
 #     ;;
 #   esac
 #   ;;
-3) st -e btop ;;
+3) nohup st -e btop >/dev/null & ;;
 4)
   powerprofilesctl set performance &
   dunstify -h string:x-dunst-stack-tag:power "Power" \
@@ -56,8 +55,6 @@ case "$BLOCK_BUTTON" in
   dunstify -h string:x-dunst-stack-tag:power "Power" \
     "$(powerprofilesctl get)"
   ;;
-  # 4) notify-send "res" "$BLOCK_BUTTON" ;;
-  # 5) notify-send "res" "$BLOCK_BUTTON" ;;
 6) nohup st -e nvim "$0" >/dev/null & ;;
 esac
 # df_output=$(df -h $df_check_location | tail -n 1)
