@@ -62,8 +62,8 @@ layout {
         off
     }
     struts {
-        left 48
-        right 48
+        left 0
+        right 0
         top 0
         bottom 0
     }
@@ -133,12 +133,7 @@ window-rule {
         proportion 0.6
     }
 }
-window-rule {
-    match app-id="waterfox"
-    default-column-width {
-        proportion 1.0
-    }
-}
+// window-rule { match app-id="waterfox" default-column-width { proportion 1.0 } }
 workspace "home" {
     open-on-output "HDMI-A-1"
 }
