@@ -61,6 +61,8 @@ alias tree="eza -T"
 alias gg="lazygit"
 # alias zi="z -I"
 alias ha="harsh ask"
+alias ht="harsh todo"
+alias hl="harsh log"
 
 # usefule tools
 alias weather="curl 'v2d.wttr.in/Beijing'"

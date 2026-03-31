@@ -239,21 +239,6 @@
       "data": {},
       "id": 13,
       "name": [
-        "Zotero"
-      ],
-      "rule": {
-        "regex": "Zotero",
-        "type": "regex"
-      },
-      "name_pretty": "Zotero",
-      "subname": "Zotero",
-      "parent": null,
-      "depth": 0
-    },
-    {
-      "data": {},
-      "id": 14,
-      "name": [
         "rss",
         "Quarks"
       ],
@@ -270,12 +255,12 @@
     },
     {
       "data": {},
-      "id": 15,
+      "id": 14,
       "name": [
         "Web"
       ],
       "rule": {
-        "regex": "waterfox",
+        "regex": "waterfox|brave",
         "type": "regex"
       },
       "name_pretty": "Web",
@@ -285,12 +270,12 @@
     },
     {
       "data": {},
-      "id": 16,
+      "id": 15,
       "name": [
         "Blog"
       ],
       "rule": {
-        "regex": "hexo|hugo|obsidian|mkdocs|blogs",
+        "regex": "hexo|hugo|obsidian|mkdocs|blogs|memex|docs",
         "type": "regex"
       },
       "name_pretty": "Blog",
@@ -300,7 +285,7 @@
     },
     {
       "data": {},
-      "id": 17,
+      "id": 16,
       "name": [
         "config"
       ],
@@ -315,7 +300,7 @@
     },
     {
       "data": {},
-      "id": 18,
+      "id": 17,
       "name": [
         "Comms",
         "wechat"
@@ -333,12 +318,12 @@
     },
     {
       "data": {},
-      "id": 19,
+      "id": 18,
       "name": [
         "DeepSeek"
       ],
       "rule": {
-        "regex": "DeepSeek",
+        "regex": "DeepSeek|deepseek",
         "type": "regex"
       },
       "name_pretty": "DeepSeek",
@@ -348,33 +333,52 @@
     },
     {
       "data": {},
-      "id": 20,
+      "id": 19,
       "name": [
-        "misc"
+        "Web",
+        "zhihu"
       ],
       "rule": {
-        "regex": "",
+        "regex": "zhihu",
         "type": "regex"
       },
-      "name_pretty": "misc",
-      "subname": "misc",
+      "name_pretty": "Web>zhihu",
+      "subname": "zhihu",
+      "parent": [
+        "Web"
+      ],
+      "depth": 1
+    },
+    {
+      "data": {},
+      "id": 20,
+      "name": [
+        "Math"
+      ],
+      "rule": {
+        "regex": "math|projects",
+        "type": "regex"
+      },
+      "name_pretty": "Math",
+      "subname": "Math",
       "parent": null,
       "depth": 0
     },
     {
+      "data": {},
       "id": 21,
       "name": [
-        "config",
-        "New class"
+        "Math",
+        "zotero"
       ],
       "rule": {
-        "regex": "FILL ME",
+        "regex": "zotero|Zotero",
         "type": "regex"
       },
-      "name_pretty": "config>New class",
-      "subname": "New class",
+      "name_pretty": "Math>zotero",
+      "subname": "zotero",
       "parent": [
-        "config"
+        "Math"
       ],
       "depth": 1
     }
