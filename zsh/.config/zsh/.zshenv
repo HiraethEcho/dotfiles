@@ -2,7 +2,7 @@
 # export FZF_DEFAULT_OPTS=" --height 60% --reverse --border"
   # --header-label ' File Type ' \
   # --bind 'focus:+transform-header:file --brief {} || echo \"No file selected\"' \
-export DISPLAY=":0"
+# export DISPLAY=":0"
 export FZF_DEFAULT_OPTS="--reverse --style full \
   --border --padding 0,0 \
   --border-label ' fzf ' \

@@ -47,6 +47,7 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 # export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+export DISPLAY=":0"
 
 # export HOME_IP_5G="2408:8207:1962:6500:bf23:f89a:d169:3449"
 # export HOME_IP="2408:8207:1962:6500:87c2:38e5:1717:8420"
