@@ -34,6 +34,9 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export W3M_DIR="$XDG_DATA_HOME"/w3m
 # export XDG_RUNTIME_DIR="$HOME/.local/tmp"
 
+# export XDG_CURRENT_DESKTOP="GTK"
+# export GTK_USE_PORTAL=1
+
 # File
 export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
