@@ -6,6 +6,7 @@
 
 bindkey -v
 # source
+#
 source $HOME/.config/zsh/alias
 
 # plugins
@@ -14,7 +15,6 @@ source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.zsh  # Replace zsh's default c
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh # a little bit faster, as is said
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh # completion offered after the cursor in a muted gray color, by history
 # source <(fzf --zsh) # CTRL-T CTRL-R ALT-C and ** trigger
-
 # theme
 # source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme # promot theme
 eval "$(starship init zsh)"
