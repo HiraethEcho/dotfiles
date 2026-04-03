@@ -96,6 +96,8 @@ environment {
     XMODIFIERS "@im=fcitx"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
     LANG "en_US.UTF-8"
+    XDG_CURRENT_DESKTOP "GTK"
+    GTK_USE_PORTAL "1"
 }
 // LC_MESSAGES "zh_CN.UTF-8"
 // LANG "zh_CN.UTF-8"

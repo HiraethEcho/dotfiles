@@ -127,3 +127,20 @@ a = "zeabur_local"
 b = "zeabur_remote"
 collections = ["from a", "from b"]
 metadata = ["color", "displayname", "description", "order"]
+
+[storage radicale_remote]
+type = "caldav"
+url = "https://radicale.keinmal.top/"
+username = "hiraeth"
+password = "wyz2025zxc"
+
+[storage radicale_local]
+type = "filesystem"
+path = "~/.local/share/calendar_radicale/"
+fileext = ".ics"
+
+[pair radicale]
+a = "radicale_local"
+b = "radicale_remote"
+collections = ["from a", "from b"]
+metadata = ["color", "displayname", "description", "order"]
