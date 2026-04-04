@@ -24,7 +24,8 @@ RCLONE_PAIR=(
   "$HOME/Documents/sorge/;tera:/Documents/sorge/"
   "$HOME/Documents/projects/;koofr:/kDocuments/projects/"
   "$HOME/Documents/projects/;tera:/Documents/projects/"
-  "$HOME/.local/share/calendar_zeabur/;koofr:/asset/radicale-hiraeth-collection/"
+  # "$HOME/.local/share/calendar_zeabur/;koofr:/asset/radicale-hiraeth-collection/"
+  "$HOME/.local/share/calendar_radicale/;koofr:/asset/radicale-hiraeth-collection/"
   # "$HOME/.local/share/calendar_zeabur/;cloudflare:/asset/radicale-hiraeth-collection/"
   "$HOME/Documents/math/;koofr:/kDocuments/math/"
   # "$HOME/Documents/math/;cloudflare:/blog/math/"
@@ -364,7 +365,7 @@ night() {
 }
 
 misc() {
-  vdirsyncer sync zeabur
+  vdirsyncer sync radicale
 }
 
 mytest() {
