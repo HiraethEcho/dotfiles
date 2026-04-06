@@ -213,13 +213,11 @@ binds {
         spawn "niri-scratchpad" "kitty"
     }
     // lanucher
-    // Super+A { spawn "rofi_allapps"; }
-    Super+A hotkey-overlay-title="Application Launcher" {
-        spawn "dms" "ipc" "call" "spotlight" "toggle"
+    Super+A {
+        spawn "rofi_allapps"
     }
-    Super+V hotkey-overlay-title="Clipboard Manager" {
-        spawn "dms" "ipc" "call" "clipboard" "toggle"
-    }
+    // Super+A hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle" }
+    // Super+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle" }
     Alt+Space {
         spawn "rofi_quickapps"
     }
