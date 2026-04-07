@@ -1,0 +1,21 @@
+layer-rule {
+    match namespace="dms:blurwallpaper"
+    place-within-backdrop true
+}
+// layer-rule { match namespace="^quickshell$" place-within-backdrop true }
+binds {
+    Super+A hotkey-overlay-title="Application Launcher" {
+        spawn "dms" "ipc" "call" "spotlight" "toggle"
+    }
+    Super+V hotkey-overlay-title="Clipboard Manager" {
+        spawn "dms" "ipc" "call" "clipboard" "toggle"
+    }
+    Ctrl+Alt+Backspace hotkey-overlay-title="Task Manager" {
+        spawn "dms" "ipc" "call" "processlist" "toggle"
+    }
+    Super+I hotkey-overlay-title="Settings" {
+        spawn "dms" "ipc" "call" "settings" "toggle"
+    }
+}
+spawn-at-startup "dms" "run"
+

@@ -1,35 +1,27 @@
-layout {
-
-    focus-ring {
-        active-color   "#8fbcbb"
-        inactive-color "#2e3440"
-        urgent-color   "#bf616a"
+layer-rule {
+    match namespace="^noctalia-overview*"
+    place-within-backdrop true
+}
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
+binds {
+    Super+A {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
     }
-
-    border {
-        active-color   "#8fbcbb"
-        inactive-color "#2e3440"
-        urgent-color   "#bf616a"
+    Super+V {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"
     }
-
-    shadow {
-        color "#00000070"
+    Alt+B {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "bar" "toggle"
     }
-
-    tab-indicator {
-        active-color   "#8fbcbb"
-        inactive-color "#326766"
-        urgent-color   "#bf616a"
+    Alt+Shift+B {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "dock" "toggle"
     }
-
-    insert-hint {
-        color "#8fbcbb80"
+    Super+I {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"
     }
 }
 
-recent-windows {
-    highlight {
-        active-color "#8fbcbb"
-        urgent-color "#bf616a"
-    }
-}
+spawn-at-startup "qs" "-c" "noctalia-shell"

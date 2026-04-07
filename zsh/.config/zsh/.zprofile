@@ -4,11 +4,6 @@
 # export LANGUAGE=en_US
 # export LC_MESSAGES=zh_CN.UTF-8
 
-# PATH
-export PATH="$GOPATH/bin:$PATH"
-export PATH="$HOME/.local/opt/npm/bin:$PATH"
-# export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
-# export PATH="/home/hiraeth/.local/stewbin:$PATH"
 
 export EDITOR=nvim
 # export PAGER=sioyek
@@ -62,3 +57,30 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 # export _ZL_DATA="$XDG_DATA_HOME/zlua"
 # export UNISON="$XDG_CONFIG_HOME/unison"
 # export UNISON="$XDG_DATA_HOME/unison"
+
+export FZF_DEFAULT_OPTS="--reverse --style full \
+  --border --padding 0,0 \
+  --border-label ' fzf ' \
+  --input-label ' Input ' \
+  --bind=ctrl-d:preview-down,ctrl-u:preview-up \
+  --color 'border:#aaaaaa,label:#cccccc' \
+  --color 'preview-border:#9999cc,preview-label:#ccccff' \
+  --color 'list-border:#669966,list-label:#99cc99' \
+  --color 'input-border:#996666,input-label:#ffcccc' \
+  --color 'header-border:#6699cc,header-label:#99ccff'
+"
+
+# PATH
+# export PATH="$GOPATH/bin:$PATH"
+# export PATH="$HOME/.local/opt/npm/bin:$PATH"
+# export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
+# export PATH="/home/hiraeth/.local/stewbin:$PATH"
+#
+typeset -U path
+path=(
+    "$HOME/.local/bin"
+    "$HOME/.local/share/npm/bin"
+    "$GOPATH/bin"
+    $path
+)
+export PATH

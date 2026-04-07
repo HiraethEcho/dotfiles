@@ -62,8 +62,8 @@ layout {
         off
     }
     struts {
-        left 0
-        right 0
+        left 24
+        right 24
         top 0
         bottom 0
     }
@@ -113,18 +113,6 @@ animations {
 overview {
     zoom 0.25
 }
-layer-rule {
-    match namespace="^noctalia-overview*"
-    place-within-backdrop true
-}
-layer-rule {
-    match namespace="dms:blurwallpaper"
-    place-within-backdrop true
-}
-layer-rule {
-    match namespace="^quickshell$"
-    place-within-backdrop true
-}
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 window-rule {
     clip-to-geometry true
@@ -135,7 +123,6 @@ window-rule {
         proportion 0.6
     }
 }
-// window-rule { match app-id="waterfox" default-column-width { proportion 1.0 } }
 workspace "home" {
     open-on-output "HDMI-A-1"
 }
@@ -152,11 +139,6 @@ window-rule {
 }
 workspace "term" {
     open-on-output "HDMI-A-1"
-}
-/-window-rule {
-match app-id="kitty"
-open-on-workspace "term"
-clip-to-geometry true
 }
 workspace "apps" {
     open-on-output "HDMI-A-1"
@@ -216,8 +198,6 @@ binds {
     Super+A {
         spawn "rofi_allapps"
     }
-    // Super+A hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle" }
-    // Super+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle" }
     Alt+Space {
         spawn "rofi_quickapps"
     }
@@ -226,13 +206,6 @@ binds {
     }
     Super+X {
         spawn "rofi_winx"
-    }
-    Ctrl+Alt+Backspace hotkey-overlay-title="Task Manager" {
-        spawn "dms" "ipc" "call" "processlist" "toggle"
-    }
-    // function
-    Super+I hotkey-overlay-title="Settings" {
-        spawn "dms" "ipc" "call" "settings" "toggle"
     }
     Super+S {
         power-off-monitors
@@ -437,9 +410,8 @@ spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "fcitx5"
 spawn-at-startup "foot" "-s"
-spawn-at-startup "dms" "run"
 spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 spawn-at-startup "awatcher"
-include "dms/outputs.kdl"
-include "dms/windowrules.kdl"
+include "dms.kdl"
+ // include "noctalia.kdl"
 
