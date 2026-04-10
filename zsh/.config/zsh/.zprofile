@@ -79,7 +79,7 @@ export FZF_DEFAULT_OPTS="--reverse --style full \
 typeset -U path
 path=(
     "$HOME/.local/bin"
-    "$HOME/.local/share/npm/bin"
+    "$HOME/.local/opt/npm/bin"
     "$GOPATH/bin"
     $path
 )
