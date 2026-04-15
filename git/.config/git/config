@@ -4,7 +4,7 @@
 [http]
 	sslVerify = false
 [init]
-  defaultBranch = main
+	defaultBranch = main
 [pull]
   rebase = true
 [credential "https://github.com"]
