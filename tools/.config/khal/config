@@ -1,7 +1,7 @@
 [calendars]
 
-[[zeabur_local]]
-path = ~/.local/share/calendar_zeabur/*
+[[radicale_local]]
+path = ~/.local/share/calendar_radicale/*
 type = discover
 
 [locale]
@@ -12,4 +12,4 @@ datetimeformat = %Y-%m-%d %H:%M
 longdatetimeformat = %Y-%m-%d %H:%M
 
 [default]
-default_calendar = sorge
+default_calendar = loisir
