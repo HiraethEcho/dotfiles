@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pamixer -t
+pkill -SIGUSR1 dwmblocks

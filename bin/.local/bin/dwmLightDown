@@ -1,0 +1,4 @@
+#!/bin/bash
+
+xbacklight -dec 5
+pkill -SIGUSR1 dwmblocks
