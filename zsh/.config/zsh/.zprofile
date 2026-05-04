@@ -49,7 +49,7 @@ export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 
 # Software
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
-export GOPROXY=goproxy.io
+# export GOPROXY=goproxy.io
 export GOPATH="$HOME"/.local/opt/go
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 # PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
