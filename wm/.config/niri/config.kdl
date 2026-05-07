@@ -4,7 +4,7 @@
 // Find the full list of options on the wiki:
 input {
     touchpad {
-        // off // toggle touchpad
+        off // toggle touchpad
         tap
         scroll-method "two-finger"
     }
