@@ -1,10 +1,10 @@
 # A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
-"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+#:schema https://yazi-rs.github.io/schemas/keymap.json
 
 [mgr]
 prepend_keymap = [
-  { on = ["C"], run = "plugin ouch --args=zip", desc = "Compress with ouch" },
+  # { on = ["C"], run = "plugin ouch --args=zip", desc = "Compress with ouch" },
   { on = ["g","i"], run = "plugin lazygit", desc = "run lazygit" },
   { on = [ "P" ], run = "plugin toggle-pane max-preview",  desc = "Maximize or restore the preview pane" },
   { on = [ "z","p" ], run = "plugin toggle-pane min-parent",  desc = "toggle the parent pane" },
@@ -157,7 +157,7 @@ keymap = [
   { on = [ "}" ], run = "tab_swap 1",  desc = "Swap the current tab with the next tab" },
 
   # Tasks
-  { on = [ "w" ], run = "tasks_show", desc = "Show the tasks manager" },
+	{ on = "w", run = "tasks:show", desc = "Show task manager" },
 
   # Goto
   { on = [ "g", "h" ],       run = "cd ~",             desc = "Go to the home directory" },

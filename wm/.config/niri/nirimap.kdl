@@ -1,0 +1,6 @@
+layer-rule {
+    match namespace="nirimap"
+ // Add any layer-specific rules here, such as opacity
+}
+spawn-at-startup "nirimap"
+
