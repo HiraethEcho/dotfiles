@@ -48,11 +48,10 @@ export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 # export HOME_IP="2408:8207:1962:6500:87c2:38e5:1717:8420"
 
 # Software
-export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export CARGO_HOME="$HOME"/.local/opt/cargo
 # export GOPROXY=goproxy.io
 export GOPATH="$HOME"/.local/opt/go
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
-# PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 # export WECHAT_DATA_DIR="$HOME/Desktop/WeChat_Data"
 # export _ZL_DATA="$XDG_DATA_HOME/zlua"
 # export UNISON="$XDG_CONFIG_HOME/unison"
@@ -71,6 +70,7 @@ export FZF_DEFAULT_OPTS="--reverse --style full \
 "
 
 # PATH
+# PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 # export PATH="$GOPATH/bin:$PATH"
 # export PATH="$HOME/.local/opt/npm/bin:$PATH"
 # export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
@@ -81,6 +81,7 @@ path=(
     "$HOME/.local/bin"
     "$HOME/.local/opt/npm/bin"
     "$GOPATH/bin"
+    "$CARGO_HOME/bin"
     $path
 )
 export PATH
