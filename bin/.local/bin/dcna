@@ -312,6 +312,33 @@ rclone_push_all() {
   done
 }
 
+rclone_push_all_force() {
+  if [[ -n "$INTERACTIVE" ]]; then
+    RCLONE_INTERACTIVE="-i"
+  fi
+
+  LOG="${YELLOW}Rclone Push All${NC}\n"
+  echo -e "$LOG"
+  TOTAL_LOG=$TOTAL_LOG"$LOG"
+  for pair in "${RCLONE_PAIR[@]}"; do
+    IFS=";" read -r local remote <<<"$pair"
+    LOG="${YELLOW}推送: $local → $remote${NC}"
+    echo -e "$LOG"
+    TOTAL_LOG=$TOTAL_LOG"$LOG"
+    if rclone sync "$local" "$remote" $RCLONE_INTERACTIVE --suffix-keep-extension --filter-from "$HOME/.config/rclone/filter-list.txt" --transfers 50 -L ; then
+      LOG="${GREEN}✓ 成功${NC}"
+      echo -e "$LOG"
+      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+      notify-send 'rclone' "push $local to $remote"
+    else
+      LOG="${RED}✗ 失败${NC}"
+      echo -e "$LOG"
+      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+      notify-send -u critical 'rclone' "push from $local to $remote failed"
+    fi
+  done
+}
+
 night_reboot() {
   # local POWER=""
   # OPTIND=1
@@ -403,6 +430,9 @@ main() {
     ;;
   rP)
     rclone_push_all "$@"
+    ;;
+  rPf)
+    rclone_push_all_force "$@"
     ;;
   gp)
     git_pull_all "$@"
