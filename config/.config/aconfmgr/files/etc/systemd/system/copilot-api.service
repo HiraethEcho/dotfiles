@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 User=hiraeth
-ExecStart=copilot-api start
+ExecStart=/home/hiraeth/.local/opt/npm/bin/copilot-api start
 Restart=always
 RestartSec=10
 KillMode=process

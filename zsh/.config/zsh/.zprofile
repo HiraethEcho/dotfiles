@@ -52,6 +52,7 @@ export CARGO_HOME="$HOME"/.local/opt/cargo
 # export GOPROXY=goproxy.io
 export GOPATH="$HOME"/.local/opt/go
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+# export BUN_INSTALL_CACHE_DIR="$HOME"/.local/opt/bun
 # export WECHAT_DATA_DIR="$HOME/Desktop/WeChat_Data"
 # export _ZL_DATA="$XDG_DATA_HOME/zlua"
 # export UNISON="$XDG_CONFIG_HOME/unison"

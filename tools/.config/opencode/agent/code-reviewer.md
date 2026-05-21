@@ -1,6 +1,6 @@
 ---
 description: Reviews code for best practices and potential issues
-model: anthropic/claude-sonnet-4-20250514
+model: opencode/deepseek-v4-flash-free
 tools:
   write: false
   edit: false

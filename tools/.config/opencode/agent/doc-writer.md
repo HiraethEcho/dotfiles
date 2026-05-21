@@ -1,5 +1,6 @@
 ---
 description: Writes and maintains project documentation
+model: opencode/deepseek-v4-flash-free
 tools:
   bash: false
 ---

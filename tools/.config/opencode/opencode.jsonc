@@ -1,0 +1,5 @@
+{
+  "plugin": ["oh-my-openagent@latest"],
+  "$schema": "https://opencode.ai/config.json",
+  "lsp": true
+}

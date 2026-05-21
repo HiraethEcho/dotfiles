@@ -112,3 +112,39 @@ CopyFile /etc/zsh/zshenv
 SetFileProperty /etc/artalk group artalk
 SetFileProperty /etc/artalk mode 750
 SetFileProperty /etc/artalk owner artalk
+
+
+# Thu May 21 02:43:38 PM CST 2026 - Extra files
+
+
+RemoveFile /etc/zsh/zprofile
+RemoveFile /etc/cloudflared/config.yml
+
+
+# Thu May 21 02:43:38 PM CST 2026 - New / changed files
+
+
+CopyFile /etc/locale.gen.pacnew
+CopyFile /etc/paclist/lists/all.list-arch-old
+CopyFile /etc/paclist/lists/aur.list-arch-old
+CopyFile /etc/paclist/lists/official.list-arch-old
+CreateLink /etc/systemd/system/autovt@.service /usr/lib/systemd/system/getty@.service
+CreateLink /etc/systemd/system/multi-user.target.wants/apm-daily-update.service /usr/lib/systemd/system/apm-daily-update.service
+CreateLink /etc/systemd/system/multi-user.target.wants/cloudflared.service /etc/systemd/system/cloudflared.service
+CreateLink /etc/systemd/system/multi-user.target.wants/memos.service /usr/lib/systemd/system/memos.service
+CreateLink /etc/systemd/system/multi-user.target.wants/radicale-hiraeth.service /etc/systemd/system/radicale-hiraeth.service
+CreateLink /etc/systemd/system/timers.target.wants/cloudflared-update.timer /etc/systemd/system/cloudflared-update.timer
+CreateLink /host /
+CopyFile /etc/fstab
+CopyFile /etc/mkinitcpio.conf.pacnew
+CopyFile /etc/pacman.d/mirrorlist.pacnew
+CopyFile /etc/systemd/system/cloudflared.service
+CopyFile /etc/systemd/system/copilot-api.service
+
+
+# Thu May 21 02:43:38 PM CST 2026 - New file properties
+
+
+SetFileProperty /etc/radicale/users group radicale
+SetFileProperty /etc/radicale/users mode 640
+SetFileProperty /etc/radicale/users owner radicale
