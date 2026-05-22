@@ -1,3 +1,2 @@
 prefix=${HOME}/.local/opt/npm
-cache=/home/hiraeth/.cache/npm-cache
 init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js

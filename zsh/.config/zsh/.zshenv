@@ -10,3 +10,5 @@
 
 # export ZOTERO_API_KEY="vxwGh0XaMLa637qhhGYZ48LS"
 # export ZOTERO_USER_ID="9666949"
+# export BUN_INSTALL="$HOME"/.local/opt/bun
+# export UV_TOOL_DIR="$HOME"/.local/opt/uv

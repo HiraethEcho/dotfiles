@@ -4,7 +4,7 @@
 # export LANGUAGE=en_US
 # export LC_MESSAGES=zh_CN.UTF-8
 
-
+# Defaults
 export EDITOR=nvim
 # export PAGER=sioyek
 # export TERMINAL=kitty
@@ -52,6 +52,8 @@ export CARGO_HOME="$HOME"/.local/opt/cargo
 # export GOPROXY=goproxy.io
 export GOPATH="$HOME"/.local/opt/go
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export BUN_INSTALL="$HOME"/.local/opt/bun
+export UV_TOOL_DIR="$HOME"/.local/opt/uv
 # export BUN_INSTALL_CACHE_DIR="$HOME"/.local/opt/bun
 # export WECHAT_DATA_DIR="$HOME/Desktop/WeChat_Data"
 # export _ZL_DATA="$XDG_DATA_HOME/zlua"
@@ -80,9 +82,11 @@ export FZF_DEFAULT_OPTS="--reverse --style full \
 typeset -U path
 path=(
     "$HOME/.local/bin"
+    "$HOME/.local/stewbin"
     "$HOME/.local/opt/npm/bin"
     "$GOPATH/bin"
     "$CARGO_HOME/bin"
+    "$BUN_INSTALL/bin"
     $path
 )
 export PATH
