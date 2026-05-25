@@ -1,6 +1,5 @@
 ---
 description: All-in-one Obsidian PKM assistant: search, create, link, summarize, and organize notes in your vault
-mode: subagent
 permission:
   read: allow
   edit: ask
