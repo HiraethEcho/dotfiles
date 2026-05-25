@@ -158,6 +158,7 @@ prepend_preloaders = [
 
 prepend_previewers = [
   { url = "*/", run = 'piper -- eza -TL=2 -a --color=always --icons=always --group-directories-first --no-quotes "$1"' },
+  { url = "*.docx", run = 'piper -- doxx "$1"' },
   # Replace magick, image, video with mediainfo
   # { mime = "{audio,video,image}/*", run = "mediainfo" },
 
