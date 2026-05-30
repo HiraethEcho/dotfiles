@@ -1,0 +1,280 @@
+#!/bin/bash
+# daily — daily sync & backup tool
+set -euo pipefail
+
+# ── Config ──────────────────────────────────────────
+CONFLICT_DIR="$HOME/conflicts"
+
+GIT_REPOS=(
+  "$HOME/Documents/math"
+  "$HOME/Code/docs"
+  "$HOME/memex"
+  "$HOME/Sites/content/"
+  "$HOME/.config/nvim"
+  "$HOME/dotfiles"
+)
+
+RCLONE_PAIRS=(
+  "$HOME/obsidian/;koofr:/obsidian/"
+  "$HOME/Documents/zotero_files/;koofr:/kDocuments/zotero_files/"
+  "$HOME/Documents/zotero_files/;tera:/Documents/zotero_files/"
+  "$HOME/Documents/sorge/;koofr:/kDocuments/sorge/"
+  "$HOME/Documents/sorge/;tera:/Documents/sorge/"
+  "$HOME/Documents/projects/;koofr:/kDocuments/projects/"
+  "$HOME/Documents/projects/;tera:/Documents/projects/"
+  "$HOME/.local/share/calendar_radicale/;koofr:/asset/radicale-hiraeth-collection/"
+  "$HOME/Documents/math/;koofr:/kDocuments/math/"
+  "$HOME/Documents/math/;tera:/Documents/math/"
+  "$HOME/Code/docs/;koofr:/docs/"
+  "$HOME/Code/docs/;tera:/docs/"
+  "$HOME/memex/;koofr:/memex/"
+)
+
+RCLONE_BASE=(
+  -P -v --track-renames
+  --filter-from "$HOME/.config/rclone/filter-list.txt"
+  --no-update-dir-modtime --no-update-modtime
+  --transfers 20 -L
+)
+RCLONE_EXTRA=(--suffix-keep-extension)
+
+# ── Colors ──────────────────────────────────────────
+RED=$'\033[0;31m'
+GREEN=$'\033[0;32m'
+YELLOW=$'\033[0;33m'
+NC=$'\033[0m'
+
+# ── State ───────────────────────────────────────────
+LOG=""
+INTERACTIVE=""
+DRY_RUN=""
+POWER_ACTION=""
+
+# ── Logging ─────────────────────────────────────────
+log()   { echo "$1"; LOG+="$1"$'\n'; }
+ok()    { log "${GREEN}$1${NC}"; }
+info()  { log "${YELLOW}$1${NC}"; }
+err()   { log "${RED}$1${NC}"; notify-send -u critical "daily" "$1"; }
+is_dry() { [[ -n "$DRY_RUN" ]]; }
+summary() { echo "─"; info "LOG:"; echo "$LOG"; }
+
+# ── Git ─────────────────────────────────────────────
+git_pull() {
+  info "Git: pull all repos"
+  for repo in "${GIT_REPOS[@]}"; do
+    pushd "$repo" >/dev/null || { err "cannot enter $repo"; continue; }
+    info "  $repo"
+    if [[ -n "$(git status --porcelain)" ]]; then
+      if is_dry; then
+        info "    [DRY] git stash"
+      else
+        git stash 2>/dev/null || err "stash failed $repo"
+      fi
+    fi
+    if is_dry; then
+      info "    [DRY] git pull"
+    else
+      git pull && ok "  ✓ pulled" || err "  ✗ pull failed $repo"
+    fi
+    popd >/dev/null
+  done
+}
+
+git_push() {
+  info "Git: push all repos"
+  for repo in "${GIT_REPOS[@]}"; do
+    pushd "$repo" >/dev/null || { err "cannot enter $repo"; continue; }
+    info "  $repo"
+    if [[ -n "$(git status --porcelain)" ]]; then
+      if is_dry; then
+        info "    [DRY] git add + commit + push"
+      else
+        git add .
+        git commit -m "backup at $(date +%y/%m/%d-%T)"
+        git push && ok "  ✓ pushed" || err "  ✗ push failed $repo"
+      fi
+    else
+      ok "  ✓ no changes"
+    fi
+    popd >/dev/null
+  done
+}
+
+# ── Rclone ──────────────────────────────────────────
+rclone_sync() {
+  local direction="$1"
+  local extra=("${@:2}")
+  local label="$([[ "$direction" == "pull" ]] && echo "← pull" || echo "→ push")"
+
+  info "Rclone: ${label} all"
+  for pair in "${RCLONE_PAIRS[@]}"; do
+    IFS=";" read -r local remote <<< "$pair"
+    local desc="$([[ "$direction" == "pull" ]] && echo "$remote → $local" || echo "$local → $remote")"
+    info "  $desc"
+
+    local cmd=(rclone sync)
+    [[ "$direction" == "pull" ]] && cmd+=("$remote" "$local") || cmd+=("$local" "$remote")
+    [[ -n "$INTERACTIVE" ]] && cmd+=(-i)
+    is_dry && cmd+=(--dry-run)
+    cmd+=("${RCLONE_BASE[@]}" "${extra[@]}")
+
+    "${cmd[@]}" && ok "  ✓ synced" || err "  ✗ sync failed"
+
+    [[ -d "$CONFLICT_DIR" ]] && err "conflicts in $CONFLICT_DIR"
+  done
+}
+
+rclone_pull()      { rclone_sync pull; }
+rclone_push()      { rclone_sync push "${RCLONE_EXTRA[@]}" --max-age 24h; }
+rclone_push_force(){ rclone_sync push "${RCLONE_EXTRA[@]}"; }
+
+# ── Calendar ────────────────────────────────────────
+calendar_sync() {
+  info "Calendar: vdirsyncer radicale"
+  if is_dry; then
+    info "  [DRY] vdirsyncer sync radicale"
+  else
+    vdirsyncer sync radicale && ok "  ✓ synced" || err "  ✗ sync failed"
+  fi
+}
+
+# ── System backup ───────────────────────────────────
+sysbak() {
+  info "System: update & backup"
+
+  if is_dry; then
+    info "  [DRY] paru -Syu"
+    info "  [DRY] sudo timeshift --check"
+    info "  [DRY] sudo grub-mkconfig -o /boot/grub/grub.cfg"
+    info "  [DRY] pacman -Qqe > Qqe.bak && pacman -Qe > Qe.bak"
+    return
+  fi
+
+  local paru_flags=(--noconfirm)
+  [[ -n "$INTERACTIVE" ]] && paru_flags=()
+
+  paru -Syu "${paru_flags[@]}" && ok "  ✓ packages" || err "  ✗ paru failed"
+  sudo timeshift --check && ok "  ✓ timeshift" || err "  ✗ timeshift failed"
+  sudo grub-mkconfig -o /boot/grub/grub.cfg && ok "  ✓ grub" || err "  ✗ grub failed"
+  pacman -Qqe > "$HOME/Desktop/bak/Qqe-$(whoami).bak" 2>/dev/null
+  pacman -Qe  > "$HOME/Desktop/bak/Qe-$(whoami).bak"  2>/dev/null
+  ok "  ✓ package lists"
+}
+
+# ── Power ───────────────────────────────────────────
+power() {
+  if [[ -z "$POWER_ACTION" ]]; then
+    echo "${YELLOW}[r]eboot  sh[u]tdown  [l]ock  [s]leep  [n]othing ?${NC}"
+    read -r -t 5 -s -n 1 POWER_ACTION
+  fi
+  case "$POWER_ACTION" in
+    r) systemctl reboot ;;
+    u) systemctl poweroff -i ;;
+    l) slock &
+       sleep .5
+       xset dpms force off ;;
+    s) sleep .5; xset dpms force off ;;
+    *) echo "cancelled" ;;
+  esac
+}
+
+# ── Combined commands ───────────────────────────────
+cmd_pull() {
+  rclone_pull
+  git_pull
+  summary
+  [[ -d "$CONFLICT_DIR" ]] && cd "$CONFLICT_DIR" || true
+}
+
+cmd_push() {
+  calendar_sync
+  rclone_push
+  git_push
+  sysbak
+  summary
+  power
+}
+
+# ── Help ────────────────────────────────────────────
+help() {
+  cat <<EOF
+${GREEN}daily — daily sync & backup tool${NC}
+
+${GREEN}Usage:${NC}
+  daily <command> [options]
+  Options can go before or after the command.
+
+${GREEN}Commands:${NC}
+  pull, p         Pull from remotes (rclone pull + git pull)
+  push            Push to remotes + system backup (calendar + rclone + git + sysbak + power)
+  rclone-pull, rp Rclone pull only
+  rclone-push, rP Rclone push (last 24h)
+  rclone-force, rPf Rclone push (all files, no time filter)
+  git-pull, gp    Git pull only
+  git-push, gP    Git push only
+  sysbak, bak     System: paru -Syu + timeshift + grub + pkg lists
+  power, re       Power menu: reboot / shutdown / lock / sleep / cancel
+  config          Show current configuration
+  help            Show this help
+
+${GREEN}Options:${NC}
+  -i, --interactive   Interactive (paru asks confirmation, rclone shows prompts)
+  -u, --power ACTION  Skip power prompt, use ACTION: r|u|l|s|n
+  -n, --dry-run       Preview only, no actual changes
+  -h, --help          Show this help
+EOF
+}
+
+config() {
+  info "Configuration:"
+  echo
+  echo "${GREEN}Git repos:${NC}"
+  printf '  %s\n' "${GIT_REPOS[@]}"
+  echo
+  echo "${GREEN}Rclone pairs:${NC}"
+  printf '  %s\n' "${RCLONE_PAIRS[@]}"
+  echo
+  echo "${GREEN}Options:${NC}"
+  echo "  DRY_RUN:      ${DRY_RUN:-no}"
+  echo "  INTERACTIVE:  ${INTERACTIVE:-no}"
+}
+
+# ── Entry point ─────────────────────────────────────
+main() {
+  local positional=()
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -h|--help)          help; exit 0 ;;
+      -i|--interactive)   INTERACTIVE="yes"; shift ;;
+      -n|--dry-run)       DRY_RUN="yes"; shift ;;
+      -u|--power)         POWER_ACTION="$2"; shift 2 ;;
+      --)                 shift; positional+=("$@"); break ;;
+      -*)                 echo "unknown option: $1" >&2; exit 1 ;;
+      *)                  positional+=("$1"); shift ;;
+    esac
+  done
+
+  set -- "${positional[@]}"
+  local cmd="help"
+  if [[ $# -gt 0 ]]; then
+    cmd="$1"
+    shift
+  fi
+
+  case "$cmd" in
+    pull|p)                 cmd_pull "$@" ;;
+    push)                   cmd_push "$@" ;;
+    rclone-pull|rp|rpull)   rclone_pull "$@" ;;
+    rclone-push|rP|rpush)   rclone_push "$@" ;;
+    rclone-force|rPf)       rclone_push_force "$@" ;;
+    git-pull|gp|gpull)      git_pull "$@" ;;
+    git-push|gP|gpush)      git_push "$@" ;;
+    sysbak|bak)             sysbak "$@" ;;
+    power|re)               power "$@" ;;
+    config)                 config ;;
+    help|"")                help ;;
+    *)                      echo "unknown command: $cmd" >&2; help; exit 1 ;;
+  esac
+}
+
+main "$@"

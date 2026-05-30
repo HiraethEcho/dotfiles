@@ -1,4 +1,5 @@
 - .git/
+- .opencode/
 - .trash/
 - WeChat_Data/
 - confilct/
