@@ -1,10 +1,8 @@
 #!/bin/bash
 # daily sync, pull or push
-# set -x
-# set -u
 
-# set -euo pipefail
-# config
+set -euo pipefail
+
 CONFLICT_DIR="$HOME/conflicts"
 GIT_REPO=(
   "$HOME/Documents/math"
@@ -14,7 +12,6 @@ GIT_REPO=(
   "$HOME/.config/nvim"
   "$HOME/dotfiles"
 )
-# "$HOME/Documents/memex"
 
 RCLONE_PAIR=(
   "$HOME/obsidian/;koofr:/obsidian/"
@@ -24,340 +21,276 @@ RCLONE_PAIR=(
   "$HOME/Documents/sorge/;tera:/Documents/sorge/"
   "$HOME/Documents/projects/;koofr:/kDocuments/projects/"
   "$HOME/Documents/projects/;tera:/Documents/projects/"
-  # "$HOME/.local/share/calendar_zeabur/;koofr:/asset/radicale-hiraeth-collection/"
   "$HOME/.local/share/calendar_radicale/;koofr:/asset/radicale-hiraeth-collection/"
-  # "$HOME/.local/share/calendar_zeabur/;cloudflare:/asset/radicale-hiraeth-collection/"
   "$HOME/Documents/math/;koofr:/kDocuments/math/"
-  # "$HOME/Documents/math/;cloudflare:/blog/math/"
   "$HOME/Documents/math/;tera:/Documents/math/"
   "$HOME/Code/docs/;koofr:/docs/"
-  # "$HOME/Code/docs/;cloudflare:/blog/docs"
   "$HOME/Code/docs/;tera:/docs/"
   "$HOME/memex/;koofr:/memex/"
-  # "$HOME/memex/;cloudflare:/blog/memex"
 )
-# "$HOME/.local/share/calendar_zeabur/;tera:/asset/radicale-hiraeth-collection/"
-# "$HOME/obsidian/;tera:/obsidian/"
-# "$HOME/memex/;tera:/memex/"
-
-# "$HOME/Documents/math/;openlist:/cst/math/"
-# "$HOME/Documents/projects/;cst:/projects/"
-# "$HOME/Documents/zotero_files/;openlist:/cst/zotero_files/"
-# "$HOME/Documents/doc/;koofr:/kDocuments/doc/"
-# "$HOME/Documents/doc/;tera:/kDocuments/doc/"
-# "$HOME/Documents/ucas/;koofr:/kDocuments/ucas/"
-# "$HOME/Documents/projects/;koofr:/kDocuments/projects/"
-# "$HOME/Documents/lectures/;koofr:/kDocuments/lectures/"
-# "$HOME/Documents/talks/;koofr:/kDocuments/talks/"
-# "$HOME/Documents/philosophy/;koofr:/kDocuments/philosophy/"
-# "$HOME/Documents/doc/;tera:/Documents/doc/"
-# "$HOME/Documents/ucas/;tera:/Documents/ucas/"
-# "$HOME/Documents/talks/;tera:/Documents/talks/"
-# "$HOME/Documents/projects/;tera:/Documents/projects/"
-# "$HOME/Documents/lectures/;tera:/Documents/lectures/"
-# "$HOME/Documents/philosophy/;tera:/Documents/philosophy/"
-# "$HOME/Documents/obsidian_old/;cloudflare:/blog/"
-# "$HOME/Documents/obsidian_old/;koofr:/obsidian_old/"
-# "$HOME/Documents/obsidian_old/;tera:/obsidian_old/"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 
-# tmp
-# BEGIN_PWD="$PWD"
-#log
 TOTAL_LOG=""
-LOG=""
-
-# flag
 POWER=""
 INTERACTIVE=""
+DRY_RUN=""
+RCLONE_INTERACTIVE=""
+AUTO_STASH="yes"
+
+log() {
+  echo -e "$1"
+  TOTAL_LOG+="$1\n"
+}
+
+log_ok() {
+  log "${GREEN}$1${NC}"
+}
+
+log_err() {
+  log "${RED}$1${NC}"
+}
+
+log_info() {
+  log "${YELLOW}$1${NC}"
+}
+
+fail() {
+  log_err "$1"
+  notify-send -u critical "dcna" "$1"
+}
+
+ok() {
+  log_ok "$1"
+}
+
+dry_info() {
+  log "${YELLOW}[DRY RUN] $1${NC}"
+}
+
+dry_run() {
+  [ -n "$DRY_RUN" ]
+}
 
 total_log() {
   echo "----"
-  echo -e "${YELLOW}LOG:${NC}"
+  log_info "LOG:"
   echo -e "$TOTAL_LOG"
-  # notify-send "LOG" "$TOTAL_LOG"
 }
 
 show_help() {
-  echo -e "${GREEN}使用方法:${NC}"
-  echo "  dcna [命令]"
+  echo -e "${GREEN}dcna — 日常同步/备份工具${NC}"
   echo ""
-  echo -e "${GREEN}可用命令:${NC}"
-  # echo "  gp     拉取所有Git仓库（自动处理未提交内容）并同步Rclone"
-  # echo "  gP     推送所有Git仓库（自动处理未提交内容）并同步Rclone"
-  # echo "  track    启动ActivityWatch"
-  echo "  bak   更新系统并备份（需要sudo）"
-  echo "  config   显示当前配置"
-  echo "  help     显示帮助信息"
+  echo -e "${GREEN}用法:${NC}"
+  echo "  dcna <命令> [选项]"
+  echo "  选项可放在命令前或后: dcna -i day, dcna day -i"
+  echo ""
+  echo -e "${GREEN}命令:${NC}"
+  echo "  d, day, c, coffee    白天: rclone拉取 + git拉取"
+  echo "  n, night, a, alcohol 夜间: 日历同步 + rclone推送 + git推送 + 系统更新 + 备份 + 关机提示"
+  echo "  rp                   rclone拉取全部"
+  echo "  rP                   rclone推送全部 (24h内有修改的文件)"
+  echo "  rPf                  rclone强制推送全部 (无视时间限制)"
+  echo "  gp                   git拉取全部"
+  echo "  gP                   git推送全部"
+  echo "  re                   shutdown/reboot/lock/sleep 操作"
+  echo "  bak                  系统更新 + timeshift + grub + 包列表备份 (需sudo)"
+  echo "  config               显示当前配置"
+  echo "  help                 显示此帮助"
+  echo ""
+  echo -e "${GREEN}选项:${NC}"
+  echo "  -i          交互模式 (paru不自动确认, rclone显示交互确认)"
+  echo "  -u <操作>   跳过关机提示, 直接执行指定操作: r=重启 u=关机 l=锁屏 s=休眠 n=取消"
+  echo "  -n          dry-run, 仅显示将执行的操作, 不实际执行"
+  echo "  -h, --help  显示此帮助"
   echo ""
   echo -e "${YELLOW}注意: 所有路径已在脚本内配置，无需手动输入。${NC}"
-  echo -e "${YELLOW}      AUTO_STASH=$AUTO_STASH (是否自动stash未提交更改)${NC}"
+  echo -e "${YELLOW}      AUTO_STASH=${AUTO_STASH}${NC}"
+  echo -e "${YELLOW}      默认自动stash未提交的更改再拉取。${NC}"
 }
 
-# 显示当前配置
 show_config() {
-  echo -e "${YELLOW}当前配置:${NC}"
+  log_info "当前配置:"
   echo ""
   echo -e "${GREEN}Git 仓库:${NC}"
   for repo in "${GIT_REPO[@]}"; do
     echo "  - $repo"
   done
-
   echo ""
   echo -e "${GREEN}Rclone 同步任务:${NC}"
   for pair in "${RCLONE_PAIR[@]}"; do
     echo "  - $pair"
   done
-
   echo ""
   echo -e "${GREEN}其他选项:${NC}"
   echo "  - AUTO_STASH: $AUTO_STASH"
+  echo "  - DRY_RUN: ${DRY_RUN:-no}"
 }
 
 check_sudo() {
   if ! sudo -v &>/dev/null; then
-    echo -e "${RED}错误: 需要sudo权限${NC}"
+    log_err "错误: 需要sudo权限"
     return 1
   fi
 }
 
 git_pull_all() {
-  LOG="${YELLOW}Git Pull All${NC}\n"
-  echo -e "$LOG"
-  TOTAL_LOG=$TOTAL_LOG"$LOG"
+  log_info "Git Pull All"
   for i in "${GIT_REPO[@]}"; do
-    cd "$i" || return
-    LOG="${YELLOW}处理 Git 仓库: $i${NC}..."
-    echo -e "$LOG"
-    TOTAL_LOG=$TOTAL_LOG"$LOG"
-    git add .
+    pushd "$i" >/dev/null || { fail "无法进入 $i"; continue; }
+    log_info "处理 Git 仓库: $i"
     if [[ -n "$(git status --porcelain)" ]]; then
-      echo -e "${YELLOW}Try stash${NC}"
-      if git stash; then
-        LOG="${RED}STASHED $i ${NC}\n"
-        TOTAL_LOG=$TOTAL_LOG"$LOG"
-        echo -e "$LOG"
-        notify-send -u critical "Stashed Repo" "$i"
+      if dry_run; then
+        dry_info "git stash → $i"
       else
-        LOG="${RED}✓ 失败${NC}"
-        echo -e "$LOG"
-        TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-        notify-send -u critical "stashed failed" "$i"
+        log "Try stash"
+        if git stash; then
+          fail "STASHED $i"
+        else
+          fail "stash failed $i"
+        fi
       fi
     fi
-    if git pull; then
-      LOG="${GREEN}✓ 拉取成功${NC}\n"
-      echo -e "$LOG"
-      TOTAL_LOG=$TOTAL_LOG"$LOG"
-      notify-send -u normal "Pull" "$i"
+    if dry_run; then
+      dry_info "git pull → $i"
     else
-      LOG="${RED}✓ 拉取失败${NC}"
-      echo -e "$LOG"
-      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-      notify-send -u critical "Pull failed" "$i"
+      if git pull; then
+        ok "拉取成功 $i"
+      else
+        fail "拉取失败 $i"
+      fi
     fi
+    popd >/dev/null
   done
 }
 
 git_push_all() {
-  LOG="${YELLOW}Git Push All${NC}\n"
-  echo -e "$LOG"
-  TOTAL_LOG=$TOTAL_LOG"$LOG"
+  log_info "Git Push All"
   for i in "${GIT_REPO[@]}"; do
-    cd "$i" || return
-    LOG="${YELLOW}正在处理 Git 仓库: $i${NC}"
-    echo -e "$LOG"
-    TOTAL_LOG=$TOTAL_LOG"$LOG"
-    if [[ -n "$(git status --porcelain)" ]]; then
-      git add .
-      git commit -m "backup at $(date +%y/%m/%d-%T)"
-      if git push; then
-        LOG="${GREEN}✓ 推送成功${NC}\n"
-        echo -e "$LOG"
-        TOTAL_LOG=$TOTAL_LOG"$LOG"
-        notify-send -u normal "Push" "$i"
+    pushd "$i" >/dev/null || { fail "无法进入 $i"; continue; }
+    log_info "正在处理 Git 仓库: $i"
+    if dry_run; then
+      if [[ -n "$(git status --porcelain)" ]]; then
+        dry_info "git add + commit + push → $i"
       else
-        LOG="${RED}✓ 推送失败${NC}\n"
-        echo -e "$LOG"
-        TOTAL_LOG=$TOTAL_LOG"$LOG"
-        notify-send -u normal "Push failed" "$i"
+        ok "No Change $i"
       fi
     else
-      LOG="${GREEN}No Change${NC}\n"
-      echo -e "$LOG"
-      TOTAL_LOG=$TOTAL_LOG"$LOG"
+      if [[ -n "$(git status --porcelain)" ]]; then
+        git add .
+        git commit -m "backup at $(date +%y/%m/%d-%T)"
+        if git push; then
+          ok "推送成功 $i"
+        else
+          fail "推送失败 $i"
+        fi
+      else
+        ok "No Change $i"
+      fi
     fi
+    popd >/dev/null
   done
 }
 
 system_bak() {
+  if dry_run; then
+    dry_info "paru -Syu"
+    dry_info "sudo timeshift --check"
+    dry_info "sudo grub-mkconfig -o /boot/grub/grub.cfg"
+    dry_info "pacman -Qqe > Qqe.bak && pacman -Qe > Qe.bak"
+    return
+  fi
 
+  local PARU_INTERACTIVE=""
   if [ -z "$INTERACTIVE" ]; then
     PARU_INTERACTIVE="--noconfirm"
   fi
 
-  LOG="${YELLOW}运行系统更新...${NC}"
-  echo -e "$LOG"
-  TOTAL_LOG=$TOTAL_LOG"$LOG..."
-  if paru -Syyu "$PARU_INTERACTIVE"; then
-    LOG="${GREEN}✓ 更新成功${NC}"
-    echo -e "$LOG"
-    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+  log_info "运行系统更新..."
+  if paru -Syu "$PARU_INTERACTIVE"; then
+    ok "更新成功"
   else
-    LOG="${RED}✗ 更新失败${NC}"
-    echo -e "$LOG"
-    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+    log_err "更新失败"
   fi
-  LOG="${YELLOW}创建系统备份...${NC}"
-  echo -e "$LOG"
-  TOTAL_LOG=$TOTAL_LOG"$LOG"
+
+  log_info "创建系统备份..."
   if sudo timeshift --check; then
-    LOG="${GREEN}✓ 备份成功${NC}"
-    echo -e "$LOG"
-    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+    ok "备份成功"
   else
-    LOG="${RED}✗ 备份失败${NC}"
-    echo -e "$LOG"
-    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+    log_err "备份失败"
   fi
-  LOG="${YELLOW}更新GRUB配置...${NC}"
-  echo -e "$LOG"
-  TOTAL_LOG=$TOTAL_LOG"$LOG"
+
+  log_info "更新GRUB配置..."
   if sudo grub-mkconfig -o /boot/grub/grub.cfg; then
-    LOG="${GREEN}✓ 成功${NC}"
-    echo -e "$LOG"
-    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+    ok "GRUB更新成功"
   else
-    LOG="${RED}✗ 失败${NC}"
-    echo -e "$LOG"
-    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+    log_err "GRUB更新失败"
   fi
-  LOG="${YELLOW}备份package list...${NC}"
-  echo -e "$LOG"
-  TOTAL_LOG=$TOTAL_LOG"$LOG"
+
+  log_info "备份package list..."
   if pacman -Qqe >"$HOME/Desktop/bak/Qqe-$(whoami).bak" &&
-    pacman -Qe >"$HOME/Desktop/bak/Qe-$(whoami).bak"; then
-    LOG="${GREEN}✓ 成功${NC}"
-    echo -e "$LOG"
-    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+     pacman -Qe >"$HOME/Desktop/bak/Qe-$(whoami).bak"; then
+    ok "备份成功"
   else
-    LOG="${RED}✗ 失败${NC}"
-    echo -e "$LOG"
-    TOTAL_LOG=$TOTAL_LOG"$LOG\n"
+    log_err "备份失败"
   fi
 }
 
-rclone_pull_all() {
-  if [[ -n "$INTERACTIVE" ]]; then
-    RCLONE_INTERACTIVE="-i"
-  fi
+RCLONE_BASE_FLAGS="-P -v --track-renames --filter-from $HOME/.config/rclone/filter-list.txt --no-update-dir-modtime --no-update-modtime --transfers 20 -L"
+RCLONE_PUSH_FLAGS="$RCLONE_BASE_FLAGS --suffix-keep-extension --max-age 24h"
+RCLONE_PUSH_FORCE_FLAGS="$RCLONE_BASE_FLAGS --suffix-keep-extension"
+RCLONE_PULL_FLAGS="$RCLONE_BASE_FLAGS"
+RCLONE_DRY=""
 
-  LOG="${YELLOW}Rclone Pull All${NC}\n"
-  echo -e "$LOG"
-  TOTAL_LOG=$TOTAL_LOG"$LOG"
+rclone_pull_all() {
+  log_info "Rclone Pull All"
   for pair in "${RCLONE_PAIR[@]}"; do
     IFS=";" read -r local remote <<<"$pair"
-    LOG="${YELLOW}拉取: $remote → $local${NC}..."
-    echo -e "$LOG"
-    TOTAL_LOG=$TOTAL_LOG"$LOG"
-    # if rclone sync "$remote" "$local" $RCLONE_INTERACTIVE --backup-dir $CONFICT_DIRS --suffix '_local' --track-renames --filter-from "$HOME/.config/rclone/filter-list.txt" --no-update-dir-modtime --no-update-modtime --transfers 20 -L; then
-    if rclone sync "$remote" "$local" $RCLONE_INTERACTIVE --track-renames --filter-from "$HOME/.config/rclone/filter-list.txt" --no-update-dir-modtime --no-update-modtime --transfers 20 -L; then
-      LOG="${GREEN}✓ 成功${NC}"
-      echo -e "$LOG"
-      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-      notify-send 'rclone' "pull from $remote to $local"
+    log_info "拉取: $remote → $local"
+    if rclone sync "$remote" "$local" $RCLONE_INTERACTIVE $RCLONE_DRY $RCLONE_PULL_FLAGS; then
+      ok "拉取完成: $remote → $local"
     else
-      LOG="${RED}✗ 失败${NC}"
-      echo -e "$LOG"
-      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-      notify-send -u critical 'rclone' "pull from $remote to $local failed"
+      fail "拉取失败: $remote → $local"
     fi
     if [ -d "$CONFLICT_DIR" ]; then
-      LOG="${RED}Rclone has conflicts in ${CONFLICT_DIR}${NC}"
-      echo -e "$LOG"
-      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-      notify-send -u critical 'rclone' "Conflicts detected in $CONFLICT_DIR"
+      fail "Rclone has conflicts in $CONFLICT_DIR"
     fi
   done
 }
 
 rclone_push_all() {
-  if [[ -n "$INTERACTIVE" ]]; then
-    RCLONE_INTERACTIVE="-i"
-  fi
-
-  LOG="${YELLOW}Rclone Push All${NC}\n"
-  echo -e "$LOG"
-  TOTAL_LOG=$TOTAL_LOG"$LOG"
+  local extra_flags=${1:-$RCLONE_PUSH_FLAGS}
+  log_info "Rclone Push All"
   for pair in "${RCLONE_PAIR[@]}"; do
     IFS=";" read -r local remote <<<"$pair"
-    LOG="${YELLOW}推送: $local → $remote${NC}"
-    echo -e "$LOG"
-    TOTAL_LOG=$TOTAL_LOG"$LOG"
-    if rclone sync "$local" "$remote" $RCLONE_INTERACTIVE --suffix-keep-extension --track-renames --no-update-dir-modtime --no-update-modtime --filter-from "$HOME/.config/rclone/filter-list.txt" --transfers 20 -L --max-age 24h; then
-      LOG="${GREEN}✓ 成功${NC}"
-      echo -e "$LOG"
-      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-      notify-send 'rclone' "push $local to $remote"
+    log_info "推送: $local → $remote"
+    if rclone sync "$local" "$remote" $RCLONE_INTERACTIVE $RCLONE_DRY $extra_flags; then
+      ok "推送完成: $local → $remote"
     else
-      LOG="${RED}✗ 失败${NC}"
-      echo -e "$LOG"
-      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-      notify-send -u critical 'rclone' "push from $local to $remote failed"
+      fail "推送失败: $local → $remote"
     fi
   done
 }
 
 rclone_push_all_force() {
-  if [[ -n "$INTERACTIVE" ]]; then
-    RCLONE_INTERACTIVE="-i"
-  fi
-
-  LOG="${YELLOW}Rclone Push All${NC}\n"
-  echo -e "$LOG"
-  TOTAL_LOG=$TOTAL_LOG"$LOG"
-  for pair in "${RCLONE_PAIR[@]}"; do
-    IFS=";" read -r local remote <<<"$pair"
-    LOG="${YELLOW}推送: $local → $remote${NC}"
-    echo -e "$LOG"
-    TOTAL_LOG=$TOTAL_LOG"$LOG"
-    if rclone sync "$local" "$remote" $RCLONE_INTERACTIVE --suffix-keep-extension --filter-from "$HOME/.config/rclone/filter-list.txt" --transfers 50 -L ; then
-      LOG="${GREEN}✓ 成功${NC}"
-      echo -e "$LOG"
-      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-      notify-send 'rclone' "push $local to $remote"
-    else
-      LOG="${RED}✗ 失败${NC}"
-      echo -e "$LOG"
-      TOTAL_LOG=$TOTAL_LOG"$LOG\n"
-      notify-send -u critical 'rclone' "push from $local to $remote failed"
-    fi
-  done
+  rclone_push_all "$RCLONE_PUSH_FORCE_FLAGS"
 }
 
 night_reboot() {
-  # local POWER=""
-  # OPTIND=1
-  # getopts :u: opt
-  # [[ $opt == "u" ]] && POWER=$OPTARG
-  # # POWER=$OPTARG
-  # echo "$OPTARG"
-
+  if dry_run; then
+    dry_info "night_reboot: systemctl (reboot/poweroff) or lock screen"
+    return
+  fi
   if [ -z "$POWER" ]; then
     echo -e "${YELLOW}[r]eboot/sh[u]tdown/[l]ock/[s]leep/[n]othing ?${NC}"
     read -r -t 5 -s -n 1 POWER
   fi
   case "$POWER" in
-  r)
-    systemctl reboot
-    ;;
-  u)
-    systemctl poweroff -i
-    ;;
+  r) systemctl reboot ;;
+  u) systemctl poweroff -i ;;
   l)
     slock &
     sleep .5
@@ -392,78 +325,75 @@ night() {
 }
 
 misc() {
+  if dry_run; then
+    dry_info "vdirsyncer sync radicale"
+    return
+  fi
   vdirsyncer sync radicale
 }
 
-mytest() {
-  # getopts :u: opt
-  # POWER=$OPTARG
-  # night_reboot "$@"
-  # night_reboot
-  # echo "$(date +%y/%m/%d-%T)"
-  echo "end test"
-}
-
 main() {
-  local command=$1
-  shift
-
-  while getopts "iu:" opt; do
-    case $opt in
-    i) INTERACTIVE="yes" ;;
-    u) POWER=$OPTARG ;;
-    \?)
-      echo "无效选项: -$OPTARG" >&2
+  local positional=()
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+    --help) show_help; exit 0 ;;
+    --) shift; positional+=("$@"); break ;;
+    -h) show_help; exit 0 ;;
+    -i) INTERACTIVE="yes"; RCLONE_INTERACTIVE="-i"; shift ;;
+    -n) DRY_RUN="yes"; shift ;;
+    -u) POWER="$2"; shift 2 ;;
+    -[A-Za-z]*)
+      local chars="${1#-}"
+      shift
+      while [[ -n "$chars" ]]; do
+        local f="${chars:0:1}"
+        chars="${chars:1}"
+        case "$f" in
+        i) INTERACTIVE="yes"; RCLONE_INTERACTIVE="-i" ;;
+        n) DRY_RUN="yes" ;;
+        h) show_help; exit 0 ;;
+        u)
+          if [[ -n "$chars" ]]; then
+            POWER="$chars"; chars=""
+          elif [[ $# -gt 0 ]]; then
+            POWER="$1"; shift
+          else
+            echo "error: -u needs a value" >&2; exit 1
+          fi
+          ;;
+        *) echo "invalid option: -$f" >&2; exit 1 ;;
+        esac
+      done
       ;;
+    *) positional+=("$1"); shift ;;
     esac
   done
 
+  if [[ -n "$DRY_RUN" ]]; then
+    RCLONE_DRY="--dry-run"
+  fi
+
+  set -- "${positional[@]}"
+  local command=${1:-help}
+  shift
+
   case "$command" in
-  d | day | c | coffee)
-    day "$@"
-    ;;
-  n | night | a | alcohol)
-    night "$@"
-    ;;
-  rp)
-    rclone_pull_all "$@"
-    ;;
-  rP)
-    rclone_push_all "$@"
-    ;;
-  rPf)
-    rclone_push_all_force "$@"
-    ;;
-  gp)
-    git_pull_all "$@"
-    ;;
-  re)
-    night_reboot "$@"
-    ;;
-  gP)
-    git_push_all "$@"
-    ;;
-  t)
-    # mytest "$@"
-    mytest
-    ;;
-  # track)
-  #   start_tracking "$@"
-  #   ;;
-  bak)
-    system_bak "$@"
-    ;;
-  config)
-    show_config
-    ;;
-  help | --help | -h)
-    show_help
-    ;;
+  d | day | c | coffee)     day "$@" ;;
+  n | night | a | alcohol)  night "$@" ;;
+  rp)                       rclone_pull_all "$@" ;;
+  rP)                       rclone_push_all "$@" ;;
+  rPf)                      rclone_push_all_force "$@" ;;
+  gp)                       git_pull_all "$@" ;;
+  gP)                       git_push_all "$@" ;;
+  re)                       night_reboot "$@" ;;
+  bak)                      system_bak "$@" ;;
+  config)                   show_config ;;
+  help | --help | -h)       show_help ;;
   *)
-    if [ "$1" = "" ]; then
+    if [[ -z "$command" ]]; then
       show_help
     else
-      echo -e "${RED}错误: 未知命令 '$1'${NC}"
+      log_err "未知命令 '$command'"
       show_help
       exit 1
     fi
