@@ -1,8 +1,9 @@
 - .git/
 - .opencode/
+- .omo/
 - .trash/
 - WeChat_Data/
-- confilct/
+- confilcts/
 - *.log
 - *.aux
 - *.fdb_latexmk

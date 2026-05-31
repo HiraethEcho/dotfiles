@@ -27,6 +27,8 @@ RCLONE_PAIRS=(
   "$HOME/Documents/math/;tera:/Documents/math/"
   "$HOME/Code/docs/;koofr:/docs/"
   "$HOME/Code/docs/;tera:/docs/"
+  "$HOME/Code/ai/;koofr:/ai/"
+  "$HOME/Code/ai/;tera:/ai/"
   "$HOME/memex/;koofr:/memex/"
 )
 
@@ -34,7 +36,7 @@ RCLONE_BASE=(
   -P -v --track-renames
   --filter-from "$HOME/.config/rclone/filter-list.txt"
   --no-update-dir-modtime --no-update-modtime
-  --transfers 20 -L
+  --transfers 50 -L
 )
 RCLONE_EXTRA=(--suffix-keep-extension)
 
@@ -51,18 +53,31 @@ DRY_RUN=""
 POWER_ACTION=""
 
 # ── Logging ─────────────────────────────────────────
-log()   { echo "$1"; LOG+="$1"$'\n'; }
-ok()    { log "${GREEN}$1${NC}"; }
-info()  { log "${YELLOW}$1${NC}"; }
-err()   { log "${RED}$1${NC}"; notify-send -u critical "daily" "$1"; }
+log() {
+  echo "$1"
+  LOG+="$1"$'\n'
+}
+ok() { log "${GREEN}$1${NC}"; }
+info() { log "${YELLOW}$1${NC}"; }
+err() {
+  log "${RED}$1${NC}"
+  notify-send -u critical "daily" "$1"
+}
 is_dry() { [[ -n "$DRY_RUN" ]]; }
-summary() { echo "─"; info "LOG:"; echo "$LOG"; }
+summary() {
+  echo "─"
+  info "LOG:"
+  echo "$LOG"
+}
 
 # ── Git ─────────────────────────────────────────────
 git_pull() {
   info "Git: pull all repos"
   for repo in "${GIT_REPOS[@]}"; do
-    pushd "$repo" >/dev/null || { err "cannot enter $repo"; continue; }
+    pushd "$repo" >/dev/null || {
+      err "cannot enter $repo"
+      continue
+    }
     info "  $repo"
     if [[ -n "$(git status --porcelain)" ]]; then
       if is_dry; then
@@ -83,7 +98,10 @@ git_pull() {
 git_push() {
   info "Git: push all repos"
   for repo in "${GIT_REPOS[@]}"; do
-    pushd "$repo" >/dev/null || { err "cannot enter $repo"; continue; }
+    pushd "$repo" >/dev/null || {
+      err "cannot enter $repo"
+      continue
+    }
     info "  $repo"
     if [[ -n "$(git status --porcelain)" ]]; then
       if is_dry; then
@@ -108,7 +126,7 @@ rclone_sync() {
 
   info "Rclone: ${label} all"
   for pair in "${RCLONE_PAIRS[@]}"; do
-    IFS=";" read -r local remote <<< "$pair"
+    IFS=";" read -r local remote <<<"$pair"
     local desc="$([[ "$direction" == "pull" ]] && echo "$remote → $local" || echo "$local → $remote")"
     info "  $desc"
 
@@ -124,9 +142,9 @@ rclone_sync() {
   done
 }
 
-rclone_pull()      { rclone_sync pull; }
-rclone_push()      { rclone_sync push "${RCLONE_EXTRA[@]}" --max-age 24h; }
-rclone_push_force(){ rclone_sync push "${RCLONE_EXTRA[@]}"; }
+rclone_pull() { rclone_sync pull; }
+rclone_push() { rclone_sync push "${RCLONE_EXTRA[@]}" --max-age 24h; }
+rclone_push_force() { rclone_sync push "${RCLONE_EXTRA[@]}"; }
 
 # ── Calendar ────────────────────────────────────────
 calendar_sync() {
@@ -156,8 +174,8 @@ sysbak() {
   paru -Syu "${paru_flags[@]}" && ok "  ✓ packages" || err "  ✗ paru failed"
   sudo timeshift --check && ok "  ✓ timeshift" || err "  ✗ timeshift failed"
   sudo grub-mkconfig -o /boot/grub/grub.cfg && ok "  ✓ grub" || err "  ✗ grub failed"
-  pacman -Qqe > "$HOME/Desktop/bak/Qqe-$(whoami).bak" 2>/dev/null
-  pacman -Qe  > "$HOME/Desktop/bak/Qe-$(whoami).bak"  2>/dev/null
+  pacman -Qqe >"$HOME/Desktop/bak/Qqe-$(whoami).bak" 2>/dev/null
+  pacman -Qe >"$HOME/Desktop/bak/Qe-$(whoami).bak" 2>/dev/null
   ok "  ✓ package lists"
 }
 
@@ -168,13 +186,18 @@ power() {
     read -r -t 5 -s -n 1 POWER_ACTION
   fi
   case "$POWER_ACTION" in
-    r) systemctl reboot ;;
-    u) systemctl poweroff -i ;;
-    l) slock &
-       sleep .5
-       xset dpms force off ;;
-    s) sleep .5; xset dpms force off ;;
-    *) echo "cancelled" ;;
+  r) systemctl reboot ;;
+  u) systemctl poweroff -i ;;
+  l)
+    slock &
+    sleep .5
+    xset dpms force off
+    ;;
+  s)
+    sleep .5
+    xset dpms force off
+    ;;
+  *) echo "cancelled" ;;
   esac
 }
 
@@ -244,13 +267,35 @@ main() {
   local positional=()
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      -h|--help)          help; exit 0 ;;
-      -i|--interactive)   INTERACTIVE="yes"; shift ;;
-      -n|--dry-run)       DRY_RUN="yes"; shift ;;
-      -u|--power)         POWER_ACTION="$2"; shift 2 ;;
-      --)                 shift; positional+=("$@"); break ;;
-      -*)                 echo "unknown option: $1" >&2; exit 1 ;;
-      *)                  positional+=("$1"); shift ;;
+    -h | --help)
+      help
+      exit 0
+      ;;
+    -i | --interactive)
+      INTERACTIVE="yes"
+      shift
+      ;;
+    -n | --dry-run)
+      DRY_RUN="yes"
+      shift
+      ;;
+    -u | --power)
+      POWER_ACTION="$2"
+      shift 2
+      ;;
+    --)
+      shift
+      positional+=("$@")
+      break
+      ;;
+    -*)
+      echo "unknown option: $1" >&2
+      exit 1
+      ;;
+    *)
+      positional+=("$1")
+      shift
+      ;;
     esac
   done
 
@@ -262,18 +307,22 @@ main() {
   fi
 
   case "$cmd" in
-    pull|p)                 cmd_pull "$@" ;;
-    push)                   cmd_push "$@" ;;
-    rclone-pull|rp|rpull)   rclone_pull "$@" ;;
-    rclone-push|rP|rpush)   rclone_push "$@" ;;
-    rclone-force|rPf)       rclone_push_force "$@" ;;
-    git-pull|gp|gpull)      git_pull "$@" ;;
-    git-push|gP|gpush)      git_push "$@" ;;
-    sysbak|bak)             sysbak "$@" ;;
-    power|re)               power "$@" ;;
-    config)                 config ;;
-    help|"")                help ;;
-    *)                      echo "unknown command: $cmd" >&2; help; exit 1 ;;
+  pull | p) cmd_pull "$@" ;;
+  push) cmd_push "$@" ;;
+  rclone-pull | rp | rpull) rclone_pull "$@" ;;
+  rclone-push | rP | rpush) rclone_push "$@" ;;
+  rclone-force | rPf) rclone_push_force "$@" ;;
+  git-pull | gp | gpull) git_pull "$@" ;;
+  git-push | gP | gpush) git_push "$@" ;;
+  sysbak | bak) sysbak "$@" ;;
+  power | re) power "$@" ;;
+  config) config ;;
+  help | "") help ;;
+  *)
+    echo "unknown command: $cmd" >&2
+    help
+    exit 1
+    ;;
   esac
 }
 
