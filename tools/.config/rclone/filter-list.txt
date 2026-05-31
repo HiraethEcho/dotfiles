@@ -3,7 +3,7 @@
 - .omo/
 - .trash/
 - WeChat_Data/
-- confilcts/
+- conflicts/
 - *.log
 - *.aux
 - *.fdb_latexmk

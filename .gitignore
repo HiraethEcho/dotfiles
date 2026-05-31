@@ -1,1 +1,2 @@
-tools/.config/todoman/__pycache__
+__pycache__
+*tmp
