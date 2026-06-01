@@ -48,19 +48,22 @@ export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 # export HOME_IP="2408:8207:1962:6500:87c2:38e5:1717:8420"
 
 # Software
-export CARGO_HOME="$HOME"/.local/opt/cargo
-# export GOPROXY=goproxy.io
-export GOPATH="$HOME"/.local/opt/go
-# export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
-export NPM_CONFIG_PREFIX="$HOME"/.local/opt/npm
-export NODE_PATH="$HOME/.local/opt/npm/lib/node_modules:$NODE_PATH"
-export BUN_INSTALL="$HOME"/.local/opt/bun
-export UV_TOOL_DIR="$HOME"/.local/opt/uv
-# export BUN_INSTALL_CACHE_DIR="$HOME"/.local/opt/bun
 # export WECHAT_DATA_DIR="$HOME/Desktop/WeChat_Data"
 # export _ZL_DATA="$XDG_DATA_HOME/zlua"
 # export UNISON="$XDG_CONFIG_HOME/unison"
 # export UNISON="$XDG_DATA_HOME/unison"
+## package
+export CARGO_HOME="$HOME"/.local/opt/cargo
+# export GOPROXY=goproxy.io
+export GOPATH="$HOME"/.local/opt/go
+export UV_TOOL_DIR="$HOME"/.local/opt/uv
+# node
+export NODE_PATH="$HOME/.local/opt/npm/lib/node_modules:$NODE_PATH"
+# export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NPM_CONFIG_PREFIX="$HOME"/.local/opt/npm
+export PNPM_HOME="$HOME"/.local/opt/pnpm
+export BUN_INSTALL="$HOME"/.local/opt/bun
+# export BUN_INSTALL_CACHE_DIR="$HOME"/.local/opt/bun
 
 export FZF_DEFAULT_OPTS="--reverse --style full \
   --border --padding 0,0 \
@@ -86,6 +89,7 @@ path=(
     "$HOME/.local/bin"
     "$HOME/.local/stewbin"
     "$HOME/.local/opt/npm/bin"
+    "$HOME/.local/opt/pnpm/bin"
     "$GOPATH/bin"
     "$CARGO_HOME/bin"
     "$BUN_INSTALL/bin"
