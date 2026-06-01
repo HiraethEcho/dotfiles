@@ -325,6 +325,7 @@ run_night() {
   if [ "$TARGET" = "git" ]; then
     run_vdirsyncer
   fi
+  system_bak
   run_power_action
 }
 

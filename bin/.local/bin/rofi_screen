@@ -8,9 +8,9 @@ option_w="window      w"
 option_f="flameshot   f"
 
 mesg="DIR: $(xdg-user-dir PICTURES)/Screenshots"
-time=$(date +%Y-%m-%d-%H-%M-%S)
+time=$(date +%Y%m%d%H%M%S)
 dir="$(xdg-user-dir PICTURES)/Screenshots"
-file="Screenshot_${time}.png"
+file="dwm-${time}.png"
 
 if [[ ! -d "$dir" ]]; then
   mkdir -p "$dir"

@@ -1,2 +1,3 @@
-prefix=${HOME}/.local/opt/npm
+prefix=${HOME}/.local/
+# prefix=${HOME}/.local/opt/npm
 init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js
