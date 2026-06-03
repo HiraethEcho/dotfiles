@@ -94,3 +94,4 @@ precmd () {print -Pn "\e]0;%~\a"}
 # if [[ "$PROFILE_STARTUP" == true ]]; then
 #   zprof
 # fi
+# vim: set commentstring=#\ %s:
