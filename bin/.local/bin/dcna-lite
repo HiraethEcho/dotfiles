@@ -29,6 +29,8 @@ RCLONE_PAIR=(
   "$HOME/Code/docs/;tera:/docs/"
   "$HOME/Code/ai/;koofr:/ai/"
   "$HOME/Code/ai/;tera:/ai/"
+  "$HOME/Code/resource/;koofr:resource/"
+  "$HOME/Code/resource/;tera:resource/"
   "$HOME/memex/;koofr:/memex/"
 )
 
