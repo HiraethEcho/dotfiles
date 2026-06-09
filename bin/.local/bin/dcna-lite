@@ -9,7 +9,7 @@ GIT_REPO=(
   "$HOME/Documents/math"
   "$HOME/Code/docs"
   "$HOME/memex"
-  "$HOME/Sites/content/"
+  "$HOME/Code/projects/sites/content"
   "$HOME/.config/nvim"
   "$HOME/dotfiles"
 )
