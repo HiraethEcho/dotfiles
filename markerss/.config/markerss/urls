@@ -1,0 +1,36 @@
+# markerss subscriptions (newsboat urls format)
+https://sspai.com/feed "少数派" stream !favourite
+https://plink.anyfeeder.com/gcores "机核" stream !favourite
+http://solidot.org/index.rss "~奇客" stream !favourite
+https://www.douban.com/feed/review/book "豆瓣书评" stream
+http://feed.appinn.com/ "小众软件" stream !favourite
+https://rss.arxiv.org/rss/math.AG "arxiv AG" paper !favourite
+https://www.nature.com/nature.rss "Nature" paper
+https://frenzymath.com/rss.xml "FrenzyMath"
+https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins" dev
+https://www.obsidianstats.com/rss.xml "~obsidian stats" dev
+https://terminaltrove.com/totw.xml "Terminal Trove Tool of the Week" dev
+https://hellogithub.com/rss "HelloGitHub 月刊" dev
+https://docs.keinmal.top/index.xml "docs"
+https://memex.keinmal.top/index.xml "memex"
+https://forum.archlinuxcn.org/latest.rss "Arch RSS" arch !favourite
+https://www.archlinuxcn.org/feed/ "ArchCN News" arch
+https://archlinux.org/feeds/packages/x86_64/ "Arch repo" arch
+https://aur.archlinux.org/rss "AUR" arch
+https://aphilosopher.drmcl.com/feed/ "A Philosopher's blog" blog !favourite
+https://sliun.com/feed/ "理论派" blog
+https://immarcus.com/blog/rss.xml "I'm Marcus Blog" blog !favourite
+https://blog.xiaket.org/feed.xml "年华转瞬" blog !favourite
+https://pathos.page/feed.xml "揆机" blog
+https://hutusi.com/feed.xml "胡涂说" blog
+https://www.ruanyifeng.com/blog/atom.xml "阮一峰的网络日志" blog !favourite
+https://www.pingfan.me/feed.xml "我本平凡" blog
+https://www.geedea.pro/index.xml "极客死亡计划 ｜ 極客死亡計劃" blog !favourite
+https://www.suiyan.cc/feed.xml "碎言" blog !favourite
+https://blog.solazy.me/feed/ "So!azy" blog !favourite
+https://ramble.imzh.me/index.xml "jz's ramblings" blog
+https://polebug.github.io/atom.xml "保持思考、等待、斋戒" blog
+https://goldenriver.site/index.xml "金色河流" blog !favourite
+https://emptystack.top/atom.xml "空栈顶" blog !favourite
+https://xkcd.com/rss.xml "xkcd.com" blog
+https://eyu.at/index.xml "鹅玉" blog !favourite

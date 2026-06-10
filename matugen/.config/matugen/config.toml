@@ -1,0 +1,24 @@
+[config]
+
+[templates.niri]
+input_path = "~/.config/matugen/templates/niri-ashell.kdl"
+output_path = "~/.config/niri/ashell.kdl"
+post_hook = "niri msg action load-config-file || true"
+
+[templates.kitty]
+input_path = "~/.config/matugen/matugen-themes/templates/kitty-colors.conf"
+output_path = "~/.config/kitty/themes/Matugen.conf"
+post_hook = "pkill -USR1 kitty || true"
+
+[templates.foot]
+input_path = "~/.config/matugen/templates/foot-colors.ini"
+output_path = "~/.config/foot/colors.ini"
+post_hook = "pkill -USR1 foot || true"
+
+# [templates.rofi]
+# input_path = "~/.config/matugen/matugen-themes/templates/rofi-colors.rasi"
+# output_path = "~/.config/rofi/colors.rasi"
+
+[templates.yazi]
+input_path = "~/.config/matugen/matugen-themes/templates/yazi-theme.toml"
+output_path = "~/.config/yazi/theme.toml"

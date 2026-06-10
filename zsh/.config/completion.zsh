@@ -1,0 +1,14 @@
+# =========================================================
+# Completion
+# =========================================================
+
+fpath=("$ZDOTDIR/completions" $fpath)
+# Load completion system
+autoload -Uz compinit
+# Initialize completion with cached metadata file
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+# Enable interactive completion menu selection
+zstyle ':completion:*' menu select
+# Make completion case-insensitive
+# Example: "doc" can complete to "Documents"
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # lowercase input matches upper and lower

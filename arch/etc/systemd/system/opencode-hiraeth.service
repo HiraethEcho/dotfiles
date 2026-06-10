@@ -1,0 +1,16 @@
+[Unit]
+Description=opencode web
+After=network.target
+
+[Service]
+User=hiraeth
+Group=hiraeth
+Environment="OPENCODE_SERVER_USERNAME=hiraeth"
+Environment="OPENCODE_SERVER_PASSWORD=mln2026zxc"
+ExecStart=opencode web
+Restart=always
+RestartSec=10
+WorkingDirectory=/home/hiraeth
+
+[Install]
+WantedBy=multi-user.target

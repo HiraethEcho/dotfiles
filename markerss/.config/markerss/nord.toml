@@ -1,0 +1,31 @@
+# markerss theme — Nord (dark + light in one file)
+# Truecolor (#rrggbb). Select mode via `background = "dark"|"light"` in config.toml.
+# Keys per section: bg focused selected top accent dim h1 h2 h3 code link quote
+
+[light]
+background = "#d8dAf0"
+accent = "#5E81AC"
+dim = "#1B1230"
+focused = "#5E81AC"
+selected = "#384242"
+top = "#5E91AC"
+h1 = "#5E81AC"
+h2 = "#81A1C1"
+h3 = "#4C566A"
+code = "#5C865A"
+link = "#4C868A"
+quote = "#5E81AC"
+
+[dark]
+background = "#2E3440"
+accent = "#88C0D0"
+dim = "#4C566A"
+focused = "#88C0D0"
+selected = "#3B4252"
+top = "#88B0D0"
+h1 = "#88C0D0"
+h2 = "#81A1C1"
+h3 = "#5E81AC"
+code = "#A3BE8C"
+link = "#8FBCBB"
+quote = "#D8DEE9"

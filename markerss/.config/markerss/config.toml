@@ -1,0 +1,27 @@
+db_path = "~/.local/share/markerss/markerss.db"
+cache_ttl_days = 7
+# export_dir = "/data/out"
+fetch_timeout = 30
+# max_items_per_feed = 50
+# browser = "firefox"
+refresh = true
+# refresh = { interval_minutes = 30 }
+pane_ratio = [0.2, 0.3, 0.5]
+nav_presets = [
+  [
+    "Unread",
+    "Favourite",
+    "Feeds",
+  ],
+  [
+    "Categories",
+    "Tags",
+    "Read Later",
+    "Saved",
+  ]
+]
+background = "dark"
+theme = "nord.toml"
+foldlevel = 0
+sort = ["time","time","time"]
+# reading_width = 80

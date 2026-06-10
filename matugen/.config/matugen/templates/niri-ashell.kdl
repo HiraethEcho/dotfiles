@@ -1,0 +1,50 @@
+spawn-at-startup "ashell"
+
+spawn-at-startup "awww-daemon"
+spawn-at-startup "bash" "-c" "exec $HOME/.config/niri/wallpaper-cycle.sh"
+
+layer-rule {
+    match namespace="^awww-daemon"
+    place-within-backdrop true
+}
+
+layout {
+	background-color "transparent"
+
+    focus-ring {
+        active-color "{{colors.primary.default.hex}}"
+        inactive-color "{{colors.outline.default.hex}}"
+        urgent-color   "{{colors.error.default.hex}}"
+    }
+
+    border {
+        active-color   "{{colors.primary.default.hex}}"
+        inactive-color "{{colors.outline.default.hex}}"
+        urgent-color   "{{colors.error.default.hex}}"
+    }
+
+    shadow {
+        color "{{colors.shadow.default.hex}}70"
+    }
+
+    tab-indicator {
+        active-color   "{{colors.primary.default.hex}}"
+        inactive-color "{{colors.outline.default.hex}}"
+        urgent-color   "{{colors.error.default.hex}}"
+    }
+
+    insert-hint {
+        color "{{colors.primary.default.hex}}80"
+    }
+}
+
+overview {
+	backdrop-color "{{colors.background.default.hex}}"
+}
+
+recent-windows {
+    highlight {
+        active-color "{{colors.primary.default.hex}}"
+        urgent-color "{{colors.error.default.hex}}"
+    }
+}
