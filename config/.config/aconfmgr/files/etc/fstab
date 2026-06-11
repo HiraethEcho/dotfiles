@@ -42,14 +42,14 @@ UUID=1A1087A31087848B /mnt/share lowntfs-3g uid=1000,gid=1000,rw,user,exec,umask
 # /dev/zram0: LABEL="zram0" UUID="880a64e5-0e67-4fb0-bba7-4002631eb707" TYPE="swap"
 
 # /dev/nvme0n1p8
-UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/         	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@	0 0
-UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/home     	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@home	0 0
-UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/root     	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@root	0 0
-UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/opt      	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@opt	0 0
-UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/var/log  	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@log	0 0
-UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/var/cache	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@cache	0 0
-UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/var/lib/containers	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@containers	0 0
-UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/var/lib/ollama	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@ollama	0 0
-UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/var/lib/libvirt	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@libvirt	0 0
-UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/var/lib/docker	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@docker	0 0
-UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/tmp      	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@tmp	0 0
+# UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/         	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@	0 0
+# UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/home     	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@home	0 0
+# UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/root     	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@root	0 0
+# UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/opt      	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@opt	0 0
+# UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/var/log  	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@log	0 0
+# UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/var/cache	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@cache	0 0
+# UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/var/lib/containers	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@containers	0 0
+# UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/var/lib/ollama	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@ollama	0 0
+# UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/var/lib/libvirt	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@libvirt	0 0
+# UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/var/lib/docker	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@docker	0 0
+# UUID=3735d85f-0b8d-406f-8b18-e20ddc4ca1a4	/mnt/new/tmp      	btrfs     	rw,noatime,nodiratime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@tmp	0 0
