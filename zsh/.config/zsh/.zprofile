@@ -52,6 +52,8 @@ export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 # export _ZL_DATA="$XDG_DATA_HOME/zlua"
 # export UNISON="$XDG_CONFIG_HOME/unison"
 # export UNISON="$XDG_DATA_HOME/unison"
+export TYPST_PACKAGE_PATH="$HOME/.local/lib/typst/packages"
+export TYPST_PACKAGE_CACHE_PATH="$HOME/.local/lib/typst/cache"
 ## package
 export CARGO_HOME="$HOME"/.local/opt/cargo
 # export GOPROXY=goproxy.io
