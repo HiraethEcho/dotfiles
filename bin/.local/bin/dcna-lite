@@ -27,12 +27,13 @@ RCLONE_PAIR=(
   "$HOME/Documents/math/;tera:/Documents/math/"
   "$HOME/Code/docs/;koofr:/docs/"
   "$HOME/Code/docs/;tera:/docs/"
-  "$HOME/Code/ai/;koofr:/ai/"
-  "$HOME/Code/ai/;tera:/ai/"
-  "$HOME/Code/resource/;koofr:resource/"
-  "$HOME/Code/resource/;tera:resource/"
   "$HOME/memex/;koofr:/memex/"
+  "$HOME/memex/;tera:/memex/"
 )
+# "$HOME/Code/ai/;koofr:/ai/"
+# "$HOME/Code/ai/;tera:/ai/"
+# "$HOME/Code/resource/;koofr:resource/"
+# "$HOME/Code/resource/;tera:resource/"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'

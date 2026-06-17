@@ -104,3 +104,5 @@ alias sl="pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse --bind 'e
 alias fzfp="fzf --preview 'fzf-preview.sh {}'"
 alias fman="man -k . | fzf --preview 'man {1}' --bind 'enter:execute(man {1})'"
 ### abbreviation ###
+# misc
+alias quit="exit"
