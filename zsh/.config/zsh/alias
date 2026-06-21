@@ -106,3 +106,8 @@ alias fman="man -k . | fzf --preview 'man {1}' --bind 'enter:execute(man {1})'"
 ### abbreviation ###
 # misc
 alias quit="exit"
+
+# alias claude='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" claude'
+# alias codebuddy='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" codebuddy'
+# alias codex='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" codex'
+# alias gemini='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" gemini'
