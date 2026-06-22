@@ -10,7 +10,7 @@ sort_sensitive = false
 sort_reverse = false
 sort_dir_first = true
 sort_translit = false
-show_hidden = true
+show_hidden = false
 linemode = "none"
 show_symlink = true
 scrolloff = 5
@@ -157,7 +157,7 @@ prepend_preloaders = [
 ]
 
 prepend_previewers = [
-  { url = "*/", run = 'piper -- eza -TL=2 -a --color=always --icons=always --group-directories-first --no-quotes "$1"' },
+  { url = "*/", run = 'piper -- eza -TL=2 --color=always --icons=always --group-directories-first --no-quotes "$1"' },
   { url = "*.docx", run = 'piper -- doxx "$1"' },
   # Replace magick, image, video with mediainfo
   # { mime = "{audio,video,image}/*", run = "mediainfo" },
