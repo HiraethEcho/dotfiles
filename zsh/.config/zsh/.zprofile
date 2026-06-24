@@ -61,7 +61,7 @@ export GOPATH="$HOME"/.local/opt/go
 export UV_TOOL_DIR="$HOME"/.local/opt/uv
 # node
 export NODE_PATH="$HOME/.local/opt/npm/lib/node_modules:$NODE_PATH"
-# export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export NPM_CONFIG_PREFIX="$HOME"/.local/opt/npm
 export PNPM_HOME="$HOME"/.local/opt/pnpm
 export BUN_INSTALL="$HOME"/.local/opt/bun
