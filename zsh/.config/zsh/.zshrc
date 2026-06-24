@@ -8,7 +8,7 @@ bindkey -v
 # source
 #
 source $HOME/.config/zsh/alias
-# source $HOME/.config/zsh/lean-zsh
+source $HOME/.config/zsh/lean-zsh
 
 # plugins
 source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.zsh  # Replace zsh's default completion selection menu with fzf
@@ -77,10 +77,6 @@ function r() {
   fi
   rm -f -- "$tmp"
 }
-
-if [ -f "/home/hiraeth/.config/lean-ctx/shell-hook.zsh" ]; then
-. "/home/hiraeth/.config/lean-ctx/shell-hook.zsh"
-fi
 
 # The following lines were added by compinstall
 # zstyle :compinstall filename '/home/hiraeth/.zshrc'
