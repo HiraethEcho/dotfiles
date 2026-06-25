@@ -1,25 +1,16 @@
 # zmodload zsh/zprof
 
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
 bindkey -v
 # source
-#
 source $HOME/.config/zsh/alias
 source $HOME/.config/zsh/lean-zsh
-
 # plugins
 source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.zsh  # Replace zsh's default completion selection menu with fzf
 # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh # a little bit faster, as is said
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh # completion offered after the cursor in a muted gray color, by history
 # source <(fzf --zsh) # CTRL-T CTRL-R ALT-C and ** trigger
-# theme
-# source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme # promot theme
 eval "$(starship init zsh)"
-
 # eval $(thefuck --alias f)
 eval "$(zoxide init zsh)"
 # eval "$(navi widget zsh)"
@@ -27,12 +18,6 @@ eval "$(zoxide init zsh)"
 # Bind ctrl-r but not up arrow
 eval "$(atuin init zsh --disable-up-arrow)"
 # eval "$(atuin init zsh --disable-ctrl-r)"
-
-# carapace completion
-# export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
-# zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-# zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'external commands'
-# source <(carapace _carapace)
 
 # source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh # completion, wired
 # zstyle ':autocomplete:*' min-input 3
@@ -78,14 +63,10 @@ function r() {
   rm -f -- "$tmp"
 }
 
-# The following lines were added by compinstall
-# zstyle :compinstall filename '/home/hiraeth/.zshrc'
 
+fpath=("/home/hiraeth/.zsh/completions" $fpath)
 autoload -Uz compinit
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION" 
-# End of lines added by compinstall
-
-# [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 # use directory as name of terminal
 precmd () {print -Pn "\e]0;%~\a"}
