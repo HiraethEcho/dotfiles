@@ -64,7 +64,7 @@ function r() {
 }
 
 
-fpath=("/home/hiraeth/.zsh/completions" $fpath)
+fpath=("/home/hiraeth/.config/zsh/completions" $fpath)
 autoload -Uz compinit
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION" 
 
