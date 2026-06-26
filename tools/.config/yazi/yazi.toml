@@ -60,6 +60,8 @@ download = [
   { run = "ya emit download --open %S", desc = "Download and open" },
   { run = "ya emit download %S", desc = "Download" },
 ]
+water = [{ run = "waterfox %s1", desc = "Waterfox", for = "linux" }]
+brave = [{ run = "brave-origin %s1", desc = "Brave", for = "linux" }]
 
 [open]
 rules = [
@@ -105,6 +107,8 @@ rules = [
   { url = "*", use = [
     "open",
     "reveal",
+    "water",
+    "brave",
   ] },
 ]
 
