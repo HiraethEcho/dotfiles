@@ -10,8 +10,8 @@ sort_sensitive = false
 sort_reverse = false
 sort_dir_first = true
 sort_translit = false
-show_hidden = false
-linemode = "none"
+show_hidden = true
+linemode = "mtime"
 show_symlink = true
 scrolloff = 5
 mouse_events = ["click", "scroll", "drag"]
@@ -62,6 +62,7 @@ download = [
 ]
 water = [{ run = "waterfox %s1", desc = "Waterfox", for = "linux" }]
 brave = [{ run = "brave-origin %s1", desc = "Brave", for = "linux" }]
+marktext = [{ run = "marktext %s1", desc = "marktext", for = "linux" }]
 
 [open]
 rules = [
@@ -75,6 +76,7 @@ rules = [
   { mime = "text/*", use = [
     "edit",
     "reveal",
+    "marktext",
   ] },
   # Image
   { mime = "image/*", use = [
