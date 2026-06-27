@@ -73,6 +73,11 @@ rules = [
     "reveal",
   ] },
   # Text
+  { mime = "text/html", use = [
+    "edit",
+    "reveal",
+    "water",
+  ] },
   { mime = "text/*", use = [
     "edit",
     "reveal",
@@ -163,7 +168,7 @@ prepend_preloaders = [
 ]
 
 prepend_previewers = [
-  { url = "*/", run = 'piper -- eza -TL=2 --color=always --icons=always --group-directories-first --no-quotes "$1"' },
+  { url = "*/", run = 'piper -- eza -a -TL=2 --color=always --icons=always --group-directories-first --no-quotes "$1"' },
   { url = "*.docx", run = 'piper -- doxx "$1"' },
   # Replace magick, image, video with mediainfo
   # { mime = "{audio,video,image}/*", run = "mediainfo" },
