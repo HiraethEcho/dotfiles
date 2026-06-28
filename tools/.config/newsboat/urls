@@ -32,6 +32,7 @@ https://memex.keinmal.top/index.xml "~MEMEX" blog
 https://rss.arxiv.org/rss/math.AG "~arxiv AG" paper
 https://hiraethecho.github.io/ZotWatch/feed.xml "~Zotero Watch" paper
 https://www.nature.com/nature.rss paper
+https://frenzymath.com/rss.xml
 
 https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins" dev
 https://www.obsidianstats.com/rss.xml "~obsidian stats" dev
