@@ -62,7 +62,7 @@ download = [
 ]
 water = [{ run = "waterfox %s1", desc = "Waterfox", for = "linux" }]
 brave = [{ run = "brave-origin %s1", desc = "Brave", for = "linux" }]
-marktext = [{ run = "marktext %s1", desc = "marktext", for = "linux" }]
+marktext = [{ run = "marktext %s1 &", desc = "marktext", for = "linux" }]
 
 [open]
 rules = [
