@@ -61,7 +61,7 @@ Commands:
   pull, p             Pull backups to local (git/rclone by --target)
   push, P             Push local to backups (git/rclone by --target)
   night, n            Run push + vdsync + power action
-  bak, b              Update Arch + timeshift + grub + package list backup
+  bak, b              Update Arch +  grub + package list backup
   power, u            Run power action
   vdsync, vs          Run: vdirsyncer sync radicale
   config              Show configured repos/pairs/options
@@ -293,16 +293,20 @@ system_bak() {
   log_info "System update"
   run_cmd paru -Syyu "${paru_mode[@]}" || log_err "Fail: paru -Syyu"
 
-  log_info "Timeshift backup"
-  run_cmd sudo timeshift --check || log_err "Fail: timeshift"
-
   log_info "Update grub config"
   run_cmd sudo grub-mkconfig -o /boot/grub/grub.cfg || log_err "Fail: grub-mkconfig"
 
   log_info "Backup package list"
   run_cmd mkdir -p "$bak_dir"
-  run_cmd bash -lc "pacman -Qqe >\"$bak_dir/Qqe-$(whoami).bak\""
-  run_cmd bash -lc "pacman -Qe >\"$bak_dir/Qe-$(whoami).bak\""
+  local qqe_file="$bak_dir/Qqe-$(whoami).bak"
+  local qqe_extra="$bak_dir/Qqe-extra-$(whoami).bak"
+
+  if [ -f "$qqe_file" ]; then
+    comm -23 <(sort "$qqe_file") <(pacman -Qqe | sort) >> "$qqe_extra"
+    sort -u "$qqe_extra" -o "$qqe_extra"
+  fi
+
+  run_cmd bash -lc "pacman -Qqe >\"$qqe_file\""
 }
 
 run_vdirsyncer() {

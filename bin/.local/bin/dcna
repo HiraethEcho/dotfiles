@@ -231,8 +231,18 @@ system_bak() {
   fi
 
   log_info "备份package list..."
-  if pacman -Qqe >"$HOME/Desktop/bak/Qqe-$(whoami).bak" &&
-     pacman -Qe >"$HOME/Desktop/bak/Qe-$(whoami).bak"; then
+  local qqe_file="$HOME/Desktop/bak/Qqe-$(whoami).bak"
+  local qqe_extra="$HOME/Desktop/bak/Qqe-extra-$(whoami).bak"
+  local qe_file="$HOME/Desktop/bak/Qe-$(whoami).bak"
+
+  mkdir -p "$HOME/Desktop/bak"
+
+  if [ -f "$qqe_file" ]; then
+    comm -23 <(sort "$qqe_file") <(pacman -Qqe | sort) >> "$qqe_extra"
+    sort -u "$qqe_extra" -o "$qqe_extra"
+  fi
+
+  if pacman -Qqe >"$qqe_file" && pacman -Qe >"$qe_file"; then
     ok "备份成功"
   else
     log_err "备份失败"
