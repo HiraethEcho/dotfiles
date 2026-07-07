@@ -3,7 +3,7 @@
 bindkey -v
 # source
 source $HOME/.config/zsh/alias
-source $HOME/.config/zsh/lean-zsh
+# source $HOME/.config/zsh/lean-zsh
 # plugins
 source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.zsh  # Replace zsh's default completion selection menu with fzf
 # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

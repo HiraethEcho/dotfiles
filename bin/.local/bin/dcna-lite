@@ -15,25 +15,28 @@ GIT_REPO=(
 )
 
 RCLONE_PAIR=(
-  "$HOME/obsidian/;koofr:/obsidian/"
   "$HOME/Documents/zotero_files/;koofr:/kDocuments/zotero_files/"
-  "$HOME/Documents/zotero_files/;tera:/Documents/zotero_files/"
   "$HOME/Documents/sorge/;koofr:/kDocuments/sorge/"
-  "$HOME/Documents/sorge/;tera:/Documents/sorge/"
   "$HOME/Documents/projects/;koofr:/kDocuments/projects/"
-  "$HOME/Documents/projects/;tera:/Documents/projects/"
-  "$HOME/.local/share/calendar_radicale/;koofr:/asset/radicale-hiraeth-collection/"
-  "$HOME/Documents/math/;koofr:/kDocuments/math/"
-  "$HOME/Documents/math/;tera:/Documents/math/"
   "$HOME/Code/docs/;koofr:/docs/"
-  "$HOME/Code/docs/;tera:/docs/"
   "$HOME/memex/;koofr:/memex/"
-  "$HOME/memex/;tera:/memex/"
+  "$HOME/.local/share/calendar_radicale/;koofr:/asset/radicale-hiraeth-collection/"
 )
+# "$HOME/Documents/zotero_files/AlgebraicGeometry/;cst:/zotero_files/AlgebraicGeometry/"
+# "$HOME/Documents/projects/;cst:/projects/"
+# "$HOME/Documents/math/;cst:/math/"
 # "$HOME/Code/ai/;koofr:/ai/"
 # "$HOME/Code/ai/;tera:/ai/"
 # "$HOME/Code/resource/;koofr:resource/"
 # "$HOME/Code/resource/;tera:resource/"
+# "$HOME/obsidian/;koofr:/obsidian/"
+# "$HOME/Code/docs/;tera:/docs/"
+# "$HOME/memex/;tera:/memex/"
+# "$HOME/Documents/zotero_files/;tera:/Documents/zotero_files/"
+# "$HOME/Documents/sorge/;tera:/Documents/sorge/"
+# "$HOME/Documents/projects/;tera:/Documents/projects/"
+# "$HOME/Documents/math/;koofr:/kDocuments/math/"
+# "$HOME/Documents/math/;tera:/Documents/math/"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -302,7 +305,7 @@ system_bak() {
   local qqe_extra="$bak_dir/Qqe-extra-$(whoami).bak"
 
   if [ -f "$qqe_file" ]; then
-    comm -23 <(sort "$qqe_file") <(pacman -Qqe | sort) >> "$qqe_extra"
+    comm -23 <(sort "$qqe_file") <(pacman -Qqe | sort) >>"$qqe_extra"
     sort -u "$qqe_extra" -o "$qqe_extra"
   fi
 
