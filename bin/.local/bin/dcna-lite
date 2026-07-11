@@ -6,22 +6,28 @@ CONFLICT_DIR="$HOME/conflicts"
 FILTER_LIST="$HOME/.config/rclone/filter-list.txt"
 
 GIT_REPO=(
-  "$HOME/Documents/math"
-  "$HOME/Code/docs"
   "$HOME/memex"
-  "$HOME/Code/sites/content"
   "$HOME/.config/nvim"
   "$HOME/dotfiles"
 )
+# "$HOME/Documents/math"
+# "$HOME/sites/content"
+# "$HOME/Code/docs"
 
 RCLONE_PAIR=(
   "$HOME/Documents/zotero_files/;koofr:/kDocuments/zotero_files/"
-  "$HOME/Documents/sorge/;koofr:/kDocuments/sorge/"
   "$HOME/Documents/projects/;koofr:/kDocuments/projects/"
   "$HOME/Code/docs/;koofr:/docs/"
   "$HOME/memex/;koofr:/memex/"
   "$HOME/.local/share/calendar_radicale/;koofr:/asset/radicale-hiraeth-collection/"
+  "$HOME/Code/aid/;koofr:/aid/"
+  "$HOME/ai4math/;koofr:/ai4math/"
 )
+# "$HOME/Code/aid/;tera:/aid/"
+# "$HOME/ai4math/;tera:/ai4math/"
+# "$HOME/Code/aid/;cst:/aid/"
+# "$HOME/ai4math/;cst:/ai4math/"
+# "$HOME/Documents/sorge/;koofr:/kDocuments/sorge/"
 # "$HOME/Documents/zotero_files/AlgebraicGeometry/;cst:/zotero_files/AlgebraicGeometry/"
 # "$HOME/Documents/projects/;cst:/projects/"
 # "$HOME/Documents/math/;cst:/math/"

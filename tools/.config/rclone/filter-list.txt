@@ -5,6 +5,9 @@
 - .opencode/
 - .omo/
 - .mimocode/
+- .pi/
+- .claude/
+- .codex/
 - themes/
 - misc/
 - .trash/
