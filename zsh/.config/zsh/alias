@@ -4,12 +4,13 @@ alias zrc="nvim ~/.config/zsh/.zshrc"
 alias zalias="nvim ~/.config/zsh/alias"
 alias zenv="nvim ~/.config/zsh/.zshenv"
 alias zpro="nvim ~/.config/zsh/.zprofile"
+
+# startup from tty
 # alias D="sx exec dwm"
 # alias G="sx exec gnome-session"
 # alias K="sx exec startplasma-x11"
 # alias X="startxfce4"
 
-# tui
 # (n)vim
 alias n="nvim"
 alias nn="nvim ."
@@ -31,7 +32,6 @@ alias gl="git log --graph --oneline --decorate --all"
 alias gpatch="git format-patch -1"
 alias gc="git clone "
 alias gc1="git clone --depth 1"
-
 alias githost="sudo sh -c 'sed -i \"/# GitHub520 Host Start/Q\" /etc/hosts && curl https://raw.hellogithub.com/hosts >> /etc/hosts'"
 
 # tmux
@@ -44,23 +44,16 @@ alias githost="sudo sh -c 'sed -i \"/# GitHub520 Host Start/Q\" /etc/hosts && cu
 # alias tp="tmux attach -t pad"
 # alias tt="tmux attach -t tmp"
 # alias tb="tmux attach -t blog"
-alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
-# snapper
-
-# status
-alias s="fastfetch"
-# alias B="upower -i /org/freedesktop/UPower/devices/battery_BAT1 "
+# alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
 # cli
+alias s="fastfetch"
 alias l="eza -1 --icons=always"
 alias ll="eza -l --git --icons=always"
 alias la="eza -lha --git --icons=always"
 alias lh="eza -lha --hyperlink --git --icons=always"
 # alias tree="eza -T"
-# alias r="ranger"
-# alias y="yazi"
 alias gg="lazygit"
-# alias zi="z -I"
 alias ha="harsh ask"
 alias ht="harsh todo"
 alias hl="harsh log"
@@ -71,27 +64,9 @@ alias weather="curl 'v2d.wttr.in/Beijing'"
 # alias hs="hexo clean ; hexo g ; hexo s"
 alias sg="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
-# rclone
-alias rdpush="rclone sync ~/Documents/doc koofr:/kDocuments/doc  --track-renames --filter-from ~/.config/rclone/filter-list.txt --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'force push ~/Documents/doc to kDocuments/doc'"
-alias rdpull="rclone sync koofr:/kDocuments/doc ~/Documents/doc --backup-dir ~/conflicts --suffix '_local' --suffix-keep-extension --track-renames  --no-update-dir-modtime --no-update-modtime --filter-from ~/.config/rclone/filter-list.txt --transfers 20 -i -L && notify-send 'rclone' 'download from kDocuments/doc to ~/Documents/doc'"
-
-alias rapush="rclone sync ~/Documents/ koofr:/kDocuments/  --track-renames --filter-from ~/.config/rclone/filter-list.txt --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'force push ~/Documents to kDocuments'"
-alias rapull="rclone sync koofr:/kDocuments/ ~/Documents/ --backup-dir ~/conflicts --suffix '_local' --suffix-keep-extension --track-renames  --no-update-dir-modtime --no-update-modtime --filter-from ~/.config/rclone/filter-list.txt --transfers 20 -i -L && notify-send 'rclone' 'download from kDocuments to ~/Documents'"
-
-alias rzpush="rclone sync ~/Documents/zotero_files/ koofr:/kDocuments/zotero_files/  --track-renames --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'force push ~/Documents/zotero_files to koofr'"
-alias rzpull="rclone sync koofr:/kDocuments/zotero_files/ ~/Documents/zotero_files/ --backup-dir ~/conflicts --suffix '_local' --suffix-keep-extension --track-renames  --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'download from koofr to ~/Documents/zotero_files/'"
-
-# alias rppush="rclone sync ~/Documents/projects/ koofr:/kDocuments/projects/ --exclude '.git/' --filter-from ~/.config/rclone/filter-list.txt --track-renames --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'force push ~/Documents/projects/ to koofr'"
-alias rppush="rclone sync ~/Documents/projects/ koofr:/kDocuments/projects/ --filter-from ~/.config/rclone/filter-list.txt --track-renames --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'force push ~/Documents/projects/ to koofr'"
-alias rppull="rclone sync koofr:/kDocuments/projects/ ~/Documents/projects/ --filter-from ~/.config/rclone/filter-list.txt --backup-dir ~/conflicts --suffix '_local' --suffix-keep-extension --track-renames  --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'download from koofr to ~/Documents/projects/'"
-
-alias ropush="rclone sync ~/obsidian/ koofr:/obsidian/ --filter-from ~/.config/rclone/filter-list.txt --track-renames --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'force push ~/Documents/projects/ to koofr'"
-alias ropull="rclone sync koofr:/obsidian/ ~/obsidian/ --filter-from ~/.config/rclone/filter-list.txt --backup-dir ~/conflicts --suffix '_local' --suffix-keep-extension --track-renames  --no-update-dir-modtime --no-update-modtime --transfers 20 -i -L && notify-send 'rclone' 'download from koofr to ~/Documents/projects/'"
-
 # pacman and yay
 alias syyu="paru -Syyu"
 alias syu="paru -Syu"
-alias bak="sudo timeshift --check && sudo grub-mkconfig -o /boot/grub/grub.cfg && pacman -Qqe > ~/dotfiles/cache/Desktop/cache/readme/Qqe-`whoami`.bak && pacman -Qe > ~/dotfiles/cache/Desktop/cache/readme/Qe-`whoami`.bak"
 alias qdtq="pacman -Qdttq | sudo pacman -Rscn -"
 
 alias qei="pacman -Qqe | fzf --preview-window=50%:bottom: --preview 'pacman -Qiil {}' --layout=reverse --bind 'enter:execute(pacman -Qiil {} | less)'"
@@ -101,8 +76,9 @@ alias pt="pacman -Qq | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt
 alias sl="pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse --bind 'enter:execute(pacman -Si {} | less)'"
 
 # fzf
-alias fzfp="fzf --preview 'fzf-preview.sh {}'"
-alias fman="man -k . | fzf --preview 'man {1}' --bind 'enter:execute(man {1})'"
+# alias fzfp="fzf --preview 'fzf-preview.sh {}'"
+# alias fman="man -k . | fzf --preview 'man {1}' --bind 'enter:execute(man {1})'"
 ### abbreviation ###
 # misc
 alias quit="exit"
+alias lc='git rev-parse --show-toplevel >/dev/null 2>&1 && find "$(git rev-parse --show-toplevel)" -type f \( -name "*.aux" -o -name "*.log" -o -name "*.toc" -o -name "*.lof" -o -name "*.lot" -o -name "*.out" -o -name "*.bbl" -o -name "*.blg" -o -name "*.synctex.gz" -o -name "*.fls" -o -name "*.xdv" -o -name "*.fdb_latexmk" \) -delete'
