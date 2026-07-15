@@ -39,7 +39,6 @@ keymap = [
 
   { on = [ "<C-u>" ], run = "seek -1", desc = "Seek up 5 units in the preview" },
   { on = [ "<C-d>" ], run = "seek 1",  desc = "Seek down 5 units in the preview" },
-  # { on = [ "P" ], run = "plugin max-preview", desc = "Maximize or restore preview" },
 
   # { on = [ "<S-Up>" ],   run = "arrow -5", desc = "Move cursor up 5 lines" },
   # { on = [ "<S-Down>" ], run = "arrow 5",  desc = "Move cursor down 5 lines" },
@@ -72,21 +71,6 @@ keymap = [
   # { on = [ "<C-Enter>" ], run = "open --interactive",         desc = "Open the selected files interactively" },
   { on = [ "o" ],           run = "open --interactive",         desc = "Open the selected files interactively" },
   { on = [ "<Enter>" ],     run = "open",                       desc = "Open the selected files" },
-  # { on = [ "y","y" ],       run = "yank",                  desc = "Copy the selected files" },
-  { on = [ "y","y" ],       run = [  '''
-      shell 'echo "$@" | xclip -i -selection clipboard -t text/uri-list' --confirm
-      ''', "yank" ] ,desc = "Copy to xclip" },
-  { on = [ "y","p" ],                              run = "copy path",             desc = "Copy the absolute path" },
-  { on = [ "y","d" ],                              run = "copy dirname",          desc = "Copy the path of the parent directory" },
-  { on = [ "y","f" ],                              run = "copy filename",         desc = "Copy the name of the file" },
-  { on = [ "y","F" ],                              run = "copy name_without_ext", desc = "Copy the name of the file without the extension" },
-  { on = [ "Y" ],           run = "unyank",                     desc = "Cancel the yank status of files" },
-  { on = [ "x" ],           run = "yank --cut",                 desc = "Cut the selected files" },
-  { on = [ "X" ],           run = "unyank",                     desc = "Cancel the yank status of files" },
-  { on = [ "p" ],           run = "paste",                      desc = "Paste the files" },
-  # { on = [ "P" ],         run = "paste --force",              desc = "Paste the files (overwrite if the destination exists)" },
-  { on = [ "-" ],           run = "link",                       desc = "Symlink the absolute path of files" },
-  { on = [ "_" ],           run = "link --relative",            desc = "Symlink the relative path of files" },
   { on = [ "d" ],           run = "remove",                     desc = "Move the files to the trash" },
   { on = [ "D" ],           run = "remove --permanently",       desc = "Permanently delete the files" },
   { on = [ "a" ],           run = "create",                     desc = "Create a file or directory (ends with / for directories)" },
@@ -105,10 +89,26 @@ keymap = [
   # Linemode
   { on = [ "m", "s" ], run = "linemode size",        desc = "Set linemode to size" },
   { on = [ "m", "p" ], run = "linemode permissions", desc = "Set linemode to permissions" },
+	{ on = [ "m", "b" ], run = "linemode btime",       desc = "Linemode: btime" },
   { on = [ "m", "m" ], run = "linemode mtime",       desc = "Set linemode to mtime" },
+	{ on = [ "m", "o" ], run = "linemode owner",       desc = "Linemode: owner" },
   { on = [ "m", "n" ], run = "linemode none",        desc = "Set linemode to none" },
 
   # Copy
+  { on = [ "y","y" ],       run = [  '''
+      shell 'echo "$@" | xclip -i -selection clipboard -t text/uri-list' --confirm
+      ''', "yank" ] ,desc = "Copy to xclip" },
+  { on = [ "y","p" ],                              run = "copy path",             desc = "Copy the absolute path" },
+  { on = [ "y","d" ],                              run = "copy dirname",          desc = "Copy the path of the parent directory" },
+  { on = [ "y","f" ],                              run = "copy filename",         desc = "Copy the name of the file" },
+  { on = [ "y","F" ],                              run = "copy name_without_ext", desc = "Copy the name of the file without the extension" },
+  { on = [ "Y" ],           run = "unyank",                     desc = "Cancel the yank status of files" },
+  { on = [ "x" ],           run = "yank --cut",                 desc = "Cut the selected files" },
+  { on = [ "X" ],           run = "unyank",                     desc = "Cancel the yank status of files" },
+  { on = [ "p","p" ],           run = "paste",                      desc = "Paste the files" },
+  { on = [ "p","P" ],         run = "paste --force",              desc = "Paste the files (overwrite if the destination exists)" },
+  { on = [ "p", "l" ],           run = "link",                       desc = "Symlink the absolute path of files" },
+  { on = [ "p","r" ],           run = "link --relative",            desc = "Symlink the relative path of files" },
 
   # Filter
   { on = [ "?" ], run = "filter --smart", desc = "Filter the files" },
