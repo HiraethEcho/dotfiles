@@ -127,3 +127,34 @@ SetFileProperty /etc/artalk owner artalk
 SetFileProperty /etc/radicale/users group radicale
 SetFileProperty /etc/radicale/users mode 640
 SetFileProperty /etc/radicale/users owner radicale
+
+
+# Wed Jul 22 23:47:50 CST 2026 - Extra files
+
+
+RemoveFile /etc/systemd/user/graphical-session-pre.target.wants/xdg-user-dirs.service
+RemoveFile /etc/systemd/user/graphical-session-pre.target.wants
+RemoveFile /etc/systemd/system/multi-user.target.wants/clash-verge-service.service
+RemoveFile /etc/systemd/system/getty.target.wants/getty@tty1.service
+RemoveFile /etc/systemd/system/getty.target.wants
+RemoveFile /etc/systemd/system/clash-verge-service.service
+
+
+# Wed Jul 22 23:47:50 CST 2026 - New / changed files
+
+
+CopyFile /etc/ly/config.ini
+CreateLink /etc/systemd/system/multi-user.target.wants/ly@tty1.service /usr/lib/systemd/system/ly@.service
+CreateLink /etc/systemd/system/multi-user.target.wants/ollama.service /usr/lib/systemd/system/ollama.service
+CopyFile /etc/ly/save.txt
+CopyFile /etc/pacman.d/mirrorlist.pacnew
+CopyFile /etc/shells
+CopyFile /etc/systemd/coredump.conf.d/override.conf
+CopyFile /etc/systemd/system.conf.pacnew
+CopyFile /etc/systemd/system/cloudflared.service
+
+
+# Wed Jul 22 23:47:51 CST 2026 - New file properties
+
+
+SetFileProperty / mode 555
