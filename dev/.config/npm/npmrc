@@ -1,2 +1,2 @@
 prefix=${HOME}/.local/opt/npm
-allow-scripts=@fission-ai/openspec,@mimo-ai/cli,lightspec,reasonix,esbuild,workerd,sharp,@google/genai,protobufjs
+allow-scripts=@blackbelt-technology/pi-agent-dashboard,@blackbelt-technology/pi-dashboard-server,node-pty,@google/genai,protobufjs
