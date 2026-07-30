@@ -10,6 +10,8 @@ https://archlinux.org/feeds/packages/x86_64/ "~Arch repo" arch
 https://aur.archlinux.org/rss "~AUR" arch
 
 https://aphilosopher.drmcl.com/feed/ "~A Philosopher's blog" blog
+https://sliun.com/feed/ blog
+https://immarcus.com/blog/rss.xml blog
 https://blog.xiaket.org/feed.xml blog
 https://pathos.page/feed.xml blog
 https://hutusi.com/feed.xml blog
@@ -27,6 +29,7 @@ https://ramble.imzh.me/index.xml blog
 https://polebug.github.io/atom.xml blog
 https://goldenriver.site/index.xml blog
 https://emptystack.top/atom.xml blog
+https://xkcd.com/rss.xml blog
 https://memex.keinmal.top/index.xml "~MEMEX" blog
 
 https://rss.arxiv.org/rss/math.AG "~arxiv AG" paper
