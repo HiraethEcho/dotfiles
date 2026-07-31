@@ -153,7 +153,6 @@ spotters = [
   # Fallback
   { url = "*", run = "file" },
 ]
-
 prepend_preloaders = [
   # Replace magick, image, video with mediainfo
   # { mime = "{audio,video,image}/*", run = "mediainfo" },
@@ -166,9 +165,9 @@ prepend_preloaders = [
   # NOTE: Use both --no-metadata and --no-preview will display nothing. :)
   # Make sure both of your previewers and preloaders has the same arguments (--no-metadata and --no-preview)
 ]
-
 prepend_previewers = [
-  { url = "*/", run = 'piper -- eza -a -TL=2 --color=always --icons=always --group-directories-first --no-quotes "$1"' },
+  { url = "*/", run = 'piper -- eza -a -TL=2 --color=always --follow-symlinks --icons=always --group-directories-first --no-quotes "$1"' },
+  { url = "text/*", run = 'fat' },
   { url = "*.docx", run = 'piper -- doxx "$1"' },
   # Replace magick, image, video with mediainfo
   # { mime = "{audio,video,image}/*", run = "mediainfo" },
@@ -180,8 +179,6 @@ prepend_previewers = [
   # NOTE: Use both --no-metadata and --no-preview will display nothing. :)
   # Make sure both of your previewers and preloaders has the same arguments (--no-metadata and --no-preview)
 ]
-
-
 preloaders = [
   # Image
   { mime = "image/{avif,hei?,jxl}", run = "magick" },
@@ -230,12 +227,12 @@ previewers = [
   # Fallback
   { url = "*", run = "file" },
 ]
-
 prepend_fetchers = [
   { id = "git", url = "*", run = "git", group = "git" },
   { id = "git", url = "*/", run = "git", group = "git" },
   # { id = "mime", name = "*", run = "mime-ext", prio = "high" },
 ]
+
 [input]
 cursor_blink = false
 

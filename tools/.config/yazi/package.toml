@@ -24,11 +24,6 @@ rev = "398796d"
 hash = "2dd68af59418b631b9703a03f606b31f"
 
 [[plugin.deps]]
-use = "GrzegorzKozub/mdcat"
-rev = "7b7380a"
-hash = "40c20e6c1085d1f45309b9f148bf4f6e"
-
-[[plugin.deps]]
 use = "macydnah/office"
 rev = "41ebef8"
 hash = "5805affd3ae8adcb3c72b6997d21c0a6"
