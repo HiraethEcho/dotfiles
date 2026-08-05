@@ -106,6 +106,7 @@ keymap = [
   { on = [ "x" ],           run = "yank --cut",                 desc = "Cut the selected files" },
   { on = [ "X" ],           run = "unyank",                     desc = "Cancel the yank status of files" },
   { on = [ "p" ],           run = "paste",                      desc = "Paste the files" },
+  { on = [ "F" ],           run = "paste --force",                      desc = "Paste the files" },
   { on = [ "_" ],           run = "link",                       desc = "Symlink the absolute path of files" },
   { on = [ "-" ],           run = "link --relative",            desc = "Symlink the relative path of files" },
   # { on = [ "p","p" ],           run = "paste",                      desc = "Paste the files" },
