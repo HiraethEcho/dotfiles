@@ -10,15 +10,36 @@ export EDITOR=nvim
 # export TERMINAL=kitty
 # export TERM=kitty
 
-# Shell opt
-# The meaning of these options can be found in man page of `zshoptions`.
-export HISTSIZE=1000
-export SAVEHIST=1000
+# =========================================================
+# History
+# =========================================================
+
+HISTFILE="$XDG_STATE_HOME/zsh/history"
+HISTSIZE=100000
+SAVEHIST=100000
+
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS  # do not put duplicated command into history list
 setopt HIST_SAVE_NO_DUPS  # do not save duplicated command
 setopt HIST_REDUCE_BLANKS  # remove unnecessary blanks
 setopt INC_APPEND_HISTORY_TIME  # append command to history file immediately after execution
 setopt EXTENDED_HISTORY  # record command start time
+
+# =========================================================
+# Shell behaviour
+# =========================================================
+
+setopt AUTOCD
+setopt NOBEEP
+setopt NUMERIC_GLOB_SORT  # sort file10 after file9, not after file1
+
+# Shell opt
+# The meaning of these options can be found in man page of `zshoptions`.
 # export SUDO_ASKPASS="$HOME/.local/bin/rpass"
 
 # Dir
@@ -35,7 +56,6 @@ export W3M_DIR="$XDG_DATA_HOME"/w3m
 # File
 export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-export HISTFILE="$XDG_STATE_HOME/zsh/history"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 
 # X
@@ -67,17 +87,6 @@ export PNPM_HOME="$HOME"/.local/opt/pnpm
 export BUN_INSTALL="$HOME"/.local/opt/bun
 # export BUN_INSTALL_CACHE_DIR="$HOME"/.local/opt/bun
 
-export FZF_DEFAULT_OPTS="--reverse --style full \
-  --border --padding 0,0 \
-  --border-label ' fzf ' \
-  --input-label ' Input ' \
-  --bind=ctrl-d:preview-down,ctrl-u:preview-up \
-  --color 'border:#aaaaaa,label:#cccccc' \
-  --color 'preview-border:#9999cc,preview-label:#ccccff' \
-  --color 'list-border:#669966,list-label:#99cc99' \
-  --color 'input-border:#996666,input-label:#ffcccc' \
-  --color 'header-border:#6699cc,header-label:#99ccff'
-"
 
 # PATH
 # PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"

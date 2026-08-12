@@ -1,40 +1,28 @@
 # zmodload zsh/zprof
 
 bindkey -v
+
+# =========================================================
+# Completion
+# =========================================================
+
+fpath=("$HOME/.config/zsh/completions" $fpath)
+# Load completion system
+autoload -Uz compinit
+# Initialize completion with cached metadata file
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION" 
+# Enable interactive completion menu selection
+zstyle ':completion:*' menu select
+# Make completion case-insensitive
+# Example: "doc" can complete to "Documents"
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # lowercase input matches upper and lower
+
 # source
-source $HOME/.config/zsh/alias
+source $HOME/.config/zsh/alias.zsh
+source $HOME/.config/zsh/plugins.zsh
+source $HOME/.config/zsh/fzf.zsh
 # source $HOME/.config/zsh/lean-zsh
-# plugins
-source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.zsh  # Replace zsh's default completion selection menu with fzf
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh # a little bit faster, as is said
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh # completion offered after the cursor in a muted gray color, by history
-# source <(fzf --zsh) # CTRL-T CTRL-R ALT-C and ** trigger
-eval "$(starship init zsh)"
-# eval $(thefuck --alias f)
-eval "$(zoxide init zsh)"
-# eval "$(navi widget zsh)"
-# eval "$(gh copilot alias -- zsh)"
-# Bind ctrl-r but not up arrow
-eval "$(atuin init zsh --disable-up-arrow)"
-# eval "$(atuin init zsh --disable-ctrl-r)"
 
-# source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh # completion, wired
-# zstyle ':autocomplete:*' min-input 3
-# bindkey '^I'   menu-complete
-# bindkey '^[[Z' reverse-menu-complete
-
-# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
-# - The first argument to the function ($1) is the base path to start traversal
-# - See the source code (completion.{bash,zsh}) for the details.
-_fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" . "$1"
-}
-
-# Use fd to generate the list for directory completion
-_fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
-}
 
 # double tap Esc to add sudo
 sudo-command-line() {
@@ -64,9 +52,6 @@ function r() {
 }
 
 
-fpath=("/home/hiraeth/.config/zsh/completions" $fpath)
-autoload -Uz compinit
-compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION" 
 
 # use directory as name of terminal
 precmd () {print -Pn "\e]0;%~\a"}

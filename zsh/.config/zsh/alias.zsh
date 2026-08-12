@@ -75,6 +75,8 @@ alias ptr="pacman -Qq | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --promp
 alias pt="pacman -Qq | fzf --bind=ctrl-d:preview-down,ctrl-u:preview-up --prompt='required by ' --preview-window=70%:bottom: --preview 'pactree -d2 {}'"
 alias sl="pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse --bind 'enter:execute(pacman -Si {} | less)'"
 
+alias -- -='cd -'  # -- prevents - being parsed as a flag; cd - jumps to previous directory
+
 # fzf
 # alias fzfp="fzf --preview 'fzf-preview.sh {}'"
 # alias fman="man -k . | fzf --preview 'man {1}' --bind 'enter:execute(man {1})'"
