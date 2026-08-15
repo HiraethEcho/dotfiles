@@ -2,13 +2,13 @@
 
 theme="~/.config/rofi/choose.rasi"
 
-option_u="power       u"
-option_k="gparted     k"
-option_i="terminal    i"
-option_s="snapper     s"
-option_b="buku        b"
-option_w="website     w"
-option_n="newsboat    n"
+option_u="power    u"
+option_k="gparted  k"
+option_i="terminal i"
+option_s="snapper  s"
+option_b="buku     b"
+option_w="website  w"
+option_n="rss      n"
 
 rofi_cmd() {
   rofi -theme-str "listview {columns: 1; lines: 7;}" \
@@ -49,6 +49,6 @@ $option_w)
   rofi_quicklinks
   ;;
 $option_n)
-  kitty -e newsboat
+  kitty -e markerss
   ;;
 esac
