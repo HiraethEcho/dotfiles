@@ -1,0 +1,51 @@
+layer-rule {
+    match namespace="^noctalia-overview*"
+    place-within-backdrop true
+}
+layer-rule {
+  match namespace="^noctalia-backdrop"
+  place-within-backdrop true
+}
+// Place the regular wallpaper on the backdrop.
+layer-rule {
+  match namespace="^noctalia-wallpaper"
+  place-within-backdrop true
+}
+// Set transparent workspace background color so the backdrop is visible at all times.
+layout {
+  background-color "transparent"
+}
+
+binds {
+    // Core Noctalia binds
+    Super+A { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Super+I { spawn-sh "noctalia msg panel-toggle control-center"; }
+    // Super+I { spawn-sh "noctalia msg settings-toggle"; }
+    Alt+Tab { spawn-sh "noctalia msg window-switcher"; }
+    // Niri has a built-in window switcher you might want to try it to see which one you prefer.
+    // others
+    Alt+B { spawn-sh "noctalia msg bar-toggle"; }
+    Alt+Shift+B { spawn-sh "noctalia msg doc-toggle"; }
+    Super+Shift+S { spawn-sh "noctalia msg screenshot-region"; }
+    // Audio & Brightness
+    XF86AudioRaiseVolume { spawn-sh "noctalia msg volume-up"; }
+    XF86AudioLowerVolume { spawn-sh "noctalia msg volume-down"; }
+    XF86AudioMute { spawn-sh "noctalia msg volume-mute"; }
+    XF86MonBrightnessUp { spawn-sh "noctalia msg brightness-up"; }
+    XF86MonBrightnessDown { spawn-sh "noctalia msg brightness-down"; }
+}
+
+spawn-at-startup "noctalia"
+
+// Floating Noctalia settings window.
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
+
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
+}
