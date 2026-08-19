@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+# 配置文件路径
+CONFIG_FILE="$HOME/.config/niri/config.kdl"
+
+if grep -q '^[[:space:]]*//[[:space:]]*off' "$CONFIG_FILE"; then
+  exit 0
+else
+  exit 1
+fi
