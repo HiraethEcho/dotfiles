@@ -19,9 +19,9 @@ layout {
 binds {
     // Core Noctalia binds
     Super+A { spawn-sh "noctalia msg panel-toggle launcher"; }
-    Super+I { spawn-sh "noctalia msg panel-toggle control-center"; }
-    // Super+I { spawn-sh "noctalia msg settings-toggle"; }
-    Alt+Tab { spawn-sh "noctalia msg window-switcher"; }
+    // Super+I { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Super+I { spawn-sh "noctalia msg settings-toggle"; }
+    // Alt+Tab { spawn-sh "noctalia msg window-switcher"; }
     // Niri has a built-in window switcher you might want to try it to see which one you prefer.
     // others
     Alt+B { spawn-sh "noctalia msg bar-toggle"; }
@@ -43,9 +43,4 @@ window-rule {
   open-floating true
   default-column-width { fixed 1080; }
   default-window-height { fixed 920; }
-}
-
-debug {
-  // Allows notification actions and window activation from Noctalia.
-  honor-xdg-activation-with-invalid-serial
 }

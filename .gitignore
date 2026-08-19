@@ -1,2 +1,5 @@
 __pycache__
 *tmp
+/terminal/.config/foot/themes/noctalia
+/terminal/.config/kitty/themes/noctalia.conf
+/wm/.config/niri/noctalia.kdl
