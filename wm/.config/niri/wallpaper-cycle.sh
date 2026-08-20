@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-WALL_DIR="$HOME/Pictures/wallpapers"
+WALL_DIR="$HOME/Pictures/Wallpapers"
 CACHE="$HOME/.cache/awww-last"
 
 cycle() {

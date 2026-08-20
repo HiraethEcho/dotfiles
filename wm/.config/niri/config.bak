@@ -164,11 +164,6 @@ window-rule {
     open-focused false
 }
 binds {
-    // >>> jcode launch hotkeys (managed) >>>
-    Super+Semicolon hotkey-overlay-title="jcode: home" { spawn "sh" "-c" "if [ -d '/home/hiraeth' ]; then cd '/home/hiraeth'; else cd \"$HOME\"; fi; exec 'kitty' '/usr/lib/jcode/jcode-linux-x86_64.bin' --spawn-hotkey 'cmd+;'"; }
-    Super+Apostrophe hotkey-overlay-title="jcode: last project" { spawn "sh" "-c" "if [ -d '/home/hiraeth' ]; then cd '/home/hiraeth'; else cd \"$HOME\"; fi; exec 'kitty' '/usr/lib/jcode/jcode-linux-x86_64.bin' --spawn-hotkey 'cmd+'\\'''"; }
-    Super+Shift+Apostrophe hotkey-overlay-title="jcode: self-dev (self-dev)" { spawn "sh" "-c" "if [ -d '/home/hiraeth' ]; then cd '/home/hiraeth'; else cd \"$HOME\"; fi; exec 'kitty' '/usr/lib/jcode/jcode-linux-x86_64.bin' --spawn-hotkey 'cmd+shift+'\\''' self-dev"; }
-    // <<< jcode launch hotkeys (managed) <<<
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
     // spawn and kill
