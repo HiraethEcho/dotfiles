@@ -1,7 +1,6 @@
-news.version=3.4.1
+news.version=3.5.0
 
 data.location=~/.local/share/task
-hooks.location=~/.config/task/hooks
 weekstart=monday
 recurrence.limit=1
 recurrence=on
