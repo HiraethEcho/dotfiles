@@ -25,3 +25,4 @@
 - *.gitignore
 - *.gitsubmodule
 - node_modules/
+- .obsidian/

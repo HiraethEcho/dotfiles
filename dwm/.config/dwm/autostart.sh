@@ -13,19 +13,11 @@ if [ -z $(pidof xbindkeys) ]; then
   xbindkeys -f ~/.config/dwm/keys
 fi
 
-
-if [ -z $(pidof awatcher) ]; then
-  awatcher &
-fi
-
-# if [ -z $(pidof aw-qt) ]; then
-# aw-qt &
+# if [ -z $(pidof awatcher) ]; then
+#   awatcher &
 # fi
 # if [ -z $(pidof picom) ]; then
 # picom -b
-# fi
-# if [ -z $(pidof blueberry-tray) ]; then
-# fi
 
 # killall wallpaper_loop
 # wallpaper_loop &
@@ -37,12 +29,8 @@ pamixer -m &
 
 # killall battery_warning
 # battery_warning &
-#
-# killall dwmblocks
-# dwmblocks &
 
-# autossh -M 20000 -fNR 7004:localhost:2222 wyz@2408:8207:1963:c5d0:336f:8d38:d21a:7600
-# autossh -M 20000 -fNR 7004:localhost:2222 wyz@$DEBIAN_IP &
+# autossh -M 20000 -fNR 7004:localhost:2222 wyz@$SERVER_IP &
 
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # /usr/lib/xfce-polkit/xfce-polkit &

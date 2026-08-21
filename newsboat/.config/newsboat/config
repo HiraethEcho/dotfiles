@@ -163,7 +163,7 @@ bookmark-cmd "~/.config/newsboat/bookmark-buku.sh"
 # Default value: %BROWSER, otherwise lynx
 #
 # browser "w3m %u"
-browser "waterfox %u"
+browser "zen %u"
 ####  cache-file
 #
 # This configuration option sets the cache file. This is especially useful if

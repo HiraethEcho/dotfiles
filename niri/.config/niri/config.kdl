@@ -194,7 +194,7 @@ binds {
         spawn "zotero"
     }
     Super+W {
-        spawn "waterfox"
+        spawn "zen"
     }
     Super+Grave {
         spawn "niri-scratchpad" "kitty"

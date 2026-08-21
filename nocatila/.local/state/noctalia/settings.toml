@@ -1,4 +1,4 @@
-config_version = 12
+config_version = 13
 
 [bar]
 order = [ "default" ]
@@ -161,6 +161,8 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
     cx = 960.0
     cy = 898.0
     output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -186,6 +188,8 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
     cx = 960.0
     cy = 898.0
     output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -213,7 +217,7 @@ monitors = [ "eDP-1" ]
     media = false
 
 [plugins]
-auto_update = false
+auto_update = "none"
 
     [[plugins.source]]
     enabled = false
@@ -244,13 +248,14 @@ screen_time_enabled = true
 
 [theme]
 builtin = "Nord"
-community_palette = "Oxocarbon"
+community_palette = "One"
 mode = "dark"
 source = "wallpaper"
-wallpaper_scheme = "dysfunctional"
+wallpaper_scheme = "m3-rainbow"
 
     [theme.templates]
-    community_ids = [ "opencode", "obsidian" ]
+    builtin_ids = [ "foot", "kitty" ]
+    community_ids = [ "opencode", "obsidian", "rofi", "fastfetch", "zathura", "yazi" ]
 
 [wallpaper]
 per_monitor_directories = true
@@ -260,16 +265,16 @@ per_monitor_directories = true
     interval_seconds = 600
 
     [wallpaper.default]
-    path = "/home/hiraeth/Pictures/Wallpapers/arch.png"
+    path = "/home/hiraeth/Pictures/Wallpapers/fuji.png"
 
     [wallpaper.last]
-    path = "/home/hiraeth/Pictures/Wallpapers/icemountain.jpg"
+    path = "/home/hiraeth/Pictures/Wallpapers/fuji.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/hiraeth/Pictures/Wallpapers/icemountain.jpg"
+    path = "/home/hiraeth/Pictures/Wallpapers/abstract.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/hiraeth/Pictures/Wallpapers/abstract.jpg"
+    path = "/home/hiraeth/Pictures/Wallpapers/fuji.png"
 
 [widget.control-center]
 glyph = "navigation-filled"
