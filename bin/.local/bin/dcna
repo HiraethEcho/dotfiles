@@ -191,7 +191,7 @@ git_push_all() {
   log_info "Git push"
   for repo in "${GIT_REPO[@]}"; do
     log_info "Repo: $repo"
-    if [ ! -d "$repo/.git" ]; then
+    if [ ! -e "$repo/.git" ]; then
       log_err "Skip (not git repo): $repo"
       continue
     fi
