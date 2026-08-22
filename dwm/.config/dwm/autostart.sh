@@ -10,7 +10,6 @@ if [ -z $(pidof dwmblocks) ]; then
   dwmblocks &
 fi
 if [ -z $(pidof xbindkeys) ]; then
-  # mykeys &
   xbindkeys -f ~/.config/dwm/keys
 fi
 

@@ -1,6 +1,0 @@
-binds {
-    Ctrl+Alt+Backspace hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "toggle"; }
-    Super+A hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
-    Super+I hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "toggle"; }
-    Super+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
-}

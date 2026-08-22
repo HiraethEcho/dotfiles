@@ -250,20 +250,7 @@ source = "wallpaper"
 wallpaper_scheme = "dysfunctional"
 
     [theme.templates]
-    builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "kitty", "niri", "starship" ]
-    community_ids = [
-        "opencode",
-        "pi-agent",
-        "qutebrowser",
-        "neovim",
-        "obsidian",
-        "rofi",
-        "fastfetch",
-        "zathura",
-        "bat",
-        "lazygit",
-        "yazi"
-    ]
+    community_ids = [ "opencode", "obsidian" ]
 
 [wallpaper]
 per_monitor_directories = true
@@ -276,13 +263,13 @@ per_monitor_directories = true
     path = "/home/hiraeth/Pictures/Wallpapers/arch.png"
 
     [wallpaper.last]
-    path = "/home/hiraeth/Pictures/Wallpapers/Linus.png"
+    path = "/home/hiraeth/Pictures/Wallpapers/icemountain.jpg"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/hiraeth/Pictures/Wallpapers/Linus.png"
+    path = "/home/hiraeth/Pictures/Wallpapers/icemountain.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/hiraeth/Pictures/Wallpapers/flowers-2.png"
+    path = "/home/hiraeth/Pictures/Wallpapers/abstract.jpg"
 
 [widget.control-center]
 glyph = "navigation-filled"

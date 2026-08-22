@@ -430,4 +430,3 @@ spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 // include "ashell.kdl"
 
 include "noctalia-start.kdl"
-include "noctalia.kdl"
