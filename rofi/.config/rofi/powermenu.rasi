@@ -14,8 +14,8 @@ configuration {
 
 /*****----- Global Properties -----*****/
 
-@import                          "share/color.rasi"
-@import                          "share/fonts.rasi"
+@import                          "nord.rasi"
+@import                          "fonts.rasi"
 
 /*****----- Main Window -----*****/
 window {

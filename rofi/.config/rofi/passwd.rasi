@@ -4,7 +4,7 @@ configuration {
   font: "CodeNewRoman Nerd Font mono 20";
 }
 
-@import "~/.config/rofi/share/color.rasi"
+@import "~/.config/rofi/nord.rasi"
 
 mainbox { 
     enabled:                     true;

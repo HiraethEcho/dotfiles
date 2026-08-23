@@ -5,8 +5,8 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import "~/.config/rofi/share/fonts.rasi"
-@import "~/.config/rofi/share/color.rasi"
+@import "~/.config/rofi/fonts.rasi"
+@import "~/.config/rofi/nord.rasi"
 
 /*****----- Main Window -----*****/
 window {

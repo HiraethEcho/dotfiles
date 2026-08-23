@@ -60,8 +60,7 @@ download = [
   { run = "ya emit download --open %S", desc = "Download and open" },
   { run = "ya emit download %S", desc = "Download" },
 ]
-water = [{ run = "waterfox %s1 &", desc = "Waterfox", for = "linux" }]
-brave = [{ run = "brave-origin %s1 &", desc = "Brave", for = "linux" }]
+zen = [{ run = "zen %s1 &", desc = "zen", for = "linux" }]
 marktext = [{ run = "marktext %s1 &", desc = "marktext", for = "linux" }]
 
 [open]
@@ -76,7 +75,7 @@ rules = [
   { mime = "text/html", use = [
     "edit",
     "reveal",
-    "water",
+    "zen",
   ] },
   { mime = "text/*", use = [
     "edit",
@@ -114,8 +113,7 @@ rules = [
   { url = "*", use = [
     "open",
     "reveal",
-    "water",
-    "brave",
+    "zen",
   ] },
 ]
 

@@ -17,7 +17,7 @@ configuration {
 
 /*****----- Global Properties -----*****/
 @import "~/.config/rofi/fonts.rasi"
-@import "~/.config/rofi/color.rasi"
+@import "~/.config/rofi/nord.rasi"
 /*****----- Main Window -----*****/
 window {
     transparency:                "real";
