@@ -8,7 +8,7 @@ recurrence=on
 include ~/.config/task/custom.theme
 include ~/.config/task/report
 
-# include ~/.config/task/uda
+include ~/.config/task/uda
 # include ~/.config/task/sync
 # include ~/.config/task/tui
 
