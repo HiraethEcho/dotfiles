@@ -1,37 +1,41 @@
 #!/bin/bash
 
-# A dwm_bar module to display the current backlight brighness with xbacklight
+# A dwm_bar module to display the current backlight brighness with brightnessctl
 # Joe Standring <git@joestandring.com>
 # GNU GPLv3
 
-# Dependencies: xbacklight
+# Dependencies: brightnessctl
 printf "^f3^"
 printf "^c#ffd900^"
-light=$(xbacklight -get)
+light=$(( $(brightnessctl get) * 100 / $(brightnessctl max) ))
 a=$(($light / 4))
 
 case $BLOCK_BUTTON in
 1)
-  xbacklight $((($(xbacklight -get) + 20) % 100))
-  notify-send -h int:value:$(xbacklight -get) "Light"
+  brightnessctl -q set "$(((light + 20) % 100))%"
+  light=$(( $(brightnessctl get) * 100 / $(brightnessctl max) ))
+  notify-send -h int:value:$light "Light"
   ;;
-  # 2) xbacklight 75 ; notify-send -h int:value:$(xbacklight -get) "Light" ;;
+  # 2) brightnessctl -q set 75% ; notify-send -h int:value:$(brightnessctl get) "Light" ;;
   # 2) wallpaper_change ;;
 2)
-  xbacklight $(rofi -dmenu -config ~/.config/rofi/passwd.rasi)
-  notify-send -h int:value:$(xbacklight -get) "Light"
+  brightnessctl -q set "$(rofi -dmenu -config ~/.config/rofi/passwd.rasi)%"
+  light=$(( $(brightnessctl get) * 100 / $(brightnessctl max) ))
+  notify-send -h int:value:$light "Light"
   ;;
-# 3) xbacklight $(( ($(xbacklight -get) + 80) % 100  )) ; notify-send -h int:value:$(xbacklight -get) "Light" ;;
+# 3) brightnessctl -q set $(( ($(brightnessctl get) + 80) % 100  ))% ; notify-send -h int:value:$light "Light" ;;
 3) wallpaper_change ;;
 4)
-  xbacklight -inc 5
+  brightnessctl -q set +5%
+  light=$(( $(brightnessctl get) * 100 / $(brightnessctl max) ))
   pkill -SIGUSR1 dwmblocks
-  notify-send -h int:value:$(xbacklight -get) "Light"
+  notify-send -h int:value:$light "Light"
   ;;
 5)
-  xbacklight -dec 5
+  brightnessctl -q set 5%-
+  light=$(( $(brightnessctl get) * 100 / $(brightnessctl max) ))
   pkill -SIGUSR1 dwmblocks
-  notify-send -h int:value:$(xbacklight -get) "Light"
+  notify-send -h int:value:$light "Light"
   ;;
 6) nohup st -e nvim "$0" >/dev/null & ;;
 esac

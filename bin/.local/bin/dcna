@@ -3,15 +3,59 @@
 set -u
 
 CONFLICT_DIR="$HOME/conflicts"
-FILTER_LIST="$HOME/.config/rclone/filter-list.txt"
+
+# 日志文件（留空=不写日志）
+LOG_FILE="$HOME/.cache/dcna.log"
+
+# ===== rclone 默认配置（改这里即可自定义）=====
+# 并行传输数
+DEFAULT_TRANSFERS=50
+
+# 快速 push 的时间窗口（--max-age）
+DEFAULT_MAX_AGE="24h"
+
+# 外部过滤器文件（可选；留空=不用）
+DEFAULT_FILTER_FROM=""
+
+# 默认 include 过滤（rclone --include，按顺序应用）
+DEFAULT_INCLUDE_PATTERNS=(
+)
+
+# 默认 exclude 过滤（rclone --exclude）
+DEFAULT_EXCLUDE_PATTERNS=(
+  ".git/"
+  ".venv/"
+  "__pycache__/"
+  "logs/"
+  ".opencode/"
+  ".omo/"
+  ".mimocode/"
+  ".pi/"
+  ".claude/"
+  ".codex/"
+  "themes/"
+  "misc/"
+  ".trash/"
+  "WeChat_Data/"
+  "conflicts/"
+  "*.log"
+  "*.aux"
+  "*.fdb_latexmk"
+  "*.fls"
+  "*.synctex.gz"
+  "*.toc"
+  "*.out"
+  "*.xdv"
+  "*.html"
+  "*.gitignore"
+  "*.gitsubmodule"
+  "node_modules/"
+  ".obsidian/"
+)
 
 GIT_REPO=(
-  "$HOME/.config/nvim"
   "$HOME/dotfiles"
-  "$HOME/Documents/math"
   "$HOME/Documents/memex"
-  "$HOME/Documents/docs"
-  "$HOME/Documents/blogs"
 )
 # "$HOME/Documents/math"
 # "$HOME/sites/content"
@@ -46,13 +90,28 @@ NC='\033[0m'
 INTERACTIVE=0
 FULL=0
 DRY_RUN=0
+DELETE_MODE=0
+GIT_DIRTY_MODE="skip"   # skip|stop: pull 遇脏仓库跳过或终止
 TARGET="all"
 POWER_ACTION="none"
+
+# 命令行可覆盖 rclone 配置
+TRANSFERS="$DEFAULT_TRANSFERS"
+EXTRA_INCLUDE_PATTERNS=()
+EXTRA_EXCLUDE_PATTERNS=()
+EXTRA_FILTER_FROM=""
+
 DIRTY_GIT_REPOS=()
 
-log_info() { echo -e "${YELLOW}$*${NC}"; }
-log_ok() { echo -e "${GREEN}$*${NC}"; }
-log_err() { echo -e "${RED}$*${NC}"; }
+log_info() { log_to_file "$*"; echo -e "${YELLOW}$*${NC}"; }
+log_ok() { log_to_file "$*"; echo -e "${GREEN}$*${NC}"; }
+log_err() { log_to_file "$*"; echo -e "${RED}$*${NC}"; }
+
+log_to_file() {
+  [ -z "$LOG_FILE" ] && return 0
+  mkdir -p "$(dirname "$LOG_FILE")"
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" >>"$LOG_FILE"
+}
 
 show_help() {
   cat <<'EOF'
@@ -75,10 +134,18 @@ Options:
   -i, --interactive   Interactive mode (rclone --interactive; paru no --noconfirm)
   -f, --full          Full rclone push (sync mirror, all files)
   -n, --dry-run       Print/preview operations without applying changes
+  -d, --delete        Push: delete remote files absent locally (copy mode)
+  --git-dirty=mode    Pull: dirty repos = stop|skip (default: skip)
   -u, --power-action  Power action: none|shutdown|reboot (aliases: n|u|r; default: none)
+  --include=<pat>     Extra rclone include (repeatable)
+  --exclude=<pat>     Extra rclone exclude (repeatable)
+  --filter-from=<f>   Extra rclone filter file
+  --transfers=<n>     Parallel transfers (default: $DEFAULT_TRANSFERS)
   -h, --help          Show help
 
 Notes:
+  - Config editable via DEFAULT_* vars at top of script (filters, transfers, max-age)
+  - Log: ~/.cache/dcna.log (set LOG_FILE at top to change)
   - -f/--full only valid for: push|night with --target rclone|all
   - push default mode: copy + --max-age 24h (quick)
   - push full mode: sync mirror (can delete remote-only files)
@@ -99,13 +166,28 @@ show_config() {
     echo "  - $pair"
   done
   echo
+  echo "Rclone defaults:"
+  echo "  - TRANSFERS=$TRANSFERS (default $DEFAULT_TRANSFERS)"
+  echo "  - MAX_AGE=$DEFAULT_MAX_AGE"
+  echo "  - FILTER_FROM=$DEFAULT_FILTER_FROM"
+  echo "  - EXTRA_FILTER_FROM=$EXTRA_FILTER_FROM"
+  echo "  - EXTRA_INCLUDE: ${EXTRA_INCLUDE_PATTERNS[*]}"
+  echo "  - EXTRA_EXCLUDE: ${EXTRA_EXCLUDE_PATTERNS[*]}"
+  echo
+  echo "DEFAULT_INCLUDE_PATTERNS:"
+  for p in "${DEFAULT_INCLUDE_PATTERNS[@]}"; do echo "  - $p"; done
+  echo "DEFAULT_EXCLUDE_PATTERNS:"
+  for p in "${DEFAULT_EXCLUDE_PATTERNS[@]}"; do echo "  - $p"; done
+  echo
   echo "Options:"
   echo "  - TARGET=$TARGET"
   echo "  - INTERACTIVE=$INTERACTIVE"
   echo "  - FULL=$FULL"
+  echo "  - DELETE_MODE=$DELETE_MODE"
+  echo "  - GIT_DIRTY_MODE=$GIT_DIRTY_MODE"
   echo "  - DRY_RUN=$DRY_RUN"
   echo "  - POWER_ACTION=$POWER_ACTION"
-  echo "  - FILTER_LIST=$FILTER_LIST"
+  echo "  - LOG_FILE=$LOG_FILE"
 }
 
 validate_target() {
@@ -162,6 +244,10 @@ git_pull_all() {
     fi
 
     if [ -n "$(git -C "$repo" status --porcelain)" ]; then
+      if [ "$GIT_DIRTY_MODE" = "stop" ]; then
+        log_err "Stop (dirty tree): $repo"
+        exit 1
+      fi
       log_err "Skip pull (dirty tree): $repo"
       DIRTY_GIT_REPOS+=("$repo")
       continue
@@ -220,13 +306,35 @@ git_push_all() {
 
 build_rclone_flags() {
   local -n out_flags=$1
+  local pattern
   out_flags=(
-    --filter-from "$FILTER_LIST"
-    --transfers 50
+    --transfers "$TRANSFERS"
     --progress
     -L
     --track-renames
   )
+
+  # 默认过滤
+  for pattern in "${DEFAULT_INCLUDE_PATTERNS[@]}"; do
+    out_flags+=(--include "$pattern")
+  done
+  for pattern in "${DEFAULT_EXCLUDE_PATTERNS[@]}"; do
+    out_flags+=(--exclude "$pattern")
+  done
+  if [ -n "$DEFAULT_FILTER_FROM" ]; then
+    out_flags+=(--filter-from "$DEFAULT_FILTER_FROM")
+  fi
+
+  # 命令行追加过滤（后应用，可覆盖默认）
+  for pattern in "${EXTRA_INCLUDE_PATTERNS[@]}"; do
+    out_flags+=(--include "$pattern")
+  done
+  for pattern in "${EXTRA_EXCLUDE_PATTERNS[@]}"; do
+    out_flags+=(--exclude "$pattern")
+  done
+  if [ -n "$EXTRA_FILTER_FROM" ]; then
+    out_flags+=(--filter-from "$EXTRA_FILTER_FROM")
+  fi
 
   if [ "$INTERACTIVE" -eq 1 ]; then
     out_flags+=(--interactive)
@@ -276,7 +384,11 @@ rclone_push_all() {
         log_err "Fail full push(sync): $remote_path"
       fi
     else
-      if run_cmd rclone copy "$local_path" "$remote_path" "${base_flags[@]}" --suffix-keep-extension --no-update-dir-modtime --no-update-modtime --max-age 24h; then
+      local push_extra=()
+      if [ "$DELETE_MODE" -eq 1 ]; then
+        push_extra+=(--delete)
+      fi
+      if run_cmd rclone copy "$local_path" "$remote_path" "${base_flags[@]}" "${push_extra[@]}" --suffix-keep-extension --no-update-dir-modtime --no-update-modtime --max-age "$DEFAULT_MAX_AGE"; then
         log_ok "OK push(copy): $remote_path"
       else
         log_err "Fail push(copy): $remote_path"
@@ -394,6 +506,30 @@ parse_args() {
     -n | --dry-run)
       DRY_RUN=1
       ;;
+    --include=*)
+      EXTRA_INCLUDE_PATTERNS+=("${1#*=}")
+      ;;
+    --exclude=*)
+      EXTRA_EXCLUDE_PATTERNS+=("${1#*=}")
+      ;;
+    --filter-from=*)
+      EXTRA_FILTER_FROM="${1#*=}"
+      ;;
+    --transfers=*)
+      TRANSFERS="${1#*=}"
+      ;;
+    -d | --delete)
+      DELETE_MODE=1
+      ;;
+    --git-dirty=*)
+      case "${1#*=}" in
+      stop | skip) GIT_DIRTY_MODE="${1#*=}" ;;
+      *)
+        log_err "--git-dirty must be stop or skip"
+        exit 1
+        ;;
+      esac
+      ;;
     -t | --target)
       shift
       if [ -z "${1:-}" ]; then
@@ -471,11 +607,22 @@ validate_full_usage() {
     log_err "--full not valid with --target git"
     exit 1
   fi
+
+  if [ "$DELETE_MODE" -eq 1 ] && [ "$COMMAND" != "push" ] && [ "$COMMAND" != "P" ] && [ "$COMMAND" != "night" ] && [ "$COMMAND" != "n" ]; then
+    log_err "--delete only valid with push or night command"
+    exit 1
+  fi
+
+  if [ "$DELETE_MODE" -eq 1 ] && [ "$TARGET" = "git" ]; then
+    log_err "--delete not valid with --target git"
+    exit 1
+  fi
 }
 
 main() {
   parse_args "$@"
   validate_full_usage
+  log_to_file "===== dcna: $COMMAND (target=$TARGET) ====="
 
   case "$COMMAND" in
   day | d) run_day ;;
