@@ -23,5 +23,5 @@ nav_presets = [
 background = "dark"
 theme = "nord.toml"
 foldlevel = 0
-sort = ["time","time","time"]
+sort = ["time","title"]
 # reading_width = 80

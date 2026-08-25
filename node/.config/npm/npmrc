@@ -1,2 +1,5 @@
 prefix=${HOME}/.local/opt/npm
+cache=${XDG_CACHE_HOME}/npm
+init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js
+tmp=${XDG_RUNTIME_DIR}/npm
 allow-scripts=@blackbelt-technology/pi-agent-dashboard,@blackbelt-technology/pi-dashboard-server,node-pty,@google/genai,protobufjs
