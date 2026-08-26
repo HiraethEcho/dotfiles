@@ -19,7 +19,7 @@ quote = "#5E81AC"
 [dark]
 background = "#2E3440"
 accent = "#88C0D0"
-dim = "#4C566A"
+dim = "#aCa6aA"
 focused = "#88C0D0"
 selected = "#3B4252"
 top = "#88B0D0"

@@ -2,17 +2,17 @@
 https://sspai.com/feed "少数派" stream !favourite
 https://plink.anyfeeder.com/gcores "机核" stream !favourite
 http://solidot.org/index.rss "奇客" stream !favourite
-https://www.douban.com/feed/review/book "豆瓣书评" stream
+https://www.douban.com/feed/review/book "豆瓣书评" stream !lazy
 http://feed.appinn.com/ "小众软件" stream !favourite
 https://rss.arxiv.org/rss/math.AG "arxiv AG" paper !favourite
-https://www.nature.com/nature.rss "Nature" paper
-https://frenzymath.com/rss.xml "FrenzyMath"
+https://www.nature.com/nature.rss "Nature" paper !lazy
+https://frenzymath.com/rss.xml "~Frenzy"
 https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins" dev
-https://www.obsidianstats.com/rss.xml "~obsidian stats" dev
+https://www.obsidianstats.com/rss.xml "~obsidian stats" dev !lazy
 https://terminaltrove.com/totw.xml "Terminal Trove Tool of the Week" dev
 https://hellogithub.com/rss "HelloGitHub 月刊" dev
 https://docs.keinmal.top/index.xml "docs"
-https://memex.keinmal.top/index.xml "memex"
+https://memex.keinmal.top/index.xml "memex" !lazy
 https://forum.archlinuxcn.org/latest.rss "Arch RSS" arch !favourite
 https://www.archlinuxcn.org/feed/ "ArchCN News" arch
 https://archlinux.org/feeds/packages/x86_64/ "Arch repo" arch
@@ -34,3 +34,5 @@ https://goldenriver.site/index.xml "金色河流" blog !favourite
 https://emptystack.top/atom.xml "空栈顶" blog !favourite
 https://xkcd.com/rss.xml "xkcd.com" blog
 https://eyu.at/index.xml "鹅玉" blog !favourite
+https://stephenleng.com/cn/feed "心的道理" blog !favourite
+https://memex.keinmal.top/index.xml "MEMEX" blog #mine

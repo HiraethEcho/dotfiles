@@ -12,3 +12,7 @@ enabled = true
 
 [ui.toast]
 delivery = "system"
+[worktrees]
+directory = "~/WorkSpace/worktrees"
+[experimental]
+kitty_graphics = true
