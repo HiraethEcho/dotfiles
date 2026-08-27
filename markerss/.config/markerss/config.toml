@@ -25,3 +25,9 @@ theme = "nord.toml"
 foldlevel = 0
 sort = ["time","title"]
 # reading_width = 80
+
+[markers]
+saved = " "
+later = " "
+favourite = " "
+lazy = " 󰒲"

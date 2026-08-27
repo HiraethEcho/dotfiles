@@ -1,14 +1,14 @@
 onboarding = false
 [theme]
-name = "nord"
+name = "terminal"
 auto_switch = false
 
 [ui]
 status_indicators = "symbols"
 
-show_agent_labels_on_pane_borders = true
+show_agent_labels_on_pane_borders = false
 [ui.sound]
-enabled = true
+enabled = false
 
 [ui.toast]
 delivery = "system"
@@ -16,3 +16,9 @@ delivery = "system"
 directory = "~/WorkSpace/worktrees"
 [experimental]
 kitty_graphics = true
+
+[[keys.command]]
+key = "prefix+m"
+type = "plugin_action"
+command = "osamahbeig.pane-mover.open"
+description = "move this pane"

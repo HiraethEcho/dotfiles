@@ -35,6 +35,7 @@ source "$ZDOTDIR/alias.zsh"
 source "$ZDOTDIR/functions.zsh"
 source "$ZDOTDIR/fzf.zsh"
 source "$ZDOTDIR/plugins.zsh"
+source "$ZDOTDIR/ai.zsh"
 # source "$ZDOTDIR/lean.zsh"
 
 # uncomment the first line and the following, then use `PROFILE_STARTUP=true zsh` to show start time
