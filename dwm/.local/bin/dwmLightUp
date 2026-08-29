@@ -1,4 +1,4 @@
 #!/bin/bash
 
-xbacklight -inc 5
+brightnessctl -q set +5%
 pkill -SIGUSR1 dwmblocks
