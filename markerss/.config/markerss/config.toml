@@ -27,7 +27,7 @@ sort = ["time","title"]
 # reading_width = 80
 
 [markers]
-saved = " "
-later = " "
-favourite = " "
-lazy = " 󰒲"
+saved = ""
+later = ""
+favourite = ""
+lazy = "󰒲"
