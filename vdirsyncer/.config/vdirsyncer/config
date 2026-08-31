@@ -125,4 +125,5 @@ fileext = ".ics"
 a = "radicale_local"
 b = "radicale_remote"
 collections = ["from a", "from b"]
+conflict_resolution = "b wins"
 metadata = ["color", "displayname", "description", "order"]
