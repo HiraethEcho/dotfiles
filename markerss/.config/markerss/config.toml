@@ -6,7 +6,7 @@ fetch_timeout = 30
 # browser = "firefox"
 refresh = true
 # refresh = { interval_minutes = 30 }
-pane_ratio = [0.2, 0.3, 0.5]
+pane_ratio = [0.15, 0.25, 0.6]
 nav_presets = [
   [
     "Favourite",

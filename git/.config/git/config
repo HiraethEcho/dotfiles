@@ -20,3 +20,5 @@
 	required = true
 [maintenance]
 	repo = /home/hiraeth/memex
+[branch]
+	sort = committerdate
