@@ -8,6 +8,7 @@ format = """
 [╭─](bold green_bright)\
 $os\
 $hostname\
+$jj\
 $directory\
 $git_branch\
 $git_commit\
@@ -115,6 +116,11 @@ read_only = " "
 style = 'bold cyan_bright dimmed'
 home_symbol = '~'
 truncate_to_repo = false
+
+[vcs]
+order = ["jujutsu", "git"]  # 优先显示 jj 信息
+jujutsu_modules = "$jujutsu_state$jujutsu_change$jujutsu_commit$jujutsu_bookmark"
+
 
 [git_branch]
 format = '[$symbol$branch(:$remote_branch)](bold magenta_bright dimmed)'
@@ -260,6 +266,12 @@ threshold = 5
 charging_symbol = '[󰂎 $percentage](bold fg:70 bg:color_bg)'
 discharging_symbol = '[󰂎 $percentage](bold fg:160 bg:color_bg)'
 style = 'bg:color_bg'
+
+# [custom.jj]
+# when = "jj-starship detect"
+# shell = ["jj-starship"]
+# format = "$output "
+
 [custom.taskwarrior]
 command = """
   OVERDUE=$(task "+OVERDUE" count 2>/dev/null || echo 0);

@@ -14,6 +14,8 @@ export GOPATH="$HOME/.local/opt/go"
 export NPM_CONFIG_PREFIX="$HOME/.local/opt/npm"
 export PNPM_HOME="$HOME/.local/opt/pnpm"
 export BUN_INSTALL="$HOME/.local/opt/bun"
+export CARGO_BUILD_BUILD_DIR="$HOME/.cache/build"
+export QT_QPA_PLATFORM=wayland
 
 # =========================================================
 # PATH (array, deduped)
@@ -24,6 +26,7 @@ path=(
     "$HOME/.local/opt/stew/bin"
     "$HOME/.local/opt/npm/bin"
     "$HOME/.local/opt/pnpm/bin"
+    "$HOME/.elan/bin"
     "$GOPATH/bin"
     "$CARGO_HOME/bin"
     "$BUN_INSTALL/bin"

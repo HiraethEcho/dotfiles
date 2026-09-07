@@ -3,6 +3,7 @@
   email = wyz2016zxc@outlook.com
 [http]
 	sslVerify = false
+	curloptResolve = github.com:443:140.82.113.3
 [init]
 	defaultBranch = main
 [pull]
