@@ -1,7 +1,7 @@
 # alias
 
 alias zrc="nvim ~/.config/zsh/.zshrc"
-alias zalias="nvim ~/.config/zsh/alias"
+alias zalias="nvim ~/.config/zsh/alias.zsh"
 alias zenv="nvim ~/.config/zsh/.zshenv"
 alias zpro="nvim ~/.config/zsh/.zprofile"
 
