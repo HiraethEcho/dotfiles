@@ -4,6 +4,7 @@
 
 [mgr]
 prepend_keymap = [
+  { on = ["M","s"], run = "plugin sshfs -- menu",            desc = "Open SSHFS options" },
   # { on = ["C"], run = "plugin ouch --args=zip", desc = "Compress with ouch" },
   { on = ["g","i"], run = "plugin lazygit", desc = "run lazygit" },
   { on = [ "F" ], run = "plugin toggle-pane max-preview",  desc = "Maximize or restore the preview pane" },

@@ -30,3 +30,4 @@ require("session"):setup({
 })
 
 -- require("eza-preview"):setup({ level = 2, follow_symlinks = true, dereference = false, all = true })
+require("sshfs"):setup()
