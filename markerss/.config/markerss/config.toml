@@ -3,7 +3,7 @@ cache_ttl_days = 7
 # export_dir = "/data/out"
 fetch_timeout = 30
 # max_items_per_feed = 50
-# browser = "firefox"
+# browser = "brave-origin"
 refresh = true
 # refresh = { interval_minutes = 30 }
 pane_ratio = [0.15, 0.25, 0.6]

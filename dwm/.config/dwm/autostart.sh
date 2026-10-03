@@ -6,9 +6,9 @@ fi
 if [ -z $(pidof dunst) ]; then
   dunst &
 fi
-if [ -z $(pidof dwmblocks) ]; then
-  dwmblocks &
-fi
+# if [ -z $(pidof dwmblocks) ]; then
+#   dwmblocks &
+# fi
 if [ -z $(pidof xbindkeys) ]; then
   xbindkeys -f ~/.config/dwm/keys
 fi

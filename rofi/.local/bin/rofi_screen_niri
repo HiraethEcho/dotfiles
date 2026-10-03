@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+theme="~/.config/rofi/choose.rasi"
+
+option_s="screen      s"
+option_a="aera        a"
+option_w="window      w"
+
+
+rofi_cmd() {
+  rofi -theme-str "listview {columns: 1; lines: 3;}" \
+    -dmenu \
+    -kb-select-1 s \
+    -kb-select-2 a \
+    -kb-select-3 w \
+    -markup-rows \
+    -theme ${theme}
+}
+
+run_rofi() {
+  echo -e "$option_s\n$option_a\n$option_w\n$option_f" | rofi_cmd
+}
+
+chosen="$(run_rofi)"
+
+case ${chosen} in
+$option_s)
+  niri msg action screenshot-screen
+  ;;
+$option_a)
+  niri msg action screenshot
+  ;;
+$option_w)
+  niri msg action screenshot-window
+  ;;
+esac
