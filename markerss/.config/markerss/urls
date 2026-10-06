@@ -11,7 +11,7 @@ https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins" dev
 https://www.obsidianstats.com/rss.xml "~obsidian stats" dev !lazy
 https://terminaltrove.com/totw.xml "Terminal Trove Tool of the Week" dev
 https://hellogithub.com/rss "HelloGitHub 月刊" dev
-https://docs.keinmal.top/index.xml "docs"
+https://docs.keinmal.top/index.xml "docs" !lazy
 https://memex.keinmal.top/index.xml "memex" !lazy
 https://forum.archlinuxcn.org/latest.rss "Arch RSS" arch !favourite
 https://www.archlinuxcn.org/feed/ "ArchCN News" arch

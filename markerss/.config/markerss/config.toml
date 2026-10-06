@@ -9,14 +9,13 @@ refresh = true
 pane_ratio = [0.15, 0.25, 0.6]
 nav_presets = [
   [
+    "Unread",
     "Favourite",
-    "Feeds",
+    "Read Later",
   ],
   [
     "Categories",
     "Tags",
-    "Unread",
-    "Read Later",
     "Saved",
   ]
 ]
