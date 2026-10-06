@@ -1,0 +1,93 @@
+# ============================================================================
+# calman — 报告配置示例 (report.example.toml)
+#
+# 被 config.toml 的 include 引用。复制为 report.toml (或保持此名) 并按需修改。
+# 内容:
+#   [report.<name>]  报告定义 (同名覆盖内置 ls/list/next)
+#   [icons]          nerdfont 图标全局覆盖
+#
+# 内置报告已存在: ls (短列) / list (长列) / next (默认)。这里展示同名覆盖写法,
+# 删除不需要的块即用内置。
+# ============================================================================
+
+# ---------------------------------------------------------------- [report.ls]
+[report.ls]
+filter = "type:todo -status:completed -status:cancelled -status:recurring or type:event due.after:sod -status:recurring"
+sort = ["status-", "pri-", "due-"]
+columns = [
+  { field = "id",      label = "ID",     width = 4 },
+  { field = "status",  label = "STATUS", icon = true },
+  { field = "date",    label = "DATE" },
+  { field = "summary", label = "SUMMARY", format = "truncate", width = 10 },
+  { field = "desc",    label = "DESC", format = "truncate", width = 10 },
+  { field = "pri",     label = "PRI" },
+  { field = "tags",    label = "TAGS" },
+  { field = "source",  label = "SRC" },
+]
+
+# -------------------------------------------------------------- [report.list]
+[report.list]
+sort = ["status-", "pri-", "due-"]
+columns = [
+  { field = "id",      label = "ID",     width = 4 },
+  { field = "status",  label = "STATUS", icon = true },
+  { field = "date",    label = "DATE",   todo_format = "relative" },
+  { field = "summary", label = "SUMMARY", format = "truncate", width = 10 },
+  { field = "desc",    label = "DESC", format = "truncate", width = 10 },
+  { field = "pri",     label = "PRI" },
+  { field = "tags",    label = "TAGS" },
+  { field = "source",  label = "SRC" },
+]
+
+# ------------------------------------------------------------- [report.next]
+[report.next]
+filter = "type:todo status:active -PARENT -WAITING -pri:L or type:event due.after:sod"
+sort = ["due-", "pri-"]
+columns = [
+  { field = "id",      label = "ID",   width = 4 },
+  { field = "status",  label = "ST",   icon = true },
+  { field = "date",    label = "DATE", todo_format = "relative" },
+  { field = "summary", label = "SUMMARY" },
+  { field = "source",  label = "SRC" },
+]
+
+# 可用字段 (field): id status summary desc tags date due pri type source recur/recurrence
+#   summary = CalDAV SUMMARY; desc = DESCRIPTION; date/due 列对 event 显示 dtstart
+# 可用格式 (format): relative | countdown | iso | truncate; date/due 另有
+#   event_format / todo_format 分别定制 event 与 todo 的显示
+#   (默认: event = MM/DD 纯日期, todo = relative)
+# truncate 配合 width 使用 (超宽截断加 …)
+# width = 列最小宽度
+# icon = true 时 status/type 列渲染 nerdfont 图标; 合并后 STATUS 列中
+#   todo 显示状态图标, event 显示日历图标
+#
+# 过滤串支持 and/or/括号, 例:
+#   filter = "type:event due.after:sod or (type:todo +urgent)"
+#   CLI 可用 rc.report.<name>.columns=... labels=... 临时覆盖, 不改配置文件
+#
+# 每列可单独覆盖图标 (优先级: 列 icons > [icons] 全局 > 内置默认):
+#   { field = "status", label = "ST", icon = true,
+#     icons = { completed = "✔", pending = "◌" } }
+
+# ------------------------------------------------------------------- [icons]
+# 全局图标覆盖 (可选; 缺失的键回落到内置默认)
+# 合并后的 STATUS 列按任务类型取表: todo → [icons.todo], event → [icons.event]
+[icons]
+[icons.todo]                         # VTODO: pending=○ in-progress=● recurring=⟳ completed=✓ cancelled=✕
+pending = "○"
+in-progress = ""
+recurring = "⟳"
+completed = "✓"
+cancelled = "✕"
+overdue = "!"
+
+[icons.event]                        # VEVENT: pending/confirmed/recurring=○, cancelled=✕ (无 completed)
+pending = ""
+in-progress = "●"
+recurring = "⟳"
+completed = "✓"
+cancelled = "✕"
+
+# 自定义 field = "type" 列仍可用列级 icons { todo=..., event=... }
+
+# 行级颜色规则在 colorscheme.example.toml 的 [colorscheme] / [colorscheme.rules.*] 中定义:

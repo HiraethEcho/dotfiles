@@ -1,0 +1,57 @@
+# ============================================================================
+# calman — colorscheme.example.toml
+#
+# Report row colors (Phase-3 TUI / `list --color`). Include it from your
+# config.toml (include only goes one level deep):
+#
+#   include = ["config.default.toml", "colorscheme.example.toml"]
+#
+# Each row is wrapped by the FIRST rule whose condition matches, scanning
+# `priority` top-to-bottom. Available rules:
+#   completed  cancelled  overdue  today  due
+#   blocked  blocking  scheduled  tagged
+#   priority.L  priority.M  priority.H
+# ============================================================================
+
+[colorscheme]
+# Precedence: first rule that matches wins.
+priority = [
+  "completed",
+  "cancelled",
+  "overdue",
+  "priority.H",
+  "priority.M",
+  "priority.L",
+  "today",
+  "due",
+  "scheduled",
+  "tagged",
+  "blocked",
+  "blocking",
+]
+
+# Optional named colors, referenced by fg/bg below (and inline #RRGGBB works too).
+[colorscheme.palette]
+blue = "#1e90ff"
+green = "#2ecc71"
+red = "#e74c3c"
+yellow = "#f1c40f"
+gray = "#95a5a6"
+
+# Per-rule styles. Every attribute is optional.
+#   inverse  = true        -> swap fg/bg (e.g. overdue highlighted bar)
+#   bold / italic / underline / dim = true
+#   fg / bg  = named color | #RRGGBB | builtin (red, gray10, bright-blue, …)
+[colorscheme.rules]
+completed = { fg = "gray", bg = "gray10" }
+overdue = { inverse = true }
+"priority.H" = { fg = "yellow" }
+"priority.M" = { fg = "green" }
+"priority.L" = { fg = "gray" }
+due = { bold = true }
+today = { underline = true }
+cancelled = { fg = "#7f8c8d" }
+blocked = { fg = "gray18" }
+blocking = { fg = "gray", underline = true }
+scheduled = { fg = "gray" }
+tagged = { bold = true }
