@@ -1,10 +1,10 @@
 # markerss subscriptions (newsboat urls format)
 https://sspai.com/feed "少数派" stream !favourite
-https://plink.anyfeeder.com/gcores "机核" stream !favourite
+https://plink.anyfeeder.com/gcores "机核" stream
 http://solidot.org/index.rss "奇客" stream !favourite
 https://www.douban.com/feed/review/book "豆瓣书评" stream !lazy
 http://feed.appinn.com/ "小众软件" stream !favourite
-https://rss.arxiv.org/rss/math.AG "arxiv AG" paper
+https://rss.arxiv.org/rss/math.AG "arxiv AG" paper !lazy
 https://www.nature.com/nature.rss "Nature" paper !lazy
 https://frenzymath.com/rss.xml "~Frenzy"
 https://dotfyle.com/neovim/plugins/rss.xml "~nvim plugins" dev
@@ -31,7 +31,7 @@ https://ramble.imzh.me/index.xml "jz's ramblings" blog !lazy
 https://polebug.github.io/atom.xml "保持思考、等待、斋戒" blog
 https://goldenriver.site/index.xml "金色河流" blog
 https://emptystack.top/atom.xml "空栈顶" blog
-https://xkcd.com/rss.xml "xkcd.com" blog
+https://xkcd.com/rss.xml "xkcd.com" blog !lazy
 https://eyu.at/index.xml "鹅玉" blog !favourite
 https://stephenleng.com/cn/feed "心的道理" blog !favourite
 https://memex.keinmal.top/index.xml "MEMEX" blog #mine
