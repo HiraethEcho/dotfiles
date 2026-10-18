@@ -1,6 +1,6 @@
 # markerss subscriptions (newsboat urls format)
 https://sspai.com/feed "少数派" stream !favourite
-https://plink.anyfeeder.com/gcores "机核" stream
+https://plink.anyfeeder.com/gcores "机核" stream !lazy
 http://solidot.org/index.rss "奇客" stream !favourite
 https://www.douban.com/feed/review/book "豆瓣书评" stream !lazy
 http://feed.appinn.com/ "小众软件" stream !favourite
