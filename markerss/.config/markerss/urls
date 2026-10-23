@@ -33,5 +33,5 @@ https://stephenleng.com/cn/feed "心的道理" blog !favourite
 https://wiwi.blog/blog/rss.xml "Wiwi.Blog Blog" blog
 https://jaron.tw/blog/rss.xml "Jaron Writes." blog
 https://terrytao.wordpress.com/feed/ "What's new" blog !favourite
-https://docs.keinmal.top/index.xml "docs" !lazy blog #mine
-https://memex.keinmal.top/index.xml "memex" !lazy blog #mine
+https://docs.keinmal.top/index.xml "docs" blog #mine !lazy
+https://memex.keinmal.top/index.xml "memex" blog #mine !lazy
