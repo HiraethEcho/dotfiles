@@ -3,17 +3,18 @@ https://sspai.com/feed "少数派" stream !favourite
 https://plink.anyfeeder.com/gcores "机核" stream !lazy
 http://solidot.org/index.rss "奇客" stream !favourite
 https://www.douban.com/feed/review/book "豆瓣书评" stream !lazy
-http://feed.appinn.com/ "小众软件" stream !favourite
-https://rss.arxiv.org/rss/math.AG "arxiv AG" paper !lazy
+http://feed.appinn.com/ "小众软件" stream #software !favourite
+https://rss.arxiv.org/rss/math.AG "arxiv AG" paper #math !lazy
+https://hexagonmath.org/rss/math.AG paper #math
 https://www.nature.com/nature.rss "Nature" paper !lazy
-https://frenzymath.com/rss.xml "Frenzy"
-https://dotfyle.com/neovim/plugins/rss.xml "nvim plugins" dev
-https://terminaltrove.com/totw.xml "Terminal Trove Tool of the Week" dev
+https://frenzymath.com/rss.xml "Frenzy" #math
+https://dotfyle.com/neovim/plugins/rss.xml "nvim plugins" #software dev
+https://terminaltrove.com/totw.xml "Terminal Trove Tool of the Week" #software dev
 https://hellogithub.com/rss "HelloGitHub 月刊" dev
-https://forum.archlinuxcn.org/latest.rss "Arch RSS" arch !favourite
-https://www.archlinuxcn.org/feed/ "ArchCN News" arch
-https://archlinux.org/feeds/packages/x86_64/ "Arch repo" arch
-https://aur.archlinux.org/rss "AUR" arch
+https://forum.archlinuxcn.org/latest.rss "Arch RSS" dev #arch !favourite
+https://www.archlinuxcn.org/feed/ "ArchCN News" dev #arch
+https://archlinux.org/feeds/packages/x86_64/ "Arch repo" dev #arch
+https://aur.archlinux.org/rss "AUR" dev #arch
 https://sliun.com/feed/ "理论派" blog
 https://immarcus.com/blog/rss.xml "I'm Marcus Blog" blog !favourite
 https://blog.xiaket.org/feed.xml "年华转瞬" blog !favourite
@@ -32,8 +33,8 @@ https://eyu.at/index.xml "鹅玉" blog !favourite
 https://stephenleng.com/cn/feed "心的道理" blog !favourite
 https://wiwi.blog/blog/rss.xml "Wiwi.Blog Blog" blog
 https://jaron.tw/blog/rss.xml "Jaron Writes." blog
-https://terrytao.wordpress.com/feed/ "What's new" blog !favourite
+https://terrytao.wordpress.com/feed/ "What's new" blog #math !favourite
 https://docs.keinmal.top/index.xml "docs" blog #mine !lazy
 https://memex.keinmal.top/index.xml "memex" blog #mine !lazy
-https://kt3k.github.io/changelog/leanprover/lean4/daily.rss "leanprover/lean4 · Daily" !favourite
+https://kt3k.github.io/changelog/leanprover/lean4/daily.rss "leanprover/lean4 · Daily" stream #math !favourite
 https://ivonblog.com/index.xml blog
