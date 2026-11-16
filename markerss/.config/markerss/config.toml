@@ -20,7 +20,7 @@ nav_presets = [
     "Saved",
   ]
 ]
-background = "dark"
+background = "light"
 theme = "nord.toml"
 foldlevel = 0
 sort = ["time","title"]

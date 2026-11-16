@@ -5,11 +5,11 @@ http://solidot.org/index.rss "奇客" stream !favourite
 https://www.douban.com/feed/review/book "豆瓣书评" stream !lazy
 http://feed.appinn.com/ "小众软件" stream #software !favourite
 https://rss.arxiv.org/rss/math.AG "arxiv AG" paper #math !lazy
-https://hexagonmath.org/rss/math.AG paper #math
+https://hexagonmath.org/rss/math.AG "Hexagon — math.AG — Algebraic Geometry" paper #math
 https://www.nature.com/nature.rss "Nature" paper !lazy
 https://frenzymath.com/rss.xml "Frenzy" #math
-https://dotfyle.com/neovim/plugins/rss.xml "nvim plugins" #software dev
-https://terminaltrove.com/totw.xml "Terminal Trove Tool of the Week" #software dev
+https://dotfyle.com/neovim/plugins/rss.xml "nvim plugins" dev #software
+https://terminaltrove.com/totw.xml "Terminal Trove Tool of the Week" dev #software
 https://hellogithub.com/rss "HelloGitHub 月刊" dev
 https://forum.archlinuxcn.org/latest.rss "Arch RSS" dev #arch !favourite
 https://www.archlinuxcn.org/feed/ "ArchCN News" dev #arch
@@ -37,4 +37,4 @@ https://terrytao.wordpress.com/feed/ "What's new" blog #math !favourite
 https://docs.keinmal.top/index.xml "docs" blog #mine !lazy
 https://memex.keinmal.top/index.xml "memex" blog #mine !lazy
 https://kt3k.github.io/changelog/leanprover/lean4/daily.rss "leanprover/lean4 · Daily" stream #math !favourite
-https://ivonblog.com/index.xml blog
+https://everen.blog/blog/rss.xml "Everen个人小站" blog
